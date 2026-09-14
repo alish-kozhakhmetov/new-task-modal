@@ -4,7 +4,11 @@ import { describe, expect, it } from 'vitest'
 import { makeDeps, makeTranslation } from '../../lib/testing/test-utils'
 import type { ComplexCoordinatePlanePart } from '../../lib/types.task'
 
-import { planeLength, PlaneFigureType } from './coordinate-plane/plane-math'
+import {
+  fitOptionsToContent,
+  planeLength,
+  PlaneFigureType,
+} from './coordinate-plane/plane-math'
 import { CoordinatePlanePart } from './coordinate-plane-part'
 
 const baseOptions = {
@@ -33,21 +37,30 @@ describe('CoordinatePlanePart fitToContent', () => {
       figures,
     }) as unknown as ComplexCoordinatePlanePart
 
-  /** A segment spanning one unit inside a field declared -10..10. */
+  /** Backend shape: a segment spanning one unit inside a field declared -10..10. */
+  const точка = (x: number, y: number) => ({ x, y })
   const отрезок = [
-    { type: PlaneFigureType.LineSegment, x1: 0, y1: 0, x2: 1, y2: 0 },
+    {
+      type: PlaneFigureType.LineSegment,
+      point1: точка(0, 0),
+      point2: точка(1, 0),
+    },
   ]
 
-  it('keeps Matheducator parity when the prop is absent', () => {
-    render(<CoordinatePlanePart part={поле(отрезок)} deps={makeDeps()} />)
+  it('keeps Matheducator parity when fitToContent is false', () => {
+    render(
+      <CoordinatePlanePart
+        part={поле(отрезок)}
+        deps={makeDeps()}
+        fitToContent={false}
+      />,
+    )
     const svg = screen.getByTestId('complex-coordinate-plane-part')
-    expect(svg.getAttribute('width')).toBe(String(planeLength(baseOptions)))
+    expect(svg).toHaveAttribute('width', String(planeLength(baseOptions)))
   })
 
-  it('shrinks the canvas to the drawn figure when asked', () => {
-    render(
-      <CoordinatePlanePart part={поле(отрезок)} deps={makeDeps()} fitToContent />,
-    )
+  it('shrinks the canvas to the drawn figure by default', () => {
+    render(<CoordinatePlanePart part={поле(отрезок)} deps={makeDeps()} />)
     const svg = screen.getByTestId('complex-coordinate-plane-part')
     const width = Number(svg.getAttribute('width'))
     expect(width).toBeGreaterThan(0)
@@ -55,9 +68,109 @@ describe('CoordinatePlanePart fitToContent', () => {
   })
 
   it('keeps the declared field when nothing is drawn', () => {
-    render(<CoordinatePlanePart part={поле([])} deps={makeDeps()} fitToContent />)
+    render(<CoordinatePlanePart part={поле([])} deps={makeDeps()} />)
     const svg = screen.getByTestId('complex-coordinate-plane-part')
-    expect(svg.getAttribute('width')).toBe(String(planeLength(baseOptions)))
+    expect(svg).toHaveAttribute('width', String(planeLength(baseOptions)))
+  })
+
+  it('keeps the origin on the canvas when axes are shown', () => {
+    // A figure far from zero would otherwise push both axes off the canvas.
+    const далеко = [
+      {
+        type: PlaneFigureType.LineSegment,
+        point1: точка(3, 3),
+        point2: точка(6, 6),
+      },
+    ]
+    const withAxes = fitOptionsToContent(baseOptions, [], далеко)
+    expect(withAxes.minPosition).toBeLessThanOrEqual(0)
+    expect(withAxes.maxPosition).toBeGreaterThanOrEqual(6)
+
+    const noAxes = fitOptionsToContent(
+      { ...baseOptions, showAxis: false },
+      [],
+      далеко,
+    )
+    expect(noAxes.minPosition).toBeGreaterThan(0)
+  })
+
+  it('snaps the narrowed field to the tick grid', () => {
+    const дробный = [
+      {
+        type: PlaneFigureType.LineSegment,
+        point1: точка(0.5, 0.5),
+        point2: точка(1.5, 1.5),
+      },
+    ]
+    const o = fitOptionsToContent(
+      { ...baseOptions, showAxis: false },
+      [],
+      дробный,
+    )
+    expect(Number.isInteger(o.minPosition)).toBe(true)
+    expect(Number.isInteger(o.maxPosition)).toBe(true)
+    expect(o.minPosition).toBeLessThanOrEqual(0.5 - 1)
+    expect(o.maxPosition).toBeGreaterThanOrEqual(1.5 + 1)
+  })
+
+  it('keeps a circle whole, reading centerPoint and radius', () => {
+    // The first version read f.x/f.y for circles — a shape the backend never
+    // sends — and narrowed the canvas past them.
+    const круг = [
+      { type: PlaneFigureType.Circle, centerPoint: точка(4, 4), radius: 3 },
+      {
+        type: PlaneFigureType.LineSegment,
+        point1: точка(4, 4),
+        point2: точка(5, 4),
+      },
+    ]
+    const o = fitOptionsToContent({ ...baseOptions, showAxis: false }, [], круг)
+    expect(o.minPosition).toBeLessThanOrEqual(4 - 3)
+    expect(o.maxPosition).toBeGreaterThanOrEqual(4 + 3)
+  })
+
+  it('keeps an elliptical arc whole, reading rx and ry', () => {
+    const дуга = [
+      {
+        type: PlaneFigureType.EllipticalArc,
+        centerPoint: точка(0, 0),
+        mPoint: точка(2, 0),
+        endPoint: точка(0, 1),
+        rx: 2,
+        ry: 1,
+      },
+    ]
+    const o = fitOptionsToContent({ ...baseOptions, showAxis: false }, [], дуга)
+    expect(o.minPosition).toBeLessThanOrEqual(-2)
+    expect(o.maxPosition).toBeGreaterThanOrEqual(2)
+  })
+
+  it('keeps the declared field when a Line is drawn', () => {
+    // A Line runs to the edges of the declared field by definition.
+    const прямая = [
+      { type: PlaneFigureType.Line, point1: точка(0, 0), point2: точка(1, 1) },
+    ]
+    expect(fitOptionsToContent(baseOptions, [], прямая)).toEqual(baseOptions)
+  })
+
+  it('keeps the declared field when a figure type is unknown', () => {
+    const неизвестная = [{ type: 999, point1: точка(0, 0) }]
+    expect(fitOptionsToContent(baseOptions, [], неизвестная)).toEqual(
+      baseOptions,
+    )
+  })
+
+  it('never exceeds the declared field', () => {
+    const уКрая = [
+      {
+        type: PlaneFigureType.LineSegment,
+        point1: точка(-10, -10),
+        point2: точка(10, 10),
+      },
+    ]
+    const o = fitOptionsToContent(baseOptions, [], уКрая)
+    expect(o.minPosition).toBe(-10)
+    expect(o.maxPosition).toBe(10)
   })
 })
 

@@ -26,8 +26,8 @@ interface MultiTextTemplateConfig {
   withBefore?: boolean
   /**
    * Size each input to the volume of the expected answer instead of the fixed
-   * 120px. Off by default: the fixed width is what the visual baselines were
-   * recorded with, and turning this on changes them.
+   * 120px. On by default since 2.1.0; pass `false` for the fixed width the
+   * original visual baselines were recorded with.
    */
   widthFromTask?: boolean
   withAfter?: boolean
@@ -48,7 +48,7 @@ export const createMultiTextTemplate = ({
   layout,
   withBefore = false,
   withAfter = false,
-  widthFromTask = false,
+  widthFromTask = true,
   normalizeBareMath: shouldNormalize = false,
 }: MultiTextTemplateConfig) => {
   const MultiTextTemplate = ({
@@ -90,7 +90,6 @@ export const createMultiTextTemplate = ({
 
     const widthPx = widthFromTask ? inputWidthHint(task, 24) : null
 
-
     return (
       <div className={styles.container} data-template-id={id}>
         <TaskTitle title={task.title} deps={deps} />
@@ -120,7 +119,9 @@ export const createMultiTextTemplate = ({
                 formula={answerValues[index] ?? ''}
                 onMathFieldChanged={handleChange}
                 className={styles.input}
-                style={widthPx ? { flex: 'none', width: widthPx } : undefined}
+                style={
+                  widthPx ? { flex: 'none', minWidth: widthPx } : undefined
+                }
               />
               {withAfter && after && (
                 <TextAdornment

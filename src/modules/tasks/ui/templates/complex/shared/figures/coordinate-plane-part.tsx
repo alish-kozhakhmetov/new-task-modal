@@ -21,9 +21,10 @@ interface Props {
   /**
    * Size the canvas to what is drawn instead of the declared coordinate field.
    *
-   * Off by default: `planeLength` reproduces Matheducator pixel-for-pixel and
-   * that parity is covered by a test. With it on, a figure spanning half a
-   * unit inside a field declared -10..10 no longer sits in a large empty grid.
+   * On by default since 2.1.0. A figure spanning half a unit inside a field
+   * declared -10..10 no longer sits in a large empty grid. Pass `false` to get
+   * the Matheducator pixel-for-pixel size back — that parity is still covered
+   * by a test with the prop set explicitly.
    */
   fitToContent?: boolean
 }
@@ -43,7 +44,11 @@ const toOptions = (part: ComplexCoordinatePlanePart): PlaneOptions => ({
 })
 
 /** Display-only CoordinatePlane (no click / draw for grade 4). */
-export const CoordinatePlanePart = ({ part, deps, fitToContent = false }: Props) => {
+export const CoordinatePlanePart = ({
+  part,
+  deps,
+  fitToContent = true,
+}: Props) => {
   const declared = toOptions(part)
   const translate = (value: unknown) => deps.global.translateTasks(value)
 

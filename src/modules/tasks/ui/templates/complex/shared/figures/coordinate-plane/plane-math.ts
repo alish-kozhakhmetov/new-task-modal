@@ -55,7 +55,17 @@ export const planeLength = (options: PlaneOptions) => {
  * segment spanning 0..1 inside a field declared -10..10 ends up as a thin line
  * in a large empty grid.
  *
- * Returns `null` when nothing is drawn, so callers keep the declared field.
+ * **Reads exactly the keys `PlaneFigure` renders from** — `point1`/`point2`,
+ * `centerPoint` with `radius` or `rx`/`ry`, `mPoint`/`endPoint`, `point`,
+ * `points`. The first version read `x1`/`y1`/`x2`/`y2` and `f.x` for circles,
+ * a shape the backend never sends: on real payloads it saw only some figures
+ * and could narrow the canvas past the ones it missed. Caught by rendering
+ * real tasks, not by the unit tests, which had been written on the same
+ * invented shape.
+ *
+ * Returns `null` — keep the declared field — when nothing is drawn, when a
+ * `Line` is present (it runs to the edges of the declared field by
+ * definition), or when a figure type is unknown (its extent is unknown).
  */
 export const contentBounds = (
   points: PlanePoint[],
@@ -63,33 +73,51 @@ export const contentBounds = (
 ): { minX: number; maxX: number; minY: number; maxY: number } | null => {
   const xs: number[] = []
   const ys: number[] = []
-  const add = (x: unknown, y: unknown) => {
-    if (typeof x === 'number' && Number.isFinite(x)) xs.push(x)
-    if (typeof y === 'number' && Number.isFinite(y)) ys.push(y)
+  const num = (v: unknown): v is number =>
+    typeof v === 'number' && Number.isFinite(v)
+  const pt = (v: unknown): PlanePoint | null => {
+    if (!v || typeof v !== 'object') return null
+    const { x, y } = v as Record<string, unknown>
+    return num(x) && num(y) ? { x, y } : null
+  }
+  const add = (p: PlanePoint | null, rx = 0, ry = rx) => {
+    if (!p) return
+    xs.push(p.x - rx, p.x + rx)
+    ys.push(p.y - ry, p.y + ry)
   }
 
-  for (const p of points) add(p.x, p.y)
+  for (const p of points) add(pt(p))
 
   for (const f of figures) {
-    const type = Number(f.type)
-    const пары = (key: string) => {
-      const list = f[key]
-      if (!Array.isArray(list)) return
-      for (const p of list) if (p && typeof p === 'object') add((p as PlanePoint).x, (p as PlanePoint).y)
-    }
-    пары('points')
-    пары('answerPoints')
-    add(f.x, f.y)
-    add(f.x1, f.y1)
-    add(f.x2, f.y2)
-    if (type === PlaneFigureType.Circle) {
-      const r = Number(f.radius ?? f.r)
-      const cx = Number(f.x)
-      const cy = Number(f.y)
-      if (Number.isFinite(r) && Number.isFinite(cx) && Number.isFinite(cy)) {
-        add(cx - r, cy - r)
-        add(cx + r, cy + r)
-      }
+    switch (Number(f.type)) {
+      case PlaneFigureType.Point:
+        add(pt({ ...f, ...(f.point as object) }))
+        break
+      case PlaneFigureType.LineSegment:
+      case PlaneFigureType.Vector:
+        add(pt(f.point1))
+        add(pt(f.point2))
+        break
+      case PlaneFigureType.Polygon:
+        if (Array.isArray(f.points)) for (const p of f.points) add(pt(p))
+        break
+      case PlaneFigureType.Circle:
+        if (num(f.radius)) add(pt(f.centerPoint), Math.abs(f.radius))
+        break
+      case PlaneFigureType.EllipticalArc:
+        if (num(f.rx) && num(f.ry))
+          add(pt(f.centerPoint), Math.abs(f.rx), Math.abs(f.ry))
+        add(pt(f.mPoint))
+        add(pt(f.endPoint))
+        break
+      case PlaneFigureType.Text:
+        // The renderer places a Text without coordinates at the origin.
+        add({ x: num(f.x) ? f.x : 0, y: num(f.y) ? f.y : 0 })
+        break
+      case PlaneFigureType.Line:
+        return null
+      default:
+        return null
     }
   }
 
@@ -105,8 +133,19 @@ export const contentBounds = (
 /**
  * Options narrowed to what is actually drawn, with one cell of air around it.
  *
- * Off by default: `planeLength` reproduces Matheducator pixel-for-pixel, and
- * that parity is covered by a test. Pass `fitToContent` to opt in.
+ * Two guards, both measured on the backend corpus (1741 variants, 345 planes):
+ *
+ * - **The origin stays on the canvas when axes are shown.** Axes are drawn
+ *   through zero; a figure sitting at 3..6 would otherwise narrow the field to
+ *   2..7 and push both axes off the canvas, leaving a coordinate task with
+ *   nothing to read coordinates against. One task in the corpus hit this
+ *   (Task_7_3_1_15).
+ * - **Bounds snap to the tick grid.** Without it an integer grid drifts to
+ *   fractional lines (-0.5, 0.5, …) whenever the drawn content is fractional,
+ *   and the cells stop matching integer coordinates. Sixteen tasks hit this.
+ *
+ * The declared field is never exceeded: snapping and the origin are clamped to
+ * it, so a field declared without zero stays without zero.
  */
 export const fitOptionsToContent = (
   options: PlaneOptions,
@@ -116,9 +155,15 @@ export const fitOptionsToContent = (
   const b = contentBounds(points, figures)
   if (!b) return options
 
-  const air = options.tickStep
-  const min = Math.max(options.minPosition, Math.min(b.minX, b.minY) - air)
-  const max = Math.min(options.maxPosition, Math.max(b.maxX, b.maxY) + air)
+  const tick = options.tickStep > 0 ? options.tickStep : 1
+  let lo = Math.floor((Math.min(b.minX, b.minY) - tick) / tick) * tick
+  let hi = Math.ceil((Math.max(b.maxX, b.maxY) + tick) / tick) * tick
+  if (options.showAxis) {
+    lo = Math.min(lo, 0)
+    hi = Math.max(hi, 0)
+  }
+  const min = Math.max(options.minPosition, lo)
+  const max = Math.min(options.maxPosition, hi)
   if (!(max > min)) return options
 
   return { ...options, minPosition: min, maxPosition: max }
