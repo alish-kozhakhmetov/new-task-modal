@@ -120,7 +120,9 @@ export const createMultiTextTemplate = ({
                 onMathFieldChanged={handleChange}
                 className={styles.input}
                 style={
-                  widthPx ? { flex: 'none', minWidth: widthPx } : undefined
+                  widthPx
+                    ? { flex: 'none', minWidth: `min(${widthPx}px, 100%)` }
+                    : undefined
                 }
               />
               {withAfter && after && (
