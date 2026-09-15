@@ -113,6 +113,15 @@
     align-items: center;
     width: 100%;
   }
+
+  // An inline answer row is an expression — «796441 = ▢ + ▢ + ▢ + ▢ + ▢ + ▢»
+  // — and on a phone it wraps like one instead of scrolling six 120px fields
+  // out of sight. A row that fits is laid out exactly as before: wrapping
+  // only ever moves what would have overflowed.
+  tr {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
 }
 
 .tableFlexMixedSolution,
@@ -125,8 +134,12 @@
     width: 100%;
   }
 
+  // Same as the inline rows: «t = ▢ шар : ▢ шар/мин = ▢ мин» wraps on a
+  // phone instead of hiding the last field.
   tr {
     display: flex;
+    flex-wrap: wrap;
+    row-gap: 8px;
     align-items: center;
     width: 100%;
   }
@@ -175,6 +188,15 @@
   // `.cell`'s nowrap; a header has no spaces inside a number to break at.
   white-space: normal;
   @include body-medium-bold;
+}
+
+.cellGlued {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  padding: 0;
+  white-space: nowrap;
+  border: none;
 }
 
 .cellLine {

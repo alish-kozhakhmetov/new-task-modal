@@ -19,6 +19,9 @@ import { TableStaticCellContent } from './render-table-cell-content'
 import type { TableTask } from './types.task'
 import { useHiddenRight } from './use-hidden-right'
 
+/** Flex rows that wrap on a phone; a field stays glued to the cell after it. */
+const GLUED_ROW_IDS = new Set(['table.inline', 'table.mixed'])
+
 interface TableTemplateConfig {
   /** templateId, e.g. `table.plain`. */
   id: string
@@ -104,59 +107,97 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
               data-testid="task-table"
             >
               <tbody>
-                {table.rows.map((row, rowIndex) => (
-                  <tr key={rowIndex}>
-                    {row.cells.map((cell, cellIndex) => {
-                      const isInput = cell === 'answercell'
-                      const content =
-                        typeof cell === 'string'
-                          ? cell
-                          : deps.global.translateTasks(cell)
+                {table.rows.map((row, rowIndex) => {
+                  const isHeaderRow =
+                    id === 'table.grid'
+                      ? rowIndex < table.rows.length - 1
+                      : id === 'table.multiRow' || id === 'table.multiRowSvg'
+                        ? rowIndex === 0
+                        : false
 
-                      const currentInputIndex = isInput ? inputIndex++ : -1
+                  const cellClass = (cellIndex: number, isInput: boolean) =>
+                    getCellClassName({
+                      id,
+                      mode: 'input',
+                      isInput,
+                      isFirstCell: cellIndex === 0,
+                      isLastCell: cellIndex === row.cells.length - 1,
+                      isHeaderRow,
+                      isLastRow: rowIndex === table.rows.length - 1,
+                    })
 
-                      const isHeaderRow =
-                        id === 'table.grid'
-                          ? rowIndex < table.rows.length - 1
-                          : id === 'table.multiRow' ||
-                              id === 'table.multiRowSvg'
-                            ? rowIndex === 0
-                            : false
+                  const renderInput = () => {
+                    const currentInputIndex = inputIndex++
+                    return (
+                      <MathInput
+                        id={`table-input-${currentInputIndex}`}
+                        ref={bindRef(`table-input-${currentInputIndex}`)}
+                        formula={answerValues[currentInputIndex] ?? ''}
+                        onMathFieldChanged={handleChange}
+                        className={getInputClassName({ id, mode: 'input' })}
+                      />
+                    )
+                  }
 
-                      return (
-                        <td
-                          key={cellIndex}
-                          className={getCellClassName({
-                            id,
-                            mode: 'input',
-                            isInput,
-                            isFirstCell: cellIndex === 0,
-                            isLastCell: cellIndex === row.cells.length - 1,
-                            isHeaderRow,
-                            isLastRow: rowIndex === table.rows.length - 1,
-                          })}
-                          colSpan={row.colspan_list?.[cellIndex] || 1}
-                          rowSpan={row.rowspan_list?.[cellIndex] || 1}
-                        >
-                          {isInput ? (
-                            <MathInput
-                              id={`table-input-${currentInputIndex}`}
-                              ref={bindRef(`table-input-${currentInputIndex}`)}
-                              formula={answerValues[currentInputIndex] ?? ''}
-                              onMathFieldChanged={handleChange}
-                              className={getInputClassName({
-                                id,
-                                mode: 'input',
-                              })}
-                            />
-                          ) : (
-                            <TableStaticCellContent content={content} />
-                          )}
-                        </td>
+                  const contentOf = (cell: (typeof row.cells)[number]) =>
+                    typeof cell === 'string'
+                      ? cell
+                      : deps.global.translateTasks(cell)
+
+                  const cells: React.ReactNode[] = []
+                  for (
+                    let cellIndex = 0;
+                    cellIndex < row.cells.length;
+                    cellIndex++
+                  ) {
+                    const cell = row.cells[cellIndex]
+                    const isInput = cell === 'answercell'
+                    const next = row.cells[cellIndex + 1]
+
+                    /*
+                     * In the flex rows (inline, mixed) a field and the cell right
+                     * after it wrap as one unit: «▢ кг», «▢ шар :», «▢ +». Rows
+                     * wrap on a phone, and without this the unit of a field
+                     * landed alone on the next line — «9020 г = ▢ кг ▢» / «г».
+                     */
+                    if (
+                      isInput &&
+                      GLUED_ROW_IDS.has(id) &&
+                      next !== undefined &&
+                      next !== 'answercell'
+                    ) {
+                      cells.push(
+                        <td key={cellIndex} className={styles.cellGlued}>
+                          <span className={cellClass(cellIndex, true)}>
+                            {renderInput()}
+                          </span>
+                          <span className={cellClass(cellIndex + 1, false)}>
+                            <TableStaticCellContent content={contentOf(next)} />
+                          </span>
+                        </td>,
                       )
-                    })}
-                  </tr>
-                ))}
+                      cellIndex++
+                      continue
+                    }
+
+                    cells.push(
+                      <td
+                        key={cellIndex}
+                        className={cellClass(cellIndex, isInput)}
+                        colSpan={row.colspan_list?.[cellIndex] || 1}
+                        rowSpan={row.rowspan_list?.[cellIndex] || 1}
+                      >
+                        {isInput ? (
+                          renderInput()
+                        ) : (
+                          <TableStaticCellContent content={contentOf(cell)} />
+                        )}
+                      </td>,
+                    )
+                  }
+
+                  return <tr key={rowIndex}>{cells}</tr>
+                })}
               </tbody>
             </table>
           </div>
