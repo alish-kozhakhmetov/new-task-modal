@@ -4,6 +4,7 @@ import { type ComponentProps } from 'react'
 
 import styles from './math-text.module.scss'
 import { normalizeFractionStyle } from './normalize-fraction-style'
+import { normalizeOperatorSigns } from './normalize-operator-signs'
 import { scheduleMathStretch } from './stretch-tall-glyphs'
 
 type Props = ComponentProps<typeof MathJax> & {
@@ -19,7 +20,9 @@ const IS_SAFARI = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
 
 export const MathText = ({ children, className, inline, onTypeset }: Props) => {
   const content =
-    typeof children === 'string' ? normalizeFractionStyle(children) : children
+    typeof children === 'string'
+      ? normalizeFractionStyle(normalizeOperatorSigns(children))
+      : children
 
   const handleTypeset = () => {
     scheduleMathStretch()

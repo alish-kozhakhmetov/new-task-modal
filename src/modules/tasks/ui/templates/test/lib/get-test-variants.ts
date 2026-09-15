@@ -1,4 +1,5 @@
 import type { Translation } from '@/types/api/task'
+import { normalizeOperatorSigns } from '@/ui/math-text/normalize-operator-signs'
 import type { RadioOption } from '@/ui/radio-button/radio-button-group'
 
 /** Letter for variant index: 0 → A, 1 → B, … */
@@ -10,10 +11,18 @@ export const getTestVariants = (
   variants: Translation[] | undefined,
   translate: (value: Translation | string) => string,
 ): RadioOption[] =>
-  (variants ?? []).map((option, index) => ({
-    value: getTestRadioValue(index),
-    label: translate(option),
-  }))
+  (variants ?? []).map((option, index) => {
+    const label = translate(option)
+    return {
+      value: getTestRadioValue(index),
+      /*
+       * Option text bypasses MathText, so signs are normalized here:
+       * «820 - 432 > 386», «49 · 8 = 3136 : 8» (Task_4_3_4_14, 4_3_4_6).
+       * Markup (SVG variants) is left alone — a `*` in its CSS is not a sign.
+       */
+      label: label.includes('<') ? label : normalizeOperatorSigns(label),
+    }
+  })
 
 /**
  * Resolve a stored letter (A/B/C…) to its display value for answer panels —

@@ -1,4 +1,5 @@
 import { MathText } from '@/ui/math-text/math-text'
+import { normalizeOperatorSigns } from '@/ui/math-text/normalize-operator-signs'
 
 import { prepareAdornment } from '../lib/prepare-adornment'
 
@@ -20,7 +21,7 @@ export const TextAdornment = ({
   if (prepared.kind === 'plain') {
     return (
       <span data-testid={testId} className={className}>
-        {prepared.text}
+        {normalizeOperatorSigns(prepared.text)}
       </span>
     )
   }
