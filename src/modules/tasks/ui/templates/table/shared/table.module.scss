@@ -5,6 +5,23 @@
   width: 100%;
 }
 
+.tableFrame {
+  position: relative;
+}
+
+// Visible sign that the table goes on past the right edge. A phone shows no
+// scrollbar until touched, so without it the hidden columns look absent.
+// Set by `useHiddenRight` only while something is still hidden.
+.tableFrame[data-hidden-right]::after {
+  position: absolute;
+  inset-block: 16px 0;
+  right: 0;
+  width: 32px;
+  pointer-events: none;
+  content: '';
+  background: linear-gradient(to right, transparent, var(--bg-canvas));
+}
+
 .tableWrapper {
   padding: 2px;
   margin: -2px;
@@ -151,7 +168,28 @@
 
 .cellHeader {
   background: var(--bg-subtle);
+  // Headers are words and may wrap between them: «Первое слагаемое» on one
+  // line made a three-column table 478px wide on a 343px phone column, and
+  // the column with the sum — the value the task is about — scrolled out of
+  // sight behind a scrollbar a phone does not show. Numbers stay on
+  // `.cell`'s nowrap; a header has no spaces inside a number to break at.
+  white-space: normal;
   @include body-medium-bold;
+}
+
+.cellLine {
+  // MathText renders a block, so lines stack on their own; `display: block`
+  // keeps that true for plain text too, without an extra <br> line.
+  display: block;
+  white-space: nowrap;
+}
+
+// Grid tables carry up to seven columns (label + six place-value digits).
+// At 8px a side the padding alone was 112px of a 343px phone column; 4px
+// brings the II-class place-value grid inside it.
+.tableRounded .cell,
+.tableRounded .inputCell {
+  padding-inline: 4px;
 }
 
 .cellNoBottomBorder {

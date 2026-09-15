@@ -1,3 +1,5 @@
+import { Fragment } from 'react'
+
 import { stripEmptyMathIslands } from '@/modules/tasks/ui/templates/text/lib/strip-empty-math-islands'
 import { uprightUnitsInTex } from '@/modules/tasks/ui/templates/text/lib/upright-math-units'
 import { MathFormula } from '@/ui/math-text/math-formula'
@@ -10,6 +12,9 @@ export const isHtmlTableCellContent = (content: string): boolean =>
   content.includes('svg') || content.includes('<div')
 
 const CYRILLIC_RE = /[а-яА-ЯёЁ]/
+
+/** A math island holding only `\\` — the backend's line break inside a cell. */
+const LINE_BREAK_ISLAND_RE = /\\\(\s*\\\\\s*\\\)/
 
 /**
  * MathJax math mode italicizes letters and `\text{…}` uses MJX text fonts
@@ -56,6 +61,30 @@ export const TableStaticCellContent = ({
         data-testid="table-html-cell"
         dangerouslySetInnerHTML={{ __html: content }}
       />
+    )
+  }
+
+  /*
+   * `\(\\\)` is the backend's line break inside a cell: headers of the
+   * place-value grid arrive as `сот.\(\\\)6-й`, meaning «сот.» over «6-й».
+   * MathJax drops a `\\` in inline math, so the header rendered as one long
+   * «сот.6-й» and six such columns pushed the table past a phone screen.
+   * Honouring the break halves the column width.
+   */
+  const lines = content.split(LINE_BREAK_ISLAND_RE)
+  if (lines.length > 1) {
+    return (
+      <>
+        {lines.map((line, index) => (
+          <Fragment key={index}>
+            {/* A line the backend broke on purpose is one unit: «3-ий» must
+                not wrap again at its hyphen once headers are allowed to wrap. */}
+            <span className={styles.cellLine}>
+              <TableStaticCellContent content={line} asFormula={asFormula} />
+            </span>
+          </Fragment>
+        ))}
+      </>
     )
   }
 

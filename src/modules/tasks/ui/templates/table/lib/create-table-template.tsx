@@ -17,6 +17,7 @@ import {
 } from './get-table-classnames'
 import { TableStaticCellContent } from './render-table-cell-content'
 import type { TableTask } from './types.task'
+import { useHiddenRight } from './use-hidden-right'
 
 interface TableTemplateConfig {
   /** templateId, e.g. `table.plain`. */
@@ -32,6 +33,10 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
     onChange,
     mathInput,
   }: TaskComponentProps<TableTask>) => {
+    // Called before the early returns below: hook order must not depend on
+    // whether the task is in solution mode or has a table.
+    const { ref: wrapperRef, hiddenRight } = useHiddenRight<HTMLDivElement>()
+
     if (isActiveSolution(task.solution)) {
       return (
         <TableSolution
@@ -76,76 +81,85 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
         <TaskTitle title={task.title} deps={deps} />
         <TaskDescription task={task as unknown as Task<'table'>} deps={deps} />
 
-        <div className={styles.tableWrapper}>
-          <table
-            className={getTableClassName({
-              id,
-              mode: 'input',
-              removeBorders: table.removeBorders,
-              removePadding: table.removePadding,
-            })}
-            style={{
-              width:
-                id === 'table.list' ||
-                id === 'table.mixed' ||
-                id === 'table.inline'
-                  ? '100%'
-                  : table.width,
-            }}
-            data-testid="task-table"
-          >
-            <tbody>
-              {table.rows.map((row, rowIndex) => (
-                <tr key={rowIndex}>
-                  {row.cells.map((cell, cellIndex) => {
-                    const isInput = cell === 'answercell'
-                    const content =
-                      typeof cell === 'string'
-                        ? cell
-                        : deps.global.translateTasks(cell)
+        <div
+          className={styles.tableFrame}
+          data-hidden-right={hiddenRight || undefined}
+        >
+          <div ref={wrapperRef} className={styles.tableWrapper}>
+            <table
+              className={getTableClassName({
+                id,
+                mode: 'input',
+                removeBorders: table.removeBorders,
+                removePadding: table.removePadding,
+              })}
+              style={{
+                width:
+                  id === 'table.list' ||
+                  id === 'table.mixed' ||
+                  id === 'table.inline'
+                    ? '100%'
+                    : table.width,
+              }}
+              data-testid="task-table"
+            >
+              <tbody>
+                {table.rows.map((row, rowIndex) => (
+                  <tr key={rowIndex}>
+                    {row.cells.map((cell, cellIndex) => {
+                      const isInput = cell === 'answercell'
+                      const content =
+                        typeof cell === 'string'
+                          ? cell
+                          : deps.global.translateTasks(cell)
 
-                    const currentInputIndex = isInput ? inputIndex++ : -1
+                      const currentInputIndex = isInput ? inputIndex++ : -1
 
-                    const isHeaderRow =
-                      id === 'table.grid'
-                        ? rowIndex < table.rows.length - 1
-                        : id === 'table.multiRow' || id === 'table.multiRowSvg'
-                          ? rowIndex === 0
-                          : false
+                      const isHeaderRow =
+                        id === 'table.grid'
+                          ? rowIndex < table.rows.length - 1
+                          : id === 'table.multiRow' ||
+                              id === 'table.multiRowSvg'
+                            ? rowIndex === 0
+                            : false
 
-                    return (
-                      <td
-                        key={cellIndex}
-                        className={getCellClassName({
-                          id,
-                          mode: 'input',
-                          isInput,
-                          isFirstCell: cellIndex === 0,
-                          isLastCell: cellIndex === row.cells.length - 1,
-                          isHeaderRow,
-                          isLastRow: rowIndex === table.rows.length - 1,
-                        })}
-                        colSpan={row.colspan_list?.[cellIndex] || 1}
-                        rowSpan={row.rowspan_list?.[cellIndex] || 1}
-                      >
-                        {isInput ? (
-                          <MathInput
-                            id={`table-input-${currentInputIndex}`}
-                            ref={bindRef(`table-input-${currentInputIndex}`)}
-                            formula={answerValues[currentInputIndex] ?? ''}
-                            onMathFieldChanged={handleChange}
-                            className={getInputClassName({ id, mode: 'input' })}
-                          />
-                        ) : (
-                          <TableStaticCellContent content={content} />
-                        )}
-                      </td>
-                    )
-                  })}
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                      return (
+                        <td
+                          key={cellIndex}
+                          className={getCellClassName({
+                            id,
+                            mode: 'input',
+                            isInput,
+                            isFirstCell: cellIndex === 0,
+                            isLastCell: cellIndex === row.cells.length - 1,
+                            isHeaderRow,
+                            isLastRow: rowIndex === table.rows.length - 1,
+                          })}
+                          colSpan={row.colspan_list?.[cellIndex] || 1}
+                          rowSpan={row.rowspan_list?.[cellIndex] || 1}
+                        >
+                          {isInput ? (
+                            <MathInput
+                              id={`table-input-${currentInputIndex}`}
+                              ref={bindRef(`table-input-${currentInputIndex}`)}
+                              formula={answerValues[currentInputIndex] ?? ''}
+                              onMathFieldChanged={handleChange}
+                              className={getInputClassName({
+                                id,
+                                mode: 'input',
+                              })}
+                            />
+                          ) : (
+                            <TableStaticCellContent content={content} />
+                          )}
+                        </td>
+                      )
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     )
