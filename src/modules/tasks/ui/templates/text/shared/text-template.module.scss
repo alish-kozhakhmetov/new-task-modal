@@ -10,7 +10,9 @@
 .inputRow {
   display: flex;
   flex-wrap: nowrap;
-  gap: 6px;
+  // A sign or a unit and a field are 8px apart — the rule (math-signs.md).
+  // At 6px «▢ см²» read as one glued token; measured on 291 text.after tasks.
+  gap: var(--space-8);
   align-items: center;
 }
 

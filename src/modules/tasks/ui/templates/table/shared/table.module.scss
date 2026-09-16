@@ -148,7 +148,8 @@
 
   tr {
     display: flex;
-    gap: 4px;
+    // 8px between a field and its label — the sign/field rule.
+    gap: var(--space-8);
     align-items: center;
     width: 100%;
   }
