@@ -142,7 +142,13 @@ const HYPHEN_AFTER_UNIT = new RegExp(
   String.raw`(\d\s*(?:${UNITS})\.?)(\s+)-(\s+)(?=[\d(])`,
   'gu',
 )
-const HYPHEN_AS_PROSE_DASH = new RegExp(String.raw`(\p{L}{2,})\s+-\s+`, 'gu')
+// Only before a number, as in every measured case («Петербург - 7887»). Before
+// a word the hyphen is left alone: «II - класс» turned into «II — класс» while
+// its neighbour «I - класс» kept the hyphen — one letter is not «a word».
+const HYPHEN_AS_PROSE_DASH = new RegExp(
+  String.raw`(\p{L}{2,})\s+-\s+(?=\d)`,
+  'gu',
+)
 const DASH_BETWEEN = new RegExp(
   String.raw`(${LEFT})(\s+)[-–](\s+)(?=${RIGHT})`,
   'gu',

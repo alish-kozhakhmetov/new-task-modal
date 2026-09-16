@@ -69,6 +69,9 @@ describe('normalizeOperatorSigns', () => {
     expect(n('сот.6-й, дес.5-й')).toBe('сот.6-й, дес.5-й')
     expect(n('2022-жылы')).toBe('2022-жылы')
     expect(n('5-7 лет')).toBe('5-7 лет')
+    // place-value headers: both classes stay alike
+    expect(n('II - класс')).toBe('II - класс')
+    expect(n('I - класс')).toBe('I - класс')
   })
 
   it('does not touch math islands', () => {
