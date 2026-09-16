@@ -114,13 +114,8 @@
     width: 100%;
   }
 
-  // An inline answer row is an expression — «796441 = ▢ + ▢ + ▢ + ▢ + ▢ + ▢»
-  // — and on a phone it wraps like one instead of scrolling six 120px fields
-  // out of sight. A row that fits is laid out exactly as before: wrapping
-  // only ever moves what would have overflowed.
   tr {
-    flex-wrap: wrap;
-    row-gap: 8px;
+    column-gap: var(--space-8);
   }
 }
 
@@ -134,12 +129,9 @@
     width: 100%;
   }
 
-  // Same as the inline rows: «t = ▢ шар : ▢ шар/мин = ▢ мин» wraps on a
-  // phone instead of hiding the last field.
   tr {
     display: flex;
-    flex-wrap: wrap;
-    row-gap: 8px;
+    column-gap: var(--space-8);
     align-items: center;
     width: 100%;
   }
@@ -190,13 +182,44 @@
   @include body-medium-bold;
 }
 
-.cellGlued {
+.cellGlued,
+.cellLead {
   display: flex;
   flex: 0 0 auto;
+  // A sign and a field are 8px apart — the rule (math-signs.md). The cells
+  // inside keep their classes but lose their inline padding, so the gap is
+  // exactly 8px and not 4 + 4 of two paddings.
+  gap: var(--space-8);
   align-items: center;
   padding: 0;
   white-space: nowrap;
   border: none;
+
+  > span {
+    padding-inline: 0;
+  }
+}
+
+// A row that does not fit a phone (useAlignedWrap): the lead on its own line,
+// field groups in columns of one width. A row that fits never gets this.
+.tableFlexInlineInput tr[data-wrap],
+.tableFlexMixedInput tr[data-wrap] {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--group-width));
+  gap: var(--space-8);
+  align-items: center;
+  justify-content: start;
+
+  > .cellLead {
+    grid-column: 1 / -1;
+  }
+}
+
+// In columns every field keeps its 120px. The trailing field of a borderless
+// row otherwise stretches to the whole column (`.tableRemoveBorders
+// .inputCell:last-child`) and reads as a different kind of field.
+.table.tableRemoveBorders tr[data-wrap] > .inputCell:last-child {
+  width: 120px;
 }
 
 .cellLine {

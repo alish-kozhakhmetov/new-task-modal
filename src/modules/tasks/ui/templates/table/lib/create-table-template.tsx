@@ -17,6 +17,7 @@ import {
 } from './get-table-classnames'
 import { TableStaticCellContent } from './render-table-cell-content'
 import type { TableTask } from './types.task'
+import { useAlignedWrap } from './use-aligned-wrap'
 import { useHiddenRight } from './use-hidden-right'
 
 /** Flex rows that wrap on a phone; a field stays glued to the cell after it. */
@@ -39,6 +40,7 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
     // Called before the early returns below: hook order must not depend on
     // whether the task is in solution mode or has a table.
     const { ref: wrapperRef, hiddenRight } = useHiddenRight<HTMLDivElement>()
+    const tableRef = useAlignedWrap<HTMLTableElement>(GLUED_ROW_IDS.has(id))
 
     if (isActiveSolution(task.solution)) {
       return (
@@ -90,6 +92,7 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
         >
           <div ref={wrapperRef} className={styles.tableWrapper}>
             <table
+              ref={tableRef}
               className={getTableClassName({
                 id,
                 mode: 'input',
@@ -145,8 +148,30 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
                       : deps.global.translateTasks(cell)
 
                   const cells: React.ReactNode[] = []
+                  const glued = GLUED_ROW_IDS.has(id)
+                  const firstInput = row.cells.indexOf('answercell')
+
+                  /*
+                   * The lead of an answer row — «796441 =», «9020 г =» — is one
+                   * unit. When the row switches to columns it takes a line of
+                   * its own (see useAlignedWrap).
+                   */
+                  let startIndex = 0
+                  if (glued && firstInput > 0) {
+                    cells.push(
+                      <td key="lead" className={styles.cellLead}>
+                        {row.cells.slice(0, firstInput).map((cell, i) => (
+                          <span key={i} className={cellClass(i, false)}>
+                            <TableStaticCellContent content={contentOf(cell)} />
+                          </span>
+                        ))}
+                      </td>,
+                    )
+                    startIndex = firstInput
+                  }
+
                   for (
-                    let cellIndex = 0;
+                    let cellIndex = startIndex;
                     cellIndex < row.cells.length;
                     cellIndex++
                   ) {
@@ -167,7 +192,11 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
                       next !== 'answercell'
                     ) {
                       cells.push(
-                        <td key={cellIndex} className={styles.cellGlued}>
+                        <td
+                          key={cellIndex}
+                          className={styles.cellGlued}
+                          data-group="glued"
+                        >
                           <span className={cellClass(cellIndex, true)}>
                             {renderInput()}
                           </span>
@@ -186,6 +215,7 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
                         className={cellClass(cellIndex, isInput)}
                         colSpan={row.colspan_list?.[cellIndex] || 1}
                         rowSpan={row.rowspan_list?.[cellIndex] || 1}
+                        data-group={glued && isInput ? '' : undefined}
                       >
                         {isInput ? (
                           renderInput()
