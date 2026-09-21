@@ -59,6 +59,15 @@
   width: 100%;
 }
 
+// Grid tables carry up to seven columns (label + six place-value digits).
+// At 8px a side the padding alone was 112px of a 343px phone column; 4px
+// brings the II-class place-value grid inside it. Declared before the
+// remove-padding modifier, which is more specific and still zeroes it.
+.tableRounded .cell,
+.tableRounded .inputCell {
+  padding-inline: 4px;
+}
+
 .table.tableRemovePadding {
   border-spacing: 0 8px;
   border-collapse: separate;
@@ -148,6 +157,7 @@
 
   tr {
     display: flex;
+
     // 8px between a field and its label — the sign/field rule.
     gap: var(--space-8);
     align-items: center;
@@ -173,13 +183,13 @@
 }
 
 .cellHeader {
-  background: var(--bg-subtle);
   // Headers are words and may wrap between them: «Первое слагаемое» on one
   // line made a three-column table 478px wide on a 343px phone column, and
   // the column with the sum — the value the task is about — scrolled out of
   // sight behind a scrollbar a phone does not show. Numbers stay on
   // `.cell`'s nowrap; a header has no spaces inside a number to break at.
   white-space: normal;
+  background: var(--bg-subtle);
   @include body-medium-bold;
 }
 
@@ -187,6 +197,7 @@
 .cellLead {
   display: flex;
   flex: 0 0 auto;
+
   // A sign and a field are 8px apart — the rule (math-signs.md). The cells
   // inside keep their classes but lose their inline padding, so the gap is
   // exactly 8px and not 4 + 4 of two paddings.
@@ -228,14 +239,6 @@
   // keeps that true for plain text too, without an extra <br> line.
   display: block;
   white-space: nowrap;
-}
-
-// Grid tables carry up to seven columns (label + six place-value digits).
-// At 8px a side the padding alone was 112px of a 343px phone column; 4px
-// brings the II-class place-value grid inside it.
-.tableRounded .cell,
-.tableRounded .inputCell {
-  padding-inline: 4px;
 }
 
 .cellNoBottomBorder {
