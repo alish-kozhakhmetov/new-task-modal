@@ -30,9 +30,13 @@ export const TaskModal = (props: TaskModalProps) => {
           <Canvas onClose={canvas.close} />
         </ReactActivity>
 
-        <ReactActivity visible={chat.isOpen}>
-          <Chat props={props} onClose={chat.close} />
-        </ReactActivity>
+        {/* Mounted on open, not kept under ReactActivity: a hidden Activity
+            tree misses store updates made while hidden, so after «Далее» the
+            chat still held the previous task — its buttons asked the backend
+            for that task's answer (alish-kozhakhmetov/qalan#14). Messages
+            live in the chat store and mentor messages in the query cache, so
+            remounting loses only an unsent draft. */}
+        {chat.isOpen && <Chat props={props} onClose={chat.close} />}
       </TaskModalProviders>
     </>
   )
