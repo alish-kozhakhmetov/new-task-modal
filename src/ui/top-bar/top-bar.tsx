@@ -33,7 +33,7 @@ export const TopBar = ({
 
   return (
     <FlexRow ref={ref} className={clsx(s.container, className)} dir={direction}>
-      {onGoBack && (
+      {onGoBack ? (
         <Button
           color={ButtonColor.White}
           layout={ButtonLayout.Icon}
@@ -42,6 +42,12 @@ export const TopBar = ({
         >
           <ArrowBackIcon />
         </Button>
+      ) : (
+        // Invisible twin of the close button: keeps the title centred when
+        // there is no back button (task header, chat).
+        <span className={clsx(s.button, s.spacer)} aria-hidden>
+          <CloseIcon width={20} height={20} />
+        </span>
       )}
 
       <h1 className={clsx(s.title, isArabic && s.rtl, titleClassName)}>

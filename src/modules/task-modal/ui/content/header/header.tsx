@@ -15,17 +15,12 @@ interface Props {
 export const TaskModalHeader = ({ props, ref }: Props) => {
   const { closeModal } = props
 
-  const goBack = () => {
-    console.log('goBack')
-  }
-
   return (
     <TopBar
       ref={ref}
       titleClassName={s.title}
       deps={props.deps}
       onClose={closeModal}
-      onGoBack={goBack}
     >
       <TasksNum />
       <LivesIndicator props={props} />
