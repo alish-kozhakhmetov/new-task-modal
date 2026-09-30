@@ -1,4 +1,9 @@
 .container {
+  // One size for everything inside the task — condition, signs between
+  // fields, units, labels. Without it they inherited the host page's size
+  // (16px in Storybook, other values in the monolith) next to 18px text.
+  @include body-medium-regular;
+
   // display: grid;
   height: 100%;
   padding: var(--space-8) var(--space-16);

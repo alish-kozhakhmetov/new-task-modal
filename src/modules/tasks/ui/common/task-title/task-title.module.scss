@@ -1,5 +1,10 @@
+// Same size and weight as the condition (task-description): one size for the
+// whole task, roles differ by colour or table position, not by a second size
+// or a bold title (canon: Qalan App › Trainer). Set explicitly — inheriting
+// left the title at whatever size the host page had.
 .title {
+  @include body-medium-regular;
+
   display: block;
-  margin-bottom: 12px;
-  font-weight: 600;
+  margin-bottom: var(--space-12);
 }

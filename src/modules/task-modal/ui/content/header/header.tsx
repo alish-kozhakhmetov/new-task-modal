@@ -27,7 +27,7 @@ export const TaskModalHeader = ({ props, ref }: Props) => {
       onClose={closeModal}
       onGoBack={goBack}
     >
-      Задача <TasksNum />
+      <TasksNum />
       <LivesIndicator props={props} />
     </TopBar>
   )

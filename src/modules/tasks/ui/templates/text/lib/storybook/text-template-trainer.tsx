@@ -17,6 +17,7 @@ import {
   useStore,
 } from '@/modules/task-modal/model/store/task-modal-store'
 import { TaskModalProviders } from '@/modules/task-modal/providers'
+import containerStyles from '@/modules/task-modal/ui/content/container/container.module.scss'
 import contentStyles from '@/modules/task-modal/ui/content/content.module.scss'
 import { TaskModalControls } from '@/modules/task-modal/ui/content/controls/controls'
 import { TaskModalHeader } from '@/modules/task-modal/ui/content/header/header'
@@ -229,7 +230,13 @@ const TrainerBody = ({
     >
       <TaskModalHeader props={props} ref={header} />
 
-      <div style={taskAreaStyle} ref={taskContainer}>
+      {/* Same container class as TaskModalContainer in the host, so stories
+          get the task's type size instead of Storybook's 16px body. */}
+      <div
+        className={containerStyles.container}
+        style={taskAreaStyle}
+        ref={taskContainer}
+      >
         <Template
           task={activeTask}
           deps={props.deps}

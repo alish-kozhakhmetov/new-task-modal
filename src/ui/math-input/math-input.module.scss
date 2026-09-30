@@ -2,7 +2,7 @@
 /* stylelint-disable selector-class-pattern */
 
 .mathInput {
-  @include body-lead-regular;
+  @include body-medium-regular;
 
   /* MathQuill sets display:inline-block on .mq-editable-field / .mq-math-mode
    * and breaks flex centering from .input — re-assert it here. */
@@ -11,8 +11,10 @@
   padding-block: to-rem(11px);
   overflow-x: auto;
 
-  /* Cancel MathQuill's .mq-math-mode { font-size: 115% } so body-lead 24px sticks. */
-  font-size: to-rem(24px) !important;
+  /* Cancel MathQuill's .mq-math-mode { font-size: 115% }. One size for the
+   * whole task — the field types in the condition's body-medium 18px, not a
+   * larger one (canon: Qalan App › Trainer). */
+  font-size: to-rem(18px) !important;
   scrollbar-width: none;
   -ms-overflow-style: none;
 

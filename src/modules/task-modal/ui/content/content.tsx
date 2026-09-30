@@ -13,7 +13,6 @@ import { TaskModalContainer } from './container/container'
 import styles from './content.module.scss'
 import { TaskModalControls } from './controls/controls'
 import { TaskModalHeader } from './header/header'
-import { OldProgressBar } from './old-progress-bar'
 
 interface Props {
   props: TaskModalProps
@@ -78,7 +77,6 @@ export const TaskModalContent = ({ props, modals }: Props) => {
           isAdjusting={isAdjusting}
         />
 
-        <OldProgressBar modalProps={props} />
       </div>
     </>
   )
