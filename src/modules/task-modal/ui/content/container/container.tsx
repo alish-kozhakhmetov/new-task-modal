@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/static-components */
 import clsx from 'clsx'
-import { Suspense, type RefObject } from 'react'
+import { Fragment, Suspense, type RefObject } from 'react'
 
 import { ErrorBoundary } from '@/lib/error-boundary/error-boundary'
 import {
@@ -71,7 +71,12 @@ export const TaskModalContainer = ({
           {!isTaskSupported && props.renderLegacyTask ? (
             <LegacyTaskRoot props={props} />
           ) : (
-            <>
+            // Keyed by task: «Далее» to a task of the same template used to
+            // reuse the mounted template — MathJax kept the old typeset (raw
+            // TeX on screen, alish-kozhakhmetov/qalan#20) and keyboard input
+            // went to the previous task's field (#19). A fresh mount per task
+            // typesets and registers fields from scratch.
+            <Fragment key={activeTask.id}>
               <TaskComponent
                 {...taskProps}
                 answer={answer}
@@ -79,7 +84,7 @@ export const TaskModalContainer = ({
                 task={activeTask}
               />
               <TaskHints />
-            </>
+            </Fragment>
           )}
         </div>
       </Suspense>

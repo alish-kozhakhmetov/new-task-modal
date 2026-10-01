@@ -11,6 +11,8 @@ import {
   resetTrainerSession,
 } from '@/modules/tasks/ui/templates/text/lib/storybook/make-trainer-props'
 import type { TextTask } from '@/modules/tasks/ui/templates/text/lib/types.task'
+import formulaFixture from '@/modules/tasks/ui/templates/formula/ui/plain/data/task.json'
+import beforeFixture from '@/modules/tasks/ui/templates/text/ui/before/data/task.json'
 import fixture from '@/modules/tasks/ui/templates/text/ui/plain/data/task.json'
 import { applyTrainerState } from '@/modules/trainer/lib/apply-trainer-state'
 import { runPlayStep } from '@/testing/play-step'
@@ -22,7 +24,7 @@ import { ContainerSkeleton } from './container-skeleton'
 
 injectFonts()
 
-const task = fixture as unknown as TextTask
+const defaultTask = fixture as unknown as TextTask
 
 const frameStyle = {
   width: 375,
@@ -56,10 +58,54 @@ const cleanupStore = () => {
 interface HostProps {
   mode: 'input' | 'solution'
   isAdjusting?: boolean
+  /** After mount, move to a second task of the same template (as «Далее» does). */
+  switchToNext?: 'formula' | 'before'
 }
 
-const TaskContainerHost = ({ mode, isAdjusting = false }: HostProps) => {
-  const props = useMemo(() => makeTrainerProps(task), [])
+/**
+ * «Далее» to the next task of the same formula template, whose formula comes
+ * with TeX delimiters — the case in alish-kozhakhmetov/qalan#20, where the
+ * tester saw «\(64 \approx\)» raw after moving on, but not on opening the
+ * task directly.
+ */
+const formulaTask = formulaFixture as unknown as TextTask
+const nextFormulaTask = {
+  ...formulaTask,
+  id: 'next-task-same-template',
+  solution: null,
+  result: null,
+  position: (formulaTask.position ?? 0) + 1,
+  description: { ...formulaTask.description, content: '\\(64 \\approx\\)' },
+} as unknown as TextTask
+
+/** Same, but the TeX sits in the label before the field (text.before). */
+const beforeTask = beforeFixture as unknown as TextTask
+const LANGS = ['rus', 'kaz', 'eng', 'uzb', 'aze', 'kgz']
+const nextBeforeTask = {
+  ...beforeTask,
+  id: 'next-before-same-template',
+  solution: null,
+  result: null,
+  position: (beforeTask.position ?? 0) + 1,
+  answerInput: {
+    ...(beforeTask as unknown as { answerInput: object }).answerInput,
+    before: Object.fromEntries(LANGS.map((l) => [l, '\\(64 \\approx\\)'])),
+  },
+} as unknown as TextTask
+
+const TaskContainerHost = ({
+  mode,
+  isAdjusting = false,
+  switchToNext,
+}: HostProps) => {
+  const task =
+    switchToNext === 'formula'
+      ? formulaTask
+      : switchToNext === 'before'
+        ? beforeTask
+        : defaultTask
+  const next = switchToNext === 'formula' ? nextFormulaTask : nextBeforeTask
+  const props = useMemo(() => makeTrainerProps(task), [task])
   const [ready, setReady] = useState(false)
   const mathInput = useRef(new Map())
   const containerRef = useRef<HTMLDivElement>(null)
@@ -85,13 +131,24 @@ const TaskContainerHost = ({ mode, isAdjusting = false }: HostProps) => {
       })
 
       if (!cancelled) setReady(true)
+
+      if (switchToNext) {
+        await new Promise((resolve) => setTimeout(resolve, 1200))
+        const state = useStore.getState().state
+        if (!cancelled && state) {
+          useStore.getState().setState({
+            activeTask: next as unknown as Task,
+            tasks: [task as unknown as Task, next as unknown as Task],
+          })
+        }
+      }
     })()
 
     return () => {
       cancelled = true
       cleanupStore()
     }
-  }, [mode])
+  }, [mode, switchToNext, task, next])
 
   if (!ready || !activeTask) return null
 
@@ -179,4 +236,16 @@ export const Loading: Story = {
       <ContainerSkeleton />
     </div>
   ),
+}
+
+/** «Далее» to a task of the same template: the condition must be typeset again. */
+export const SwitchToNextFormula: Story = {
+  args: {} as never,
+  render: () => <TaskContainerHost mode="input" switchToNext="formula" />,
+}
+
+/** «Далее» to a text.before task whose label before the field is TeX. */
+export const SwitchToNextBefore: Story = {
+  args: {} as never,
+  render: () => <TaskContainerHost mode="input" switchToNext="before" />,
 }

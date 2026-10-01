@@ -5,6 +5,18 @@ import styles from './math-text.module.scss'
 import { normalizeFractionStyle } from './normalize-fraction-style'
 import { scheduleMathStretch } from './stretch-tall-glyphs'
 
+const WRAPPED = /^\s*\\\(([\s\S]*)\\\)\s*$/
+
+/**
+ * Drop one outer `\( … \)` pair when the whole formula is wrapped in it.
+ * «\(a\) + \(b\)» is two islands, not one wrap — left as is.
+ */
+export const unwrapMath = (formula: string) => {
+  const inner = WRAPPED.exec(formula)?.[1]
+  if (inner === undefined || /\\[()]/.test(inner)) return formula
+  return inner
+}
+
 interface Props {
   children: string
   className?: string
@@ -13,7 +25,9 @@ interface Props {
 
 export const MathFormula = ({ children, className, onTypeset }: Props) => {
   // Wrap first — normalizeFractionStyle only rewrites islands inside `\(...\)`.
-  const content = normalizeFractionStyle(`\\(${children}\\)`)
+  // Some generators already send the formula wrapped («\(64 \approx\)»);
+  // wrapping it again made MathJax print a red «\(» error.
+  const content = normalizeFractionStyle(`\\(${unwrapMath(children)}\\)`)
 
   const handleTypeset = () => {
     scheduleMathStretch()
