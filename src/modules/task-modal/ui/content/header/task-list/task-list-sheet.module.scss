@@ -1,16 +1,28 @@
 // Task list sheet — draft (Alisher, 05.10). Sizes from the task screen:
 // cells are the 48 task field, gaps 8, sheet padding 16 like the screen.
 
-.scrim {
+.overlay {
   position: absolute;
   inset: 0;
   z-index: 10;
   display: flex;
   align-items: flex-end;
-  background: rgb(10 10 10 / 40%); // token-ok: scrim over the task, no DS token yet
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  cursor: default;
+  background: rgb(
+    10 10 10 / 40%
+  ); // token-ok: scrim over the task, no DS token yet
+
+  border: none;
 }
 
 .sheet {
+  position: relative;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -167,6 +179,23 @@
   border-radius: 4px;
 
   &.current {
-    border-width: 2px;
+    border: 2px solid var(--border-focus);
+  }
+}
+
+.penaltyNote {
+  position: relative;
+  width: 14px;
+  height: 14px;
+
+  &::after {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 6px;
+    height: 6px;
+    content: '';
+    background: var(--text-secondary);
+    border-radius: 999px;
   }
 }

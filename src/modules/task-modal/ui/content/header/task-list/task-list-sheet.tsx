@@ -3,11 +3,7 @@ import clsx from 'clsx'
 import CloseIcon from '@/assets/icons/close.svg'
 
 import styles from './task-list-sheet.module.scss'
-import {
-  isOpenable,
-  STATUS_LABEL,
-  type TaskStatus,
-} from './task-status'
+import { isOpenable, STATUS_LABEL, type TaskStatus } from './task-status'
 
 export interface TaskListItem {
   /** 1-based number shown to the child */
@@ -31,17 +27,19 @@ const LEGEND: TaskStatus[] = ['correct', 'error', 'shown', 'current', 'ahead']
  */
 export const TaskListSheet = ({ items, onSelect, onClose }: Props) => {
   const solved = items.filter(
-    (i) => i.status === 'correct' || i.status === 'error' || i.status === 'shown',
+    (i) =>
+      i.status === 'correct' || i.status === 'error' || i.status === 'shown',
   ).length
 
   return (
-    <div className={styles.scrim} role="presentation" onClick={onClose}>
-      <section
-        className={styles.sheet}
-        role="dialog"
-        aria-label="Задачи урока"
-        onClick={(e) => e.stopPropagation()}
-      >
+    <div className={styles.overlay}>
+      <button
+        type="button"
+        className={styles.scrim}
+        aria-label="Закрыть список задач"
+        onClick={onClose}
+      />
+      <section className={styles.sheet} role="dialog" aria-label="Задачи урока">
         <span className={styles.handle} aria-hidden />
         <header className={styles.head}>
           <div className={styles.titles}>
@@ -74,7 +72,9 @@ export const TaskListSheet = ({ items, onSelect, onClose }: Props) => {
                   onClick={() => onSelect(item.num)}
                 >
                   {item.num}
-                  {item.isPenalty && <span className={styles.penalty} aria-hidden />}
+                  {item.isPenalty && (
+                    <span className={styles.penalty} aria-hidden />
+                  )}
                 </button>
               </li>
             )
@@ -88,6 +88,12 @@ export const TaskListSheet = ({ items, onSelect, onClose }: Props) => {
               {STATUS_LABEL[s]}
             </li>
           ))}
+          {items.some((i) => i.isPenalty) && (
+            <li>
+              <span className={styles.penaltyNote} aria-hidden />
+              Дополнительная — после ошибки
+            </li>
+          )}
         </ul>
       </section>
     </div>
