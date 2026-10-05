@@ -54,6 +54,13 @@
     font-family: var(--font-halvar) !important;
   }
 
+  /* MathQuill shrinks a fraction to 90% — 16.2px against the condition's 18,
+   * where MathJax sets fractions in display style. One size for the task
+   * (rule 48). */
+  .mq-math-mode .mq-fraction {
+    font-size: 100% !important;
+  }
+
   .mq-math-mode var {
     font-family: var(--font-halvar) !important;
     font-style: normal !important;

@@ -37,7 +37,14 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
       input.classList.add(FOCUSED)
 
       if (!calcState.isOpen) {
-        input.scrollIntoView({ block: 'center', behavior: 'smooth' })
+        input.scrollIntoView({
+          block: 'center',
+          // CSS can't override an explicit 'smooth' — honour rule 99 here.
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)')
+            .matches
+            ? 'auto'
+            : 'smooth',
+        })
       }
     }
 
