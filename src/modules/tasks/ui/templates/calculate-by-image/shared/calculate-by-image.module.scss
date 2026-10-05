@@ -212,12 +212,33 @@ $item-size: to-rem(56px);
   }
 }
 
+/* Added cubes: a quiet place background — the backend picture is not repainted. */
+.cubeAdded {
+  background: var(--bg-subtle);
+  border-radius: var(--radius-s);
+}
+
 /*
- * The equation is drawn by `table.inline`; with no condition text of its own
- * it renders an empty description that still takes a 16px gap.
+ * cubeCalculator equation «7 + 8 = 10 + ▢ = ▢»: one line (rule 24 — an
+ * expression and its field wrap together); too wide scrolls, never breaks
+ * (rule 13). Signs and fields 8 apart (rule 25).
  */
-.equation :global([data-template-id='table.inline']) > :empty {
-  /* MathText sets display inline; only !important wins over it. */
-  /* stylelint-disable-next-line declaration-no-important */
-  display: none !important;
+.equation {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--space-8);
+  align-items: center;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.equationText {
+  @include body-medium-regular;
+
+  flex: none;
+  white-space: nowrap;
+}
+
+.equationInput {
+  flex: none;
 }

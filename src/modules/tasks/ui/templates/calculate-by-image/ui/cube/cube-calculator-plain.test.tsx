@@ -14,7 +14,9 @@ vi.mock(
   () => import('../../../text/lib/testing/mocks/math-text'),
 )
 vi.mock('@/ui/math-input/math-input', () => ({
-  MathInput: () => <input data-testid="cube-field" />,
+  MathInput: ({ style }: { style?: { width?: string } }) => (
+    <input data-testid="cube-field" data-width={style?.width} />
+  ),
 }))
 
 const tasks = (fixtures as unknown as { tasks: CubeCalculatorTask[] }).tasks
@@ -57,8 +59,26 @@ describe('cubeCalculator.plain', () => {
     expect(screen.getAllByTestId('cube-filled')).toHaveLength(14)
   })
 
-  it('два поля равенства — ответ из двух чисел', () => {
+  it('два поля равенства, ширина по ожидаемому ответу (правило 16)', () => {
     renderTask('1_8_4_11')
-    expect(screen.getAllByTestId('cube-field')).toHaveLength(2)
+    const fields = screen.getAllByTestId('cube-field')
+    expect(fields).toHaveLength(2)
+    // fields 7 and 15 → two digits → the 72px minimum, not 120
+    expect(fields[0]).toHaveAttribute('data-width', '72px')
+  })
+
+  it('равенство — одна строка, начало не отрывается от полей', () => {
+    renderTask('1_8_4_11')
+    const row = screen.getByTestId('cube-equation')
+    expect(row).toHaveTextContent('7+8=10+=')
+    expect(row.querySelectorAll('[data-testid=cube-field]')).toHaveLength(2)
+  })
+
+  it('добавленные отмечены, исходные — нет', () => {
+    renderTask('1_8_4_11')
+    fireEvent.click(screen.getByTestId('cube-add'))
+    const filled = screen.getAllByTestId('cube-filled')
+    expect(filled.filter((b) => b.hasAttribute('data-added'))).toHaveLength(1)
+    expect(filled[0]).not.toHaveAttribute('data-added')
   })
 })

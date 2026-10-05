@@ -1,13 +1,18 @@
 import { useState } from 'react'
 
+import clsx from 'clsx'
+
+import { getMultipleInputHandlers } from '@/modules/tasks/lib/get-multiple-input-handlers'
+import { inputWidthHint } from '@/modules/tasks/lib/input-width-hint'
+import { splitMultiAnswer } from '@/modules/tasks/lib/multi-answer'
 import { isActiveSolution } from '@/modules/tasks/lib/solution-types'
 import { isTranslation } from '@/modules/tasks/lib/translation-utils'
 import type { TaskComponentProps } from '@/modules/tasks/model/types'
 import { SharedSolutionBody } from '@/modules/tasks/ui/common/task-solution/shared-solution-body'
 import { TaskTitle } from '@/modules/tasks/ui/common/task-title/task-title'
-import { TableInline } from '@/modules/tasks/ui/templates/table/ui/inline'
 import type { TableTask } from '@/modules/tasks/ui/templates/table/lib/types.task'
 import type { Translation } from '@/types/api/task'
+import { MathInput } from '@/ui/math-input/math-input'
 import { MathText } from '@/ui/math-text/math-text'
 
 import styles from '../shared/calculate-by-image.module.scss'
@@ -36,6 +41,7 @@ export interface CubeCalculatorTask {
     table?: TableTask['description']['table']
     [key: string]: unknown
   }
+  fields?: Record<string, unknown>
   answerInput?: unknown
   answer?: string | null
   solution?: unknown
@@ -55,8 +61,12 @@ const toText = (
  * twenty places in two rows of ten — the point is the step over ten. A tap
  * on the cube under the frame fills the next empty place, a tap on a filled
  * place empties it. The cubes are a counting aid; the answer is the two
- * fields of the equation (`7 + 8 = 10 + ▢ = ▢`), drawn by `table.inline`
- * exactly as table tasks draw them.
+ * fields of the equation (`7 + 8 = 10 + ▢ = ▢`).
+ *
+ * The equation is one line, not `table.inline`: that template puts the lead
+ * «7 + 8 = 10 +» on a line of its own and keeps 120px fields, so the row
+ * broke in two (rule 24). Fields are sized to the expected answer from
+ * `fields` (rule 16, `inputWidthHint`) — the whole row fits 343px.
  */
 export const createCubeCalculatorTemplate = ({ id }: { id: string }) => {
   const Template = ({
@@ -108,13 +118,16 @@ export const createCubeCalculatorTemplate = ({ id }: { id: string }) => {
     const textBefore = toText(description.textBefore, translate)
     const textAfter = toText(description.textAfter, translate)
 
-    const equation = description.table
-      ? ({
-          ...task,
-          title: null,
-          description: { type: 'table', table: description.table },
-        } as unknown as TableTask)
-      : null
+    const separator = deps.helpers.TaskHelper.multipleTaskAnswerSeparator
+    const { bindRef, handleChange } = getMultipleInputHandlers({
+      onChange,
+      separator,
+      mathInput,
+    })
+    const values = splitMultiAnswer(answer, separator)
+    const widthPx = inputWidthHint(task, 18)
+    const cells = description.table?.rows?.[0]?.cells ?? []
+    let fieldIndex = 0
 
     return (
       <div className={styles.root} data-template-id={id}>
@@ -135,9 +148,13 @@ export const createCubeCalculatorTemplate = ({ id }: { id: string }) => {
               <button
                 key={index}
                 type="button"
-                className={styles.cubePlace}
+                className={clsx(
+                  styles.cubePlace,
+                  isFilled && index >= filledAtStart && styles.cubeAdded,
+                )}
                 aria-label={isFilled ? 'Убрать кубик' : 'Пустое место'}
                 aria-pressed={isFilled}
+                data-added={(isFilled && index >= filledAtStart) || undefined}
                 disabled={!isFilled}
                 data-testid={isFilled ? 'cube-filled' : 'cube-empty'}
                 onClick={() =>
@@ -177,15 +194,34 @@ export const createCubeCalculatorTemplate = ({ id }: { id: string }) => {
           {textAfter ? (
             <MathText className={styles.text}>{textAfter}</MathText>
           ) : null}
-          {equation ? (
-            <div className={styles.equation}>
-              <TableInline
-                task={equation}
-                deps={deps}
-                answer={answer}
-                onChange={onChange}
-                mathInput={mathInput}
-              />
+          {cells.length > 0 ? (
+            <div className={styles.equation} data-testid="cube-equation">
+              {cells.map((cell, index) => {
+                if (cell === 'answercell') {
+                  const slot = fieldIndex++
+                  return (
+                    <MathInput
+                      key={index}
+                      id={`cube-input-${slot}`}
+                      ref={bindRef(`cube-input-${slot}`)}
+                      formula={values[slot] ?? ''}
+                      onMathFieldChanged={handleChange}
+                      className={styles.equationInput}
+                      style={
+                        widthPx
+                          ? { flex: 'none', width: `${widthPx}px` }
+                          : undefined
+                      }
+                    />
+                  )
+                }
+                const text = toText(cell, translate)
+                return text ? (
+                  <MathText key={index} inline className={styles.equationText}>
+                    {text}
+                  </MathText>
+                ) : null
+              })}
             </div>
           ) : null}
         </div>
