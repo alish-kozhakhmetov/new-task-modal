@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 
 import { GRID_INK, INK, paint, STROKE } from '../figure-paint'
+import { parseFraction, SvgFraction } from '../svg-fraction'
 
 import {
   fromPointToDot,
@@ -413,6 +414,19 @@ export const PlaneFigure = ({
       const d = fromPointToDot(options, x, y)
       const label = translate(figure.text)
       if (!label) return null
+      const fraction = parseFraction(label)
+      if (fraction && !figure.degree) {
+        return (
+          <SvgFraction
+            x={d.x}
+            y={d.y}
+            num={fraction.num}
+            den={fraction.den}
+            fontSize={(figure.fontSize as number) || 18}
+            fill={INK}
+          />
+        )
+      }
       return (
         <text
           x={d.x}
