@@ -8,8 +8,9 @@
 }
 
 .description {
-  font-size: 1.1em;
-  line-height: 1.4;
+  // One size for the task (rule 1): 1.1em made formulas 19.8px — the
+  // «MathJax 19.8» of the parity audit came from here, not from MathJax.
+  line-height: inherit;
 }
 
 .expressionRow {

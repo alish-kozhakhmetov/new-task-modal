@@ -10,8 +10,8 @@
  * Measured on the 1281 whitelisted grade-4 tasks: 60 show a hyphen for minus
  * and 57 a dot for times.
  *
- * Only text outside math islands changes: MathJax already typesets `-` in math
- * mode as a minus, and `\cdot` there is a separate decision.
+ * Outside math islands the rules below apply. Inside them MathJax already
+ * typesets `-` as a minus; only `\cdot` becomes `\times` (Alisher, 05.10).
  *
  * The rules are narrow on purpose, because prose uses the same characters:
  * - an ASCII `-` with spaces around it is a minus between numbers and brackets,
@@ -186,8 +186,20 @@ const normalizeSegment = (text: string): string => {
     .replace(EDGE_TIMES, `$1${TIMES}$2`)
 }
 
+/**
+ * Multiplication inside math: `\\cdot`, `·` and `⋅` become `\\times` (Alisher,
+ * 05.10 — `×` everywhere). `\\cdotp` and other commands are left alone.
+ */
+export const timesInMath = (math: string): string =>
+  math.replace(/\\cdot(?![a-zA-Z])|[·⋅]/g, '\\times ')
+
 export const normalizeOperatorSigns = (text: string): string =>
   text
     .split(MATH_ISLAND_RE)
-    .map((part, index) => (index % 2 === 1 ? part : normalizeSegment(part)))
+    .map((part, index) =>
+      // Inside an island only `\\cdot` changes: multiplication is `×` there
+      // too (Alisher, 05.10). Done in the text, not only by a MathJax macro —
+      // MathJax keeps the config of whichever context loaded it first.
+      index % 2 === 1 ? timesInMath(part) : normalizeSegment(part),
+    )
     .join('')

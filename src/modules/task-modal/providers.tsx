@@ -6,14 +6,14 @@ interface Props {
   children: React.ReactNode
 }
 
-const MATH_JAX_CONFIG: MathJax3Config = {
+/** Shared with Storybook so stories render formulas the way the child sees them. */
+export const MATH_JAX_CONFIG: MathJax3Config = {
   loader: { load: ['input/tex', 'output/chtml'] },
-  // `matchFontHeight` (default true) scales MathJax output to the actual
-  // rendered font's ex-height so numbers/formulas match surrounding plain
-  // text. Was off, so MathJax used its own fixed metrics — visibly smaller
-  // and baseline-shifted vs plain text next to it (e.g. answer-cell
-  // solution rows mixing plain-text and MathFormula-rendered numbers).
-  chtml: { matchFontHeight: true },
+  // `matchFontHeight` off: one size for the task (rule 1). MathJax glyphs are
+  // drawn in Halvar (math-text.module.scss), so scaling them to Halvar's
+  // ex-height made formulas 20.2px next to 18px text (measured 05.10 in
+  // Formula/plain and ColumnOperation/plain).
+  chtml: { matchFontHeight: false },
   // Multiplication is `×` everywhere, MathJax included (Alisher, 05.10).
   // Generators write `\\cdot`; outside MathJax normalizeOperatorSigns already
   // turns `·` into `×`, so the two halves of one condition used to disagree.

@@ -5,20 +5,20 @@
 }
 
 .content {
-  font-size: 20px;
+  // One size for the task (rule 1): was 20px next to 18px text.
+  font-size: inherit;
 }
 
 .inputWrapper {
   display: flex;
   gap: var(--space-8, 8px);
   align-items: center;
-  font-size: 20px;
+  font-size: inherit;
 }
 
 .beforeText,
 .afterText {
   flex-shrink: 0;
-  font-weight: 500;
   white-space: nowrap;
 }
 

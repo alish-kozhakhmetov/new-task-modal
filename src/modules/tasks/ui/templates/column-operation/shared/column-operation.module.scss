@@ -5,8 +5,8 @@
 }
 
 .description {
-  font-size: 1.1em;
-  line-height: 1.4;
+  // One size for the task (rule 1), was 1.1em = 19.8px.
+  line-height: inherit;
 
   /* MathJax centers display-mode blocks by default (`text-align: center`
    * on `mjx-container[jax="CHTML"][display="true"]`, injected at runtime);
@@ -28,7 +28,6 @@
   align-items: start;
   align-self: start;
   width: max-content;
-  font-size: 1.1em;
   line-height: 1.2;
 }
 
@@ -73,7 +72,6 @@
   flex-direction: column;
   gap: 0.15em;
   margin-top: 0.3em;
-  font-size: 1.1em;
   line-height: 1.2;
 }
 

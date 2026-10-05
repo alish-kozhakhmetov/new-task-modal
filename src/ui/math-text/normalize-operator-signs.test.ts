@@ -90,8 +90,10 @@ describe('normalizeOperatorSigns', () => {
     expect(n('тгх')).toBe('тгх')
   })
 
-  it('does not touch math islands', () => {
-    expect(n('\\(3 - 2 \\cdot 4\\) - 1')).toBe(`\\(3 - 2 \\cdot 4\\) ${M} 1`)
+  it('inside math islands only turns \\\\cdot into \\\\times', () => {
+    expect(n('\\(3 - 2 \\cdot 4\\) - 1')).toBe(`\\(3 - 2 \\times  4\\) ${M} 1`)
+    expect(n('\\(8 · 10\\)')).toBe('\\(8 \\times  10\\)')
+    expect(n('\\(a \\cdotp b\\)')).toBe('\\(a \\cdotp b\\)')
   })
 
   it('is idempotent', () => {
