@@ -11,6 +11,9 @@ import {
   type PlanePoint,
 } from './plane-math'
 
+/** Axis numbers with a real minus (rule 27), not a hyphen. */
+const signed = (n: number) => (n < 0 ? `−${-n}` : String(n))
+
 const asPoint = (value: unknown): PlanePoint | null => {
   if (!value || typeof value !== 'object') return null
   const p = value as Record<string, unknown>
@@ -183,7 +186,7 @@ export const PlaneAxes = ({ options }: AxesProps) => {
                 dominantBaseline="central"
                 fontSize={14}
               >
-                {i * tickStepXMultiply}
+                {signed(i * tickStepXMultiply)}
               </text>
             </g>
           ),
@@ -221,13 +224,15 @@ export const PlaneAxes = ({ options }: AxesProps) => {
                 strokeWidth={STROKE.hair}
               />
               <text
-                x={axisX - 15}
+                // End-aligned left of the axis: centred labels of the first
+                // ticks below zero ran into the x-axis numbers («−1» under «0»).
+                x={axisX - 9}
                 y={yOf(i)}
-                textAnchor="middle"
+                textAnchor="end"
                 dominantBaseline="central"
                 fontSize={14}
               >
-                {i * tickStepYMultiply}
+                {signed(i * tickStepYMultiply)}
               </text>
             </g>
           ),
