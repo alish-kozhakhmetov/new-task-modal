@@ -76,7 +76,6 @@ export const TaskModalContent = ({ props, modals }: Props) => {
           modals={modals}
           isAdjusting={isAdjusting}
         />
-
       </div>
     </>
   )

@@ -6,12 +6,12 @@ import { injectFonts } from '@/modules/task-modal/model/lib/fonts/inject-fonts'
 import { useStore } from '@/modules/task-modal/model/store/task-modal-store'
 import { TaskModalProviders } from '@/modules/task-modal/providers'
 import { getTaskComponent } from '@/modules/tasks/model/component/get-task-component'
+import formulaFixture from '@/modules/tasks/ui/templates/formula/ui/plain/data/task.json'
 import {
   makeTrainerProps,
   resetTrainerSession,
 } from '@/modules/tasks/ui/templates/text/lib/storybook/make-trainer-props'
 import type { TextTask } from '@/modules/tasks/ui/templates/text/lib/types.task'
-import formulaFixture from '@/modules/tasks/ui/templates/formula/ui/plain/data/task.json'
 import beforeFixture from '@/modules/tasks/ui/templates/text/ui/before/data/task.json'
 import fixture from '@/modules/tasks/ui/templates/text/ui/plain/data/task.json'
 import { applyTrainerState } from '@/modules/trainer/lib/apply-trainer-state'
