@@ -4,7 +4,6 @@ import { GRID_INK, INK, paint, STROKE } from '../figure-paint'
 
 import {
   fromPointToDot,
-  getAxisX,
   planeLength,
   PlaneFigureType,
   type PlaneOptions,
@@ -74,6 +73,16 @@ interface AxesProps {
   options: PlaneOptions
 }
 
+/**
+ * Grid and axes, every line placed through `fromPointToDot` — the same
+ * mapping the figures and the pupil's points use.
+ *
+ * The earlier version drew the Y half by rotating a group around `(0, mid)`:
+ * horizontal grid lines came out only in the upper-left quarter, the Y axis
+ * sat on the left edge at half height with no numbers, and the X axis lay on
+ * the canvas middle rather than on y = 0, so on a field with min ≠ −max it
+ * missed the origin.
+ */
 export const PlaneAxes = ({ options }: AxesProps) => {
   const {
     minPosition,
@@ -88,7 +97,6 @@ export const PlaneAxes = ({ options }: AxesProps) => {
     yAxisLabel,
   } = options
   const length = planeLength(options)
-  const mid = length / 2
   const arrowLength = stepSize / 2
 
   const ticks: number[] = []
@@ -96,147 +104,145 @@ export const PlaneAxes = ({ options }: AxesProps) => {
     ticks.push(i)
   }
 
-  const gridLines = showCells
-    ? ticks.map((i) => {
-        const x = getAxisX(options, i)
-        return (
-          <g key={`grid-${i}`}>
-            <line
-              x1={x}
-              y1={-mid}
-              x2={x}
-              y2={mid}
-              stroke={GRID_INK}
-              strokeWidth={STROKE.grid}
-            />
-          </g>
-        )
-      })
-    : null
+  const xOf = (value: number) => fromPointToDot(options, value, 0).x
+  const yOf = (value: number) => fromPointToDot(options, 0, value).y
+  const left = xOf(minPosition)
+  const right = xOf(maxPosition)
+  const top = yOf(maxPosition)
+  const bottom = yOf(minPosition)
+  // The axes cross at the origin; when 0 is outside the field, at its edge.
+  const origin = Math.min(maxPosition, Math.max(minPosition, 0))
+  const axisY = yOf(origin)
+  const axisX = xOf(origin)
 
-  const axisContent = showAxis ? (
-    <>
-      <line
-        x1={0}
-        y1={0}
-        x2={length}
-        y2={0}
-        stroke={INK}
-        strokeWidth={STROKE.data}
-      />
-      <path d={`M${arrowLength},-5 L0,0 L${arrowLength},5z`} fill={INK} />
-      <path
-        d={`M${length - arrowLength},-5 L${length},0 L${length - arrowLength},5z`}
-        fill={INK}
-        transform={`rotate(180 ${length - arrowLength / 2} 0)`}
-      />
-      {ticks.map((i) => {
-        if (i === 0) return null
-        const x = getAxisX(options, i)
-        return (
-          <line
-            key={`tick-${i}`}
-            x1={x}
-            y1={-6}
-            x2={x}
-            y2={6}
-            stroke={INK}
-            strokeWidth={STROKE.hair}
-          />
-        )
-      })}
-    </>
+  const grid = showCells ? (
+    <g data-plane-layer="grid">
+      {ticks.map((i) => (
+        <line
+          key={`vgrid-${i}`}
+          x1={xOf(i)}
+          y1={top}
+          x2={xOf(i)}
+          y2={bottom}
+          stroke={GRID_INK}
+          strokeWidth={STROKE.grid}
+        />
+      ))}
+      {ticks.map((i) => (
+        <line
+          key={`hgrid-${i}`}
+          x1={left}
+          y1={yOf(i)}
+          x2={right}
+          y2={yOf(i)}
+          stroke={GRID_INK}
+          strokeWidth={STROKE.grid}
+        />
+      ))}
+    </g>
   ) : null
+
+  if (!showAxis) return grid
 
   return (
     <g>
-      {/* X axis at mid-Y */}
-      <g transform={`translate(0,${mid})`}>
-        {gridLines}
-        {axisContent}
-        {showAxis
-          ? ticks.map((i) => {
-              if (i === 0) return null
-              const x = getAxisX(options, i)
-              return (
-                <text
-                  key={`xn-${i}`}
-                  x={x}
-                  y={15}
-                  textAnchor="middle"
-                  dominantBaseline="central"
-                  fontSize={14}
-                >
-                  {i * tickStepXMultiply}
-                </text>
-              )
-            })
-          : null}
-        {showAxis ? (
-          <>
-            <text
-              x={mid - 10}
-              y={10}
-              textAnchor="middle"
-              dominantBaseline="central"
-            >
-              0
-            </text>
-            <text x={length} y={-15} textAnchor="end">
-              {xAxisLabel}
-            </text>
-          </>
-        ) : null}
+      {grid}
+      <g data-plane-layer="x-axis">
+        <line
+          x1={0}
+          y1={axisY}
+          x2={length}
+          y2={axisY}
+          stroke={INK}
+          strokeWidth={STROKE.data}
+        />
+        <path
+          d={`M${arrowLength},${axisY - 5} L0,${axisY} L${arrowLength},${axisY + 5}z`}
+          fill={INK}
+        />
+        <path
+          d={`M${length - arrowLength},${axisY - 5} L${length},${axisY} L${length - arrowLength},${axisY + 5}z`}
+          fill={INK}
+        />
+        {ticks.map((i) =>
+          i === origin ? null : (
+            <g key={`xt-${i}`}>
+              <line
+                x1={xOf(i)}
+                y1={axisY - 6}
+                x2={xOf(i)}
+                y2={axisY + 6}
+                stroke={INK}
+                strokeWidth={STROKE.hair}
+              />
+              <text
+                x={xOf(i)}
+                y={axisY + 15}
+                textAnchor="middle"
+                dominantBaseline="central"
+                fontSize={14}
+              >
+                {i * tickStepXMultiply}
+              </text>
+            </g>
+          ),
+        )}
+        <text x={length} y={axisY - 15} textAnchor="end">
+          {xAxisLabel}
+        </text>
       </g>
-
-      {/* Y axis: rotate -90 around mid */}
-      <g transform={`translate(0,${mid}) rotate(-90)`}>
-        {showCells
-          ? ticks.map((i) => {
-              const x = getAxisX(options, i)
-              return (
-                <line
-                  key={`ygrid-${i}`}
-                  x1={x}
-                  y1={-mid}
-                  x2={x}
-                  y2={mid}
-                  stroke={GRID_INK}
-                  strokeWidth={STROKE.grid}
-                />
-              )
-            })
-          : null}
-        {axisContent}
-        {showAxis
-          ? ticks.map((i) => {
-              if (i === 0) return null
-              const x = getAxisX(options, i)
-              return (
-                <text
-                  key={`yn-${i}`}
-                  x={x}
-                  y={-15}
-                  textAnchor="middle"
-                  dominantBaseline="central"
-                  fontSize={14}
-                  transform={`rotate(90 ${x} -15)`}
-                >
-                  {i * tickStepYMultiply}
-                </text>
-              )
-            })
-          : null}
-        {showAxis ? (
-          <text
-            x={0}
-            y={0}
-            transform={`rotate(90) translate(10,${-length + 15})`}
-          >
-            {yAxisLabel}
-          </text>
-        ) : null}
+      <g data-plane-layer="y-axis">
+        <line
+          x1={axisX}
+          y1={0}
+          x2={axisX}
+          y2={length}
+          stroke={INK}
+          strokeWidth={STROKE.data}
+        />
+        <path
+          d={`M${axisX - 5},${arrowLength} L${axisX},0 L${axisX + 5},${arrowLength}z`}
+          fill={INK}
+        />
+        <path
+          d={`M${axisX - 5},${length - arrowLength} L${axisX},${length} L${axisX + 5},${length - arrowLength}z`}
+          fill={INK}
+        />
+        {ticks.map((i) =>
+          i === origin ? null : (
+            <g key={`yt-${i}`}>
+              <line
+                x1={axisX - 6}
+                y1={yOf(i)}
+                x2={axisX + 6}
+                y2={yOf(i)}
+                stroke={INK}
+                strokeWidth={STROKE.hair}
+              />
+              <text
+                x={axisX - 15}
+                y={yOf(i)}
+                textAnchor="middle"
+                dominantBaseline="central"
+                fontSize={14}
+              >
+                {i * tickStepYMultiply}
+              </text>
+            </g>
+          ),
+        )}
+        <text x={axisX + 10} y={15}>
+          {yAxisLabel}
+        </text>
       </g>
+      <text
+        x={axisX - 10}
+        y={axisY + 10}
+        textAnchor="middle"
+        dominantBaseline="central"
+      >
+        {origin}
+      </text>
     </g>
   )
 }
