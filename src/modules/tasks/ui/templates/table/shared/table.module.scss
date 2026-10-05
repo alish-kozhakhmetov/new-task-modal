@@ -1,7 +1,10 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+
+  // Rhythm (rule 7): parts of the condition 8px apart, condition → answer 24. The table holds
+  // the fields, so it is the answer: wrapper margin 16 + gap 8.
+  gap: var(--space-8);
   width: 100%;
 }
 

@@ -45,7 +45,7 @@ describe('ChatSolutionView: complex-type condition', () => {
     expect(screen.getByText('Условие')).toBeInTheDocument()
     // task.title renders once, under "Условие" — not duplicated elsewhere.
     expect(
-      screen.getByText('Выразите в указанной единице измерения.'),
+      screen.getByText('Выразите в указанной единице измерения:'),
     ).toBeInTheDocument()
     const mathTexts = screen.getAllByTestId('math-text')
     const joined = mathTexts.map((el) => el.textContent ?? '').join(' ')

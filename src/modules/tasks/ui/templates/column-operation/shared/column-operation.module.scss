@@ -1,7 +1,10 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+
+  // Title → column 8 (parts of the condition); the field under the column
+  // line keeps 12 below — it belongs to the column, not after it.
+  gap: var(--space-8);
 }
 
 .description {
@@ -146,4 +149,10 @@
   flex-wrap: wrap;
   gap: 8px;
   align-items: center;
+}
+
+// Answer block after the condition (rule 7). Last in the file: a container
+// child selector outranks the plain class rules above.
+.container > :last-child {
+  margin-top: var(--space-4);
 }

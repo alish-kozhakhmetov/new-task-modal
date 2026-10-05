@@ -4,7 +4,9 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+
+  // Rhythm (rule 7): parts of the condition 8px apart, condition → answer 24.
+  gap: var(--space-8);
 }
 
 .description {
@@ -64,4 +66,13 @@
   flex-wrap: wrap;
   gap: 8px;
   align-items: center;
+}
+
+// Answer block after the condition (rule 7). Last in the file: a container
+// child selector outranks the plain class rules above.
+.container > .expressionRow,
+.container > .inputRow,
+.container > .stack,
+.container > .inline {
+  margin-top: var(--space-16);
 }
