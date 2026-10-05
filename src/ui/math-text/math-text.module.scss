@@ -51,6 +51,25 @@
       padding-right: 0.38em;
     }
 
+    /* Operators and relations: MathJax gives each a 0.778em box (TeX
+       metrics) and draws the Halvar glyph, 0.587em wide, at its left edge —
+       «8× 10», the sign hugging the left operand. Split the spare 0.191em
+       evenly so the glyph sits centred; the box width stays MathJax's. */
+    .mjx-cD7::before,
+    .mjx-c2B::before,
+    .mjx-c2212::before,
+    .mjx-c3D::before,
+    .mjx-c3C::before,
+    .mjx-c3E::before,
+    .mjx-cF7::before,
+    .mjx-c2248::before,
+    .mjx-c2260::before,
+    .mjx-c2264::before,
+    .mjx-c2265::before {
+      padding-right: 0.6825em;
+      padding-left: 0.0955em;
+    }
+
     /* the stretched hook reaches the index spot, lift it clear of the stroke */
     mjx-root {
       transform: translateY(-0.2em);

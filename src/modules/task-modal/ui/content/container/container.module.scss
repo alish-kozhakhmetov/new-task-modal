@@ -17,6 +17,14 @@
   & * {
     font-variant-numeric: lining-nums tabular-nums;
   }
+
+  // Not inside MathJax: it places every glyph in a box sized by its own
+  // metrics, and a tabular «1» drawn in Halvar overran that box — «10» glued
+  // together in formula tasks (seen 05.10 on Formula/plain).
+  & :global(mjx-container),
+  & :global(mjx-container) * {
+    font-variant-numeric: normal;
+  }
 }
 
 .adjusting {
