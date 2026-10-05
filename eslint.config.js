@@ -203,7 +203,9 @@ export default defineConfig([
     languageOptions: tseslint.configs.disableTypeChecked.languageOptions,
     rules: {
       ...tseslint.configs.disableTypeChecked.rules,
-      ...reactx.configs['disable-type-checked'].rules,
+      // eslint-plugin-react-x 2.3.x has no 'disable-type-checked' config —
+      // reading `.rules` off undefined threw and ESLint never ran at all.
+      ...(reactx.configs['disable-type-checked']?.rules ?? {}),
     },
   },
 

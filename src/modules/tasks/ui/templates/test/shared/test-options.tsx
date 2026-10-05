@@ -60,20 +60,20 @@ export const TestOptions = ({
           hint={multipleHint}
         />
       ) : (
-      <RadioButtonGroup
-        className={clsx(
-          styles.radioGroup,
-          horizontal && styles.radioGroupHorizontal,
-          wrap && styles.radioGroupWrap,
-        )}
-        name={name}
-        options={options}
-        value={value}
-        onChange={onChange}
-        disabled={disabled}
-        readOnly={readOnly}
-        ariaLabel="test-options"
-      />
+        <RadioButtonGroup
+          className={clsx(
+            styles.radioGroup,
+            horizontal && styles.radioGroupHorizontal,
+            wrap && styles.radioGroupWrap,
+          )}
+          name={name}
+          options={options}
+          value={value}
+          onChange={onChange}
+          disabled={disabled}
+          readOnly={readOnly}
+          ariaLabel="test-options"
+        />
       )}
     </div>
   )
