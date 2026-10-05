@@ -61,11 +61,14 @@ describe('normalizeOperatorSigns', () => {
     expect(n('изд./ч *')).toBe(`изд./ч ${X}`)
   })
 
-  it('keeps prose dashes and hyphens inside words', () => {
-    const prose =
-      'население Березники 1578700 человек, Нижневартовска – 254500 человек'
-    expect(n(prose)).toBe(prose)
-    expect(n('Белые овцы – 3')).toBe('Белые овцы – 3')
+  it('long dash in prose, hyphens inside words stay', () => {
+    expect(
+      n('население Березники 1578700 человек, Нижневартовска – 254500 человек'),
+    ).toBe(
+      'население Березники 1578700 человек, Нижневартовска — 254500 человек',
+    )
+    expect(n('Белые овцы – 3')).toBe('Белые овцы — 3')
+    expect(n('а второй – 5 недель')).toBe('а второй — 5 недель')
     expect(n('сот.6-й, дес.5-й')).toBe('сот.6-й, дес.5-й')
     expect(n('2022-жылы')).toBe('2022-жылы')
     expect(n('5-7 лет')).toBe('5-7 лет')
