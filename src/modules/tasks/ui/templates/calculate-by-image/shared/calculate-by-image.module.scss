@@ -212,9 +212,14 @@ $item-size: to-rem(56px);
   }
 }
 
-/* Added cubes: a quiet place background — the backend picture is not repainted. */
+/*
+ * Added cubes: what the pupil put is the «interactive» layer, and that layer
+ * is brand (math-illustrations §2). Same tint as picked cells and shapes in
+ * qalan-assets trainer/ (fromBackend.ts, ТОН_БРЕНДА), so one action looks
+ * one way everywhere. The backend picture itself is not repainted.
+ */
 .cubeAdded {
-  background: var(--bg-subtle);
+  background: color-mix(in srgb, var(--bg-brand) 14%, var(--bg-surface));
   border-radius: var(--radius-s);
 }
 
