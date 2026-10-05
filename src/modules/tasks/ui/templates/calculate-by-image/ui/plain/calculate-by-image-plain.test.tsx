@@ -87,7 +87,7 @@ describe('calculateByImage.plain', () => {
       unmount()
     }
     expect(toCalculateByImageApiAnswer(answer, t.description)).toEqual({
-      list: t._expected.list.map((id) => ({ id })),
+      list: t._expected.list.map((id) => ({ image: '', id })),
     })
   })
 

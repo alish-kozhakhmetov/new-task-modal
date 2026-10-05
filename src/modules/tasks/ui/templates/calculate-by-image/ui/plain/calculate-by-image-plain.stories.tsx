@@ -91,7 +91,7 @@ export const FilledMoney: Story = {
     await expect(canvas.getAllByTestId('cbi-zone-item')).toHaveLength(7)
     ;(document.activeElement as HTMLElement | null)?.blur()
     await expect(canvas.getByTestId('cbi-review')).toHaveTextContent(
-      '{"id":"coin2000"},{"id":"coin2000"}]}',
+      '{"image":"","id":"coin2000"},{"image":"","id":"coin2000"}]}',
     )
   },
 }

@@ -66,7 +66,7 @@ describe('ответ', () => {
     expect(decodeZone('["ruler"]')).toBeNull()
   })
 
-  it('на бэк — { list: [{ id }] } с повторами и в порядке нажатий', () => {
+  it('на бэк — { list: [{ image: '', id }] } с повторами и в порядке нажатий', () => {
     const { description } = byType('1_5_12_6')
     const model = parseCalculateByImage(description, translate)
     const [a, b] = model.pool
@@ -75,7 +75,13 @@ describe('ответ', () => {
         `[${b.index},${a.index},${a.index}]`,
         description,
       ),
-    ).toEqual({ list: [{ id: b.id }, { id: a.id }, { id: a.id }] })
+    ).toEqual({
+      list: [
+        { image: '', id: b.id },
+        { image: '', id: a.id },
+        { image: '', id: a.id },
+      ],
+    })
   })
 
   it('номер вне каталога не уходит на бэк', () => {

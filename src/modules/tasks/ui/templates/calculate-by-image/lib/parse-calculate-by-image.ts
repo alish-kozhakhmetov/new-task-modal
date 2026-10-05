@@ -142,7 +142,7 @@ export const decodeZone = (answer: string): number[] | null => {
 }
 
 /**
- * Wire format: `{ list: [{ id }] }` with raw ids — strings, numbers or
+ * Wire format: `{ list: [{ image: '', id }] }` with raw ids — strings, numbers or
  * Translation objects (units «мм» in grade 3), repeats and tap order kept.
  * The backend rejects every string form (trainer-rebuild-context, «Ответ не
  * всегда строка»).
@@ -150,11 +150,13 @@ export const decodeZone = (answer: string): number[] | null => {
 export const toCalculateByImageApiAnswer = (
   answer: string,
   description: CalculateByImageDescription,
-): { list: { id: ItemId }[] } | null => {
+): { list: { image: ''; id: ItemId }[] } | null => {
   const indexes = decodeZone(answer)
   if (!indexes) return null
   const { catalog } = buildCatalog(description)
   const ids = indexes.map((index) => catalog[index]?.id)
   if (ids.some((id) => id === undefined)) return null
-  return { list: ids.map((id) => ({ id: id as ItemId })) }
+  // Same item shape as the old screen sends (test.qalan.kz, 05.10):
+  // `{ image: "", id }`.
+  return { list: ids.map((id) => ({ image: '' as const, id: id as ItemId })) }
 }

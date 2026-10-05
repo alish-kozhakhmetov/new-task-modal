@@ -19,10 +19,14 @@ const wire = (desc: { type?: unknown }, answer: unknown) =>
   })
 
 describe('toWireAnswer', () => {
-  it('calculateByImage: номера каталога → { list: [{ id }] } с повторами', () => {
+  it('calculateByImage: номера каталога → { list: [{ image: '', id }] } с повторами', () => {
     // catalog: 0 = preplaced ruler, 1 = row ruler, 2 = coin200
     expect(wire(description, '[0,2,2]')).toEqual({
-      list: [{ id: 'ruler' }, { id: 'coin200' }, { id: 'coin200' }],
+      list: [
+        { image: '', id: 'ruler' },
+        { image: '', id: 'coin200' },
+        { image: '', id: 'coin200' },
+      ],
     })
   })
 
@@ -30,11 +34,11 @@ describe('toWireAnswer', () => {
     const mm = { rus: 'мм', module_name: 'Elixir.Helpers.Translation' }
     expect(
       wire({ type: 'calculateByImage', selectableItems: [item(mm)] }, '[0]'),
-    ).toEqual({ list: [{ id: mm }] })
+    ).toEqual({ list: [{ image: '', id: mm }] })
   })
 
   it('calculateByImage старым путём: JSON объекта из legacy-task-root не тронут', () => {
-    const legacy = JSON.stringify({ list: [{ id: 'coin200' }] })
+    const legacy = JSON.stringify({ list: [{ image: '', id: 'coin200' }] })
     expect(wire(description, legacy)).toBe(legacy)
   })
 

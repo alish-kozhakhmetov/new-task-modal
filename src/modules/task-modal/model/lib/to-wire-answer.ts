@@ -10,7 +10,7 @@ interface Args {
 
 /**
  * Last step before `api.checkAnswer`: the only type whose answer is not a
- * string. calculateByImage goes out as `{ list: [{ id }] }` — the backend
+ * string. calculateByImage goes out as `{ list: [{ image: '', id }] }` — the backend
  * rejects every string form (qalan-assets, trainer-rebuild-context.md, «Ответ
  * не всегда строка»). The template keeps catalog indexes in the store; ids
  * are resolved here from the task description. Every other type passes
