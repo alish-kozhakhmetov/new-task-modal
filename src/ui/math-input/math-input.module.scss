@@ -8,7 +8,12 @@
    * and breaks flex centering from .input — re-assert it here. */
   display: flex !important;
   align-items: center;
-  padding-block: to-rem(11px);
+
+  // Task field 48 / 12 (Alisher, 05.10): between the layout's 58/16 and our
+  // 40/12 — Material's 48dp touch target; three labelled fields fit above the
+  // keypad. Only the task field: the chat input shares `ui/input` and keeps 58.
+  min-height: 48px !important;
+  padding-block: to-rem(6px);
   overflow-x: auto;
 
   /* Cancel MathQuill's .mq-math-mode { font-size: 115% }. One size for the
@@ -16,6 +21,7 @@
    * larger one (canon: Qalan App › Trainer). */
   font-size: to-rem(18px) !important;
   scrollbar-width: none;
+  border-radius: var(--radius-m) !important;
   -ms-overflow-style: none;
 
   &::-webkit-scrollbar {
@@ -26,7 +32,7 @@
   &:global(.mq-focused),
   &:global(.focused) {
     border: 1px solid var(--border-focus) !important;
-    border-radius: var(--radius-l) !important;
+    border-radius: var(--radius-m) !important;
     box-shadow: 0 0 0 1px var(--border-focus) !important;
   }
 
