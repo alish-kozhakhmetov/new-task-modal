@@ -29,7 +29,9 @@ interface CanvasProps {
 const STORAGE_PREFIX = 'drawing-board-data'
 
 export const canvasStorageKey = (taskId?: string | number | null) =>
-  taskId == null || taskId === '' ? STORAGE_PREFIX : `${STORAGE_PREFIX}:${taskId}`
+  taskId == null || taskId === ''
+    ? STORAGE_PREFIX
+    : `${STORAGE_PREFIX}:${taskId}`
 
 export function Canvas({ onClose, taskId }: CanvasProps) {
   const STORAGE_KEY = canvasStorageKey(taskId)

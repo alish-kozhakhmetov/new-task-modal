@@ -3,8 +3,8 @@ import type { ReactNode } from 'react'
 import type { ComplexAngleListPart } from '../../lib/types.task'
 import styles from '../complex.module.scss'
 
-import { PROTRACTOR_DATA_URL } from './protractor-image'
 import { INK } from './figure-paint'
+import { PROTRACTOR_DATA_URL } from './protractor-image'
 
 interface Props {
   part: ComplexAngleListPart

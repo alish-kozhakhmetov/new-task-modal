@@ -79,7 +79,8 @@ const nearest = ([r, g, b]: [number, number, number]): string => {
   const min = Math.min(r, g, b) / 255
   const light = (max + min) / 2
   const sat = max === min ? 0 : (max - min) / (1 - Math.abs(2 * light - 1))
-  if (sat < 0.15) return light > 0.85 ? NAMED.white : light < 0.25 ? INK : MUTED_INK
+  if (sat < 0.15)
+    return light > 0.85 ? NAMED.white : light < 0.25 ? INK : MUTED_INK
 
   const d = max - min
   const rn = r / 255

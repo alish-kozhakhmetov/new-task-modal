@@ -1,5 +1,6 @@
 import type { ComplexNumberLinePart } from '../../lib/types.task'
 import styles from '../complex.module.scss'
+
 import { INK, paint } from './figure-paint'
 
 interface Props {

@@ -1,4 +1,3 @@
-import { ReactActivity } from '@/lib/wrappers/react-activity'
 
 import { Canvas } from '../canvas/canvas'
 import { Chat } from '../chat/chat'
