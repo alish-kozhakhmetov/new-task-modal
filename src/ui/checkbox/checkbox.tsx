@@ -1,9 +1,15 @@
 import clsx from 'clsx'
 import React, { useId } from 'react'
 
+import { MathText } from '../math-text/math-text'
 import { isHtmlRadioLabel } from '../radio-button/radio-button'
 
 import styles from './checkbox.module.scss'
+
+// Labels carry math islands («\\(97 \\times 11 = 1067\\)»). They go through
+// MathText: nothing else typesets them. In Storybook MathJax's start-up pass
+// over the whole page happened to catch them; in the trainer the task arrives
+// later and the child saw «\\(59 ⋅ 64 = 3777\\)» (4_3_4_3 on 2.2.2, 05.10).
 
 interface Props {
   name: string
@@ -58,7 +64,9 @@ export const Checkbox = ({
           dangerouslySetInnerHTML={{ __html: label }}
         />
       ) : (
-        <span className={styles.checkboxLabel}>{label}</span>
+        <MathText inline className={styles.checkboxLabel}>
+          {label}
+        </MathText>
       )}
     </label>
   )

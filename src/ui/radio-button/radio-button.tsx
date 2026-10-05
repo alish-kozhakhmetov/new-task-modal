@@ -1,7 +1,14 @@
 import clsx from 'clsx'
 import React, { useId } from 'react'
 
+import { MathText } from '../math-text/math-text'
+
 import styles from './radio-button.module.scss'
+
+// Labels carry math islands («\\(97 \\times 11 = 1067\\)»). They go through
+// MathText: nothing else typesets them. In Storybook MathJax's start-up pass
+// over the whole page happened to catch them; in the trainer the task arrives
+// later and the child saw «\\(59 ⋅ 64 = 3777\\)» (4_3_4_3 on 2.2.2, 05.10).
 
 /** ME parity: SVG / HTML markup must not be escaped as text. */
 export const isHtmlRadioLabel = (content: string): boolean =>
@@ -59,7 +66,9 @@ export const RadioButton = ({
           dangerouslySetInnerHTML={{ __html: label }}
         />
       ) : (
-        <span className={styles.radioLabel}>{label}</span>
+        <MathText inline className={styles.radioLabel}>
+          {label}
+        </MathText>
       )}
     </label>
   )
