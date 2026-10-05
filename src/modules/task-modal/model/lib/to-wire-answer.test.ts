@@ -19,7 +19,7 @@ const wire = (desc: { type?: unknown }, answer: unknown) =>
   })
 
 describe('toWireAnswer', () => {
-  it('calculateByImage: номера каталога → { list: [{ image: '', id }] } с повторами', () => {
+  it('calculateByImage: номера каталога → { list: [{ image, id }] } с повторами', () => {
     // catalog: 0 = preplaced ruler, 1 = row ruler, 2 = coin200
     expect(wire(description, '[0,2,2]')).toEqual({
       list: [

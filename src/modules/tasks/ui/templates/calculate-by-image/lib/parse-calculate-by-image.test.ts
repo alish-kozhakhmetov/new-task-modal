@@ -66,7 +66,7 @@ describe('ответ', () => {
     expect(decodeZone('["ruler"]')).toBeNull()
   })
 
-  it('на бэк — { list: [{ image: '', id }] } с повторами и в порядке нажатий', () => {
+  it('на бэк — { list: [{ image, id }] } с повторами и в порядке нажатий', () => {
     const { description } = byType('1_5_12_6')
     const model = parseCalculateByImage(description, translate)
     const [a, b] = model.pool
