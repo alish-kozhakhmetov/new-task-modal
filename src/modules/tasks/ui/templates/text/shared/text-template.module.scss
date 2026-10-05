@@ -75,3 +75,21 @@
   margin-inline-end: 4px;
   white-space: nowrap;
 }
+
+// Labelled fields one under another (rule 20): «Альбом: ▢ ₸ / Краски: ▢ ₸»
+// share one label column, so the fields start on one vertical line instead
+// of each after its own label. Rows become grid rows via display: contents.
+.stackGrid {
+  display: grid;
+  grid-template-columns: max-content max-content 1fr;
+  gap: 12px 8px;
+  align-items: center;
+
+  > .inputRow {
+    display: contents;
+  }
+
+  .fieldLabel {
+    margin-inline-end: 0;
+  }
+}

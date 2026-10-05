@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 import { getInlineInputEntries } from '@/modules/tasks/lib/get-inline-input-entries'
 import { getMultipleInputHandlers } from '@/modules/tasks/lib/get-multiple-input-handlers'
 import { inputWidthHint } from '@/modules/tasks/lib/input-width-hint'
@@ -89,6 +91,10 @@ export const createMultiTextTemplate = ({
        read as different in importance, not as a hint about the answer. */
 
     const widthPx = widthFromTask ? inputWidthHint(task, 24) : null
+    const labelled =
+      layout !== 'inline' &&
+      withBefore &&
+      inputEntries.some(({ before }) => Boolean(before))
 
     return (
       <div className={styles.container} data-template-id={id}>
@@ -102,16 +108,23 @@ export const createMultiTextTemplate = ({
         <div
           data-testid="text-inputs"
           data-layout={layout}
-          className={layout === 'inline' ? styles.inline : styles.stack}
+          className={
+            layout === 'inline'
+              ? styles.inline
+              : clsx(styles.stack, labelled && styles.stackGrid)
+          }
         >
           {inputEntries.map(({ key, before, after }, index) => (
             <div key={key} className={styles.inputRow}>
-              {withBefore && before && (
+              {withBefore && before ? (
                 <TextAdornment
                   data-testid="text-prefix"
                   className={styles.fieldLabel}
                   value={maybeNormalizeBareMath(before, shouldNormalize)}
                 />
+              ) : (
+                // keeps the label column in the grid for a row without one
+                labelled && <span aria-hidden />
               )}
               <MathInput
                 id={key}
@@ -125,12 +138,14 @@ export const createMultiTextTemplate = ({
                     : undefined
                 }
               />
-              {withAfter && after && (
+              {withAfter && after ? (
                 <TextAdornment
                   data-testid="text-suffix"
                   className={styles.suffix}
                   value={maybeNormalizeBareMath(after, shouldNormalize)}
                 />
+              ) : (
+                labelled && <span aria-hidden />
               )}
             </div>
           ))}
