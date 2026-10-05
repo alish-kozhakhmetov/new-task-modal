@@ -26,7 +26,12 @@
 
 .contentRow {
   display: flex;
-  flex-wrap: nowrap;
+
+  // A row that doesn't fit the phone wraps between segments. With nowrap the
+  // segments shrank below their content and slid under each other: the «;»
+  // between two fields hid under the first one (4_12_19_8), a field covered
+  // the next word (4_1_66) — seen on 2.2.2, 05.10.
+  flex-wrap: wrap;
   gap: 4px 8px;
   align-items: center;
   justify-content: flex-start;
@@ -57,7 +62,15 @@
 
 .segmentInput {
   flex: 1 1 auto;
-  min-width: 0;
+
+  // Not narrower than its text plus the field's minimum — see .contentRow.
+  min-width: max-content;
+
+  // Sequence blanks are a fixed 60px: a growing segment would only open a
+  // gap between the field and the next «;».
+  [data-template-id$='.sequence'] & {
+    flex-grow: 0;
+  }
 }
 
 /* Stretch to fill the available row width, regardless of how many cells
