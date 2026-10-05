@@ -26,6 +26,11 @@
   width: 120px;
 }
 
+.inputFull {
+  flex: 1 1 auto;
+  width: 100%;
+}
+
 /** Solution-mode formula — no min-width so unit suffix sits next to the answer. */
 .answerFormula {
   flex: 0 1 auto;

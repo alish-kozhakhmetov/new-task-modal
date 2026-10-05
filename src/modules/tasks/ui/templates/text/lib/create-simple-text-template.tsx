@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 import { setMathInputRef } from '@/modules/tasks/lib/set-math-input-ref'
 import { isActiveSolution } from '@/modules/tasks/lib/solution-types'
 import { isTranslation } from '@/modules/tasks/lib/translation-utils'
@@ -117,7 +119,12 @@ export const createSimpleTextTemplate = ({
             ref={(ref) => setMathInputRef(ref, mathInput)}
             formula={answer}
             onMathFieldChanged={onChange}
-            className={styles.input}
+            // A lone field with no sign or unit takes the whole line, as in
+            // the layout (Lives flow) — rule 18. With a label it keeps 120px.
+            className={clsx(
+              styles.input,
+              !prefix && !suffix && styles.inputFull,
+            )}
           />
           {suffix && (
             <TextAdornment
