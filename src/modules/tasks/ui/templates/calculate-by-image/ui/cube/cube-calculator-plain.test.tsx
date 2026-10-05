@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render, screen, within } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 
 import { makeTaskModalDeps } from '@/modules/tasks/ui/templates/shared/testing/make-task-modal-deps'
@@ -71,7 +71,7 @@ describe('cubeCalculator.plain', () => {
     renderTask('1_8_4_11')
     const row = screen.getByTestId('cube-equation')
     expect(row).toHaveTextContent('7+8=10+=')
-    expect(row.querySelectorAll('[data-testid=cube-field]')).toHaveLength(2)
+    expect(within(row).getAllByTestId('cube-field')).toHaveLength(2)
   })
 
   it('добавленные отмечены, исходные — нет', () => {

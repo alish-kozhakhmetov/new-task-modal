@@ -2,10 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { useRef, useState } from 'react'
 import { expect, userEvent, within } from 'storybook/test'
 
-import type { CubeCalculatorTask } from '../../lib/create-cube-calculator-template'
-import { templateDocs } from '../../../shared/storybook/story-docs'
 import { makeTaskModalDeps } from '@/modules/tasks/ui/templates/shared/testing/make-task-modal-deps'
 import type { MathInputRef } from '@/ui/math-input/types'
+
+import { templateDocs } from '../../../shared/storybook/story-docs'
+import type { CubeCalculatorTask } from '../../lib/create-cube-calculator-template'
 import readme from '../plain/README.md?raw'
 
 import fixtures from './data/tasks.json'

@@ -1,8 +1,8 @@
 import { useRef, useState, type ComponentType } from 'react'
 
+import type { TaskComponentProps } from '@/modules/tasks/model/types'
 import { makeTaskModalDeps } from '@/modules/tasks/ui/templates/shared/testing/make-task-modal-deps'
 import type { MathInputRef } from '@/ui/math-input/types'
-import type { TaskComponentProps } from '@/modules/tasks/model/types'
 
 import { toCalculateByImageApiAnswer } from '../parse-calculate-by-image'
 import type { CalculateByImageTask } from '../types.task'

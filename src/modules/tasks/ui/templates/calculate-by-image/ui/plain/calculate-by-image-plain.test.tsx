@@ -36,7 +36,7 @@ const renderTask = (
       mathInput={{ current: new Map() }}
     />,
   )
-  return onChange
+  return { onChange }
 }
 
 describe('calculateByImage.plain', () => {
@@ -47,20 +47,20 @@ describe('calculateByImage.plain', () => {
   })
 
   it('нажатие в ряду добавляет ещё один к тому, что в зоне', () => {
-    const onChange = renderTask(task('0_1_38_9'))
+    const { onChange } = renderTask(task('0_1_38_9'))
     fireEvent.click(screen.getByTestId('cbi-pool-item'))
     // catalog: three preplaced rulers (0–2), then the row (3)
     expect(onChange).toHaveBeenCalledWith('[0,1,2,3]')
   })
 
   it('нажатие в зоне убирает предмет', () => {
-    const onChange = renderTask(task('0_1_38_9'), '[3,3]')
+    const { onChange } = renderTask(task('0_1_38_9'), '[3,3]')
     fireEvent.click(screen.getAllByTestId('cbi-zone-item')[0])
     expect(onChange).toHaveBeenCalledWith('[3]')
   })
 
   it('последний убранный предмет даёт пустой ответ', () => {
-    const onChange = renderTask(task('0_1_38_9'), '[3]')
+    const { onChange } = renderTask(task('0_1_38_9'), '[3]')
     fireEvent.click(screen.getByTestId('cbi-zone-item'))
     expect(onChange).toHaveBeenCalledWith('')
   })
@@ -92,7 +92,7 @@ describe('calculateByImage.plain', () => {
   })
 
   it('у каждого члена семьи своя картинка в зоне (Task_1_13_8_4)', () => {
-    const onChange = renderTask(task('1_13_8_4'))
+    const { onChange } = renderTask(task('1_13_8_4'))
     const buttons = screen.getAllByTestId('cbi-pool-item')
     fireEvent.click(buttons[1])
     const stored = onChange.mock.calls[0][0] as string

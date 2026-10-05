@@ -51,7 +51,7 @@ describe('calculateByImage.withCell — «до» и «после» (Task_0_3_11_
     for (let i = 0; i < count; i += 1) fireEvent.click(pool)
     expect(pool).toBeDisabled()
     fireEvent.click(screen.getAllByTestId('cbi-zone-item')[0])
-    expect(pool).not.toBeDisabled()
+    expect(pool).toBeEnabled()
   })
 
   it('ответ — число в поле', () => {

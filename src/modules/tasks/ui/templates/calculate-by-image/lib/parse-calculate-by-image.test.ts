@@ -22,13 +22,14 @@ const parse = (id: string) =>
   parseCalculateByImage(byType(id).description, translate)
 
 describe('parseCalculateByImage', () => {
-  it('каждая фикстура даёт непустой ряд и вместимость', () => {
-    for (const task of tasks) {
+  it.each(tasks.map((task) => [task.type, task] as const))(
+    '%s: непустой ряд и вместимость',
+    (_, task) => {
       const model = parseCalculateByImage(task.description, translate)
-      expect(model.pool.length, task.type).toBeGreaterThan(0)
-      expect(model.capacity, task.type).toBeGreaterThan(0)
-    }
-  })
+      expect(model.pool.length).toBeGreaterThan(0)
+      expect(model.capacity).toBeGreaterThan(0)
+    },
+  )
 
   it('заранее положенные предметы — в зоне (Task_0_1_38_9: три линейки)', () => {
     const model = parse('0_1_38_9')

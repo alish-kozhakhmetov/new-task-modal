@@ -158,5 +158,5 @@ export const toCalculateByImageApiAnswer = (
   if (ids.some((id) => id === undefined)) return null
   // Same item shape as the old screen sends (test.qalan.kz, 05.10):
   // `{ image: "", id }`.
-  return { list: ids.map((id) => ({ image: '' as const, id: id as ItemId })) }
+  return { list: ids.map((id) => ({ image: '' as const, id: id })) }
 }

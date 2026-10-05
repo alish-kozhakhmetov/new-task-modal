@@ -1,6 +1,5 @@
-import { useState } from 'react'
-
 import clsx from 'clsx'
+import { useState } from 'react'
 
 import { getMultipleInputHandlers } from '@/modules/tasks/lib/get-multiple-input-handlers'
 import { inputWidthHint } from '@/modules/tasks/lib/input-width-hint'

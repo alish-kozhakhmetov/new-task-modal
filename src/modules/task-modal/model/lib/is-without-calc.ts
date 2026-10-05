@@ -23,5 +23,5 @@ export const isWithoutCalc = (
   if (CALC_ONLY_IN_NEW_TEMPLATE.includes(type) && availableTasks?.[key]) {
     return false
   }
-  return (TASK_DESCRIPTIONS_WITHOUT_CALC as string[]).includes(type)
+  return TASK_DESCRIPTIONS_WITHOUT_CALC.includes(type)
 }
