@@ -8,6 +8,15 @@
   height: 100%;
   padding: var(--space-8) var(--space-16);
   overflow: hidden auto;
+
+  // Lining tabular figures for every digit in the task (rule 4), so numbers
+  // in the condition, the table and the field share one set and line up by
+  // place. Set on every element, not inherited: the `font` shorthand in the
+  // typography mixins resets font-variant-numeric to normal.
+  &,
+  & * {
+    font-variant-numeric: lining-nums tabular-nums;
+  }
 }
 
 .adjusting {

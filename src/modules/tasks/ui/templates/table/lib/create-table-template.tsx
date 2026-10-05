@@ -118,8 +118,13 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
                         ? rowIndex === 0
                         : false
 
-                  const cellClass = (cellIndex: number, isInput: boolean) =>
+                  const cellClass = (
+                    cellIndex: number,
+                    isInput: boolean,
+                    content?: string,
+                  ) =>
                     getCellClassName({
+                      content,
                       id,
                       mode: 'input',
                       isInput,
@@ -212,7 +217,11 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
                     cells.push(
                       <td
                         key={cellIndex}
-                        className={cellClass(cellIndex, isInput)}
+                        className={cellClass(
+                          cellIndex,
+                          isInput,
+                          isInput ? undefined : contentOf(cell),
+                        )}
                         colSpan={row.colspan_list?.[cellIndex] || 1}
                         rowSpan={row.rowspan_list?.[cellIndex] || 1}
                         data-group={glued && isInput ? '' : undefined}

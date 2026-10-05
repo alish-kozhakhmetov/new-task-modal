@@ -183,6 +183,8 @@
 }
 
 .cellHeader {
+  color: var(--text-secondary);
+
   // Headers are words and may wrap between them: «Первое слагаемое» on one
   // line made a three-column table 478px wide on a 343px phone column, and
   // the column with the sum — the value the task is about — scrolled out of
@@ -190,7 +192,15 @@
   // `.cell`'s nowrap; a header has no spaces inside a number to break at.
   white-space: normal;
   background: var(--bg-subtle);
-  @include body-medium-bold;
+
+  // Header is muted, not bold (rule 2): roles are told apart by the fill and
+  // the grey, the row label carries the weight.
+  @include body-medium-regular;
+}
+
+.cellNum {
+  font-variant-numeric: lining-nums tabular-nums;
+  text-align: right;
 }
 
 .cellGlued,

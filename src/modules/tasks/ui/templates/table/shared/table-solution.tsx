@@ -124,6 +124,7 @@ export const TableSolution = ({
                         isLastCell: cellIndex === row.cells.length - 1,
                         isHeaderRow,
                         isLastRow: rowIndex === table.rows.length - 1,
+                        content: isInput ? undefined : content,
                       })}
                       colSpan={row.colspan_list?.[cellIndex] || 1}
                       rowSpan={row.rowspan_list?.[cellIndex] || 1}

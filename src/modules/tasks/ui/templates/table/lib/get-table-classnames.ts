@@ -44,6 +44,22 @@ export function getTableClassName(params: {
   )
 }
 
+// Strip latex wrappers and commands so «\\(12\\,500\\)» reads as a number.
+const plainOf = (content?: string) =>
+  (content ?? '')
+    .replace(/\\[,;:! ]/g, '')
+    .replace(/\\[()[\]]|\\[a-zA-Z]+|[{}$]/g, ' ')
+    .trim()
+
+/** A row label made of words («Масса», «Первое слагаемое»), not a number. */
+const isWordLabel = (content?: string) => /\p{L}{2,}/u.test(plainOf(content))
+
+/** Digits with grouping, sign and unit marks only: «12 500», «−3», «0,5». */
+const isNumberCell = (content?: string) => {
+  const t = plainOf(content)
+  return t !== '' && /^[−+-]?[\d\s.,]+(?:\s*[₸%])?$/u.test(t)
+}
+
 export function getCellClassName(params: {
   id: string
   mode: TableMode
@@ -52,9 +68,19 @@ export function getCellClassName(params: {
   isLastCell: boolean
   isHeaderRow: boolean
   isLastRow: boolean
+  /** Visible text of the cell; drives label weight and number alignment. */
+  content?: string
 }): string {
-  const { id, mode, isInput, isFirstCell, isLastCell, isHeaderRow, isLastRow } =
-    params
+  const {
+    id,
+    mode,
+    isInput,
+    isFirstCell,
+    isLastCell,
+    isHeaderRow,
+    isLastRow,
+    content,
+  } = params
 
   return clsx(
     styles.cell,
@@ -62,10 +88,24 @@ export function getCellClassName(params: {
     isInput && !FLEX_SIZED_IDS.has(id) && styles.inputCellDefaultWidth,
     isHeaderRow && styles.cellHeader,
     ROUNDED_IDS.has(id) && isLastRow && styles.cellNoBottomBorder,
+    // Row labels are bold only when they are words (rule 58): a first column
+    // of numbers is data, not an axis.
+    // The corner cell belongs to the header, never bold.
     LABEL_COLUMN_IDS.has(id) &&
       isFirstCell &&
       !isInput &&
+      !isHeaderRow &&
+      (content === undefined || isWordLabel(content)) &&
       styles.cellFirstColLabel,
+    // Numbers align right so places line up down a column (rule 59). Only in
+    // the bordered data tables; the flex rows (inline/list/mixed) are
+    // sentences, not columns.
+    ROUNDED_IDS.has(id) &&
+      id !== 'table.grid' &&
+      !isHeaderRow &&
+      !isInput &&
+      isNumberCell(content) &&
+      styles.cellNum,
     id === 'table.inline' && mode === 'solution' && styles.cellInlineSolution,
     id === 'table.inline' && mode === 'input' && styles.cellInlineInput,
     id === 'table.inline' &&
