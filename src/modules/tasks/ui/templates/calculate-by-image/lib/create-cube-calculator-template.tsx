@@ -1,0 +1,199 @@
+import { useState } from 'react'
+
+import { isActiveSolution } from '@/modules/tasks/lib/solution-types'
+import { isTranslation } from '@/modules/tasks/lib/translation-utils'
+import type { TaskComponentProps } from '@/modules/tasks/model/types'
+import { SharedSolutionBody } from '@/modules/tasks/ui/common/task-solution/shared-solution-body'
+import { TaskTitle } from '@/modules/tasks/ui/common/task-title/task-title'
+import { TableInline } from '@/modules/tasks/ui/templates/table/ui/inline'
+import type { TableTask } from '@/modules/tasks/ui/templates/table/lib/types.task'
+import type { Translation } from '@/types/api/task'
+import { MathText } from '@/ui/math-text/math-text'
+
+import styles from '../shared/calculate-by-image.module.scss'
+
+import { scopeSvg } from './scope-svg'
+import type { SelectableItem } from './types.task'
+
+/** Backend payload for `cubeCalculator` — as far as the template reads it. */
+export interface CubeCalculatorTask {
+  id: string
+  type: string
+  title: Translation | string | null
+  description: {
+    type: 'cubeCalculator'
+    textBefore?: Translation | string | null
+    textAfter?: Translation | string | null
+    /** Filled cubes at start («Есть 7 кубиков»). */
+    cubes1?: SelectableItem[]
+    /** Empty places left in the frame. */
+    cubes2?: SelectableItem[]
+    /** Picture of an empty place. */
+    constCube?: SelectableItem | null
+    /** The cube the pupil adds. */
+    selectableItems?: SelectableItem[]
+    /** The equation row with `answercell`s — same shape as a table task. */
+    table?: TableTask['description']['table']
+    [key: string]: unknown
+  }
+  answerInput?: unknown
+  answer?: string | null
+  solution?: unknown
+}
+
+const toText = (
+  value: unknown,
+  translate: (value: Translation | string) => string,
+): string => {
+  if (value == null) return ''
+  if (isTranslation(value)) return translate(value)
+  return typeof value === 'string' ? value : ''
+}
+
+/**
+ * «Есть 7 кубиков. Добавьте к ним 8» / «Дано 15. Уберите 8»: a frame of
+ * twenty places in two rows of ten — the point is the step over ten. A tap
+ * on the cube under the frame fills the next empty place, a tap on a filled
+ * place empties it. The cubes are a counting aid; the answer is the two
+ * fields of the equation (`7 + 8 = 10 + ▢ = ▢`), drawn by `table.inline`
+ * exactly as table tasks draw them.
+ */
+export const createCubeCalculatorTemplate = ({ id }: { id: string }) => {
+  const Template = ({
+    task,
+    deps,
+    answer,
+    onChange,
+    mathInput,
+  }: TaskComponentProps<CubeCalculatorTask>) => {
+    const { description } = task
+    const filledAtStart = description.cubes1?.length ?? 0
+    const places = filledAtStart + (description.cubes2?.length ?? 0)
+    const [filled, setFilled] = useState<boolean[]>(() =>
+      Array.from({ length: places }, (_, i) => i < filledAtStart),
+    )
+
+    const translate = (value: Translation | string) =>
+      deps.global.translateTasks(value)
+
+    if (isActiveSolution(task.solution as never)) {
+      return (
+        <div className={styles.root} data-template-id={id}>
+          <TaskTitle title={task.title} deps={deps} />
+          <SharedSolutionBody solution={task.solution as never} deps={deps} />
+        </div>
+      )
+    }
+
+    const filledHtml = scopeSvg(
+      toText(
+        description.cubes1?.[0]?.image ??
+          description.selectableItems?.[0]?.image,
+        translate,
+      ),
+      'cube-f-',
+    )
+    const emptyHtml = scopeSvg(
+      toText(
+        description.constCube?.image ?? description.cubes2?.[0]?.image,
+        translate,
+      ),
+      'cube-e-',
+    )
+    const addHtml = scopeSvg(
+      toText(description.selectableItems?.[0]?.image, translate),
+      'cube-a-',
+    )
+    const nextEmpty = filled.indexOf(false)
+    const textBefore = toText(description.textBefore, translate)
+    const textAfter = toText(description.textAfter, translate)
+
+    const equation = description.table
+      ? ({
+          ...task,
+          title: null,
+          description: { type: 'table', table: description.table },
+        } as unknown as TableTask)
+      : null
+
+    return (
+      <div className={styles.root} data-template-id={id}>
+        <div className={styles.condition}>
+          <TaskTitle title={task.title} deps={deps} />
+          {textBefore ? (
+            <MathText className={styles.text}>{textBefore}</MathText>
+          ) : null}
+        </div>
+
+        <div className={styles.answer}>
+          <div
+            className={styles.cubeFrame}
+            role="group"
+            data-testid="cube-frame"
+          >
+            {filled.map((isFilled, index) => (
+              <button
+                key={index}
+                type="button"
+                className={styles.cubePlace}
+                aria-label={isFilled ? 'Убрать кубик' : 'Пустое место'}
+                aria-pressed={isFilled}
+                disabled={!isFilled}
+                data-testid={isFilled ? 'cube-filled' : 'cube-empty'}
+                onClick={() =>
+                  setFilled(filled.map((f, i) => (i === index ? false : f)))
+                }
+              >
+                <span
+                  className={styles.itemImage}
+                  aria-hidden
+                  dangerouslySetInnerHTML={{
+                    __html: isFilled ? filledHtml : emptyHtml,
+                  }}
+                />
+              </button>
+            ))}
+          </div>
+          {addHtml ? (
+            <div className={styles.pool}>
+              <button
+                type="button"
+                className={styles.poolItem}
+                aria-label="Добавить кубик"
+                disabled={nextEmpty < 0}
+                data-testid="cube-add"
+                onClick={() =>
+                  setFilled(filled.map((f, i) => (i === nextEmpty ? true : f)))
+                }
+              >
+                <span
+                  className={styles.itemImage}
+                  aria-hidden
+                  dangerouslySetInnerHTML={{ __html: addHtml }}
+                />
+              </button>
+            </div>
+          ) : null}
+          {textAfter ? (
+            <MathText className={styles.text}>{textAfter}</MathText>
+          ) : null}
+          {equation ? (
+            <div className={styles.equation}>
+              <TableInline
+                task={equation}
+                deps={deps}
+                answer={answer}
+                onChange={onChange}
+                mathInput={mathInput}
+              />
+            </div>
+          ) : null}
+        </div>
+      </div>
+    )
+  }
+
+  Template.displayName = id
+
+  return Template
+}

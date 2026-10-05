@@ -4,6 +4,7 @@ import { withTaskLoading } from '@/modules/tasks/lib/with-task-loading'
 import { TemplateTypes } from '@/modules/tasks/model/template-types'
 import type { TaskComponentProps } from '@/modules/tasks/model/types'
 import type { AnswerCellTask } from '@/modules/tasks/ui/templates/answer-cell/lib/types.task'
+import type { CubeCalculatorTask } from '@/modules/tasks/ui/templates/calculate-by-image/lib/create-cube-calculator-template'
 import type { CalculateByImageTask } from '@/modules/tasks/ui/templates/calculate-by-image/lib/types.task'
 import type { ColumnOperationTask } from '@/modules/tasks/ui/templates/column-operation/lib/types.task'
 import type { ComparisonTask } from '@/modules/tasks/ui/templates/comparison/lib/types.task'
@@ -32,6 +33,9 @@ type TestTemplateComponent = ComponentType<TaskComponentProps<TestTask>>
 type EquationTemplateComponent = ComponentType<TaskComponentProps<EquationTask>>
 type CalculateByImageTemplateComponent = ComponentType<
   TaskComponentProps<CalculateByImageTask>
+>
+type CubeCalculatorTemplateComponent = ComponentType<
+  TaskComponentProps<CubeCalculatorTask>
 >
 
 const wrapText = (
@@ -99,6 +103,13 @@ const wrapEquation = (
 
 const wrapCalculateByImage = (
   importFn: () => Promise<{ default: CalculateByImageTemplateComponent }>,
+) =>
+  importFn().then((m) => ({
+    default: withTaskLoading(m.default),
+  }))
+
+const wrapCubeCalculator = (
+  importFn: () => Promise<{ default: CubeCalculatorTemplateComponent }>,
 ) =>
   importFn().then((m) => ({
     default: withTaskLoading(m.default),
@@ -387,6 +398,12 @@ export const TEMPLATE_MAP = {
       import(
         '@/modules/tasks/ui/templates/calculate-by-image/ui/with-cell'
       ).then((module) => ({ default: module.CalculateByImageWithCell })),
+    ),
+  [TemplateTypes.CubeCalculator.Plain]: () =>
+    wrapCubeCalculator(() =>
+      import('@/modules/tasks/ui/templates/calculate-by-image/ui/cube').then(
+        (module) => ({ default: module.CubeCalculatorPlain }),
+      ),
     ),
 } satisfies Record<string, unknown>
 

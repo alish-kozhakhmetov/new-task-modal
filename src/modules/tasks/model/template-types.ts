@@ -88,4 +88,7 @@ export const TemplateTypes = {
     Plain: 'calculateByImage.plain',
     WithCell: 'calculateByImage.withCell',
   },
+  CubeCalculator: {
+    Plain: 'cubeCalculator.plain',
+  },
 }

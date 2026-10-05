@@ -52,5 +52,6 @@
   "comparison": ["comparison.plain"],
   "test": ["test.plain"],
   "equation": ["equation.before"],
-  "calculateByImage": ["calculateByImage.plain", "calculateByImage.withCell"]
+  "calculateByImage": ["calculateByImage.plain", "calculateByImage.withCell"],
+  "cubeCalculator": ["cubeCalculator.plain"]
 }
