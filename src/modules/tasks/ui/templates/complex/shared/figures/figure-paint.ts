@@ -6,8 +6,8 @@
  * a fill keeps its hue (two shapes of different colour stay different) but
  * takes the nearest colour of the design-system palette, step 500; lines are
  * the system weights 1 / 1.5 / 2. Values mirror `tokens.css` of the design
- * system (qalan-assets, 1.17.0): the package palette still has an older
- * `green-500` (#21ef69), so the drawing palette is spelled out here.
+ * system (qalan-assets, 1.17.0); `colors-palette.scss` carries the same
+ * values since 05.10.
  */
 
 /** Line weights: data and contours, fine marking, grid. */
