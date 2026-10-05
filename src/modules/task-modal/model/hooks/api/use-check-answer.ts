@@ -7,6 +7,7 @@ import {
 } from '@/modules/tasks/lib/multi-answer'
 
 import { isApiError } from '../../lib/is-api-error'
+import { toWireAnswer } from '../../lib/to-wire-answer'
 import {
   useAppState,
   useSetAppState,
@@ -135,8 +136,15 @@ export const useCheckAnswer = ({ props, refs }: Args) => {
       //   return
       // }
 
+      // Boundary: the store keeps strings; calculateByImage leaves as an object.
+      const wireAnswer = toWireAnswer({
+        description: activeTask.description,
+        answer,
+        calculateByImageType: TaskDescriptionType.CalculateByImage,
+      })
+
       const response = await api.checkAnswer(
-        { ...activeTask, answer, lockVersion },
+        { ...activeTask, answer: wireAnswer as typeof answer, lockVersion },
         hostProps.lessonId,
         global.getLanguage(),
       )

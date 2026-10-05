@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 import type { Task } from '@/types/api/task'
 
-import { TASK_DESCRIPTIONS_WITHOUT_CALC } from '../../constants'
+import { isWithoutCalc } from '../../lib/is-without-calc'
 import { useStore } from '../../store/task-modal-store'
 import { useOpenState } from '../use-open-state'
 
@@ -29,7 +29,7 @@ export const useCalcSetup = ({ activeTask, refs, isTesting = false }: Args) => {
   useEffect(() => {
     if (!isTaskLoaded) return
 
-    if (isWithoutCalc(activeTask)) {
+    if (isWithoutCalc(activeTask, useStore.getState().availableTasks)) {
       calc.close()
       setIsCalcEnabled(false)
       setFinishedTaskId(activeTask.id)
@@ -100,6 +100,3 @@ export const useCalcSetup = ({ activeTask, refs, isTesting = false }: Args) => {
 }
 
 export type CalcState = ReturnType<typeof useCalcSetup>
-
-const isWithoutCalc = (task: Task) =>
-  TASK_DESCRIPTIONS_WITHOUT_CALC.includes(task.description.type)

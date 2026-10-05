@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { expect, userEvent, within } from 'storybook/test'
 
 import { templateDocs } from '../../../shared/storybook/story-docs'
 import { StoryFrame, type FixtureFile } from '../../lib/storybook/story-frame'
@@ -53,4 +54,21 @@ export const AllTasks: Story = {
       ))}
     </div>
   ),
+}
+
+/** Three rabbits get a carrot, then the field waits for the number. */
+export const FilledRabbits: Story = {
+  // Review shot: the play runs on load, no «Run interaction» overlay.
+  parameters: { skipRunPlayButton: true },
+  args: { taskId: '0_3_11_6' },
+  render: ({ taskId }) => (
+    <StoryFrame Template={Template} task={byId(taskId)} numeric />
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const give = canvas.getByTestId('cbi-pool-item')
+    for (let i = 0; i < 3; i += 1) await userEvent.click(give)
+    await expect(canvas.getAllByTestId('cbi-zone-item')).toHaveLength(5)
+    ;(document.activeElement as HTMLElement | null)?.blur()
+  },
 }

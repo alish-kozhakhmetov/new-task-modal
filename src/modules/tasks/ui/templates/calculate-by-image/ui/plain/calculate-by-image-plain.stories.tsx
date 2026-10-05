@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { expect, userEvent, within } from 'storybook/test'
 
 import { templateDocs } from '../../../shared/storybook/story-docs'
 import { StoryFrame, type FixtureFile } from '../../lib/storybook/story-frame'
@@ -60,4 +61,55 @@ export const WithSolution: Story = {
   render: ({ taskId }) => (
     <StoryFrame Template={Template} task={byId(taskId)} withSolution />
   ),
+}
+
+/**
+ * Review shots: real taps, then the zone and the wire answer are checked.
+ * Money (4_6_6_8): 200 × 4 + 1000 + 2000 × 2 = 5800, as asked.
+ */
+export const FilledMoney: Story = {
+  // Review shot: the play runs on load, no «Run interaction» overlay.
+  parameters: { skipRunPlayButton: true },
+  args: { taskId: '4_6_6_8' },
+  render: ({ taskId }) => (
+    <StoryFrame Template={Template} task={byId(taskId)} />
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const [coin200, note1000, note2000] = canvas.getAllByTestId('cbi-pool-item')
+    for (const button of [
+      coin200,
+      coin200,
+      coin200,
+      coin200,
+      note1000,
+      note2000,
+      note2000,
+    ]) {
+      await userEvent.click(button)
+    }
+    await expect(canvas.getAllByTestId('cbi-zone-item')).toHaveLength(7)
+    ;(document.activeElement as HTMLElement | null)?.blur()
+    await expect(canvas.getByTestId('cbi-review')).toHaveTextContent(
+      '{"id":"coin2000"},{"id":"coin2000"}]}',
+    )
+  },
+}
+
+/** Family members share one id; the zone keeps the pictures that were tapped. */
+export const FilledFamily: Story = {
+  // Review shot: the play runs on load, no «Run interaction» overlay.
+  parameters: { skipRunPlayButton: true },
+  args: { taskId: '1_13_8_4' },
+  render: ({ taskId }) => (
+    <StoryFrame Template={Template} task={byId(taskId)} />
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const pool = canvas.getAllByTestId('cbi-pool-item')
+    await userEvent.click(pool[0])
+    await userEvent.click(pool[5])
+    await expect(canvas.getAllByTestId('cbi-zone-item')).toHaveLength(2)
+    ;(document.activeElement as HTMLElement | null)?.blur()
+  },
 }
