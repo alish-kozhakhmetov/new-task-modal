@@ -1,13 +1,16 @@
 import clsx from 'clsx'
 import React, { useId } from 'react'
 
+import { MathText } from '../math-text/math-text'
 import mathTextStyles from '../math-text/math-text.module.scss'
 import { isHtmlRadioLabel } from '../radio-button/radio-button'
 
 import styles from './checkbox.module.scss'
 
-// Labels carry math islands («\\(97 \\times 11 = 1067\\)») that MathJax typesets in
-// place; without the MathText scope its TeX serif font stayed next to Halvar.
+// Labels carry math islands («\\(97 \\times 11 = 1067\\)»). They go through
+// MathText: nothing else typesets them. In Storybook MathJax's start-up pass
+// over the whole page happened to catch them; in the trainer the task arrives
+// later and the child saw «\\(59 ⋅ 64 = 3777\\)» (4_3_4_3 on 2.2.2, 05.10).
 
 interface Props {
   name: string
@@ -62,9 +65,9 @@ export const Checkbox = ({
           dangerouslySetInnerHTML={{ __html: label }}
         />
       ) : (
-        <span className={clsx(styles.checkboxLabel, mathTextStyles.mathText)}>
+        <MathText inline className={styles.checkboxLabel}>
           {label}
-        </span>
+        </MathText>
       )}
     </label>
   )
