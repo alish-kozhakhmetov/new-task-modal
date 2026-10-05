@@ -1,0 +1,39 @@
+/* stylelint-disable selector-class-pattern */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.text {
+  @include body-medium-regular;
+
+  display: block;
+  color: var(--text-primary);
+}
+
+/* Real pixels; a narrow column shrinks it, never stretches (§1). */
+.plane {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Interactive layer: brand fill, white ring so the dot does not merge with the line under it (§5). */
+.picked {
+  fill: var(--bg-brand);
+  stroke: var(--bg-surface);
+  stroke-width: 2;
+}
+
+.pickedLabel {
+  font-family: var(--font-halvar);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+  fill: var(--text-primary);
+}

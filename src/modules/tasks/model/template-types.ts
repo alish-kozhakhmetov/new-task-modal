@@ -91,4 +91,7 @@ export const TemplateTypes = {
   CubeCalculator: {
     Plain: 'cubeCalculator.plain',
   },
+  CoordinatePlane: {
+    Point: 'coordinatePlane.point',
+  },
 }

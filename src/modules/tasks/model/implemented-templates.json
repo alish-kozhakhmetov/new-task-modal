@@ -53,5 +53,6 @@
   "test": ["test.plain"],
   "equation": ["equation.before"],
   "calculateByImage": ["calculateByImage.plain", "calculateByImage.withCell"],
-  "cubeCalculator": ["cubeCalculator.plain"]
+  "cubeCalculator": ["cubeCalculator.plain"],
+  "coordinatePlane": ["coordinatePlane.point"]
 }

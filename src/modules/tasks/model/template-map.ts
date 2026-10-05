@@ -4,6 +4,7 @@ import { withTaskLoading } from '@/modules/tasks/lib/with-task-loading'
 import { TemplateTypes } from '@/modules/tasks/model/template-types'
 import type { TaskComponentProps } from '@/modules/tasks/model/types'
 import type { AnswerCellTask } from '@/modules/tasks/ui/templates/answer-cell/lib/types.task'
+import type { CoordinatePlaneTask } from '@/modules/tasks/ui/templates/coordinate-plane/lib/types.task'
 import type { CubeCalculatorTask } from '@/modules/tasks/ui/templates/calculate-by-image/lib/create-cube-calculator-template'
 import type { CalculateByImageTask } from '@/modules/tasks/ui/templates/calculate-by-image/lib/types.task'
 import type { ColumnOperationTask } from '@/modules/tasks/ui/templates/column-operation/lib/types.task'
@@ -36,6 +37,9 @@ type CalculateByImageTemplateComponent = ComponentType<
 >
 type CubeCalculatorTemplateComponent = ComponentType<
   TaskComponentProps<CubeCalculatorTask>
+>
+type CoordinatePlaneTemplateComponent = ComponentType<
+  TaskComponentProps<CoordinatePlaneTask>
 >
 
 const wrapText = (
@@ -110,6 +114,13 @@ const wrapCalculateByImage = (
 
 const wrapCubeCalculator = (
   importFn: () => Promise<{ default: CubeCalculatorTemplateComponent }>,
+) =>
+  importFn().then((m) => ({
+    default: withTaskLoading(m.default),
+  }))
+
+const wrapCoordinatePlane = (
+  importFn: () => Promise<{ default: CoordinatePlaneTemplateComponent }>,
 ) =>
   importFn().then((m) => ({
     default: withTaskLoading(m.default),
@@ -403,6 +414,12 @@ export const TEMPLATE_MAP = {
     wrapCubeCalculator(() =>
       import('@/modules/tasks/ui/templates/calculate-by-image/ui/cube').then(
         (module) => ({ default: module.CubeCalculatorPlain }),
+      ),
+    ),
+  [TemplateTypes.CoordinatePlane.Point]: () =>
+    wrapCoordinatePlane(() =>
+      import('@/modules/tasks/ui/templates/coordinate-plane/ui/point').then(
+        (module) => ({ default: module.CoordinatePlanePoint }),
       ),
     ),
 } satisfies Record<string, unknown>
