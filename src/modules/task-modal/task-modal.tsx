@@ -1,8 +1,11 @@
+import { useMemo } from 'react'
+
 import { Canvas } from '../canvas/canvas'
 import { Chat } from '../chat/chat'
 
 import { useInitialSetup } from './model/hooks/use-initial-setup'
 import { useOpenState, type OpenState } from './model/hooks/use-open-state'
+import { withWordForms } from './model/lib/resolve-word-forms'
 import { useStore } from './model/store/task-modal-store'
 import type { TaskModalProps } from './model/types/props'
 import { TaskModalProviders } from './providers'
@@ -13,7 +16,8 @@ export interface TaskModalModals {
   canvas: OpenState
 }
 
-export const TaskModal = (props: TaskModalProps) => {
+export const TaskModal = (hostProps: TaskModalProps) => {
+  const props = useMemo(() => withWordForms(hostProps), [hostProps])
   const chat = useOpenState()
   const canvas = useOpenState()
   const isSetupDone = useInitialSetup(props)

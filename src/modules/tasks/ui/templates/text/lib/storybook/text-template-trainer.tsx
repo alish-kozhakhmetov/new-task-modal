@@ -11,6 +11,7 @@ import { useTaskModalRefs } from '@/modules/task-modal/model/hooks/layout/use-re
 import { useOpenState } from '@/modules/task-modal/model/hooks/use-open-state'
 import { isCalcForceHidden } from '@/modules/task-modal/model/lib/calc-visibility-param'
 import { injectFonts } from '@/modules/task-modal/model/lib/fonts/inject-fonts'
+import { withWordForms } from '@/modules/task-modal/model/lib/resolve-word-forms'
 import { isShellFitContent } from '@/modules/task-modal/model/lib/shell-fit-param'
 import {
   useAppState,
@@ -111,7 +112,7 @@ export const TextTemplateTrainer = ({
   }, [refs.mathInput, task, resolvedOptions])
 
   const props = useMemo(
-    () => ({ ...baseProps, closeModal: closeTrainer }),
+    () => withWordForms({ ...baseProps, closeModal: closeTrainer }),
     [baseProps, closeTrainer],
   )
 
