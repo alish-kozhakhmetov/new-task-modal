@@ -12,7 +12,7 @@ import {
   type PlanePoint,
 } from '@/modules/tasks/ui/templates/complex/shared/figures/coordinate-plane/plane-math'
 
-import { nearestNode, type Node } from '../lib/plane-answer'
+import { nearestNode, nodeLabel, type Node } from '../lib/plane-answer'
 
 import styles from './coordinate-plane.module.scss'
 
@@ -91,11 +91,9 @@ export const PointBoard = ({
         return (
           <g key={`sel-${node.x}-${node.y}`} data-testid="plane-picked">
             <circle className={styles.picked} cx={x} cy={y} r={6} />
-            <text
-              className={styles.pickedLabel}
-              x={x + 10}
-              y={y - 10}
-            >{`(${node.x}; ${node.y})`}</text>
+            <text className={styles.pickedLabel} x={x + 10} y={y - 10}>
+              {nodeLabel(node)}
+            </text>
           </g>
         )
       })}

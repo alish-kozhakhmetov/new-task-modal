@@ -92,3 +92,13 @@ export const toggleNode = (
   if (present) return nodes.filter((it) => !sameNode(it, node))
   return multiple ? [...nodes, node] : [node]
 }
+
+/**
+ * On-screen label of a picked node: a real minus, U+2212 (parity rule 27).
+ * The answer string keeps the hyphen — answers are not normalised (rule 44).
+ */
+export const nodeLabel = (node: Node): string => {
+  const signed = (value: number) =>
+    value < 0 ? `\u2212${Math.abs(value)}` : String(value)
+  return `(${signed(node.x)}; ${signed(node.y)})`
+}

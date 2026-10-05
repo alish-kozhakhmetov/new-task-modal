@@ -11,6 +11,7 @@ import {
   decodeNodes,
   encodeNodes,
   nearestNode,
+  nodeLabel,
   planeOptions,
   toggleNode,
 } from '../../lib/plane-answer'
@@ -72,6 +73,11 @@ describe('coordinatePlane.point', () => {
   ])('%s: нажатие у эталонной точки даёт «(x;y)» эталона', (id) => {
     const { onChange, expected } = tapExpected(id)
     expect(onChange).toHaveBeenCalledWith(`(${expected.x};${expected.y})`)
+  })
+
+  it('подпись точки — минус U+2212, ответ на бэк — дефис', () => {
+    expect(nodeLabel({ x: 1, y: -2 })).toBe('(1; \u22122)')
+    expect(encodeNodes([{ x: 1, y: -2 }], ';;')).toBe('(1;-2)')
   })
 
   it('ближайший узел и границы поля', () => {
