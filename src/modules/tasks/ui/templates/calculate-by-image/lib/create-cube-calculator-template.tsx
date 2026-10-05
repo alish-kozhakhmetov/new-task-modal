@@ -16,7 +16,6 @@ import { MathText } from '@/ui/math-text/math-text'
 
 import styles from '../shared/calculate-by-image.module.scss'
 
-import { scopeSvg } from './scope-svg'
 import type { SelectableItem } from './types.task'
 
 /** Backend payload for `cubeCalculator` — as far as the template reads it. */
@@ -94,25 +93,15 @@ export const createCubeCalculatorTemplate = ({ id }: { id: string }) => {
       )
     }
 
-    const filledHtml = scopeSvg(
-      toText(
-        description.cubes1?.[0]?.image ??
-          description.selectableItems?.[0]?.image,
-        translate,
-      ),
-      'cube-f-',
+    const filledHtml = toText(
+      description.cubes1?.[0]?.image ?? description.selectableItems?.[0]?.image,
+      translate,
     )
-    const emptyHtml = scopeSvg(
-      toText(
-        description.constCube?.image ?? description.cubes2?.[0]?.image,
-        translate,
-      ),
-      'cube-e-',
+    const emptyHtml = toText(
+      description.constCube?.image ?? description.cubes2?.[0]?.image,
+      translate,
     )
-    const addHtml = scopeSvg(
-      toText(description.selectableItems?.[0]?.image, translate),
-      'cube-a-',
-    )
+    const addHtml = toText(description.selectableItems?.[0]?.image, translate)
     const nextEmpty = filled.indexOf(false)
     const textBefore = toText(description.textBefore, translate)
     const textAfter = toText(description.textAfter, translate)

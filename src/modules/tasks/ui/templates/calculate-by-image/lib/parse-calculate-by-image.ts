@@ -1,7 +1,6 @@
 import { isTranslation } from '@/modules/tasks/lib/translation-utils'
 import type { Translation } from '@/types/api/task'
 
-import { scopeSvg } from './scope-svg'
 import type { CalculateByImageDescription, SelectableItem } from './types.task'
 
 export type ItemId = SelectableItem['id'] | Translation
@@ -99,7 +98,7 @@ export const parseCalculateByImage = (
   const { catalog: raw, preplacedCount } = buildCatalog(description)
   const catalog = raw.map((item) => ({
     ...item,
-    html: scopeSvg(toText(item.image, translate), `cbi${item.index}-`),
+    html: toText(item.image, translate),
   }))
   const preplaced = catalog.slice(0, preplacedCount)
   const declared = Number(description.itemsMaxQuantity)
@@ -114,11 +113,11 @@ export const parseCalculateByImage = (
     catalog,
     capacity,
     zonePicture: zonePictureFrom(
-      scopeSvg(toText(description.backgroundImage, translate), 'cbiz-'),
+      toText(description.backgroundImage, translate),
     ),
     textBefore: toText(description.textBefore, translate),
     textAfter: toText(description.textAfter, translate),
-    imageBefore: scopeSvg(toText(description.imageBefore, translate), 'cbib-'),
+    imageBefore: toText(description.imageBefore, translate),
   }
 }
 
