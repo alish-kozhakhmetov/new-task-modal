@@ -16,11 +16,13 @@ const byId = (id: string) =>
 
 interface Args {
   taskId: string
+  /** Review panel under the task; off for presentation shots. */
+  panel: boolean
 }
 
 const meta = {
   title: 'Templates/CalculateByImage/plain',
-  args: { taskId: ids[0] },
+  args: { taskId: ids[0], panel: true },
   argTypes: {
     taskId: {
       control: 'select',
@@ -35,8 +37,8 @@ export default meta
 type Story = StoryObj<Args>
 
 export const Default: Story = {
-  render: ({ taskId }) => (
-    <StoryFrame Template={Template} task={byId(taskId)} />
+  render: ({ taskId, panel }) => (
+    <StoryFrame Template={Template} task={byId(taskId)} panel={panel} />
   ),
 }
 
@@ -58,8 +60,13 @@ export const AllTasks: Story = {
 }
 
 export const WithSolution: Story = {
-  render: ({ taskId }) => (
-    <StoryFrame Template={Template} task={byId(taskId)} withSolution />
+  render: ({ taskId, panel }) => (
+    <StoryFrame
+      Template={Template}
+      task={byId(taskId)}
+      panel={panel}
+      withSolution
+    />
   ),
 }
 
@@ -71,8 +78,8 @@ export const FilledMoney: Story = {
   // Review shot: the play runs on load, no «Run interaction» overlay.
   parameters: { skipRunPlayButton: true },
   args: { taskId: '4_6_6_8' },
-  render: ({ taskId }) => (
-    <StoryFrame Template={Template} task={byId(taskId)} />
+  render: ({ taskId, panel }) => (
+    <StoryFrame Template={Template} task={byId(taskId)} panel={panel} />
   ),
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
@@ -90,9 +97,12 @@ export const FilledMoney: Story = {
     }
     await expect(canvas.getAllByTestId('cbi-zone-item')).toHaveLength(7)
     ;(document.activeElement as HTMLElement | null)?.blur()
-    await expect(canvas.getByTestId('cbi-review')).toHaveTextContent(
-      '{"image":"","id":"coin2000"},{"image":"","id":"coin2000"}]}',
-    )
+    const review = canvas.queryByTestId('cbi-review')
+    if (review) {
+      await expect(review).toHaveTextContent(
+        '{"image":"","id":"coin2000"},{"image":"","id":"coin2000"}]}',
+      )
+    }
   },
 }
 
@@ -101,8 +111,8 @@ export const FilledFamily: Story = {
   // Review shot: the play runs on load, no «Run interaction» overlay.
   parameters: { skipRunPlayButton: true },
   args: { taskId: '1_13_8_4' },
-  render: ({ taskId }) => (
-    <StoryFrame Template={Template} task={byId(taskId)} />
+  render: ({ taskId, panel }) => (
+    <StoryFrame Template={Template} task={byId(taskId)} panel={panel} />
   ),
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)

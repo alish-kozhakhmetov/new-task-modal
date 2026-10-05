@@ -16,11 +16,13 @@ const byId = (id: string) =>
 
 interface Args {
   taskId: string
+  /** Review panel under the task; off for presentation shots. */
+  panel: boolean
 }
 
 const meta = {
   title: 'Templates/CalculateByImage/withCell',
-  args: { taskId: ids[0] },
+  args: { taskId: ids[0], panel: true },
   argTypes: {
     taskId: {
       control: 'select',
@@ -35,8 +37,8 @@ export default meta
 type Story = StoryObj<Args>
 
 export const Default: Story = {
-  render: ({ taskId }) => (
-    <StoryFrame Template={Template} task={byId(taskId)} numeric />
+  render: ({ taskId, panel }) => (
+    <StoryFrame Template={Template} task={byId(taskId)} panel={panel} numeric />
   ),
 }
 
@@ -61,8 +63,8 @@ export const FilledRabbits: Story = {
   // Review shot: the play runs on load, no «Run interaction» overlay.
   parameters: { skipRunPlayButton: true },
   args: { taskId: '0_3_11_6' },
-  render: ({ taskId }) => (
-    <StoryFrame Template={Template} task={byId(taskId)} numeric />
+  render: ({ taskId, panel }) => (
+    <StoryFrame Template={Template} task={byId(taskId)} panel={panel} numeric />
   ),
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)

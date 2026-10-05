@@ -18,7 +18,7 @@ const ids = tasks.map((task) => task.type.replace('Elixir.Task_', ''))
 const byId = (id: string) =>
   tasks.find((task) => task.type === `Elixir.Task_${id}`) ?? tasks[0]
 
-const Frame = ({ task }: { task: Fixture }) => {
+const Frame = ({ task, panel = true }: { task: Fixture; panel?: boolean }) => {
   const [answer, setAnswer] = useState('')
   const mathInput = useRef<Map<string, MathInputRef> | null>(new Map())
   return (
@@ -31,27 +31,30 @@ const Frame = ({ task }: { task: Fixture }) => {
         onChange={setAnswer}
         mathInput={mathInput}
       />
-      <p
-        data-testid="cbi-review"
-        style={{
-          font: '12px/16px ui-monospace, monospace',
-          color: 'var(--text-secondary)',
-        }}
-      >
-        {task.type} · в сторе: {answer || '—'} · эталон бэка:{' '}
-        {JSON.stringify(task._expected)}
-      </p>
+      {panel ? (
+        <p
+          data-testid="cbi-review"
+          style={{
+            font: '12px/16px ui-monospace, monospace',
+            color: 'var(--text-secondary)',
+          }}
+        >
+          {task.type} · в сторе: {answer || '—'} · эталон бэка:{' '}
+          {JSON.stringify(task._expected)}
+        </p>
+      ) : null}
     </div>
   )
 }
 
 interface Args {
   taskId: string
+  panel: boolean
 }
 
 const meta = {
   title: 'Templates/CalculateByImage/cube',
-  args: { taskId: ids[0] },
+  args: { taskId: ids[0], panel: true },
   argTypes: {
     taskId: { control: 'select', options: ids },
   },
@@ -62,7 +65,7 @@ export default meta
 type Story = StoryObj<Args>
 
 export const Default: Story = {
-  render: ({ taskId }) => <Frame task={byId(taskId)} />,
+  render: ({ taskId, panel }) => <Frame task={byId(taskId)} panel={panel} />,
 }
 
 /** «Есть 7 кубиков. Добавьте к ним 8»: eight taps fill the frame to 15. */
@@ -70,7 +73,7 @@ export const FilledAddition: Story = {
   args: { taskId: '1_8_4_11' },
   // Review shot: the play runs on load, no «Run interaction» overlay.
   parameters: { skipRunPlayButton: true },
-  render: ({ taskId }) => <Frame task={byId(taskId)} />,
+  render: ({ taskId, panel }) => <Frame task={byId(taskId)} panel={panel} />,
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const add = canvas.getByTestId('cube-add')

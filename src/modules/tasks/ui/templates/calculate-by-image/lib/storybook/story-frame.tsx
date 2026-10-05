@@ -24,6 +24,8 @@ interface Props {
   /** `true` sends the store string as is (withCell); `false` wraps it in `{ list }`. */
   numeric?: boolean
   withSolution?: boolean
+  /** `false` — presentation shot without the review panel. */
+  panel?: boolean
 }
 
 const show = (value: unknown) =>
@@ -39,6 +41,7 @@ export const StoryFrame = ({
   task,
   numeric,
   withSolution,
+  panel = true,
 }: Props) => {
   const [answer, setAnswer] = useState('')
   const mathInput = useRef<Map<string, MathInputRef> | null>(new Map())
@@ -64,29 +67,31 @@ export const StoryFrame = ({
         onChange={setAnswer}
         mathInput={mathInput}
       />
-      <dl
-        data-testid="cbi-review"
-        style={{
-          margin: 0,
-          padding: 'var(--space-12)',
-          font: '12px/16px ui-monospace, monospace',
-          color: 'var(--text-secondary)',
-          background: 'var(--bg-subtle)',
-          borderRadius: 'var(--radius-m)',
-          overflowWrap: 'anywhere',
-        }}
-      >
-        <dt>{task.type}</dt>
-        <dd style={{ margin: 0 }}>источник: {task._source}</dd>
-        <dd style={{ margin: 0 }}>в сторе: {answer || '—'}</dd>
-        <dd style={{ margin: 0 }}>
-          на бэк:{' '}
-          {numeric
-            ? answer || '—'
-            : show(toCalculateByImageApiAnswer(answer, task.description))}
-        </dd>
-        <dd style={{ margin: 0 }}>эталон бэка: {show(task._expected)}</dd>
-      </dl>
+      {panel ? (
+        <dl
+          data-testid="cbi-review"
+          style={{
+            margin: 0,
+            padding: 'var(--space-12)',
+            font: '12px/16px ui-monospace, monospace',
+            color: 'var(--text-secondary)',
+            background: 'var(--bg-subtle)',
+            borderRadius: 'var(--radius-m)',
+            overflowWrap: 'anywhere',
+          }}
+        >
+          <dt>{task.type}</dt>
+          <dd style={{ margin: 0 }}>источник: {task._source}</dd>
+          <dd style={{ margin: 0 }}>в сторе: {answer || '—'}</dd>
+          <dd style={{ margin: 0 }}>
+            на бэк:{' '}
+            {numeric
+              ? answer || '—'
+              : show(toCalculateByImageApiAnswer(answer, task.description))}
+          </dd>
+          <dd style={{ margin: 0 }}>эталон бэка: {show(task._expected)}</dd>
+        </dl>
+      ) : null}
     </div>
   )
 }
