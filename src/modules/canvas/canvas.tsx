@@ -22,11 +22,17 @@ interface Point {
 
 interface CanvasProps {
   onClose: () => void
+  /** Draft belongs to one task (Alisher, 05.10): pass the task id. */
+  taskId?: string | number | null
 }
 
-const STORAGE_KEY = 'drawing-board-data'
+const STORAGE_PREFIX = 'drawing-board-data'
 
-export function Canvas({ onClose }: CanvasProps) {
+export const canvasStorageKey = (taskId?: string | number | null) =>
+  taskId == null || taskId === '' ? STORAGE_PREFIX : `${STORAGE_PREFIX}:${taskId}`
+
+export function Canvas({ onClose, taskId }: CanvasProps) {
+  const STORAGE_KEY = canvasStorageKey(taskId)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const isDrawingRef = useRef(false)
   const [mode, setMode] = useState<DrawingMode>('draw')
@@ -58,7 +64,7 @@ export function Canvas({ onClose }: CanvasProps) {
       setHistory([imageData])
       setHistoryStep(0)
     }
-  }, [])
+  }, [STORAGE_KEY])
 
   const saveToLocalStorage = useCallback(() => {
     const canvas = canvasRef.current
@@ -66,7 +72,7 @@ export function Canvas({ onClose }: CanvasProps) {
 
     const dataUrl = canvas.toDataURL('image/png')
     localStorage.setItem(STORAGE_KEY, dataUrl)
-  }, [])
+  }, [STORAGE_KEY])
 
   const handleClose = useCallback(() => {
     saveToLocalStorage()
