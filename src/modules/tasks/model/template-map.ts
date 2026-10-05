@@ -4,6 +4,7 @@ import { withTaskLoading } from '@/modules/tasks/lib/with-task-loading'
 import { TemplateTypes } from '@/modules/tasks/model/template-types'
 import type { TaskComponentProps } from '@/modules/tasks/model/types'
 import type { AnswerCellTask } from '@/modules/tasks/ui/templates/answer-cell/lib/types.task'
+import type { CalculateByImageTask } from '@/modules/tasks/ui/templates/calculate-by-image/lib/types.task'
 import type { ColumnOperationTask } from '@/modules/tasks/ui/templates/column-operation/lib/types.task'
 import type { ComparisonTask } from '@/modules/tasks/ui/templates/comparison/lib/types.task'
 import type { ComplexTask } from '@/modules/tasks/ui/templates/complex/lib/types.task'
@@ -29,6 +30,9 @@ type ComparisonTemplateComponent = ComponentType<
 >
 type TestTemplateComponent = ComponentType<TaskComponentProps<TestTask>>
 type EquationTemplateComponent = ComponentType<TaskComponentProps<EquationTask>>
+type CalculateByImageTemplateComponent = ComponentType<
+  TaskComponentProps<CalculateByImageTask>
+>
 
 const wrapText = (
   importFn: () => Promise<{ default: TextTemplateComponent }>,
@@ -88,6 +92,13 @@ const wrapTest = (
 
 const wrapEquation = (
   importFn: () => Promise<{ default: EquationTemplateComponent }>,
+) =>
+  importFn().then((m) => ({
+    default: withTaskLoading(m.default),
+  }))
+
+const wrapCalculateByImage = (
+  importFn: () => Promise<{ default: CalculateByImageTemplateComponent }>,
 ) =>
   importFn().then((m) => ({
     default: withTaskLoading(m.default),
@@ -364,6 +375,18 @@ export const TEMPLATE_MAP = {
       import('@/modules/tasks/ui/templates/equation/ui/before').then(
         (module) => ({ default: module.EquationBefore }),
       ),
+    ),
+  [TemplateTypes.CalculateByImage.Plain]: () =>
+    wrapCalculateByImage(() =>
+      import('@/modules/tasks/ui/templates/calculate-by-image/ui/plain').then(
+        (module) => ({ default: module.CalculateByImagePlain }),
+      ),
+    ),
+  [TemplateTypes.CalculateByImage.WithCell]: () =>
+    wrapCalculateByImage(() =>
+      import(
+        '@/modules/tasks/ui/templates/calculate-by-image/ui/with-cell'
+      ).then((module) => ({ default: module.CalculateByImageWithCell })),
     ),
 } satisfies Record<string, unknown>
 
