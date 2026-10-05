@@ -8,6 +8,7 @@ import { Chat } from '@/modules/chat/chat'
 import { useCalcSetup } from '@/modules/task-modal/model/hooks/layout/use-calc-setup'
 import { useInputFocus } from '@/modules/task-modal/model/hooks/layout/use-input-focus'
 import { useTaskModalRefs } from '@/modules/task-modal/model/hooks/layout/use-refs'
+import { useWordFormAgreement } from '@/modules/task-modal/model/hooks/layout/use-word-form-agreement'
 import { useOpenState } from '@/modules/task-modal/model/hooks/use-open-state'
 import { isCalcForceHidden } from '@/modules/task-modal/model/lib/calc-visibility-param'
 import { injectFonts } from '@/modules/task-modal/model/lib/fonts/inject-fonts'
@@ -223,6 +224,7 @@ const TrainerBody = ({
   }
 
   const { root, header, taskContainer, mathInput } = refs
+  useWordFormAgreement(taskContainer, activeTask?.id)
 
   return (
     <div

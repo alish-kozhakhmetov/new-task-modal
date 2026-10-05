@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import { Fragment, Suspense, type RefObject } from 'react'
 
 import { ErrorBoundary } from '@/lib/error-boundary/error-boundary'
+import { useWordFormAgreement } from '@/modules/task-modal/model/hooks/layout/use-word-form-agreement'
 import {
   useAppState,
   useStore,
@@ -37,6 +38,9 @@ export const TaskModalContainer = ({
   const TaskComponent = useTaskComponent({
     activeTask,
   })
+
+  // «5 лет» → «1 год» as the child types (4_1_8 and other word forms).
+  useWordFormAgreement(ref, activeTask?.id)
 
   const availableTasks = useStore((s) => s.availableTasks)
 
