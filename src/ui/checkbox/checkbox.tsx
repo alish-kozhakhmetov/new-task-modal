@@ -1,9 +1,13 @@
 import clsx from 'clsx'
 import React, { useId } from 'react'
 
+import mathTextStyles from '../math-text/math-text.module.scss'
 import { isHtmlRadioLabel } from '../radio-button/radio-button'
 
 import styles from './checkbox.module.scss'
+
+// Labels carry math islands («\\(97 \\times 11 = 1067\\)») that MathJax typesets in
+// place; without the MathText scope its TeX serif font stayed next to Halvar.
 
 interface Props {
   name: string
@@ -54,11 +58,13 @@ export const Checkbox = ({
       <span className={styles.checkboxControl} aria-hidden />
       {htmlLabel ? (
         <span
-          className={styles.checkboxLabel}
+          className={clsx(styles.checkboxLabel, mathTextStyles.mathText)}
           dangerouslySetInnerHTML={{ __html: label }}
         />
       ) : (
-        <span className={styles.checkboxLabel}>{label}</span>
+        <span className={clsx(styles.checkboxLabel, mathTextStyles.mathText)}>
+          {label}
+        </span>
       )}
     </label>
   )

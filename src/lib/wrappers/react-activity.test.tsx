@@ -12,7 +12,11 @@ const Child = () => {
   const id = useS((s) => s.id)
   const [seen, setSeen] = useState('')
   useEffect(() => setSeen(id), [id])
-  return <div data-testid="child">{id}|{seen}</div>
+  return (
+    <div data-testid="child">
+      {id}|{seen}
+    </div>
+  )
 }
 
 const Host = ({ visible }: { visible: boolean }) => (
@@ -27,12 +31,13 @@ const Host = ({ visible }: { visible: boolean }) => (
 // (the chat) must not live under ReactActivity. If React changes this, the test
 // fails — then the chat may go back under Activity.
 describe('Activity + zustand', () => {
-  it('hidden subtree misses store changes made while hidden', async () => {
+  it('hidden subtree misses store changes made while hidden', () => {
     const { rerender } = render(<Host visible />)
     rerender(<Host visible={false} />)
-    await act(async () => useS.getState().set('t4'))
+    act(() => {
+      useS.getState().set('t4')
+    })
     rerender(<Host visible />)
-    await act(async () => {})
-    expect(screen.getByTestId('child').textContent).toBe('t3|t3')
+    expect(screen.getByTestId('child')).toHaveTextContent('t3|t3')
   })
 })

@@ -3,6 +3,7 @@ import clsx from 'clsx'
 
 import styles from './math-text.module.scss'
 import { normalizeFractionStyle } from './normalize-fraction-style'
+import { timesInMath } from './normalize-operator-signs'
 import { scheduleMathStretch } from './stretch-tall-glyphs'
 
 const WRAPPED = /^\s*\\\(([\s\S]*)\\\)\s*$/
@@ -27,7 +28,9 @@ export const MathFormula = ({ children, className, onTypeset }: Props) => {
   // Wrap first — normalizeFractionStyle only rewrites islands inside `\(...\)`.
   // Some generators already send the formula wrapped («\(64 \approx\)»);
   // wrapping it again made MathJax print a red «\(» error.
-  const content = normalizeFractionStyle(`\\(${unwrapMath(children)}\\)`)
+  const content = normalizeFractionStyle(
+    `\\(${timesInMath(unwrapMath(children))}\\)`,
+  )
 
   const handleTypeset = () => {
     scheduleMathStretch()

@@ -32,8 +32,10 @@
   align-items: center;
   justify-content: start;
   margin-top: 12px;
-  font-size: 20px;
-  font-weight: 500;
+
+  // One size and weight for the task (rule 1): was 20/500. The sign box
+  // below keeps its 24px — it is the control, not the expression.
+  font-size: inherit;
 }
 
 .side {

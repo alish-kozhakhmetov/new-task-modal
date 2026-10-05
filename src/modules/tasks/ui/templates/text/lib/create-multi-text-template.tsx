@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 import { getInlineInputEntries } from '@/modules/tasks/lib/get-inline-input-entries'
 import { getMultipleInputHandlers } from '@/modules/tasks/lib/get-multiple-input-handlers'
 import { inputWidthHint } from '@/modules/tasks/lib/input-width-hint'
@@ -43,6 +45,10 @@ interface MultiTextTemplateConfig {
  * MathInputs, each with optional before/after labels. The combined answer
  * is joined with the multiple-answer separator.
  */
+/** A row name: letters and punctuation, no digits, signs or math. */
+const isWordLabel = (label: string) =>
+  /\p{L}{2,}/u.test(label) && !/[\d=+×·*<>\\]/.test(label)
+
 export const createMultiTextTemplate = ({
   id,
   layout,
@@ -89,6 +95,15 @@ export const createMultiTextTemplate = ({
        read as different in importance, not as a hint about the answer. */
 
     const widthPx = widthFromTask ? inputWidthHint(task, 24) : null
+    // Shared label column only for named rows («Альбом:», «Краски:»). When a
+    // label is an expression («(46 + 76) × x =» over «x =») the column takes
+    // the widest one and pushes the short row's field and unit off the screen.
+    const labels = inputEntries.map(({ before }) => before).filter(Boolean)
+    const labelled =
+      layout !== 'inline' &&
+      withBefore &&
+      labels.length > 0 &&
+      labels.every((l) => isWordLabel(String(l)))
 
     return (
       <div className={styles.container} data-template-id={id}>
@@ -102,16 +117,23 @@ export const createMultiTextTemplate = ({
         <div
           data-testid="text-inputs"
           data-layout={layout}
-          className={layout === 'inline' ? styles.inline : styles.stack}
+          className={
+            layout === 'inline'
+              ? styles.inline
+              : clsx(styles.stack, labelled && styles.stackGrid)
+          }
         >
           {inputEntries.map(({ key, before, after }, index) => (
             <div key={key} className={styles.inputRow}>
-              {withBefore && before && (
+              {withBefore && before ? (
                 <TextAdornment
                   data-testid="text-prefix"
                   className={styles.fieldLabel}
                   value={maybeNormalizeBareMath(before, shouldNormalize)}
                 />
+              ) : (
+                // keeps the label column in the grid for a row without one
+                labelled && <span aria-hidden />
               )}
               <MathInput
                 id={key}
@@ -125,12 +147,14 @@ export const createMultiTextTemplate = ({
                     : undefined
                 }
               />
-              {withAfter && after && (
+              {withAfter && after ? (
                 <TextAdornment
                   data-testid="text-suffix"
                   className={styles.suffix}
                   value={maybeNormalizeBareMath(after, shouldNormalize)}
                 />
+              ) : (
+                labelled && <span aria-hidden />
               )}
             </div>
           ))}

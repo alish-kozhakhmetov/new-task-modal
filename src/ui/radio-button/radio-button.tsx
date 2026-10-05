@@ -1,7 +1,12 @@
 import clsx from 'clsx'
 import React, { useId } from 'react'
 
+import mathTextStyles from '../math-text/math-text.module.scss'
+
 import styles from './radio-button.module.scss'
+
+// Labels carry math islands («\\(97 \\times 11 = 1067\\)») that MathJax typesets in
+// place; without the MathText scope its TeX serif font stayed next to Halvar.
 
 /** ME parity: SVG / HTML markup must not be escaped as text. */
 export const isHtmlRadioLabel = (content: string): boolean =>
@@ -55,11 +60,13 @@ export const RadioButton = ({
       <span className={styles.radioControl} aria-hidden />
       {htmlLabel ? (
         <span
-          className={styles.radioLabel}
+          className={clsx(styles.radioLabel, mathTextStyles.mathText)}
           dangerouslySetInnerHTML={{ __html: label }}
         />
       ) : (
-        <span className={styles.radioLabel}>{label}</span>
+        <span className={clsx(styles.radioLabel, mathTextStyles.mathText)}>
+          {label}
+        </span>
       )}
     </label>
   )

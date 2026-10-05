@@ -1,8 +1,9 @@
 import type { Preview } from '@storybook/react-vite'
-import { MathJaxContext, type MathJax3Config } from 'better-react-mathjax'
+import { MathJaxContext } from 'better-react-mathjax'
 import type { ReactNode } from 'react'
 
 import { injectFonts } from '@/modules/task-modal/model/lib/fonts/inject-fonts'
+import { MATH_JAX_CONFIG } from '@/modules/task-modal/providers'
 import { initTestRunChannel } from '@/modules/testing/lib/test-run-store'
 
 import 'react-toastify/dist/ReactToastify.css'
@@ -29,16 +30,6 @@ if (typeof window !== 'undefined') {
       event.preventDefault()
     }
   })
-}
-
-const MATH_JAX_CONFIG: MathJax3Config = {
-  loader: { load: ['input/tex', 'output/chtml'] },
-  chtml: { matchFontHeight: false },
-  options: {
-    renderActions: {
-      addMenu: [],
-    },
-  },
 }
 
 const withMathJax = (

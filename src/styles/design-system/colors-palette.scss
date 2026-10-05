@@ -51,11 +51,11 @@ $graphit-50: #fafafa;
 $red-900: #3a0a0a;
 $red-800: #6c1111;
 $red-700: #951a1a;
-$red-600: #c12a24;
+$red-600: #c12424; // DS
 $red-500: #ff4a4a;
 $red-400: #ff7575;
 $red-300: #ffa5a5;
-$red-200: #fcdcdc;
+$red-200: #ffcdcd; // DS
 $red-100: #ffe7e7;
 $red-50: #fff5f5;
 
@@ -82,7 +82,7 @@ $yellow-400: #ffe24a;
 // =========================
 // Green
 // =========================
-$green-500: #21ef69;
+$green-500: #00b53f; // DS tokens.css 1.17.0; was #21ef69 (neon, not in DS)
 $green-400: #33d266;
 $green-800: #0a3d21;
-$green-100: #def9e7;
+$green-100: #dffae8; // DS

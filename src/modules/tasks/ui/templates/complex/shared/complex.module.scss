@@ -14,8 +14,9 @@
 
 .textPart {
   width: 100%;
-  font-size: 1.05em;
-  line-height: 1.4;
+
+  // One size for the task (rule 1): was 1.05em = 18.9px.
+  line-height: inherit;
 }
 
 .imagePart {

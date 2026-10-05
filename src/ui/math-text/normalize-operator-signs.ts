@@ -10,8 +10,8 @@
  * Measured on the 1281 whitelisted grade-4 tasks: 60 show a hyphen for minus
  * and 57 a dot for times.
  *
- * Only text outside math islands changes: MathJax already typesets `-` in math
- * mode as a minus, and `\cdot` there is a separate decision.
+ * Outside math islands the rules below apply. Inside them MathJax already
+ * typesets `-` as a minus; only `\cdot` becomes `\times` (Alisher, 05.10).
  *
  * The rules are narrow on purpose, because prose uses the same characters:
  * - an ASCII `-` with spaces around it is a minus between numbers and brackets,
@@ -21,10 +21,16 @@
  *   a hyphen — «а в Санкт-Петербург - 7887 студентов», «во второй день -
  *   460110 кг» — and becomes an em dash, as in our trainer. Measured on the
  *   whitelist: 21 such hyphens are subtraction of quantities, 8 are prose;
- * - an en dash `–` becomes a minus only between numbers and brackets, so
- *   «Нижневартовска – 254500 человек» keeps its dash;
+ * - an en dash `–` becomes a minus between numbers and brackets; after a
+ *   word it is a prose dash and becomes an em dash, like the hyphen above —
+ *   «Нижневартовска – 254500 человек» → «—» (Alisher, 05.10: Russian prose
+ *   takes the long dash);
  * - `·`, `⋅`, `*` between numbers and brackets, alone in a label, or at the
  *   end of a label right before a field («изд./ч *») become `×`;
+ * - a lone `/` between fields (a label of its own) becomes `÷`; a slash inside
+ *   text («1/2», «км/ч») is a fraction or a unit and stays;
+ * - `тг` next to a number or alone becomes `₸` (Halvar draws its own glyph);
+ *   the word «тенге»/«теңге» in prose stays a word;
  * - anything without spaces around it («4-й», «2022-жылы») is left alone.
  */
 
@@ -32,6 +38,7 @@ const MATH_ISLAND_RE = /(\\\([\s\S]*?\\\)|\\\[[\s\S]*?\\\]|\$\$[\s\S]*?\$\$)/
 
 const MINUS = '−'
 const TIMES = '×'
+const DIVIDE = '÷'
 const DASH = '—'
 
 /** Left operand: a digit, a closing bracket or a single Latin variable. */
@@ -146,7 +153,7 @@ const HYPHEN_AFTER_UNIT = new RegExp(
 // a word the hyphen is left alone: «II - класс» turned into «II — класс» while
 // its neighbour «I - класс» kept the hyphen — one letter is not «a word».
 const HYPHEN_AS_PROSE_DASH = new RegExp(
-  String.raw`(\p{L}{2,})\s+-\s+(?=\d)`,
+  String.raw`(\p{L}{2,})\s+[-–]\s+(?=\d)`,
   'gu',
 )
 const DASH_BETWEEN = new RegExp(
@@ -159,6 +166,7 @@ const TIMES_BETWEEN = new RegExp(
 )
 const LEADING_MINUS = new RegExp(String.raw`^(\s*)[-–](\s+)(?=[\d(])`, 'u')
 const TRAILING_MINUS = new RegExp(String.raw`([\d)])(\s+)[-–](\s*)$`, 'u')
+const TENGE = /(^|[\s\d(])тг(?=$|[\s.,;:)])/gu
 const EDGE_TIMES = new RegExp(String.raw`(^\s*|\s)[·⋅*](\s*$|\s+)`, 'gu')
 
 const normalizeSegment = (text: string): string => {
@@ -167,8 +175,10 @@ const normalizeSegment = (text: string): string => {
   if (trimmed === '·' || trimmed === '⋅' || trimmed === '*') {
     return text.replace(trimmed, TIMES)
   }
+  if (trimmed === '/') return text.replace(trimmed, DIVIDE)
 
   return text
+    .replace(TENGE, '$1₸')
     .replace(DASH_BETWEEN, `$1$2${MINUS}$3`)
     .replace(HYPHEN_AFTER_UNIT, `$1$2${MINUS}$3`)
     .replace(HYPHEN_AS_PROSE_DASH, `$1 ${DASH} `)
@@ -178,8 +188,20 @@ const normalizeSegment = (text: string): string => {
     .replace(EDGE_TIMES, `$1${TIMES}$2`)
 }
 
+/**
+ * Multiplication inside math: `\\cdot`, `·` and `⋅` become `\\times` (Alisher,
+ * 05.10 — `×` everywhere). `\\cdotp` and other commands are left alone.
+ */
+export const timesInMath = (math: string): string =>
+  math.replace(/\\cdot(?![a-zA-Z])|[·⋅]/g, '\\times ')
+
 export const normalizeOperatorSigns = (text: string): string =>
   text
     .split(MATH_ISLAND_RE)
-    .map((part, index) => (index % 2 === 1 ? part : normalizeSegment(part)))
+    .map((part, index) =>
+      // Inside an island only `\\cdot` changes: multiplication is `×` there
+      // too (Alisher, 05.10). Done in the text, not only by a MathJax macro —
+      // MathJax keeps the config of whichever context loaded it first.
+      index % 2 === 1 ? timesInMath(part) : normalizeSegment(part),
+    )
     .join('')

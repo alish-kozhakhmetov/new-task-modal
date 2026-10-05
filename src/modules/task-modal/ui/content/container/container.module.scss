@@ -8,6 +8,23 @@
   height: 100%;
   padding: var(--space-8) var(--space-16);
   overflow: hidden auto;
+
+  // Lining tabular figures for every digit in the task (rule 4), so numbers
+  // in the condition, the table and the field share one set and line up by
+  // place. Set on every element, not inherited: the `font` shorthand in the
+  // typography mixins resets font-variant-numeric to normal.
+  &,
+  & * {
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+
+  // Not inside MathJax: it places every glyph in a box sized by its own
+  // metrics, and a tabular «1» drawn in Halvar overran that box — «10» glued
+  // together in formula tasks (seen 05.10 on Formula/plain).
+  & :global(mjx-container),
+  & :global(mjx-container) * {
+    font-variant-numeric: normal;
+  }
 }
 
 .adjusting {
@@ -26,7 +43,7 @@
 }
 
 .inputSkeleton {
-  height: 58px;
+  height: 48px;
   margin-top: var(--space-24);
 }
 

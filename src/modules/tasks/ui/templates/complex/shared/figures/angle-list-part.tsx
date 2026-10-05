@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import type { ComplexAngleListPart } from '../../lib/types.task'
 import styles from '../complex.module.scss'
 
+import { INK } from './figure-paint'
 import { PROTRACTOR_DATA_URL } from './protractor-image'
 
 interface Props {
@@ -37,7 +38,7 @@ const DegreeCurve = ({
         cy={0}
         rx={degreeLength}
         ry={15}
-        stroke="black"
+        stroke={INK}
         fill="transparent"
       />
     )
@@ -47,7 +48,7 @@ const DegreeCurve = ({
     return (
       <path
         d={`M${degreeLength},0 L${degreeLength},${-degreeLength} L${0},${-degreeLength}`}
-        stroke="black"
+        stroke={INK}
         fill="transparent"
         transform={`rotate(${-startDegree} 0 0)`}
       />
@@ -61,7 +62,7 @@ const DegreeCurve = ({
         Q${snapCos(qDegree) * (degreeLength + 3)},${snapSin(qDegree) * (-degreeLength - 3)}
         ${snapCos(degreeFromZero) * degreeLength},${snapSin(degreeFromZero) * -degreeLength}
       `}
-      stroke="black"
+      stroke={INK}
       fill="transparent"
     />
   )
@@ -69,8 +70,8 @@ const DegreeCurve = ({
 
 const Ray = () => (
   <g>
-    <line x1={0} y1={0} x2={200} y2={0} stroke="black" />
-    <path d="M185,-5 L200,0 L185,5z" fill="black" />
+    <line x1={0} y1={0} x2={200} y2={0} stroke={INK} />
+    <path d="M185,-5 L200,0 L185,5z" fill={INK} />
   </g>
 )
 
@@ -173,7 +174,7 @@ export const AngleListPart = ({ part }: Props) => {
     if (angle.dot) {
       overlays.push(
         <g key={`dot-${index}`} transform={`rotate(${-degreeFromZero} 0 0)`}>
-          <circle cx={length - 30} cy={0} r={3} fill="black" />
+          <circle cx={length - 30} cy={0} r={3} fill={INK} />
           {angle.dot.letter ? (
             <text
               x={length - 30}
@@ -210,7 +211,7 @@ export const AngleListPart = ({ part }: Props) => {
 
         {part.centerPointLetter ? (
           <>
-            <circle cx={0} cy={0} r={3} fill="black" />
+            <circle cx={0} cy={0} r={3} fill={INK} />
             <text x={0} y={20} textAnchor="middle" fontSize={14}>
               {part.centerPointLetter}
             </text>

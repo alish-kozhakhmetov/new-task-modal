@@ -61,11 +61,14 @@ describe('normalizeOperatorSigns', () => {
     expect(n('изд./ч *')).toBe(`изд./ч ${X}`)
   })
 
-  it('keeps prose dashes and hyphens inside words', () => {
-    const prose =
-      'население Березники 1578700 человек, Нижневартовска – 254500 человек'
-    expect(n(prose)).toBe(prose)
-    expect(n('Белые овцы – 3')).toBe('Белые овцы – 3')
+  it('long dash in prose, hyphens inside words stay', () => {
+    expect(
+      n('население Березники 1578700 человек, Нижневартовска – 254500 человек'),
+    ).toBe(
+      'население Березники 1578700 человек, Нижневартовска — 254500 человек',
+    )
+    expect(n('Белые овцы – 3')).toBe('Белые овцы — 3')
+    expect(n('а второй – 5 недель')).toBe('а второй — 5 недель')
     expect(n('сот.6-й, дес.5-й')).toBe('сот.6-й, дес.5-й')
     expect(n('2022-жылы')).toBe('2022-жылы')
     expect(n('5-7 лет')).toBe('5-7 лет')
@@ -74,8 +77,26 @@ describe('normalizeOperatorSigns', () => {
     expect(n('I - класс')).toBe('I - класс')
   })
 
-  it('does not touch math islands', () => {
-    expect(n('\\(3 - 2 \\cdot 4\\) - 1')).toBe(`\\(3 - 2 \\cdot 4\\) ${M} 1`)
+  it('turns a lone slash between fields into ÷, keeps fractions and units', () => {
+    expect(n('/')).toBe('÷')
+    expect(n(' / ')).toBe(' ÷ ')
+    expect(n('1/2')).toBe('1/2')
+    expect(n('80 км/ч')).toBe('80 км/ч')
+  })
+
+  it('writes tenge as ₸ next to a number, keeps the word', () => {
+    expect(n('500 тг')).toBe('500 ₸')
+    expect(n('500тг')).toBe('500₸')
+    expect(n('тг')).toBe('₸')
+    expect(n('цена 20 тг.')).toBe('цена 20 ₸.')
+    expect(n('у Асана 300 тенге')).toBe('у Асана 300 тенге')
+    expect(n('тгх')).toBe('тгх')
+  })
+
+  it('inside math islands only turns \\\\cdot into \\\\times', () => {
+    expect(n('\\(3 - 2 \\cdot 4\\) - 1')).toBe(`\\(3 - 2 \\times  4\\) ${M} 1`)
+    expect(n('\\(8 · 10\\)')).toBe('\\(8 \\times  10\\)')
+    expect(n('\\(a \\cdotp b\\)')).toBe('\\(a \\cdotp b\\)')
   })
 
   it('is idempotent', () => {
