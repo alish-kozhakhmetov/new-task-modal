@@ -4,6 +4,7 @@ import { useState } from 'react'
 import CloseIcon from '@/assets/icons/close.svg'
 import HeartIcon from '@/assets/icons/header/heart.svg'
 
+import { TaskListPage, type TaskListRow } from './task-list-page'
 import { TaskListSheet, type TaskListItem } from './task-list-sheet'
 import styles from './task-list.stories.module.scss'
 import { STATUS_LABEL, type TaskStatus } from './task-status'
@@ -39,6 +40,37 @@ const RESULTS: TaskStatus[] = [
 const ITEMS: TaskListItem[] = RESULTS.map((status, i) => ({
   num: i + 1,
   status,
+  isPenalty: i === 20,
+}))
+
+// Real conditions of lesson 2120 (grade 4, «Чтение и запись чисел до 100 000»).
+const PREVIEWS = [
+  'Запишите цифрами число шестьдесят тысяч.',
+  'Запишите цифрами число восемьдесят тысяч девять.',
+  'Запишите цифрами число девяносто тысяч пятнадцать.',
+  'Запишите цифрами число пятьдесят тысяч сто пятьдесят один.',
+  'Запишите цифрами число двадцать две тысячи сто семьдесят четыре.',
+  'Запишите цифрами число шестьдесят тысяч.',
+  'Запишите цифрами число девяносто тысяч семь.',
+  'Запишите цифрами число сорок тысяч восемьдесят четыре.',
+  'Запишите цифрами число сорок тысяч двести тридцать семь.',
+  'Запишите цифрами число сорок шесть тысяч восемьсот сорок шесть.',
+  'Укажите правильное чтение числа 30000.',
+  'Укажите правильное чтение числа 10009.',
+  'Укажите правильное чтение числа 30075.',
+  'Укажите правильное чтение числа 90797.',
+  'Укажите правильное чтение числа 23249.',
+  'Укажите правильное чтение числа 30000.',
+  'Укажите правильное чтение числа 70001.',
+  'Укажите правильное чтение числа 60026.',
+  'Укажите правильное чтение числа 90771.',
+  'Укажите правильное чтение числа 15427.',
+  'Укажите правильное чтение числа 30075.',
+]
+const ROWS: TaskListRow[] = RESULTS.map((status, i) => ({
+  num: i + 1,
+  status,
+  preview: PREVIEWS[i] ?? '',
   isPenalty: i === 20,
 }))
 
@@ -92,9 +124,9 @@ const Interactive = () => {
           current={current}
         />
         {open && (
-          <TaskListSheet
-            items={ITEMS}
-            onClose={() => setOpen(false)}
+          <TaskListPage
+            rows={ROWS}
+            onBack={() => setOpen(false)}
             onSelect={(n) => {
               setOpen(false)
               setViewing(n === current ? null : n)
@@ -165,7 +197,16 @@ export const Closed: Story = {
   ),
 }
 
-export const Open: Story = {
+export const ListPage: Story = {
+  render: () => (
+    <Phone>
+      <TaskListPage rows={ROWS} onBack={() => {}} onSelect={() => {}} />
+    </Phone>
+  ),
+}
+
+/** First draft (sheet) — rejected 05.10 in favour of a full page. */
+export const SheetRejected: Story = {
   render: () => (
     <Phone>
       <Header num={14} />

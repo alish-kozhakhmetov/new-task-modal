@@ -1,0 +1,160 @@
+// Task list page — draft (Alisher, 05.10). A full screen over the task:
+// the top bar like the task header, rows of 64 with the 48 number badge.
+
+.page {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-canvas);
+}
+
+.bar {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  gap: var(--space-8);
+  align-items: center;
+  padding: var(--space-8) var(--space-16);
+}
+
+.iconBtn {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  color: var(--text-primary);
+  cursor: pointer;
+  background: var(--bg-surface);
+  border: none;
+  border-radius: 999px;
+
+  &[aria-hidden] {
+    visibility: hidden;
+  }
+}
+
+.titles {
+  display: grid;
+  justify-items: center;
+}
+
+.title {
+  @include body-large-regular;
+
+  margin: 0;
+  font-weight: 600;
+}
+
+.sub {
+  @include body-small-regular;
+
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.list {
+  display: grid;
+  gap: var(--space-8);
+  padding: var(--space-8) var(--space-16) var(--space-24);
+  margin: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.row {
+  @include body-medium-regular;
+
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: var(--space-12);
+  align-items: center;
+  width: 100%;
+  min-height: 64px;
+  padding: var(--space-8) var(--space-12) var(--space-8) var(--space-8);
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-l);
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.num {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  font-variant-numeric: lining-nums tabular-nums;
+  border-radius: var(--radius-m);
+}
+
+.text {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.preview {
+  // Two lines: lesson tasks often share the same opening («Запишите цифрами
+  // число…»), the part that tells them apart comes after it.
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.state {
+  @include body-small-regular;
+
+  color: var(--text-secondary);
+}
+
+.correct .num {
+  color: var(--text-on-brand);
+  background: var(--status-fg-success);
+}
+
+.error .num {
+  color: var(--text-on-brand);
+  background: var(--status-fg-error);
+}
+
+.shown .num {
+  color: var(--text-secondary);
+  background: var(--bg-subtle);
+}
+
+.current {
+  border: 2px solid var(--border-focus);
+
+  .num {
+    font-weight: 600;
+    color: var(--text-brand);
+    background: var(--status-bg-info);
+  }
+
+  .state {
+    color: var(--text-brand);
+  }
+}
+
+.ahead {
+  color: var(--text-tertiary);
+  background: transparent;
+  border-color: var(--border-default);
+
+  .num {
+    background: var(--bg-surface);
+  }
+
+  .state {
+    color: var(--text-tertiary);
+  }
+}
