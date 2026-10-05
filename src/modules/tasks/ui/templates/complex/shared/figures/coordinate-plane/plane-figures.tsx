@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react'
 
+import { GRID_INK, INK, paint, STROKE } from '../figure-paint'
+
 import {
   fromPointToDot,
   getAxisX,
@@ -28,7 +30,7 @@ export const PlaneDot = ({ options, point }: DotProps) => {
   const { x, y } = fromPointToDot(options, point.x, point.y)
   const offsetX = 12 * (point.x >= 0 ? 1 : -1)
   const offsetY = 12 * (point.y >= 0 ? 1 : -1)
-  const fill = point.color || 'green'
+  const fill = paint(point.color || 'green', INK)
   const radius = point.radius === 0 ? 0 : (point.radius ?? 4)
   const letter = letterOf(point)
 
@@ -39,8 +41,8 @@ export const PlaneDot = ({ options, point }: DotProps) => {
         cy={y}
         r={radius}
         fill={fill}
-        stroke={point.borderColor || fill}
-        strokeWidth={point.borderColor ? 1 : 0}
+        stroke={point.borderColor ? paint(point.borderColor, INK) : fill}
+        strokeWidth={point.borderColor ? STROKE.grid : 0}
       />
       {point.showOnlyLetter && letter ? (
         <text
@@ -99,7 +101,14 @@ export const PlaneAxes = ({ options }: AxesProps) => {
         const x = getAxisX(options, i)
         return (
           <g key={`grid-${i}`}>
-            <line x1={x} y1={-mid} x2={x} y2={mid} stroke="lightgrey" />
+            <line
+              x1={x}
+              y1={-mid}
+              x2={x}
+              y2={mid}
+              stroke={GRID_INK}
+              strokeWidth={STROKE.grid}
+            />
           </g>
         )
       })
@@ -107,18 +116,33 @@ export const PlaneAxes = ({ options }: AxesProps) => {
 
   const axisContent = showAxis ? (
     <>
-      <line x1={0} y1={0} x2={length} y2={0} stroke="black" />
-      <path d={`M${arrowLength},-5 L0,0 L${arrowLength},5z`} fill="black" />
+      <line
+        x1={0}
+        y1={0}
+        x2={length}
+        y2={0}
+        stroke={INK}
+        strokeWidth={STROKE.data}
+      />
+      <path d={`M${arrowLength},-5 L0,0 L${arrowLength},5z`} fill={INK} />
       <path
         d={`M${length - arrowLength},-5 L${length},0 L${length - arrowLength},5z`}
-        fill="black"
+        fill={INK}
         transform={`rotate(180 ${length - arrowLength / 2} 0)`}
       />
       {ticks.map((i) => {
         if (i === 0) return null
         const x = getAxisX(options, i)
         return (
-          <line key={`tick-${i}`} x1={x} y1={-6} x2={x} y2={6} stroke="black" />
+          <line
+            key={`tick-${i}`}
+            x1={x}
+            y1={-6}
+            x2={x}
+            y2={6}
+            stroke={INK}
+            strokeWidth={STROKE.hair}
+          />
         )
       })}
     </>
@@ -177,7 +201,8 @@ export const PlaneAxes = ({ options }: AxesProps) => {
                   y1={-mid}
                   x2={x}
                   y2={mid}
-                  stroke="lightgrey"
+                  stroke={GRID_INK}
+                  strokeWidth={STROKE.grid}
                 />
               )
             })
@@ -241,7 +266,7 @@ export const PlaneFigure = ({
       if (!point1 || !point2) return null
       const d1 = fromPointToDot(options, point1.x, point1.y)
       const d2 = fromPointToDot(options, point2.x, point2.y)
-      const color = (figure.lineColor as string) || 'black'
+      const color = paint(figure.lineColor, INK)
       const showLetters = Boolean(figure.showDotLetters)
       const radius =
         typeof figure.dotRadius === 'number' ? figure.dotRadius : undefined
@@ -288,7 +313,7 @@ export const PlaneFigure = ({
           y1={d1.y}
           x2={d2.x}
           y2={d2.y}
-          stroke="green"
+          stroke={paint('green', INK)}
           strokeDasharray={figure.dashed ? '5' : undefined}
         />
       )
@@ -308,8 +333,9 @@ export const PlaneFigure = ({
         <g>
           <polygon
             points={poly}
-            stroke={(figure.borderColor as string) || 'black'}
-            fill={(figure.fill as string) || 'none'}
+            stroke={paint(figure.borderColor, INK)}
+            strokeWidth={STROKE.data}
+            fill={paint(figure.fill, 'none')}
           />
           {figure.showPointsLetter
             ? points.map((p, i) => (
@@ -332,8 +358,8 @@ export const PlaneFigure = ({
           cx={d.x}
           cy={d.y}
           r={figure.radius * options.stepSize}
-          stroke={(figure.strokeColor as string) || 'black'}
-          fill={(figure.innerColor as string) || 'transparent'}
+          stroke={paint(figure.strokeColor, INK)}
+          fill={paint(figure.innerColor, 'transparent')}
           strokeDasharray={figure.dashed ? '5' : undefined}
         />
       )
@@ -344,7 +370,7 @@ export const PlaneFigure = ({
       if (!point1 || !point2) return null
       const d1 = fromPointToDot(options, point1.x, point1.y)
       const d2 = fromPointToDot(options, point2.x, point2.y)
-      const color = (figure.color as string) || 'black'
+      const color = paint(figure.color, INK)
       const center = { x: (d1.x + d2.x) / 2, y: (d1.y + d2.y) / 2 }
       const degree =
         (Math.atan((d2.y - center.y) / (d2.x - center.x || 1)) * 180) / Math.PI
@@ -410,7 +436,7 @@ export const PlaneFigure = ({
       const endDot = fromPointToDot(options, endPoint.x, endPoint.y)
       const rx = figure.rx * options.stepSize
       const ry = figure.ry * options.stepSize
-      const fill = (figure.fill as string) || 'none'
+      const fill = paint(figure.fill, 'none')
       const start =
         fill === 'transparent'
           ? `M${mDot.x} ${mDot.y}`
@@ -420,8 +446,9 @@ export const PlaneFigure = ({
         <g>
           <path
             d={d}
-            stroke={(figure.borderColor as string) || 'black'}
-            strokeWidth={(figure.strokeWidth as number) || 1}
+            stroke={paint(figure.borderColor, INK)}
+            // System weight, not the payload's 1 / 2 / 2.5 (rule 68).
+            strokeWidth={STROKE.data}
             fill={fill}
             strokeDasharray={figure.dashed ? '5' : undefined}
             transform={

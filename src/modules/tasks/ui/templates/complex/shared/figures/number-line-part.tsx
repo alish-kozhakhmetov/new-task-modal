@@ -1,5 +1,6 @@
 import type { ComplexNumberLinePart } from '../../lib/types.task'
 import styles from '../complex.module.scss'
+import { INK, paint } from './figure-paint'
 
 interface Props {
   part: ComplexNumberLinePart
@@ -38,23 +39,23 @@ export const NumberLinePart = ({ part }: Props) => {
       height={70}
       viewBox={`0 0 ${viewW} 70`}
     >
-      <path d={`M0,${yPos} L${length},${yPos}`} stroke="black" fill="none" />
+      <path d={`M0,${yPos} L${length},${yPos}`} stroke={INK} fill="none" />
       <path
         d={`M${length - 15},${yPos + 4} L${length},${yPos} L${length - 15},${yPos - 4}z`}
-        fill="black"
+        fill={INK}
       />
 
       {ticks.map((x) => (
         <path
           key={x}
           d={`M${x},${yPos - 6} L${x},${yPos + 6}`}
-          stroke="black"
+          stroke={INK}
           fill="none"
         />
       ))}
 
       {/* origin */}
-      <circle cx={xAt(0)} cy={yPos} r={dotRadius} fill="green" />
+      <circle cx={xAt(0)} cy={yPos} r={dotRadius} fill={paint('green', INK)} />
       <text
         x={xAt(0)}
         y={yPos - 10}
@@ -70,7 +71,7 @@ export const NumberLinePart = ({ part }: Props) => {
 
       {(part.dots ?? []).map((dot, index) => (
         <g key={`dot-${index}`}>
-          <circle cx={xAt(dot.position)} cy={yPos} r={dotRadius} fill="black" />
+          <circle cx={xAt(dot.position)} cy={yPos} r={dotRadius} fill={INK} />
           {dot.letter ? (
             <text
               x={xAt(dot.position)}
