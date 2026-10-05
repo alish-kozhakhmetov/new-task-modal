@@ -124,10 +124,7 @@ const map = {
     '14_9',
     '14_10',
   ],
-  // 2_8, 2_9, 2_10 removed (05.10): the backend export of 02.08 gives them a
-  // `complex` description, and the table template renders only the title for
-  // it — no condition, no fields. Back to the old screen until verified live.
-  [TemplateTypes.Table.Mixed]: [],
+  [TemplateTypes.Table.Mixed]: ['2_10', '2_8', '2_9'],
   [TemplateTypes.Table.MultiRow]: ['9_9'],
   [TemplateTypes.Complex.After]: [
     '6_1',
