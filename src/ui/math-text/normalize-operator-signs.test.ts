@@ -74,6 +74,22 @@ describe('normalizeOperatorSigns', () => {
     expect(n('I - класс')).toBe('I - класс')
   })
 
+  it('turns a lone slash between fields into ÷, keeps fractions and units', () => {
+    expect(n('/')).toBe('÷')
+    expect(n(' / ')).toBe(' ÷ ')
+    expect(n('1/2')).toBe('1/2')
+    expect(n('80 км/ч')).toBe('80 км/ч')
+  })
+
+  it('writes tenge as ₸ next to a number, keeps the word', () => {
+    expect(n('500 тг')).toBe('500 ₸')
+    expect(n('500тг')).toBe('500₸')
+    expect(n('тг')).toBe('₸')
+    expect(n('цена 20 тг.')).toBe('цена 20 ₸.')
+    expect(n('у Асана 300 тенге')).toBe('у Асана 300 тенге')
+    expect(n('тгх')).toBe('тгх')
+  })
+
   it('does not touch math islands', () => {
     expect(n('\\(3 - 2 \\cdot 4\\) - 1')).toBe(`\\(3 - 2 \\cdot 4\\) ${M} 1`)
   })

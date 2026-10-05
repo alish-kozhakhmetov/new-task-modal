@@ -14,6 +14,10 @@ const MATH_JAX_CONFIG: MathJax3Config = {
   // and baseline-shifted vs plain text next to it (e.g. answer-cell
   // solution rows mixing plain-text and MathFormula-rendered numbers).
   chtml: { matchFontHeight: true },
+  // Multiplication is `×` everywhere, MathJax included (Alisher, 05.10).
+  // Generators write `\\cdot`; outside MathJax normalizeOperatorSigns already
+  // turns `·` into `×`, so the two halves of one condition used to disagree.
+  tex: { macros: { cdot: '\\times' } },
   options: {
     renderActions: {
       addMenu: [], // disables MathJax context menu

@@ -25,6 +25,10 @@
  *   «Нижневартовска – 254500 человек» keeps its dash;
  * - `·`, `⋅`, `*` between numbers and brackets, alone in a label, or at the
  *   end of a label right before a field («изд./ч *») become `×`;
+ * - a lone `/` between fields (a label of its own) becomes `÷`; a slash inside
+ *   text («1/2», «км/ч») is a fraction or a unit and stays;
+ * - `тг` next to a number or alone becomes `₸` (Halvar draws its own glyph);
+ *   the word «тенге»/«теңге» in prose stays a word;
  * - anything without spaces around it («4-й», «2022-жылы») is left alone.
  */
 
@@ -32,6 +36,7 @@ const MATH_ISLAND_RE = /(\\\([\s\S]*?\\\)|\\\[[\s\S]*?\\\]|\$\$[\s\S]*?\$\$)/
 
 const MINUS = '−'
 const TIMES = '×'
+const DIVIDE = '÷'
 const DASH = '—'
 
 /** Left operand: a digit, a closing bracket or a single Latin variable. */
@@ -159,6 +164,7 @@ const TIMES_BETWEEN = new RegExp(
 )
 const LEADING_MINUS = new RegExp(String.raw`^(\s*)[-–](\s+)(?=[\d(])`, 'u')
 const TRAILING_MINUS = new RegExp(String.raw`([\d)])(\s+)[-–](\s*)$`, 'u')
+const TENGE = /(^|[\s\d(])тг(?=$|[\s.,;:)])/gu
 const EDGE_TIMES = new RegExp(String.raw`(^\s*|\s)[·⋅*](\s*$|\s+)`, 'gu')
 
 const normalizeSegment = (text: string): string => {
@@ -167,8 +173,10 @@ const normalizeSegment = (text: string): string => {
   if (trimmed === '·' || trimmed === '⋅' || trimmed === '*') {
     return text.replace(trimmed, TIMES)
   }
+  if (trimmed === '/') return text.replace(trimmed, DIVIDE)
 
   return text
+    .replace(TENGE, '$1₸')
     .replace(DASH_BETWEEN, `$1$2${MINUS}$3`)
     .replace(HYPHEN_AFTER_UNIT, `$1$2${MINUS}$3`)
     .replace(HYPHEN_AS_PROSE_DASH, `$1 ${DASH} `)
