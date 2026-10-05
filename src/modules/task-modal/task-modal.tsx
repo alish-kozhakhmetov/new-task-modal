@@ -1,4 +1,3 @@
-
 import { Canvas } from '../canvas/canvas'
 import { Chat } from '../chat/chat'
 
