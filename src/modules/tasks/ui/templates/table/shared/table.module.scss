@@ -71,6 +71,12 @@
   padding-inline: 4px;
 }
 
+// A borderless equation row (table.plain, 4_2_10): the text cell's own 8px
+// is the gap to the field, as everywhere else (rule 23).
+.equationStretch .inputCell {
+  padding-inline: 0;
+}
+
 .table.tableRemovePadding {
   border-spacing: 0 8px;
   border-collapse: separate;

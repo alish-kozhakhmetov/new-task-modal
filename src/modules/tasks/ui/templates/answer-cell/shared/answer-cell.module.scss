@@ -51,7 +51,9 @@
 .segment {
   display: inline-flex;
   flex-shrink: 0;
-  gap: 4px;
+
+  // 8 between a sign and its field, the same as between segments (rule 23).
+  gap: var(--space-8);
   align-items: center;
   white-space: nowrap;
 }
@@ -84,7 +86,6 @@
   flex: 1 1 0%;
   width: 0;
   min-width: 80px;
-  margin-inline: 4px;
 }
 
 .prefix,

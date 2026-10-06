@@ -28,7 +28,9 @@
 
 .container {
   display: flex;
-  gap: 16px;
+
+  // Expression and field 8 apart, as every label and field (rule 23).
+  gap: var(--space-8);
   align-items: center;
   justify-content: start;
 

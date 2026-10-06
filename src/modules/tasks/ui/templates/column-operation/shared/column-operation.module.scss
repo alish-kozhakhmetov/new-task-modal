@@ -134,10 +134,6 @@
   white-space: nowrap;
 }
 
-.fieldLabel {
-  margin-inline-end: 4px;
-}
-
 .stack {
   display: flex;
   flex-direction: column;
@@ -162,10 +158,6 @@
 
   > .inputRow {
     display: contents;
-  }
-
-  .fieldLabel {
-    margin-inline-end: 0;
   }
 }
 
