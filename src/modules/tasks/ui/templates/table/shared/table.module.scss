@@ -185,6 +185,24 @@
   }
 }
 
+// Rule 16: «▢ — label» rows share one field column — it takes what the widest
+// label leaves, so every field in the group is one width.
+.tableFlexListInput[data-field-column] tbody {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  gap: 8px var(--space-8);
+  align-items: center;
+
+  tr {
+    display: contents;
+  }
+
+  // the label follows its field, as in a flex row
+  td:last-child {
+    text-align: start;
+  }
+}
+
 .cellHeader {
   color: var(--text-secondary);
 
