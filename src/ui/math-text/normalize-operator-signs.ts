@@ -31,6 +31,9 @@
  *   text («1/2», «км/ч») is a fraction or a unit and stays;
  * - `тг` next to a number or alone becomes `₸` (Halvar draws its own glyph);
  *   the word «тенге»/«теңге» in prose stays a word;
+ * - a label that opens with `- ` before a word is the dash after a field:
+ *   «▢ - сотни тысяч» → «▢ — сотни тысяч» (4_4_55). Only at the very start
+ *   of the text; a minus before a number there stays a minus;
  * - anything without spaces around it («4-й», «2022-жылы») is left alone.
  */
 
@@ -167,6 +170,9 @@ const TIMES_BETWEEN = new RegExp(
 const LEADING_MINUS = new RegExp(String.raw`^(\s*)[-–](\s+)(?=[\d(])`, 'u')
 const TRAILING_MINUS = new RegExp(String.raw`([\d)])(\s+)[-–](\s*)$`, 'u')
 const TENGE = /(^|[\s\d(])тг(?=$|[\s.,;:)])/gu
+// Measured on the grade-4 whitelist (snapshot 08.04): 6 labels, all in
+// 4_4_55, the same in every language; nothing else starts this way.
+const LEADING_DASH_BEFORE_WORD = /^(\s*)[-–](\s+)(?=\p{L})/u
 const EDGE_TIMES = new RegExp(String.raw`(^\s*|\s)[·⋅*](\s*$|\s+)`, 'gu')
 
 const normalizeSegment = (text: string): string => {
@@ -197,6 +203,7 @@ export const timesInMath = (math: string): string =>
 
 export const normalizeOperatorSigns = (text: string): string =>
   text
+    .replace(LEADING_DASH_BEFORE_WORD, `$1${DASH}$2`)
     .split(MATH_ISLAND_RE)
     .map((part, index) =>
       // Inside an island only `\\cdot` changes: multiplication is `×` there
