@@ -6,10 +6,11 @@
   gap: var(--space-8);
   align-items: center;
 
-  // List Item, Size M: at least 58 tall, content centred (set 18521:40747).
+  // List Item, Size M (set 18521:40747): at least 58 tall, content centred,
+  // text/primary in Default — the grey was not a decision, only a leftover.
   min-height: 58px;
   padding: var(--space-12);
-  color: var(--text-secondary);
+  color: var(--text-primary);
   cursor: pointer;
   background-color: var(--bg-surface);
 
