@@ -151,6 +151,24 @@
   align-items: center;
 }
 
+// Named rows one under another («Значение частного: ▢ / Значение остатка: ▢»)
+// share one label column (rule 20), so the fields start on one vertical line.
+// The field track keeps the flex row's 120–200 range.
+.stackGrid {
+  display: grid;
+  grid-template-columns: max-content minmax(120px, 200px) 1fr;
+  gap: 12px 8px;
+  align-items: center;
+
+  > .inputRow {
+    display: contents;
+  }
+
+  .fieldLabel {
+    margin-inline-end: 0;
+  }
+}
+
 // Answer block after the condition (rule 7). Last in the file: a container
 // child selector outranks the plain class rules above.
 .container > :last-child {

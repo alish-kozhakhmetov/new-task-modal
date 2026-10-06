@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 import { getInlineInputEntries } from '@/modules/tasks/lib/get-inline-input-entries'
 import { getMultipleInputHandlers } from '@/modules/tasks/lib/get-multiple-input-handlers'
 import { splitMultiAnswer } from '@/modules/tasks/lib/multi-answer'
@@ -7,6 +9,7 @@ import { TaskTitle } from '@/modules/tasks/ui/common/task-title/task-title'
 import type { Task } from '@/types/api/task'
 import { MathInput } from '@/ui/math-input/math-input'
 
+import { hasLabelColumn } from '../../text/shared/label-column'
 import { TextAdornment } from '../../text/shared/text-adornment'
 import { ColumnOperationDescription } from '../shared/column-operation-description'
 import styles from '../shared/column-operation.module.scss'
@@ -62,6 +65,12 @@ export const createMultiColumnOperationTemplate = ({
       (value) => deps.global.translateTasks(value),
     )
 
+    const labelled = hasLabelColumn(
+      layout,
+      withBefore,
+      inputEntries.map(({ before }) => before),
+    )
+
     return (
       <div className={styles.container} data-template-id={id}>
         <TaskTitle title={task.title} deps={deps} />
@@ -70,16 +79,23 @@ export const createMultiColumnOperationTemplate = ({
         <div
           data-testid="text-inputs"
           data-layout={layout}
-          className={layout === 'inline' ? styles.inline : styles.stack}
+          className={
+            layout === 'inline'
+              ? styles.inline
+              : clsx(styles.stack, labelled && styles.stackGrid)
+          }
         >
           {inputEntries.map(({ key, before, after }, index) => (
             <div key={key} className={styles.inputRow}>
-              {withBefore && before && (
+              {withBefore && before ? (
                 <TextAdornment
                   data-testid="text-prefix"
                   className={styles.fieldLabel}
                   value={before}
                 />
+              ) : (
+                // keeps the label column in the grid for a row without one
+                labelled && <span aria-hidden />
               )}
               <MathInput
                 id={key}
@@ -88,12 +104,14 @@ export const createMultiColumnOperationTemplate = ({
                 onMathFieldChanged={handleChange}
                 className={styles.input}
               />
-              {withAfter && after && (
+              {withAfter && after ? (
                 <TextAdornment
                   data-testid="text-suffix"
                   className={styles.suffix}
                   value={after}
                 />
+              ) : (
+                labelled && <span aria-hidden />
               )}
             </div>
           ))}
