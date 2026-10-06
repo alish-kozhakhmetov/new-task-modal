@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react'
 import type { Task } from '@/types/api/task'
 
 import { getParentWithAttr } from '../../helpers'
+import { getRevealScrollTop } from '../../lib/reveal-in-container'
 import { useStore } from '../../store/task-modal-store'
 
 import type { CalcState } from './use-calc-setup'
@@ -123,6 +124,47 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
       lastFocusedInput.current = null
     }
   }, [activeTask.id, calcState.isSetupFinished, isTaskLoaded])
+
+  // Rule 98: a tap scrolls the field to the centre while the calculator is
+  // still closed; then the calculator opens, the task area shrinks and the
+  // field ends up below its edge. Bring the field back once the area has
+  // shrunk, unless it is still fully visible.
+  useEffect(() => {
+    const taskContainer = refs.taskContainer.current
+    if (!taskContainer || typeof ResizeObserver === 'undefined') return
+
+    let lastHeight = taskContainer.clientHeight
+    const observer = new ResizeObserver(() => {
+      const height = taskContainer.clientHeight
+      const shrank = height < lastHeight
+      lastHeight = height
+
+      const input = lastFocusedInput.current
+      if (!shrank || !input || !taskContainer.contains(input)) return
+
+      const top = getRevealScrollTop(
+        taskContainer.getBoundingClientRect(),
+        input.getBoundingClientRect(),
+        taskContainer.scrollTop,
+      )
+      if (top === null) return
+
+      taskContainer.scrollTo({
+        top,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          ? 'auto'
+          : 'smooth',
+      })
+    })
+    observer.observe(taskContainer)
+
+    return () => observer.disconnect()
+  }, [
+    activeTask.id,
+    calcState.isSetupFinished,
+    isTaskLoaded,
+    refs.taskContainer,
+  ])
 
   return lastFocusedInput
 }
