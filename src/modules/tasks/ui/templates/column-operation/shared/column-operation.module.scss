@@ -137,7 +137,9 @@
 .stack {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+
+  // Rows of fields 8 apart (Trainer/Answer slot, Layout=Stack; rule 23).
+  gap: var(--space-8);
 }
 
 .inline {
@@ -153,7 +155,7 @@
 .stackGrid {
   display: grid;
   grid-template-columns: max-content minmax(120px, 200px) 1fr;
-  gap: 12px 8px;
+  gap: var(--space-8);
   align-items: center;
 
   > .inputRow {

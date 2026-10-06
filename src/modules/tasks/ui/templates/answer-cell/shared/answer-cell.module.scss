@@ -32,7 +32,9 @@
   // between two fields hid under the first one (4_12_19_8), a field covered
   // the next word (4_1_66) — seen on 2.2.2, 05.10.
   flex-wrap: wrap;
-  gap: 4px 8px;
+
+  // A wrapped row sits 8 below, as rows of fields do (rule 23).
+  gap: var(--space-8);
   align-items: center;
   justify-content: flex-start;
   min-width: 0;

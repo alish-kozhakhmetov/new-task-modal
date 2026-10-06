@@ -114,7 +114,9 @@
 .stack {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+
+  // Rows of fields 8 apart (Trainer/Answer slot, Layout=Stack; rule 23).
+  gap: var(--space-8);
 }
 
 .inline {
