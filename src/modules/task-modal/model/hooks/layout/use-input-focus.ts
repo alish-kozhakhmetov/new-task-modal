@@ -99,6 +99,18 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
       }
     }
 
+    // Rule 96: Tab moves focus without a click — remember that field too, or
+    // the calculator keeps typing into the one clicked before.
+    const onFocusIn = (event: FocusEvent) => {
+      const target = event.target
+      if (!(target instanceof HTMLElement)) return
+
+      const input = target.hasAttribute(DATA_INPUT)
+        ? target
+        : getParentWithAttr(target, DATA_INPUT)
+      if (input && input !== lastFocusedInput.current) setFocusedInput(input)
+    }
+
     setInitialFocus()
 
     // Lazy templates / MathJax can mount [data-input] after isSetupFinished.
@@ -114,9 +126,11 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
     })
 
     root.addEventListener('click', handler)
+    root.addEventListener('focusin', onFocusIn)
 
     return () => {
       observer.disconnect()
+      root.removeEventListener('focusin', onFocusIn)
       cancelAnimationFrame(raf1)
       cancelAnimationFrame(raf2)
       root.removeEventListener('click', handler)
