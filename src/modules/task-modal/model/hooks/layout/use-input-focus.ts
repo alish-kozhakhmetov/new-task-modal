@@ -31,13 +31,13 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
       return
     }
 
-    const setFocusedInput = (input: HTMLElement) => {
+    const setFocusedInput = (input: HTMLElement, { scroll = true } = {}) => {
       lastFocusedInput.current?.classList.remove(FOCUSED)
       lastFocusedInput.current = input
 
       input.classList.add(FOCUSED)
 
-      if (!calcState.isOpen) {
+      if (scroll && !calcState.isOpen) {
         input.scrollIntoView({
           block: 'center',
           // CSS can't override an explicit 'smooth' — honour rule 99 here.
@@ -55,7 +55,9 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
       const input = refs.taskContainer.current?.querySelector(`[${DATA_INPUT}]`)
 
       if (input instanceof HTMLElement) {
-        setFocusedInput(input)
+        // The task opens from its top: scrolling to the field belongs to the
+        // pupil's own tap or Tab, not to the initial focus (rule 98).
+        setFocusedInput(input, { scroll: false })
 
         // Programmatic .focus() bubbles a focusin to the overflow handler's
         // `data-control` listener, which reopens the calculator — undoing a
