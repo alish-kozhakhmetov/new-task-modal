@@ -13,7 +13,9 @@
   --border-color: var(--border-default);
 
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-m);
+
+  // List Item, Size M (Qalan App › Trainer, set 18521:40747): r16, 1px.
+  border-radius: var(--radius-l);
   transition: all 0.2s ease;
 
   &:hover:not(.disabled, .readOnly) {
@@ -22,11 +24,13 @@
     --border-color: var(--border-strong);
   }
 
+  // Active in the layout: a 2px inside stroke and a 4px halo; the inset
+  // second pixel keeps the box and its content in place (as the radio).
   &.checked {
     color: var(--text-primary);
     box-shadow:
-      0 0 0 5px #3176f633,
-      0 0 0 1px var(--border-focus);
+      inset 0 0 0 1px var(--border-focus),
+      0 0 0 4px #3176f633;
 
     --border-color: var(--border-focus);
   }
