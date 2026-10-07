@@ -158,7 +158,7 @@ const ENTRIES: Entry[] = [
       act: tapPoint,
     }),
   ),
-  ...['1_5_2_16', '3_3_7_17'].map(
+  ...['1_5_2_16', '6_6_19_1'].map(
     (key): Entry => ({
       id: `segment-${key}`,
       grade: Number(key.split('_')[0]),
