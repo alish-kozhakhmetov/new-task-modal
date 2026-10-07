@@ -100,6 +100,18 @@
   flex: 0 1 auto;
 }
 
+// Rule 24: a row that does not fit (useRowWrap) opens its segments into the
+// row, so the expression wraps on its own line and the field moves down with
+// its unit — «… 160 недель =» / «▢ дней» — instead of the field running past
+// the edge and the unit dropping alone.
+.contentRow[data-wrap] {
+  white-space: normal;
+
+  > .segment {
+    display: contents;
+  }
+}
+
 // Answer block after the condition (rule 7). Last in the file: a container
 // child selector outranks the plain class rules above.
 .container > .contentRow {

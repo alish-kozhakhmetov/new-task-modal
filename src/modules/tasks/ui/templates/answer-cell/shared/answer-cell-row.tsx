@@ -19,6 +19,7 @@ import type {
   MultiAnswerCellAnswerInput,
   SimpleAnswerCellAnswerInput,
 } from '../lib/types.task'
+import { useRowWrap } from '../lib/use-row-wrap'
 
 import styles from './answer-cell.module.scss'
 
@@ -133,6 +134,7 @@ export const AnswerCellRow = ({
 
   const margin = desc.answerCellMargin ?? undefined
   const isColumn = Boolean(desc.isColumn)
+  const rowRef = useRowWrap<HTMLDivElement>(!isColumn)
 
   const adornmentsForCell = (index: number): CellAdornments => {
     const source = multi
@@ -155,6 +157,7 @@ export const AnswerCellRow = ({
 
   return (
     <div
+      ref={rowRef}
       className={clsx(
         styles.contentRow,
         mode === 'solution' &&
