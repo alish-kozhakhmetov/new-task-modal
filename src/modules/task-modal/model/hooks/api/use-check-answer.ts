@@ -141,6 +141,7 @@ export const useCheckAnswer = ({ props, refs }: Args) => {
         description: activeTask.description,
         answer,
         calculateByImageType: TaskDescriptionType.CalculateByImage,
+        coordinatePlaneType: TaskDescriptionType.CoordinatePlane,
       })
 
       const response = await api.checkAnswer(

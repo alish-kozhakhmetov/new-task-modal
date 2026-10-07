@@ -11,11 +11,15 @@ const description = {
   selectableItems: [item('ruler'), item('coin200')],
 }
 
-const wire = (desc: { type?: unknown }, answer: unknown) =>
+const wire = (
+  desc: { type?: unknown; figure?: { drawingFigure?: number } },
+  answer: unknown,
+) =>
   toWireAnswer({
     description: desc,
     answer,
     calculateByImageType: TaskDescriptionType.CalculateByImage,
+    coordinatePlaneType: TaskDescriptionType.CoordinatePlane,
   })
 
 describe('toWireAnswer', () => {
@@ -67,5 +71,37 @@ describe('toWireAnswer', () => {
         calculateByImageType: TaskDescriptionType.CalculateByImage,
       }),
     ).toBe('5')
+  })
+
+  // issue #23, Abduali 07.10
+  it('coordinatePlane, одна точка: строка «(x;y)» как есть', () => {
+    const plane = { type: 'coordinatePlane', figure: { drawingFigure: 10 } }
+    expect(wire(plane, '(2;1)')).toBe('(2;1)')
+  })
+
+  it('coordinatePlane, точки списком: { points: [{ x, y }] }', () => {
+    const plane = { type: 'coordinatePlane', figure: { drawingFigure: 15 } }
+    expect(wire(plane, '(-1;5);;(3;-3)')).toEqual({
+      points: [
+        { x: -1, y: 5 },
+        { x: 3, y: -3 },
+      ],
+    })
+  })
+
+  it('coordinatePlane, отрезок: { figures: [{ type: 30, points, dashed }] }', () => {
+    const plane = { type: 'coordinatePlane', figure: { drawingFigure: 30 } }
+    expect(wire(plane, '(-1;0);;(1;0)')).toEqual({
+      figures: [
+        {
+          type: 30,
+          points: [
+            { x: -1, y: 0 },
+            { x: 1, y: 0 },
+          ],
+          dashed: false,
+        },
+      ],
+    })
   })
 })

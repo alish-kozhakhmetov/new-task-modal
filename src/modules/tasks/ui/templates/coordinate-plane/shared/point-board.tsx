@@ -21,6 +21,8 @@ interface Props {
   figures: Record<string, unknown>[]
   points: PlanePoint[]
   selected: Node[]
+  /** Draw the pupil's two picks as a segment (`drawingFigure` 30). */
+  segment?: boolean
   translate: (value: unknown) => string
   /** No handler — the solution view. */
   onPick?: (node: Node) => void
@@ -37,6 +39,7 @@ export const PointBoard = ({
   figures,
   points,
   selected,
+  segment = false,
   translate,
   onPick,
   label,
@@ -86,6 +89,17 @@ export const PointBoard = ({
           point={point}
         />
       ))}
+      {segment && selected.length === 2 ? (
+        <line
+          className={styles.pickedSegment}
+          data-testid="plane-segment"
+          {...(() => {
+            const a = fromPointToDot(options, selected[0].x, selected[0].y)
+            const b = fromPointToDot(options, selected[1].x, selected[1].y)
+            return { x1: a.x, y1: a.y, x2: b.x, y2: b.y }
+          })()}
+        />
+      ) : null}
       {selected.map((node) => {
         const { x, y } = fromPointToDot(options, node.x, node.y)
         return (

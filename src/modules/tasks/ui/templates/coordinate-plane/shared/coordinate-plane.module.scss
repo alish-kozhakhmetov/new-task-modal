@@ -30,6 +30,13 @@
   stroke-width: 2;
 }
 
+/* The pupil's segment: the interactive layer, brand, data stroke 2 (figures). */
+.pickedSegment {
+  stroke: var(--bg-brand);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
 .pickedLabel {
   font-family: var(--font-halvar);
   font-size: 14px;

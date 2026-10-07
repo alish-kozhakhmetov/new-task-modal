@@ -1,0 +1,544 @@
+{
+  "_note": "Real payloads from qalan-assets contracts/fixtures/variants.json (descriptionType coordinatePlane, drawingFigure 30); `_expected` — the backend reference answer (LineSegmentTaskAnswer).",
+  "tasks": [
+    {
+      "id": "1_5_2_16",
+      "type": "Elixir.Task_1_5_2_16",
+      "title": null,
+      "description": {
+        "type": "coordinatePlane",
+        "figure": {
+          "yAxisLabel": "y",
+          "xAxisLabel": "x",
+          "type": 110,
+          "tickStepYMultiply": 1,
+          "tickStepXMultiply": 1,
+          "tickStep": 1,
+          "stepSize": 30,
+          "startNumber": false,
+          "showCells": true,
+          "showAxis": false,
+          "reduceHeight": 1,
+          "points": [],
+          "notClickableDots": true,
+          "minPosition": -5,
+          "maxPosition": 5,
+          "limitedPoint": 0,
+          "isLine": false,
+          "isFullFilled": false,
+          "isFillingLimitedByAxis": false,
+          "intervals": [],
+          "fillingFunctions": [],
+          "figures": [
+            {
+              "type": 10,
+              "showOnlyLetter": false,
+              "showDashes": false,
+              "showCoordinate": false,
+              "radius": 5,
+              "point": {
+                "y": 0,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              "color": "green",
+              "borderColor": null
+            },
+            {
+              "type": 10,
+              "showOnlyLetter": false,
+              "showDashes": false,
+              "showCoordinate": false,
+              "radius": 5,
+              "point": {
+                "y": 0,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              "color": "green",
+              "borderColor": null
+            }
+          ],
+          "drawingFigure": 30,
+          "displayedNumbers": [],
+          "disabledPoints": [],
+          "canFill": false,
+          "canDrawMultipleFigures": false,
+          "allowedFigures": []
+        },
+        "content": {
+          "with_audio_player": false,
+          "uzb": "Berilgan ikkita nuqtani birlashtirib, uzunligi 1 cm-ga teng kesma chizing.",
+          "rus": "Соедините данные две точки и проведите отрезок длиной 1 см.",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "Берилген эки чекитти туташтырыңыз жана узундугу 1 см болгон кесиндини жүргүзүңүз.",
+          "kaz": "Берілген екі нүктені қосып, ұзындығы 1 см болатын кесінді сызыңыз.",
+          "eng": "",
+          "aze": "Verilmiş iki nöqtəni birləşdirin və 1 sm uzunluğunda bir parça çəkin.",
+          "arsa": "",
+          "arjd": "",
+          "areg": "",
+          "_struct": "Helpers.Translation"
+        }
+      },
+      "fields": {
+        "number": 1
+      },
+      "answerInput": {
+        "up": "",
+        "type": 10,
+        "text": " ",
+        "svg": "",
+        "down": "",
+        "before": "",
+        "after": "",
+        "_struct": "TaskAnswerInput"
+      },
+      "solution": null,
+      "_source": "contracts/fixtures/variants.json",
+      "_expected": {
+        "point2": {
+          "y": 0,
+          "x": 1,
+          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+          "letter": "",
+          "_struct": "CustomeTypes.CoordinatePlane.Point"
+        },
+        "point1": {
+          "y": 0,
+          "x": -1,
+          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+          "letter": "",
+          "_struct": "CustomeTypes.CoordinatePlane.Point"
+        },
+        "_struct": "TaskAnswers.CoordinatePlane.LineSegmentTaskAnswer"
+      }
+    },
+    {
+      "id": "3_3_7_17",
+      "type": "Elixir.Task_3_3_7_17",
+      "title": null,
+      "description": {
+        "type": "coordinatePlane",
+        "figure": {
+          "yAxisLabel": "y",
+          "xAxisLabel": "x",
+          "type": 110,
+          "tickStepYMultiply": 1,
+          "tickStepXMultiply": 1,
+          "tickStep": 1,
+          "stepSize": 30,
+          "startNumber": false,
+          "showCells": true,
+          "showAxis": false,
+          "reduceHeight": 1,
+          "points": [],
+          "notClickableDots": true,
+          "minPosition": -4,
+          "maxPosition": 4,
+          "limitedPoint": 0,
+          "isLine": false,
+          "isFullFilled": false,
+          "isFillingLimitedByAxis": false,
+          "intervals": [],
+          "fillingFunctions": [],
+          "figures": [
+            {
+              "type": 30,
+              "showDotLetters": false,
+              "point2": {
+                "y": -5,
+                "x": 0,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              "point1": {
+                "y": 5,
+                "x": 0,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              "lineColor": "black",
+              "dotRadius": 0,
+              "degree": 0,
+              "dashed": false
+            },
+            {
+              "type": 30,
+              "showDotLetters": false,
+              "point2": {
+                "y": 2,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              "point1": {
+                "y": -2,
+                "x": 2,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              "lineColor": "black",
+              "dotRadius": 4,
+              "degree": 0,
+              "dashed": false
+            },
+            {
+              "y": -4.5,
+              "x": 0.5,
+              "type": 100,
+              "textAnchor": null,
+              "text": "a",
+              "isLatex": false,
+              "fontWeight": null,
+              "fontSize": 18,
+              "dominantBaseline": null,
+              "degree": 0
+            }
+          ],
+          "drawingFigure": 30,
+          "displayedNumbers": [],
+          "disabledPoints": [],
+          "canFill": false,
+          "canDrawMultipleFigures": false,
+          "allowedFigures": []
+        },
+        "content": {
+          "with_audio_player": false,
+          "uzb": "",
+          "rus": "",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "",
+          "kaz": "Берілген кесіндіге а түзуі бойынша симметриялы болатын кесіндіні салыңыз. (Кесіндіні салу үшін шеткі екі нүктесін таңдаңыз)\r\n",
+          "eng": "",
+          "aze": "",
+          "arsa": "",
+          "arjd": "",
+          "areg": "",
+          "_struct": "Helpers.Translation"
+        }
+      },
+      "fields": {
+        "var": 4
+      },
+      "answerInput": {
+        "up": "",
+        "type": 10,
+        "text": " ",
+        "svg": "",
+        "down": "",
+        "before": "",
+        "after": "",
+        "_struct": "TaskAnswerInput"
+      },
+      "solution": null,
+      "_source": "contracts/fixtures/variants.json",
+      "_expected": {
+        "point2": {
+          "y": 2,
+          "x": -3,
+          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+          "letter": "",
+          "_struct": "CustomeTypes.CoordinatePlane.Point"
+        },
+        "point1": {
+          "y": -2,
+          "x": -2,
+          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+          "letter": "",
+          "_struct": "CustomeTypes.CoordinatePlane.Point"
+        },
+        "_struct": "TaskAnswers.CoordinatePlane.LineSegmentTaskAnswer"
+      }
+    },
+    {
+      "id": "6_6_19_1",
+      "type": "Elixir.Task_6_6_19_1",
+      "title": null,
+      "description": {
+        "type": "coordinatePlane",
+        "figure": {
+          "yAxisLabel": "y",
+          "xAxisLabel": "x",
+          "type": 110,
+          "tickStepYMultiply": 1,
+          "tickStepXMultiply": 1,
+          "tickStep": 1,
+          "stepSize": 30,
+          "startNumber": false,
+          "showCells": true,
+          "showAxis": true,
+          "reduceHeight": 1,
+          "points": [],
+          "notClickableDots": true,
+          "minPosition": -5,
+          "maxPosition": 5,
+          "limitedPoint": 0,
+          "isLine": false,
+          "isFullFilled": false,
+          "isFillingLimitedByAxis": false,
+          "intervals": [],
+          "fillingFunctions": [],
+          "figures": [
+            {
+              "type": 30,
+              "showDotLetters": false,
+              "point2": {
+                "y": 1,
+                "x": 4,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "B",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              "point1": {
+                "y": 4,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "A",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              "lineColor": "black",
+              "dotRadius": 4,
+              "degree": 0,
+              "dashed": false
+            },
+            {
+              "type": 10,
+              "showOnlyLetter": true,
+              "showDashes": false,
+              "showCoordinate": false,
+              "radius": 4,
+              "point": {
+                "y": 4,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "A",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              "color": "green",
+              "borderColor": null
+            },
+            {
+              "type": 10,
+              "showOnlyLetter": true,
+              "showDashes": false,
+              "showCoordinate": false,
+              "radius": 4,
+              "point": {
+                "y": 1,
+                "x": 4,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "B",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              "color": "green",
+              "borderColor": null
+            }
+          ],
+          "drawingFigure": 30,
+          "displayedNumbers": [],
+          "disabledPoints": [],
+          "canFill": false,
+          "canDrawMultipleFigures": false,
+          "allowedFigures": []
+        },
+        "content": {
+          "with_audio_player": false,
+          "uzb": "Koordinatalar tekisligidagi AB kesmaning ordinata o'qiga nisbatan simmetrik bo'ladigan A'B' kesmani ko'rsating.\r\n",
+          "rus": "На отрезок АВ в координатной плоскости нарисуйте отрезок A'В', симметричный относительно оси ординат.\r\n",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "Координаталык тегиздиктеги АВ кесиндисине ордината огуна  карата симметриялуу болгон  A'B' кесиндисин сызыңыз.\r\n",
+          "kaz": "Координаталық жазықтықтағы АВ кесіндісіне ординаталар осіне қатысты симметриялы болатын А'В' кесіндісін салыңыз.\r\n",
+          "eng": "On the segment AB in the coordinate plane, draw the segment A'B', symmetrical with respect to the Y-axis.\r\n",
+          "aze": "Koordinat müstəvisində ordinat oxuna nəzərən AB parçasına  simmetrik olan A'B' parçasını çəkin.",
+          "arsa": "ارسم في المستوى الإحداثي القطعة المستقيمة 'A'B التي تكون متماثلة بالنسبة للقطعة المستقيمة AB ، حول المحور Y.",
+          "arjd": "على القطعة المستقيمة AB في المستوى الإحداثي، ارسم القطعة A'B' المتماثلة بالنسبة لمحور Y.\r\n",
+          "areg": "ارسم في المستوى الإحداثي القطعة المستقيمة 'A'B التي تكون متماثلة بالنسبة للقطعة المستقيمة AB حول المحور Y.\r\n",
+          "_struct": "Helpers.Translation"
+        }
+      },
+      "fields": {
+        "point2": {
+          "y": 1,
+          "x": 4,
+          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+          "letter": "B",
+          "_struct": "CustomeTypes.CoordinatePlane.Point"
+        },
+        "point1": {
+          "y": 4,
+          "x": 1,
+          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+          "letter": "A",
+          "_struct": "CustomeTypes.CoordinatePlane.Point"
+        },
+        "difficulty": "x1"
+      },
+      "answerInput": {
+        "up": "",
+        "type": 10,
+        "text": " ",
+        "svg": "",
+        "down": "",
+        "before": "",
+        "after": "",
+        "_struct": "TaskAnswerInput"
+      },
+      "solution": null,
+      "_source": "contracts/fixtures/variants.json",
+      "_expected": {
+        "point2": {
+          "y": 1,
+          "x": -4,
+          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+          "letter": "B'",
+          "_struct": "CustomeTypes.CoordinatePlane.Point"
+        },
+        "point1": {
+          "y": 4,
+          "x": -1,
+          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+          "letter": "A'",
+          "_struct": "CustomeTypes.CoordinatePlane.Point"
+        },
+        "_struct": "TaskAnswers.CoordinatePlane.LineSegmentTaskAnswer"
+      }
+    },
+    {
+      "id": "11_9_5_9",
+      "type": "Elixir.Task_11_9_5_9",
+      "title": null,
+      "description": {
+        "type": "coordinatePlane",
+        "figure": {
+          "yAxisLabel": "y",
+          "xAxisLabel": "x",
+          "type": 110,
+          "tickStepYMultiply": 1,
+          "tickStepXMultiply": 1,
+          "tickStep": 1,
+          "stepSize": 30,
+          "startNumber": false,
+          "showCells": true,
+          "showAxis": false,
+          "reduceHeight": 1,
+          "points": [],
+          "notClickableDots": true,
+          "minPosition": -5,
+          "maxPosition": 5,
+          "limitedPoint": 0,
+          "isLine": false,
+          "isFullFilled": false,
+          "isFillingLimitedByAxis": false,
+          "intervals": [],
+          "fillingFunctions": [],
+          "figures": [
+            {
+              "type": 80,
+              "point2": {
+                "y": 0,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              "point1": {
+                "y": 0,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              "label": "",
+              "dotRadius": 3,
+              "dashed": false,
+              "color": "black"
+            },
+            {
+              "type": 80,
+              "point2": {
+                "y": 5,
+                "x": 0,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              "point1": {
+                "y": -5,
+                "x": 0,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              "label": "",
+              "dotRadius": 3,
+              "dashed": false,
+              "color": "black"
+            }
+          ],
+          "drawingFigure": 30,
+          "displayedNumbers": [],
+          "disabledPoints": [],
+          "canFill": false,
+          "canDrawMultipleFigures": false,
+          "allowedFigures": []
+        },
+        "content": {
+          "with_audio_player": false,
+          "uzb": "(z=frac{3i-9}{-2i+1}+(-2i+2)i) kompleks sonini kompleks tekisligida belgilang.",
+          "rus": "Отметьте на комплексной плоскости комплексное число \\(z=\\dfrac{3i-9}{-2i+1}+(-2i+2)i\\)",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "",
+          "kaz": "\\(z=\\dfrac{3i-9}{-2i+1}+(-2i+2)i\\) комплекс санын комплекс жазықтығында белгілеңіз.",
+          "eng": "",
+          "aze": "\\(z=\\dfrac{3i-9}{-2i+1}+(-2i+2)i\\) kompleks ədədini kompleks müstəvidə təsvir edək:",
+          "arsa": "",
+          "arjd": "",
+          "areg": "",
+          "_struct": "Helpers.Translation"
+        }
+      },
+      "fields": {
+        "b": 2,
+        "a": -2
+      },
+      "answerInput": {
+        "up": "",
+        "type": 15,
+        "text": " ",
+        "svg": "",
+        "down": "",
+        "before": "",
+        "after": "",
+        "_struct": "TaskAnswerInput"
+      },
+      "solution": null,
+      "_source": "contracts/fixtures/variants.json",
+      "_expected": {
+        "point2": {
+          "y": -1,
+          "x": -1,
+          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+          "letter": "",
+          "_struct": "CustomeTypes.CoordinatePlane.Point"
+        },
+        "point1": {
+          "y": 0,
+          "x": 0,
+          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+          "letter": "",
+          "_struct": "CustomeTypes.CoordinatePlane.Point"
+        },
+        "_struct": "TaskAnswers.CoordinatePlane.LineSegmentTaskAnswer"
+      }
+    }
+  ]
+}

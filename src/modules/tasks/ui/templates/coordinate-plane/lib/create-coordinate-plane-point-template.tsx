@@ -13,16 +13,21 @@ import { PointBoard } from '../shared/point-board'
 import {
   decodeNodes,
   DRAW_POINTS,
+  DRAW_SEGMENT,
   encodeNodes,
   planeOptions,
   toggleNode,
+  toggleSegmentNode,
 } from './plane-answer'
 import type { CoordinatePlaneTask } from './types.task'
 
 /**
  * «Отметьте точку»: the pupil taps the plane, the tap snaps to a grid node,
  * the answer is «(x;y)» — several points joined by the separator when
- * `drawingFigure` is 15. No keyboard: coordinatePlane is in the no-calc list.
+ * `drawingFigure` is 15. With 30 the two taps are the ends of a segment,
+ * drawn between them. No keyboard: coordinatePlane is in the no-calc list.
+ * The store keeps the string; `toWireAnswer` turns points and segments into
+ * the objects the backend reads (issue #23).
  */
 export const createCoordinatePlanePointTemplate = ({ id }: { id: string }) => {
   const Template = ({
@@ -37,6 +42,7 @@ export const createCoordinatePlanePointTemplate = ({ id }: { id: string }) => {
     const options = planeOptions(figure)
     const separator = deps.helpers.TaskHelper.multipleTaskAnswerSeparator
     const multiple = figure.drawingFigure === DRAW_POINTS
+    const segment = figure.drawingFigure === DRAW_SEGMENT
     const content = task.description.content
     const text = isTranslation(content)
       ? translate(content)
@@ -70,11 +76,17 @@ export const createCoordinatePlanePointTemplate = ({ id }: { id: string }) => {
           figures={figures}
           points={points}
           selected={selected}
+          segment={segment}
           translate={translate}
           label={text || 'Координатная плоскость'}
           onPick={(node) =>
             onChange(
-              encodeNodes(toggleNode(selected, node, multiple), separator),
+              encodeNodes(
+                segment
+                  ? toggleSegmentNode(selected, node)
+                  : toggleNode(selected, node, multiple),
+                separator,
+              ),
             )
           }
         />

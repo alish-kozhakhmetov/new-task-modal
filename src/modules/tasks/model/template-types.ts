@@ -93,5 +93,6 @@ export const TemplateTypes = {
   },
   CoordinatePlane: {
     Point: 'coordinatePlane.point',
+    Segment: 'coordinatePlane.segment',
   },
 }

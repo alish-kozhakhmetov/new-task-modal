@@ -54,5 +54,5 @@
   "equation": ["equation.before"],
   "calculateByImage": ["calculateByImage.plain", "calculateByImage.withCell"],
   "cubeCalculator": ["cubeCalculator.plain"],
-  "coordinatePlane": ["coordinatePlane.point"]
+  "coordinatePlane": ["coordinatePlane.point", "coordinatePlane.segment"]
 }

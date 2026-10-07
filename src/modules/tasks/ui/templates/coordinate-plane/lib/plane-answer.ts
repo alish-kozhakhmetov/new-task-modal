@@ -10,6 +10,7 @@ export interface Node {
 /** Drawing-figure ids that ask the pupil for points. */
 export const DRAW_POINT = 10
 export const DRAW_POINTS = 15
+export const DRAW_SEGMENT = 30
 
 /**
  * The whole declared field, not fitted to the drawing: the answer may lie
@@ -91,6 +92,42 @@ export const toggleNode = (
   const present = nodes.some((it) => sameNode(it, node))
   if (present) return nodes.filter((it) => !sameNode(it, node))
   return multiple ? [...nodes, node] : [node]
+}
+
+/**
+ * A segment has two ends. A tap on an end takes it back; with both ends set,
+ * a new tap moves the second one — the pupil adjusts, not starts over.
+ */
+export const toggleSegmentNode = (nodes: Node[], node: Node): Node[] => {
+  if (nodes.some((it) => sameNode(it, node)))
+    return nodes.filter((it) => !sameNode(it, node))
+  if (nodes.length < 2) return [...nodes, node]
+  return [nodes[0], node]
+}
+
+/** Every «(x;y)» in the stored answer, whatever joins them. */
+const nodesIn = (answer: string): Node[] =>
+  [...answer.matchAll(/\((-?[\d.]+);(-?[\d.]+)\)/g)].map((match) => ({
+    x: Number(match[1]),
+    y: Number(match[2]),
+  }))
+
+/**
+ * What goes to the backend (issue #23, Abduali 07.10). One point — the string
+ * «(x;y)», `Point.correct` reads it. Several points — `PointListTaskAnswer`,
+ * an object `{ points }`. A segment — `GraphUserAnswer` `{ figures }` with one
+ * figure of type 30 and its two ends; the order of the ends is not checked.
+ */
+export const toPlaneWireAnswer = (
+  answer: string,
+  drawingFigure: number | undefined,
+): unknown => {
+  if (drawingFigure === DRAW_POINTS) return { points: nodesIn(answer) }
+  if (drawingFigure === DRAW_SEGMENT)
+    return {
+      figures: [{ type: DRAW_SEGMENT, points: nodesIn(answer), dashed: false }],
+    }
+  return answer
 }
 
 /**

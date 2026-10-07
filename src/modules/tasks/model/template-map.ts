@@ -422,6 +422,12 @@ export const TEMPLATE_MAP = {
         (module) => ({ default: module.CoordinatePlanePoint }),
       ),
     ),
+  [TemplateTypes.CoordinatePlane.Segment]: () =>
+    wrapCoordinatePlane(() =>
+      import('@/modules/tasks/ui/templates/coordinate-plane/ui/segment').then(
+        (module) => ({ default: module.CoordinatePlaneSegment }),
+      ),
+    ),
 } satisfies Record<string, unknown>
 
 export type TemplateType = Awaited<
