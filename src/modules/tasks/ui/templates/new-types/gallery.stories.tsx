@@ -17,6 +17,8 @@ import { planeOptions } from '@/modules/tasks/ui/templates/coordinate-plane/lib/
 import type { CoordinatePlaneTask } from '@/modules/tasks/ui/templates/coordinate-plane/lib/types.task'
 import { CoordinatePlanePoint } from '@/modules/tasks/ui/templates/coordinate-plane/ui/point'
 import planeFixtures from '@/modules/tasks/ui/templates/coordinate-plane/ui/point/data/tasks.json'
+import { CoordinatePlaneSegment } from '@/modules/tasks/ui/templates/coordinate-plane/ui/segment'
+import segmentFixtures from '@/modules/tasks/ui/templates/coordinate-plane/ui/segment/data/tasks.json'
 import { makeTaskModalDeps } from '@/modules/tasks/ui/templates/shared/testing/make-task-modal-deps'
 import type { MathInputRef } from '@/ui/math-input/types'
 
@@ -65,6 +67,27 @@ const tapPoint = (root: HTMLElement, task: AnyTask) => {
     clientY: rect.top + dot.y * scale,
   })
   return Promise.resolve()
+}
+
+type End = { x: number; y: number }
+
+/** Two taps at the reference ends: the segment is drawn between them. */
+const tapSegment = async (root: HTMLElement, task: AnyTask) => {
+  const plane = task as unknown as CoordinatePlaneTask & {
+    _expected: { point1: End; point2: End }
+  }
+  const options = planeOptions(plane.description.figure ?? {})
+  for (const end of [plane._expected.point1, plane._expected.point2]) {
+    const board = within(root).getByTestId('plane-board')
+    const rect = board.getBoundingClientRect()
+    const scale = rect.width / planeLength(options)
+    const dot = fromPointToDot(options, end.x, end.y)
+    void fireEvent.pointerDown(board, {
+      clientX: rect.left + dot.x * scale,
+      clientY: rect.top + dot.y * scale,
+    })
+    await new Promise((done) => setTimeout(done, 50))
+  }
 }
 
 const asTemplate = (Template: unknown) =>
@@ -133,6 +156,20 @@ const ENTRIES: Entry[] = [
         (t) => t.type === `Elixir.Task_${key}`,
       ) as AnyTask,
       act: tapPoint,
+    }),
+  ),
+  ...['1_5_2_16', '3_3_7_17'].map(
+    (key): Entry => ({
+      id: `segment-${key}`,
+      grade: Number(key.split('_')[0]),
+      mechanic: 'провести отрезок на плоскости',
+      forms: 4,
+      does: 'нажимает два узла сетки — концы, между ними появляется отрезок',
+      Template: asTemplate(CoordinatePlaneSegment),
+      task: (segmentFixtures as unknown as { tasks: AnyTask[] }).tasks.find(
+        (t) => t.type === `Elixir.Task_${key}`,
+      ) as AnyTask,
+      act: tapSegment,
     }),
   ),
 ]
@@ -233,8 +270,12 @@ export const Gallery: StoryObj = {
       await entry.act(after, entry.task)
     }
     ;(document.activeElement as HTMLElement | null)?.blur()
+    // three points plus two segments of two ends each
     await expect(
       await within(canvasElement).findAllByTestId('plane-picked'),
-    ).toHaveLength(3)
+    ).toHaveLength(7)
+    await expect(
+      await within(canvasElement).findAllByTestId('plane-segment'),
+    ).toHaveLength(2)
   },
 }
