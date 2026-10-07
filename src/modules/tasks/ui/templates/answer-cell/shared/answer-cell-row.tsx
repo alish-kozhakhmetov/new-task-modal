@@ -13,12 +13,14 @@ import { MathFormula } from '@/ui/math-text/math-formula'
 import { MathText } from '@/ui/math-text/math-text'
 
 import { normalizeAnswerCellDescription } from '../lib/normalize-answer-cell-description'
+import { splitLeadingSeparators } from '../lib/split-leading-separators'
 import type {
   AnswerCellAnswerInput,
   AnswerCellTaskDescription,
   MultiAnswerCellAnswerInput,
   SimpleAnswerCellAnswerInput,
 } from '../lib/types.task'
+import { useRowWrap } from '../lib/use-row-wrap'
 
 import styles from './answer-cell.module.scss'
 
@@ -53,6 +55,20 @@ interface Props {
 }
 
 const warnedAdornmentMismatches = new Set<string>()
+
+/**
+ * A field and the «;» after it (rule 24). Without a separator nothing wraps
+ * the field; with one the wrapper is `display: contents` and only holds the
+ * pair together when the row opens its segments (`data-wrap`).
+ */
+const CellGlue = ({
+  glued,
+  children,
+}: {
+  glued: boolean
+  children: React.ReactNode
+}) =>
+  glued ? <span className={styles.glue}>{children}</span> : <>{children}</>
 
 /**
  * Dev-only: the chapter routing map (`ui/grades/**`) can assign a task to a
@@ -125,7 +141,9 @@ export const AnswerCellRow = ({
   const content = stripEmptyMathIslands(
     translateContent(desc.content, translate),
   )
-  const parts = content.split(ANSWER_CELL_TOKEN)
+  const { parts, trailing } = splitLeadingSeparators(
+    content.split(ANSWER_CELL_TOKEN),
+  )
   const cellCount = Math.max(0, parts.length - 1)
   const separator = deps.helpers.TaskHelper.multipleTaskAnswerSeparator
   const answerValues =
@@ -133,6 +151,7 @@ export const AnswerCellRow = ({
 
   const margin = desc.answerCellMargin ?? undefined
   const isColumn = Boolean(desc.isColumn)
+  const rowRef = useRowWrap<HTMLDivElement>(!isColumn)
 
   const adornmentsForCell = (index: number): CellAdornments => {
     const source = multi
@@ -155,6 +174,7 @@ export const AnswerCellRow = ({
 
   return (
     <div
+      ref={rowRef}
       className={clsx(
         styles.contentRow,
         mode === 'solution' &&
@@ -197,33 +217,38 @@ export const AnswerCellRow = ({
                 value={before}
               />
             ) : null}
-            {mode === 'input' ? (
-              <MathInput
-                id={inputId}
-                ref={
-                  multi
-                    ? inputId && bindRef
-                      ? bindRef(inputId)
-                      : setRef
-                    : mathInputRef
-                }
-                formula={cellValue}
-                onMathFieldChanged={onChange}
-                className={clsx(styles.cellInput, cellInputClassName)}
-                style={margin ? { margin } : undefined}
-              />
-            ) : (
-              <MathFormula className={styles.answerFormula}>
-                {solutionCellValue}
-              </MathFormula>
-            )}
-            {after ? (
-              <TextAdornment
-                data-testid="text-suffix"
-                className={styles.suffix}
-                value={after}
-              />
-            ) : null}
+            <CellGlue glued={Boolean(trailing[index])}>
+              {mode === 'input' ? (
+                <MathInput
+                  id={inputId}
+                  ref={
+                    multi
+                      ? inputId && bindRef
+                        ? bindRef(inputId)
+                        : setRef
+                      : mathInputRef
+                  }
+                  formula={cellValue}
+                  onMathFieldChanged={onChange}
+                  className={clsx(styles.cellInput, cellInputClassName)}
+                  style={margin ? { margin } : undefined}
+                />
+              ) : (
+                <MathFormula className={styles.answerFormula}>
+                  {solutionCellValue}
+                </MathFormula>
+              )}
+              {after ? (
+                <TextAdornment
+                  data-testid="text-suffix"
+                  className={styles.suffix}
+                  value={after}
+                />
+              ) : null}
+              {trailing[index] ? (
+                <span className={styles.separator}>{trailing[index]}</span>
+              ) : null}
+            </CellGlue>
           </div>
         )
       })}

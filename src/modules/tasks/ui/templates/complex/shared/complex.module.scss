@@ -3,7 +3,9 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+
+  // Rhythm (rule 7): parts of the condition 8px apart, condition → answer 24.
+  gap: var(--space-8);
 }
 
 .parts {
@@ -109,14 +111,12 @@
   white-space: nowrap;
 }
 
-.fieldLabel {
-  margin-inline-end: 4px;
-}
-
 .stack {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+
+  // Rows of fields 8 apart (Trainer/Answer slot, Layout=Stack; rule 23).
+  gap: var(--space-8);
 }
 
 .inline {
@@ -141,4 +141,13 @@
      default `svg:not(:root) { overflow: hidden }`, which otherwise wins
      over a plain class selector regardless of source order. */
   overflow: visible !important;
+}
+
+// Answer block after the condition (rule 7). Last in the file: a container
+// child selector outranks the plain class rules above.
+.container > .expressionRow,
+.container > .inputRow,
+.container > .stack,
+.container > .inline {
+  margin-top: var(--space-16);
 }

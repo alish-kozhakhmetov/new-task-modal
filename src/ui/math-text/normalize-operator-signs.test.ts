@@ -55,6 +55,17 @@ describe('normalizeOperatorSigns', () => {
     expect(n('*')).toBe(X)
   })
 
+  it('turns a label opening with a hyphen before a word into a dash', () => {
+    // 4_4_55: «▢ - сотни тысяч», the label after a field
+    expect(n('- сотни тысяч')).toBe('— сотни тысяч')
+    expect(n('– единицы')).toBe('— единицы')
+    // a minus before a number stays a minus, a hyphen inside a word stays
+    expect(n('- 5')).toBe(`${M} 5`)
+    expect(n('-сотни')).toBe('-сотни')
+    // only at the very start, not after a math island
+    expect(n('\\(x\\) - это')).toBe('\\(x\\) - это')
+  })
+
   it('handles a sign at the edge of a label next to a field', () => {
     expect(n('- 14')).toBe(`${M} 14`)
     expect(n('+ 39 -')).toBe(`+ 39 ${M}`)

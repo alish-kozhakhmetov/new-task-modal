@@ -81,6 +81,18 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
     const answerValues = splitMultiAnswer(answer, separator)
     let inputIndex = 0
 
+    // Rule 16: a list of «▢ — сотни тысяч» rows is one group, and its fields
+    // are one width. Each row sized its field to what its own label left over,
+    // so six fields came out 199–263px wide (4_4_55).
+    const fieldColumn =
+      id === 'table.list' &&
+      table.rows.every(
+        ({ cells }) =>
+          cells.length === 2 &&
+          cells[0] === 'answercell' &&
+          cells[1] !== 'answercell',
+      )
+
     return (
       <div className={styles.container} data-template-id={id} data-mode="input">
         <TaskTitle title={task.title} deps={deps} />
@@ -108,6 +120,7 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
                     : table.width,
               }}
               data-testid="task-table"
+              data-field-column={fieldColumn || undefined}
             >
               <tbody>
                 {table.rows.map((row, rowIndex) => {

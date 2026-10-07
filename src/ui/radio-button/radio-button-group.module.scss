@@ -1,5 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: var(--space-16);
+
+  // Options 8 apart, as in the layout's answer slot.
+  gap: var(--space-8);
 }

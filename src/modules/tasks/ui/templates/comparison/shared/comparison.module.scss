@@ -28,10 +28,14 @@
 
 .container {
   display: flex;
-  gap: 16px;
+
+  // Expression and field 8 apart, as every label and field (rule 23).
+  gap: var(--space-8);
   align-items: center;
   justify-content: start;
-  margin-top: 12px;
+
+  // condition → answer 24 (rule 7), with the 12px gap of the parent
+  margin-top: var(--space-12);
 
   // One size and weight for the task (rule 1): was 20/500. The sign box
   // below keeps its 24px — it is the control, not the expression.

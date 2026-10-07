@@ -1,11 +1,18 @@
 import type { ComplexNumberLinePart } from '../../lib/types.task'
 import styles from '../complex.module.scss'
 
-import { INK, paint } from './figure-paint'
+import { INK, STROKE } from './figure-paint'
 
 interface Props {
   part: ComplexNumberLinePart
 }
+
+/**
+ * Labels are drawn at 14 viewBox units; the line is shown at a fixed scale so
+ * they come out at the task size, 18px (rule 79). It used to stretch to the
+ * column width: ×1.82 on a phone, labels around 25px.
+ */
+const SCALE = 18 / 14
 
 /** Pure-SVG port of Matheducator NumberLine (display-only). */
 export const NumberLinePart = ({ part }: Props) => {
@@ -15,7 +22,10 @@ export const NumberLinePart = ({ part }: Props) => {
   const maxPosition = part.maxPosition ?? 10
   const divisionsIsVisible = part.divisionsIsVisible !== false
 
-  const dotRadius = 3
+  // A point is 4px in brand colour (rule 79); the backend's green is dropped.
+  const dotRadius = 4 / SCALE
+  const DOT = 'var(--bg-brand)'
+  const line = STROKE.hair / SCALE
   const startX = dotRadius * 3
   const yPos = 30
   const divisionsQuantity = (maxPosition - minPosition) / tickStep
@@ -36,11 +46,16 @@ export const NumberLinePart = ({ part }: Props) => {
     <svg
       className={styles.numberLineSvg}
       data-figure-type="20"
-      width="100%"
-      height={70}
+      width={viewW * SCALE}
+      height={70 * SCALE}
       viewBox={`0 0 ${viewW} 70`}
     >
-      <path d={`M0,${yPos} L${length},${yPos}`} stroke={INK} fill="none" />
+      <path
+        d={`M0,${yPos} L${length},${yPos}`}
+        stroke={INK}
+        strokeWidth={line}
+        fill="none"
+      />
       <path
         d={`M${length - 15},${yPos + 4} L${length},${yPos} L${length - 15},${yPos - 4}z`}
         fill={INK}
@@ -51,12 +66,13 @@ export const NumberLinePart = ({ part }: Props) => {
           key={x}
           d={`M${x},${yPos - 6} L${x},${yPos + 6}`}
           stroke={INK}
+          strokeWidth={line}
           fill="none"
         />
       ))}
 
       {/* origin */}
-      <circle cx={xAt(0)} cy={yPos} r={dotRadius} fill={paint('green', INK)} />
+      <circle cx={xAt(0)} cy={yPos} r={dotRadius} fill={DOT} />
       <text
         x={xAt(0)}
         y={yPos - 10}
@@ -72,7 +88,7 @@ export const NumberLinePart = ({ part }: Props) => {
 
       {(part.dots ?? []).map((dot, index) => (
         <g key={`dot-${index}`}>
-          <circle cx={xAt(dot.position)} cy={yPos} r={dotRadius} fill={INK} />
+          <circle cx={xAt(dot.position)} cy={yPos} r={dotRadius} fill={DOT} />
           {dot.letter ? (
             <text
               x={xAt(dot.position)}

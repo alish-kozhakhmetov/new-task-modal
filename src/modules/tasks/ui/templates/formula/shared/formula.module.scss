@@ -4,7 +4,9 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+
+  // Rhythm (rule 7): parts of the condition 8px apart, condition → answer 24.
+  gap: var(--space-8);
 }
 
 .description {
@@ -49,14 +51,12 @@
   white-space: nowrap;
 }
 
-.fieldLabel {
-  margin-inline-end: 4px;
-}
-
 .stack {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+
+  // Rows of fields 8 apart (Trainer/Answer slot, Layout=Stack; rule 23).
+  gap: var(--space-8);
 }
 
 .inline {
@@ -64,4 +64,27 @@
   flex-wrap: wrap;
   gap: 8px;
   align-items: center;
+}
+
+// Answer block after the condition (rule 7). Last in the file: a container
+// child selector outranks the plain class rules above.
+.container > .expressionRow,
+.container > .inputRow,
+.container > .stack,
+.container > .inline {
+  margin-top: var(--space-16);
+}
+
+// Named rows one under another («Значение частного: ▢ / Значение остатка: ▢»)
+// share one label column (rule 20), so the fields start on one vertical line.
+// The field track keeps the flex row's 120–200 range.
+.stackGrid {
+  display: grid;
+  grid-template-columns: max-content minmax(120px, 200px) 1fr;
+  gap: var(--space-8);
+  align-items: center;
+
+  > .inputRow {
+    display: contents;
+  }
 }

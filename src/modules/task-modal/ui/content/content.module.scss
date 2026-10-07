@@ -13,6 +13,21 @@
 
   // }
 
+  // Reduced motion (rule 99): transitions and animations collapse to a single
+  // frame for children who turned motion off in the system settings.
+  /* stylelint-disable declaration-no-important -- must beat per-component
+     transitions declared later in the cascade */
+  @media (prefers-reduced-motion: reduce) {
+    &,
+    & * {
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+  /* stylelint-enable declaration-no-important */
+
   @include min-width(sm) {
     max-width: 375px;
     margin: 0 auto;

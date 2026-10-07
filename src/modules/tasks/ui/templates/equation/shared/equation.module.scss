@@ -1,7 +1,9 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: var(--space-24, 24px);
+
+  // Rhythm (rule 7): parts of the condition 8px apart, condition → answer 24.
+  gap: var(--space-8);
 }
 
 .content {
@@ -28,4 +30,10 @@
 
 .answerFormula {
   min-width: 120px;
+}
+
+// Answer block after the condition (rule 7). Last in the file: a container
+// child selector outranks the plain class rules above.
+.container > .inputWrapper {
+  margin-top: var(--space-16);
 }

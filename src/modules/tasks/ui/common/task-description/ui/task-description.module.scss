@@ -1,7 +1,7 @@
 .container {
   @include body-medium-regular;
 
-  margin-bottom: var(--space-16);
+  // Spacing comes from the template's gap (rule 7).
 }
 
 .highlighted {

@@ -10,6 +10,7 @@ import { TaskTitle } from '@/modules/tasks/ui/common/task-title/task-title'
 import type { Task } from '@/types/api/task'
 import { MathInput } from '@/ui/math-input/math-input'
 
+import { hasLabelColumn } from '../shared/label-column'
 import { MultiTextSolution } from '../shared/multi-text-solution'
 import { TextAdornment } from '../shared/text-adornment'
 import { TextTaskDescription } from '../shared/text-task-description'
@@ -45,10 +46,6 @@ interface MultiTextTemplateConfig {
  * MathInputs, each with optional before/after labels. The combined answer
  * is joined with the multiple-answer separator.
  */
-/** A row name: letters and punctuation, no digits, signs or math. */
-const isWordLabel = (label: string) =>
-  /\p{L}{2,}/u.test(label) && !/[\d=+×·*<>\\]/.test(label)
-
 export const createMultiTextTemplate = ({
   id,
   layout,
@@ -95,15 +92,11 @@ export const createMultiTextTemplate = ({
        read as different in importance, not as a hint about the answer. */
 
     const widthPx = widthFromTask ? inputWidthHint(task, 24) : null
-    // Shared label column only for named rows («Альбом:», «Краски:»). When a
-    // label is an expression («(46 + 76) × x =» over «x =») the column takes
-    // the widest one and pushes the short row's field and unit off the screen.
-    const labels = inputEntries.map(({ before }) => before).filter(Boolean)
-    const labelled =
-      layout !== 'inline' &&
-      withBefore &&
-      labels.length > 0 &&
-      labels.every((l) => isWordLabel(String(l)))
+    const labelled = hasLabelColumn(
+      layout,
+      withBefore,
+      inputEntries.map(({ before }) => before),
+    )
 
     return (
       <div className={styles.container} data-template-id={id}>

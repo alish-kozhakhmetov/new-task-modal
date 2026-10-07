@@ -6,5 +6,6 @@
   @include body-medium-regular;
 
   display: block;
-  margin-bottom: var(--space-12);
+
+  // Spacing comes from the template's gap (rule 7), not from the title.
 }

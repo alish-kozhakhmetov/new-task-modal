@@ -55,7 +55,6 @@ export const TaskModalContent = ({ props, modals }: Props) => {
   //   isTaskLoaded,
   //   isTransitioning,
   // })
-  console.log({ isAdjusting })
   return (
     <>
       <div ref={root} className={clsx('task-modal', styles.container)}>

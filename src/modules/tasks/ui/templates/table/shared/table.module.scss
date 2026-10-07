@@ -1,7 +1,10 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+
+  // Rhythm (rule 7): parts of the condition 8px apart, condition → answer 24. The table holds
+  // the fields, so it is the answer: wrapper margin 16 + gap 8.
+  gap: var(--space-8);
   width: 100%;
 }
 
@@ -66,6 +69,12 @@
 .tableRounded .cell,
 .tableRounded .inputCell {
   padding-inline: 4px;
+}
+
+// A borderless equation row (table.plain, 4_2_10): the text cell's own 8px
+// is the gap to the field, as everywhere else (rule 23).
+.equationStretch .inputCell {
+  padding-inline: 0;
 }
 
 .table.tableRemovePadding {
@@ -179,6 +188,24 @@
     gap: 4px;
     align-items: center;
     width: auto;
+  }
+}
+
+// Rule 16: «▢ — label» rows share one field column — it takes what the widest
+// label leaves, so every field in the group is one width.
+.tableFlexListInput[data-field-column] tbody {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  gap: 8px var(--space-8);
+  align-items: center;
+
+  tr {
+    display: contents;
+  }
+
+  // the label follows its field, as in a flex row
+  td:last-child {
+    text-align: start;
   }
 }
 

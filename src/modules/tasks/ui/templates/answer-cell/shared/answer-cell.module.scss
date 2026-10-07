@@ -3,7 +3,9 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+
+  // Rhythm (rule 7): parts of the condition 8px apart, condition → answer 24.
+  gap: var(--space-8);
 }
 
 .textBefore,
@@ -24,8 +26,15 @@
 
 .contentRow {
   display: flex;
-  flex-wrap: nowrap;
-  gap: 4px 8px;
+
+  // A row that doesn't fit the phone wraps between segments. With nowrap the
+  // segments shrank below their content and slid under each other: the «;»
+  // between two fields hid under the first one (4_12_19_8), a field covered
+  // the next word (4_1_66) — seen on 2.2.2, 05.10.
+  flex-wrap: wrap;
+
+  // A wrapped row sits 8 below, as rows of fields do (rule 23).
+  gap: var(--space-8);
   align-items: center;
   justify-content: flex-start;
   min-width: 0;
@@ -44,7 +53,9 @@
 .segment {
   display: inline-flex;
   flex-shrink: 0;
-  gap: 4px;
+
+  // 8 between a sign and its field, the same as between segments (rule 23).
+  gap: var(--space-8);
   align-items: center;
   white-space: nowrap;
 }
@@ -55,7 +66,15 @@
 
 .segmentInput {
   flex: 1 1 auto;
-  min-width: 0;
+
+  // Not narrower than its text plus the field's minimum — see .contentRow.
+  min-width: max-content;
+
+  // Sequence blanks are a fixed 60px: a growing segment would only open a
+  // gap between the field and the next «;».
+  [data-template-id$='.sequence'] & {
+    flex-grow: 0;
+  }
 }
 
 /* Stretch to fill the available row width, regardless of how many cells
@@ -69,7 +88,6 @@
   flex: 1 1 0%;
   width: 0;
   min-width: 80px;
-  margin-inline: 4px;
 }
 
 .prefix,
@@ -80,4 +98,39 @@
 
 .answerFormula {
   flex: 0 1 auto;
+}
+
+// A field and the «;» after it (rule 24): no box of its own on one line; held
+// together when the row opens its segments below.
+.glue {
+  display: contents;
+}
+
+.separator {
+  flex-shrink: 0;
+}
+
+// Rule 24: a row that does not fit (useRowWrap) opens its segments into the
+// row, so the expression wraps on its own line and the field moves down with
+// its unit — «… 160 недель =» / «▢ дней» — instead of the field running past
+// the edge and the unit dropping alone.
+.contentRow[data-wrap] {
+  white-space: normal;
+
+  > .segment {
+    display: contents;
+  }
+
+  .glue {
+    display: inline-flex;
+    gap: var(--space-8);
+    align-items: center;
+    white-space: nowrap;
+  }
+}
+
+// Answer block after the condition (rule 7). Last in the file: a container
+// child selector outranks the plain class rules above.
+.container > .contentRow {
+  margin-top: var(--space-16);
 }

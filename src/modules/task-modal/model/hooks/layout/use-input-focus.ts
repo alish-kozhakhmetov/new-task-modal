@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react'
 import type { Task } from '@/types/api/task'
 
 import { getParentWithAttr } from '../../helpers'
+import { getRevealScrollTop } from '../../lib/reveal-in-container'
 import { useStore } from '../../store/task-modal-store'
 
 import type { CalcState } from './use-calc-setup'
@@ -30,14 +31,21 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
       return
     }
 
-    const setFocusedInput = (input: HTMLElement) => {
+    const setFocusedInput = (input: HTMLElement, { scroll = true } = {}) => {
       lastFocusedInput.current?.classList.remove(FOCUSED)
       lastFocusedInput.current = input
 
       input.classList.add(FOCUSED)
 
-      if (!calcState.isOpen) {
-        input.scrollIntoView({ block: 'center', behavior: 'smooth' })
+      if (scroll && !calcState.isOpen) {
+        input.scrollIntoView({
+          block: 'center',
+          // CSS can't override an explicit 'smooth' — honour rule 99 here.
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)')
+            .matches
+            ? 'auto'
+            : 'smooth',
+        })
       }
     }
 
@@ -47,7 +55,9 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
       const input = refs.taskContainer.current?.querySelector(`[${DATA_INPUT}]`)
 
       if (input instanceof HTMLElement) {
-        setFocusedInput(input)
+        // The task opens from its top: scrolling to the field belongs to the
+        // pupil's own tap or Tab, not to the initial focus (rule 98).
+        setFocusedInput(input, { scroll: false })
 
         // Programmatic .focus() bubbles a focusin to the overflow handler's
         // `data-control` listener, which reopens the calculator — undoing a
@@ -91,6 +101,18 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
       }
     }
 
+    // Rule 96: Tab moves focus without a click — remember that field too, or
+    // the calculator keeps typing into the one clicked before.
+    const onFocusIn = (event: FocusEvent) => {
+      const target = event.target
+      if (!(target instanceof HTMLElement)) return
+
+      const input = target.hasAttribute(DATA_INPUT)
+        ? target
+        : getParentWithAttr(target, DATA_INPUT)
+      if (input && input !== lastFocusedInput.current) setFocusedInput(input)
+    }
+
     setInitialFocus()
 
     // Lazy templates / MathJax can mount [data-input] after isSetupFinished.
@@ -106,9 +128,11 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
     })
 
     root.addEventListener('click', handler)
+    root.addEventListener('focusin', onFocusIn)
 
     return () => {
       observer.disconnect()
+      root.removeEventListener('focusin', onFocusIn)
       cancelAnimationFrame(raf1)
       cancelAnimationFrame(raf2)
       root.removeEventListener('click', handler)
@@ -116,6 +140,47 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
       lastFocusedInput.current = null
     }
   }, [activeTask.id, calcState.isSetupFinished, isTaskLoaded])
+
+  // Rule 98: a tap scrolls the field to the centre while the calculator is
+  // still closed; then the calculator opens, the task area shrinks and the
+  // field ends up below its edge. Bring the field back once the area has
+  // shrunk, unless it is still fully visible.
+  useEffect(() => {
+    const taskContainer = refs.taskContainer.current
+    if (!taskContainer || typeof ResizeObserver === 'undefined') return
+
+    let lastHeight = taskContainer.clientHeight
+    const observer = new ResizeObserver(() => {
+      const height = taskContainer.clientHeight
+      const shrank = height < lastHeight
+      lastHeight = height
+
+      const input = lastFocusedInput.current
+      if (!shrank || !input || !taskContainer.contains(input)) return
+
+      const top = getRevealScrollTop(
+        taskContainer.getBoundingClientRect(),
+        input.getBoundingClientRect(),
+        taskContainer.scrollTop,
+      )
+      if (top === null) return
+
+      taskContainer.scrollTo({
+        top,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          ? 'auto'
+          : 'smooth',
+      })
+    })
+    observer.observe(taskContainer)
+
+    return () => observer.disconnect()
+  }, [
+    activeTask.id,
+    calcState.isSetupFinished,
+    isTaskLoaded,
+    refs.taskContainer,
+  ])
 
   return lastFocusedInput
 }

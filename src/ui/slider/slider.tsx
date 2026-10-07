@@ -31,7 +31,12 @@ export const Slider = ({ slides, ref, className }: Props) => {
     <div ref={ref} className={className}>
       <div ref={sliderRef} className="keen-slider">
         {slides.map((slide, index) => (
-          <div key={index} className="keen-slider__slide">
+          <div
+            key={index}
+            className="keen-slider__slide"
+            // Off-screen pages stay out of Tab and screen readers (rule 96).
+            inert={index !== currentSlide}
+          >
             {slide}
           </div>
         ))}

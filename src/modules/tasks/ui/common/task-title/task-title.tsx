@@ -3,6 +3,7 @@ import { MathText } from '@/ui/math-text/math-text'
 
 import type { TaskModalDependencies } from '../../../../task-modal/model/types/props'
 
+import { leadColon } from './lead-colon'
 import styles from './task-title.module.scss'
 
 interface Props {
@@ -17,5 +18,5 @@ export const TaskTitle = ({ title, deps }: Props) => {
 
   if (!text.trim()) return null
 
-  return <MathText className={styles.title}>{text}</MathText>
+  return <MathText className={styles.title}>{leadColon(text)}</MathText>
 }
