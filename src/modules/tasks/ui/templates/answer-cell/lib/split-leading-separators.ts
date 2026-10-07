@@ -1,5 +1,9 @@
-/** A list separator that opens the text after a field: «; 51; 56» or «, 7». */
-const LEADING_SEPARATOR = /^\s*([;,])\s*/
+/**
+ * A list separator that opens the text after a field: «; 51; 56» or «, 7».
+ * Only before a space or the end of the part: «▢,5» is a decimal comma and
+ * stays with its digits.
+ */
+const LEADING_SEPARATOR = /^\s*([;,])(?=\s|$)\s*/
 
 /**
  * Rule 24: a separator belongs to the field on its left.

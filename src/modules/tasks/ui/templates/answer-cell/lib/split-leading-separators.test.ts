@@ -20,6 +20,14 @@ describe('splitLeadingSeparators', () => {
     })
   })
 
+  it('keeps a decimal comma with its digits («▢,5»)', () => {
+    const parts = ['', ',5 см']
+    expect(splitLeadingSeparators(parts)).toEqual({
+      parts,
+      trailing: [''],
+    })
+  })
+
   it('keeps division and other signs on the right (4_1_73)', () => {
     const parts = ['', ' : ', ' = 5']
     expect(splitLeadingSeparators(parts)).toEqual({
