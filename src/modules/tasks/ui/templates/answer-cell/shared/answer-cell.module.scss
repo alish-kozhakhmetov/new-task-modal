@@ -100,6 +100,16 @@
   flex: 0 1 auto;
 }
 
+// A field and the «;» after it (rule 24): no box of its own on one line; held
+// together when the row opens its segments below.
+.glue {
+  display: contents;
+}
+
+.separator {
+  flex-shrink: 0;
+}
+
 // Rule 24: a row that does not fit (useRowWrap) opens its segments into the
 // row, so the expression wraps on its own line and the field moves down with
 // its unit — «… 160 недель =» / «▢ дней» — instead of the field running past
@@ -109,6 +119,13 @@
 
   > .segment {
     display: contents;
+  }
+
+  .glue {
+    display: inline-flex;
+    gap: var(--space-8);
+    align-items: center;
+    white-space: nowrap;
   }
 }
 
