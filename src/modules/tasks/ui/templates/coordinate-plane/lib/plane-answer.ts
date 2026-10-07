@@ -130,6 +130,91 @@ export const toPlaneWireAnswer = (
   return answer
 }
 
+export interface LabelPlace {
+  dx: number
+  dy: number
+  anchor: 'start' | 'end'
+}
+
+/** Top-right first, as before; the rest only when it collides. */
+const PLACES: LabelPlace[] = [
+  { dx: 10, dy: -10, anchor: 'start' },
+  { dx: -10, dy: -10, anchor: 'end' },
+  { dx: 10, dy: 20, anchor: 'start' },
+  { dx: -10, dy: 20, anchor: 'end' },
+]
+
+/** Width of a 14px tabular label, per character. */
+const LABEL_CHAR = 7.2
+const LABEL_HEIGHT = 14
+
+interface Box {
+  left: number
+  right: number
+  top: number
+  bottom: number
+}
+
+const crossesSegment = (box: Box, a: Node, b: Node) => {
+  // sampled: labels are small, segments are short
+  for (let t = 0.1; t <= 0.9; t += 0.05) {
+    const x = a.x + (b.x - a.x) * t
+    const y = a.y + (b.y - a.y) * t
+    if (x > box.left && x < box.right && y > box.top && y < box.bottom)
+      return true
+  }
+  return false
+}
+
+/**
+ * Where the coordinates of a picked node go (svg pixels): clear of the
+ * pupil's own segment, of the axes with their tick numbers and of the edge.
+ * Top-right stays the default — it moves only when it collides (6_6_19_1:
+ * «(−1; 4)» sat on the «4» of the Y axis, «(−4; 1)» on the segment).
+ */
+export const labelPlace = ({
+  at,
+  text,
+  segmentTo = [],
+  axes,
+  size,
+}: {
+  at: Node
+  text: string
+  /** Other ends of the segment the node belongs to. */
+  segmentTo?: Node[]
+  /** Origin in svg pixels, when axes are drawn. */
+  axes: Node | null
+  size: number
+}): LabelPlace => {
+  const width = text.length * LABEL_CHAR
+  const score = (place: LabelPlace) => {
+    const x = at.x + place.dx
+    const y = at.y + place.dy
+    const box: Box = {
+      left: place.anchor === 'start' ? x : x - width,
+      right: place.anchor === 'start' ? x + width : x,
+      top: y - LABEL_HEIGHT + 3,
+      bottom: y + 3,
+    }
+    let penalty = 0
+    if (axes) {
+      // the Y axis and its end-aligned numbers to the left of it
+      if (box.left < axes.x + 3 && box.right > axes.x - 28) penalty += 10
+      // the X axis and its numbers under it
+      if (box.top < axes.y + 24 && box.bottom > axes.y - 3) penalty += 10
+    }
+    for (const other of segmentTo)
+      if (crossesSegment(box, at, other)) penalty += 8
+    if (box.left < 0 || box.right > size || box.top < 0 || box.bottom > size)
+      penalty += 6
+    return penalty
+  }
+  return PLACES.reduce((best, place) =>
+    score(place) < score(best) ? place : best,
+  )
+}
+
 /**
  * On-screen label of a picked node: a real minus, U+2212 (parity rule 27).
  * The answer string keeps the hyphen — answers are not normalised (rule 44).

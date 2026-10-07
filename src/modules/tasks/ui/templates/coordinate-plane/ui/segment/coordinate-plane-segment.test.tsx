@@ -8,6 +8,8 @@ import {
 import { makeTaskModalDeps } from '@/modules/tasks/ui/templates/shared/testing/make-task-modal-deps'
 
 import {
+  labelPlace,
+  nodeLabel,
   planeOptions,
   toggleSegmentNode,
   toPlaneWireAnswer,
@@ -107,5 +109,36 @@ describe('coordinatePlane.segment', () => {
     )
     expect(screen.queryByTestId('plane-segment')).not.toBeInTheDocument()
     expect(screen.getAllByTestId('plane-picked')).toHaveLength(1)
+  })
+
+  it('подпись конца — справа сверху, пока ничего не мешает', () => {
+    expect(
+      labelPlace({
+        at: { x: 100, y: 100 },
+        text: '(1; 2)',
+        axes: null,
+        size: 400,
+      }),
+    ).toEqual({ dx: 10, dy: -10, anchor: 'start' })
+  })
+
+  it('6_6_19_1: подписи концов уходят с оси Y и с самого отрезка', () => {
+    const t = tasks.find((x) => x.id === '6_6_19_1')!
+    const options = planeOptions(t.description.figure ?? {})
+    const size = planeLength(options)
+    const axes = fromPointToDot(options, 0, 0)
+    const a = { x: -1, y: 4 }
+    const b = { x: -4, y: 1 }
+    const pa = fromPointToDot(options, a.x, a.y)
+    const pb = fromPointToDot(options, b.x, b.y)
+    const NE = { dx: 10, dy: -10, anchor: 'start' }
+    // (−1; 4) one cell left of the Y axis: top-right would sit on «4»
+    expect(
+      labelPlace({ at: pa, text: nodeLabel(a), segmentTo: [pb], axes, size }),
+    ).not.toEqual(NE)
+    // (−4; 1): the segment goes up-right — top-right would sit on it
+    expect(
+      labelPlace({ at: pb, text: nodeLabel(b), segmentTo: [pa], axes, size }),
+    ).not.toEqual(NE)
   })
 })

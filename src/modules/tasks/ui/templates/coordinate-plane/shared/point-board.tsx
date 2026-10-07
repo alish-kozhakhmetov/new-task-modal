@@ -12,7 +12,12 @@ import {
   type PlanePoint,
 } from '@/modules/tasks/ui/templates/complex/shared/figures/coordinate-plane/plane-math'
 
-import { nearestNode, nodeLabel, type Node } from '../lib/plane-answer'
+import {
+  labelPlace,
+  nearestNode,
+  nodeLabel,
+  type Node,
+} from '../lib/plane-answer'
 
 import styles from './coordinate-plane.module.scss'
 
@@ -101,12 +106,30 @@ export const PointBoard = ({
         />
       ) : null}
       {selected.map((node) => {
-        const { x, y } = fromPointToDot(options, node.x, node.y)
+        const at = fromPointToDot(options, node.x, node.y)
+        const label = nodeLabel(node)
+        const place = labelPlace({
+          at,
+          text: label,
+          segmentTo:
+            segment && selected.length === 2
+              ? selected
+                  .filter((other) => other !== node)
+                  .map((other) => fromPointToDot(options, other.x, other.y))
+              : [],
+          axes: options.showAxis ? fromPointToDot(options, 0, 0) : null,
+          size: length,
+        })
         return (
           <g key={`sel-${node.x}-${node.y}`} data-testid="plane-picked">
-            <circle className={styles.picked} cx={x} cy={y} r={6} />
-            <text className={styles.pickedLabel} x={x + 10} y={y - 10}>
-              {nodeLabel(node)}
+            <circle className={styles.picked} cx={at.x} cy={at.y} r={6} />
+            <text
+              className={styles.pickedLabel}
+              x={at.x + place.dx}
+              y={at.y + place.dy}
+              textAnchor={place.anchor}
+            >
+              {label}
             </text>
           </g>
         )
