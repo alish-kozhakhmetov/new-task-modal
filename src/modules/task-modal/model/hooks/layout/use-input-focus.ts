@@ -68,7 +68,15 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
         if (!map) return
 
         const mathInputRef = map.get(input.id)
+        // The browser scrolls every overflow ancestor to the focused field.
+        // A wide table then opened scrolled to its last column, the first one
+        // cut off (4_10_9_9); the initial focus must not move anything.
+        const scrolled = scrollParents(input)
         mathInputRef?.focus()
+        for (const [el, left, top] of scrolled) {
+          el.scrollLeft = left
+          el.scrollTop = top
+        }
       }
     }
 
@@ -183,4 +191,14 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
   ])
 
   return lastFocusedInput
+}
+
+/** Scrollable ancestors of an element with their scroll offsets. */
+const scrollParents = (el: HTMLElement): [HTMLElement, number, number][] => {
+  const out: [HTMLElement, number, number][] = []
+  for (let p = el.parentElement; p; p = p.parentElement) {
+    if (p.scrollWidth > p.clientWidth || p.scrollHeight > p.clientHeight)
+      out.push([p, p.scrollLeft, p.scrollTop])
+  }
+  return out
 }
