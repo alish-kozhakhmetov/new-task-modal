@@ -127,3 +127,13 @@
     }
   }
 }
+
+// Rule 100: a grouped number never breaks, classes are half a space apart.
+// A margin, not a character: copying the number gives it solid.
+.digits {
+  white-space: nowrap;
+}
+
+.digitClass {
+  margin-inline-start: 0.14em;
+}

@@ -24,6 +24,7 @@ import contentStyles from '@/modules/task-modal/ui/content/content.module.scss'
 import { TaskModalControls } from '@/modules/task-modal/ui/content/controls/controls'
 import { TaskModalHeader } from '@/modules/task-modal/ui/content/header/header'
 import { TaskHints } from '@/modules/task-modal/ui/content/task-hints/task-hints'
+import { DigitGroupingForTask } from '@/modules/tasks/lib/digit-grouping-for-task'
 import type { TaskComponentProps } from '@/modules/tasks/model/types'
 import {
   applyTrainerState,
@@ -240,13 +241,15 @@ const TrainerBody = ({
         style={taskAreaStyle}
         ref={taskContainer}
       >
-        <Template
-          task={activeTask}
-          deps={props.deps}
-          answer={answer}
-          onChange={onChange}
-          mathInput={mathInput}
-        />
+        <DigitGroupingForTask taskType={activeTask?.type}>
+          <Template
+            task={activeTask}
+            deps={props.deps}
+            answer={answer}
+            onChange={onChange}
+            mathInput={mathInput}
+          />
+        </DigitGroupingForTask>
         <TaskHints />
       </div>
 

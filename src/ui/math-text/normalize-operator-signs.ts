@@ -37,7 +37,8 @@
  * - anything without spaces around it («4-й», «2022-жылы») is left alone.
  */
 
-const MATH_ISLAND_RE = /(\\\([\s\S]*?\\\)|\\\[[\s\S]*?\\\]|\$\$[\s\S]*?\$\$)/
+export const MATH_ISLAND_RE =
+  /(\\\([\s\S]*?\\\)|\\\[[\s\S]*?\\\]|\$\$[\s\S]*?\$\$)/
 
 const MINUS = '−'
 const TIMES = '×'

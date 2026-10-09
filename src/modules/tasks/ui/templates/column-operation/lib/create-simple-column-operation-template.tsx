@@ -3,6 +3,7 @@ import { isActiveSolution } from '@/modules/tasks/lib/solution-types'
 import type { TaskComponentProps } from '@/modules/tasks/model/types'
 import { TaskTitle } from '@/modules/tasks/ui/common/task-title/task-title'
 import { MathInput } from '@/ui/math-input/math-input'
+import { DigitGroupingContext } from '@/ui/math-text/group-digits'
 
 import { ColumnOperationDescription } from '../shared/column-operation-description'
 import { ColumnOperationSolution } from '../shared/column-operation-solution'
@@ -53,5 +54,13 @@ export const createSimpleColumnOperationTemplate = ({
 
   SimpleColumnOperationTemplate.displayName = id
 
-  return SimpleColumnOperationTemplate
+  // Column arithmetic: each digit stands in its own column, never grouped
+  // (rule 100).
+  const Ungrouped = (props: TaskComponentProps<ColumnOperationTask>) => (
+    <DigitGroupingContext value={{ from: null }}>
+      <SimpleColumnOperationTemplate {...props} />
+    </DigitGroupingContext>
+  )
+
+  return Ungrouped
 }

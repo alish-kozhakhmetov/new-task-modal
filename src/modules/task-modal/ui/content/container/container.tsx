@@ -9,6 +9,7 @@ import {
   useStore,
 } from '@/modules/task-modal/model/store/task-modal-store'
 import { LegacyTaskRoot } from '@/modules/task-modal/ui/legacy-task-root'
+import { DigitGroupingForTask } from '@/modules/tasks/lib/digit-grouping-for-task'
 import { useTaskComponent } from '@/modules/tasks/model/component/use-task-component'
 import type { TaskComponentProps } from '@/modules/tasks/model/types'
 
@@ -81,12 +82,14 @@ export const TaskModalContainer = ({
             // went to the previous task's field (#19). A fresh mount per task
             // typesets and registers fields from scratch.
             <Fragment key={activeTask.id}>
-              <TaskComponent
-                {...taskProps}
-                answer={answer}
-                deps={deps}
-                task={activeTask}
-              />
+              <DigitGroupingForTask taskType={activeTask.type}>
+                <TaskComponent
+                  {...taskProps}
+                  answer={answer}
+                  deps={deps}
+                  task={activeTask}
+                />
+              </DigitGroupingForTask>
               <TaskHints />
             </Fragment>
           )}

@@ -1,6 +1,7 @@
 import { MathJax } from 'better-react-mathjax'
 import clsx from 'clsx'
 
+import { groupDigitsInTex, useDigitGrouping } from './group-digits'
 import styles from './math-text.module.scss'
 import { normalizeFractionStyle } from './normalize-fraction-style'
 import { timesInMath } from './normalize-operator-signs'
@@ -25,11 +26,13 @@ interface Props {
 }
 
 export const MathFormula = ({ children, className, onTypeset }: Props) => {
+  const { from } = useDigitGrouping()
+  const tex = timesInMath(unwrapMath(children))
   // Wrap first — normalizeFractionStyle only rewrites islands inside `\(...\)`.
   // Some generators already send the formula wrapped («\(64 \approx\)»);
   // wrapping it again made MathJax print a red «\(» error.
   const content = normalizeFractionStyle(
-    `\\(${timesInMath(unwrapMath(children))}\\)`,
+    `\\(${from === null ? tex : groupDigitsInTex(tex, from)}\\)`,
   )
 
   const handleTypeset = () => {

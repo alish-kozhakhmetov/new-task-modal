@@ -8,6 +8,7 @@ import type { TaskComponentProps } from '@/modules/tasks/model/types'
 import { TaskTitle } from '@/modules/tasks/ui/common/task-title/task-title'
 import type { Task } from '@/types/api/task'
 import { MathInput } from '@/ui/math-input/math-input'
+import { DigitGroupingContext } from '@/ui/math-text/group-digits'
 
 import { hasLabelColumn } from '../../text/shared/label-column'
 import { TextAdornment } from '../../text/shared/text-adornment'
@@ -122,5 +123,13 @@ export const createMultiColumnOperationTemplate = ({
 
   MultiColumnOperationTemplate.displayName = id
 
-  return MultiColumnOperationTemplate
+  // Column arithmetic: each digit stands in its own column, never grouped
+  // (rule 100).
+  const Ungrouped = (props: TaskComponentProps<ColumnOperationTask>) => (
+    <DigitGroupingContext value={{ from: null }}>
+      <MultiColumnOperationTemplate {...props} />
+    </DigitGroupingContext>
+  )
+
+  return Ungrouped
 }

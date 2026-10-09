@@ -6,6 +6,10 @@ import { TaskDescription } from '@/modules/tasks/ui/common/task-description/ui/t
 import { TaskTitle } from '@/modules/tasks/ui/common/task-title/task-title'
 import type { Task } from '@/types/api/task'
 import { MathInput } from '@/ui/math-input/math-input'
+import {
+  DigitGroupingContext,
+  useDigitGrouping,
+} from '@/ui/math-text/group-digits'
 
 import { TableSolution } from '../shared/table-solution'
 import styles from '../shared/table.module.scss'
@@ -22,6 +26,14 @@ import { useHiddenRight } from './use-hidden-right'
 
 /** Flex rows that wrap on a phone; a field stays glued to the cell after it. */
 const GLUED_ROW_IDS = new Set(['table.inline', 'table.mixed'])
+
+/** Data tables whose columns are columns of numbers (rule 100). */
+const COLUMN_GROUPED_IDS = new Set([
+  'table.grid',
+  'table.multiRow',
+  'table.multiRowSvg',
+])
+const COLUMN_GROUPING = { from: 4 }
 
 interface TableTemplateConfig {
   /** templateId, e.g. `table.plain`. */
@@ -41,6 +53,7 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
     // whether the task is in solution mode or has a table.
     const { ref: wrapperRef, hiddenRight } = useHiddenRight<HTMLDivElement>()
     const tableRef = useAlignedWrap<HTMLTableElement>(GLUED_ROW_IDS.has(id))
+    const grouping = useDigitGrouping()
 
     if (isActiveSolution(task.solution)) {
       return (
@@ -92,6 +105,20 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
           cells[0] === 'answercell' &&
           cells[1] !== 'answercell',
       )
+
+    // Rule 100: a data-table column that holds a number of five digits or
+    // more groups its four-digit numbers too, so the classes line up.
+    const columnGrouping = (cellIndex: number) => {
+      if (grouping.from === null || !COLUMN_GROUPED_IDS.has(id)) return grouping
+      const wide = table.rows.some(({ cells }) => {
+        const cell = cells[cellIndex]
+        if (cell === undefined || cell === 'answercell') return false
+        const text =
+          typeof cell === 'string' ? cell : deps.global.translateTasks(cell)
+        return /\d{5,}/.test(text.replace(/(?<=\d)[ \u00a0]+(?=\d{3})/g, ''))
+      })
+      return wide ? COLUMN_GROUPING : grouping
+    }
 
     return (
       <div className={styles.container} data-template-id={id} data-mode="input">
@@ -246,7 +273,11 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
                         {isInput ? (
                           renderInput()
                         ) : (
-                          <TableStaticCellContent content={contentOf(cell)} />
+                          <DigitGroupingContext
+                            value={columnGrouping(cellIndex)}
+                          >
+                            <TableStaticCellContent content={contentOf(cell)} />
+                          </DigitGroupingContext>
                         )}
                       </td>,
                     )
