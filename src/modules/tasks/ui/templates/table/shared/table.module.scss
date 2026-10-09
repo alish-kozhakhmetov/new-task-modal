@@ -71,12 +71,6 @@
   padding-inline: 4px;
 }
 
-// A borderless equation row (table.plain, 4_2_10): the text cell's own 8px
-// is the gap to the field, as everywhere else (rule 23).
-.equationStretch .inputCell {
-  padding-inline: 0;
-}
-
 .table.tableRemovePadding {
   border-spacing: 0 8px;
   border-collapse: separate;
@@ -368,4 +362,36 @@
 // this and them — exactly one width-setting rule is ever active per cell.
 .inputCellDefaultWidth {
   width: 1%;
+}
+
+// A borderless table.plain row is a phrase: «53 л = ▢ мл», «822864 : 2 = ▢».
+// It is as wide as its parts, 8px between them (rule 23), the field 120 like
+// every other field. The backend's `table.width` is ignored here, as it is
+// for inline/list/mixed: 75 of the 104 grade-4 rows came as 100% and spread
+// their parts across the screen, the other 29 as auto and stretched the field.
+.table.tableRemoveBorders.equationStretch {
+  &,
+  tbody,
+  tr {
+    display: flex;
+  }
+
+  tr {
+    flex-wrap: wrap;
+    gap: var(--space-8);
+    align-items: center;
+  }
+
+  /* stylelint-disable no-descending-specificity -- tr[data-wrap] is set only by useAlignedWrap, never on table.plain */
+  .cell,
+  .inputCell {
+    width: auto;
+    padding: 0;
+  }
+
+  .inputCell {
+    flex: 0 0 120px;
+    width: 120px;
+  }
+  /* stylelint-enable no-descending-specificity */
 }
