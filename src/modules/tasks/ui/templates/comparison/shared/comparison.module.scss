@@ -64,17 +64,18 @@
   align-items: center;
 }
 
+// The sign field is a field like any other (rule 14): h48, r12, 1px, from the
+// shared math input. One sign is its whole expected answer, so it is a square
+// of the field height (rule 16). It was 64×64 with its own 2px/r8 — the border
+// and radius never applied (the math input's own wins), the size did.
 .input {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 64px !important;
-  height: 64px !important;
-  min-height: 64px !important;
-  font-size: 24px;
+  width: var(--size-control-field) !important;
+  height: var(--size-control-field) !important;
+  min-height: var(--size-control-field) !important;
   background: var(--bg-surface);
-  border: 2px solid var(--border-default);
-  border-radius: 8px;
 
   :global(.mq-editable-field) {
     display: flex;

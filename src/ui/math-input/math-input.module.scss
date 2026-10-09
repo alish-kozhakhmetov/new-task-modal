@@ -12,7 +12,7 @@
   // Task field 48 / 12 (Alisher, 05.10): between the layout's 58/16 and our
   // 40/12 — Material's 48dp touch target; three labelled fields fit above the
   // keypad. Only the task field: the chat input shares `ui/input` and keeps 58.
-  min-height: 48px !important;
+  min-height: var(--size-control-field) !important;
   padding-block: to-rem(6px);
   overflow-x: auto;
 

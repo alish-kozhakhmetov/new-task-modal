@@ -1,0 +1,7 @@
+@use '../lib/functions.scss' as *;
+
+// Sizes of controls, mirrored from the DS (qalan-assets tokens.css).
+:root {
+  // Task answer field: one height in every template (rule 14).
+  --size-control-field: #{to-rem(48px)};
+}

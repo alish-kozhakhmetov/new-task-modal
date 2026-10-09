@@ -43,7 +43,7 @@
 }
 
 .inputSkeleton {
-  height: 48px;
+  height: var(--size-control-field);
   margin-top: var(--space-24);
 }
 
