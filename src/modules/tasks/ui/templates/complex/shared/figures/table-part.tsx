@@ -42,7 +42,11 @@ export const TablePart = ({
   const answerValues = answerBindings
     ? splitMultiAnswer(answerBindings.answer, answerBindings.separator)
     : []
-  const tableWidth = part.width || '100%'
+  // A borderless one-row table is a phrase, as in table.plain: sized by its
+  // parts, the backend width ignored (.equationStretch).
+  const phrase =
+    Boolean(part.removeBorders) && !part.removePadding && rows.length === 1
+  const tableWidth = phrase ? undefined : part.width || '100%'
 
   return (
     <div
@@ -55,6 +59,7 @@ export const TablePart = ({
           tableStyles.table,
           part.removeBorders && tableStyles.tableRemoveBorders,
           part.removePadding && tableStyles.tableRemovePadding,
+          phrase && tableStyles.equationStretch,
         )}
         style={{ width: tableWidth }}
         data-testid="task-table"

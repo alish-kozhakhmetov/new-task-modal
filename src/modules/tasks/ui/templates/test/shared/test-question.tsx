@@ -30,10 +30,9 @@ export const TestQuestion = ({ description, deps }: Props) => {
   const question = translateValue(description.question, translate)
   const questionAfter = translateValue(description.questionAfter, translate)
 
+  // One type size for the whole task (rule 48): the backend's
+  // questionFontSize is not applied. In grade 4 all 32 tests send 18 anyway.
   const questionStyle: CSSProperties = {}
-  if (description.questionFontSize) {
-    questionStyle.fontSize = description.questionFontSize
-  }
   if (description.questionAlign) {
     questionStyle.textAlign =
       description.questionAlign as CSSProperties['textAlign']

@@ -89,7 +89,14 @@ export const TableSolution = ({
             removePadding: table.removePadding,
           })}
           style={{
-            width: templateId === 'table.mixed' ? '100%' : table.width,
+            width:
+              templateId === 'table.mixed'
+                ? '100%'
+                : // the answer row is the same phrase as the task row
+                  (templateId ?? 'table.plain') === 'table.plain' &&
+                    table.removeBorders
+                  ? undefined
+                  : table.width,
           }}
           data-testid="task-table"
         >
