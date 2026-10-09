@@ -117,7 +117,11 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
                   id === 'table.mixed' ||
                   id === 'table.inline'
                     ? '100%'
-                    : table.width,
+                    : // A borderless table.plain row is a phrase and sizes to
+                      // its content; the backend flag is ignored (.equationStretch).
+                      id === 'table.plain' && table.removeBorders
+                      ? undefined
+                      : table.width,
               }}
               data-testid="task-table"
               data-field-column={fieldColumn || undefined}
