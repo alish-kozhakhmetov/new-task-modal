@@ -6,7 +6,7 @@ import {
   wordFormsOf,
 } from '../../lib/resolve-word-forms'
 
-const MARKED_WORD = new RegExp(`([А-Яа-яЁё]+)${WORD_FORM_MARK}`, 'g')
+const MARKED_WORD = new RegExp(`([\\p{L}'ʻ’]+)${WORD_FORM_MARK}`, 'gu')
 
 /** First text node with a marked word, outside MathJax. */
 const markedText = (el: Element): Text | null => {

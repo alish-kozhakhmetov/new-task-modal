@@ -8,14 +8,36 @@ import type {
 import { pickTranslationText } from '@/modules/tasks/lib/translation-utils'
 import type { User } from '@/types/api/api'
 import type { Task, TaskSolution } from '@/types/api/task'
+import type { Language } from '@/types/enums'
 
 import { stripMathDelimiters } from '../strip-math-delimiters'
 import type { TextTask } from '../types.task'
 
 import { withoutSolution } from './text-template-story'
 
+// Stories run in Russian; `?lang=english` (any host Language) switches the
+// task text and getLanguage() together — word forms pick by that language.
+const STORY_LANGUAGE =
+  (typeof window !== 'undefined' &&
+    new URLSearchParams(window.location.search).get('lang')) ||
+  'russian'
+
+const LANGUAGE_FIELD: Record<string, string> = {
+  russian: 'rus',
+  english: 'eng',
+  uzbek: 'uzb',
+  azerbaijani: 'aze',
+  kyrgyz: 'kgz',
+  'kk-cyrillic': 'kaz',
+}
+
 const translate = (value: unknown): string => {
   if (typeof value === 'string') return value
+  const field = LANGUAGE_FIELD[STORY_LANGUAGE]
+  if (field && value && typeof value === 'object') {
+    const text = (value as Record<string, unknown>)[field]
+    if (typeof text === 'string' && text) return text
+  }
   return pickTranslationText(value)
 }
 
@@ -349,7 +371,7 @@ export const makeTrainerProps = (
       global: {
         translate,
         translateTasks: translate,
-        getLanguage: () => 'russian',
+        getLanguage: () => STORY_LANGUAGE as Language,
         getAbbreviatedLanguage: () => 'rus',
         saveLastAnswer: noop,
         getLastAnswer: () => null,
