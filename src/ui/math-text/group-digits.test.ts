@@ -48,8 +48,6 @@ describe('rule 100: digit grouping', () => {
     )
     expect(groupDigitsInTex('75\\,834', 5)).toBe('75\\hspace{0.14em}834')
     expect(groupDigitsInTex('5825', 5)).toBe('5825')
-    expect(groupDigitsInTex('12345,0159', 5)).toBe(
-      '12\\hspace{0.14em}345,0159',
-    )
+    expect(groupDigitsInTex('12345,0159', 5)).toBe('12\\hspace{0.14em}345,0159')
   })
 })
