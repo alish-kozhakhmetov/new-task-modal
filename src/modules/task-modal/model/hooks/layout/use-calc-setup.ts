@@ -62,8 +62,19 @@ export const useCalcSetup = ({ activeTask, refs, isTesting = false }: Args) => {
     // use-input-focus's click handler) before MathQuill attaches makes inputs
     // look clickable but do nothing. Wait for window.MathQuill too, same
     // retry cadence as MathInput's own init retry.
+    //
+    // The template is lazy: while its chunk loads, Suspense shows the skeleton
+    // and the task container is not on the page. Setup finished then found no
+    // container — use-input-focus never attached, and the calculator typed
+    // every key into the first field (alish-kozhakhmetov/qalan#19: a slow
+    // chunk on the phone after «Далее»). Wait for the task to show, unbounded:
+    // it is the template's own load.
     const waitForMathQuill = () => {
       if (cancelled) return
+      if (!isShown(refs.taskContainer.current)) {
+        retryId = window.setTimeout(waitForMathQuill, 50)
+        return
+      }
       if (window.MathQuill || attempts++ >= MAX_ATTEMPTS) {
         finishSetup()
         return
@@ -103,3 +114,7 @@ export type CalcState = ReturnType<typeof useCalcSetup>
 
 const isWithoutCalc = (task: Task) =>
   TASK_DESCRIPTIONS_WITHOUT_CALC.includes(task.description.type)
+
+/** In the page and laid out — not missing, not hidden by Suspense. */
+const isShown = (el: HTMLElement | null) =>
+  Boolean(el?.isConnected && el.getClientRects().length > 0)
