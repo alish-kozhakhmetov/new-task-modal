@@ -40,9 +40,6 @@ export const TaskModalContainer = ({
     activeTask,
   })
 
-  // «5 лет» → «1 год» as the child types (4_1_8 and other word forms).
-  useWordFormAgreement(ref, activeTask?.id)
-
   const availableTasks = useStore((s) => s.availableTasks)
 
   const isAzerbaijan = deps.global.isLanguageAzerbaijanSelected()
@@ -91,10 +88,30 @@ export const TaskModalContainer = ({
                 />
               </DigitGroupingForTask>
               <TaskHints />
+              <WordFormAgreement root={ref} taskId={activeTask.id} />
             </Fragment>
           )}
         </div>
       </Suspense>
     </ErrorBoundary>
   )
+}
+
+/**
+ * «5 лет» → «1 год» as the child types (4_1_8 and other word forms). Lives
+ * inside the task's own subtree: the template is lazy, and until its chunk
+ * loads Suspense shows the skeleton and the container is not on the page.
+ * Called from the container itself, the hook ran with no container and never
+ * again — the word after a field stayed «тысяч» for any number (live on test,
+ * 16.10). Mounted with the task, it runs once the task is on screen.
+ */
+const WordFormAgreement = ({
+  root,
+  taskId,
+}: {
+  root: RefObject<HTMLDivElement | null>
+  taskId: unknown
+}) => {
+  useWordFormAgreement(root, taskId)
+  return null
 }
