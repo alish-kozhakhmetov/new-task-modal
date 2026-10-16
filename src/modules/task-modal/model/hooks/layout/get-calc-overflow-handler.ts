@@ -1,4 +1,4 @@
-import { getParentWithAttr } from '../../helpers'
+import { getParentWithAttr, trackPressTarget } from '../../helpers'
 import type { OpenState } from '../use-open-state'
 
 import type { TaskModalRefs } from './use-refs'
@@ -40,8 +40,10 @@ export const handleCalcOverflow = ({ refs, calc }: Args) => {
     }
   }
 
+  const press = trackPressTarget(taskContainer)
   const onClick = getControlGestureHandler({
     onGesture: onControlGesture,
+    getTarget: press.resolve,
   })
   const onFocusIn = getControlGestureHandler({
     onGesture: (isControl) => {
@@ -70,18 +72,21 @@ export const handleCalcOverflow = ({ refs, calc }: Args) => {
   return () => {
     taskContainer.removeEventListener('click', onClick)
     taskContainer.removeEventListener('focusin', onFocusIn)
+    press.dispose()
   }
 }
 
 interface GetControlGestureHandlerArgs {
   onGesture: (isControl: boolean) => void
+  getTarget?: (event: Event) => EventTarget | null
 }
 
 const getControlGestureHandler = ({
   onGesture,
+  getTarget = (event) => event.target,
 }: GetControlGestureHandlerArgs) => {
   const handler = (event: Event) => {
-    const target = event.target
+    const target = getTarget(event)
 
     const isElement = target instanceof HTMLElement
     if (!isElement) return

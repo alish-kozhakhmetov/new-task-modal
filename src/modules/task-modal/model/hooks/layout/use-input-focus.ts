@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 
 import type { Task } from '@/types/api/task'
 
-import { getParentWithAttr } from '../../helpers'
+import { getParentWithAttr, trackPressTarget } from '../../helpers'
 import { getRevealScrollTop } from '../../lib/reveal-in-container'
 import { useStore } from '../../store/task-modal-store'
 
@@ -23,6 +23,14 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
   const lastFocusedInput = useRef<HTMLElement | null>(null)
   const isTaskLoaded = useStore((s) => s.isTaskLoaded)
 
+  // The effect below is set up once per task; the calculator opens and closes
+  // after that. Read whether it is open now: with the setup-time «closed»
+  // every tap scrolled the field to the centre over an open calculator.
+  const isCalcOpen = useRef(calcState.isOpen)
+  useEffect(() => {
+    isCalcOpen.current = calcState.isOpen
+  }, [calcState.isOpen])
+
   useEffect(() => {
     const root = refs.root.current
     const taskContainer = refs.taskContainer.current
@@ -37,7 +45,7 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
 
       input.classList.add(FOCUSED)
 
-      if (scroll && !calcState.isOpen) {
+      if (scroll && !isCalcOpen.current) {
         input.scrollIntoView({
           block: 'center',
           // CSS can't override an explicit 'smooth' — honour rule 99 here.
@@ -80,8 +88,10 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
       }
     }
 
+    const press = trackPressTarget(root)
+
     const handler = (event: MouseEvent) => {
-      const target = event.target
+      const target = press.resolve(event)
 
       const isElement = target instanceof HTMLElement
       if (!isElement) return
@@ -144,6 +154,7 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
       cancelAnimationFrame(raf1)
       cancelAnimationFrame(raf2)
       root.removeEventListener('click', handler)
+      press.dispose()
       lastFocusedInput.current?.classList.remove(FOCUSED)
       lastFocusedInput.current = null
     }

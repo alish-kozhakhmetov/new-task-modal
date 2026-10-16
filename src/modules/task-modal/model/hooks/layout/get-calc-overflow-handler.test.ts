@@ -102,4 +102,39 @@ describe('handleCalcOverflow', () => {
     cleanup()
     taskContainer.remove()
   })
+  it('keeps calc open when a press on a control is released past it', () => {
+    // Focusing the field scrolls the task under the pointer: the release lands
+    // elsewhere and the browser clicks the common ancestor.
+    const taskContainer = document.createElement('div')
+    Object.defineProperty(taskContainer, 'clientHeight', { value: 100 })
+    Object.defineProperty(taskContainer, 'scrollHeight', { value: 400 })
+
+    const stack = document.createElement('div')
+    const control = document.createElement('span')
+    control.setAttribute('data-control', '')
+    stack.appendChild(control)
+    taskContainer.appendChild(stack)
+    document.body.appendChild(taskContainer)
+
+    const calc = makeCalc()
+    const cleanup = handleCalcOverflow({
+      refs: makeRefs(taskContainer),
+      calc,
+    })
+
+    control.dispatchEvent(new FocusEvent('focusin', { bubbles: true }))
+    expect(calc.isOpen).toBe(true)
+
+    control.dispatchEvent(new MouseEvent('pointerdown', { bubbles: true }))
+    stack.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+    expect(calc.isOpen).toBe(true)
+
+    // A press off the controls still hides it.
+    stack.dispatchEvent(new MouseEvent('pointerdown', { bubbles: true }))
+    stack.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+    expect(calc.isOpen).toBe(false)
+
+    cleanup()
+    taskContainer.remove()
+  })
 })
