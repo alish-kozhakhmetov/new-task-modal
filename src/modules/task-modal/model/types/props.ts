@@ -16,6 +16,12 @@ export interface TaskModalProps {
   actions: TaskModalActions
   closeModal: () => void
   renderLegacyTask?: RenderLegacyTask
+  /**
+   * `wide` — the site's «Тренажёр на всю ширину» flag (`useWideTrainer`):
+   * on a screen with a mouse from 1100px chat, task and draft stand as
+   * columns. Ignored on touch screens. Without it — the phone layout, as 2.4.3.
+   */
+  layout?: 'wide'
 }
 
 export interface TaskModalDependencies {

@@ -29,7 +29,11 @@ export const TaskModal = (hostProps: TaskModalProps) => {
   return (
     <>
       <TaskModalProviders>
-        <TaskModalShell isChatOpen={chat.isOpen} isDraftOpen={canvas.isOpen}>
+        <TaskModalShell
+          isWide={props.layout === 'wide'}
+          isChatOpen={chat.isOpen}
+          isDraftOpen={canvas.isOpen}
+        >
           <TaskModalContent props={props} modals={{ chat, canvas }} />
 
           {/* One draft per task (Alisher, 05.10): the board is keyed by task

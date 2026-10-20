@@ -24,15 +24,16 @@ $breakpoints: (
 // Wide desktop layout (Alisher, 20.10): on a screen with a mouse the parts
 // that are sheets on the phone — chat, task, draft — stand side by side as
 // columns, like the qalan-trainer stand. Two conditions, both required:
-// - the host opted in with `data-ntm-layout="wide"` on any ancestor (the
-//   site's «Тренажёр на всю ширину» flag, or the bookmarklet until it ships):
-//   in the old 430px modal column the grid has no room;
+// - the host passed `layout="wide"` (the site's `useWideTrainer` flag): the
+//   shell then carries `data-ntm-layout="wide"` — on itself or, in Storybook,
+//   on an ancestor. In the site's old 80% window the grid has no room;
 // - a fine pointer that can hover: the app's WebView on phones and tablets
 //   never matches, so they keep the phone layout pixel for pixel.
 // The width is the viewport's: in wide mode the host gives the whole window.
 @mixin wide($min: 1100px) {
   @media (hover: hover) and (pointer: fine) and (min-width: $min) {
-    :global([data-ntm-layout='wide']) & {
+    :global([data-ntm-layout='wide']) &,
+    &:global([data-ntm-layout='wide']) {
       @content;
     }
   }
