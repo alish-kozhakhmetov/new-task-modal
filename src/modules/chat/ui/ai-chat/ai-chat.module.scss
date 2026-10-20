@@ -1,6 +1,13 @@
 .buttons {
   gap: var(--space-12);
   padding: var(--space-16);
+
+  // Wide chat column: both replies stretch to one height; with the field's
+  // own 12 on top the gap to it is 24 — one step of the scale, not 16 + 12.
+  @include wide {
+    align-items: stretch;
+    padding-bottom: var(--space-12);
+  }
 }
 
 .button {
@@ -13,4 +20,10 @@
   background: var(--bg-surface);
   border: none;
   border-radius: var(--radius-xl) var(--radius-xl) var(--radius-s);
+}
+
+.word {
+  @include wide {
+    display: block;
+  }
 }

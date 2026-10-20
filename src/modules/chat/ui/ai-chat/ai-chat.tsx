@@ -43,7 +43,14 @@ export const AiChat = ({ props }: Props) => {
               <FlexRow>
                 <BrokenHeartIcon />
               </FlexRow>
-              Смотреть пример
+              {/* Two words, two lines in the wide chat column (Alisher,
+                  20.10): both quick replies the same height. Inline spans
+                  render as plain text everywhere else — one
+                  flex item, as the bare text was. */}
+              <span>
+                <span className={s.word}>Смотреть</span>{' '}
+                <span className={s.word}>пример</span>
+              </span>
             </button>
           )}
 
@@ -53,7 +60,10 @@ export const AiChat = ({ props }: Props) => {
                 <BrokenHeartIcon />
                 <BrokenHeartIcon />
               </FlexRow>
-              Показать ответ
+              <span>
+                <span className={s.word}>Показать</span>{' '}
+                <span className={s.word}>ответ</span>
+              </span>
             </button>
           )}
         </FlexRow>
