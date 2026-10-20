@@ -27,11 +27,20 @@ export const translateContent = (
   return text.kaz
 }
 
-export const getMessageNodes = (messages: AiChatMessageType[]): ReactNode[] => {
+export const getMessageNodes = (
+  messages: AiChatMessageType[],
+  onTheoryPlay?: () => void,
+): ReactNode[] => {
   return messages.map((message) => {
     switch (message.type) {
       case 'my-video':
-        return <YoutubeVideo key={message.id} url={message.url} />
+        return (
+          <YoutubeVideo
+            key={message.id}
+            url={message.url}
+            onPlay={message.isTheory ? onTheoryPlay : undefined}
+          />
+        )
 
       case 'current-date':
         return <DateMessage key={message.id} />

@@ -6,9 +6,11 @@ import s from './youtube-video.module.scss'
 
 interface Props {
   url: string
+  /** Called on the press that starts the video. */
+  onPlay?: () => void
 }
 
-export const YoutubeVideo = ({ url }: Props) => {
+export const YoutubeVideo = ({ url, onPlay }: Props) => {
   const [isPlaying, setIsPlaying] = useState(false)
 
   const getVideoId = (url: string) => {
@@ -45,7 +47,10 @@ export const YoutubeVideo = ({ url }: Props) => {
     <button
       type="button"
       className={s.fakePlayer}
-      onClick={() => setIsPlaying(true)}
+      onClick={() => {
+        setIsPlaying(true)
+        onPlay?.()
+      }}
     >
       {thumbnailUrl ? (
         <img src={thumbnailUrl} alt="Video thumbnail" className={s.thumbnail} />

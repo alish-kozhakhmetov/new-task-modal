@@ -23,9 +23,11 @@ import type { MyVideoMessageType } from './types'
 
 interface Args {
   props: TaskModalProps
+  /** Permanent chat column of the wide layout: theory coin on video press. */
+  isPinned?: boolean
 }
 
-export const useAiChat = ({ props }: Args) => {
+export const useAiChat = ({ props, isPinned = false }: Args) => {
   const state = useAppState()
   const { locatedCountry, activeTask } = state
   const answer = useStore((s) => s.answer)
@@ -54,9 +56,10 @@ export const useAiChat = ({ props }: Args) => {
   const showSolution = useShowSolution({ props })
   const showVideoExplanation = useShowVideoExplanation({ props })
 
-  const isTheorySet = useTheory({
+  const { isTheorySet, awardTheoryCoin } = useTheory({
     props,
     isTheoryShown,
+    deferCoin: isPinned,
     onLoad: (theory) => {
       const url = theory?.content
         ? translateContent(theory.content, deps, locatedCountry)
@@ -70,7 +73,13 @@ export const useAiChat = ({ props }: Args) => {
           } as MyVideoMessageType)
         : MOCK_THEORY
 
-      addMessages(...INITIAL_MESSAGES, theoryMessage)
+      // Narrows the union MOCK_THEORY is typed with; both are videos.
+      addMessages(
+        ...INITIAL_MESSAGES,
+        theoryMessage.type === 'my-video'
+          ? { ...theoryMessage, isTheory: true }
+          : theoryMessage,
+      )
 
       setIsTheoryShown(true)
     },
@@ -159,6 +168,7 @@ export const useAiChat = ({ props }: Args) => {
   return {
     messages,
     isTheorySet,
+    awardTheoryCoin,
     isHintShown,
     isSolutionShown,
     handleSend,

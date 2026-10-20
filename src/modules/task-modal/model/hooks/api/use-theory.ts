@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { useEffect, useMemo } from 'react'
+import { useCallback, useEffect, useMemo, useRef } from 'react'
 
 import type { Theory } from '@/types/api/api'
 
@@ -10,11 +10,24 @@ interface Args {
   props: TaskModalProps
   onLoad: (theory: Theory | undefined) => void
   isTheoryShown: boolean
+  /**
+   * Wide layout (lead session, 20.10): the chat is always on screen, so it
+   * opening is no longer the child turning to the theory. The theory still
+   * loads with the task, but the coin waits for a press on the theory video —
+   * call `awardTheoryCoin`. On the phone opening the chat is that action, and
+   * the coin comes with the load, as before.
+   */
+  deferCoin?: boolean
 }
 
 const NAMESPACE = 'lesson'
 
-export const useTheory = ({ props, onLoad, isTheoryShown }: Args) => {
+export const useTheory = ({
+  props,
+  onLoad,
+  isTheoryShown,
+  deferCoin = false,
+}: Args) => {
   const setAppState = useSetAppState()
   const { deps, hostProps } = props
   const { global, api, alert, enums } = deps
@@ -27,6 +40,13 @@ export const useTheory = ({ props, onLoad, isTheoryShown }: Args) => {
       ? 'school'
       : abbrLanguage
   }, [global])
+
+  const coinGiven = useRef(false)
+  const giveCoin = () => {
+    if (!personalStudyItemId || coinGiven.current) return
+    coinGiven.current = true
+    void api.addCoinForTheory(lessonId!, personalStudyItemId, applicationType)
+  }
 
   const { data, isSuccess, isFetched, error, isError } = useQuery({
     queryKey: [NAMESPACE, lessonId, language],
@@ -54,16 +74,17 @@ export const useTheory = ({ props, onLoad, isTheoryShown }: Args) => {
       })
 
       onLoad(theory[0])
+      coinGiven.current = false
 
-      if (personalStudyItemId) {
-        void api.addCoinForTheory(
-          lessonId!,
-          personalStudyItemId,
-          applicationType,
-        )
-      }
+      if (!deferCoin) giveCoin()
     }
   }, [isSuccess, data, isTheoryShown])
 
-  return isFetched || isTheoryShown
+  // One coin per theory load (that is, per task), however many presses.
+  const awardTheoryCoin = useCallback(() => {
+    if (deferCoin) giveCoin()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [deferCoin, lessonId, personalStudyItemId, applicationType])
+
+  return { isTheorySet: isFetched || isTheoryShown, awardTheoryCoin }
 }

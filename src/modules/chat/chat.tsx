@@ -18,7 +18,7 @@ export const Chat = ({ props, onClose, isPinned = false }: ChatProps) => {
     {
       title: 'AI-чат',
       subtitle: '24/7',
-      content: () => <AiChat props={props} />,
+      content: () => <AiChat props={props} isPinned={isPinned} />,
     },
     {
       title: 'Ментор',

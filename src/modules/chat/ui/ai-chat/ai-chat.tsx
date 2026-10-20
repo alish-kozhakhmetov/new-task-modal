@@ -11,23 +11,25 @@ import { useAiChat } from './model/use-ai-chat'
 
 interface Props {
   props: TaskModalProps
+  isPinned?: boolean
 }
 
-export const AiChat = ({ props }: Props) => {
+export const AiChat = ({ props, isPinned = false }: Props) => {
   const {
     messages,
     isTheorySet,
+    awardTheoryCoin,
     isHintShown,
     isSolutionShown,
     handleSend,
     handleViewExample,
     handleShowAnswer,
     addMessages,
-  } = useAiChat({ props })
+  } = useAiChat({ props, isPinned })
 
   const shouldShowActions = !isHintShown || !isSolutionShown
 
-  const messageNodes = getMessageNodes(messages)
+  const messageNodes = getMessageNodes(messages, awardTheoryCoin)
   const messageKeys = messages.map((message) => message.id)
 
   return (

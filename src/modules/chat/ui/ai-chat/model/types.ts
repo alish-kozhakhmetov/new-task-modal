@@ -4,6 +4,8 @@ export interface MyVideoMessageType {
   type: 'my-video'
   url: string
   id: number
+  /** The lesson theory video: pressing it is turning to the theory. */
+  isTheory?: boolean
 }
 
 type CurrentDateMessage = {
