@@ -100,3 +100,15 @@
   flex: 1;
   min-height: 0;
 }
+
+// Wide layout: the stage is the host's whole window under the toolbar, so the
+// columns get a definite height to share.
+.rootWide {
+  height: 100dvh;
+  min-height: 0;
+
+  .stage {
+    display: flex;
+    flex-direction: column;
+  }
+}

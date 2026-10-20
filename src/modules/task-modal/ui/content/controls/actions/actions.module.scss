@@ -10,6 +10,12 @@
     gap: var(--space-4);
     padding: var(--space-8) var(--space-16);
   }
+
+  // Wide desktop: icons keep their phone size, «Проверить» takes the rest of
+  // the 640 column instead of stretching the icons into wide pills.
+  @include wide {
+    display: flex;
+  }
 }
 
 .button {
@@ -45,6 +51,11 @@
   @include min-width(sm) {
     max-width: 203px;
   }
+
+  @include wide {
+    flex: 1 1 auto;
+    max-width: none;
+  }
 }
 
 .secondary {
@@ -52,6 +63,18 @@
 
   @include min-width(sm) {
     max-width: 66px;
+  }
+
+  @include wide {
+    flex: 0 0 66px;
+  }
+}
+
+// Wide desktop: the column this button opens is already on screen — a button
+// repeating what is visible only takes room from «Проверить» (the stand).
+.shown {
+  @include wide {
+    display: none;
   }
 }
 

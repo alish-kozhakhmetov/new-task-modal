@@ -48,8 +48,16 @@ export function Canvas({ onClose, taskId }: CanvasProps) {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
+    // On the phone the board is a fixed sheet the size of the window. In the
+    // wide layout it is a column (its frame is not fixed): the bitmap takes the
+    // column's size, or a window-sized canvas would overflow it.
+    const frame = canvas.parentElement
+    const column =
+      frame && getComputedStyle(frame).position !== 'fixed'
+        ? frame.getBoundingClientRect()
+        : null
+    canvas.width = column ? Math.round(column.width) : window.innerWidth
+    canvas.height = column ? Math.round(column.height) : window.innerHeight
 
     const savedData = localStorage.getItem(STORAGE_KEY)
     if (savedData) {
@@ -204,6 +212,9 @@ export function Canvas({ onClose, taskId }: CanvasProps) {
   return (
     <>
       <div className={styles.container}>
+        {/* Seen only as a column of the wide layout: an empty white strip
+            without a name reads as a broken page. */}
+        <p className={styles.title}>Черновик</p>
         <canvas
           ref={canvasRef}
           className={styles.canvas}

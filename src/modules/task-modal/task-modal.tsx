@@ -10,6 +10,7 @@ import { useStore } from './model/store/task-modal-store'
 import type { TaskModalProps } from './model/types/props'
 import { TaskModalProviders } from './providers'
 import { TaskModalContent } from './ui/content/content'
+import { TaskModalShell } from './ui/shell/shell'
 
 export interface TaskModalModals {
   chat: OpenState
@@ -28,27 +29,29 @@ export const TaskModal = (hostProps: TaskModalProps) => {
   return (
     <>
       <TaskModalProviders>
-        <TaskModalContent props={props} modals={{ chat, canvas }} />
+        <TaskModalShell isChatOpen={chat.isOpen} isDraftOpen={canvas.isOpen}>
+          <TaskModalContent props={props} modals={{ chat, canvas }} />
 
-        {/* One draft per task (Alisher, 05.10): the board is keyed by task
+          {/* One draft per task (Alisher, 05.10): the board is keyed by task
             and mounted on open, so «Далее» never shows the previous task's
             drawing. Same reason as the chat below — a hidden Activity tree
             would keep the old task id. */}
-        {canvas.isOpen && (
-          <Canvas
-            key={activeTaskId ?? 'none'}
-            taskId={activeTaskId}
-            onClose={canvas.close}
-          />
-        )}
+          {canvas.isOpen && (
+            <Canvas
+              key={activeTaskId ?? 'none'}
+              taskId={activeTaskId}
+              onClose={canvas.close}
+            />
+          )}
 
-        {/* Mounted on open, not kept under ReactActivity: a hidden Activity
+          {/* Mounted on open, not kept under ReactActivity: a hidden Activity
             tree misses store updates made while hidden, so after «Далее» the
             chat still held the previous task — its buttons asked the backend
             for that task's answer (alish-kozhakhmetov/qalan#14). Messages
             live in the chat store and mentor messages in the query cache, so
             remounting loses only an unsent draft. */}
-        {chat.isOpen && <Chat props={props} onClose={chat.close} />}
+          {chat.isOpen && <Chat props={props} onClose={chat.close} />}
+        </TaskModalShell>
       </TaskModalProviders>
     </>
   )

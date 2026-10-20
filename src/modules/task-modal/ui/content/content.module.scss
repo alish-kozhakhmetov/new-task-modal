@@ -33,4 +33,26 @@
     margin: 0 auto;
     border: 1px solid #808080;
   }
+
+  // Wide desktop: the phone frame comes off. The column of the task is as wide
+  // as the keyboard (640, as on the stand) — the keyboard is the stiffest part,
+  // and the condition, the counter and the answer share its left edge.
+  @include wide {
+    display: flex;
+    flex-direction: column;
+    grid-area: task;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    min-height: 0;
+    padding-bottom: var(--space-16);
+    margin: 0;
+    border: 0;
+
+    > * {
+      width: 100%;
+      max-width: 640px;
+      margin-inline: auto;
+    }
+  }
 }

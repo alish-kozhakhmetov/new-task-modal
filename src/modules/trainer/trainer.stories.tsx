@@ -47,6 +47,11 @@ const meta = {
       control: 'text',
       description: 'Structural group id (also via toolbar select)',
     },
+    layout: {
+      control: 'inline-radio',
+      options: ['phone', 'wide'],
+      description: 'Host layout: phone frame or wide desktop columns',
+    },
     showAllStates: { table: { disable: true } },
     stateTab: { table: { disable: true } },
   },
@@ -87,6 +92,25 @@ export const VideoExplanation: Story = {
 
 export const CanvasAndChat: Story = {
   tags: ['!autodocs'],
+  render: (args) => <TrainerPlayground {...args} stateTab="canvasChat" />,
+}
+
+/**
+ * Wide desktop layout (Alisher, 20.10): the host sets
+ * `data-ntm-layout="wide"`, and on a screen with a mouse from 1100px chat,
+ * task and draft stand as columns — 340 / up to 640 / 320, as on the
+ * qalan-trainer stand. Below 1100 and on touch screens — the phone layout.
+ */
+export const WideDesktop: Story = {
+  tags: ['!autodocs'],
+  args: { layout: 'wide' },
+  render: (args) => <TrainerPlayground {...args} stateTab="idle" />,
+}
+
+/** Wide layout with the chat open: it becomes the left column. */
+export const WideDesktopChat: Story = {
+  tags: ['!autodocs'],
+  args: { layout: 'wide' },
   render: (args) => <TrainerPlayground {...args} stateTab="canvasChat" />,
 }
 

@@ -24,6 +24,7 @@ import contentStyles from '@/modules/task-modal/ui/content/content.module.scss'
 import { TaskModalControls } from '@/modules/task-modal/ui/content/controls/controls'
 import { TaskModalHeader } from '@/modules/task-modal/ui/content/header/header'
 import { TaskHints } from '@/modules/task-modal/ui/content/task-hints/task-hints'
+import { TaskModalShell } from '@/modules/task-modal/ui/shell/shell'
 import { DigitGroupingForTask } from '@/modules/tasks/lib/digit-grouping-for-task'
 import type { TaskComponentProps } from '@/modules/tasks/model/types'
 import {
@@ -147,25 +148,27 @@ export const TextTemplateTrainer = ({
   return (
     <TaskModalProviders>
       <div className={clsx(styles.shell, fitContent && styles.shellFitContent)}>
-        <TrainerBody
-          key={sessionKey}
-          Template={Template}
-          props={props}
-          refs={refs}
-          chat={chat}
-          canvas={canvas}
-          forceCalcOpen={forceCalcOpen}
-        />
+        <TaskModalShell isChatOpen={chat.isOpen} isDraftOpen={canvas.isOpen}>
+          <TrainerBody
+            key={sessionKey}
+            Template={Template}
+            props={props}
+            refs={refs}
+            chat={chat}
+            canvas={canvas}
+            forceCalcOpen={forceCalcOpen}
+          />
 
-        <div className={styles.overlays}>
-          <ReactActivity visible={canvas.isOpen}>
-            <Canvas onClose={canvas.close} />
-          </ReactActivity>
+          <div className={styles.overlays}>
+            <ReactActivity visible={canvas.isOpen}>
+              <Canvas onClose={canvas.close} />
+            </ReactActivity>
 
-          <ReactActivity visible={chat.isOpen}>
-            <TrainerChat props={props} onClose={chat.close} />
-          </ReactActivity>
-        </div>
+            <ReactActivity visible={chat.isOpen}>
+              <TrainerChat props={props} onClose={chat.close} />
+            </ReactActivity>
+          </div>
+        </TaskModalShell>
       </div>
     </TaskModalProviders>
   )

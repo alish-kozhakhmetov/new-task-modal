@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { useEffect, useMemo, useState } from 'react'
 
 import {
@@ -18,6 +19,12 @@ export type { TrainerStateTab }
 export type TrainerPlaygroundArgs = {
   variantKey: string
   group: string
+  /**
+   * `wide` — the host opted into the wide desktop layout
+   * (`data-ntm-layout="wide"`): chat, task and draft as columns on a screen
+   * with a mouse from 1100px. `phone` — the 375px frame, as in the app.
+   */
+  layout?: 'phone' | 'wide'
 }
 
 const STATE_TABS: { id: TrainerStateTab; label: string }[] = [
@@ -47,6 +54,7 @@ export const TrainerPlayground = ({
   group: groupArg,
   showAllStates = false,
   stateTab: stateTabProp = 'idle',
+  layout = 'phone',
 }: Props) => {
   const [variantKey, setVariantKey] = useState(variantKeyArg)
   const [group, setGroup] = useState(groupArg)
@@ -111,7 +119,7 @@ export const TrainerPlayground = ({
   const activeTab = showAllStates ? stateTab : stateTabProp
 
   return (
-    <div className={styles.root}>
+    <div className={clsx(styles.root, layout === 'wide' && styles.rootWide)}>
       <div className={styles.toolbar}>
         <label className={styles.field}>
           <span className={styles.label}>Шаблон</span>
@@ -192,6 +200,7 @@ export const TrainerPlayground = ({
       <div
         className={styles.stage}
         key={`${variant.key}:${resolvedGroup}:${activeTab}`}
+        data-ntm-layout={layout === 'wide' ? 'wide' : undefined}
       >
         {variant.render(resolvedGroup, activeTab)}
       </div>

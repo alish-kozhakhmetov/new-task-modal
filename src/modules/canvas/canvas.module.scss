@@ -9,6 +9,41 @@
     margin: 0 auto;
     border: 1px solid #808080;
   }
+
+  // Wide desktop, 1100–1279: no room for a third column, so the draft covers
+  // the task — its column only, not the chat beside it.
+  @include wide {
+    position: relative;
+    inset: auto;
+    z-index: 1;
+    grid-area: task;
+    max-width: none;
+    margin: 0;
+    border: 0;
+  }
+
+  // From 1280: its own column right of the task, as on the stand.
+  @include wide(1280px) {
+    grid-area: draft;
+    background-color: var(--bg-surface);
+    border-left: 1px solid var(--border-default);
+  }
+}
+
+.title {
+  @include body-large-bold;
+
+  display: none;
+
+  @include wide(1280px) {
+    position: absolute;
+    top: var(--space-16);
+    left: var(--space-16);
+    display: block;
+    margin: 0;
+    color: var(--text-tertiary);
+    pointer-events: none;
+  }
 }
 
 .canvas {

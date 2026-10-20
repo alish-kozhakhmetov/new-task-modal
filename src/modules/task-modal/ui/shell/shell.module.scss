@@ -1,0 +1,40 @@
+// Off the wide layout the shell has no box: the task, the draft and the chat
+// stay exactly where they were (fixed sheets over the task).
+.shell {
+  display: contents;
+
+  @include wide {
+    display: grid;
+    grid-template-areas: 'task';
+    grid-template-columns: minmax(0, 1fr);
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+    background: var(--bg-canvas);
+  }
+}
+
+// Chat column from 1100: 340, as on the stand. Closed chat leaves no empty
+// strip — the task takes the width back.
+.withChat {
+  @include wide {
+    grid-template-areas: 'chat task';
+    grid-template-columns: 340px minmax(0, 1fr);
+  }
+}
+
+// Draft column from 1280. Between 1100 and 1280 there is no room for three
+// columns, so the draft keeps covering the task, only inside its column.
+.withDraft {
+  @include wide(1280px) {
+    grid-template-areas: 'task draft';
+    grid-template-columns: minmax(0, 1fr) 320px;
+  }
+}
+
+.withChat.withDraft {
+  @include wide(1280px) {
+    grid-template-areas: 'chat task draft';
+    grid-template-columns: 340px minmax(0, 1fr) 320px;
+  }
+}

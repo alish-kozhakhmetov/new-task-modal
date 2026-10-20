@@ -8,6 +8,14 @@
   margin: 0 auto;
 
   // Do not overflow:hidden here — heart decrease animation uses top: -20px.
+
+  // Wide layout: no phone frame — the host's whole window.
+  @include wide {
+    flex: 1;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+  }
 }
 
 /**
@@ -44,5 +52,10 @@
 
   > * {
     pointer-events: auto;
+  }
+
+  // Wide layout: chat and draft are grid columns, not layers over the frame.
+  @include wide {
+    display: contents;
   }
 }

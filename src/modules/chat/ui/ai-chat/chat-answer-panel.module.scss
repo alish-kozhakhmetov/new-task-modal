@@ -21,6 +21,13 @@
     );
   }
 
+  // Wide desktop: the chat is a 340px column with a 1px right border.
+  @include wide {
+    max-width: calc(
+      340px - 1px - (var(--space-16) * 2) - (var(--space-12) * 2)
+    );
+  }
+
   :global(mjx-math) {
     font-weight: 700;
     line-height: 0.3;
