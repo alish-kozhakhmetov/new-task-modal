@@ -72,6 +72,21 @@
 
 // Wide desktop: the column this button opens is already on screen — a button
 // repeating what is visible only takes room from «Проверить» (the stand).
+// The chat is a permanent column from 1100, the draft from 1280 (Alisher,
+// 20.10, 17:52); between 1100 and 1280 the pencil opens the draft over the
+// task and hides while it is open.
+.chatButton {
+  @include wide {
+    display: none;
+  }
+}
+
+.draftButton {
+  @include wide(1280px) {
+    display: none;
+  }
+}
+
 .shown {
   @include wide {
     display: none;

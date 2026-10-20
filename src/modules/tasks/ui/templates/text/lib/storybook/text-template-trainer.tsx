@@ -7,6 +7,7 @@ import { Canvas } from '@/modules/canvas/canvas'
 import { Chat } from '@/modules/chat/chat'
 import { useCalcSetup } from '@/modules/task-modal/model/hooks/layout/use-calc-setup'
 import { useInputFocus } from '@/modules/task-modal/model/hooks/layout/use-input-focus'
+import { usePinnedColumns } from '@/modules/task-modal/model/hooks/layout/use-pinned-columns'
 import { useTaskModalRefs } from '@/modules/task-modal/model/hooks/layout/use-refs'
 import { useWordFormAgreement } from '@/modules/task-modal/model/hooks/layout/use-word-form-agreement'
 import { useOpenState } from '@/modules/task-modal/model/hooks/use-open-state'
@@ -50,6 +51,8 @@ interface Props {
   initialAnswer?: string
   /** Declarative trainer visual state (All States tabs). */
   stateTab?: TrainerStateTab
+  /** Host layout, as TaskModal's `layout` prop: `wide` — columns on a desktop. */
+  layout?: 'wide'
   /** Opt-in Storybook mocks (hints / theory). */
   trainerOptions?: MakeTrainerPropsOptions
   /**
@@ -88,6 +91,7 @@ export const TextTemplateTrainer = ({
   stateTab = 'idle',
   trainerOptions,
   forceCalcOpen = true,
+  layout,
 }: Props) => {
   const withHints = trainerOptions?.withHints
   const withTheory = trainerOptions?.withTheory
@@ -104,6 +108,10 @@ export const TextTemplateTrainer = ({
     stateTab === 'canvasChat' || stateTab === 'videoExplanation',
   )
   const canvas = useOpenState(false)
+  const isWide = layout === 'wide'
+  const { isChatPinned, isDraftPinned } = usePinnedColumns(isWide)
+  const isChatShown = chat.isOpen || isChatPinned
+  const isDraftShown = canvas.isOpen || isDraftPinned
   const [ready, setReady] = useState(false)
   const [sessionKey, setSessionKey] = useState(0)
   const fitContent = isShellFitContent(window.location.search)
@@ -148,7 +156,11 @@ export const TextTemplateTrainer = ({
   return (
     <TaskModalProviders>
       <div className={clsx(styles.shell, fitContent && styles.shellFitContent)}>
-        <TaskModalShell isChatOpen={chat.isOpen} isDraftOpen={canvas.isOpen}>
+        <TaskModalShell
+          isWide={isWide}
+          isChatOpen={isChatShown}
+          isDraftOpen={isDraftShown}
+        >
           <TrainerBody
             key={sessionKey}
             Template={Template}
@@ -160,12 +172,16 @@ export const TextTemplateTrainer = ({
           />
 
           <div className={styles.overlays}>
-            <ReactActivity visible={canvas.isOpen}>
-              <Canvas onClose={canvas.close} />
+            <ReactActivity visible={isDraftShown}>
+              <Canvas onClose={canvas.close} isPinned={isDraftPinned} />
             </ReactActivity>
 
-            <ReactActivity visible={chat.isOpen}>
-              <TrainerChat props={props} onClose={chat.close} />
+            <ReactActivity visible={isChatShown}>
+              <TrainerChat
+                props={props}
+                onClose={chat.close}
+                isPinned={isChatPinned}
+              />
             </ReactActivity>
           </div>
         </TaskModalShell>
@@ -275,10 +291,18 @@ const TrainerBody = ({
 const TrainerChat = ({
   props,
   onClose,
+  isPinned,
 }: {
   props: ReturnType<typeof makeTrainerProps>
   onClose: () => void
+  isPinned: boolean
 }) => {
   const { activeTask } = useAppState()
-  return <Chat props={{ ...props, activeTask: activeTask }} onClose={onClose} />
+  return (
+    <Chat
+      props={{ ...props, activeTask: activeTask }}
+      onClose={onClose}
+      isPinned={isPinned}
+    />
+  )
 }

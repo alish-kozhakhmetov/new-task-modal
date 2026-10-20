@@ -16,7 +16,8 @@ interface Props {
   className?: string
   titleClassName?: string
   onGoBack?: () => void
-  onClose: () => void
+  /** Without it there is no close button (a pinned column has nothing to close). */
+  onClose?: () => void
 }
 
 export const TopBar = ({
@@ -54,14 +55,20 @@ export const TopBar = ({
         {children}
       </h1>
 
-      <Button
-        color={ButtonColor.White}
-        layout={ButtonLayout.Icon}
-        onClick={onClose}
-        className={s.button}
-      >
-        <CloseIcon width={20} height={20} />
-      </Button>
+      {onClose ? (
+        <Button
+          color={ButtonColor.White}
+          layout={ButtonLayout.Icon}
+          onClick={onClose}
+          className={s.button}
+        >
+          <CloseIcon width={20} height={20} />
+        </Button>
+      ) : (
+        <span className={clsx(s.button, s.spacer)} aria-hidden>
+          <CloseIcon width={20} height={20} />
+        </span>
+      )}
     </FlexRow>
   )
 }

@@ -202,7 +202,11 @@ export const TrainerPlayground = ({
         key={`${variant.key}:${resolvedGroup}:${activeTab}`}
         data-ntm-layout={layout === 'wide' ? 'wide' : undefined}
       >
-        {variant.render(resolvedGroup, activeTab)}
+        {variant.render(
+          resolvedGroup,
+          activeTab,
+          layout === 'wide' ? 'wide' : undefined,
+        )}
       </div>
     </div>
   )

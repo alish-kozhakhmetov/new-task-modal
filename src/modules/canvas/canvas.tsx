@@ -24,6 +24,11 @@ interface CanvasProps {
   onClose: () => void
   /** Draft belongs to one task (Alisher, 05.10): pass the task id. */
   taskId?: string | number | null
+  /**
+   * Permanent column of the wide layout: never closed, so the drawing is
+   * saved after every stroke instead of on «Закрыть», and there is no close.
+   */
+  isPinned?: boolean
 }
 
 const STORAGE_PREFIX = 'drawing-board-data'
@@ -33,7 +38,7 @@ export const canvasStorageKey = (taskId?: string | number | null) =>
     ? STORAGE_PREFIX
     : `${STORAGE_PREFIX}:${taskId}`
 
-export function Canvas({ onClose, taskId }: CanvasProps) {
+export function Canvas({ onClose, taskId, isPinned = false }: CanvasProps) {
   const STORAGE_KEY = canvasStorageKey(taskId)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const isDrawingRef = useRef(false)
@@ -167,6 +172,7 @@ export function Canvas({ onClose, taskId }: CanvasProps) {
     if (isDrawingRef.current) {
       isDrawingRef.current = false
       saveState()
+      if (isPinned) saveToLocalStorage()
     }
   }
 
@@ -228,7 +234,7 @@ export function Canvas({ onClose, taskId }: CanvasProps) {
         />
 
         <div className={styles.controlPanel}>
-          <div className={styles.controls}>
+          <div className={clsx(styles.controls, isPinned && styles.pinned)}>
             <div className={clsx(styles.group, styles.edit)}>
               <button
                 className={clsx(
@@ -279,15 +285,17 @@ export function Canvas({ onClose, taskId }: CanvasProps) {
               </button>
             </div>
 
-            <div className={clsx(styles.group, styles.close)}>
-              <button
-                className={styles.button}
-                onClick={handleClose}
-                title="Закрыть доску"
-              >
-                <CloseIcon />
-              </button>
-            </div>
+            {!isPinned && (
+              <div className={clsx(styles.group, styles.close)}>
+                <button
+                  className={styles.button}
+                  onClick={handleClose}
+                  title="Закрыть доску"
+                >
+                  <CloseIcon />
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

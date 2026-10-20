@@ -72,6 +72,11 @@
   align-items: stretch;
 }
 
+// Pinned column: no close button, the history group takes its cell.
+.pinned {
+  grid-template-areas: 'edit edit history history history';
+}
+
 .edit {
   grid-area: edit;
 }

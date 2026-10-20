@@ -8,10 +8,12 @@ import { MentorChat } from './ui/mentor-chat/mentor-chat'
 
 export interface ChatProps {
   onClose: () => void
+  /** Permanent column of the wide layout: no close button. */
+  isPinned?: boolean
   props: TaskModalProps
 }
 
-export const Chat = ({ props, onClose }: ChatProps) => {
+export const Chat = ({ props, onClose, isPinned = false }: ChatProps) => {
   const tabs = [
     {
       title: 'AI-чат',
@@ -27,7 +29,11 @@ export const Chat = ({ props, onClose }: ChatProps) => {
 
   return (
     <div className={s.chat}>
-      <TopBar titleClassName={s.title} deps={props.deps} onClose={onClose}>
+      <TopBar
+        titleClassName={s.title}
+        deps={props.deps}
+        onClose={isPinned ? undefined : onClose}
+      >
         AI-чат
       </TopBar>
 

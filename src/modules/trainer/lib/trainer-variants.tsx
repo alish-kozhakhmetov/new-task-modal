@@ -140,7 +140,11 @@ export type TrainerVariant = {
   groups: TemplateGroupFixture[]
   /** Fallback task fixture when the selected group has no task. */
   fallbackTask: unknown
-  render: (group: string, stateTab?: TrainerStateTab) => ReactNode
+  render: (
+    group: string,
+    stateTab?: TrainerStateTab,
+    layout?: 'wide',
+  ) => ReactNode
 }
 
 // `Template` varies per call site — each template's component expects its own
@@ -171,7 +175,7 @@ const makeVariant = <T,>({
     defaultGroup,
     groups,
     fallbackTask,
-    render: (group, stateTab = 'idle') => {
+    render: (group, stateTab = 'idle', layout) => {
       const TrainerTemplate = Template as unknown as ComponentType<
         TaskComponentProps<TextTask>
       >
@@ -180,6 +184,7 @@ const makeVariant = <T,>({
           Template={TrainerTemplate}
           task={pickTask(groups, group, fallbackTask as TextTask)}
           stateTab={stateTab}
+          layout={layout}
         />
       )
     },

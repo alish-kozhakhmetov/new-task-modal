@@ -83,7 +83,12 @@ export const TaskModalActions = ({ props, refs, className, modals }: Props) => {
         layout={ButtonLayout.Icon}
         onClick={modals.canvas.open}
         aria-label="Открыть доску"
-        className={clsx(s.button, s.secondary, modals.canvas.isOpen && s.shown)}
+        className={clsx(
+          s.button,
+          s.secondary,
+          s.draftButton,
+          modals.canvas.isOpen && s.shown,
+        )}
       >
         <Pen />
       </Button>
@@ -93,7 +98,7 @@ export const TaskModalActions = ({ props, refs, className, modals }: Props) => {
         layout={ButtonLayout.Icon}
         onClick={modals.chat.open}
         aria-label="Открыть чат"
-        className={clsx(s.button, s.secondary, modals.chat.isOpen && s.shown)}
+        className={clsx(s.button, s.secondary, s.chatButton)}
       >
         <Message />
       </Button>
