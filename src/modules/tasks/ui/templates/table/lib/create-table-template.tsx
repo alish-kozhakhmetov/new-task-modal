@@ -129,7 +129,11 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
           className={styles.tableFrame}
           data-hidden-right={hiddenRight || undefined}
         >
-          <div ref={wrapperRef} className={styles.tableWrapper}>
+          <div
+            ref={wrapperRef}
+            className={styles.tableWrapper}
+            data-ntm-table-scroll
+          >
             <table
               ref={tableRef}
               className={getTableClassName({

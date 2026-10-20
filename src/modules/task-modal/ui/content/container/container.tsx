@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import { Fragment, Suspense, type RefObject } from 'react'
 
 import { ErrorBoundary } from '@/lib/error-boundary/error-boundary'
+import { useWideTableRoom } from '@/modules/task-modal/model/hooks/layout/use-wide-table-room'
 import { useWordFormAgreement } from '@/modules/task-modal/model/hooks/layout/use-word-form-agreement'
 import {
   useAppState,
@@ -89,6 +90,7 @@ export const TaskModalContainer = ({
               </DigitGroupingForTask>
               <TaskHints />
               <WordFormAgreement root={ref} taskId={activeTask.id} />
+              <WideTableRoom root={ref} taskId={activeTask.id} />
             </Fragment>
           )}
         </div>
@@ -113,5 +115,18 @@ const WordFormAgreement = ({
   taskId: unknown
 }) => {
   useWordFormAgreement(root, taskId)
+  return null
+}
+
+/** Wide layout: room for a table wider than the task column. Mounted with the
+ * task for the same reason as WordFormAgreement — the template is lazy. */
+const WideTableRoom = ({
+  root,
+  taskId,
+}: {
+  root: RefObject<HTMLDivElement | null>
+  taskId: unknown
+}) => {
+  useWideTableRoom(root, taskId)
   return null
 }

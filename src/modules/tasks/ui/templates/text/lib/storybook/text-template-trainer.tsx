@@ -9,6 +9,7 @@ import { useCalcSetup } from '@/modules/task-modal/model/hooks/layout/use-calc-s
 import { useInputFocus } from '@/modules/task-modal/model/hooks/layout/use-input-focus'
 import { usePinnedColumns } from '@/modules/task-modal/model/hooks/layout/use-pinned-columns'
 import { useTaskModalRefs } from '@/modules/task-modal/model/hooks/layout/use-refs'
+import { useWideTableRoom } from '@/modules/task-modal/model/hooks/layout/use-wide-table-room'
 import { useWordFormAgreement } from '@/modules/task-modal/model/hooks/layout/use-word-form-agreement'
 import { useOpenState } from '@/modules/task-modal/model/hooks/use-open-state'
 import { isCalcForceHidden } from '@/modules/task-modal/model/lib/calc-visibility-param'
@@ -245,6 +246,7 @@ const TrainerBody = ({
 
   const { root, header, taskContainer, mathInput } = refs
   useWordFormAgreement(taskContainer, activeTask?.id)
+  useWideTableRoom(taskContainer, activeTask?.id)
 
   return (
     <div
