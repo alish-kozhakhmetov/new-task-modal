@@ -10,7 +10,8 @@
   ],
   "exports": {
     ".": "./dist/index.js",
-    "./available-tasks": "./dist/available-tasks.js"
+    "./available-tasks": "./dist/available-tasks.js",
+    "./skin.css": "./dist/skin.css"
   },
   "scripts": {
     "dev": "vite",
