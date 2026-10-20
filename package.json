@@ -1,6 +1,6 @@
 {
   "name": "@qalan/new-task-modal",
-  "version": "2.4.3",
+  "version": "2.5.0",
   "description": "",
   "type": "module",
   "main": "dist/index.js",
