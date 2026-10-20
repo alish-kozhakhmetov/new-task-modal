@@ -1,0 +1,4 @@
+/* @qalan/new-task-modal/skin.css — скин платформы для сайта (флаг useNewDesign).
+   Файл в корне пакета для сборщиков без поля "exports" (webpack 4 на сайте):
+   путь пакет/skin.css у них ищется здесь. Сам скин — dist/skin.css. */
+@import "./dist/skin.css";
