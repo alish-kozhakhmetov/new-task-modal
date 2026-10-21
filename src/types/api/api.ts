@@ -406,7 +406,10 @@ export interface Api {
     userAnswer: unknown,
   ): Promise<unknown>
   setControlWorkAsFinished(controlWorkId: number): Promise<unknown>
-  setCheckLessonAsFinished(userCheckLessonId: number): Promise<unknown>
+  setCheckLessonAsFinished(
+    userCheckLessonId: number,
+    applicationType?: string,
+  ): Promise<unknown>
   getRegions(): Promise<unknown>
   getDistricts(regionId: number): Promise<unknown>
   getInstitutions(districtId: number): Promise<unknown>

@@ -8,6 +8,8 @@ import { useInitialSetup } from './model/hooks/use-initial-setup'
 import { useOpenState, type OpenState } from './model/hooks/use-open-state'
 import { withWordForms } from './model/lib/resolve-word-forms'
 import { useStore } from './model/store/task-modal-store'
+import { useTestStore } from './model/test/test-store'
+import { useLoadLessonTest } from './model/test/use-lesson-test'
 import type { TaskModalProps } from './model/types/props'
 import { TaskModalProviders } from './providers'
 import { TaskModalContent } from './ui/content/content'
@@ -16,6 +18,12 @@ import { TaskModalShell } from './ui/shell/shell'
 export interface TaskModalModals {
   chat: OpenState
   canvas: OpenState
+}
+
+/** Loads the lesson test's attempt; renders nothing until the tasks come. */
+const LessonTestLoader = ({ props }: { props: TaskModalProps }) => {
+  useLoadLessonTest(props)
+  return null
 }
 
 export const TaskModal = (hostProps: TaskModalProps) => {
@@ -28,10 +36,15 @@ export const TaskModal = (hostProps: TaskModalProps) => {
   // columns, shown without a button press (Alisher, 20.10, 17:52).
   const isWide = props.layout === 'wide'
   const { isChatPinned, isDraftPinned } = usePinnedColumns(isWide)
-  const isChatShown = chat.isOpen || isChatPinned
+  // Lesson test: no chat at all — the test has no help (site's CheckTaskModal)
+  const isTest = props.mode === 'test'
+  const isChatShown = !isTest && (chat.isOpen || isChatPinned)
   const isDraftShown = canvas.isOpen || isDraftPinned
+  const testPhase = useTestStore((s) => s.phase)
 
   if (!isSetupDone) return null
+  if (isTest && testPhase === 'loading')
+    return <LessonTestLoader props={props} />
 
   return (
     <>

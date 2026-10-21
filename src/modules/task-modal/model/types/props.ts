@@ -22,6 +22,14 @@ export interface TaskModalProps {
    * columns. Ignored on touch screens. Without it — the phone layout, as 2.4.3.
    */
   layout?: 'wide'
+  /**
+   * `test` — the lesson test (the site's old `CheckTaskModal`): the package loads
+   * the attempt itself (`api.getCheckTasksByLessonId`), answers are not checked,
+   * each one is saved on leaving the task, «Завершить» finishes the attempt and
+   * shows the result. Rules — qalan-docs/trainer/package-parity.md, «Тест урока
+   * на сайте». Without it — practice, as 2.5.1.
+   */
+  mode?: 'test'
 }
 
 export interface TaskModalDependencies {
@@ -139,6 +147,24 @@ export interface TaskModalHostProps {
   applicationType?: string
   canUseDotNavigation?: boolean
   isTesting?: boolean
+
+  // lesson test (`mode: 'test'`)
+  /** Resume this attempt (the lesson's `activeCheckLessonId`); new attempt without it. */
+  checkLessonId?: number
+  preparationType?: string
+  /** Lesson title for the result screen. */
+  lessonTitle?: string
+  /** Passed from this percent; the site rewards rating from 75 (LessonList). */
+  testPassPercent?: number
+  /** The attempt is finished: the site updates the lesson row and rating. */
+  onTestFinish?: (result: {
+    resultProgress: number
+    checkLessonId: number
+  }) => void
+  /** «Пересдать тест» on the result screen; hidden without it. */
+  onRetakeTest?: () => void
+  /** «Повторить практику» on the result screen; hidden without it. */
+  onRepeatPractice?: () => void
 
   // router props
   location: Location

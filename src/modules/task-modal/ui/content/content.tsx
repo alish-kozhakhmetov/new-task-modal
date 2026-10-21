@@ -6,8 +6,11 @@ import { useInputFocus } from '../../model/hooks/layout/use-input-focus'
 import { useTaskModalRefs } from '../../model/hooks/layout/use-refs'
 import { isCalcForceHidden } from '../../model/lib/calc-visibility-param'
 import { useAppState, useStore } from '../../model/store/task-modal-store'
+import { useLessonTest } from '../../model/test/use-lesson-test'
 import type { TaskModalProps } from '../../model/types/props'
 import type { TaskModalModals } from '../../task-modal'
+import { FinishSheet } from '../test/finish-sheet'
+import { TestResult } from '../test/test-result'
 
 import { TaskModalContainer } from './container/container'
 import styles from './content.module.scss'
@@ -34,6 +37,8 @@ export const TaskModalContent = ({ props, modals }: Props) => {
     ? { ...rawCalcState, isEnabled: false, isOpen: false }
     : rawCalcState
   const lastFocusedInput = useInputFocus({ refs, activeTask, calcState })
+  const isTest = props.mode === 'test'
+  const testFlow = useLessonTest(props, refs)
 
   const onChange = (value: string) => {
     setAnswer(value)
@@ -55,10 +60,17 @@ export const TaskModalContent = ({ props, modals }: Props) => {
   //   isTaskLoaded,
   //   isTransitioning,
   // })
+  if (isTest && testFlow.test.phase === 'result')
+    return <TestResult props={props} />
+
   return (
     <>
       <div ref={root} className={clsx('task-modal', styles.container)}>
-        <TaskModalHeader props={props} ref={header} />
+        <TaskModalHeader
+          props={props}
+          ref={header}
+          testFlow={isTest ? testFlow : undefined}
+        />
 
         <TaskModalContainer
           props={props}
@@ -74,7 +86,14 @@ export const TaskModalContent = ({ props, modals }: Props) => {
           calcState={calcState}
           modals={modals}
           isAdjusting={isAdjusting}
+          testFlow={isTest ? testFlow : undefined}
         />
+
+        {isTest &&
+          (testFlow.test.phase === 'confirm' ||
+            testFlow.test.phase === 'finishing') && (
+            <FinishSheet flow={testFlow} />
+          )}
       </div>
     </>
   )

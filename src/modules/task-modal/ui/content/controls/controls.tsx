@@ -7,7 +7,9 @@ import { useStore } from '@/modules/task-modal/model/store/task-modal-store'
 import type { TaskModalModals } from '@/modules/task-modal/task-modal'
 
 import type { TaskModalRefs } from '../../../model/hooks/layout/use-refs'
+import type { useLessonTest } from '../../../model/test/use-lesson-test'
 import type { TaskModalProps } from '../../../model/types/props'
+import { TestActions } from '../../test/test-actions'
 
 import { TaskModalActions } from './actions/actions'
 import { TaskModalActionsSkeleton } from './actions/actions-skeleton'
@@ -22,6 +24,8 @@ interface Props {
   lastFocusedInput: RefObject<HTMLElement | null>
   modals: TaskModalModals
   isAdjusting: boolean
+  /** Lesson test: draft · «Завершить» · «Далее» instead of the practice actions. */
+  testFlow?: ReturnType<typeof useLessonTest>
 }
 
 export const TaskModalControls = ({
@@ -31,6 +35,7 @@ export const TaskModalControls = ({
   lastFocusedInput: lastFocusedInputRef,
   modals,
   isAdjusting,
+  testFlow,
 }: Props) => {
   const { calc } = refs
   const { isEnabled, isOpen } = calcState
@@ -83,12 +88,21 @@ export const TaskModalControls = ({
   return (
     <>
       {isAdjusting && <TaskModalActionsSkeleton />}
-      <TaskModalActions
-        props={props}
-        refs={refs}
-        modals={modals}
-        className={clsx(isAdjusting && s.adjusting)}
-      />
+      {testFlow ? (
+        <TestActions
+          props={props}
+          refs={refs}
+          modals={modals}
+          flow={testFlow}
+        />
+      ) : (
+        <TaskModalActions
+          props={props}
+          refs={refs}
+          modals={modals}
+          className={clsx(isAdjusting && s.adjusting)}
+        />
+      )}
 
       {isAdjusting && <CalculatorSkeleton className={s.calculatorSkeleton} />}
       {isEnabled && isOpen && (

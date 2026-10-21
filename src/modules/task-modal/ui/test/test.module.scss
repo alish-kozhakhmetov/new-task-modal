@@ -1,0 +1,235 @@
+// Lesson test: header timer, actions, finish question, result (App 14312:653941
+// «тест — успех», 18106:116452 «тест — неудача»). Tokens of the DS only.
+
+.timer {
+  margin-inline-start: var(--space-8);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
+
+  &.low {
+    color: var(--text-error);
+  }
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: to-vw(4px, 375px);
+  width: 100%;
+  padding: to-vw(8px, 375px) to-vw(16px, 375px);
+  margin: 0 auto;
+
+  @include min-width(sm) {
+    gap: var(--space-4);
+    padding: var(--space-8) var(--space-16);
+  }
+
+  @include wide {
+    display: flex;
+  }
+}
+
+.button {
+  height: to-vw(60px, 375px);
+  padding-top: to-vw(17.5px, 375px);
+  padding-bottom: to-vw(18.5px, 375px);
+  line-height: to-vw(23px, 375px);
+
+  @include min-width(sm) {
+    height: 60px;
+    padding-top: to-rem(17.5px);
+    padding-bottom: to-rem(18.5px);
+    line-height: to-rem(23px);
+  }
+
+  &.icon {
+    padding: to-vw(16px, 375px) to-vw(21px, 375px) to-vw(20px, 375px);
+
+    @include min-width(sm) {
+      padding: var(--space-16) to-rem(21px) var(--space-24);
+    }
+  }
+}
+
+.pen {
+  // the draft is a pinned column from 1280 (as practice's draft button)
+  @include wide(1280px) {
+    display: none;
+  }
+}
+
+.finish {
+  grid-column: span 2 / span 2;
+
+  @include wide {
+    flex: none;
+    padding-inline: var(--space-24);
+  }
+}
+
+.next {
+  grid-column: span 2 / span 2;
+
+  @include wide {
+    flex: 1 1 auto;
+  }
+}
+
+// Finish question — a sheet over the task, solid fill (no blur or glow)
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: color-mix(in srgb, var(--bg-inverse) 40%, transparent);
+
+  @include min-width(sm) {
+    align-items: center;
+  }
+}
+
+.sheet {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  width: 100%;
+  max-width: 420px;
+  padding: var(--space-24) var(--space-16) var(--space-16);
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+
+  @include min-width(sm) {
+    border-radius: var(--radius-xl);
+  }
+
+  h2 {
+    @include title-24;
+
+    margin: 0;
+    color: var(--text-primary);
+  }
+
+  p {
+    @include body-medium-regular;
+
+    margin: 0;
+    color: var(--text-secondary);
+  }
+}
+
+.sheetButtons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+
+  button {
+    height: 52px;
+  }
+}
+
+// Result — App layout: title, status, metrics, two buttons at the bottom
+.result {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-canvas);
+}
+
+.resultBody {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--space-8);
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-24) var(--space-16);
+  text-align: center;
+}
+
+.resultTitle {
+  @include title-24;
+
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.resultText {
+  @include body-medium-regular;
+
+  max-width: 320px;
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.metrics {
+  display: flex;
+  gap: var(--space-32);
+  justify-content: center;
+  margin-top: var(--space-24);
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  align-items: center;
+
+  span {
+    @include body-medium-bold;
+
+    color: var(--text-primary);
+  }
+}
+
+.ring {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+
+  svg {
+    position: absolute;
+    inset: 0;
+  }
+
+  b {
+    @include body-large-bold;
+
+    position: relative;
+    color: var(--text-primary);
+  }
+}
+
+.ringTrack {
+  stroke: var(--bg-subtle);
+}
+
+.ringFill {
+  stroke: var(--status-fg-success);
+
+  &.brand {
+    stroke: var(--bg-brand);
+  }
+
+
+  &.fail {
+    stroke: var(--status-fg-error);
+  }
+}
+
+.resultButtons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  width: 100%;
+  max-width: 640px;
+  padding: var(--space-8) var(--space-16) var(--space-24);
+  margin: 0 auto;
+
+  button {
+    height: 56px;
+  }
+}
