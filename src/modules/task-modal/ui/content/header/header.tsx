@@ -3,6 +3,8 @@ import type { RefObject } from 'react'
 import type { useLessonTest } from '@/modules/task-modal/model/test/use-lesson-test'
 import type { TaskModalProps } from '@/modules/task-modal/model/types/props'
 import { TestTimer } from '@/modules/task-modal/ui/test/test-timer'
+import { TEST_TEXTS } from '@/modules/task-modal/ui/test/texts'
+import { Button, ButtonColor, ButtonSize } from '@/ui/button/button'
 import { TopBar } from '@/ui/top-bar/top-bar'
 
 import s from './header.module.scss'
@@ -25,6 +27,18 @@ export const TaskModalHeader = ({ props, ref, testFlow }: Props) => {
       titleClassName={s.title}
       deps={props.deps}
       onClose={closeModal}
+      start={
+        testFlow ? (
+          <Button
+            color={ButtonColor.White}
+            size={ButtonSize.Small}
+            onClick={() => testFlow.setPhase('confirm')}
+            disabled={testFlow.test.phase === 'finishing'}
+          >
+            {TEST_TEXTS.finish}
+          </Button>
+        ) : undefined
+      }
     >
       <TasksNum />
       {testFlow ? (

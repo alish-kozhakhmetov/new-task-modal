@@ -50,18 +50,17 @@ const Ring = ({
 )
 
 /**
- * Result of the attempt, by App 14312:653941 (passed) and 18106:116452 (not
- * passed): title, status, metrics, two actions. The web gets only the percent
- * (`resultProgress`), so no «Баллы 24/28», coins or time, and no character
- * until the package has the real assets.
+ * Result of the attempt — the look of App 14312:653941 / 18106:116452: title,
+ * metrics, two actions. No «passed / not passed»: the site has no such rule
+ * (the server returns only `resultProgress`; 75 % is the rating threshold, not
+ * a verdict — lead session, 21.10). No «Баллы 24/28», coins, time or
+ * character: the web gets only the percent, the package has no characters.
  */
 export const TestResult = ({ props }: { props: TaskModalProps }) => {
   const { hostProps } = props
   const progress = Math.round(useTestStore((st) => st.resultProgress) ?? 0)
   const answered = useTestStore((st) => st.answeredIds.length)
   const total = getAppState().tasks?.length ?? 0
-  const pass = hostProps.testPassPercent ?? 75
-  const passed = progress >= pass
   const lessonTitle = getAppState().lesson?.title
   const title =
     hostProps.lessonTitle ??
@@ -72,18 +71,14 @@ export const TestResult = ({ props }: { props: TaskModalProps }) => {
       : '')
 
   const retake = hostProps.onRetakeTest && (
-    <Button
-      key="retake"
-      color={passed ? undefined : ButtonColor.White}
-      onClick={hostProps.onRetakeTest}
-    >
+    <Button key="retake" onClick={hostProps.onRetakeTest}>
       {TEST_TEXTS.retake}
     </Button>
   )
   const practice = hostProps.onRepeatPractice && (
     <Button
       key="practice"
-      color={passed ? ButtonColor.White : undefined}
+      color={ButtonColor.White}
       onClick={hostProps.onRepeatPractice}
     >
       {TEST_TEXTS.repeatPractice}
@@ -97,18 +92,14 @@ export const TestResult = ({ props }: { props: TaskModalProps }) => {
       </TopBar>
       <div className={s.resultBody}>
         {title ? <h2 className={s.resultTitle}>{title}</h2> : null}
-        <p className={s.resultText}>
-          {passed ? TEST_TEXTS.passed : TEST_TEXTS.failed(pass)}
-        </p>
+        <p className={s.resultText}>{TEST_TEXTS.done}</p>
         <div className={s.metrics}>
           <div className={s.metric}>
-            <Ring part={progress / 100} className={passed ? undefined : s.fail}>
-              {progress}%
-            </Ring>
+            <Ring part={progress / 100}>{progress}%</Ring>
             <span>{TEST_TEXTS.result}</span>
           </div>
           <div className={s.metric}>
-            <Ring part={total ? answered / total : 0} className={s.brand}>
+            <Ring part={total ? answered / total : 0}>
               {answered}/{total}
             </Ring>
             <span>{TEST_TEXTS.answered}</span>
@@ -116,7 +107,8 @@ export const TestResult = ({ props }: { props: TaskModalProps }) => {
         </div>
       </div>
       <div className={s.resultButtons}>
-        {passed ? [retake, practice] : [practice, retake]}
+        {retake}
+        {practice}
       </div>
     </div>
   )

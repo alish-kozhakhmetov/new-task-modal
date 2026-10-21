@@ -58,17 +58,8 @@
   }
 }
 
-.finish {
-  grid-column: span 2 / span 2;
-
-  @include wide {
-    flex: none;
-    padding-inline: var(--space-24);
-  }
-}
-
 .next {
-  grid-column: span 2 / span 2;
+  grid-column: span 4 / span 4;
 
   @include wide {
     flex: 1 1 auto;
@@ -208,15 +199,7 @@
 }
 
 .ringFill {
-  stroke: var(--status-fg-success);
-
-  &.brand {
-    stroke: var(--bg-brand);
-  }
-
-  &.fail {
-    stroke: var(--status-fg-error);
-  }
+  stroke: var(--bg-brand);
 }
 
 .resultButtons {

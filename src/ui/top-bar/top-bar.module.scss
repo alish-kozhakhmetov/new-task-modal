@@ -22,3 +22,22 @@
   visibility: hidden;
   pointer-events: none;
 }
+
+// With a start control (lesson test): equal side columns keep the title centred
+.container.withStart {
+  display: grid;
+
+  // never narrower than the controls: on a phone the title gives way instead of overlapping
+  grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
+  gap: var(--space-8);
+  align-items: center;
+
+  > :last-child {
+    justify-self: end;
+  }
+}
+
+.start {
+  display: flex;
+  justify-self: start;
+}

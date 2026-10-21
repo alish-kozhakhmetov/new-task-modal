@@ -18,6 +18,11 @@ interface Props {
   onGoBack?: () => void
   /** Without it there is no close button (a pinned column has nothing to close). */
   onClose?: () => void
+  /**
+   * A control at the start instead of the back button (lesson test: «Завершить»).
+   * The bar becomes a 1fr · title · 1fr grid so the title stays centred.
+   */
+  start?: ReactNode
 }
 
 export const TopBar = ({
@@ -28,13 +33,20 @@ export const TopBar = ({
   titleClassName,
   onGoBack,
   onClose,
+  start,
 }: Props) => {
   const isArabic = deps.helpers.ArabicNumeralUtils.isArabic()
   const direction = deps.helpers.ArabicNumeralUtils.getDirection()
 
   return (
-    <FlexRow ref={ref} className={clsx(s.container, className)} dir={direction}>
-      {onGoBack ? (
+    <FlexRow
+      ref={ref}
+      className={clsx(s.container, start != null && s.withStart, className)}
+      dir={direction}
+    >
+      {start != null ? (
+        <div className={s.start}>{start}</div>
+      ) : onGoBack ? (
         <Button
           color={ButtonColor.White}
           layout={ButtonLayout.Icon}

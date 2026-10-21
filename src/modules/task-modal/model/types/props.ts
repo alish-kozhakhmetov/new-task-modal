@@ -154,8 +154,6 @@ export interface TaskModalHostProps {
   preparationType?: string
   /** Lesson title for the result screen. */
   lessonTitle?: string
-  /** Passed from this percent; the site rewards rating from 75 (LessonList). */
-  testPassPercent?: number
   /** The attempt is finished: the site updates the lesson row and rating. */
   onTestFinish?: (result: {
     resultProgress: number

@@ -23,7 +23,8 @@ interface Props {
 }
 
 /**
- * Test actions: draft · «Завершить» · «Далее». No «Проверить», no chat: the
+ * Test actions: draft · «Далее» («Завершить» is in the header, away from
+ * «Далее» — two targets side by side were the pain in the reviews). No «Проверить», no chat: the
  * test does not check answers and has no help (site's CheckTaskModal). An
  * empty answer — «Пропустить».
  */
@@ -56,14 +57,6 @@ export const TestActions = ({ props, refs, modals, flow }: Props) => {
         className={clsx(s.button, s.icon, s.pen)}
       >
         <Pen />
-      </Button>
-      <Button
-        color={ButtonColor.White}
-        onClick={() => flow.setPhase('confirm')}
-        disabled={busy}
-        className={clsx(s.button, s.finish)}
-      >
-        {TEST_TEXTS.finish}
       </Button>
       <ButtonWithLoader
         onClick={() => void flow.next()}
