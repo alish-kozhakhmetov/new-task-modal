@@ -106,9 +106,9 @@ type Story = StoryObj<Args>
 export const Task: Story = {}
 export const TaskWide: Story = { args: { layout: 'wide' } }
 export const FinishQuestion: Story = { args: { at: 'confirm' } }
-export const ResultPassed: Story = {
+export const Result: Story = {
   args: { at: 'result', resultProgress: 92 },
 }
-export const ResultFailed: Story = {
+export const ResultLow: Story = {
   args: { at: 'result', resultProgress: 45 },
 }
