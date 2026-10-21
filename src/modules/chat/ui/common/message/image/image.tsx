@@ -1,5 +1,7 @@
 import clsx from 'clsx'
 
+import { formatMessageTime } from '@/lib/helpers/format-message-time'
+
 import s from './image.module.scss'
 
 interface Props {
@@ -9,7 +11,7 @@ interface Props {
 }
 
 const ImageMessage = ({ imageUrl, sentAt, isFromPupil }: Props) => {
-  const time = new Date(sentAt).toLocaleTimeString().slice(0, 5)
+  const time = formatMessageTime(sentAt)
   return (
     <div className={clsx(s.container, isFromPupil ? s.fromPupil : s.fromOther)}>
       <img src={imageUrl} alt="" className={s.image} />

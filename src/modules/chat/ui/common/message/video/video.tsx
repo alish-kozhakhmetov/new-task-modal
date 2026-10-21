@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import PlayIcon from '@/assets/icons/chat/play.svg'
 import StopIcon from '@/assets/icons/chat/stop.svg'
+import { formatMessageTime } from '@/lib/helpers/format-message-time'
 import {
   Button,
   ButtonColor,
@@ -25,7 +26,7 @@ const VideoMessage = ({
   sentAt,
   isFromPupil,
 }: Props) => {
-  const time = new Date(sentAt).toLocaleTimeString().slice(0, 5)
+  const time = formatMessageTime(sentAt)
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [nativeControlsUnlocked, setNativeControlsUnlocked] = useState(false)

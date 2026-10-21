@@ -521,11 +521,12 @@ html.qalan-skin:not(.qsk-off) .pupil-page .page-header .Dropdown-control { borde
   html.qalan-skin:not(.qsk-off) .pupil-page .page-header .left-side .user-fullname { font: var(--qsk-font-body-s-bold); }
   html.qalan-skin:not(.qsk-off) .pupil-page .page-header .left-side .user-menu-block .user-menu-popup { position: absolute; top: calc(100% + var(--qsk-space-8)); right: 0; left: auto; min-width: 260px; z-index: 20; background: var(--qsk-bg-surface); border: var(--qsk-stroke-hairline) solid var(--qsk-border-default); border-radius: var(--qsk-radius-l); padding: var(--qsk-space-4) 0; overflow: hidden; box-shadow: none; }
   
-  html.qalan-skin:not(.qsk-off) .pupil-page .page-body > .navigation-panel { position: absolute; top: 0; left: calc((100% - min(1246px, 100% - 2 * var(--qsk-space-16))) / 2 + 84px + var(--qsk-space-32)); height: 64px; margin: 0; padding: 0; z-index: 3; background: transparent; }
-  html.qalan-skin:not(.qsk-off) .pupil-page .navigation-panel .navbar { height: 64px; display: flex; gap: var(--qsk-space-8); margin: 0; padding: 0 !important; justify-content: flex-start; }
-  html.qalan-skin:not(.qsk-off) .pupil-page .navigation-panel .navbar .nav-item { height: 63px; display: flex; flex-direction: row; align-items: center; gap: var(--qsk-space-8); padding: 0 var(--qsk-space-12); margin: 0; box-sizing: border-box; }
+  html.qalan-skin:not(.qsk-off) .pupil-page .page-body > .navigation-panel { position: relative; z-index: 0; height: 48px; margin: 0 0 var(--qsk-space-24); padding: 0; background: transparent; }
+  html.qalan-skin:not(.qsk-off) .pupil-page .page-body > .navigation-panel::before { content: ""; position: absolute; inset: 0 calc(50% - 50vw); z-index: -1; background: var(--qsk-bg-surface); border-bottom: var(--qsk-stroke-hairline) solid var(--qsk-border-default); }
+  html.qalan-skin:not(.qsk-off) .pupil-page .navigation-panel .navbar { height: 48px; width: min(1246px, calc(100% - 2 * var(--qsk-space-16))); display: flex; gap: var(--qsk-space-8); margin: 0 auto; padding: 0 !important; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; }
+  html.qalan-skin:not(.qsk-off) .pupil-page .navigation-panel .navbar .nav-item { height: 47px; display: flex; flex-direction: row; align-items: center; gap: var(--qsk-space-8); padding: 0 var(--qsk-space-8); margin: 0; box-sizing: border-box; }
   html.qalan-skin:not(.qsk-off) .pupil-page .navigation-panel .navbar .nav-item .nav-item-link { font: var(--qsk-font-body-s-bold); padding: 0; white-space: nowrap; }
-  html.qalan-skin:not(.qsk-off) .pupil-page .page-body { padding-top: var(--qsk-space-24); }
+  html.qalan-skin:not(.qsk-off) .pupil-page .page-body { padding-top: 0; }
 }
 @media screen and (max-width: 600px) {
   html.qalan-skin:not(.qsk-off) .pupil-page .page-header { height: 56px; }
@@ -1128,3 +1129,34 @@ html.qalan-skin body:has(.pupil-page):not(.ReactModal__Body--open) .mobile-chat-
     overflow: hidden !important;
   }
 }
+
+
+html.qalan-skin body:has(.pupil-page) .ReactModal__Overlay { z-index: 30 !important; }
+
+
+@media (hover: hover) and (pointer: fine) and (min-width: 481px) and (max-width: 1099px) {
+  html.qalan-skin body:has(.pupil-page) .ReactModal__Content:has(> #task-modal-wrapper) {
+    width: 377px !important;
+    max-width: calc(100% - 2 * var(--qsk-space-16)) !important;
+    height: min(812px, calc(100% - 2 * var(--qsk-space-16))) !important;
+    overflow: hidden !important;
+    border-radius: var(--qsk-radius-xl) !important;
+    background: var(--qsk-bg-canvas) !important;
+  }
+  html.qalan-skin #task-modal-root .task-modal { border-color: transparent; }
+}
+
+
+html.qalan-skin .pupil-page .lesson-task-btn svg stop:first-child { stop-color: var(--qsk-bg-status-info-light); }
+html.qalan-skin .pupil-page .lesson-task-btn svg stop:last-child { stop-color: var(--qsk-bg-surface); }
+html.qalan-skin .pupil-page .lesson-task-btn svg rect:nth-of-type(1) { stroke: var(--qsk-border-strong) !important; }
+html.qalan-skin .pupil-page .lesson-task-btn svg rect:nth-of-type(2) { stroke: transparent !important; }
+html.qalan-skin .pupil-page .lesson-task-btn svg rect:nth-of-type(3) { fill: var(--qsk-border-strong) !important; stroke: none !important; }
+html.qalan-skin .pupil-page .lesson-task-btn svg path { fill: currentColor; }
+html.qalan-skin .pupil-page .lesson-task-btn svg text { fill: var(--qsk-text-secondary); font-family: var(--qsk-font-body); font-weight: 700; }
+
+
+html.qalan-skin .pupil-page .cashback-info-text .uk-label { background: var(--qsk-bg-subtle); color: var(--qsk-text-primary); text-transform: none; font: var(--qsk-font-caption-m-bold); padding: var(--qsk-space-4) var(--qsk-space-12); border-radius: var(--qsk-radius-full); }
+html.qalan-skin .pupil-page .page-body-content > .uk-padding div { color: var(--qsk-text-secondary); font: var(--qsk-font-body-s); }
+html.qalan-skin .pupil-page .my-table thead { background: var(--qsk-bg-subtle); }
+html.qalan-skin .pupil-page .my-table thead th { color: var(--qsk-text-secondary); }
