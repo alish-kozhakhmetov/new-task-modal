@@ -3,7 +3,10 @@ import { useEffect } from 'react'
 import type { RefObject } from 'react'
 
 import type { CalcState } from '@/modules/task-modal/model/hooks/layout/use-calc-setup'
-import { useStore } from '@/modules/task-modal/model/store/task-modal-store'
+import {
+  useAppState,
+  useStore,
+} from '@/modules/task-modal/model/store/task-modal-store'
 import type { TaskModalModals } from '@/modules/task-modal/task-modal'
 
 import type { TaskModalRefs } from '../../../model/hooks/layout/use-refs'
@@ -36,6 +39,7 @@ export const TaskModalControls = ({
   const { isEnabled, isOpen } = calcState
 
   const setIsTaskLoaded = useStore((s) => s.setIsTaskLoaded)
+  const { activeTask } = useAppState()
 
   const handleInput = (symbol: string) => {
     const map = refs.mathInput.current
@@ -92,7 +96,11 @@ export const TaskModalControls = ({
 
       {isAdjusting && <CalculatorSkeleton className={s.calculatorSkeleton} />}
       {isEnabled && isOpen && (
+        // A new task opens on the digits page: the calculator stays mounted
+        // across tasks while open, and kept the letters page swiped to on the
+        // previous one (2.5.2, «Жиырма мың жетпіс тоғыз…» opened on abc).
         <Calculator
+          key={activeTask.id}
           className={clsx(isAdjusting && s.adjusting)}
           ref={calc}
           global={props.deps.global}
