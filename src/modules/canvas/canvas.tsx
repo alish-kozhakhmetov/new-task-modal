@@ -142,7 +142,10 @@ export function Canvas({ onClose, taskId, isPinned = false }: CanvasProps) {
 
     if (mode === 'draw') {
       ctx.globalCompositeOperation = 'source-over'
-      ctx.strokeStyle = '#000000'
+      // --canvas-ink: white over the dimmed task, dark in the light column
+      ctx.strokeStyle =
+        getComputedStyle(canvas).getPropertyValue('--canvas-ink').trim() ||
+        'black'
       ctx.lineWidth = 3
       ctx.lineCap = 'round'
       ctx.lineJoin = 'round'

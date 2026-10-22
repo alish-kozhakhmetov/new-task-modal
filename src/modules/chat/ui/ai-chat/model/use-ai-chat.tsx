@@ -9,15 +9,12 @@ import {
 } from '@/modules/task-modal/model/store/task-modal-store'
 import type { TaskModalProps } from '@/modules/task-modal/model/types/props'
 
+import { chatT, ExampleIntro } from '../../../model/chat-text'
 import { createTextMessage } from '../../../model/helpers'
 import { SolutionMessage } from '../solution-message'
 
 import { useAiChatStore } from './ai-chat-store'
-import {
-  INITIAL_MESSAGES,
-  MOCK_THEORY,
-  VIDEO_EXPLANATION_TEXT,
-} from './constants'
+import { getInitialMessages, MOCK_THEORY } from './constants'
 import { translateContent } from './lib'
 import type { MyVideoMessageType } from './types'
 
@@ -33,6 +30,7 @@ export const useAiChat = ({ props, isPinned = false }: Args) => {
   const answer = useStore((s) => s.answer)
   const { deps } = props
   const user = deps.global.getUser()
+  const t = chatT(deps.global)
 
   const {
     messages,
@@ -75,7 +73,7 @@ export const useAiChat = ({ props, isPinned = false }: Args) => {
 
       // Narrows the union MOCK_THEORY is typed with; both are videos.
       addMessages(
-        ...INITIAL_MESSAGES,
+        ...getInitialMessages(t),
         theoryMessage.type === 'my-video'
           ? { ...theoryMessage, isTheory: true }
           : theoryMessage,
@@ -90,7 +88,7 @@ export const useAiChat = ({ props, isPinned = false }: Args) => {
 
     addMessages({
       id: Date.now(),
-      text: 'Смотреть пример',
+      text: t('viewExample'),
       senderUserId: 0,
       senderFullname: 'Pupil',
       sentAt: new Date().toISOString(),
@@ -114,9 +112,9 @@ export const useAiChat = ({ props, isPinned = false }: Args) => {
       addMessages(
         {
           id: Date.now(),
-          text: VIDEO_EXPLANATION_TEXT,
+          text: <ExampleIntro t={t} />,
           senderUserId: 0,
-          senderFullname: 'AI-чат',
+          senderFullname: t('aiChat'),
           sentAt: new Date().toISOString(),
           isFromPupil: false,
           type: 'text',
@@ -131,7 +129,7 @@ export const useAiChat = ({ props, isPinned = false }: Args) => {
 
     addMessages({
       id: Date.now(),
-      text: 'Показать ответ',
+      text: t('showAnswer'),
       senderUserId: 0,
       senderFullname: 'Pupil',
       sentAt: new Date().toISOString(),
@@ -151,7 +149,7 @@ export const useAiChat = ({ props, isPinned = false }: Args) => {
             />
           ),
           senderUserId: 0,
-          senderFullname: 'AI-чат',
+          senderFullname: t('aiChat'),
           sentAt: new Date().toISOString(),
           isFromPupil: false,
           type: 'text',
@@ -166,6 +164,7 @@ export const useAiChat = ({ props, isPinned = false }: Args) => {
   }
 
   return {
+    t,
     messages,
     isTheorySet,
     awardTheoryCoin,

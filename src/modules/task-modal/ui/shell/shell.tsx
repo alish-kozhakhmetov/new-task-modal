@@ -32,6 +32,8 @@ export const TaskModalShell = ({
       isDraftOpen && s.withDraft,
       className,
     )}
+    // the package's root: base.scss resets buttons under it (task, chat, draft)
+    data-ntm-root=""
     data-ntm-layout={isWide ? 'wide' : undefined}
   >
     {children}

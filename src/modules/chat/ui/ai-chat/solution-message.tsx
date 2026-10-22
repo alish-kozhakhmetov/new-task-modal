@@ -3,8 +3,9 @@ import type { TaskModalDependencies } from '@/modules/task-modal/model/types/pro
 import type { Task } from '@/types/api/task'
 import { SpoilerText } from '@/ui/spoiler/spoiler'
 
+import { AnswerIntro, chatT } from '../../model/chat-text'
+
 import { ChatSolutionView } from './chat-solution-view'
-import { ANSWER_SOLUTION_INTRO_TEXT } from './model/constants'
 import s from './solution-message.module.scss'
 
 interface Props {
@@ -16,7 +17,9 @@ interface Props {
 export const SolutionMessage = ({ task, deps, answer }: Props) => {
   return (
     <ErrorBoundary>
-      <div className={s.intro}>{ANSWER_SOLUTION_INTRO_TEXT}</div>
+      <div className={s.intro}>
+        <AnswerIntro t={chatT(deps.global)} />
+      </div>
       <SpoilerText>
         <ChatSolutionView task={task} deps={deps} answer={answer} />
       </SpoilerText>

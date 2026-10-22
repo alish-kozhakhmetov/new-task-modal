@@ -34,6 +34,8 @@ export interface MathField {
   moveToDirEnd(direction: number): void
   /** Focuses the math field */
   focus(): void
+  /** Selects the whole content, as Ctrl-A (MathQuill 0.10) */
+  select(): void
   /** Returns the root element of the math field */
   el(): HTMLElement | undefined
 }

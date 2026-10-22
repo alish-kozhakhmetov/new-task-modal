@@ -11,11 +11,14 @@
 }
 
 .button {
+  @include body-small-regular;
+
   display: flex;
   flex-grow: 1;
   flex-direction: column;
   max-width: 50%;
   padding: var(--space-12) var(--space-12) to-rem(10px);
+  color: var(--text-primary);
   text-align: left;
   background: var(--bg-surface);
   border: none;

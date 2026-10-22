@@ -85,6 +85,8 @@ type TaskModalStateSetter = (state: TaskModalState) => void
 
 export type SetTaskModalState = (
   arg: Partial<TaskModalState> | TaskModalStateSetter,
+  /** React's setState callback — the host passes it through (site: setHostState) */
+  callback?: () => void,
 ) => void
 
 export interface TaskModalState {

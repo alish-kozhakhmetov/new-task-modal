@@ -5,6 +5,8 @@ import { MathFormula } from '@/ui/math-text/math-formula'
 import { MathText } from '@/ui/math-text/math-text'
 import { useAnswerTruncation } from '@/ui/math-text/use-answer-truncation'
 
+import { useChatT } from '../../model/chat-text'
+
 import s from './chat-answer-panel.module.scss'
 
 interface Props {
@@ -25,6 +27,7 @@ interface Props {
  * it's truncated with an ellipsis instead of wrapping/overflowing the row.
  */
 const UserAnswerRow = ({ text, unit }: { text: string; unit?: string }) => {
+  const t = useChatT()
   const { rowRef, displayText, truncated, onTypesetDone } = useAnswerTruncation(
     s.userAnswer,
     text,
@@ -32,7 +35,7 @@ const UserAnswerRow = ({ text, unit }: { text: string; unit?: string }) => {
 
   return (
     <div ref={rowRef} className={s.row}>
-      <span className={s.label}>Ваш ответ:</span>
+      <span className={s.label}>{t('yourAnswer')}</span>
       <MathFormula className={s.userAnswer} onTypeset={onTypesetDone}>
         {displayText}
       </MathFormula>
@@ -57,21 +60,24 @@ const UserAnswerRow = ({ text, unit }: { text: string; unit?: string }) => {
  * multi-cell answers (joined with `;;`) can be long enough to overflow the
  * narrow chat bubble; clipping it would show the pupil a wrong answer.
  */
-const CorrectAnswerRow = ({ text, unit }: { text: string; unit?: string }) => (
-  <div className={s.row}>
-    <span className={s.label}>Верный ответ:</span>
-    <MathText inline className={s.correctAnswer}>
-      {text}
-    </MathText>
-    {unit ? (
-      <TextAdornment
-        data-testid="answer-unit"
-        className={s.unit}
-        value={unit}
-      />
-    ) : null}
-  </div>
-)
+const CorrectAnswerRow = ({ text, unit }: { text: string; unit?: string }) => {
+  const t = useChatT()
+  return (
+    <div className={s.row}>
+      <span className={s.label}>{t('correctAnswer')}</span>
+      <MathText inline className={s.correctAnswer}>
+        {text}
+      </MathText>
+      {unit ? (
+        <TextAdornment
+          data-testid="answer-unit"
+          className={s.unit}
+          value={unit}
+        />
+      ) : null}
+    </div>
+  )
+}
 
 /**
  * Flat, icon-free answer row for the AI-chat solution bubble.

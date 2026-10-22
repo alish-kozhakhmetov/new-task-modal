@@ -43,7 +43,7 @@ describe('ChatInput', () => {
   it('shows text field, attach, and microphone when empty', () => {
     renderInput()
 
-    expect(screen.getByPlaceholderText('Cообщение...')).toBeInTheDocument()
+    expect(screen.getByPlaceholderText('Сообщение…')).toBeInTheDocument()
     expect(screen.getByTestId('chat-file-input')).toBeInTheDocument()
     // attach + microphone
     expect(screen.getAllByRole('button')).toHaveLength(2)
@@ -51,7 +51,7 @@ describe('ChatInput', () => {
 
   it('sends text via button and clears the field', () => {
     const { onSend } = renderInput()
-    const input = screen.getByPlaceholderText('Cообщение...')
+    const input = screen.getByPlaceholderText('Сообщение…')
 
     fireEvent.change(input, { target: { value: '  привет  ' } })
     // last button is send (first is file attach)
@@ -63,7 +63,7 @@ describe('ChatInput', () => {
 
   it('sends text on Enter', () => {
     const { onSend } = renderInput()
-    const input = screen.getByPlaceholderText('Cообщение...')
+    const input = screen.getByPlaceholderText('Сообщение…')
 
     fireEvent.change(input, { target: { value: 'вопрос' } })
     fireEvent.keyDown(input, { key: 'Enter' })
@@ -73,7 +73,7 @@ describe('ChatInput', () => {
 
   it('does not send empty or whitespace-only text', () => {
     const { onSend } = renderInput()
-    const input = screen.getByPlaceholderText('Cообщение...')
+    const input = screen.getByPlaceholderText('Сообщение…')
 
     fireEvent.change(input, { target: { value: '   ' } })
     fireEvent.keyDown(input, { key: 'Enter' })
@@ -161,6 +161,6 @@ describe('ChatInput', () => {
 
     expect(cancel).toHaveBeenCalled()
     expect(onAddMessage).not.toHaveBeenCalled()
-    expect(screen.getByPlaceholderText('Cообщение...')).toBeInTheDocument()
+    expect(screen.getByPlaceholderText('Сообщение…')).toBeInTheDocument()
   })
 })

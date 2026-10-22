@@ -63,14 +63,16 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
       const input = refs.taskContainer.current?.querySelector(`[${DATA_INPUT}]`)
 
       if (input instanceof HTMLElement) {
-        // The task opens from its top: scrolling to the field belongs to the
-        // pupil's own tap or Tab, not to the initial focus (rule 98).
-        setFocusedInput(input, { scroll: false })
-
         // Programmatic .focus() bubbles a focusin to the overflow handler's
         // `data-control` listener, which reopens the calculator — undoing a
         // deliberate close (overflow layout, or solution shown). Don't fight it.
+        // Nor light the field: a lit field with no keyboard reads as a broken
+        // keyboard (iPhone, 2.5.2). The pupil's tap lights it and opens both.
         if (calcState.isEnabled && !calcState.isOpen) return
+
+        // The task opens from its top: scrolling to the field belongs to the
+        // pupil's own tap or Tab, not to the initial focus (rule 98).
+        setFocusedInput(input, { scroll: false })
 
         const map = refs.mathInput.current
         if (!map) return
@@ -85,6 +87,11 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
           el.scrollLeft = left
           el.scrollTop = top
         }
+
+        // The calculator stayed open over a short task on a low screen
+        // (iPhone Safari): the field may end up to a line under it. Scroll
+        // just enough to show it whole (2.5.2).
+        revealBottom(refs.taskContainer.current, input)
       }
     }
 
@@ -202,6 +209,18 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
   ])
 
   return lastFocusedInput
+}
+
+/** Minimal scroll of the task area so the field's bottom edge is visible. */
+const revealBottom = (container: HTMLElement | null, field: HTMLElement) => {
+  if (!container) return
+  const box = container.getBoundingClientRect()
+  const rect = field.getBoundingClientRect()
+  const GAP = 8
+  const below = rect.bottom + GAP - box.bottom
+  if (below <= 0) return
+  // never past the field's own top
+  container.scrollTop += Math.min(below, Math.max(0, rect.top - box.top))
 }
 
 /** Scrollable ancestors of an element with their scroll offsets. */

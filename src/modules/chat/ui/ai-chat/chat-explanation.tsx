@@ -18,6 +18,8 @@ import type { Task } from '@/types/api/task'
 import type { TaskDescriptionType } from '@/types/enums'
 import { MathText } from '@/ui/math-text/math-text'
 
+import { chatT } from '../../model/chat-text'
+
 import s from './chat-explanation.module.scss'
 
 interface Props {
@@ -47,7 +49,7 @@ export const ChatExplanation = ({ task, solution, deps }: Props) => {
   if (divisionNumbers) {
     return (
       <div className={s.container}>
-        <p className={s.label}>Объяснение</p>
+        <p className={s.label}>{chatT(deps.global)('explanation')}</p>
         <LongDivisionSteps
           dividend={divisionNumbers.dividend}
           divisor={divisionNumbers.divisor}
@@ -72,7 +74,7 @@ export const ChatExplanation = ({ task, solution, deps }: Props) => {
   if (isFormulaStringSolution(solution)) {
     return (
       <div className={s.container}>
-        <p className={s.label}>Объяснение</p>
+        <p className={s.label}>{chatT(deps.global)('explanation')}</p>
         <SolutionContentText content={solution} formulaClassName={s.formula} />
       </div>
     )
@@ -101,7 +103,7 @@ export const ChatExplanation = ({ task, solution, deps }: Props) => {
 
   return (
     <div className={s.container}>
-      <p className={s.label}>Объяснение</p>
+      <p className={s.label}>{chatT(deps.global)('explanation')}</p>
 
       {hasComplex && (
         <ComplexSolutionParts parts={solution.parts} deps={deps} />
