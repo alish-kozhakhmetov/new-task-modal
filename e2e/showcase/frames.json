@@ -1,0 +1,20 @@
+{
+  "_note": "Кадры витрины тренажёра для Figma: все 9 семейств условия и самые частые раскладки ответа в 4 классе (подбор — node e2e/showcase/families.mjs). name — рабочее имя по-русски.",
+  "frames": [
+    { "variant": "Text/plain", "name": "Текст: ответ в поле" },
+    { "variant": "Text/after", "name": "Текст: ответ с подписью после поля" },
+    { "variant": "Text/before", "name": "Текст: ответ с подписью перед полем" },
+    { "variant": "Text/multi/stack-n2-before-after", "name": "Текст: два ответа столбиком, с подписями" },
+    { "variant": "ColumnOperation/plain", "name": "Вычисление столбиком" },
+    { "variant": "Table/plain", "name": "Таблица с пропусками" },
+    { "variant": "Table/grid", "name": "Таблица-сетка" },
+    { "variant": "Formula/plain", "name": "Ответ формулой" },
+    { "variant": "Complex/plain", "name": "Сложное условие: ответ в поле" },
+    { "variant": "Complex/after", "name": "Сложное условие: ответ с подписью после поля" },
+    { "variant": "AnswerCell/plain", "name": "Пропуск в выражении" },
+    { "variant": "AnswerCell/multi/inline-n2-plain", "name": "Два пропуска в строку" },
+    { "variant": "Comparison/plain", "name": "Сравнение: знак между числами" },
+    { "variant": "Test/plain", "name": "Тест: выбор варианта" },
+    { "variant": "Equation/before", "name": "Уравнение: найти неизвестное" }
+  ]
+}

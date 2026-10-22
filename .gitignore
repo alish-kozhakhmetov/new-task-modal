@@ -43,3 +43,4 @@ storybook-static
 !/public/stats-static/.gitkeep
 .vercel
 .env*
+e2e/showcase/out/

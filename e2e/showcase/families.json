@@ -1,0 +1,216 @@
+{
+  "total": 2239,
+  "unmapped": 961,
+  "rows": [
+    {
+      "family": "Text",
+      "variant": "Text/plain",
+      "tasks": 304,
+      "share": 0.13577489950870925
+    },
+    {
+      "family": "Text",
+      "variant": "Text/after",
+      "tasks": 253,
+      "share": 0.11299687360428763
+    },
+    {
+      "family": "ColumnOperation",
+      "variant": "ColumnOperation/plain",
+      "tasks": 116,
+      "share": 0.05180884323358642
+    },
+    {
+      "family": "AnswerCell",
+      "variant": "AnswerCell/plain",
+      "tasks": 100,
+      "share": 0.044662795891022775
+    },
+    {
+      "family": "Comparison",
+      "variant": "Comparison/plain",
+      "tasks": 92,
+      "share": 0.04108977221974096
+    },
+    {
+      "family": "Table",
+      "variant": "Table/plain",
+      "tasks": 81,
+      "share": 0.036176864671728454
+    },
+    {
+      "family": "Complex",
+      "variant": "Complex/after",
+      "tasks": 54,
+      "share": 0.0241179097811523
+    },
+    {
+      "family": "Complex",
+      "variant": "Complex/plain",
+      "tasks": 48,
+      "share": 0.021438142027690933
+    },
+    {
+      "family": "Equation",
+      "variant": "Equation/before",
+      "tasks": 40,
+      "share": 0.01786511835640911
+    },
+    {
+      "family": "Test",
+      "variant": "Test/plain",
+      "tasks": 32,
+      "share": 0.014292094685127288
+    },
+    {
+      "family": "Formula",
+      "variant": "Formula/plain",
+      "tasks": 30,
+      "share": 0.013398838767306834
+    },
+    {
+      "family": "AnswerCell",
+      "variant": "AnswerCell/multi/inline-n2-plain",
+      "tasks": 28,
+      "share": 0.012505582849486378
+    },
+    {
+      "family": "Text",
+      "variant": "Text/multi/stack-n2-before-after",
+      "tasks": 19,
+      "share": 0.008485931219294328
+    },
+    {
+      "family": "Text",
+      "variant": "Text/before",
+      "tasks": 14,
+      "share": 0.006252791424743189
+    },
+    {
+      "family": "Table",
+      "variant": "Table/grid",
+      "tasks": 10,
+      "share": 0.0044662795891022775
+    },
+    {
+      "family": "Text",
+      "variant": "Text/multi/stack-n2-before",
+      "tasks": 9,
+      "share": 0.00401965163019205
+    },
+    {
+      "family": "Table",
+      "variant": "Table/inline",
+      "tasks": 6,
+      "share": 0.0026797677534613666
+    },
+    {
+      "family": "Text",
+      "variant": "Text/ai-translation",
+      "tasks": 6,
+      "share": 0.0026797677534613666
+    },
+    {
+      "family": "Complex",
+      "variant": "Complex/beforeAfter",
+      "tasks": 4,
+      "share": 0.001786511835640911
+    },
+    {
+      "family": "Text",
+      "variant": "Text/multi/inline-n5-after",
+      "tasks": 4,
+      "share": 0.001786511835640911
+    },
+    {
+      "family": "Text",
+      "variant": "Text/before-after",
+      "tasks": 4,
+      "share": 0.001786511835640911
+    },
+    {
+      "family": "AnswerCell",
+      "variant": "AnswerCell/after",
+      "tasks": 3,
+      "share": 0.0013398838767306833
+    },
+    {
+      "family": "Complex",
+      "variant": "Complex/multi/stack-n2-beforeAfter",
+      "tasks": 3,
+      "share": 0.0013398838767306833
+    },
+    {
+      "family": "Text",
+      "variant": "Text/multi/inline-n2-after",
+      "tasks": 3,
+      "share": 0.0013398838767306833
+    },
+    {
+      "family": "Table",
+      "variant": "Table/mixed",
+      "tasks": 3,
+      "share": 0.0013398838767306833
+    },
+    {
+      "family": "Text",
+      "variant": "Text/multi/stack-n3-before-after",
+      "tasks": 2,
+      "share": 0.0008932559178204555
+    },
+    {
+      "family": "Text",
+      "variant": "Text/multi/inline-n3-before-after",
+      "tasks": 2,
+      "share": 0.0008932559178204555
+    },
+    {
+      "family": "Text",
+      "variant": "Text/multi/stack-n4-after",
+      "tasks": 1,
+      "share": 0.00044662795891022776
+    },
+    {
+      "family": "Table",
+      "variant": "Table/multi-row-svg",
+      "tasks": 1,
+      "share": 0.00044662795891022776
+    },
+    {
+      "family": "Complex",
+      "variant": "Complex/multi/stack-n2-after",
+      "tasks": 1,
+      "share": 0.00044662795891022776
+    },
+    {
+      "family": "Text",
+      "variant": "Text/multi/stack-n2-after",
+      "tasks": 1,
+      "share": 0.00044662795891022776
+    },
+    {
+      "family": "Formula",
+      "variant": "Formula/after",
+      "tasks": 1,
+      "share": 0.00044662795891022776
+    },
+    {
+      "family": "AnswerCell",
+      "variant": "AnswerCell/multi/stack-n2-sequence",
+      "tasks": 1,
+      "share": 0.00044662795891022776
+    },
+    {
+      "family": "Table",
+      "variant": "Table/multi-row",
+      "tasks": 1,
+      "share": 0.00044662795891022776
+    },
+    {
+      "family": "Text",
+      "variant": "Text/multi/stack-n3-before",
+      "tasks": 1,
+      "share": 0.00044662795891022776
+    }
+  ]
+}

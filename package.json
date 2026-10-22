@@ -25,6 +25,8 @@
     "test:e2e": "playwright test -c e2e/playwright.config.ts",
     "test:audit": "node scripts/audit-api-vs-fixtures.mjs",
     "test:visual": "playwright test -c e2e/visual/playwright.config.ts",
+    "showcase:families": "node e2e/showcase/families.mjs",
+    "showcase:shots": "node e2e/showcase/shoot.mjs",
     "test:visual:update": "playwright test -c e2e/visual/playwright.config.ts --update-snapshots",
     "test:visual:trainer-parity": "playwright test -c e2e/visual/trainer-parity/playwright.config.ts",
     "check:real-app": "node scripts/check-real-app-parity.mjs",
