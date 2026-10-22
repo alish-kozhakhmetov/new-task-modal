@@ -8,11 +8,13 @@ interface Props {
   slides: ReactNode[]
   ref?: RefObject<HTMLDivElement | null>
   className?: string
+  /** Name of each page for its pagination dot (screen readers, Tab). */
+  slideLabels?: string[]
 }
 
 const INITIAL = 1
 
-export const Slider = ({ slides, ref, className }: Props) => {
+export const Slider = ({ slides, ref, className, slideLabels }: Props) => {
   const [currentSlide, setCurrentSlide] = useState(INITIAL)
 
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -43,9 +45,14 @@ export const Slider = ({ slides, ref, className }: Props) => {
       </div>
 
       <div className={styles.pagination}>
+        {/* A dot is a button: named by its page, the shown one marked
+            (rule 96 — they were unnamed buttons in the Tab order). */}
         {slides.map((_, index) => (
           <button
             key={index}
+            type="button"
+            aria-label={slideLabels?.[index] ?? String(index + 1)}
+            aria-current={currentSlide === index ? 'true' : undefined}
             onClick={() => changeSlide(index)}
             className={clsx(
               styles.dot,

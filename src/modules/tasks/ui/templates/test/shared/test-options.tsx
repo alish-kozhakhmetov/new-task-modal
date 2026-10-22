@@ -9,6 +9,7 @@ import {
 import type { TestTaskDescription } from '../lib/types.task'
 
 import styles from './test.module.scss'
+import { useVariantKeys } from './use-variant-keys'
 
 interface Props {
   name: string
@@ -35,6 +36,15 @@ export const TestOptions = ({
   multiple = false,
   multipleHint,
 }: Props) => {
+  useVariantKeys({
+    name,
+    options,
+    value,
+    onChange,
+    multiple,
+    enabled: !disabled && !readOnly,
+  })
+
   const horizontal = Boolean(description.isHorizontal)
   const wrap = Boolean(description.isWrapVariants)
 

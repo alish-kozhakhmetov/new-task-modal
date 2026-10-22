@@ -22,4 +22,10 @@
   &.active::after {
     background-color: var(--text-primary);
   }
+
+  // The host resets button outlines; a dot reached by Tab shows a ring
+  &:focus-visible {
+    outline: 2px solid var(--border-focus);
+    border-radius: var(--radius-s);
+  }
 }

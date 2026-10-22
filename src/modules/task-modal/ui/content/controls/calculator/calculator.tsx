@@ -10,6 +10,12 @@ import { ARROW_UP_ACTION, LETTERS } from './model/symbols/letters'
 import { MAIN } from './model/symbols/main'
 import type { CalculatorSymbol } from './model/symbols/types'
 
+/** Names of the keyboard pages, for their pagination dots. */
+const PAGE_LABELS = [
+  { rus: 'Буквы', kaz: 'Әріптер', eng: 'Letters' },
+  { rus: 'Цифры', kaz: 'Цифрлар', eng: 'Digits' },
+]
+
 interface Props {
   global: Global
   onInput: (input: string) => void
@@ -66,6 +72,7 @@ export const Calculator = ({ global, onInput, ref, className }: Props) => {
     <Slider
       className={className}
       ref={ref}
+      slideLabels={PAGE_LABELS.map((label) => translate(label))}
       slides={[
         <Keyboard
           key={CALC_MODE.LETTERS}

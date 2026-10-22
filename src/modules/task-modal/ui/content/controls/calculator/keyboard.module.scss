@@ -71,6 +71,13 @@
     transition-duration: 150ms;
   }
 
+  // A key reached by Tab shows where it is (rule 96): the host resets button
+  // outlines to none. The DS button's ring, over the neighbours' gap.
+  &:focus-visible {
+    z-index: 1;
+    outline: 2px solid var(--border-focus);
+  }
+
   :global(body.lang-ar) & {
     /* important is needed, because when arabic language is selected it overrides everything */
     @include body-lead-regular;
