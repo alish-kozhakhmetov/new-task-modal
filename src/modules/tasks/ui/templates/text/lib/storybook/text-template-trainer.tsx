@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { ReactActivity } from '@/lib/wrappers/react-activity'
 import { Canvas } from '@/modules/canvas/canvas'
+import type { DraftGrid } from '@/modules/canvas/lib/key-row'
 import { Chat } from '@/modules/chat/chat'
 import { useCalcSetup } from '@/modules/task-modal/model/hooks/layout/use-calc-setup'
 import { useInputFocus } from '@/modules/task-modal/model/hooks/layout/use-input-focus'
@@ -62,6 +63,19 @@ interface Props {
    * Set false to exercise production overflow → close behavior.
    */
   forceCalcOpen?: boolean
+  /**
+   * The calculator folded away, as when the condition is long or no field is
+   * active: open state off, the task still has a calculator.
+   */
+  calcHidden?: boolean
+  /**
+   * `viewport` — the frame is the whole window, as the app's WebView and the
+   * site's phone modal (100% × 100%): the `to-vw` sizes of the keyboard match
+   * at 390 and 430 too. Without it — the 375 phone frame.
+   */
+  frame?: 'viewport'
+  /** The draft's panel in the keyboard's cells (Canvas `grid`). */
+  draftGrid?: DraftGrid
 }
 
 const taskAreaStyle: CSSProperties = {
@@ -93,7 +107,10 @@ export const TextTemplateTrainer = ({
   stateTab = 'idle',
   trainerOptions,
   forceCalcOpen = true,
+  calcHidden = false,
   layout,
+  frame,
+  draftGrid,
 }: Props) => {
   const withHints = trainerOptions?.withHints
   const withTheory = trainerOptions?.withTheory
@@ -157,7 +174,13 @@ export const TextTemplateTrainer = ({
 
   return (
     <TaskModalProviders>
-      <div className={clsx(styles.shell, fitContent && styles.shellFitContent)}>
+      <div
+        className={clsx(
+          styles.shell,
+          fitContent && styles.shellFitContent,
+          frame === 'viewport' && styles.shellViewport,
+        )}
+      >
         <TaskModalShell
           isWide={isWide}
           isChatOpen={isChatShown}
@@ -171,11 +194,16 @@ export const TextTemplateTrainer = ({
             chat={chat}
             canvas={canvas}
             forceCalcOpen={forceCalcOpen}
+            calcHidden={calcHidden}
           />
 
           <div className={styles.overlays}>
             <ReactActivity visible={isDraftShown}>
-              <Canvas onClose={canvas.close} isPinned={isDraftPinned} />
+              <Canvas
+                onClose={canvas.close}
+                isPinned={isDraftPinned}
+                grid={draftGrid}
+              />
             </ReactActivity>
 
             <ReactActivity visible={isChatShown}>
@@ -201,6 +229,7 @@ interface BodyProps {
   chat: ReturnType<typeof useOpenState>
   canvas: ReturnType<typeof useOpenState>
   forceCalcOpen: boolean
+  calcHidden: boolean
 }
 
 /** Inner body — only mounts after store.state is set (useAppState-safe). */
@@ -211,6 +240,7 @@ const TrainerBody = ({
   chat,
   canvas,
   forceCalcOpen,
+  calcHidden,
 }: BodyProps) => {
   const { activeTask } = useAppState()
   const answer = useStore((s) => s.answer)
@@ -236,7 +266,9 @@ const TrainerBody = ({
   // against the live trainer with the same param (see calc-visibility-param).
   const storyCalcState = isCalcForceHidden(window.location.search)
     ? { ...forcedOpenCalcState, isEnabled: false, isOpen: false }
-    : forcedOpenCalcState
+    : calcHidden
+      ? { ...forcedOpenCalcState, isOpen: false }
+      : forcedOpenCalcState
   const lastFocusedInput = useInputFocus({
     refs,
     activeTask,

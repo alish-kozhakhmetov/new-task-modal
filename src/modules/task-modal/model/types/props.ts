@@ -1,3 +1,4 @@
+import type { DraftGrid } from '@/modules/canvas/lib/key-row'
 import type { Api, Lesson, Theory, User } from '@/types/api/api'
 import type { Task } from '@/types/api/task'
 import type { Enums } from '@/types/enums'
@@ -22,6 +23,12 @@ export interface TaskModalProps {
    * columns. Ignored on touch screens. Without it — the phone layout, as 2.4.3.
    */
   layout?: 'wide'
+  /**
+   * The draft's panel in the cells of the keyboard's bottom row (Alisher,
+   * 23.10): `keys` — В1, the keys' own cells; `equal` — В2, six equal cells.
+   * Without it (and without `?draftGrid=`) — the panel of 2.5.3. Phone only.
+   */
+  draftGrid?: DraftGrid
 }
 
 export interface TaskModalDependencies {

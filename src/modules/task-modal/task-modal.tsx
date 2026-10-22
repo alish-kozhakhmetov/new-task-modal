@@ -6,6 +6,7 @@ import { Chat } from '../chat/chat'
 import { usePinnedColumns } from './model/hooks/layout/use-pinned-columns'
 import { useInitialSetup } from './model/hooks/use-initial-setup'
 import { useOpenState, type OpenState } from './model/hooks/use-open-state'
+import { draftGridFromSearch } from './model/lib/draft-grid-param'
 import { withWordForms } from './model/lib/resolve-word-forms'
 import { useStore } from './model/store/task-modal-store'
 import type { TaskModalProps } from './model/types/props'
@@ -31,6 +32,8 @@ export const TaskModal = (hostProps: TaskModalProps) => {
   const { isChatPinned, isDraftPinned } = usePinnedColumns(isWide)
   const isChatShown = chat.isOpen || isChatPinned
   const isDraftShown = canvas.isOpen || isDraftPinned
+  const draftGrid =
+    props.draftGrid ?? draftGridFromSearch(props.hostProps.location?.search)
 
   if (!isSetupDone) return null
 
@@ -54,6 +57,7 @@ export const TaskModal = (hostProps: TaskModalProps) => {
               taskId={activeTaskId}
               onClose={canvas.close}
               isPinned={isDraftPinned}
+              grid={draftGrid}
             />
           )}
 

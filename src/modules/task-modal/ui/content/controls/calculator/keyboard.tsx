@@ -80,7 +80,9 @@ export const Keyboard = ({ keys, mode, onKeyPress }: Props) => {
   const pressHandlers = useTapPress(onKeyPress)
 
   return (
-    <div className={clsx(styles.keyboard, styles[mode])}>
+    // data-calc-page: the draft lays its panel over this page's bottom row,
+    // cell for cell (canvas/lib/key-row.ts)
+    <div className={clsx(styles.keyboard, styles[mode])} data-calc-page={mode}>
       {keys.map((symbol) => {
         const isOperator = OPERATORS.includes(symbol.label)
         const isNumberKey = NUMBERS.includes(Number(symbol.title))

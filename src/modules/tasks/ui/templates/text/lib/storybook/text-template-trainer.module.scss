@@ -28,6 +28,12 @@
   height: 80dvh;
 }
 
+// The whole window, as the app's WebView and the site's phone modal.
+.shellViewport {
+  width: 100%;
+  height: 100dvh;
+}
+
 .body {
   display: flex;
   flex: 1;

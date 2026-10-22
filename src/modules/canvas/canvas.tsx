@@ -2,7 +2,13 @@
 
 import clsx from 'clsx'
 import type React from 'react'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react'
 
 import DeleteIcon from '@/assets/icons/calc/delete.svg'
 import BackIcon from '@/assets/icons/canvas/back.svg'
@@ -12,6 +18,8 @@ import ForwardIcon from '@/assets/icons/canvas/forward.svg'
 import CloseIcon from '@/assets/icons/close.svg'
 
 import styles from './canvas.module.scss'
+import { measureKeyRow, type DraftGrid, type KeyRow } from './lib/key-row'
+import { KeyRowPanel, type DraftAction } from './ui/key-row-panel'
 
 type DrawingMode = 'draw' | 'erase'
 
@@ -29,6 +37,13 @@ interface CanvasProps {
    * saved after every stroke instead of on «Закрыть», and there is no close.
    */
   isPinned?: boolean
+  /**
+   * The panel in the cells of the keyboard's bottom row (Alisher, 23.10):
+   * `keys` — В1, the keys' cells; `equal` — В2, six equal cells. Without it —
+   * the panel of 2.5.3. On the phone sheet only: the wide layout's column
+   * keeps its panel.
+   */
+  grid?: DraftGrid
 }
 
 const STORAGE_PREFIX = 'drawing-board-data'
@@ -38,13 +53,84 @@ export const canvasStorageKey = (taskId?: string | number | null) =>
     ? STORAGE_PREFIX
     : `${STORAGE_PREFIX}:${taskId}`
 
-export function Canvas({ onClose, taskId, isPinned = false }: CanvasProps) {
+/** Where the panel stands: over the keys, where they would be, or 2.5.3's. */
+type Placement =
+  | { kind: 'row'; row: KeyRow }
+  | { kind: 'folded' }
+  | { kind: 'column' }
+
+const placeOn = (board: HTMLElement): Placement => {
+  // The wide layout's draft is a column, not a sheet over the keyboard
+  if (getComputedStyle(board).position !== 'fixed') return { kind: 'column' }
+  const row = measureKeyRow(board)
+  return row ? { kind: 'row', row } : { kind: 'folded' }
+}
+
+/** The keys stood still this many frames: the panel stops following them. */
+const SETTLED_FRAMES = 10
+
+/** Following ends after ~3 s whatever moves. */
+const MAX_SETTLE_FRAMES = 180
+
+export function Canvas({
+  onClose,
+  taskId,
+  isPinned = false,
+  grid,
+}: CanvasProps) {
   const STORAGE_KEY = canvasStorageKey(taskId)
+  const boardRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const isDrawingRef = useRef(false)
   const [mode, setMode] = useState<DrawingMode>('draw')
   const [history, setHistory] = useState<ImageData[]>([])
   const [historyStep, setHistoryStep] = useState(-1)
+  const [placement, setPlacement] = useState<Placement>({ kind: 'folded' })
+  const isKeyPanel = Boolean(grid) && !isPinned && placement.kind !== 'column'
+
+  // The panel follows the keyboard's bottom row: measured before the first
+  // paint, then every frame while the keys move — a swipe between the
+  // keyboard's pages may still run when the pencil is tapped — and again
+  // when the window (and with it every key) changes size.
+  useLayoutEffect(() => {
+    const board = boardRef.current
+    if (!grid || isPinned || !board) return
+
+    let shown = ''
+    const place = () => {
+      const next = placeOn(board)
+      const key = JSON.stringify(next)
+      if (key === shown) return false
+      shown = key
+      setPlacement(next)
+      return true
+    }
+
+    let frame = 0
+    const settle = () => {
+      cancelAnimationFrame(frame)
+      let still = 0
+      let ticks = 0
+      const tick = () => {
+        still = place() ? 0 : still + 1
+        ticks += 1
+        if (still < SETTLED_FRAMES && ticks < MAX_SETTLE_FRAMES) {
+          frame = requestAnimationFrame(tick)
+        }
+      }
+      tick()
+    }
+
+    settle()
+    const observer = new ResizeObserver(settle)
+    observer.observe(board)
+    window.addEventListener('resize', settle)
+    return () => {
+      cancelAnimationFrame(frame)
+      observer.disconnect()
+      window.removeEventListener('resize', settle)
+    }
+  }, [grid, isPinned])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -218,9 +304,52 @@ export function Canvas({ onClose, taskId, isPinned = false }: CanvasProps) {
     saveState()
   }
 
+  const keyPanelActions: DraftAction[] = [
+    {
+      id: 'draw',
+      title: 'Рисовать',
+      Icon: EditIcon,
+      onClick: () => setMode('draw'),
+      pressed: mode === 'draw',
+    },
+    {
+      id: 'erase',
+      title: 'Ластик',
+      Icon: EraserIcon,
+      onClick: () => setMode('erase'),
+      pressed: mode === 'erase',
+    },
+    {
+      id: 'undo',
+      title: 'Назад',
+      Icon: BackIcon,
+      onClick: undo,
+      disabled: historyStep <= 0,
+    },
+    {
+      id: 'redo',
+      title: 'Вперед',
+      Icon: ForwardIcon,
+      onClick: redo,
+      disabled: historyStep >= history.length - 1,
+    },
+    {
+      id: 'clear',
+      title: 'Очистить всё',
+      Icon: DeleteIcon,
+      onClick: clearBoard,
+    },
+    {
+      id: 'close',
+      title: 'Закрыть доску',
+      Icon: CloseIcon,
+      onClick: handleClose,
+    },
+  ]
+
   return (
     <>
-      <div className={styles.container}>
+      <div ref={boardRef} className={styles.container}>
         {/* Seen only as a column of the wide layout: an empty white strip
             without a name reads as a broken page. */}
         <p className={styles.title}>Черновик</p>
@@ -236,71 +365,79 @@ export function Canvas({ onClose, taskId, isPinned = false }: CanvasProps) {
           onTouchEnd={stopDrawing}
         />
 
-        <div className={styles.controlPanel}>
-          <div className={clsx(styles.controls, isPinned && styles.pinned)}>
-            <div className={clsx(styles.group, styles.edit)}>
-              <button
-                className={clsx(
-                  styles.button,
-                  mode === 'draw' && styles.active,
-                )}
-                onClick={() => setMode('draw')}
-                title="Рисовать"
-              >
-                <EditIcon />
-              </button>
-              <button
-                className={clsx(
-                  styles.button,
-                  mode === 'erase' && styles.active,
-                )}
-                onClick={() => setMode('erase')}
-                title="Ластик"
-              >
-                <EraserIcon />
-              </button>
-            </div>
-
-            <div className={clsx(styles.group, styles.history)}>
-              <button
-                className={styles.button}
-                onClick={undo}
-                disabled={historyStep <= 0}
-                title="Назад"
-              >
-                <BackIcon />
-              </button>
-              <button
-                className={styles.button}
-                onClick={redo}
-                disabled={historyStep >= history.length - 1}
-                title="Вперед"
-              >
-                <ForwardIcon />
-              </button>
-
-              <button
-                className={styles.button}
-                onClick={clearBoard}
-                title="Очистить всё"
-              >
-                <DeleteIcon />
-              </button>
-            </div>
-
-            {!isPinned && (
-              <div className={clsx(styles.group, styles.close)}>
+        {isKeyPanel && grid ? (
+          <KeyRowPanel
+            grid={grid}
+            row={placement.kind === 'row' ? placement.row : null}
+            actions={keyPanelActions}
+          />
+        ) : (
+          <div className={styles.controlPanel}>
+            <div className={clsx(styles.controls, isPinned && styles.pinned)}>
+              <div className={clsx(styles.group, styles.edit)}>
                 <button
-                  className={styles.button}
-                  onClick={handleClose}
-                  title="Закрыть доску"
+                  className={clsx(
+                    styles.button,
+                    mode === 'draw' && styles.active,
+                  )}
+                  onClick={() => setMode('draw')}
+                  title="Рисовать"
                 >
-                  <CloseIcon />
+                  <EditIcon />
+                </button>
+                <button
+                  className={clsx(
+                    styles.button,
+                    mode === 'erase' && styles.active,
+                  )}
+                  onClick={() => setMode('erase')}
+                  title="Ластик"
+                >
+                  <EraserIcon />
                 </button>
               </div>
-            )}
+
+              <div className={clsx(styles.group, styles.history)}>
+                <button
+                  className={styles.button}
+                  onClick={undo}
+                  disabled={historyStep <= 0}
+                  title="Назад"
+                >
+                  <BackIcon />
+                </button>
+                <button
+                  className={styles.button}
+                  onClick={redo}
+                  disabled={historyStep >= history.length - 1}
+                  title="Вперед"
+                >
+                  <ForwardIcon />
+                </button>
+
+                <button
+                  className={styles.button}
+                  onClick={clearBoard}
+                  title="Очистить всё"
+                >
+                  <DeleteIcon />
+                </button>
+              </div>
+
+              {!isPinned && (
+                <div className={clsx(styles.group, styles.close)}>
+                  <button
+                    className={styles.button}
+                    onClick={handleClose}
+                    title="Закрыть доску"
+                  >
+                    <CloseIcon />
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </>
   )

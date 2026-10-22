@@ -4,10 +4,15 @@
   // 22.10 19:47).
   --canvas-ink: var(--text-on-brand);
 
+  // The dimming over the task; the key-row panel's strip repeats it
+  // (ui/key-row-panel.module.scss).
+  --canvas-scrim-alpha: 40%;
+  --canvas-scrim: rgb(0 0 0 / var(--canvas-scrim-alpha));
+
   position: fixed;
   inset: 0;
   z-index: 50;
-  background-color: rgb(0 0 0 / 40%);
+  background-color: var(--canvas-scrim);
 
   @include min-width(sm) {
     max-width: 375px;
