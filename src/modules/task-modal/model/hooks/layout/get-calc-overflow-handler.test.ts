@@ -137,4 +137,104 @@ describe('handleCalcOverflow', () => {
     cleanup()
     taskContainer.remove()
   })
+
+  const rect = (top: number, height: number) =>
+    ({
+      top,
+      bottom: top + height,
+      height,
+      left: 0,
+      right: 300,
+      width: 300,
+      x: 0,
+      y: top,
+      toJSON: () => ({}),
+    }) as DOMRect
+
+  it('keeps calc open on a short task whose field is visible above it (iPhone Safari)', () => {
+    // 2.5.2: the task area with the calculator open is 180px; the task text
+    // and the field fit, a bit of padding below does not — «overflow».
+    const taskContainer = document.createElement('div')
+    Object.defineProperty(taskContainer, 'clientHeight', { value: 180 })
+    Object.defineProperty(taskContainer, 'scrollHeight', { value: 220 })
+    taskContainer.getBoundingClientRect = () => rect(60, 180)
+
+    const field = document.createElement('span')
+    field.setAttribute('data-control', '')
+    field.getBoundingClientRect = () => rect(150, 56)
+    taskContainer.appendChild(field)
+    document.body.appendChild(taskContainer)
+
+    const calc = makeCalc()
+    const cleanup = handleCalcOverflow({ refs: makeRefs(taskContainer), calc })
+
+    expect(calc.close).not.toHaveBeenCalled()
+    expect(calc.isOpen).toBe(true)
+
+    cleanup()
+    taskContainer.remove()
+  })
+
+  it('keeps calc open when the field needs a scroll of up to a line', () => {
+    const taskContainer = document.createElement('div')
+    Object.defineProperty(taskContainer, 'clientHeight', { value: 160 })
+    Object.defineProperty(taskContainer, 'scrollHeight', { value: 240 })
+    taskContainer.getBoundingClientRect = () => rect(60, 160)
+
+    const field = document.createElement('span')
+    field.setAttribute('data-control', '')
+    field.getBoundingClientRect = () => rect(170, 56) // 6px under the edge
+    taskContainer.appendChild(field)
+    document.body.appendChild(taskContainer)
+
+    const calc = makeCalc()
+    const cleanup = handleCalcOverflow({ refs: makeRefs(taskContainer), calc })
+    expect(calc.isOpen).toBe(true)
+
+    cleanup()
+    taskContainer.remove()
+  })
+
+  it('closes calc when showing the field would hide the task text', () => {
+    // 600px phone: the field would need the text scrolled away.
+    const taskContainer = document.createElement('div')
+    Object.defineProperty(taskContainer, 'clientHeight', { value: 80 })
+    Object.defineProperty(taskContainer, 'scrollHeight', { value: 220 })
+    taskContainer.getBoundingClientRect = () => rect(60, 80)
+
+    const field = document.createElement('span')
+    field.setAttribute('data-control', '')
+    field.getBoundingClientRect = () => rect(150, 56)
+    taskContainer.appendChild(field)
+    document.body.appendChild(taskContainer)
+
+    const calc = makeCalc()
+    const cleanup = handleCalcOverflow({ refs: makeRefs(taskContainer), calc })
+    expect(calc.isOpen).toBe(false)
+
+    cleanup()
+    taskContainer.remove()
+  })
+
+  it('still closes calc when the first field is under it (long task)', () => {
+    const taskContainer = document.createElement('div')
+    Object.defineProperty(taskContainer, 'clientHeight', { value: 180 })
+    Object.defineProperty(taskContainer, 'scrollHeight', { value: 600 })
+    taskContainer.getBoundingClientRect = () => rect(60, 180)
+
+    const field = document.createElement('span')
+    field.setAttribute('data-control', '')
+    field.getBoundingClientRect = () => rect(420, 56)
+    taskContainer.appendChild(field)
+    document.body.appendChild(taskContainer)
+
+    const calc = makeCalc()
+    const cleanup = handleCalcOverflow({ refs: makeRefs(taskContainer), calc })
+
+    expect(calc.close).toHaveBeenCalled()
+    expect(calc.isOpen).toBe(false)
+
+    cleanup()
+    taskContainer.remove()
+  })
 })

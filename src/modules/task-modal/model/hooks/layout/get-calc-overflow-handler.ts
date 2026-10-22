@@ -62,7 +62,13 @@ export const handleCalcOverflow = ({ refs, calc }: Args) => {
       (active.hasAttribute(DATA_CONTROL) ||
         Boolean(getParentWithAttr(active, DATA_CONTROL)))
 
-    if (controlFocused) {
+    // The first field shows above the calculator (or after a scroll of up to
+    // one text line): keep it open. Otherwise the task opens with it closed,
+    // the text readable, and the field not lit until a tap (use-input-focus).
+    // iPhone Safari shows ~600–660px, not the 844 of a desktop emulator: a
+    // short task «overflowed» and opened with the field lit up but no
+    // keyboard until a tap (2.5.2, «Он мың санын цифрмен жазыңыз»).
+    if (controlFocused || firstControlFits(taskContainer, refs)) {
       calc.open()
     } else {
       calc.close()
@@ -107,11 +113,43 @@ const hasOverflow = (el: HTMLDivElement) => {
 /** Exported for unit tests / Storybook overflow asserts. */
 export const hasTaskContainerOverflow = hasOverflow
 
+/** Scroll the first field may need to show whole: about one line of text. */
+const REVEAL_ALLOWANCE = 40
+
+/** First answer field shows in the task area left with the calculator open. */
+const firstControlFits = (
+  taskContainer: HTMLDivElement,
+  refs: TaskModalRefs,
+) => {
+  const control = taskContainer.querySelector(`[${DATA_CONTROL}], [data-input]`)
+  if (!(control instanceof HTMLElement)) return false
+
+  const field = control.getBoundingClientRect()
+  if (field.height <= 0) return false
+
+  const box = taskContainer.getBoundingClientRect()
+  const room = Math.min(
+    taskContainer.clientHeight,
+    availableContentHeight(refs) ?? Number.POSITIVE_INFINITY,
+  )
+  return (
+    field.bottom - box.top + taskContainer.scrollTop <= room + REVEAL_ALLOWANCE
+  )
+}
+
 // this is needed for first load
 const exceedsAvailableHeight = (
   taskContainer: HTMLDivElement,
   refs: TaskModalRefs,
 ) => {
+  const available = availableContentHeight(refs)
+  if (available === undefined) return
+
+  return taskContainer.offsetHeight > available
+}
+
+/** Height left for the task with the calculator open; undefined before layout. */
+const availableContentHeight = (refs: TaskModalRefs) => {
   const root = refs.root.current
   const header = refs.header.current
   const calc = refs.calc.current
@@ -121,12 +159,11 @@ const exceedsAvailableHeight = (
 
   const ROOT_PADDING_BOTTOM = 10 // padding bottom of task-modal root container
 
-  const availableContentHeight =
+  return (
     root.offsetHeight -
     header.offsetHeight -
     ROOT_PADDING_BOTTOM -
     actions.offsetHeight -
     calc.offsetHeight
-
-  return taskContainer.offsetHeight > availableContentHeight
+  )
 }
