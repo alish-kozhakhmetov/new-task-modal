@@ -2,6 +2,7 @@ import { createRoot, type Root } from 'react-dom/client'
 
 import { ErrorBoundary } from '@/lib/error-boundary/error-boundary'
 
+import { bindBrowserBack } from './model/lib/bind-browser-back'
 import { closeWithProgress } from './model/lib/close-with-progress'
 import { injectFonts } from './model/lib/fonts/inject-fonts'
 import type { TaskModalProps } from './model/types/props'
@@ -81,8 +82,15 @@ export const TaskModalController = (props: TaskModalProps) => {
 
     const root = getRoot()
 
-    // × , «Далее» on the last task: the host gets the lesson progress first
-    const closeModal = () => closeWithProgress(props, () => root.unmount())
+    // × , «Далее» on the last task, browser «back»: the host gets the lesson
+    // progress first
+    let unbindBack = () => {}
+    const closeModal = () =>
+      closeWithProgress(props, () => {
+        unbindBack()
+        root.unmount()
+      })
+    unbindBack = bindBrowserBack(closeModal)
 
     root.render(
       <ErrorBoundary>
