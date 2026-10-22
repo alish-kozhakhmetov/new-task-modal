@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 
 import { GRID_INK, INK, paint, STROKE } from '../figure-paint'
+import { signedNumber as signed } from '../signed-number'
 import { parseFraction, SvgFraction } from '../svg-fraction'
 
 import {
@@ -10,9 +11,6 @@ import {
   type PlaneOptions,
   type PlanePoint,
 } from './plane-math'
-
-/** Axis numbers with a real minus (rule 27), not a hyphen. */
-const signed = (n: number) => (n < 0 ? `−${-n}` : String(n))
 
 const asPoint = (value: unknown): PlanePoint | null => {
   if (!value || typeof value !== 'object') return null
@@ -247,7 +245,7 @@ export const PlaneAxes = ({ options }: AxesProps) => {
         textAnchor="middle"
         dominantBaseline="central"
       >
-        {origin}
+        {signed(origin)}
       </text>
     </g>
   )

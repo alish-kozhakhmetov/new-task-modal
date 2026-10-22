@@ -2,6 +2,7 @@ import type { ComplexNumberLinePart } from '../../lib/types.task'
 import styles from '../complex.module.scss'
 
 import { INK, STROKE } from './figure-paint'
+import { signedNumber } from './signed-number'
 
 interface Props {
   part: ComplexNumberLinePart
@@ -107,7 +108,7 @@ export const NumberLinePart = ({ part }: Props) => {
               fontSize={14}
               textAnchor="middle"
             >
-              {dot.position}
+              {signedNumber(dot.position)}
             </text>
           ) : null}
         </g>
@@ -121,7 +122,7 @@ export const NumberLinePart = ({ part }: Props) => {
           fontSize={14}
           textAnchor="middle"
         >
-          {item.position}
+          {signedNumber(item.position)}
         </text>
       ))}
 
