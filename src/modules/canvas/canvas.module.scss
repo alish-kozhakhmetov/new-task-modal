@@ -1,4 +1,9 @@
 .container {
+  // Pen colour (canvas.tsx reads it): over the dimmed task a black line is
+  // barely seen — white there; dark in the light column from 1280 (Alisher,
+  // 22.10 19:47).
+  --canvas-ink: var(--text-on-brand);
+
   position: fixed;
   inset: 0;
   z-index: 50;
@@ -7,7 +12,7 @@
   @include min-width(sm) {
     max-width: 375px;
     margin: 0 auto;
-    border: 1px solid #808080;
+    border: 1px solid var(--border-strong);
   }
 
   // Wide desktop, 1100–1279: no room for a third column, so the draft covers
@@ -24,6 +29,8 @@
 
   // From 1280: its own column right of the task, as on the stand.
   @include wide(1280px) {
+    --canvas-ink: var(--text-primary);
+
     grid-area: draft;
     background-color: var(--bg-surface);
     border-left: 1px solid var(--border-default);
@@ -92,8 +99,8 @@
 .group {
   display: flex;
   padding: var(--space-4);
-  background-color: #f0f0f0;
-  border: 1px solid #ebeaec;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-default);
   border-radius: var(--radius-m);
 }
 
@@ -103,16 +110,16 @@
   align-items: center;
   justify-content: center;
   -webkit-tap-highlight-color: transparent;
-  color: #1d1b20;
+  color: var(--text-primary);
 
   &.active {
-    color: #3176f6;
+    color: var(--text-brand);
     background-color: var(--bg-canvas);
     border-radius: var(--radius-m);
   }
 
   &:disabled {
-    color: #1d1b20;
+    color: var(--text-primary);
     opacity: 0.2;
   }
 }
