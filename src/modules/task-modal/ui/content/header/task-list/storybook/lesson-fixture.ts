@@ -1,0 +1,132 @@
+import gridTasks from '@/modules/tasks/ui/templates/table/ui/grid/data/all-tasks.json'
+import inlineN5Tasks from '@/modules/tasks/ui/templates/text/ui/multi/inline-n5-after/data/all-tasks.json'
+import stackN5Tasks from '@/modules/tasks/ui/templates/text/ui/multi/stack-n5-after/data/all-tasks.json'
+import plainTasks from '@/modules/tasks/ui/templates/text/ui/plain/data/all-tasks.json'
+import type { Task } from '@/types/api/task'
+
+/**
+ * A lesson for the task list stories: real conditions of lesson 2121
+ * (grade 4, «Разряды и классы»), from the package fixtures, in the lesson's
+ * own order. Fifteen tasks — the lesson as the backend gives it.
+ */
+const LESSON_2121 = [
+  '4_1_3',
+  '4_1_4',
+  '4_1_5',
+  '4_1_6',
+  '4_1_7',
+  '4_1_8',
+  '4_1_9',
+  '4_1_10',
+  '4_1_56_1',
+  '4_1_56',
+  '4_1_57',
+  '4_1_59',
+  '4_1_60',
+  '4_1_61',
+  '4_1_62',
+] as const
+
+type LessonTaskId = (typeof LESSON_2121)[number]
+
+interface FixtureFile {
+  byGrade?: Record<string, { id: string; task: unknown }[]>
+}
+
+const FILES = [plainTasks, stackN5Tasks, inlineN5Tasks, gridTasks] as unknown[]
+
+const fixture = (id: string): Task => {
+  for (const file of FILES) {
+    const hit = (file as FixtureFile).byGrade?.['4']?.find((t) => t.id === id)
+    if (hit) return structuredClone(hit.task) as Task
+  }
+  throw new Error(`No fixture for ${id}`)
+}
+
+/** As the backend gives it before the first attempt: no solution. */
+const unsolved = (id: string): Task => ({ ...fixture(id), solution: null })
+
+/**
+ * Solved in an earlier visit: the backend returns such a task empty —
+ * `description: ""`, no `answerInput`, no `fields`, `solution: "-"`
+ * (contracts/backend-notes.md). Nothing to show but the status.
+ */
+const solvedEarlier = (id: string, result: string): Task => {
+  const { id: taskId, type, position } = fixture(id)
+  return {
+    id: taskId,
+    type,
+    position,
+    title: '',
+    result,
+    isPenalty: false,
+    description: '' as unknown as Task['description'],
+    solution: '-',
+  }
+}
+
+/** Solved in this visit — the store keeps what the check left on the task. */
+const solvedNow = (
+  id: string,
+  result: 'correct' | 'error' | 'solution_shown',
+  answer: string,
+): Task => {
+  const task = fixture(id)
+  return {
+    ...task,
+    result,
+    answer,
+    // The backend sends the solution only after the last attempt or «show».
+    solution: result === 'correct' ? null : task.solution,
+    attemptsCount: result === 'correct' ? 1 : 3,
+  }
+}
+
+export interface LessonFixture {
+  tasks: Task[]
+  activeTask: Task
+  initialTasksCount: number
+}
+
+/**
+ * Mid-lesson, mixed: three tasks solved on an earlier visit (empty from the
+ * backend), four in this one — right, answer shown, right, with a mistake —
+ * an extra task after the mistake (solved), the current task №9 and seven
+ * ahead. 16 tasks of the initial 15: the counter reads «№9/15 16».
+ */
+export const midLesson = (): LessonFixture => {
+  const errored = solvedNow('4_1_9', 'error', '96741')
+  // An extra task is of the same type as the one with the mistake and takes
+  // its position (use-check-answer.ts). The fixture has one 4_1_9 — the
+  // story reuses its condition under a new id.
+  const extra: Task = {
+    ...solvedNow('4_1_9', 'correct', '96714'),
+    id: 'penalty-4_1_9',
+    isPenalty: true,
+  }
+  const current = unsolved('4_1_10')
+  const tasks: Task[] = [
+    solvedEarlier('4_1_3', 'correct'),
+    solvedEarlier('4_1_4', 'error'),
+    solvedEarlier('4_1_5', 'correct'),
+    solvedNow('4_1_6', 'correct', '2'),
+    solvedNow('4_1_7', 'solution_shown', ''),
+    solvedNow('4_1_8', 'correct', '6;;3;;6;;3;;2'),
+    errored,
+    extra,
+    current,
+    ...LESSON_2121.slice(8).map((id: LessonTaskId) => unsolved(id)),
+  ]
+  return { tasks, activeTask: current, initialTasksCount: LESSON_2121.length }
+}
+
+/** The start of a lesson: №1 solved right in this visit, №2 is current. */
+export const secondTask = (): LessonFixture => {
+  const current = unsolved('4_1_4')
+  const tasks: Task[] = [
+    solvedNow('4_1_3', 'correct', '1'),
+    current,
+    ...LESSON_2121.slice(2).map((id: LessonTaskId) => unsolved(id)),
+  ]
+  return { tasks, activeTask: current, initialTasksCount: LESSON_2121.length }
+}

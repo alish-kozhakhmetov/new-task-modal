@@ -1,0 +1,24 @@
+// The site's mount point: `#task-modal-root`, full height, positioned
+// (controller.tsx).
+.root {
+  position: relative;
+  height: 100%;
+}
+
+// Phone: the app's screen. The transform makes the sheets that are fixed on
+// the phone (chat, draft, task list) fill this frame instead of the page.
+.phone {
+  position: relative;
+  width: 375px;
+  height: 812px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--bg-canvas);
+  transform: translateZ(0);
+}
+
+// Wide: the site gives the whole window to the trainer.
+.wide {
+  height: 100dvh;
+  background: var(--bg-canvas);
+}
