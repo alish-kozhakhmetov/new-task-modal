@@ -2,6 +2,7 @@ import { createRoot, type Root } from 'react-dom/client'
 
 import { ErrorBoundary } from '@/lib/error-boundary/error-boundary'
 
+import { closeWithProgress } from './model/lib/close-with-progress'
 import { injectFonts } from './model/lib/fonts/inject-fonts'
 import type { TaskModalProps } from './model/types/props'
 import { TaskModal } from './task-modal'
@@ -71,14 +72,17 @@ const getRoot = () => {
  */
 export const TaskModalController = (props: TaskModalProps) => {
   setTimeout(() => {
+    // The host re-renders this controller on its own setState — also the one
+    // closeWithProgress makes on close, after which the host drops the
+    // wrapper. No wrapper — nothing to mount into (see Mount docs).
+    if (!document.getElementById(WRAPPER_ID)) return
+
     injectFonts()
 
     const root = getRoot()
 
-    const closeModal = () => {
-      props.closeModal()
-      root.unmount()
-    }
+    // × , «Далее» on the last task: the host gets the lesson progress first
+    const closeModal = () => closeWithProgress(props, () => root.unmount())
 
     root.render(
       <ErrorBoundary>
