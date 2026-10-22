@@ -1,7 +1,9 @@
 // The counter was a plain span; as a button it must look the same to the
 // pixel (task-list.visual.spec.ts): every button property back to what the
-// span had — inherited font, colour and alignment, no box of its own.
-.button {
+// span had — inherited font, colour and alignment, no box of its own. With
+// the type in the selector it outranks the normalizers' `[type='button']`
+// (native appearance) whichever stylesheet the host loads last.
+.button[type='button'] {
   all: unset;
   position: relative;
   cursor: pointer;
