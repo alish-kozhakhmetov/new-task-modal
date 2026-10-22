@@ -27,8 +27,10 @@ interface Props {
  * calculator are as they were when the pupil comes back.
  *
  * A state of the window (store `taskList`), not a route: the host's history
- * and the system «back» are not touched. Back: the arrow in the bar, Escape
- * on a computer.
+ * is not touched. Back: the arrow in the bar, Escape on a computer. The
+ * browser's «back» closes the whole window with the lesson progress, as with
+ * the chat or the draft open (controller.test.tsx); the next window opens on
+ * the task.
  */
 export const TaskListLayer = ({ props }: Props) => {
   const view = useStore((s) => s.taskList)
