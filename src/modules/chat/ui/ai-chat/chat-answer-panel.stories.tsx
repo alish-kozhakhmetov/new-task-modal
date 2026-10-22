@@ -145,10 +145,14 @@ export const Truncation: Story = {
 
     // The correct answer must never show a truncation ellipsis, however
     // long/narrow the bubble — only the user answer is allowed to truncate.
+    // The ellipsis is the aria-hidden «…» span; MathJax marks its own
+    // rendering aria-hidden too, so look for the «…» itself — the old
+    // `[aria-hidden]` check failed whenever MathJax had typeset in time.
     const correctAnswerLabel = canvas.getAllByText('Верный ответ:').at(0)
     const correctAnswerRow = correctAnswerLabel?.closest('div')
-    await expect(
-      correctAnswerRow?.querySelector('[aria-hidden="true"]'),
-    ).toBeNull()
+    const ellipses = [
+      ...(correctAnswerRow?.querySelectorAll('[aria-hidden="true"]') ?? []),
+    ].filter((el) => el.textContent?.trim() === '…')
+    await expect(ellipses).toHaveLength(0)
   },
 }
