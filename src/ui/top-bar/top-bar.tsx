@@ -16,6 +16,8 @@ interface Props {
   className?: string
   titleClassName?: string
   onGoBack?: () => void
+  /** Accessible name of the back button (it shows only an arrow). */
+  goBackLabel?: string
   /** Without it there is no close button (a pinned column has nothing to close). */
   onClose?: () => void
 }
@@ -27,6 +29,7 @@ export const TopBar = ({
   className,
   titleClassName,
   onGoBack,
+  goBackLabel,
   onClose,
 }: Props) => {
   const isArabic = deps.helpers.ArabicNumeralUtils.isArabic()
@@ -40,6 +43,7 @@ export const TopBar = ({
           layout={ButtonLayout.Icon}
           onClick={onGoBack}
           className={s.button}
+          aria-label={goBackLabel}
         >
           <ArrowBackIcon />
         </Button>

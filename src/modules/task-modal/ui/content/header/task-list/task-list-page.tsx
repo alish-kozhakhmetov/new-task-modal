@@ -1,64 +1,63 @@
 import clsx from 'clsx'
 import { useEffect, useRef } from 'react'
 
-import ArrowBackIcon from '@/assets/icons/header/arrow-back.svg'
+import type { TaskModalDependencies } from '@/modules/task-modal/model/types/props'
+import { DigitGroupingForTask } from '@/modules/tasks/lib/digit-grouping-for-task'
+import { MathText } from '@/ui/math-text/math-text'
+import { TopBar } from '@/ui/top-bar/top-bar'
 
 import styles from './task-list-page.module.scss'
-import { isOpenable, STATUS_LABEL, type TaskStatus } from './task-status'
-
-export interface TaskListRow {
-  /** 1-based number shown to the child */
-  num: number
-  status: TaskStatus
-  /** the condition, plain text */
-  preview: string
-  /** extra task added after a mistake */
-  isPenalty?: boolean
-}
+import type { TaskListStrings } from './task-list-strings'
+import { taskPreview } from './task-preview'
+import {
+  isOpenable,
+  type TaskListRow,
+  type TaskListSummary,
+  type TaskStatus,
+} from './task-status'
 
 interface Props {
   rows: TaskListRow[]
-  onSelect: (num: number) => void
-  /** back to the current task */
+  summary: TaskListSummary
+  strings: TaskListStrings
+  deps: TaskModalDependencies
+  onSelect: (row: TaskListRow) => void
+  /** Back to the current task. */
   onBack: () => void
 }
 
 /**
- * Lesson tasks on a full screen, opened by tapping «№N/M» (Alisher, 05.10).
- * Built on the diagnostic report screen (App › Diagnostic — Part 1): summary
- * with a bar and numbered rows with a status mark on the right — no tabs
- * (Alisher, 05.10: «просто список»). Strict order — solved tasks open for review, the
- * current one opens, tasks ahead are locked. DRAFT, not wired to the modal.
+ * Lesson tasks on a full screen, opened by tapping «№N/M» (Alisher, 05.10 and
+ * 22.10). Built on the diagnostic report screen (App › Diagnostic — Part 1):
+ * a summary with a bar and numbered rows with a status mark on the right — no
+ * tabs («просто список»). Strict order: solved tasks open for review, the
+ * current one opens, tasks ahead are locked.
  */
-export const TaskListPage = ({ rows, onSelect, onBack }: Props) => {
-  const count = (s: TaskStatus) => rows.filter((r) => r.status === s).length
-  const correct = count('correct')
-  const errors = count('error')
-  const shown = count('shown')
-  const solved = correct + errors + shown
-  const total = rows.length
-  const pct = (n: number) => `${(n / total) * 100}%`
+export const TaskListPage = ({
+  rows,
+  summary,
+  strings,
+  deps,
+  onSelect,
+  onBack,
+}: Props) => {
+  const { correct, errors, shown, solved, total } = summary
+  const pct = (n: number) => `${total ? (n / total) * 100 : 0}%`
 
   return (
-    <section className={styles.page} aria-label="Задачи урока">
-      <header className={styles.bar}>
-        <button
-          type="button"
-          className={styles.iconBtn}
-          onClick={onBack}
-          aria-label="Вернуться к задаче"
-        >
-          <ArrowBackIcon />
-        </button>
-        <h2 className={styles.barTitle}>Задачи урока</h2>
-        <span className={styles.iconBtn} aria-hidden />
-      </header>
+    <>
+      <TopBar
+        deps={deps}
+        onGoBack={onBack}
+        goBackLabel={strings.backToTask}
+        titleClassName={styles.title}
+      >
+        {strings.title}
+      </TopBar>
 
       <div className={styles.body}>
         <div className={styles.summary}>
-          <p className={styles.headline}>
-            Решено: {solved}/{total}
-          </p>
+          <p className={styles.headline}>{strings.solved(solved, total)}</p>
           <div className={styles.progress} aria-hidden>
             <span className={styles.pCorrect} style={{ width: pct(correct) }} />
             <span
@@ -67,18 +66,23 @@ export const TaskListPage = ({ rows, onSelect, onBack }: Props) => {
             />
           </div>
           <p className={styles.caption}>
-            Верно {correct}, с ошибкой {errors}
-            {shown ? `, ответ показан ${shown}` : ''}
+            {strings.summary(correct, errors, shown)}
           </p>
         </div>
 
-        <List rows={rows} onSelect={onSelect} scrollToCurrent />
+        <List rows={rows} strings={strings} deps={deps} onSelect={onSelect} />
       </div>
-    </section>
+    </>
   )
 }
 
-const Mark = ({ status }: { status: TaskStatus }) => {
+const Mark = ({
+  status,
+  strings,
+}: {
+  status: TaskStatus
+  strings: TaskListStrings
+}) => {
   if (status === 'correct')
     return (
       <svg
@@ -116,51 +120,86 @@ const Mark = ({ status }: { status: TaskStatus }) => {
         />
       </svg>
     )
-  if (status === 'shown') return <span className={styles.markShown}>ответ</span>
+  if (status === 'shown')
+    return (
+      <span className={styles.markShown} aria-hidden>
+        {strings.markShown}
+      </span>
+    )
   if (status === 'current')
-    return <span className={styles.markNow}>сейчас</span>
+    return (
+      <span className={styles.markNow} aria-hidden>
+        {strings.markCurrent}
+      </span>
+    )
   return null
 }
 
 const List = ({
   rows,
+  strings,
+  deps,
   onSelect,
-  scrollToCurrent,
 }: {
   rows: TaskListRow[]
-  onSelect: (num: number) => void
-  scrollToCurrent?: boolean
+  strings: TaskListStrings
+  deps: TaskModalDependencies
+  onSelect: (row: TaskListRow) => void
 }) => {
+  const listRef = useRef<HTMLOListElement>(null)
   const currentRef = useRef<HTMLButtonElement>(null)
 
   // Open on the current task, not on №1: in a long lesson it is far down.
+  // The list alone scrolls — scrollIntoView would also move the host's page
+  // and the modal around it to centre the row.
   useEffect(() => {
-    if (scrollToCurrent) currentRef.current?.scrollIntoView({ block: 'center' })
-  }, [scrollToCurrent])
+    const list = listRef.current
+    const row = currentRef.current
+    if (!list || !row) return
+    const offset =
+      row.getBoundingClientRect().top - list.getBoundingClientRect().top
+    list.scrollTop += offset - (list.clientHeight - row.offsetHeight) / 2
+  }, [])
+
+  const translate = (value: Parameters<typeof deps.global.translateTasks>[0]) =>
+    deps.global.translateTasks(value)
 
   return (
-    <ol className={styles.list}>
-      {rows.map((row) => (
-        <li key={row.num}>
-          <button
-            type="button"
-            className={clsx(styles.row, styles[row.status])}
-            disabled={!isOpenable(row.status)}
-            aria-current={row.status === 'current' ? 'step' : undefined}
-            aria-label={`${row.num}. ${row.preview} — ${STATUS_LABEL[row.status]}`}
-            ref={row.status === 'current' ? currentRef : undefined}
-            onClick={() => onSelect(row.num)}
-          >
-            <span className={styles.text}>
-              {row.num}. {row.preview}
-              {row.isPenalty && (
-                <span className={styles.extra}> · дополнительная</span>
-              )}
-            </span>
-            <Mark status={row.status} />
-          </button>
-        </li>
-      ))}
+    <ol ref={listRef} className={styles.list}>
+      {rows.map((row) => {
+        const preview =
+          taskPreview(row.task, translate) ||
+          (row.status === 'ahead' || row.status === 'current'
+            ? strings.task
+            : strings.solvedEarlier)
+        return (
+          <li key={row.task.id}>
+            <button
+              type="button"
+              className={clsx(styles.row, styles[row.status])}
+              disabled={!isOpenable(row.status)}
+              aria-current={row.status === 'current' ? 'step' : undefined}
+              aria-label={`№${row.num}${row.isPenalty ? `, ${strings.extra}` : ''} — ${strings.status[row.status]}`}
+              ref={row.status === 'current' ? currentRef : undefined}
+              onClick={() => onSelect(row)}
+              data-testid={`task-list-row-${row.num}`}
+            >
+              <span className={styles.num}>{row.num}.</span>
+              <span className={styles.text}>
+                <span className={styles.preview}>
+                  <DigitGroupingForTask taskType={row.task.type}>
+                    <MathText inline>{preview}</MathText>
+                  </DigitGroupingForTask>
+                </span>
+                {row.isPenalty && (
+                  <span className={styles.extra}>{strings.extra}</span>
+                )}
+              </span>
+              <Mark status={row.status} strings={strings} />
+            </button>
+          </li>
+        )
+      })}
     </ol>
   )
 }

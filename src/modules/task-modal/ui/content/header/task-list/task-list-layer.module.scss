@@ -1,0 +1,47 @@
+// The task list's frame — the same as the chat's and the draft's sheets
+// (chat.module.scss, canvas.module.scss): over the whole task on the phone,
+// the 375 column on a narrow desktop, the task's grid column in the wide
+// layout.
+.layer {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  max-height: 100dvh;
+  font-family: var(--font-halvar), sans-serif;
+  color: var(--text-primary);
+  outline: none;
+  background: var(--bg-canvas);
+
+  @include thin-scrollbar;
+
+  @include min-width(sm) {
+    max-width: 375px;
+    margin: 0 auto;
+    border: 1px solid var(--border-strong);
+  }
+
+  // Wide desktop: the task's column only — the chat and the draft columns
+  // stay. Above the draft, which covers the task between 1100 and 1280.
+  @include wide {
+    position: relative;
+    inset: auto;
+    z-index: 2;
+    grid-area: task;
+    max-width: none;
+    height: 100%;
+    min-height: 0;
+    max-height: none;
+    margin: 0;
+    border: 0;
+
+    // As the task: its column is as wide as the keyboard (content.module.scss).
+    > * {
+      width: 100%;
+      max-width: 640px;
+      margin-inline: auto;
+    }
+  }
+}

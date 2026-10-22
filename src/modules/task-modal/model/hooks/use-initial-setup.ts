@@ -15,6 +15,7 @@ export const useInitialSetup = (props: TaskModalProps) => {
   const setAnswer = useStore((s) => s.setAnswer)
   const setPrevAnswer = useStore((s) => s.setPrevAnswer)
   const setIsAnswerChanged = useStore((s) => s.setIsAnswerChanged)
+  const setTaskList = useStore((s) => s.setTaskList)
 
   const initialSetup = useEffectEvent(() => {
     void (async () => {
@@ -23,6 +24,7 @@ export const useInitialSetup = (props: TaskModalProps) => {
       setAnswer('')
       setPrevAnswer(null)
       setIsAnswerChanged(false)
+      setTaskList(null)
       setIsSetupDone(true)
     })()
   })

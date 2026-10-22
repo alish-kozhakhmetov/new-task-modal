@@ -214,6 +214,7 @@ export const resetTrainerSession = (
   store.setPrevAnswer(null)
   store.setIsAnswerChanged(false)
   store.setIsTransitioning(false)
+  store.setTaskList(null)
   store.setAvailableTasks({})
 }
 

@@ -22,7 +22,7 @@ export const TaskModalHeader = ({ props, ref }: Props) => {
       deps={props.deps}
       onClose={closeModal}
     >
-      <TasksNum />
+      <TasksNum deps={props.deps} />
       <LivesIndicator props={props} />
     </TopBar>
   )

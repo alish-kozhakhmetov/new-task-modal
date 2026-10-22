@@ -11,6 +11,7 @@ import { useStore } from './model/store/task-modal-store'
 import type { TaskModalProps } from './model/types/props'
 import { TaskModalProviders } from './providers'
 import { TaskModalContent } from './ui/content/content'
+import { TaskListLayer } from './ui/content/header/task-list/task-list-layer'
 import { TaskModalShell } from './ui/shell/shell'
 
 export interface TaskModalModals {
@@ -65,6 +66,9 @@ export const TaskModal = (hostProps: TaskModalProps) => {
           {isChatShown && (
             <Chat props={props} onClose={chat.close} isPinned={isChatPinned} />
           )}
+
+          {/* Opened by «№N/M» in the header (Alisher, 22.10). */}
+          <TaskListLayer props={props} />
         </TaskModalShell>
       </TaskModalProviders>
     </>

@@ -1,3 +1,26 @@
+// The counter was a plain span; as a button it must look the same to the
+// pixel (task-list.visual.spec.ts): every button property back to what the
+// span had — inherited font, colour and alignment, no box of its own.
+.button {
+  all: unset;
+  position: relative;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  // A finger-sized target around the small text, drawn nowhere.
+  &::after {
+    position: absolute;
+    inset: calc(-1 * var(--space-8)) calc(-1 * var(--space-4));
+    content: '';
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-xs);
+  }
+}
+
 .strikethrough {
   color: var(--text-disabled);
   text-decoration: line-through;

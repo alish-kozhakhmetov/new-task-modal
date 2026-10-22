@@ -5,12 +5,13 @@
   height: 100%;
 }
 
-// Phone: the app's screen. The transform makes the sheets that are fixed on
-// the phone (chat, draft, task list) fill this frame instead of the page.
+// Phone: the app's screen, no taller than the device's (as the Trainer
+// stories' shell). The transform makes the sheets that are fixed on the
+// phone (chat, draft, task list) fill this frame instead of the page.
 .phone {
   position: relative;
   width: 375px;
-  height: 812px;
+  height: min(100dvh, 812px);
   margin: 0 auto;
   overflow: hidden;
   background: var(--bg-canvas);

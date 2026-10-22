@@ -1,0 +1,89 @@
+// A solved task on review: status, the task as it was left, and the way back
+// to the task being solved. Lives in the task list layer, which gives it the
+// frame.
+
+.title {
+  @include body-large-bold;
+
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.scroll {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  align-items: center;
+  padding: var(--space-8) var(--space-16) 0;
+}
+
+// Dense fills on the grey canvas (no glow, no translucency).
+.badge {
+  @include body-small-bold;
+
+  display: inline-flex;
+  gap: var(--space-4);
+  align-items: center;
+  padding: var(--space-4) var(--space-12);
+  color: var(--text-primary);
+  border-radius: var(--radius-xxl);
+}
+
+.icon {
+  flex: none;
+}
+
+.correct {
+  background: var(--status-bg-success);
+
+  .icon {
+    color: var(--status-fg-success);
+  }
+}
+
+.error {
+  background: var(--status-bg-error);
+
+  .icon {
+    color: var(--status-fg-error);
+  }
+}
+
+.shown {
+  background: var(--bg-subtle);
+}
+
+.extra {
+  @include body-small-regular;
+
+  color: var(--text-secondary);
+}
+
+// The task's own typography (container.module.scss), without its scroll box:
+// here the review scrolls as a whole.
+.scroll > .task {
+  height: auto;
+  overflow: visible;
+}
+
+.note {
+  @include body-medium-regular;
+
+  padding: var(--space-8) var(--space-16);
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.footer {
+  padding: var(--space-8) var(--space-16) var(--space-16);
+}
+
+.current {
+  width: 100%;
+}

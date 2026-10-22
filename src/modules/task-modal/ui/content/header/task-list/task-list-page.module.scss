@@ -1,46 +1,9 @@
-// Task list page — draft v3 (Alisher, 05.10): the diagnostic report screen
-// (App › Diagnostic — Part 1) reused for lesson tasks.
+// Task list page (Alisher, 05.10, 22.10): the diagnostic report screen
+// (App › Diagnostic — Part 1) reused for lesson tasks. Lives in the task list
+// layer (task-list-layer.module.scss), which gives it the frame.
 
-.page {
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  background: var(--bg-canvas);
-}
-
-.bar {
-  display: grid;
-  grid-template-columns: 40px 1fr 40px;
-  gap: var(--space-8);
-  align-items: center;
-  padding: var(--space-8) var(--space-16);
-}
-
-.iconBtn {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  color: var(--text-primary);
-  cursor: pointer;
-  background: var(--bg-surface);
-  border: none;
-  border-radius: 999px;
-
-  &[aria-hidden] {
-    visibility: hidden;
-  }
-}
-
-.barTitle {
-  @include body-large-regular;
-
-  margin: 0;
-  font-weight: 600;
-  text-align: center;
+.title {
+  @include body-large-bold;
 }
 
 .body {
@@ -62,21 +25,20 @@
 }
 
 .headline {
-  @include body-large-regular;
+  @include body-lead-bold;
 
   margin: 0;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 28px;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
+// Dense fills on the grey canvas, no glow (Alisher): green — right, red —
+// with a mistake or with the answer shown.
 .progress {
   display: flex;
-  gap: 2px;
-  height: 20px;
+  height: var(--space-16);
   overflow: hidden;
   background: var(--bg-subtle);
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
 }
 
 .pCorrect {
@@ -88,7 +50,7 @@
 }
 
 .caption {
-  @include body-medium-regular;
+  @include body-small-regular;
 
   margin: 0;
   color: var(--text-secondary);
@@ -102,47 +64,90 @@
   padding: var(--space-8) 0 var(--space-24);
   margin: 0;
   overflow-y: auto;
+  overscroll-behavior: contain;
   list-style: none;
+  border-top: 1px solid var(--border-default);
 }
 
 .row {
   @include body-medium-regular;
 
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: var(--space-12);
-  align-items: center;
+  grid-template-columns: 2.5ch minmax(0, 1fr) auto;
+  gap: var(--space-8);
+  align-items: baseline;
   width: 100%;
-  min-height: 48px;
-  padding: var(--space-8) var(--space-4);
+  min-height: var(--space-48);
+  padding: var(--space-12) var(--space-8) var(--space-12) var(--space-4);
   color: var(--text-primary);
-  text-align: left;
+  text-align: start;
   cursor: pointer;
   background: transparent;
   border: none;
   border-radius: var(--radius-m);
+  -webkit-tap-highlight-color: transparent;
 
   &:disabled {
     cursor: default;
   }
+
+  &:focus-visible {
+    outline: 2px solid var(--border-focus);
+    outline-offset: -2px;
+  }
+
+  @media (hover: hover) {
+    &:not(:disabled):hover {
+      background: var(--bg-subtle);
+    }
+  }
+}
+
+.num {
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 .text {
+  display: grid;
   min-width: 0;
 }
 
+// Two lines at most: the row names the task, the task shows itself.
+.preview {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
 .extra {
+  @include body-small-regular;
+
   color: var(--text-secondary);
 }
 
 .current {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-brand);
   background: var(--status-bg-info);
+
+  @media (hover: hover) {
+    &:not(:disabled):hover {
+      background: var(--status-bg-info);
+    }
+  }
+
+  .extra {
+    font-weight: 400;
+  }
 }
 
 .ahead {
   color: var(--text-tertiary);
+
+  .extra {
+    color: var(--text-tertiary);
+  }
 }
 
 .markOk {
@@ -151,6 +156,13 @@
 
 .markErr {
   color: var(--status-fg-error);
+}
+
+.markOk,
+.markErr,
+.markShown,
+.markNow {
+  align-self: center;
 }
 
 .markShown,
@@ -165,5 +177,6 @@
 }
 
 .markNow {
+  font-weight: 700;
   color: var(--text-brand);
 }

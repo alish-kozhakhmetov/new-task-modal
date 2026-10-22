@@ -71,8 +71,34 @@ for (const { storyId, name } of HEADER_CASES) {
       `Storybook is not reachable at ${STORYBOOK_BASE}`,
     )
     const counter = await open(page, storyId)
+    // Not a pixel, not a shade: no count and no colour tolerance.
     await expect(header(counter)).toHaveScreenshot(`${name}.png`, {
       maxDiffPixels: 0,
+      threshold: 0,
     })
+  })
+}
+
+/** The list and the review themselves: new frames, baselines from this branch. */
+const LIST_CASES = [
+  { storyId: 'trainer-tasklist--phone-list', name: 'list-phone' },
+  { storyId: 'trainer-tasklist--phone-list-kk', name: 'list-phone-kk' },
+  { storyId: 'trainer-tasklist--wide-list', name: 'list-wide' },
+  { storyId: 'trainer-tasklist--review-error', name: 'review-error' },
+  { storyId: 'trainer-tasklist--review-correct', name: 'review-correct' },
+  { storyId: 'trainer-tasklist--review-earlier', name: 'review-earlier' },
+]
+
+for (const { storyId, name } of LIST_CASES) {
+  test(`[task list] screen › ${name}`, async ({ page }) => {
+    test.skip(
+      !storybookIsRunning,
+      `Storybook is not reachable at ${STORYBOOK_BASE}`,
+    )
+    await open(page, storyId)
+    const layer = page.getByTestId('task-list')
+    await expect(layer).toBeVisible({ timeout: 20_000 })
+    await page.waitForTimeout(800)
+    await expect(layer).toHaveScreenshot(`${name}.png`)
   })
 }

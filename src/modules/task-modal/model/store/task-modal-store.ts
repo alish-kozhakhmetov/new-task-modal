@@ -2,6 +2,16 @@ import { create } from 'zustand'
 
 import type { TaskModalState } from '../types/props'
 
+/**
+ * The task list opened from «№N/M» (Alisher, 22.10): the list itself or one
+ * solved task on review. A state of the window, not a route — the host's
+ * history and the system «back» stay as they were.
+ */
+export type TaskListView =
+  | { screen: 'list' }
+  | { screen: 'review'; taskId: string }
+  | null
+
 interface State {
   // task loading
   isTaskLoaded: boolean
@@ -29,6 +39,10 @@ interface State {
 
   isTransitioning: boolean
   setIsTransitioning: (isTransitioning: boolean) => void
+
+  // task list over the task (null — the task itself)
+  taskList: TaskListView
+  setTaskList: (taskList: TaskListView) => void
 }
 
 export const useStore = create<State>((set) => ({
@@ -78,6 +92,10 @@ export const useStore = create<State>((set) => ({
     set({
       isTransitioning,
     }),
+
+  // task list
+  taskList: null,
+  setTaskList: (taskList) => set({ taskList }),
 }))
 
 export const useAppState = () => {

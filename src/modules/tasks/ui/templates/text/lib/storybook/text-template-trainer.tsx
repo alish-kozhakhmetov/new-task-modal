@@ -25,6 +25,7 @@ import containerStyles from '@/modules/task-modal/ui/content/container/container
 import contentStyles from '@/modules/task-modal/ui/content/content.module.scss'
 import { TaskModalControls } from '@/modules/task-modal/ui/content/controls/controls'
 import { TaskModalHeader } from '@/modules/task-modal/ui/content/header/header'
+import { TaskListLayer } from '@/modules/task-modal/ui/content/header/task-list/task-list-layer'
 import { TaskHints } from '@/modules/task-modal/ui/content/task-hints/task-hints'
 import { TaskModalShell } from '@/modules/task-modal/ui/shell/shell'
 import { DigitGroupingForTask } from '@/modules/tasks/lib/digit-grouping-for-task'
@@ -184,6 +185,8 @@ export const TextTemplateTrainer = ({
                 isPinned={isChatPinned}
               />
             </ReactActivity>
+
+            <TaskListLayer props={props} />
           </div>
         </TaskModalShell>
       </div>
@@ -213,6 +216,7 @@ const TrainerBody = ({
   const answer = useStore((s) => s.answer)
   const setAnswer = useStore((s) => s.setAnswer)
   const setIsAnswerChanged = useStore((s) => s.setIsAnswerChanged)
+  const isTaskListOpen = useStore((s) => s.taskList !== null)
 
   const calcState = useCalcSetup({
     refs,
@@ -252,6 +256,7 @@ const TrainerBody = ({
     <div
       ref={root}
       className={clsx('task-modal', contentStyles.container, styles.body)}
+      inert={isTaskListOpen}
     >
       <TaskModalHeader props={props} ref={header} />
 

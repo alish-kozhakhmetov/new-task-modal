@@ -23,6 +23,8 @@ export const TaskModalContent = ({ props, modals }: Props) => {
   const { activeTask } = useAppState()
   const setAnswer = useStore((s) => s.setAnswer)
   const setIsAnswerChanged = useStore((s) => s.setIsAnswerChanged)
+  // The task list covers the task: nothing under it takes focus or keys.
+  const isTaskListOpen = useStore((s) => s.taskList !== null)
 
   const refs = useTaskModalRefs()
   const rawCalcState = useCalcSetup({
@@ -57,7 +59,11 @@ export const TaskModalContent = ({ props, modals }: Props) => {
   // })
   return (
     <>
-      <div ref={root} className={clsx('task-modal', styles.container)}>
+      <div
+        ref={root}
+        className={clsx('task-modal', styles.container)}
+        inert={isTaskListOpen}
+      >
         <TaskModalHeader props={props} ref={header} />
 
         <TaskModalContainer
