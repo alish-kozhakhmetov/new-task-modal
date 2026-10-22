@@ -2,3 +2,14 @@ button,
 [role='button'] {
   cursor: pointer;
 }
+
+// iOS Safari paints a button system-blue in the system font: buttons of the
+// task window take the text's font and colour, without the native look or the
+// grey tap flash (2.5.2). :where — no specificity, a component's own colour
+// and size win.
+:where([data-ntm-root], .task-modal) :where(button) {
+  font: inherit;
+  color: inherit;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
