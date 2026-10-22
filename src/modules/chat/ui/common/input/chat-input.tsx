@@ -6,6 +6,7 @@ import type { MessageInterface } from '@/types/api/api'
 import { Button, ButtonLayout, ButtonSize } from '@/ui/button/button'
 import { InputWithIcons } from '@/ui/input/input-with-icons'
 
+import { useChatT } from '../../../model/chat-text'
 import { createAudioMessage, createFileMessage } from '../../../model/helpers'
 
 import { AudioInput } from './audio/audio'
@@ -27,6 +28,7 @@ export const ChatInput = ({
   onAddFile,
   onAddVoice,
 }: Props) => {
+  const t = useChatT()
   const [isRecording, setIsRecording] = useState(false)
   const [messageText, setMessageText] = useState('')
   const [isSending, setIsSending] = useState(false)
@@ -80,7 +82,7 @@ export const ChatInput = ({
         <InputWithIcons
           name="message"
           value={messageText}
-          placeholder="Cообщение..."
+          placeholder={t('message')}
           disabled={isSending}
           containerClassName={s.inputContainer}
           onChange={(e) => setMessageText(e.target.value)}

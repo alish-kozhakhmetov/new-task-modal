@@ -30,6 +30,8 @@ import type { Task, TaskDescriptionAnswerCell } from '@/types/api/task'
 import type { TaskDescriptionType } from '@/types/enums'
 import { MathText } from '@/ui/math-text/math-text'
 
+import { chatT } from '../../model/chat-text'
+
 import { ChatAnswerPanel } from './chat-answer-panel'
 import { ChatExplanation } from './chat-explanation'
 import s from './chat-solution-view.module.scss'
@@ -146,7 +148,7 @@ export const ChatSolutionView = ({ task, deps, answer }: Props) => {
     <div className={s.container}>
       {hasCondition && (
         <div>
-          <p className={s.label}>Условие</p>
+          <p className={s.label}>{chatT(deps.global)('condition')}</p>
           <TaskTitle title={task.title} deps={deps} />
           {isComplex && complexDescription ? (
             <ComplexSolutionCondition

@@ -1,41 +1,35 @@
+import {
+  AnswerIntro,
+  ExampleIntro,
+  Greeting,
+  ruChatT,
+  type ChatT,
+} from '../../../model/chat-text'
+
 import type { AiChatMessageType } from './types'
 
-export const GREETING_TEXT = (
-  <>
-    Привет!
-    <br />
-    <br />
-    Трудности с задачей? Посмотри видео, если не поможет — пиши, разберемся
-  </>
-)
-
-export const VIDEO_EXPLANATION_TEXT = (
-  <>
-    Держи пример, после просмотра добавится <b>одна дополнительная задача</b>
-  </>
-)
-
-export const ANSWER_SOLUTION_INTRO_TEXT = (
-  <>
-    Держи ответ, после просмотра добавятся <b>две дополнительные задачи</b>
-  </>
-)
-
-export const INITIAL_MESSAGES: AiChatMessageType[] = [
+// Texts in the pupil's language: built with the chat's `t` (chat-text.tsx).
+// The constants below are the Russian ones, for stories.
+export const getInitialMessages = (t: ChatT): AiChatMessageType[] => [
   {
     id: Date.now() * 92423,
     type: 'current-date',
   },
   {
     id: Date.now() * 924,
-    text: GREETING_TEXT,
+    text: <Greeting t={t} />,
     senderUserId: 0,
-    senderFullname: 'AI-чат',
+    senderFullname: t('aiChat'),
     sentAt: new Date().toISOString(),
     isFromPupil: false,
     type: 'text',
   },
 ]
+
+export const GREETING_TEXT = <Greeting t={ruChatT} />
+export const VIDEO_EXPLANATION_TEXT = <ExampleIntro t={ruChatT} />
+export const ANSWER_SOLUTION_INTRO_TEXT = <AnswerIntro t={ruChatT} />
+export const INITIAL_MESSAGES = getInitialMessages(ruChatT)
 
 export const MOCK_THEORY: AiChatMessageType = {
   id: Date.now(),

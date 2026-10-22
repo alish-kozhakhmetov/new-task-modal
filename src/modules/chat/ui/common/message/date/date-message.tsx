@@ -1,3 +1,5 @@
+import { useChatT } from '../../../../model/chat-text'
+
 import s from './date-message.module.scss'
 
 interface Props {
@@ -5,6 +7,7 @@ interface Props {
 }
 
 export const DateMessage = ({ date = new Date() }: Props) => {
+  const t = useChatT()
   const d = typeof date === 'string' ? new Date(date) : date
 
   const now = new Date()
@@ -21,11 +24,11 @@ export const DateMessage = ({ date = new Date() }: Props) => {
       minute: '2-digit',
       hour12: false,
     })
-    dateText = `Сегодня, ${time}`
+    dateText = `${t('today')}, ${time}`
   } else if (messageDate.getTime() === yesterday.getTime()) {
-    dateText = 'Вчера'
+    dateText = t('yesterday')
   } else {
-    dateText = d.toLocaleDateString('ru-RU', {
+    dateText = d.toLocaleDateString(t('dateLocale'), {
       day: 'numeric',
       month: 'long',
     })

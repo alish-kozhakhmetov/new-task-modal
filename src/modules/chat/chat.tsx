@@ -3,6 +3,7 @@ import { Tabs } from '@/ui/tabs/tabs'
 import { TopBar } from '@/ui/top-bar/top-bar'
 
 import s from './chat.module.scss'
+import { chatT, ChatTextProvider } from './model/chat-text'
 import { AiChat } from './ui/ai-chat/ai-chat'
 import { MentorChat } from './ui/mentor-chat/mentor-chat'
 
@@ -14,30 +15,33 @@ export interface ChatProps {
 }
 
 export const Chat = ({ props, onClose, isPinned = false }: ChatProps) => {
+  const t = chatT(props.deps.global)
   const tabs = [
     {
-      title: 'AI-чат',
+      title: t('aiChat'),
       subtitle: '24/7',
       content: () => <AiChat props={props} isPinned={isPinned} />,
     },
     {
-      title: 'Ментор',
+      title: t('mentor'),
       subtitle: '10 — 23',
       content: () => <MentorChat props={props} />,
     },
   ]
 
   return (
-    <div className={s.chat}>
-      <TopBar
-        titleClassName={s.title}
-        deps={props.deps}
-        onClose={isPinned ? undefined : onClose}
-      >
-        AI-чат
-      </TopBar>
+    <ChatTextProvider t={t}>
+      <div className={s.chat}>
+        <TopBar
+          titleClassName={s.title}
+          deps={props.deps}
+          onClose={isPinned ? undefined : onClose}
+        >
+          {t('aiChat')}
+        </TopBar>
 
-      <Tabs tabs={tabs} />
-    </div>
+        <Tabs tabs={tabs} />
+      </div>
+    </ChatTextProvider>
   )
 }

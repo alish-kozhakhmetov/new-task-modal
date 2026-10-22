@@ -14,8 +14,21 @@ interface Props {
   isPinned?: boolean
 }
 
+// Each word its own span: two words, two lines in the wide chat column
+const Words = ({ text }: { text: string }) => (
+  <>
+    {text.split(' ').map((w, i) => (
+      <span key={i}>
+        {i ? ' ' : null}
+        <span className={s.word}>{w}</span>
+      </span>
+    ))}
+  </>
+)
+
 export const AiChat = ({ props, isPinned = false }: Props) => {
   const {
+    t,
     messages,
     isTheorySet,
     awardTheoryCoin,
@@ -50,8 +63,7 @@ export const AiChat = ({ props, isPinned = false }: Props) => {
                   render as plain text everywhere else — one
                   flex item, as the bare text was. */}
               <span>
-                <span className={s.word}>Смотреть</span>{' '}
-                <span className={s.word}>пример</span>
+                <Words text={t('viewExample')} />
               </span>
             </button>
           )}
@@ -63,8 +75,7 @@ export const AiChat = ({ props, isPinned = false }: Props) => {
                 <BrokenHeartIcon />
               </FlexRow>
               <span>
-                <span className={s.word}>Показать</span>{' '}
-                <span className={s.word}>ответ</span>
+                <Words text={t('showAnswer')} />
               </span>
             </button>
           )}
