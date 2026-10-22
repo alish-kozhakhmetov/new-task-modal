@@ -44,6 +44,14 @@
     align-items: center;
   }
 
+  // An empty floor of a fraction (or exponent, root) is MathQuill's #ccc
+  // block — not a DS colour. The field's placeholder tone instead, the same
+  // `text/tertiary` as `ui/input` (registry row 19). The field itself
+  // (.mq-root-block) stays transparent, as in MathQuill.
+  :global(.mq-empty:not(.mq-root-block)) {
+    background: var(--text-tertiary);
+  }
+
   // Whole-field selection (double tap): native-selection look on a DS token,
   // also while the keyboard holds focus (MathQuill marks it .mq-blur).
   :global(.mq-selection),
