@@ -8,7 +8,7 @@ import { TaskListPage } from './task-list-page'
 import { getTaskListStrings } from './task-list-strings'
 import { TaskReview } from './task-review'
 import {
-  resultStatus,
+  isOpenable,
   taskListRows,
   taskListSummary,
   type SolvedStatus,
@@ -69,9 +69,9 @@ export const TaskListLayer = ({ props }: Props) => {
   const toList = () => setTaskList({ screen: 'list' })
 
   const onSelect = (row: TaskListRow) => {
+    if (!isOpenable(row)) return
     if (row.status === 'current') toTask()
-    else if (resultStatus(row.task.result))
-      setTaskList({ screen: 'review', taskId: row.task.id })
+    else setTaskList({ screen: 'review', taskId: row.task.id })
   }
 
   return (
@@ -105,9 +105,9 @@ export const TaskListLayer = ({ props }: Props) => {
   )
 }
 
-/** The row on review, if it is still a solved task of this lesson. */
+/** The row on review, if it is still a solved task with a condition. */
 const solvedRow = (rows: TaskListRow[], taskId: string) => {
   const row = rows.find((r) => r.task.id === taskId)
-  if (!row || row.status === 'current' || row.status === 'ahead') return null
+  if (!row || row.status === 'current' || !isOpenable(row)) return null
   return row as TaskListRow & { status: SolvedStatus }
 }

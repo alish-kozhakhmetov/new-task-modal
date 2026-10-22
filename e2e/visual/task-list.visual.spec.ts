@@ -86,7 +86,7 @@ const LIST_CASES = [
   { storyId: 'trainer-tasklist--wide-list', name: 'list-wide' },
   { storyId: 'trainer-tasklist--review-error', name: 'review-error' },
   { storyId: 'trainer-tasklist--review-correct', name: 'review-correct' },
-  { storyId: 'trainer-tasklist--review-earlier', name: 'review-earlier' },
+  { storyId: 'trainer-tasklist--digits', name: 'list-digits' },
 ]
 
 for (const { storyId, name } of LIST_CASES) {

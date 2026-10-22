@@ -108,15 +108,22 @@ export const LessonTrainer = ({
   // The modal sets itself up asynchronously and closes the list while doing
   // so; open the asked screen once the task is on screen and the fonts are
   // in, as when a pupil taps «№N/M» (the answer panel measures its text
-  // once, by the layout it finds).
+  // once, by the layout it finds). The task is on screen: its field, or —
+  // a choice task has none — a second after the counter.
   useEffect(() => {
     if (!view) return
     let raf = 0
     let cancelled = false
+    let counterSeenAt = 0
     const openWhenReady = () => {
       if (cancelled) return
-      if (frame.current?.querySelector('.task-modal [data-input]'))
-        useStore.getState().setTaskList(view)
+      const root = frame.current
+      if (root?.querySelector('[data-testid="tasks-num"]'))
+        counterSeenAt ||= performance.now()
+      const isTaskShown =
+        Boolean(root?.querySelector('.task-modal [data-input]')) ||
+        (counterSeenAt > 0 && performance.now() - counterSeenAt > 1000)
+      if (isTaskShown) useStore.getState().setTaskList(view)
       else raf = requestAnimationFrame(openWhenReady)
     }
     void document.fonts.ready.then(() => {

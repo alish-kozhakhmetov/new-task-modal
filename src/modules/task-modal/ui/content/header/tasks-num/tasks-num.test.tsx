@@ -12,9 +12,12 @@ import { TasksNum } from './tasks-num'
 
 const task = (id: string) => ({ id }) as Task
 
-const deps = (language: string) =>
+/** The host's translate: the field of the interface language. */
+const deps = (field: 'rus' | 'kaz') =>
   ({
-    global: { getLanguage: () => language },
+    global: {
+      translate: (entry: Record<string, string>) => entry[field],
+    },
   }) as unknown as TaskModalDependencies
 
 describe('TasksNum', () => {
@@ -31,7 +34,7 @@ describe('TasksNum', () => {
   })
 
   it('is the button to the task list, with the counter as it was', () => {
-    render(<TasksNum deps={deps('russian')} />)
+    render(<TasksNum deps={deps('rus')} />)
     const button = screen.getByRole('button', { name: 'Список задач' })
     // №2 of 3, the initial 2 struck through: three tasks after an extra one.
     expect(button).toHaveTextContent('№2/2 3')
@@ -39,7 +42,7 @@ describe('TasksNum', () => {
   })
 
   it('opens the list on a click — not on focus', () => {
-    render(<TasksNum deps={deps('kk-cyrillic')} />)
+    render(<TasksNum deps={deps('kaz')} />)
     const button = screen.getByRole('button', { name: 'Есептер тізімі' })
 
     fireEvent.focus(button)
@@ -53,7 +56,7 @@ describe('TasksNum', () => {
     // The task root hears Enter natively to check the answer (actions.tsx).
     render(
       <div data-testid="task-root">
-        <TasksNum deps={deps('russian')} />
+        <TasksNum deps={deps('rus')} />
       </div>,
     )
     const heard: string[] = []

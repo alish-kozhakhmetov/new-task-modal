@@ -120,6 +120,10 @@
   -webkit-line-clamp: 2;
 }
 
+.gone {
+  color: var(--text-secondary);
+}
+
 .extra {
   @include body-small-regular;
 

@@ -3,7 +3,7 @@ import { expect, userEvent, waitFor, within } from 'storybook/test'
 
 import { withOnDemandPlay } from '@/testing/with-on-demand-play'
 
-import { midLesson, secondTask } from './storybook/lesson-fixture'
+import { lesson2120, midLesson, secondTask } from './storybook/lesson-fixture'
 import { LessonTrainer } from './storybook/lesson-trainer'
 
 /**
@@ -11,7 +11,9 @@ import { LessonTrainer } from './storybook/lesson-trainer'
  * 22.10). The real TaskModal on lesson 2121: «Phone» and «Wide» — the task
  * screen itself (the header baselines of task-list.visual.spec.ts), «…List»
  * — the list open, «Review…» — a solved task on review, «ScenarioFlow» — the
- * whole way: №2/15 → list → №1 → back → the current task.
+ * whole way: №2/15 → list → №1 → back → the current task. «EarlierLocked» —
+ * tasks solved on an earlier visit only tell their status; «Digits» — five-
+ * digit numbers in the rows grouped as on the task (rule 100).
  */
 const meta = {
   title: 'Trainer/TaskList',
@@ -81,11 +83,6 @@ export const ReviewShown: Story = {
   args: { ...Phone.args, lesson: mid, view: review(5) },
 }
 
-/** №2: solved on an earlier visit — the backend sends no condition. */
-export const ReviewEarlier: Story = {
-  args: { ...Phone.args, lesson: mid, view: review(2) },
-}
-
 export const ReviewErrorKk: Story = {
   args: { ...PhoneKk.args, lesson: mid, view: review(7) },
 }
@@ -130,5 +127,62 @@ export const ScenarioFlow: Story = {
     await expect(
       canvas.getByRole('button', { name: 'Список задач' }),
     ).toHaveTextContent('№2/15')
+  }),
+}
+
+/**
+ * №1–3 were solved on an earlier visit: the backend sends them without a
+ * condition, so the rows tell the status and do not open — no dead-end screen.
+ * Place-value tasks (№4 «12882», №5 «14342») keep their numbers solid, as on
+ * the task: they are in GROUPING_OFF_TASKS (rule 100).
+ */
+export const EarlierLocked: Story = {
+  args: { ...Phone.args, lesson: mid, view: LIST },
+  play: withOnDemandPlay(async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const list = await canvas.findByTestId('task-list')
+
+    for (const num of [1, 2, 3]) {
+      const row = within(list).getByTestId(`task-list-row-${num}`)
+      await expect(row).toBeDisabled()
+      await expect(row).toHaveTextContent('Решена раньше')
+    }
+    await expect(
+      within(list).getByTestId('task-list-row-2'),
+    ).toHaveAccessibleName('№2 — Решена с ошибкой')
+    await userEvent.click(within(list).getByTestId('task-list-row-2'), {
+      pointerEventsCheck: 0,
+    })
+    await expect(
+      canvas.queryByTestId('task-review-status'),
+    ).not.toBeInTheDocument()
+
+    // Solved now, with a condition: opens.
+    await expect(within(list).getByTestId('task-list-row-4')).toBeEnabled()
+    const placeValue = within(list).getByTestId('task-list-row-4')
+    await expect(placeValue).toHaveTextContent('12882')
+    await expect(placeValue.querySelector('[class*="digits"]')).toBeNull()
+  }),
+}
+
+/** Lesson 2120: «50000», «61861» grouped in the rows as on the task. */
+export const Digits: Story = {
+  args: {
+    lesson: lesson2120(),
+    language: 'russian',
+    layout: 'phone',
+    view: LIST,
+  },
+  play: withOnDemandPlay(async ({ canvasElement }) => {
+    const list = await within(canvasElement).findByTestId('task-list')
+    for (const [num, value] of [
+      [2, '50000'],
+      [3, '61861'],
+    ] as const) {
+      const row = within(list).getByTestId(`task-list-row-${num}`)
+      await waitFor(() =>
+        expect(row.querySelector('[class*="digits"]')).toHaveTextContent(value),
+      )
+    }
   }),
 }

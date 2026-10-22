@@ -4,7 +4,7 @@ import { pickTranslationText } from '@/modules/tasks/lib/translation-utils'
 import { makeTranslation } from '@/modules/tasks/ui/templates/shared/testing/make-task-modal-deps'
 import type { Task } from '@/types/api/task'
 
-import { taskListStrings } from './task-list-strings'
+import { makeTaskListStrings, ruTaskListStrings } from './task-list-strings'
 import { taskPreview } from './task-preview'
 import {
   hasCondition,
@@ -67,8 +67,10 @@ describe('task list rows', () => {
       'current',
       'ahead',
     ])
-    expect(rows.map((r) => isOpenable(r.status))).toEqual([
-      true,
+    expect(rows.map((r) => isOpenable(r))).toEqual([
+      // solved on an earlier visit: no condition from the backend — a status
+      // row, not a dead-end review
+      false,
       true,
       true,
       true,
@@ -159,13 +161,23 @@ describe('taskPreview', () => {
   })
 })
 
-describe('taskListStrings', () => {
-  it('speaks Russian, Kazakh and English; others fall back to Russian', () => {
-    expect(taskListStrings('russian').title).toBe('Задачи урока')
-    expect(taskListStrings('kk-cyrillic').title).toBe('Сабақ есептері')
-    expect(taskListStrings('kk-cyrillic').solved(3, 15)).toBe('Шешілді: 3/15')
-    expect(taskListStrings('english').title).toBe('Lesson tasks')
-    expect(taskListStrings('uzbek').title).toBe('Задачи урока')
-    expect(taskListStrings(undefined).openList).toBe('Список задач')
+describe('task list strings', () => {
+  const pick =
+    (field: 'rus' | 'kaz' | 'eng') =>
+    (entry: Record<'rus' | 'kaz' | 'eng', string>) =>
+      entry[field]
+
+  it('speak Russian, Kazakh and English through the host translate', () => {
+    expect(makeTaskListStrings(pick('rus')).title).toBe('Задачи урока')
+    const kk = makeTaskListStrings(pick('kaz'))
+    expect(kk.title).toBe('Сабақ есептері')
+    expect(kk.solved(3, 15)).toBe('Шешілді: 3/15')
+    expect(kk.summary(5, 2, 1)).toBe('Дұрыс 5, қатемен 2, жауап көрсетілді 1')
+    expect(kk.reviewTitle(7)).toBe('№7 есеп')
+    expect(makeTaskListStrings(pick('eng')).title).toBe('Lesson tasks')
+  })
+
+  it('leave out «answer shown» when there is none', () => {
+    expect(ruTaskListStrings.summary(1, 0, 0)).toBe('Верно 1, с ошибкой 0')
   })
 })

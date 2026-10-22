@@ -10,6 +10,7 @@ import styles from './task-list-page.module.scss'
 import type { TaskListStrings } from './task-list-strings'
 import { taskPreview } from './task-preview'
 import {
+  hasCondition,
   isOpenable,
   type TaskListRow,
   type TaskListSummary,
@@ -167,17 +168,21 @@ const List = ({
   return (
     <ol ref={listRef} className={styles.list}>
       {rows.map((row) => {
+        const text = taskPreview(row.task, translate)
+        // Solved on an earlier visit: the backend sent no condition, the row
+        // tells only the status and does not open (isOpenable).
+        const isGone = !text && !hasCondition(row.task)
         const preview =
-          taskPreview(row.task, translate) ||
-          (row.status === 'ahead' || row.status === 'current'
-            ? strings.task
-            : strings.solvedEarlier)
+          text ||
+          (isGone && row.status !== 'current'
+            ? strings.solvedEarlier
+            : strings.task)
         return (
           <li key={row.task.id}>
             <button
               type="button"
               className={clsx(styles.row, styles[row.status])}
-              disabled={!isOpenable(row.status)}
+              disabled={!isOpenable(row)}
               aria-current={row.status === 'current' ? 'step' : undefined}
               aria-label={`№${row.num}${row.isPenalty ? `, ${strings.extra}` : ''} — ${strings.status[row.status]}`}
               ref={row.status === 'current' ? currentRef : undefined}
@@ -186,7 +191,7 @@ const List = ({
             >
               <span className={styles.num}>{row.num}.</span>
               <span className={styles.text}>
-                <span className={styles.preview}>
+                <span className={clsx(styles.preview, isGone && styles.gone)}>
                   <DigitGroupingForTask taskType={row.task.type}>
                     <MathText inline>{preview}</MathText>
                   </DigitGroupingForTask>

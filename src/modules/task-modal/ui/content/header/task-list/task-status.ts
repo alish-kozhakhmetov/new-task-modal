@@ -36,9 +36,6 @@ export const taskStatus = (
   return resultStatus(result) ?? 'ahead'
 }
 
-/** Solved tasks and the current one open; the rest wait their turn. */
-export const isOpenable = (status: TaskStatus) => status !== 'ahead'
-
 export interface TaskListRow {
   task: Task
   /** 1-based number, as in «№N/M»: extra tasks take their place in it. */
@@ -47,6 +44,15 @@ export interface TaskListRow {
   /** Added after a mistake. */
   isPenalty: boolean
 }
+
+/**
+ * The current task opens (back to it); a solved one opens for review if
+ * there is something to show — a task solved on an earlier visit comes from
+ * the backend without its condition, so its row only tells the status
+ * (Alisher via the lead, 22.10: no dead-end screen). Tasks ahead wait.
+ */
+export const isOpenable = (row: TaskListRow) =>
+  row.status === 'current' || (row.status !== 'ahead' && hasCondition(row.task))
 
 export const taskListRows = (
   tasks: Task[],

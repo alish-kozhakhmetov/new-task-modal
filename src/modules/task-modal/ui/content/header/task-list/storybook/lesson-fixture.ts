@@ -1,4 +1,6 @@
+import stackN2Tasks from '@/modules/tasks/ui/templates/answer-cell/ui/multi/stack-n2-plain/data/all-tasks.json'
 import gridTasks from '@/modules/tasks/ui/templates/table/ui/grid/data/all-tasks.json'
+import testTasks from '@/modules/tasks/ui/templates/test/ui/plain/data/all-tasks.json'
 import inlineN5Tasks from '@/modules/tasks/ui/templates/text/ui/multi/inline-n5-after/data/all-tasks.json'
 import stackN5Tasks from '@/modules/tasks/ui/templates/text/ui/multi/stack-n5-after/data/all-tasks.json'
 import plainTasks from '@/modules/tasks/ui/templates/text/ui/plain/data/all-tasks.json'
@@ -33,7 +35,14 @@ interface FixtureFile {
   byGrade?: Record<string, { id: string; task: unknown }[]>
 }
 
-const FILES = [plainTasks, stackN5Tasks, inlineN5Tasks, gridTasks] as unknown[]
+const FILES = [
+  plainTasks,
+  stackN5Tasks,
+  inlineN5Tasks,
+  gridTasks,
+  testTasks,
+  stackN2Tasks,
+] as unknown[]
 
 const fixture = (id: string): Task => {
   for (const file of FILES) {
@@ -129,4 +138,22 @@ export const secondTask = (): LessonFixture => {
     ...LESSON_2121.slice(2).map((id: LessonTaskId) => unsolved(id)),
   ]
   return { tasks, activeTask: current, initialTasksCount: LESSON_2121.length }
+}
+
+/**
+ * Lesson 2120 («Чтение и запись чисел до 100 000»), its tasks in the fixtures
+ * in order: №1 right, №2 current, the rest ahead. №2 and №3 have five-digit
+ * numbers in the text («50000», «61861») and their generators group digits
+ * (rule 100) — the list's rows group them as the task does. Lesson 2121's
+ * place-value tasks (4_1_3…4_1_7, 4_1_56) are in GROUPING_OFF_TASKS: their
+ * numbers stay solid on the task and in the list.
+ */
+export const lesson2120 = (): LessonFixture => {
+  const current = unsolved('4_1_2')
+  const tasks: Task[] = [
+    solvedNow('4_1_1', 'correct', '80000'),
+    current,
+    ...['4_1_69', '4_1_70', '4_1_71', '4_1_72', '4_1_73'].map(unsolved),
+  ]
+  return { tasks, activeTask: current, initialTasksCount: tasks.length }
 }

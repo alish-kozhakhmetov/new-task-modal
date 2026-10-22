@@ -16,11 +16,7 @@ import containerStyles from '../../container/container.module.scss'
 
 import type { TaskListStrings } from './task-list-strings'
 import styles from './task-review.module.scss'
-import {
-  hasCondition,
-  type SolvedStatus,
-  type TaskListRow,
-} from './task-status'
+import { type SolvedStatus, type TaskListRow } from './task-status'
 
 interface Props {
   row: TaskListRow & { status: SolvedStatus }
@@ -38,8 +34,9 @@ const noop = () => undefined
  * A solved task, for reading only (Alisher, 22.10): its status, its
  * condition and what the store kept from solving it here — the pupil's
  * answer, and the solution when the backend sent one (after a mistake or
- * «show»). Nothing is asked of the backend for it. A task solved on an
- * earlier visit comes without its condition, so only the status is shown.
+ * «show»). Nothing is asked of the backend for it. Only tasks with a
+ * condition get here (isOpenable): one solved on an earlier visit comes
+ * from the backend empty and stays a row of the list.
  */
 export const TaskReview = ({
   row,
@@ -48,7 +45,7 @@ export const TaskReview = ({
   onBack,
   onCurrent,
 }: Props) => {
-  const { task, num, status, isPenalty } = row
+  const { num, status, isPenalty } = row
   const dir = deps.helpers.ArabicNumeralUtils.getDirection()
 
   return (
@@ -74,18 +71,14 @@ export const TaskReview = ({
           {isPenalty && <span className={styles.extra}>{strings.extra}</span>}
         </div>
 
-        {hasCondition(task) ? (
-          // `inert`: a picture of the task — no focus, no input, no taps.
-          <div
-            className={clsx(containerStyles.container, styles.task)}
-            dir={dir}
-            inert
-          >
-            <SolvedTask row={row} deps={deps} />
-          </div>
-        ) : (
-          <p className={styles.note}>{strings.conditionGone}</p>
-        )}
+        {/* `inert`: a picture of the task — no focus, no input, no taps. */}
+        <div
+          className={clsx(containerStyles.container, styles.task)}
+          dir={dir}
+          inert
+        >
+          <SolvedTask row={row} deps={deps} />
+        </div>
       </div>
 
       <div className={styles.footer}>

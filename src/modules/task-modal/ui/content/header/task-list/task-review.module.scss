@@ -72,14 +72,6 @@
   overflow: visible;
 }
 
-.note {
-  @include body-medium-regular;
-
-  padding: var(--space-8) var(--space-16);
-  margin: 0;
-  color: var(--text-secondary);
-}
-
 .footer {
   padding: var(--space-8) var(--space-16) var(--space-16);
 }
