@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { useState } from 'react'
 import { expect, fn, userEvent, within } from 'storybook/test'
 
+import { CHAT_TEXT } from '@/modules/chat/model/chat-text'
 import { createTextMessage } from '@/modules/chat/model/helpers'
 import type { TaskModalDependencies } from '@/modules/task-modal/model/types/props'
 import { runPlayStep } from '@/testing/play-step'
@@ -119,7 +120,7 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   play: withTrackedPlay([...PLAY_CASES], async ({ canvasElement, args }) => {
     const canvas = within(canvasElement)
-    const input = canvas.getByPlaceholderText('Cообщение...')
+    const input = canvas.getByPlaceholderText(CHAT_TEXT.message.rus)
 
     await runPlayStep('typeSend', 'Type and send text', async () => {
       await userEvent.type(input, 'привет')

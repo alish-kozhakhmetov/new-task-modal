@@ -1,5 +1,6 @@
 import { expect, userEvent, waitFor, within } from 'storybook/test'
 
+import { CHAT_TEXT } from '@/modules/chat/model/chat-text'
 import { runPlayStep } from '@/testing/play-step'
 import { withOnDemandPlay } from '@/testing/with-on-demand-play'
 import { withTrackedPlay } from '@/testing/with-tracked-play'
@@ -527,15 +528,16 @@ export const runPlayCanvasAndChatInTrainer = async ({
   await user.click(openChatButton)
   const chatHeading = await canvas.findByRole('heading', { name: 'AI-чат' })
 
+  // The chat's own strings (2.5.2: through global.translate, ru here)
   const showExample = await canvas.findByRole('button', {
-    name: 'Смотреть пример',
+    name: CHAT_TEXT.viewExample.rus,
   })
   await user.click(showExample)
   const thumbnails = await canvas.findAllByAltText('Video thumbnail')
   await expect(thumbnails.length).toBeGreaterThan(0)
 
   const showAnswer = await canvas.findByRole('button', {
-    name: 'Показать ответ',
+    name: CHAT_TEXT.showAnswer.rus,
   })
   await user.click(showAnswer)
   await canvas.findByText(/Верный ответ:/)
@@ -543,7 +545,7 @@ export const runPlayCanvasAndChatInTrainer = async ({
   const mentorTab = await canvas.findByText('Ментор')
   await user.click(mentorTab)
 
-  const chatInput = await canvas.findByPlaceholderText('Cообщение...')
+  const chatInput = await canvas.findByPlaceholderText(CHAT_TEXT.message.rus)
   await user.click(chatInput)
   await user.keyboard('Привет!')
   await user.keyboard('{Enter}')
@@ -769,7 +771,7 @@ export const runPlayShowAnswerInTrainer = async ({
   await canvas.findByRole('heading', { name: 'AI-чат' })
 
   const showAnswer = await canvas.findByRole('button', {
-    name: 'Показать ответ',
+    name: CHAT_TEXT.showAnswer.rus,
   })
   await user.click(showAnswer)
   await findAnswerLabelInMessage(canvasElement)

@@ -1,3 +1,5 @@
+import { Fragment } from 'react'
+
 import BrokenHeartIcon from '@/assets/icons/header/heart-broken-color.svg'
 import type { TaskModalProps } from '@/modules/task-modal/model/types/props'
 import { FlexRow } from '@/ui/layout/flex-row/flex-row'
@@ -14,14 +16,17 @@ interface Props {
   isPinned?: boolean
 }
 
-// Each word its own span: two words, two lines in the wide chat column
+// Each word its own span: two words, two lines in the wide chat column. The
+// space between them is a text node beside the words, as in 2.5.1 — inside a
+// wrapper span with the next word, the accessible name lost it
+// («Смотретьпример»: the Trainer › Tests story could not find the button).
 const Words = ({ text }: { text: string }) => (
   <>
     {text.split(' ').map((w, i) => (
-      <span key={i}>
+      <Fragment key={i}>
         {i ? ' ' : null}
         <span className={s.word}>{w}</span>
-      </span>
+      </Fragment>
     ))}
   </>
 )
