@@ -3,8 +3,9 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { bindBrowserBack } from './bind-browser-back'
 
 // Браузер на «назад» вызывает window.onpopstate; jsdom при dispatchEvent его не зовёт
-const back = () =>
+const back = () => {
   window.onpopstate?.call(window, new PopStateEvent('popstate'))
+}
 
 describe('bindBrowserBack', () => {
   afterEach(() => {
