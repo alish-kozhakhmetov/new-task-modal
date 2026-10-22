@@ -111,6 +111,31 @@ export const MathInput = ({
       })
     }
 
+    // Double tap / double click selects the whole field (2.5.2): the field
+    // has no native selection — a span typed into by our keyboard. MathQuill
+    // keeps the selection: the next key replaces it (write → deleteSelection),
+    // ⌫ clears it, a single tap drops it and places the caret. Ctrl/⌘-A is
+    // MathQuill's own. Two pointerups, not dblclick: iOS Safari doesn't
+    // always send it.
+    const DOUBLE_TAP_MS = 350
+    const DOUBLE_TAP_PX = 24
+    let lastUp = { t: -Infinity, x: 0, y: 0 }
+    const selectAllOnDoubleTap = (e: PointerEvent) => {
+      const near =
+        Math.abs(e.clientX - lastUp.x) < DOUBLE_TAP_PX &&
+        Math.abs(e.clientY - lastUp.y) < DOUBLE_TAP_PX
+      if (e.timeStamp - lastUp.t < DOUBLE_TAP_MS && near) {
+        lastUp = { t: -Infinity, x: 0, y: 0 }
+        // after MathQuill's own mouseup has placed the caret
+        window.setTimeout(() => {
+          instanceRef.current?.focus()
+          instanceRef.current?.select()
+        }, 0)
+        return
+      }
+      lastUp = { t: e.timeStamp, x: e.clientX, y: e.clientY }
+    }
+
     // Arrow keys move the caret inside the field but shouldn't also reach
     // global keydown listeners (e.g. task-navigation arrows).
     const stopArrowPropagation = (e: KeyboardEvent) => {
@@ -148,6 +173,7 @@ export const MathInput = ({
       // keyup too (calculator-button inserts go through `edit` above).
       elementRef.current.addEventListener('keyup', syncScrollToCaret)
       elementRef.current.addEventListener('keydown', stopArrowPropagation)
+      elementRef.current.addEventListener('pointerup', selectAllOnDoubleTap)
 
       setLatexProgrammatically(lastSetFormulaRef.current)
     }
@@ -157,6 +183,7 @@ export const MathInput = ({
     return () => {
       elementRef.current?.removeEventListener('keyup', syncScrollToCaret)
       elementRef.current?.removeEventListener('keydown', stopArrowPropagation)
+      elementRef.current?.removeEventListener('pointerup', selectAllOnDoubleTap)
       cancelled = true
       window.clearTimeout(retryId)
       instanceRef.current = null

@@ -20,6 +20,9 @@
    * whole task — the field types in the condition's body-medium 18px, not a
    * larger one (canon: Qalan App › Trainer). */
   font-size: to-rem(18px) !important;
+
+  // a double tap selects the field instead of zooming the page (iOS Safari)
+  touch-action: manipulation;
   scrollbar-width: none;
   border-radius: var(--radius-m) !important;
   -ms-overflow-style: none;
@@ -39,6 +42,16 @@
   :global(.mq-root-block) {
     display: flex;
     align-items: center;
+  }
+
+  // Whole-field selection (double tap): native-selection look on a DS token,
+  // also while the keyboard holds focus (MathQuill marks it .mq-blur).
+  :global(.mq-selection),
+  :global(.mq-selection .mq-non-leaf),
+  :global(.mq-blur .mq-selection),
+  :global(.mq-selection.mq-blur) {
+    color: inherit !important;
+    background: var(--status-bg-info) !important;
   }
 }
 

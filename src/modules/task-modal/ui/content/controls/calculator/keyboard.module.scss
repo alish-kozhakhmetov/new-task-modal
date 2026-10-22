@@ -7,6 +7,9 @@
   padding: 0 to-vw(16px, 375px);
   margin: 0 auto;
 
+  // fast key taps don't zoom the page in iOS Safari
+  touch-action: manipulation;
+
   @include min-width(sm) {
     padding: 0 var(--space-16);
   }
