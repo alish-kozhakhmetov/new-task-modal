@@ -22,6 +22,18 @@ interface Props {
   onClose?: () => void
 }
 
+/**
+ * The close button shows only a cross: its name, in the lesson's language,
+ * through the host's translate as the chat's strings (chat-text.tsx); the
+ * site's own word in Kazakh is «Жабу» (Localization.js).
+ */
+const CLOSE = { rus: 'Закрыть', kaz: 'Жабу', eng: 'Close' }
+
+const closeName = (deps: TaskModalDependencies) => {
+  const translate = deps.global?.translate
+  return (typeof translate === 'function' && translate(CLOSE)) || CLOSE.rus
+}
+
 export const TopBar = ({
   children,
   deps,
@@ -65,6 +77,7 @@ export const TopBar = ({
           layout={ButtonLayout.Icon}
           onClick={onClose}
           className={s.button}
+          aria-label={closeName(deps)}
         >
           <CloseIcon width={20} height={20} />
         </Button>

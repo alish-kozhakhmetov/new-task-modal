@@ -99,6 +99,8 @@ export const ScenarioFlow: Story = {
 
     const counter = await canvas.findByRole('button', { name: 'Список задач' })
     await expect(counter).toHaveTextContent('№2/15')
+    // The cross of the task window has a name too.
+    await expect(canvas.getByRole('button', { name: 'Закрыть' })).toBeVisible()
     await userEvent.click(counter)
 
     const list = await canvas.findByTestId('task-list')
