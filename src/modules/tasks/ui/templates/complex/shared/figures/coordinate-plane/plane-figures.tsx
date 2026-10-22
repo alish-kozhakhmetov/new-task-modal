@@ -3,7 +3,9 @@ import type { ReactNode } from 'react'
 import { GRID_INK, INK, paint, STROKE } from '../figure-paint'
 import { signedNumber as signed } from '../signed-number'
 import { parseFraction, SvgFraction } from '../svg-fraction'
+import { LABEL_PX } from '../use-label-scale'
 
+import { LABEL_ATTR } from './fit-labels'
 import {
   fromPointToDot,
   planeLength,
@@ -18,6 +20,10 @@ const asPoint = (value: unknown): PlanePoint | null => {
   if (typeof p.x !== 'number' || typeof p.y !== 'number') return null
   return p as PlanePoint
 }
+
+/** A text size of the plane, in viewBox units for its current scale. */
+const sized = (options: PlaneOptions, px: number) =>
+  px * (options.labelScale ?? 1)
 
 const letterOf = (point: PlanePoint) =>
   typeof point.letter === 'string' ? point.letter : ''
@@ -51,7 +57,7 @@ export const PlaneDot = ({ options, point }: DotProps) => {
           y={y - offsetY}
           textAnchor="middle"
           dominantBaseline="central"
-          fontSize={14}
+          fontSize={sized(options, 14)}
         >
           {letter}
         </text>
@@ -62,7 +68,7 @@ export const PlaneDot = ({ options, point }: DotProps) => {
           y={y - offsetY}
           textAnchor="middle"
           dominantBaseline="central"
-          fontSize={14}
+          fontSize={sized(options, 14)}
         >
           {`${letter}(${point.x};${point.y})`}
         </text>
@@ -182,7 +188,7 @@ export const PlaneAxes = ({ options }: AxesProps) => {
                 y={axisY + 15}
                 textAnchor="middle"
                 dominantBaseline="central"
-                fontSize={14}
+                fontSize={sized(options, 14)}
               >
                 {signed(i * tickStepXMultiply)}
               </text>
@@ -228,7 +234,7 @@ export const PlaneAxes = ({ options }: AxesProps) => {
                 y={yOf(i)}
                 textAnchor="end"
                 dominantBaseline="central"
-                fontSize={14}
+                fontSize={sized(options, 14)}
               >
                 {signed(i * tickStepYMultiply)}
               </text>
@@ -256,12 +262,15 @@ interface FigureProps {
   figure: Record<string, unknown>
   /** ME parity: resolve Translation / string labels (side lengths, units). */
   translate: (value: unknown) => string
+  /** Marks a text figure for the overlap detector (fit-labels.ts). */
+  labelKey?: string
 }
 
 export const PlaneFigure = ({
   options,
   figure,
   translate,
+  labelKey,
 }: FigureProps): ReactNode => {
   const type = Number(figure.type)
 
@@ -422,34 +431,41 @@ export const PlaneFigure = ({
       const d = fromPointToDot(options, x, y)
       const label = translate(figure.text)
       if (!label) return null
+      // A label in the condition's size, not the payload's (4_11_10_4 sent
+      // 13 for «7см» next to its «A» and «B» in 18): rules 1 and 73, row 57.
+      const fontSize = sized(options, LABEL_PX)
       const fraction = parseFraction(label)
-      if (fraction && !figure.degree) {
-        return (
+      const text =
+        fraction && !figure.degree ? (
           <SvgFraction
             x={d.x}
             y={d.y}
             num={fraction.num}
             den={fraction.den}
-            fontSize={(figure.fontSize as number) || 18}
+            fontSize={fontSize}
             fill={INK}
           />
+        ) : (
+          <text
+            x={d.x}
+            y={d.y}
+            textAnchor="middle"
+            dominantBaseline="central"
+            fontSize={fontSize}
+            transform={
+              figure.degree
+                ? `rotate(${Number(figure.degree)} ${d.x} ${d.y})`
+                : undefined
+            }
+          >
+            {label}
+          </text>
         )
-      }
+      if (labelKey == null) return text
       return (
-        <text
-          x={d.x}
-          y={d.y}
-          textAnchor="middle"
-          dominantBaseline="central"
-          fontSize={(figure.fontSize as number) || 18}
-          transform={
-            figure.degree
-              ? `rotate(${Number(figure.degree)} ${d.x} ${d.y})`
-              : undefined
-          }
-        >
-          {label}
-        </text>
+        <g {...{ [LABEL_ATTR]: labelKey }} data-x={d.x} data-y={d.y}>
+          {text}
+        </g>
       )
     }
     case PlaneFigureType.EllipticalArc: {

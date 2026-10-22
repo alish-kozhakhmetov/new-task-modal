@@ -22,6 +22,11 @@ export type PlaneOptions = {
   xAxisLabel: string
   yAxisLabel: string
   reduceHeight?: number
+  /**
+   * viewBox units per screen pixel (useLabelScale): text sizes are multiplied
+   * by it, so labels keep their size when the plane shrinks to the column.
+   */
+  labelScale?: number
 }
 
 export type PlanePoint = {

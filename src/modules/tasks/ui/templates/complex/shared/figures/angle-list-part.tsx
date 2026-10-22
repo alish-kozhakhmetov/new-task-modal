@@ -1,10 +1,11 @@
-import type { ReactNode } from 'react'
+import { useRef, type ReactNode } from 'react'
 
 import type { ComplexAngleListPart } from '../../lib/types.task'
 import styles from '../complex.module.scss'
 
 import { INK } from './figure-paint'
 import { PROTRACTOR_DATA_URL } from './protractor-image'
+import { LABEL_PX, useLabelScale } from './use-label-scale'
 
 interface Props {
   part: ComplexAngleListPart
@@ -80,6 +81,12 @@ const EDGE_PAD = 16
 
 /** Display-only angle rays; optional protractor PNG (legacy AngleList parity). */
 export const AngleListPart = ({ part }: Props) => {
+  const svgRef = useRef<SVGSVGElement>(null)
+  // The list stretches to the column: labels keep 18px at any scale (row 57)
+  const labelSize = LABEL_PX * useLabelScale(svgRef)
+  // A letter under its point: 3 of the dot, 4 of air, then the cap height —
+  // 20 at 18 units, as before; it moves down as the letter grows.
+  const letterY = 7 + 0.72 * labelSize
   const angles: AngleItem[] = part.list ?? []
   const length = 200
   const height = 200
@@ -165,6 +172,7 @@ export const AngleListPart = ({ part }: Props) => {
           y={snapSin(qDegree) * (-degreeLength - 20)}
           textAnchor="middle"
           dominantBaseline="central"
+          fontSize={labelSize}
         >
           {angle.text}
         </text>,
@@ -178,8 +186,9 @@ export const AngleListPart = ({ part }: Props) => {
           {angle.dot.letter ? (
             <text
               x={length - 30}
-              y={20}
+              y={letterY}
               textAnchor="middle"
+              fontSize={labelSize}
               transform={`rotate(${degreeFromZero} ${length - 30} 0)`}
             >
               {angle.dot.letter}
@@ -192,6 +201,7 @@ export const AngleListPart = ({ part }: Props) => {
 
   return (
     <svg
+      ref={svgRef}
       className={styles.angleListSvg}
       data-figure-type="50"
       width="100%"
@@ -212,7 +222,7 @@ export const AngleListPart = ({ part }: Props) => {
         {part.centerPointLetter ? (
           <>
             <circle cx={0} cy={0} r={3} fill={INK} />
-            <text x={0} y={20} textAnchor="middle" fontSize={14}>
+            <text x={0} y={letterY} textAnchor="middle" fontSize={labelSize}>
               {part.centerPointLetter}
             </text>
           </>

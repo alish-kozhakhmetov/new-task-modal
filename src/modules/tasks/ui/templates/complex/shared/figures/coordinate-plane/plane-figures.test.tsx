@@ -122,3 +122,30 @@ describe('PlaneFigure — circle', () => {
     expect(empty).toHaveAttribute('stroke', '#0066fe')
   })
 })
+
+describe('PlaneFigure — text label', () => {
+  const label = (extra: Record<string, unknown>, options = base) => {
+    const { container } = render(
+      <svg>
+        <PlaneFigure
+          options={options}
+          figure={{ type: 100, x: 0, y: 0, text: '7см', ...extra }}
+          translate={String}
+        />
+      </svg>,
+    )
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    return container.querySelector('text')!
+  }
+
+  it('is set in the condition size, not the payload one (4_11_10_4 sent 13)', () => {
+    expect(label({ fontSize: 13 })).toHaveAttribute('font-size', '18')
+  })
+
+  it('grows in viewBox units by the plane scale, to keep 18px on screen', () => {
+    expect(label({}, { ...base, labelScale: 1.25 })).toHaveAttribute(
+      'font-size',
+      '22.5',
+    )
+  })
+})
