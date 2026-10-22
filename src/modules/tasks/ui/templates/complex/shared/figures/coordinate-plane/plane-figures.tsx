@@ -365,13 +365,18 @@ export const PlaneFigure = ({
       const center = asPoint(figure.centerPoint)
       if (!center || typeof figure.radius !== 'number') return null
       const d = fromPointToDot(options, center.x, center.y)
+      const fill = paint(figure.innerColor, 'transparent')
+      // A shaded circle is the fill alone (Alisher, 18.08: «без бордера»):
+      // 4_11_4_1 came purple inside a 1px blue ring — the payload's
+      // strokeColor. An empty circle keeps its line.
+      const isFilled = fill !== 'transparent' && fill !== 'none'
       return (
         <circle
           cx={d.x}
           cy={d.y}
           r={figure.radius * options.stepSize}
-          stroke={paint(figure.strokeColor, INK)}
-          fill={paint(figure.innerColor, 'transparent')}
+          stroke={isFilled ? 'none' : paint(figure.strokeColor, INK)}
+          fill={fill}
           strokeDasharray={figure.dashed ? '5' : undefined}
         />
       )
