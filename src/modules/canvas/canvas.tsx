@@ -233,7 +233,7 @@ export function Canvas({
       <div className={styles.container}>
         {/* Seen only as a column of the wide layout: an empty white strip
             without a name reads as a broken page. */}
-        <p className={styles.title}>Черновик</p>
+        <p className={styles.title}>{t('draft')}</p>
         <canvas
           ref={canvasRef}
           className={styles.canvas}

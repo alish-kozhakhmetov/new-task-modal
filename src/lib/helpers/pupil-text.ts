@@ -57,6 +57,17 @@ export const TASK_TEXT = {
   forward: { rus: 'Вперед', kaz: 'Алға', eng: 'Forward' },
   /** Site: «Барлығын өшіру», «Тақтаны тазалау» */
   clearAll: { rus: 'Очистить всё', kaz: 'Барлығын тазалау', eng: 'Clear all' },
+  /** Title of the draft column (wide layout); Kazakh — the lead's, 23.10. */
+  draft: { rus: 'Черновик', kaz: 'Қаралама', eng: 'Draft' },
+  /**
+   * Above a test with several correct answers while the host dictionary has
+   * no `pickEveryFittingOption`; Kazakh — the lead's, 23.10.
+   */
+  pickEveryFittingOption: {
+    rus: 'Выберите все подходящие варианты',
+    kaz: 'Барлық сәйкес нұсқаларды таңдаңыз',
+    eng: 'Select all that apply',
+  },
   /** Site: «Тақтаны тазалау», «Жабу» */
   closeDraft: {
     rus: 'Закрыть доску',

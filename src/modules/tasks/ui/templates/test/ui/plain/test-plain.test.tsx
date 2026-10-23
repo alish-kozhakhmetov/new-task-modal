@@ -2,7 +2,11 @@ import { fireEvent, screen } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 
 import { classifyTestTemplate } from '../../lib/classify-test-template'
-import { makeSolution, renderTemplate } from '../../lib/testing/test-utils'
+import {
+  makeDeps,
+  makeSolution,
+  renderTemplate,
+} from '../../lib/testing/test-utils'
 import type { TestTask } from '../../lib/types.task'
 
 import fixture from './data/task.json'
@@ -103,5 +107,42 @@ describe('test.plain', () => {
     expect(document.body).not.toHaveTextContent('<svg')
     expect(screen.getByLabelText('A')).toBeInTheDocument()
     expect(screen.getByLabelText('B')).toBeInTheDocument()
+  })
+
+  // 2.5.7: подсказка над тестом с несколькими ответами — на языке ученика,
+  // пока в словаре сайта нет ключа pickEveryFittingOption.
+  const kazakhDeps = () => {
+    const deps = makeDeps()
+    return {
+      ...deps,
+      global: {
+        ...deps.global,
+        translate: (value: unknown) =>
+          typeof value === 'object' && value !== null
+            ? ((value as Record<string, string>).kaz ?? '')
+            : String(value),
+      },
+    } as typeof deps
+  }
+
+  // the backend's flag; the type of the fixture does not know it yet
+  const multipleTask = { ...task, hasMultipleAnswers: true } as TestTask
+
+  it('подсказка нескольких ответов — по-казахски в казахском уроке', () => {
+    renderTemplate(Template, multipleTask, { deps: kazakhDeps() })
+    expect(
+      screen.getByText('Барлық сәйкес нұсқаларды таңдаңыз'),
+    ).toBeInTheDocument()
+  })
+
+  it('подсказка нескольких ответов — слово сайта, когда оно есть', () => {
+    const deps = kazakhDeps()
+    renderTemplate(Template, multipleTask, {
+      deps: {
+        ...deps,
+        localize: { pickEveryFittingOption: 'Слово сайта' },
+      } as typeof deps,
+    })
+    expect(screen.getByText('Слово сайта')).toBeInTheDocument()
   })
 })

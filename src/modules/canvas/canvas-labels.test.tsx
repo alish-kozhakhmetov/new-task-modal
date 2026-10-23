@@ -15,6 +15,7 @@ describe('Canvas button names in the pupil language (2.5.7)', () => {
   it('reads Kazakh in a Kazakh lesson', () => {
     render(<Canvas onClose={() => {}} global={kazakh} />)
 
+    expect(screen.getByText('Қаралама')).toBeInTheDocument()
     for (const name of [
       'Сызу',
       'Өшіргіш',
@@ -28,6 +29,7 @@ describe('Canvas button names in the pupil language (2.5.7)', () => {
 
   it('keeps Russian without a host translate', () => {
     render(<Canvas onClose={() => {}} />)
+    expect(screen.getByText('Черновик')).toBeInTheDocument()
     expect(screen.getByTitle('Ластик')).toBeInTheDocument()
     expect(screen.getByTitle('Закрыть доску')).toBeInTheDocument()
   })

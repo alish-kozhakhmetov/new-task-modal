@@ -1,3 +1,4 @@
+import { pupilText, TASK_TEXT } from '@/lib/helpers/pupil-text'
 import { isActiveSolution } from '@/modules/tasks/lib/solution-types'
 import type { TaskComponentProps } from '@/modules/tasks/model/types'
 import { TaskTitle } from '@/modules/tasks/ui/common/task-title/task-title'
@@ -13,12 +14,13 @@ import { getTestVariants } from './get-test-variants'
 import type { TestTask } from './types.task'
 
 /*
- * The host dictionary has no key for this yet, so the Russian line is the
- * fallback: a pupil facing an untranslated interface is a smaller failure
- * than a pupil who is never told that several answers may be picked.
+ * The host dictionary has no key for this yet: until it has, the package's
+ * own words in the pupil's language (pupil-text.ts) — a pupil who is never
+ * told that several answers may be picked is the larger failure.
  */
 const multipleHint = (deps: TaskComponentProps<TestTask>['deps']): string =>
-  deps.localize?.pickEveryFittingOption ?? 'Выберите все подходящие варианты'
+  deps.localize?.pickEveryFittingOption ??
+  pupilText(deps.global, TASK_TEXT.pickEveryFittingOption)
 
 interface TestTemplateConfig {
   /** templateId, e.g. `test.plain`. */
