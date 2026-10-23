@@ -1,3 +1,4 @@
+import { handActiveTaskToHost } from '../../lib/hand-active-task-to-host'
 import {
   useAppState,
   useSetAppState,
@@ -68,6 +69,8 @@ export const useShowNextTask = ({ props }: Args) => {
       }
 
       setState({ activeTask: nextTask })
+      // The host learns the new task and keeps it in the address (2.5.5)
+      handActiveTaskToHost(props)
 
       socketController.push(
         socket,

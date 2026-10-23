@@ -46,7 +46,24 @@ const getRoot = () => {
 
   rootElement.instance = root
 
-  return root
+  return { root, rootElement }
+}
+
+/**
+ * The window is open in this wrapper: its root is on the page and mounted.
+ *
+ * The host re-renders this controller on every setState of its own and on
+ * every change of the address — the site wraps it in withRouter. A remount
+ * rebuilt the window from the host's state, which the window does not keep
+ * current: the pupil went back to the task the window had opened on, the
+ * chat and the draft closed. From 2.5.5 «Далее» hands the host the new task
+ * and the site writes it into the address, so such a re-render comes with
+ * every task. While the window is open, it stays as it is; a closed window
+ * (its root unmounted) or a new wrapper mounts afresh, as before.
+ */
+const isOpenIn = (wrapper: HTMLElement) => {
+  const rootElement = document.getElementById(ROOT_ID)
+  return Boolean(rootElement?.instance && wrapper.contains(rootElement))
 }
 
 /**
@@ -76,11 +93,15 @@ export const TaskModalController = (props: TaskModalProps) => {
     // The host re-renders this controller on its own setState — also the one
     // closeWithProgress makes on close, after which the host drops the
     // wrapper. No wrapper — nothing to mount into (see Mount docs).
-    if (!document.getElementById(WRAPPER_ID)) return
+    const wrapper = document.getElementById(WRAPPER_ID)
+    if (!wrapper) return
+
+    // A re-render of the host while the window is open (see isOpenIn)
+    if (isOpenIn(wrapper)) return
 
     injectFonts()
 
-    const root = getRoot()
+    const { root, rootElement } = getRoot()
 
     // × , «Далее» on the last task, browser «back»: the host gets the lesson
     // progress first
@@ -89,6 +110,7 @@ export const TaskModalController = (props: TaskModalProps) => {
       closeWithProgress(props, () => {
         unbindBack()
         root.unmount()
+        rootElement.instance = undefined
       })
     unbindBack = bindBrowserBack(closeModal)
 

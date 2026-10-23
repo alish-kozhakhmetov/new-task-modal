@@ -9,8 +9,9 @@ import type { TaskModalProps } from '../types/props'
  * and the package kept it only in its store: closed with × mid-lesson, the
  * row stayed at «Начать» instead of «Продолжить» and the percent.
  *
- * Only on close, not after every check: the host re-renders the controller on
- * its setState, and the controller remounts the window from the host's state.
+ * On close; the next task hands the progress along with itself
+ * (hand-active-task-to-host.ts, 2.5.5). The host re-renders the controller on
+ * its setState; an open window stays as it is (controller.tsx).
  *
  * The host's setState runs synchronously here (React 16, called from outside
  * its event handlers); its callback closes with the fresh state. A host that

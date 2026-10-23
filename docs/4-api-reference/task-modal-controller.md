@@ -14,6 +14,8 @@ TaskModalController(props: TaskModalProps): void
 
 Функция ищет элемент с id `task-modal-wrapper` в DOM хост-приложения и монтирует в него React Root с модальным окном задания.
 
+Хост перерисовывает контроллер на каждый свой `setState` и на смену адреса. Пока окно открыто в том же `task-modal-wrapper`, повторный вызов его не пересобирает (2.5.5): задачи окно ведёт в своём хранилище, а не в состоянии хоста.
+
 ---
 
 ## 📋 TaskModalProps
@@ -35,7 +37,7 @@ export interface TaskModalProps {
 | `activeTask` | `Task` | Объект активного задания (ID, текст, данные). |
 | `deps` | `TaskModalDependencies` | Внешние инжектируемые сервисы (API, локализация, тосты). |
 | `state` | `TaskModalState` | Текущее состояние модального окна от хоста. |
-| `setState` | `SetTaskModalState` | Функция для обновления состояния модального окна. |
+| `setState` | `SetTaskModalState` | Состояние хоста. Окно зовёт его при закрытии (`userProgress`) и на каждом переходе к следующей задаче — `{ activeTask, tasks, lockVersion, userProgress }`, `activeTask` — объект из `tasks` (2.5.5); сайт по нему пишет `?taskIndex=` в адрес. |
 | `hostProps` | `TaskModalHostProps` | Метаданные хоста (ID урока, устройство, версия). |
 | `actions` | `TaskModalActions` | Набор коллбэков и методов взаимодействия. |
 | `closeModal` | `() => void` | Функция для размонтирования и закрытия модалки. |
