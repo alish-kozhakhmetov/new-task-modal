@@ -274,15 +274,14 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
                         rowSpan={row.rowspan_list?.[cellIndex] || 1}
                         data-group={glued && isInput ? '' : undefined}
                       >
-                        {isInput ? (
-                          renderInput()
-                        ) : (
-                          <DigitGroupingContext
-                            value={columnGrouping(cellIndex)}
-                          >
+                        {/* the pupil's field groups as its column (23.10) */}
+                        <DigitGroupingContext value={columnGrouping(cellIndex)}>
+                          {isInput ? (
+                            renderInput()
+                          ) : (
                             <TableStaticCellContent content={contentOf(cell)} />
-                          </DigitGroupingContext>
-                        )}
+                          )}
+                        </DigitGroupingContext>
                       </td>,
                     )
                   }

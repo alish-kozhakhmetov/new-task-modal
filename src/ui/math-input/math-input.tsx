@@ -3,7 +3,9 @@ import { useEffect, useId, useImperativeHandle, useRef, type Ref } from 'react'
 
 import { InputAsSpan } from '../input/input'
 import { toMathQuillTex } from '../math-symbol-catalog'
+import { useDigitGrouping } from '../math-text/group-digits'
 
+import { groupFieldDigits, observeFieldDigits } from './group-field-digits'
 import styles from './math-input.module.scss'
 import { insertSymbolToMathField, MATHQUILL_CONFIG } from './model'
 import type { MathField, MathInputProps, MathInputRef } from './types'
@@ -36,6 +38,16 @@ export const MathInput = ({
   useEffect(() => {
     onMathFieldChangedRef.current = onMathFieldChanged
   })
+
+  // Rule 100 in the field (23.10): classes of the pupil's own number, by
+  // the task's grouping — off for GROUPING_OFF_TASKS and column arithmetic.
+  const { from: groupFrom } = useDigitGrouping()
+  const groupFromRef = useRef(groupFrom)
+  useEffect(() => {
+    groupFromRef.current = groupFrom
+    if (instanceRef.current && elementRef.current)
+      groupFieldDigits(elementRef.current, groupFrom)
+  }, [groupFrom])
 
   const notifyChanged = (latex: string) => {
     if (isSettingLatexRef.current) return
@@ -120,6 +132,7 @@ export const MathInput = ({
     const DOUBLE_TAP_MS = 350
     const DOUBLE_TAP_PX = 24
     let lastUp = { t: -Infinity, x: 0, y: 0 }
+    let stopGrouping = () => {}
     const selectAllOnDoubleTap = (e: PointerEvent) => {
       const near =
         Math.abs(e.clientX - lastUp.x) < DOUBLE_TAP_PX &&
@@ -174,6 +187,10 @@ export const MathInput = ({
       elementRef.current.addEventListener('keyup', syncScrollToCaret)
       elementRef.current.addEventListener('keydown', stopArrowPropagation)
       elementRef.current.addEventListener('pointerup', selectAllOnDoubleTap)
+      stopGrouping = observeFieldDigits(
+        elementRef.current,
+        () => groupFromRef.current,
+      )
 
       setLatexProgrammatically(lastSetFormulaRef.current)
     }
@@ -184,6 +201,7 @@ export const MathInput = ({
       elementRef.current?.removeEventListener('keyup', syncScrollToCaret)
       elementRef.current?.removeEventListener('keydown', stopArrowPropagation)
       elementRef.current?.removeEventListener('pointerup', selectAllOnDoubleTap)
+      stopGrouping()
       cancelled = true
       window.clearTimeout(retryId)
       instanceRef.current = null

@@ -1,7 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { useState, type CSSProperties, type ReactNode } from 'react'
+import { expect, waitFor, within } from 'storybook/test'
 
 import '../../../.storybook/mathquill-bootstrap'
+
+import { withOnDemandPlay } from '@/testing/with-on-demand-play'
 
 import {
   getMathQuillTex,
@@ -10,7 +13,9 @@ import {
   SYMBOL_SECTIONS,
   type SymbolSection,
 } from '../math-symbol-catalog'
+import { DigitGroupingContext } from '../math-text/group-digits'
 
+import { DIGIT_GAP_ATTR } from './group-field-digits'
 import { MathInput } from './math-input'
 
 const meta = {
@@ -219,4 +224,136 @@ export const AllSymbols: Story = {
     },
   },
   render: () => <SymbolCatalog sections={mathQuillSections()} />,
+}
+
+// ---------------------------------------------------------------------------
+// Digit grouping in the field (rule 100, Alisher 23.10)
+// ---------------------------------------------------------------------------
+
+const GROUPING_SAMPLES: { label: string; tex: string; off?: boolean }[] = [
+  { label: 'Четыре знака — слитно', tex: '5825' },
+  { label: 'Пять знаков', tex: '50000' },
+  { label: 'Семь знаков', tex: '8201794' },
+  { label: 'Дробная часть — слитно', tex: '12345,0159' },
+  { label: 'С минусом', tex: '-12345' },
+  { label: 'Дробь — оба этажа', tex: '\\frac{12345}{100000}' },
+  { label: 'Задача из GROUPING_OFF_TASKS', tex: '12345', off: true },
+]
+
+const GroupingTypedField = () => {
+  const [latex, setLatex] = useState('')
+  return (
+    <div style={cardStyle}>
+      <span style={labelStyle}>Набор — значение поля под ним</span>
+      <MathInput
+        formula=""
+        onMathFieldChanged={setLatex}
+        data-testid="grouping-field"
+      />
+      <code style={texStyle} data-testid="grouping-latex">
+        {latex}
+      </code>
+    </div>
+  )
+}
+
+type MqField = {
+  focus: () => void
+  typedText: (text: string) => void
+  keystroke: (key: string) => void
+  select: () => void
+}
+
+const mqOf = (el: HTMLElement) =>
+  (
+    window.MathQuill.getInterface(2) as unknown as (
+      el: HTMLElement,
+    ) => MqField | undefined
+  )(el)
+
+/** The field as it reads: digits, a space where a class gap is. */
+const shownDigits = (field: HTMLElement) =>
+  [...field.querySelectorAll('.mq-root-block [mathquill-command-id]')]
+    .map((n) => `${n.textContent}${n.hasAttribute(DIGIT_GAP_ATTR) ? ' ' : ''}`)
+    .join('')
+
+const digitBoxes = (field: HTMLElement) =>
+  [...field.querySelectorAll('.mq-root-block [mathquill-command-id]')].map(
+    (n) => n.getBoundingClientRect(),
+  )
+
+/**
+ * «50000» reads «50 000»: the condition's 0.14em gap after the digit that
+ * ends a class — a margin, not a character. The value under the field (what
+ * the store and the check get) stays solid. Not grouped: four digits, the
+ * fraction part, a task of GROUPING_OFF_TASKS. Play: typing, the caret
+ * between classes (in the middle of the gap), ⌫ from the middle, selection
+ * and replacement.
+ */
+export const FieldGrouping: Story = {
+  name: 'Поле: разрядка',
+  args: { formula: '' },
+  render: () => (
+    <div style={{ display: 'grid', gap: 12, maxWidth: 420 }}>
+      <GroupingTypedField />
+      {GROUPING_SAMPLES.map(({ label, tex, off }) => (
+        <DigitGroupingContext key={label} value={{ from: off ? null : 5 }}>
+          <SymbolCard label={label} tex={tex} />
+        </DigitGroupingContext>
+      ))}
+    </div>
+  ),
+  play: withOnDemandPlay(async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const field = await canvas.findByTestId('grouping-field')
+    const value = canvas.getByTestId('grouping-latex')
+    const mq = await waitFor(() => {
+      const ready = mqOf(field)
+      if (!ready) throw new Error('MathQuill is not on the field yet')
+      return ready
+    })
+    mq.focus()
+
+    // Typing: four digits solid, the fifth splits the classes.
+    for (const ch of '5000') mq.typedText(ch)
+    await waitFor(() => expect(value).toHaveTextContent(/^5000$/))
+    await expect(shownDigits(field)).toBe('5000')
+    mq.typedText('0')
+    await waitFor(() => expect(value).toHaveTextContent(/^50000$/))
+    await expect(shownDigits(field)).toBe('50 000')
+
+    // The gap: 0.14em of the field's size between classes, none inside one.
+    const em = parseFloat(getComputedStyle(field).fontSize)
+    const boxes = digitBoxes(field)
+    const inside = boxes[1].left - boxes[0].right
+    const between = boxes[2].left - boxes[1].right
+    await expect(between - inside).toBeCloseTo(0.14 * em, 0)
+
+    // Seven digits; the caret three steps left stands between the classes,
+    // in the middle of the gap — not at a class's edge, not a stop of its own.
+    mq.typedText('0')
+    mq.typedText('0')
+    await waitFor(() => expect(shownDigits(field)).toBe('5 000 000'))
+    for (let i = 0; i < 3; i += 1) mq.keystroke('Left')
+    const cursor = field.querySelector<HTMLElement>('.mq-cursor')
+    const before = cursor?.previousElementSibling?.getBoundingClientRect()
+    const after = cursor?.nextElementSibling?.getBoundingClientRect()
+    const caret = cursor?.getBoundingClientRect()
+    if (!before || !after || !caret) throw new Error('no caret between digits')
+    await expect(caret.right - before.right).toBeCloseTo(0.07 * em, 0)
+    await expect(caret.right).toBeLessThan(after.left)
+
+    // ⌫ from the middle takes the digit left of the caret and regroups.
+    mq.keystroke('Backspace')
+    await waitFor(() => expect(value).toHaveTextContent(/^500000$/))
+    await expect(shownDigits(field)).toBe('500 000')
+
+    // Selection (double tap, ⌘A): the gaps stay, a key replaces it all.
+    mq.select()
+    await expect(field.querySelector('.mq-selection')).not.toBeNull()
+    await expect(shownDigits(field)).toBe('500 000')
+    mq.typedText('7')
+    await waitFor(() => expect(value).toHaveTextContent(/^7$/))
+    await expect(shownDigits(field)).toBe('7')
+  }),
 }

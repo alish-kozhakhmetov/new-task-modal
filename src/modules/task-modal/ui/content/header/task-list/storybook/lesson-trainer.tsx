@@ -38,6 +38,8 @@ interface Props {
   layout?: 'phone' | 'wide'
   /** Open on the list or on a task's review, as after a tap on «№N/M». */
   view?: Exclude<TaskListView, null>
+  /** Sees the answer of every check request, as the backend would. */
+  onCheck?: (answer: string) => void
 }
 
 /**
@@ -52,6 +54,7 @@ export const LessonTrainer = ({
   language = 'russian',
   layout = 'phone',
   view,
+  onCheck,
 }: Props) => {
   const [session, setSession] = useState(0)
   const frame = useRef<HTMLDivElement>(null)
@@ -84,6 +87,15 @@ export const LessonTrainer = ({
       },
       deps: {
         ...base.deps,
+        api: {
+          ...base.deps.api,
+          checkAnswer: (
+            ...args: Parameters<typeof base.deps.api.checkAnswer>
+          ) => {
+            onCheck?.(String(args[0].answer ?? ''))
+            return base.deps.api.checkAnswer(...args)
+          },
+        },
         global: {
           ...base.deps.global,
           getLanguage: () => language as Language,
@@ -95,7 +107,7 @@ export const LessonTrainer = ({
       closeModal: () => setSession((n) => n + 1),
       layout: layout === 'wide' ? 'wide' : undefined,
     }
-  }, [lesson, language, layout])
+  }, [lesson, language, layout, onCheck])
 
   // TaskModal reads its state from the shared store once, on mount.
   useEffect(

@@ -157,3 +157,34 @@ export const lesson2120 = (): LessonFixture => {
   ]
   return { tasks, activeTask: current, initialTasksCount: tasks.length }
 }
+
+/** A lesson of one task, before the first attempt — a field to type into. */
+const oneTask = (task: Task): LessonFixture => ({
+  tasks: [task],
+  activeTask: task,
+  initialTasksCount: 1,
+})
+
+/**
+ * 4_1_1 «Запишите цифрами число …» with the number Alisher typed (23.10):
+ * the generator's instance for 50000. The fixture holds the 80000 one; the
+ * condition is its text with the number's words swapped.
+ */
+export const writeFiftyThousand = (): LessonFixture => {
+  const task = unsolved('4_1_1')
+  const description = task.description as unknown as {
+    content: Record<string, string>
+  }
+  description.content = {
+    ...description.content,
+    rus: 'Запишите цифрами число пятьдесят тысяч.',
+    kaz: 'Елу мың санын цифрмен жазыңыз.',
+    eng: 'Write the number fifty thousand in numerals.',
+  }
+  task.fields = { ...task.fields, number: 50000 }
+  return oneTask(task)
+}
+
+/** 4_8_3_1 «… следует за числом 3000004 …» — a seven-digit answer. */
+export const nextAfterMillions = (): LessonFixture =>
+  oneTask(unsolved('4_8_3_1'))
