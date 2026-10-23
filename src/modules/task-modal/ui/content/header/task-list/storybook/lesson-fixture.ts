@@ -194,6 +194,22 @@ export const writeFiftyThousand = (): LessonFixture => {
 export const nextAfterMillions = (): LessonFixture =>
   oneTask(unsolved('4_8_3_1'))
 
+let answerPanelSerial = 0
+
+/**
+ * 4_1_1 «Запишите цифрами число восемьдесят тысяч» with the backend's
+ * solution: three wrong answers show the answer panel, «Ваш ответ» and
+ * «Правильный ответ» with the class gap (2.5.7: on a phone «50068» read
+ * «500…»). An id per story: the check's mock counts wrong attempts by id.
+ */
+export const writeEightyThousand = (): LessonFixture => ({
+  ...oneTask({
+    ...unsolved('4_1_1'),
+    id: `answer-panel-4_1_1-${++answerPanelSerial}`,
+  }),
+  solution: fixture('4_1_1').solution,
+})
+
 /**
  * Two single-field tasks, the first with the backend's solution: three wrong
  * answers bring «Далее», «Далее» brings the second (2.5.7: the computer's

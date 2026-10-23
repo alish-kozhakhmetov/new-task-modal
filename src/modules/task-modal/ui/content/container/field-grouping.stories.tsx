@@ -4,6 +4,7 @@ import { expect, fn, userEvent, waitFor, within } from 'storybook/test'
 import { useStore } from '@/modules/task-modal/model/store/task-modal-store'
 import {
   nextAfterMillions,
+  writeEightyThousand,
   writeFiftyThousand,
 } from '@/modules/task-modal/ui/content/header/task-list/storybook/lesson-fixture'
 import { LessonTrainer } from '@/modules/task-modal/ui/content/header/task-list/storybook/lesson-trainer'
@@ -107,4 +108,100 @@ export const MillionsPhone: Story = {
 
 export const MillionsWide: Story = {
   args: { ...MillionsPhone.args, layout: 'wide' },
+}
+
+/**
+ * Three wrong answers bring the answer panel (2.5.7): the pupil's number and
+ * the correct one read with the class gap of the field and the condition
+ * (0.14em from five digits) and whole — on a phone «50068» was cut to
+ * «500…»: the panel measured the TeX source before MathJax typeset it. The
+ * labels are in the lesson's language.
+ */
+const answerPanel =
+  (labels: { yours: string; correct: string }) =>
+  async ({
+    canvasElement,
+    args,
+  }: {
+    canvasElement: HTMLElement
+    args: { onCheck?: (answer: string) => void }
+  }) => {
+    const canvas = within(canvasElement)
+    // «500», «5006», «50068»: each a new wrong answer, typed on the keys
+    let typed = ''
+    for (const keys of ['500', '6', '8']) {
+      await findField(canvasElement)
+      await pressKeys(canvasElement, keys)
+      typed += keys
+      const check = canvasElement.querySelector<HTMLButtonElement>(
+        '.task-modal button[class*="primary"]',
+      )
+      if (!check) throw new Error('no check button')
+      await waitFor(() => expect(check).toBeEnabled())
+      await userEvent.click(check)
+      await waitFor(() => expect(args.onCheck).toHaveBeenLastCalledWith(typed))
+    }
+
+    const yours = await canvas.findByTestId('user-answer-highlight')
+    await expect(within(yours).getByText(labels.yours)).toBeVisible()
+    // typeset: «50», the class gap, «068» — whole, no «…»
+    await waitFor(() =>
+      expect(typesetPieces(yours)).toEqual(['50', '_', '068']),
+    )
+    await expect(yours).not.toHaveTextContent('…')
+
+    const correct = canvas.getByText(labels.correct).parentElement
+    if (!correct) throw new Error('no correct answer row')
+    await waitFor(() =>
+      expect(typesetPieces(correct)).toEqual(['80', '_', '000']),
+    )
+  }
+
+/** A typeset number as MathJax reads it out: digits, «_» for a class gap. */
+const typesetPieces = (row: HTMLElement) => {
+  const math = row.querySelector('mjx-assistive-mml math')
+  if (!math) throw new Error('not typeset yet')
+  return [...math.children].map((node) =>
+    node.localName === 'mspace' ? '_' : (node.textContent ?? ''),
+  )
+}
+
+const RU = { yours: 'Ваш ответ:', correct: 'Правильный ответ:' }
+const KK = { yours: 'Сіздің жауабыңыз:', correct: 'Дұрыс жауап:' }
+
+export const AnswerPanelPhone: Story = {
+  args: {
+    lesson: writeEightyThousand(),
+    language: 'russian',
+    layout: 'phone',
+    onCheck: fn(),
+  },
+  play: withOnDemandPlay(answerPanel(RU)),
+}
+
+export const AnswerPanelPhoneKk: Story = {
+  args: {
+    ...AnswerPanelPhone.args,
+    lesson: writeEightyThousand(),
+    language: 'kk-cyrillic',
+  },
+  play: withOnDemandPlay(answerPanel(KK)),
+}
+
+export const AnswerPanelWide: Story = {
+  args: {
+    ...AnswerPanelPhone.args,
+    lesson: writeEightyThousand(),
+    layout: 'wide',
+  },
+  play: withOnDemandPlay(answerPanel(RU)),
+}
+
+export const AnswerPanelWideKk: Story = {
+  args: {
+    ...AnswerPanelWide.args,
+    lesson: writeEightyThousand(),
+    language: 'kk-cyrillic',
+  },
+  play: withOnDemandPlay(answerPanel(KK)),
 }

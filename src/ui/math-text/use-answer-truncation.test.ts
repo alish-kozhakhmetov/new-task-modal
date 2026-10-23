@@ -659,4 +659,36 @@ describe('useAnswerTruncation', () => {
 
     row.remove()
   })
+
+  it('does not measure the TeX source before the first typeset (2.5.7)', async () => {
+    // Phone, answer panel: fonts were ready right after mount and the
+    // fonts-ready re-evaluation measured «\(50\hspace{0.14em}068\)» — the
+    // source MathJax had not replaced yet, wider than the row — and cut
+    // «50068» to «500…».
+    const { ready, resolveReady } = mockFontsReady()
+
+    const text = '50068'
+    const { row, answer } = setupRow('\\(50\\hspace{0.14em}068\\)')
+    const { result } = renderHook(() => useAnswerTruncation(ANSWER_CLASS, text))
+    result.current.rowRef.current = row
+    mockWidths(answer, 229, 222) // the source overflows the phone's row
+
+    await act(async () => {
+      resolveReady()
+      await ready
+    })
+    expect(result.current.truncated).toBe(false)
+    expect(result.current.displayText).toBe(text)
+
+    // typeset: the number with its class gap, 52px — fits
+    mockWidths(answer, 52, 222)
+    act(() => {
+      result.current.onTypesetDone()
+      settle()
+    })
+    expect(result.current.truncated).toBe(false)
+    expect(result.current.displayText).toBe(text)
+
+    row.remove()
+  })
 })

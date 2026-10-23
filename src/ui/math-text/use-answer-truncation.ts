@@ -138,10 +138,19 @@ export const useAnswerTruncation = (
     displayLengthRef.current = displayLength
   }, [displayLength])
 
+  // Whether MathJax has typeset the answer. Until then the answer holds its
+  // TeX source — «\(50\hspace{0.14em}068\)», the class gap of rule 100
+  // makes it several times wider than the number — and a measurement of it
+  // (fonts ready right after mount, before the first typeset) cut «50068»
+  // to «500…» in the phone's answer panel (2.5.7). Only the typeset answer
+  // is measured; its typeset callback measures it anyway.
+  const isTypesetRef = useRef(false)
+
   // Whenever the text itself changes, start over from the full length --
   // the CSS safety net keeps this visually correct even before the first
   // measurement below runs.
   useLayoutEffect(() => {
+    isTypesetRef.current = false
     setDisplayLength(slicer.length)
   }, [slicer])
 
@@ -169,6 +178,7 @@ export const useAnswerTruncation = (
   // guarantees the length strictly decreases even if the ratio rounds to
   // no change, so repeated calls (see below) can't get stuck.
   const measure = useCallback(() => {
+    if (!isTypesetRef.current) return // TeX source, not the answer's width
     const row = rowRef.current
     if (!row) return
 
@@ -200,6 +210,7 @@ export const useAnswerTruncation = (
   // Cutting re-typesets, which re-fires this callback, so `measure` above
   // runs again naturally on its own if one cut wasn't enough.
   const onTypesetDone = useCallback(() => {
+    isTypesetRef.current = true
     if (measurementScheduledRef.current) return
     measurementScheduledRef.current = true
 
