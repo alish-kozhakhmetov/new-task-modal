@@ -12,6 +12,19 @@ export type TaskListView =
   | { screen: 'review'; taskId: string }
   | null
 
+/**
+ * Unsent chat text (2.5.6): on the phone the chat is a sheet that unmounts on
+ * close, so its input lost the text. The draft lives with the window, bound to
+ * the task it was typed on: another task («Далее», the list) reads it empty.
+ */
+export type ChatDraftKind = 'ai' | 'mentor'
+export interface ChatDraft {
+  taskId: string | null
+  ai: string
+  mentor: string
+}
+const EMPTY_DRAFT: ChatDraft = { taskId: null, ai: '', mentor: '' }
+
 interface State {
   // task loading
   isTaskLoaded: boolean
@@ -43,6 +56,15 @@ interface State {
   // task list over the task (null — the task itself)
   taskList: TaskListView
   setTaskList: (taskList: TaskListView) => void
+
+  // unsent chat text of the current task
+  chatDraft: ChatDraft
+  setChatDraft: (
+    kind: ChatDraftKind,
+    text: string,
+    taskId: string | null,
+  ) => void
+  resetChatDraft: () => void
 }
 
 export const useStore = create<State>((set) => ({
@@ -96,6 +118,18 @@ export const useStore = create<State>((set) => ({
   // task list
   taskList: null,
   setTaskList: (taskList) => set({ taskList }),
+
+  // chat draft: another task starts from an empty draft
+  chatDraft: EMPTY_DRAFT,
+  setChatDraft: (kind, text, taskId) =>
+    set((prev) => ({
+      chatDraft: {
+        ...(prev.chatDraft.taskId === taskId ? prev.chatDraft : EMPTY_DRAFT),
+        taskId,
+        [kind]: text,
+      },
+    })),
+  resetChatDraft: () => set({ chatDraft: EMPTY_DRAFT }),
 }))
 
 export const useAppState = () => {

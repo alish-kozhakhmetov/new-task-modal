@@ -9,6 +9,7 @@ import {
   insertDateMarkers,
   normalizeChatMessage,
 } from '../../model/helpers'
+import { useChatDraft } from '../../model/use-chat-draft'
 import { ChatLayout } from '../common/chat-layout/chat-layout'
 import { ChatInput } from '../common/input/chat-input'
 import { DateMessage } from '../common/message/date/date-message'
@@ -19,6 +20,7 @@ interface Props {
 }
 
 export const MentorChat = ({ props }: Props) => {
+  const draft = useChatDraft('mentor')
   const { deps } = props
   const { socket, socketController } = deps
   const queryClient = useQueryClient()
@@ -170,6 +172,7 @@ export const MentorChat = ({ props }: Props) => {
         onSend={sendMessage}
         onAddMessage={handleAddMessage}
         deps={props.deps}
+        draft={draft}
         onAddFile={useMediaApi ? handleAddFile : undefined}
         onAddVoice={useMediaApi ? handleAddVoice : undefined}
       />

@@ -4,6 +4,7 @@ import BrokenHeartIcon from '@/assets/icons/header/heart-broken-color.svg'
 import type { TaskModalProps } from '@/modules/task-modal/model/types/props'
 import { FlexRow } from '@/ui/layout/flex-row/flex-row'
 
+import { useChatDraft } from '../../model/use-chat-draft'
 import { ChatLayout } from '../common/chat-layout/chat-layout'
 import { ChatInput } from '../common/input/chat-input'
 
@@ -32,6 +33,7 @@ const Words = ({ text }: { text: string }) => (
 )
 
 export const AiChat = ({ props, isPinned = false }: Props) => {
+  const draft = useChatDraft('ai')
   const {
     t,
     messages,
@@ -91,6 +93,7 @@ export const AiChat = ({ props, isPinned = false }: Props) => {
         onSend={handleSend}
         onAddMessage={addMessages}
         deps={props.deps}
+        draft={draft}
       />
     </ChatLayout>
   )

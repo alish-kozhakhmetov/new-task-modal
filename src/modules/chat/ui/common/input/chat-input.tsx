@@ -19,6 +19,8 @@ interface Props {
   deps: TaskModalDependencies
   onAddFile?: (file: File) => void
   onAddVoice?: (blob: Blob, recordingTime: number) => void
+  /** Text kept outside the input (the task window's draft, 2.5.6); without it — local state */
+  draft?: [string, (text: string) => void]
 }
 
 export const ChatInput = ({
@@ -27,10 +29,12 @@ export const ChatInput = ({
   deps,
   onAddFile,
   onAddVoice,
+  draft,
 }: Props) => {
   const t = useChatT()
   const [isRecording, setIsRecording] = useState(false)
-  const [messageText, setMessageText] = useState('')
+  const local = useState('')
+  const [messageText, setMessageText] = draft ?? local
   const [isSending, setIsSending] = useState(false)
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
