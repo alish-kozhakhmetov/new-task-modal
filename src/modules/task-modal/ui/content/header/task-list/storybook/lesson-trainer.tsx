@@ -74,7 +74,11 @@ export const LessonTrainer = ({
   }, [isMapReady, lesson])
 
   const props = useMemo<TaskModalProps>(() => {
-    const base = makeTrainerProps(lesson.activeTask as unknown as TextTask)
+    // The check's mock answers the last wrong attempt with this solution.
+    const base = makeTrainerProps({
+      ...lesson.activeTask,
+      solution: lesson.solution ?? lesson.activeTask.solution,
+    } as unknown as TextTask)
     const translate = translateTo(language)
     return {
       ...base,

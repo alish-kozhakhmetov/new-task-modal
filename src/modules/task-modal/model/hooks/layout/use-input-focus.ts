@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 import type { Task } from '@/types/api/task'
+import type { MathInputRef } from '@/ui/math-input/types'
 
 import { getParentWithAttr, trackPressTarget } from '../../helpers'
 import { getRevealScrollTop } from '../../lib/reveal-in-container'
@@ -77,7 +78,15 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
         const map = refs.mathInput.current
         if (!map) return
 
-        const mathInputRef = map.get(input.id)
+        // A mouse and the computer's keyboard (2.5.7, test.qalan.kz 23.10): the
+        // field lit, but the keys went nowhere until a click — a single-field
+        // template keys its input «default», not by the DOM id, so the lookup
+        // missed and the field was never focused. On a phone the on-screen
+        // keyboard types into the lit field without DOM focus (controls.tsx);
+        // its lookup stays as it was, the system keyboard must not come up.
+        const mathInputRef = typesOnPhysicalKeyboard()
+          ? findFieldInput(map, input)
+          : map.get(input.id)
         // The browser scrolls every overflow ancestor to the focused field.
         // A wide table then opened scrolled to its last column, the first one
         // cut off (4_10_9_9); the initial focus must not move anything.
@@ -210,6 +219,27 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
 
   return lastFocusedInput
 }
+
+/**
+ * The pupil types on the computer's keyboard: a mouse or a trackpad is the
+ * main pointer, or the device has no touch at all.
+ */
+export const typesOnPhysicalKeyboard = () => {
+  if (typeof window === 'undefined') return false
+  if (window.matchMedia?.('(pointer: fine)').matches) return true
+  return !('ontouchstart' in window) && (navigator.maxTouchPoints ?? 0) === 0
+}
+
+/**
+ * The input of a field: multi-field templates key the map by the field's DOM
+ * id, a single-field one by «default» (set-math-input-ref.ts) — its input
+ * carries the DOM id itself.
+ */
+export const findFieldInput = (
+  map: Map<string, MathInputRef>,
+  field: HTMLElement,
+): MathInputRef | undefined =>
+  map.get(field.id) ?? [...map.values()].find((input) => input.id === field.id)
 
 /** Minimal scroll of the task area so the field's bottom edge is visible. */
 const revealBottom = (container: HTMLElement | null, field: HTMLElement) => {

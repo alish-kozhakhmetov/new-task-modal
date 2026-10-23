@@ -95,6 +95,11 @@ export interface LessonFixture {
   tasks: Task[]
   activeTask: Task
   initialTasksCount: number
+  /**
+   * What the check sends back after the last wrong attempt — the solution
+   * with the answer panel. Without it the mock has none to show.
+   */
+  solution?: Task['solution']
 }
 
 /**
@@ -188,3 +193,19 @@ export const writeFiftyThousand = (): LessonFixture => {
 /** 4_8_3_1 «… следует за числом 3000004 …» — a seven-digit answer. */
 export const nextAfterMillions = (): LessonFixture =>
   oneTask(unsolved('4_8_3_1'))
+
+/**
+ * Two single-field tasks, the first with the backend's solution: three wrong
+ * answers bring «Далее», «Далее» brings the second (2.5.7: the computer's
+ * keyboard types into the field on entry and after «Далее», no click).
+ */
+export const twoFieldTasks = (): LessonFixture => {
+  // own ids: the check's mock counts wrong attempts by id
+  const first = { ...unsolved('4_1_1'), id: 'keyboard-4_1_1' }
+  return {
+    tasks: [first, { ...unsolved('4_8_3_1'), id: 'keyboard-4_8_3_1' }],
+    activeTask: first,
+    initialTasksCount: 2,
+    solution: fixture('4_1_1').solution,
+  }
+}
