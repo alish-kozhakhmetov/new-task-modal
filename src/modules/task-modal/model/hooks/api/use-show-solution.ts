@@ -1,6 +1,7 @@
 import type { TaskSolutionResponse } from '@/types/api/api'
 
 import { MAX_LIVES } from '../../constants'
+import { hostLanguage } from '../../lib/host-language'
 import { isApiError } from '../../lib/is-api-error'
 import { useAppState, useSetAppState } from '../../store/task-modal-store'
 import type { TaskModalProps } from '../../types/props'
@@ -37,7 +38,7 @@ export const useShowSolution = ({ props }: Args) => {
       }
 
       const response = await api.getTaskSolution(
-        { ...activeTask, lockVersion },
+        { ...activeTask, lockVersion, language: hostLanguage(deps.global) },
         hostProps.lessonId,
       )
 

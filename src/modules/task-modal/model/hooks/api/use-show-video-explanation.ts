@@ -1,6 +1,7 @@
 import type { VideoExplanationResponse } from '@/types/api/api'
 import type { Task } from '@/types/api/task'
 
+import { hostLanguage } from '../../lib/host-language'
 import { isApiError } from '../../lib/is-api-error'
 import { useAppState, useSetAppState } from '../../store/task-modal-store'
 import type { TaskModalProps } from '../../types/props'
@@ -42,9 +43,7 @@ export const useShowVideoExplanation = ({ props }: Args) => {
       const response = await api.getVideoExplanation({
         ...activeTask,
         lockVersion,
-        language: global.isLocationQalanSchool()
-          ? 'school'
-          : global.getAbbreviatedLanguage(),
+        language: hostLanguage(global),
       })
       // console.log('video explanaiton response', { response })
       setState({ lockVersion: response.lockVersion })

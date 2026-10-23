@@ -288,17 +288,28 @@ export interface Api {
     itemId: number,
     language: string,
   ): Promise<unknown>
-  getTaskSolution(task: Task, lessonId?: number): Promise<TaskSolutionResponse>
+  /** The site reads `language` from the task object only (host-language.ts). */
+  getTaskSolution(
+    task: Task & {
+      language?: string
+    },
+    lessonId?: number,
+  ): Promise<TaskSolutionResponse>
   getVideoExplanation(
     task: Task & {
       language?: string
     },
   ): Promise<VideoExplanationResponse>
   getVideoExplanationForControlWork(task: Task): Promise<unknown>
+  /**
+   * The site reads `language` from the task object only, as the old window
+   * sends it (host-language.ts); arguments after `lessonId` it never read.
+   */
   checkAnswer(
-    task: Task,
+    task: Task & {
+      language?: string
+    },
     lessonId?: number,
-    language?: string,
   ): Promise<CheckAnswerResponse>
   login(data: LoginData): Promise<unknown>
   loginByParentPhoneNumber(data: LoginData): Promise<unknown>

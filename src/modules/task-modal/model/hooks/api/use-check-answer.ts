@@ -6,6 +6,7 @@ import {
   toWireMultiAnswer,
 } from '@/modules/tasks/lib/multi-answer'
 
+import { hostLanguage } from '../../lib/host-language'
 import { isApiError } from '../../lib/is-api-error'
 import {
   useAppState,
@@ -135,10 +136,11 @@ export const useCheckAnswer = ({ props, refs }: Args) => {
       //   return
       // }
 
+      // The language goes inside the task, as the old window sends it: the
+      // site's Api.checkAnswer(task) reads it from there only (2.5.5).
       const response = await api.checkAnswer(
-        { ...activeTask, answer, lockVersion },
+        { ...activeTask, answer, lockVersion, language: hostLanguage(global) },
         hostProps.lessonId,
-        global.getLanguage(),
       )
 
       const handleCorrectAnswer = async () => {
