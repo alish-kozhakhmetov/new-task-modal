@@ -2,6 +2,7 @@ import clsx from 'clsx'
 
 import CheckIcon from '@/assets/icons/check.svg'
 import CloseIcon from '@/assets/icons/close.svg'
+import { taskT } from '@/lib/helpers/pupil-text'
 import { TextAdornment } from '@/modules/tasks/ui/templates/text/shared/text-adornment'
 import { MathFormula } from '@/ui/math-text/math-formula'
 import { MathText } from '@/ui/math-text/math-text'
@@ -34,10 +35,12 @@ interface Props {
  */
 const UserAnswerHighlight = ({
   text,
+  label,
   unit,
   alignCenter,
 }: {
   text: string
+  label: string
   unit?: string
   alignCenter?: boolean
 }) => {
@@ -53,7 +56,7 @@ const UserAnswerHighlight = ({
       className={clsx(s.highlight, alignCenter && s.highlightCenter)}
     >
       <CloseIcon className={s.icon} />
-      <span className={s.label}>Ваш ответ:</span>
+      <span className={s.label}>{label}</span>
       <MathFormula className={s.userAnswer} onTypeset={onTypesetDone}>
         {displayText}
       </MathFormula>
@@ -90,12 +93,15 @@ export const SolutionAnswerPanel = ({
 
   const resolvedCorrectLabel =
     correctLabel ?? deps.global.translateTasks(correctAnswer)
+  // In the pupil's language (2.5.7: «Ваш ответ» in a Kazakh lesson).
+  const t = taskT(deps.global)
 
   return (
     <div className={s.container}>
       {showUser && (
         <UserAnswerHighlight
           text={userAnswer}
+          label={t('yourAnswer')}
           unit={unit}
           alignCenter={alignCenter}
         />
@@ -106,7 +112,7 @@ export const SolutionAnswerPanel = ({
       {showCorrect && (
         <div className={clsx(s.highlight, alignCenter && s.highlightCenter)}>
           <CheckIcon className={s.icon} />
-          <span className={s.label}>Правильный ответ:</span>
+          <span className={s.label}>{t('correctAnswer')}</span>
           <MathText inline className={s.answer}>
             {resolvedCorrectLabel}
           </MathText>

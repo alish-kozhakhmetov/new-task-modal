@@ -54,6 +54,7 @@ export const TaskModal = (hostProps: TaskModalProps) => {
               taskId={activeTaskId}
               onClose={canvas.close}
               isPinned={isDraftPinned}
+              global={props.deps.global}
             />
           )}
 

@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 
+import { taskT } from '@/lib/helpers/pupil-text'
 import type { TaskSolution as TaskSolutionType } from '@/types/api/task'
 import { MathText } from '@/ui/math-text/math-text'
 
@@ -24,6 +25,8 @@ const renderTextContent = (content: string) => (
 )
 
 export const SolutionExplanation = ({ solution, deps }: Props) => {
+  const title = taskT(deps.global)('explanation')
+
   if (typeof solution === 'object' && solution !== null && solution.error) {
     const errorText =
       typeof solution.error === 'string'
@@ -39,7 +42,7 @@ export const SolutionExplanation = ({ solution, deps }: Props) => {
   if (isFormulaStringSolution(solution)) {
     return (
       <div className={s.container}>
-        <p className={s.title}>Объяснение</p>
+        <p className={s.title}>{title}</p>
         {renderTextContent(solution)}
       </div>
     )
@@ -67,7 +70,7 @@ export const SolutionExplanation = ({ solution, deps }: Props) => {
 
   return (
     <div className={s.container}>
-      <p className={s.title}>Объяснение</p>
+      <p className={s.title}>{title}</p>
 
       {hasComplex && (
         <ComplexSolutionParts parts={solution.parts} deps={deps} />

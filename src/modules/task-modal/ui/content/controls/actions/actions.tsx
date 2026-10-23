@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import Message from '@/assets/icons/actions/message.svg'
 import Pen from '@/assets/icons/actions/pen.svg'
 import { capitalize } from '@/lib/helpers/capitalize'
+import { taskT } from '@/lib/helpers/pupil-text'
 import type { TaskModalModals } from '@/modules/task-modal/task-modal'
 import { getLivesCount } from '@/modules/task-modal/ui/content/header/lives-indicator/lib'
 import { Button, ButtonColor, ButtonLayout } from '@/ui/button/button'
@@ -75,6 +76,7 @@ export const TaskModalActions = ({ props, refs, className, modals }: Props) => {
 
   const { actions } = refs
   const translate = deps.global.translate
+  const t = taskT(deps.global)
 
   return (
     <div className={clsx(s.container, className)} ref={actions}>
@@ -82,7 +84,7 @@ export const TaskModalActions = ({ props, refs, className, modals }: Props) => {
         color={ButtonColor.White}
         layout={ButtonLayout.Icon}
         onClick={modals.canvas.open}
-        aria-label="Открыть доску"
+        aria-label={t('openDraft')}
         className={clsx(
           s.button,
           s.secondary,
@@ -97,7 +99,7 @@ export const TaskModalActions = ({ props, refs, className, modals }: Props) => {
         color={ButtonColor.White}
         layout={ButtonLayout.Icon}
         onClick={modals.chat.open}
-        aria-label="Открыть чат"
+        aria-label={t('openChat')}
         className={clsx(s.button, s.secondary, s.chatButton)}
       >
         <Message />

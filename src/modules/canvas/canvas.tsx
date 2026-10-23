@@ -10,6 +10,8 @@ import EditIcon from '@/assets/icons/canvas/edit.svg'
 import EraserIcon from '@/assets/icons/canvas/eraser.svg'
 import ForwardIcon from '@/assets/icons/canvas/forward.svg'
 import CloseIcon from '@/assets/icons/close.svg'
+import { taskT } from '@/lib/helpers/pupil-text'
+import type { Global } from '@/types/global'
 
 import styles from './canvas.module.scss'
 
@@ -29,6 +31,8 @@ interface CanvasProps {
    * saved after every stroke instead of on «Закрыть», and there is no close.
    */
   isPinned?: boolean
+  /** The host's translate: the buttons' names in the pupil's language. */
+  global?: Partial<Pick<Global, 'translate'>>
 }
 
 const STORAGE_PREFIX = 'drawing-board-data'
@@ -38,7 +42,13 @@ export const canvasStorageKey = (taskId?: string | number | null) =>
     ? STORAGE_PREFIX
     : `${STORAGE_PREFIX}:${taskId}`
 
-export function Canvas({ onClose, taskId, isPinned = false }: CanvasProps) {
+export function Canvas({
+  onClose,
+  taskId,
+  isPinned = false,
+  global,
+}: CanvasProps) {
+  const t = taskT(global)
   const STORAGE_KEY = canvasStorageKey(taskId)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const isDrawingRef = useRef(false)
@@ -245,7 +255,7 @@ export function Canvas({ onClose, taskId, isPinned = false }: CanvasProps) {
                   mode === 'draw' && styles.active,
                 )}
                 onClick={() => setMode('draw')}
-                title="Рисовать"
+                title={t('draw')}
               >
                 <EditIcon />
               </button>
@@ -255,7 +265,7 @@ export function Canvas({ onClose, taskId, isPinned = false }: CanvasProps) {
                   mode === 'erase' && styles.active,
                 )}
                 onClick={() => setMode('erase')}
-                title="Ластик"
+                title={t('eraser')}
               >
                 <EraserIcon />
               </button>
@@ -266,7 +276,7 @@ export function Canvas({ onClose, taskId, isPinned = false }: CanvasProps) {
                 className={styles.button}
                 onClick={undo}
                 disabled={historyStep <= 0}
-                title="Назад"
+                title={t('back')}
               >
                 <BackIcon />
               </button>
@@ -274,7 +284,7 @@ export function Canvas({ onClose, taskId, isPinned = false }: CanvasProps) {
                 className={styles.button}
                 onClick={redo}
                 disabled={historyStep >= history.length - 1}
-                title="Вперед"
+                title={t('forward')}
               >
                 <ForwardIcon />
               </button>
@@ -282,7 +292,7 @@ export function Canvas({ onClose, taskId, isPinned = false }: CanvasProps) {
               <button
                 className={styles.button}
                 onClick={clearBoard}
-                title="Очистить всё"
+                title={t('clearAll')}
               >
                 <DeleteIcon />
               </button>
@@ -293,7 +303,7 @@ export function Canvas({ onClose, taskId, isPinned = false }: CanvasProps) {
                 <button
                   className={styles.button}
                   onClick={handleClose}
-                  title="Закрыть доску"
+                  title={t('closeDraft')}
                 >
                   <CloseIcon />
                 </button>
