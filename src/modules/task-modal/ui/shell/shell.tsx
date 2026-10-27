@@ -1,5 +1,7 @@
 import clsx from 'clsx'
-import type { ReactNode } from 'react'
+import { useRef, type ReactNode } from 'react'
+
+import { useTabWithinWindow } from '../../model/hooks/layout/use-tab-within-window'
 
 import s from './shell.module.scss'
 
@@ -24,18 +26,25 @@ export const TaskModalShell = ({
   isDraftOpen,
   className,
   children,
-}: Props) => (
-  <div
-    className={clsx(
-      s.shell,
-      isChatOpen && s.withChat,
-      isDraftOpen && s.withDraft,
-      className,
-    )}
-    // the package's root: base.scss resets buttons under it (task, chat, draft)
-    data-ntm-root=""
-    data-ntm-layout={isWide ? 'wide' : undefined}
-  >
-    {children}
-  </div>
-)
+}: Props) => {
+  const ref = useRef<HTMLDivElement>(null)
+  // Tab walks the answer fields and never leaves the window.
+  useTabWithinWindow(ref)
+
+  return (
+    <div
+      ref={ref}
+      className={clsx(
+        s.shell,
+        isChatOpen && s.withChat,
+        isDraftOpen && s.withDraft,
+        className,
+      )}
+      // the package's root: base.scss resets buttons under it (task, chat, draft)
+      data-ntm-root=""
+      data-ntm-layout={isWide ? 'wide' : undefined}
+    >
+      {children}
+    </div>
+  )
+}
