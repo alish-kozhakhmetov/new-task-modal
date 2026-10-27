@@ -1,4 +1,8 @@
-import { getParentWithAttr, trackPressTarget } from '../../helpers'
+import {
+  getParentWithAttr,
+  isQuietFocus,
+  trackPressTarget,
+} from '../../helpers'
 import type { OpenState } from '../use-open-state'
 
 import type { TaskModalRefs } from './use-refs'
@@ -47,8 +51,9 @@ export const handleCalcOverflow = ({ refs, calc }: Args) => {
   })
   const onFocusIn = getControlGestureHandler({
     onGesture: (isControl) => {
-      // Focus only opens; never close on focus moving within the task.
-      if (isControl) calc.open()
+      // Focus only opens; never close on focus moving within the task. The
+      // initial focus for the computer's keyboard leaves it as it is.
+      if (isControl && !isQuietFocus()) calc.open()
     },
   })
 

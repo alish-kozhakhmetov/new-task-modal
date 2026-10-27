@@ -50,6 +50,27 @@ export const trackPressTarget = (root: HTMLElement) => {
   return { resolve, dispose }
 }
 
+let quietFocus = false
+
+/**
+ * Focus without opening the calculator: the overflow layout reopens it on any
+ * focus of an answer field (get-calc-overflow-handler.ts). The computer's
+ * keyboard needs the field focused on entry, but the task stays as it opened —
+ * text and figure readable, the calculator closed until the pupil taps.
+ * `focusin` fires inside `focus()`, so the flag is up exactly for it.
+ */
+export const focusQuietly = (focus: () => void) => {
+  quietFocus = true
+  try {
+    focus()
+  } finally {
+    quietFocus = false
+  }
+}
+
+/** The focus now arriving was asked by `focusQuietly`. */
+export const isQuietFocus = () => quietFocus
+
 export const isAnswerEmpty = (answer: string, deps: TaskModalDependencies) => {
   return splitMultiAnswer(
     answer,

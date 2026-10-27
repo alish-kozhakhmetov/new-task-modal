@@ -3,7 +3,11 @@ import { useEffect, useRef } from 'react'
 import type { Task } from '@/types/api/task'
 import type { MathInputRef } from '@/ui/math-input/types'
 
-import { getParentWithAttr, trackPressTarget } from '../../helpers'
+import {
+  focusQuietly,
+  getParentWithAttr,
+  trackPressTarget,
+} from '../../helpers'
 import { getRevealScrollTop } from '../../lib/reveal-in-container'
 import { useStore } from '../../store/task-modal-store'
 
@@ -69,7 +73,15 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
         // deliberate close (overflow layout, or solution shown). Don't fight it.
         // Nor light the field: a lit field with no keyboard reads as a broken
         // keyboard (iPhone, 2.5.2). The pupil's tap lights it and opens both.
-        if (calcState.isEnabled && !calcState.isOpen) return
+        //
+        // With the computer's keyboard the field is the keyboard (2.5.8, live
+        // test 27.10: a task with a figure — complex.after, beforeAfter, the
+        // two-field R and D — opened with the calculator closed, and the keys
+        // went nowhere until a click). Focus it quietly: the calculator stays
+        // closed, the task stays at its top.
+        const isCalcClosed = calcState.isEnabled && !calcState.isOpen
+        const physical = typesOnPhysicalKeyboard()
+        if (isCalcClosed && !physical) return
 
         // The task opens from its top: scrolling to the field belongs to the
         // pupil's own tap or Tab, not to the initial focus (rule 98).
@@ -84,14 +96,15 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
         // missed and the field was never focused. On a phone the on-screen
         // keyboard types into the lit field without DOM focus (controls.tsx);
         // its lookup stays as it was, the system keyboard must not come up.
-        const mathInputRef = typesOnPhysicalKeyboard()
+        const mathInputRef = physical
           ? findFieldInput(map, input)
           : map.get(input.id)
         // The browser scrolls every overflow ancestor to the focused field.
         // A wide table then opened scrolled to its last column, the first one
         // cut off (4_10_9_9); the initial focus must not move anything.
         const scrolled = scrollParents(input)
-        mathInputRef?.focus()
+        if (isCalcClosed) focusQuietly(() => mathInputRef?.focus())
+        else mathInputRef?.focus()
         for (const [el, left, top] of scrolled) {
           el.scrollLeft = left
           el.scrollTop = top
@@ -99,8 +112,9 @@ export const useInputFocus = ({ refs, activeTask, calcState }: Args) => {
 
         // The calculator stayed open over a short task on a low screen
         // (iPhone Safari): the field may end up to a line under it. Scroll
-        // just enough to show it whole (2.5.2).
-        revealBottom(refs.taskContainer.current, input)
+        // just enough to show it whole (2.5.2). With it closed nothing covers
+        // the field: the task opens from its top.
+        if (!isCalcClosed) revealBottom(refs.taskContainer.current, input)
       }
     }
 

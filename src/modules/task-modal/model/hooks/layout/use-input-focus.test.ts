@@ -2,6 +2,8 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import type { MathInputRef } from '@/ui/math-input/types'
 
+import { focusQuietly, isQuietFocus } from '../../helpers'
+
 import { findFieldInput, typesOnPhysicalKeyboard } from './use-input-focus'
 
 const input = (id: string): MathInputRef => ({
@@ -81,5 +83,22 @@ describe('typesOnPhysicalKeyboard', () => {
     setPointer(false)
     expect('ontouchstart' in window).toBe(false)
     expect(typesOnPhysicalKeyboard()).toBe(true)
+  })
+})
+
+describe('focusQuietly', () => {
+  it('marks only the focus it asks for (2.5.8)', () => {
+    const seen: boolean[] = []
+    const textarea = document.createElement('textarea')
+    document.body.append(textarea)
+    textarea.addEventListener('focusin', () => seen.push(isQuietFocus()))
+
+    focusQuietly(() => textarea.focus())
+    textarea.blur()
+    textarea.focus()
+
+    expect(seen).toEqual([true, false])
+    expect(isQuietFocus()).toBe(false)
+    textarea.remove()
   })
 })
