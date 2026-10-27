@@ -8,6 +8,7 @@ import { useDigitGrouping } from '../math-text/group-digits'
 import { groupFieldDigits, observeFieldDigits } from './group-field-digits'
 import styles from './math-input.module.scss'
 import { insertSymbolToMathField, MATHQUILL_CONFIG } from './model'
+import { spaceLeavesBlock } from './space-leaves-block'
 import type { MathField, MathInputProps, MathInputRef } from './types'
 
 interface Props extends MathInputProps {
@@ -157,6 +158,19 @@ export const MathInput = ({
       }
     }
 
+    // «(a + b) : 25» from the computer's keyboard became «((a)+b):25» (live
+    // test 27.10, 2141): with spaceBehavesLikeTab a space leaves the block the
+    // caret is in — out of the brackets right after «a». A space now does
+    // nothing unless it leaves a fraction or a power, as before; the answer
+    // is the one typed without spaces. Caught before MathQuill's own keydown
+    // on its textarea.
+    const keepSpaceIdle = (e: KeyboardEvent) => {
+      if (e.key !== ' ' || e.ctrlKey || e.metaKey || e.altKey) return
+      if (spaceLeavesBlock(elementRef.current)) return
+      e.preventDefault()
+      e.stopPropagation()
+    }
+
     const init = () => {
       if (cancelled || instanceRef.current) return
 
@@ -186,6 +200,7 @@ export const MathInput = ({
       // keyup too (calculator-button inserts go through `edit` above).
       elementRef.current.addEventListener('keyup', syncScrollToCaret)
       elementRef.current.addEventListener('keydown', stopArrowPropagation)
+      elementRef.current.addEventListener('keydown', keepSpaceIdle, true)
       elementRef.current.addEventListener('pointerup', selectAllOnDoubleTap)
       stopGrouping = observeFieldDigits(
         elementRef.current,
@@ -200,6 +215,7 @@ export const MathInput = ({
     return () => {
       elementRef.current?.removeEventListener('keyup', syncScrollToCaret)
       elementRef.current?.removeEventListener('keydown', stopArrowPropagation)
+      elementRef.current?.removeEventListener('keydown', keepSpaceIdle, true)
       elementRef.current?.removeEventListener('pointerup', selectAllOnDoubleTap)
       stopGrouping()
       cancelled = true
