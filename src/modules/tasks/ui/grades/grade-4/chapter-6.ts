@@ -37,6 +37,8 @@ const map = {
     '13_12',
   ],
   [TemplateTypes.Text.Multi.Stack.N2BeforeAfter]: ['7_11'],
+  [TemplateTypes.Complex.After]: ['6_1', '6_2'],
+  [TemplateTypes.Test.Plain]: ['6_3', '6_4'],
   [TemplateTypes.Text.Multi.Stack.N3BeforeAfter]: ['7_12'],
   [TemplateTypes.Text.Multi.Stack.N4After]: ['12_12'],
   [TemplateTypes.Text.Plain]: [
