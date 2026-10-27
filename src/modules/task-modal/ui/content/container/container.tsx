@@ -5,6 +5,7 @@ import { Fragment, Suspense, type RefObject } from 'react'
 import { ErrorBoundary } from '@/lib/error-boundary/error-boundary'
 import { useWideTableRoom } from '@/modules/task-modal/model/hooks/layout/use-wide-table-room'
 import { useWordFormAgreement } from '@/modules/task-modal/model/hooks/layout/use-word-form-agreement'
+import { isTaskUnavailable } from '@/modules/task-modal/model/lib/task-unavailable'
 import {
   useAppState,
   useStore,
@@ -19,6 +20,7 @@ import { TaskHints } from '../task-hints/task-hints'
 
 import { ContainerSkeleton } from './container-skeleton'
 import s from './container.module.scss'
+import { TaskUnavailable } from './task-unavailable'
 
 interface Props {
   props: TaskModalProps
@@ -71,7 +73,9 @@ export const TaskModalContainer = ({
           ref={ref}
           dir={dir}
         >
-          {!isTaskSupported && props.renderLegacyTask ? (
+          {isTaskUnavailable(activeTask, props) ? (
+            <TaskUnavailable props={props} />
+          ) : !isTaskSupported && props.renderLegacyTask ? (
             <LegacyTaskRoot props={props} />
           ) : (
             // Keyed by task: «Далее» to a task of the same template used to

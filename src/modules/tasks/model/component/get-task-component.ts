@@ -19,6 +19,19 @@ void (async () => {
   map = await generateModuleTemplateMap()
 })()
 
+/** The chapters' map has loaded: a task it lacks has no template. */
+export const isTemplateMapReady = () => map !== null
+
+/**
+ * The package has a template for the task: `null` while the chapters' map
+ * is still loading — not known yet.
+ */
+export const hasTaskTemplate = (task: Task): boolean | null => {
+  if (!map) return null
+  const key = getTaskTypeKey(task.type)
+  return key !== null && map.has(key)
+}
+
 export const getTaskComponent = (activeTask: Task | null) => {
   if (!activeTask || !map) return null
 

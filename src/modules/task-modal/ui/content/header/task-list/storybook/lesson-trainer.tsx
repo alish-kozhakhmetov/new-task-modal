@@ -8,7 +8,7 @@ import {
 import type { TaskModalProps } from '@/modules/task-modal/model/types/props'
 import { TaskModal } from '@/modules/task-modal/task-modal'
 import { pickTranslationText } from '@/modules/tasks/lib/translation-utils'
-import { getTaskComponent } from '@/modules/tasks/model/component/get-task-component'
+import { isTemplateMapReady } from '@/modules/tasks/model/component/get-task-component'
 import { makeTrainerProps } from '@/modules/tasks/ui/templates/text/lib/storybook/make-trainer-props'
 import type { TextTask } from '@/modules/tasks/ui/templates/text/lib/types.task'
 import type { Language } from '@/types/enums'
@@ -62,13 +62,11 @@ export const LessonTrainer = ({
   // The template map loads once, asynchronously, with the package; a modal
   // mounted before it shows an empty task until the next task (the site
   // mounts the modal after the lesson's request, long after it). Wait.
-  const [isMapReady, setIsMapReady] = useState(
-    () => getTaskComponent(lesson.activeTask) !== null,
-  )
+  const [isMapReady, setIsMapReady] = useState(isTemplateMapReady)
   useEffect(() => {
     if (isMapReady) return
     const timer = window.setInterval(() => {
-      if (getTaskComponent(lesson.activeTask) !== null) setIsMapReady(true)
+      if (isTemplateMapReady()) setIsMapReady(true)
     }, 50)
     return () => window.clearInterval(timer)
   }, [isMapReady, lesson])

@@ -68,6 +68,22 @@ export const TASK_TEXT = {
     kaz: 'Барлық сәйкес нұсқаларды таңдаңыз',
     eng: 'Select all that apply',
   },
+  /**
+   * A task the package has no template for (2.5.8: lesson 2205, Task_4_6_6_*
+   * — the window stayed empty). Kazakh — mine, to check with the lead.
+   */
+  taskUnavailable: {
+    rus: 'Эта задача пока открывается только в прежнем окне',
+    kaz: 'Бұл тапсырма әзірге тек бұрынғы терезеде ашылады',
+    eng: 'This task opens only in the previous window for now',
+  },
+  openInOldWindow: {
+    rus: 'Открыть в прежнем окне',
+    kaz: 'Бұрынғы терезеде ашу',
+    eng: 'Open in the previous window',
+  },
+  /** Site: «Жабу» */
+  close: { rus: 'Закрыть', kaz: 'Жабу', eng: 'Close' },
   /** Site: «Тақтаны тазалау», «Жабу» */
   closeDraft: {
     rus: 'Закрыть доску',

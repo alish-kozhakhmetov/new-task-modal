@@ -5,6 +5,7 @@ import { useCalcSetup } from '../../model/hooks/layout/use-calc-setup'
 import { useInputFocus } from '../../model/hooks/layout/use-input-focus'
 import { useTaskModalRefs } from '../../model/hooks/layout/use-refs'
 import { isCalcForceHidden } from '../../model/lib/calc-visibility-param'
+import { isTaskUnavailable } from '../../model/lib/task-unavailable'
 import { useAppState, useStore } from '../../model/store/task-modal-store'
 import type { TaskModalProps } from '../../model/types/props'
 import type { TaskModalModals } from '../../task-modal'
@@ -73,14 +74,17 @@ export const TaskModalContent = ({ props, modals }: Props) => {
           isAdjusting={isAdjusting}
         />
 
-        <TaskModalControls
-          props={props}
-          lastFocusedInput={lastFocusedInput}
-          refs={refs}
-          calcState={calcState}
-          modals={modals}
-          isAdjusting={isAdjusting}
-        />
+        {/* Nothing to check or type into: no «Проверить», no calculator. */}
+        {!isTaskUnavailable(activeTask, props) && (
+          <TaskModalControls
+            props={props}
+            lastFocusedInput={lastFocusedInput}
+            refs={refs}
+            calcState={calcState}
+            modals={modals}
+            isAdjusting={isAdjusting}
+          />
+        )}
       </div>
     </>
   )

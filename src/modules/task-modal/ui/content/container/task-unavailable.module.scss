@@ -1,0 +1,27 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 240px;
+  padding: var(--space-24) var(--space-16);
+  text-align: center;
+}
+
+.text {
+  @include body-large-bold;
+
+  max-width: 28em;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  width: 100%;
+  max-width: 360px;
+}
