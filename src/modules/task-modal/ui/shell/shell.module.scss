@@ -1,7 +1,11 @@
 // Off the wide layout the shell has no box: the task, the draft and the chat
 // stay exactly where they were (fixed sheets over the task).
+// The chat is the task's neighbour, not its child: it took the host's font
+// (Gilroy on the old site), the task its own. The shell carries it for the
+// whole window — `display: contents` keeps the inheritance.
 .shell {
   display: contents;
+  font-family: var(--font-halvar), sans-serif;
 
   @include wide {
     display: grid;
