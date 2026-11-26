@@ -21,6 +21,7 @@ const map = {
     '15_1',
     '15_2',
   ],
+  [TemplateTypes.Test.Plain]: ['1_1'],
   [TemplateTypes.Text.After]: ['3_3', '3_4'],
   [TemplateTypes.Text.Multi.Stack.N3BeforeAfter]: ['3_5'],
   [TemplateTypes.Text.Plain]: ['3_1', '3_2'],

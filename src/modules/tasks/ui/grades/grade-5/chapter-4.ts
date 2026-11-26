@@ -110,6 +110,15 @@ const map = {
     '34_5',
   ],
   [TemplateTypes.Table.Plain]: [30],
+  [TemplateTypes.Test.Plain]: [
+    '35_1',
+    '35_3',
+    '35_4',
+    '35_5',
+    '35_6',
+    '35_7',
+    '35_8',
+  ],
   [TemplateTypes.Text.After]: [
     '3_4',
     '3_5',

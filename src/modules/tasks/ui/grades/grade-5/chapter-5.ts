@@ -25,7 +25,7 @@ const map = {
   [TemplateTypes.Complex.Multi.Stack.N2BeforeAfter]: ['1_6', '1_7', '4_2'],
   [TemplateTypes.Complex.Plain]: ['2_3', 18],
   [TemplateTypes.Formula.Plain]: [30],
-  [TemplateTypes.Test.Plain]: [1, 2, '2_2'],
+  [TemplateTypes.Test.Plain]: [1, 2, '2_2', 46, 48, 49, 51],
   [TemplateTypes.Text.After]: [
     '2_5',
     23,
