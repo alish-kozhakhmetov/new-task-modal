@@ -17,7 +17,6 @@ const args = Object.fromEntries(process.argv.slice(2).map((a) => { const [k, ...
 const GRADE = Number(args.grade ?? 3)
 const CACHE = path.join(ROOT, '.pilot-cache', `grade-${GRADE}`)
 const SOLVE = path.join(CACHE, 'solve')
-const BE = path.join(ROOT, '.pilot-cache', 'g3-backend')
 
 const files = fs.readdirSync(SOLVE).filter((f) => f.endsWith('.json'))
 const jobs = []
@@ -35,8 +34,6 @@ for (const f of files) {
 const inFile = path.join(CACHE, 'judge-in.jsonl')
 const outFile = path.join(CACHE, 'judge-out.jsonl')
 fs.writeFileSync(inFile, jobs.map((j) => JSON.stringify(j)).join('\n') + '\n')
-const PA = ['certifi', 'decimal', 'hackney', 'httpoison', 'idna', 'metrics', 'mimerl', 'parse_trans', 'poison', 'ssl_verify_fun', 'unicode_util_compat']
-  .flatMap((d) => ['-pa', path.join(process.env.HOME, 'Documents/Projects/qalan/matheducator-student-platform/matheducator_task_common/_build/dev/lib', d, 'ebin')])
 execFileSync(path.join(HERE, 'be.sh'), [path.join(HERE, 'check.exs'), inFile, outFile], {
   env: { ...process.env, PATH: `/opt/homebrew/opt/erlang/bin:${process.env.PATH}` },
   stdio: ['ignore', 'ignore', 'inherit'],
