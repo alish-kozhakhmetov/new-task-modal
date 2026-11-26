@@ -1,0 +1,202 @@
+{
+  "defaultGrade": 10,
+  "grades": [
+    7,
+    10
+  ],
+  "byGrade": {
+    "7": [
+      {
+        "id": "7_2_3_1",
+        "group": "equation_plain_2",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "up": "",
+            "type": 10,
+            "text": " ",
+            "svg": "",
+            "down": "",
+            "before": "",
+            "after": ""
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "aze": "Əməli yerinə yetirin:",
+            "kgz": "Амалдарды аткарыңыз:",
+            "uzb": "Amalni bajaring:",
+            "eng": "Perform the operation:",
+            "rus": "Выполните действие:",
+            "kaz": "Амалды орындаңыз:",
+            "arjd": "جد ناتج ما يلي",
+            "arsa": "",
+            "areg": "أوجد ناتج ما يلي",
+            "module_name": "Elixir.Helpers.Translation"
+          },
+          "fields": {
+            "letter": "x",
+            "number": 3,
+            "power": 4
+          },
+          "description": {
+            "type": "equation",
+            "content": {
+              "with_audio_player": false,
+              "aze": "3x^4+x^4",
+              "kgz": "3x^4+x^4",
+              "uzb": "3x^4+x^4",
+              "eng": "3x^4+x^4",
+              "rus": "3x^4+x^4",
+              "kaz": "3x^4+x^4",
+              "arjd": "3x^4+x^4",
+              "arsa": "3x^4+x^4",
+              "areg": "3x^4+x^4",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          },
+          "type": "Elixir.Task_7_2_3_1",
+          "position": 0,
+          "id": "eq-fixture-task_7_2_3_1",
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "\\(4x^4\\)",
+              "kgz": "\\(4x^4\\)",
+              "uzb": "\\(4x^4\\)",
+              "eng": "\\(4x^4\\)",
+              "rus": "\\(4x^4\\)",
+              "kaz": "\\(4x^4\\)",
+              "arjd": "\\(4x^4\\)",
+              "arsa": "\\(4x^4\\)",
+              "areg": "\\(4x^4\\)",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          },
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "_fixtureSource": "source: task_types/7-grade/chapter2/task_7_2_3_1.ex"
+        }
+      }
+    ],
+    "10": [
+      {
+        "id": "10_2_3_1",
+        "group": "equation_plain_1",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "up": "",
+            "type": 10,
+            "text": " ",
+            "svg": "",
+            "down": "",
+            "before": "",
+            "after": ""
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "Funksiyaning qiymatlar sohasini toping.",
+            "rus": "Найдите множество значений функции.",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Функциянын маанилеринин көптүгүн табыңыз.",
+            "kaz": "Функцияның мәндер жиынын анықтаңыз.",
+            "eng": "",
+            "aze": "Funksiyanın qiymətlər çoxluğunu tapın.",
+            "arsa": "",
+            "arjd": "",
+            "areg": ""
+          },
+          "fields": {
+            "number": {
+              "sign": 1,
+              "module_name": "Elixir.MyDecimal",
+              "integer_part": 2,
+              "exp": -2,
+              "decimal_part": 25,
+              "coef": 225
+            }
+          },
+          "description": {
+            "type": "equation",
+            "content": {
+              "with_audio_player": false,
+              "uzb": "y = 2.25\\cos{ x }",
+              "rus": "y = 2.25\\cos{ x }",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "y = 2.25\\cos{ x }",
+              "kaz": "y = 2.25\\cos{ x }",
+              "eng": "y = 2.25\\cos{ x }",
+              "aze": "y = 2.25\\cos{ x }",
+              "arsa": "y = 2.25\\cos{ x }",
+              "arjd": "y = 2.25\\cos{ x }",
+              "areg": "y = 2.25\\cos{ x }"
+            }
+          },
+          "type": "Elixir.Task_10_2_3_1",
+          "position": 0,
+          "id": "eq-fixture-task_10_2_3_1",
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "\\([-2.25،2.25]\\)",
+              "kgz": "\\([-2.25،2.25]\\)",
+              "uzb": "\\([-2.25،2.25]\\)",
+              "eng": "\\([-2.25،2.25]\\)",
+              "rus": "\\([-2.25،2.25]\\)",
+              "kaz": "\\([-2.25،2.25]\\)",
+              "arjd": "\\([-2.25،2.25]\\)",
+              "arsa": "\\([-2.25،2.25]\\)",
+              "areg": "\\([-2.25،2.25]\\)",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          },
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "_fixtureSource": "variants.json (generator run 02.08)"
+        }
+      }
+    ]
+  }
+}

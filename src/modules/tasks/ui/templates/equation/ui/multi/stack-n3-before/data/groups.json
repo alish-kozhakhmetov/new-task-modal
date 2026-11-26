@@ -1,0 +1,157 @@
+[
+  {
+    "group": "equation_multi_stack_n3_before_1",
+    "count": 1,
+    "tasks": [
+      {
+        "id": "7_2_1_1"
+      }
+    ],
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 30,
+        "input3": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "Birhadning darajasi",
+            "rus": "Степень одночлена:",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Бир мүчөнүн даражасы:",
+            "kaz": "Бірмүшенің дәрежесі:",
+            "eng": "Monomial power:",
+            "aze": "Birhədlinin dərəcəsi:",
+            "arsa": "الدرجة",
+            "arjd": "",
+            "areg": "الدرجة:"
+          },
+          "after": ""
+        },
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "Birhadning koeffisenti",
+            "rus": "Коэффициент одночлена:",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Бир мүчөнүн  коэфиценти:",
+            "kaz": "Бірмүшенің коэффициенті:",
+            "eng": "Monomial coefficient:",
+            "aze": "Birhədlinin əmsalı:",
+            "arsa": "المعامل",
+            "arjd": "",
+            "areg": "المعامل:"
+          },
+          "after": ""
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "Birhadning standart shakli:",
+            "rus": "Стандартный вид одночлена:",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Бир мүчөнүн стандарттуу түрү:",
+            "kaz": "Бірмүшенің стандарт түрі:",
+            "eng": "Standard form of monomial:",
+            "aze": "Birhədlinin standart şəkli:",
+            "arsa": "الحد الأحادي في الصورة القياسية:",
+            "arjd": "",
+            "areg": "الحد الأحادي في الصورة القياسية:"
+          },
+          "after": ""
+        },
+        "inline": false
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": {
+        "with_audio_player": false,
+        "uzb": "Birhadni standart shaklga keltiring va uning koeffitsienti hamda darajasini toping.",
+        "rus": "Приведите одночлен к стандартному виду, найдите его коэффициент и степень.",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "Бир мүчөнү стандарттуу түргө келтириңиз, анын коэффицентин жана даражасын табыңыз.",
+        "kaz": "Бірмүшені стандарт түрге келтіріп және оның коэффициентін, дәрежесін табыңыз.",
+        "eng": "Write the monomial in standard form, find its coefficient and degree.",
+        "aze": "Birhədlini standart şəklə gətirin, onun əmsalını və dərəcəsini tapın.",
+        "arsa": "اكتب وحيد الحد الآتي في الصورة القياسية، ثم حدّد معامله ودرجته.",
+        "arjd": "",
+        "areg": "اكتب وحيد الحد التالي في الصورة القياسية، ثم حدّد معامله ودرجته"
+      },
+      "fields": {
+        "power": 4,
+        "number": 5,
+        "letter": "z"
+      },
+      "description": {
+        "type": "equation",
+        "content": {
+          "with_audio_player": false,
+          "uzb": "5z·z^4",
+          "rus": "5z·z^4",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "5z·z^4",
+          "kaz": "5z·z^4",
+          "eng": "5z·z^4",
+          "aze": "5z·z^4",
+          "arsa": "5z·z^4",
+          "arjd": "5z·z^4",
+          "areg": "5z×z^4"
+        }
+      },
+      "type": "Elixir.Task_7_2_1_1",
+      "position": 0,
+      "id": "eq-fixture-task_7_2_1_1",
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "\\(5z^5;;5;;5\\)",
+          "kgz": "\\(5z^5;;5;;5\\)",
+          "uzb": "\\(5z^5;;5;;5\\)",
+          "eng": "\\(5z^5;;5;;5\\)",
+          "rus": "\\(5z^5;;5;;5\\)",
+          "kaz": "\\(5z^5;;5;;5\\)",
+          "arjd": "\\(5z^5;;5;;5\\)",
+          "arsa": "\\(5z^5;;5;;5\\)",
+          "areg": "\\(5z^5;;5;;5\\)",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      },
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "_fixtureSource": "variants.json (generator run 02.08)"
+    }
+  }
+]

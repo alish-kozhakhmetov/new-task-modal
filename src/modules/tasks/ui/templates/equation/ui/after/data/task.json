@@ -1,0 +1,86 @@
+{
+  "attemptsCount": null,
+  "isPrimary": true,
+  "hasVideoUrl": false,
+  "isPenalty": false,
+  "answerInput": {
+    "up": "",
+    "type": 10,
+    "text": " ",
+    "svg": "",
+    "down": "",
+    "before": "",
+    "after": "\\(\\%\\)"
+  },
+  "difficulty": null,
+  "result": "none",
+  "title": {
+    "with_audio_player": false,
+    "aze": "Nisbəti faizlə ifadə edin:",
+    "kgz": "",
+    "uzb": "Nisbatni foiz bilan ifodalang:",
+    "eng": "",
+    "rus": "Выразите соотношение в процентах:",
+    "kaz": "Қатынасты процентпен өрнектеңіз:",
+    "arjd": "",
+    "arsa": "",
+    "areg": "",
+    "module_name": "Elixir.Helpers.Translation"
+  },
+  "fields": {
+    "number": 7
+  },
+  "description": {
+    "type": "equation",
+    "content": {
+      "with_audio_player": false,
+      "aze": "\\dfrac{7}{100}",
+      "kgz": "\\dfrac{7}{100}",
+      "uzb": "\\dfrac{7}{100}",
+      "eng": "\\dfrac{7}{100}",
+      "rus": "\\dfrac{7}{100}",
+      "kaz": "\\dfrac{7}{100}",
+      "arjd": "\\dfrac{7}{100}",
+      "arsa": "\\dfrac{7}{100}",
+      "areg": "\\dfrac{7}{100}",
+      "module_name": "Elixir.Helpers.Translation"
+    }
+  },
+  "type": "Elixir.Task_6_1_1_2_1",
+  "position": 0,
+  "id": "eq-fixture-task_6_1_1_2_1",
+  "solution": {
+    "type": "formula",
+    "answer": {
+      "with_audio_player": false,
+      "aze": "7",
+      "kgz": "7",
+      "uzb": "7",
+      "eng": "7",
+      "rus": "7",
+      "kaz": "7",
+      "arjd": "7",
+      "arsa": "7",
+      "areg": "7",
+      "module_name": "Elixir.Helpers.Translation"
+    },
+    "content": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    }
+  },
+  "hint1": null,
+  "hint2": null,
+  "videoId": null,
+  "videoUrl": null,
+  "_fixtureSource": "source: task_types/6-grade/chapter1/lesson1/lesson1_2/task_6_1_1_2_1.ex"
+}
