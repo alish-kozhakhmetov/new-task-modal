@@ -169,3 +169,26 @@
 .container > .inline {
   margin-top: var(--space-16);
 }
+
+// A table part wider than its room (table-part.tsx, useWrapTextWhenTooWide):
+// its text cells wrap by words and share the width instead of standing at 1%
+// on one line; a field keeps a field's width (72 px: «1 000» in 18 px with
+// the field's padding — 5_6_3_5 puts three fields and four formulas in a row).
+.tablePart[data-wrap-text] {
+  td:not(.tableInputCell) {
+    width: auto;
+    white-space: normal;
+  }
+
+  .tableInputCell > * {
+    min-width: to-rem(72px);
+  }
+
+  // a picture of the backend's own width (210–730 px, 3_11_9…12) shrinks with
+  // the column, keeping its proportions
+  td :global(svg) {
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+  }
+}

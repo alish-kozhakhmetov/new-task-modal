@@ -81,6 +81,11 @@ export interface ComplexTableRow {
   cells: unknown[]
   colspan_list?: number[]
   rowspan_list?: number[]
+  /** Without a list: the span of one cell, `colspan_at` (0 when absent). */
+  colspan?: number
+  colspan_at?: number
+  rowspan?: number
+  rowspan_at?: number
   border_bottom?: string
 }
 
