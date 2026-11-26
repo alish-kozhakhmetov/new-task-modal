@@ -1,0 +1,211 @@
+{
+  "defaultGrade": 2,
+  "grades": [
+    2
+  ],
+  "byGrade": {
+    "2": [
+      {
+        "id": "2_8_5_4",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": {
+                "with_audio_player": false,
+                "uzb": "pomidor",
+                "rus": "помидор(а)/(ов)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "помидор",
+                "kaz": "қызанақ",
+                "eng": "tomatoes",
+                "aze": "pomidor",
+                "arsa": "",
+                "arjd": "",
+                "areg": "طماطم"
+              }
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": {
+                "with_audio_player": false,
+                "uzb": "sabzi",
+                "rus": "морков(ь)/(и)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "сабиз",
+                "kaz": "сәбіз",
+                "eng": "carrots",
+                "aze": "yerkökü",
+                "arsa": "",
+                "arjd": "",
+                "areg": "جزر"
+              }
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": {
+                "with_audio_player": false,
+                "uzb": "piyoz",
+                "rus": "лук(а)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "пияз",
+                "kaz": "пияз",
+                "eng": "onions",
+                "aze": "soğan",
+                "arsa": "",
+                "arjd": "",
+                "areg": "بصل"
+              }
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number3": 9,
+            "number2": 4,
+            "number1": 10
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "Sa'dulla bozordan piyoz, sabzi, pomidor sotib olib, ularning diagrammasini tuzdi.",
+                  "rus": "Олег купил на рынке лук, морковь и помидоры и составил их диаграмму.",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "Олег базардан пияз, сабиз, помидор сатып алып, алардын диаграммасын түзгөн.",
+                  "kaz": "Сырым базардан пияз, сәбіз және қызанақ сатып алып, олардың диаграммасын құрды.",
+                  "eng": "Oliver buys onions, carrots, and tomatoes at the market and makes a chart.",
+                  "aze": "Çingiz bazardan soğan, yerkökü və pomidor aldı və onların diaqramını tərtib etdi.\r\n",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": "اشترى حسين من السوق بصلًا وجزرًا وطماطم،\r\nثم قام برسم المخطط البياني بالأعمدة للخضروات التي اشتراها.\r\n"
+                }
+              },
+              {
+                "type": 10,
+                "content": "\\(\\\\\\)"
+              },
+              {
+                "with_number": "",
+                "type": 160,
+                "size": 50,
+                "repeat_quantity": 1,
+                "manually_set_size": false,
+                "is_wrap_content": false,
+                "is_vertical": false,
+                "countable": false,
+                "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +166174 chars</text></svg>",
+                "background_image": null
+              },
+              {
+                "type": 10,
+                "content": "\\(\\\\\\)"
+              },
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "Sa'dulla bozordan qancha piyoz, sabzi va pomidor oldi?",
+                  "rus": "Сколько лука, сколько моркови и сколько помидоров Олег купил на рынке?",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "Олег базардан канча пияз, канча сабиз, канча помидор сатып алды?",
+                  "kaz": "Сырым базардан неше пияз, неше сәбіз және неше қызанақ сатып алды?",
+                  "eng": "How many onions, how many carrots, and how many tomatoes does Oliver buy?",
+                  "aze": "Çingiz bazardan neçə soğan, neçə yerkökü və neçə pomidor alıb?",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": "كم عدد البصل والجزر والطماطم التي اشتراها حسين من السوق؟"
+                }
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_2_8_5_4",
+          "position": 0,
+          "id": "cx-2_8_5_4-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "10;;4;;9",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            10,
+            4,
+            9
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "10;;4;;9"
+        ],
+        "truncated": true,
+        "layoutByPayload": "complex.multi.stack.n3.after",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-2"
+      }
+    ]
+  }
+}

@@ -75,8 +75,12 @@
 }
 
 .fieldLabel {
-  flex-shrink: 0;
-  white-space: nowrap;
+  // A label wider than what the field leaves wraps by words beside it
+  // (rule 17) instead of pushing the window sideways; one that fits keeps
+  // its one line, as with nowrap (stream CX, 26.11: 6_9_1_4 at 375 slid the
+  // whole window left on focus). Math labels do not break: min-width stays
+  // their min-content, so they never shrink under the field.
+  white-space: normal;
 }
 
 // Labelled fields one under another (rule 20): «Альбом: ▢ ₸ / Краски: ▢ ₸»
@@ -84,7 +88,10 @@
 // of each after its own label. Rows become grid rows via display: contents.
 .stackGrid {
   display: grid;
-  grid-template-columns: max-content max-content 1fr;
+
+  // The label column takes its max-content while it fits, else what is left
+  // and its labels wrap by words — never below their longest word.
+  grid-template-columns: minmax(min-content, max-content) max-content 1fr;
   gap: var(--space-8);
   align-items: center;
 

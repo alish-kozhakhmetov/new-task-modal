@@ -23,7 +23,15 @@ export const decodePlainTexEscapes = (text: string): string =>
 export const prepareAdornment = (
   value: string,
 ): { kind: 'plain' | 'math'; text: string } => {
-  const text = decodePlainTexEscapes(stripMathDelimiters(value))
+  // «\(\angle\) B = \(\angle\)» starts with «\(» and ends with «\)» but is
+  // two islands with prose between: the outer strip left «\angle\) B =
+  // \(\angle» on the pupil's screen (GeoTask_7_2_8_2, stream CX, 27.11).
+  const stripped = stripMathDelimiters(value)
+  const islands =
+    stripped !== value.trim() && /(?<!\\)\\\)[\s\S]*(?<!\\)\\\(/.test(stripped)
+  if (islands) return { kind: 'math', text: uprightMathUnits(value.trim()) }
+
+  const text = decodePlainTexEscapes(stripped)
   if (!text) return { kind: 'plain', text: '' }
 
   // Outer strip only applies when the whole value is `\(...\)`. Leftover

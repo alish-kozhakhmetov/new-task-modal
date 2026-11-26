@@ -1,0 +1,179 @@
+{
+  "defaultGrade": 2,
+  "grades": [
+    2
+  ],
+  "byGrade": {
+    "2": [
+      {
+        "id": "2_3_5_11",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": "\\()\\)"
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\((\\)",
+                "rus": "\\((\\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\((\\)",
+                "kaz": "\\((\\)",
+                "eng": "\\((\\)",
+                "aze": "\\((\\)",
+                "arsa": "\\((\\)",
+                "arjd": "\\((\\)",
+                "areg": "\\((\\)"
+              },
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "Ifodani yozing. (Harflar \\(\\textbf{abc}\\) tugmasi ichida joylashgan)",
+            "rus": "Напишите буквенное выражение. (Буквы внутри кнопки \\(\\textbf{abc}\\))",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Туюнтманы жазыңыз. (тамгалар \\(\\textbf{abc}\\) баскычтын ичинде)",
+            "kaz": "Өрнекті жазыңыз. (Әріптер \\(\\textbf{abc}\\) батырмасының ішінде)",
+            "eng": "Write an algebraic expression (To find the letters, click the \\(\\textbf{abc}\\) button on your keyboard.): ",
+            "aze": "Hərfi ifadəni yazın. (Hərflər \\(\\textbf{abc}\\) düyməsinin daxilindədir)",
+            "arsa": "",
+            "arjd": "",
+            "areg": "اكتب تعبيرا رمزيا."
+          },
+          "fields": {
+            "number2": 24,
+            "number1": 60,
+            "letter": "y"
+          },
+          "description": {
+            "withAudio": true,
+            "type": "answerCell",
+            "textBefore": {
+              "with_audio_player": false,
+              "uzb": "\\(y\\) va 60 yig‘indisidan 24 ni ayiring\r\\(\\\\\\)",
+              "rus": "От суммы \\(y\\) и 60 отнять 24.\r\\(\\\\\\)",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "\\(y\\) жана 60 сандарынын суммасынан 24 санын кемитиңиз.\r\\(\\\\\\)",
+              "kaz": "\\(y\\) және 60 қосындысын 24-ке кеміту\r\\(\\\\\\)",
+              "eng": "Subtract 24 from the sum of \\(y\\) and 60.\r\\(\\\\\\)",
+              "aze": "\\(y\\) və 60-nin cəmindən 24 çıxın.\r\\(\\\\\\)",
+              "arsa": "",
+              "arjd": "",
+              "areg": "اطرح 24 من مجموع العددين \\(y\\) و60"
+            },
+            "textAfter": "",
+            "tableBefore": null,
+            "isColumn": false,
+            "imageBefore": "",
+            "content": "answercell + answercell - answercell",
+            "answerCellMargin": "0 7px"
+          },
+          "type": "Elixir.Task_2_3_5_11",
+          "position": 0,
+          "id": "cx-2_3_5_11-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "y;;60;;24",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "answers": [
+            {
+              "separator": true,
+              "answers": [
+                "y",
+                60,
+                24
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                60,
+                "y",
+                24
+              ],
+              "_struct": "MultipleTaskAnswer"
+            }
+          ],
+          "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+        },
+        "answerElixirType": "TaskAnswers.AnyOfThemTaskAnswer",
+        "answerKinds": [
+          "int",
+          "str"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "y;;60;;24",
+          "60;;y;;24"
+        ],
+        "truncated": false,
+        "layoutByPayload": "answerCell.multi.stack.n3.beforeAfter",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-2"
+      }
+    ]
+  }
+}

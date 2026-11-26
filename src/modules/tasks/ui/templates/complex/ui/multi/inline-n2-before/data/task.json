@@ -1,0 +1,115 @@
+{
+  "attemptsCount": null,
+  "isPrimary": true,
+  "hasVideoUrl": false,
+  "isPenalty": false,
+  "answerInput": {
+    "type": 20,
+    "input2": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "; \\(P_{▭}\\) = \\((a + b)\\) ·",
+        "rus": "; \\(P_{▭}\\) = \\((a + b)\\) ·",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "; \\(P_{▭}\\) = \\((a + b)\\) ·",
+        "kaz": "; \\(P_{▭}\\) = \\((a + b)\\) ·",
+        "eng": "; \\(P_{▭}\\) = \\((a + b)\\) ·",
+        "aze": "; \\(P_{▭}\\) = \\((a + b)\\) ·",
+        "arsa": "; \\(P_{▭}\\) = \\((a + b)\\) ·",
+        "arjd": "; \\(P_{▭}\\) = \\((a + b)\\) ·",
+        "areg": "; \\(P_{▭}\\) = \\((a + b)\\) ·"
+      },
+      "after": ""
+    },
+    "input1": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "\\(P_{▢}\\) = \\(a\\) ·",
+        "rus": "\\(P_{▢}\\) = \\(a\\) ·",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "\\(P_{▢}\\) = \\(a\\) ·",
+        "kaz": "\\(P_{▢}\\) = \\(a\\) ·",
+        "eng": "\\(P_{▢}\\) = \\(a\\) ·",
+        "aze": "\\(P_{▢}\\) = \\(a\\) ·",
+        "arsa": "\\(P_{▢}\\) = \\(a\\) ·",
+        "arjd": "\\(P_{▢}\\) = \\(a\\) ·",
+        "areg": "\\(P_{▢}\\) = \\(a\\) ·"
+      },
+      "after": ""
+    },
+    "inline": true
+  },
+  "difficulty": null,
+  "result": "none",
+  "title": null,
+  "fields": {},
+  "description": {
+    "type": "complex",
+    "parts": [
+      {
+        "type": 10,
+        "content": {
+          "with_audio_player": false,
+          "uzb": "",
+          "rus": "",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "",
+          "kaz": "Тіктөртбұрыш пен шаршының периметрінің формулаларын толықтырыңыз.\r\n",
+          "eng": "",
+          "aze": "",
+          "arsa": "",
+          "arjd": "",
+          "areg": ""
+        }
+      }
+    ],
+    "isCalculatorClosed": false,
+    "isAnswerCellHidden": false
+  },
+  "type": "Elixir.Task_3_10_3_6",
+  "position": 0,
+  "id": "cx-3_10_3_6-0",
+  "hint1": null,
+  "hint2": null,
+  "videoId": null,
+  "videoUrl": null,
+  "solution": {
+    "type": "formula",
+    "answer": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "4;;2",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    },
+    "content": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    }
+  }
+}

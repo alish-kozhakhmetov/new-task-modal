@@ -1,0 +1,226 @@
+[
+  {
+    "group": "grade-2",
+    "count": 1,
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 40,
+        "input4": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": "",
+          "after": ""
+        },
+        "input3": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": "",
+          "after": ") = "
+        },
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": "",
+          "after": " + "
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": "",
+          "after": " – ("
+        },
+        "inline": true
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": null,
+      "fields": {
+        "number3": 10,
+        "number2": 50,
+        "number1": 62
+      },
+      "description": {
+        "with_audio": true,
+        "type": "text",
+        "content": {
+          "with_audio_player": false,
+          "uzb": "62 – (50 + 10) ifodasidagi qo‘shiluvchilarning o‘rinlarini almashtirib, qiymatini toping.",
+          "rus": "Поменяйте местами слагаемые в выражении 62 – (50 + 10) и найдите значение.",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "",
+          "kaz": "62 – (50 + 10) өрнегіндегі қосылғыштардың орындарын ауыстырып, мәнін табыңыз.",
+          "eng": "",
+          "aze": "62 – (50 + 10) ifadəsində toplananların yerlərini dəyişin və qiymətini tapın.",
+          "arsa": "",
+          "arjd": "",
+          "areg": ""
+        }
+      },
+      "type": "Elixir.Task_2_6_12_6",
+      "position": 0,
+      "id": "cx-2_6_12_6-0",
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "62;;10;;50;;2",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      }
+    }
+  },
+  {
+    "group": "grade-3",
+    "count": 1,
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 40,
+        "input4": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": "",
+          "after": ""
+        },
+        "input3": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": "",
+          "after": "\\(+\\)"
+        },
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": "",
+          "after": "\\(+\\)"
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": "",
+          "after": "\\(+\\)"
+        },
+        "inline": true
+      },
+      "difficulty": "x1",
+      "result": "none",
+      "title": {
+        "with_audio_player": false,
+        "uzb": "To'rt xonali sonni, xona qo'shiluvchilari yig'indisi ko'rinishida yozing.\r\n(Minglik sonlar, yuzlik sonlar, o'nlik sonlar va birlik sonlarning yig'indisini yozish kerak)\r\n",
+        "rus": "Запишите четырехзначное число в виде суммы разрядных слагаемых.\r\n(Необходимо записать сумму единиц разрядов: тысячных, сотых, десятичных и единичных)\r\n",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "Төрт орундуу санды цифралык мүчөлөрдүн суммасы катары жазыңыз.\r\n(Миңдик, жүздүк, ондук жана бирдиктердин суммасын жазышыңыз керек)\r\n",
+        "kaz": "Төрт таңбалы санды разрядтық қосылғыштардың  қосындысы түрінде жазыңыз.\r\n(Мыңдық сандар, жүздік сандар, ондық сандар мен бірлік сандардың қосындысын жазу керек)\r\n",
+        "eng": "Write the four-digit number as a sum of place value addends.\r\n(You need to write the sum of thousands, hundreds, tens, and ones).\r\n",
+        "aze": "Dördrəqəmli ədədi mərtəbə vahidlərinin  cəmi kimi yazın.\r\n(Minliklər, yüzlüklər, onluqlar və təkliklərin cəmini yazmalısınız).\r\n",
+        "arsa": "",
+        "arjd": "",
+        "areg": "اكتب الصيغة الممتدة للعدد التالي.\r\n(يجب عليك كتابة مجموع الألوف والمئات والعشرات والآحاد)\r\n"
+      },
+      "fields": {
+        "units": 1,
+        "thousands": 5,
+        "tens": 8,
+        "hundreds": 2,
+        "difficulty": "x1"
+      },
+      "description": {
+        "with_audio": true,
+        "type": "text",
+        "content": "5281"
+      },
+      "type": "Elixir.Task_3_8_9",
+      "position": 0,
+      "id": "cx-3_8_9-0",
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "5000;;200;;80;;1",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,451 @@
+{
+  "defaultGrade": 6,
+  "grades": [
+    6
+  ],
+  "byGrade": {
+    "6": [
+      {
+        "id": "6_12_3_10",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 40,
+            "input4": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "Singlisi: ",
+                "rus": "Сестренка: ",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "Қарындасы: ",
+                "eng": "",
+                "aze": "Bacı",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              },
+              "after": {
+                "with_audio_player": false,
+                "uzb": "yosh",
+                "rus": " ",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "жас",
+                "eng": "",
+                "aze": "yaş",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              }
+            },
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "Abduali: ",
+                "rus": "Лео: ",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "Арман: ",
+                "eng": "",
+                "aze": "Aslan",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              },
+              "after": {
+                "with_audio_player": false,
+                "uzb": "yosh",
+                "rus": " ",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "жас",
+                "eng": "",
+                "aze": "yaş",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              }
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "Onasi: ",
+                "rus": "Мама: ",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "Анасы: ",
+                "eng": "",
+                "aze": "Ana",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              },
+              "after": {
+                "with_audio_player": false,
+                "uzb": "yosh",
+                "rus": " ",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "жас",
+                "eng": "",
+                "aze": "yaş",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              }
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "Otasi: ",
+                "rus": "Отец: ",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "Әкесі: ",
+                "eng": "",
+                "aze": "Ata",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              },
+              "after": {
+                "with_audio_player": false,
+                "uzb": "yosh",
+                "rus": " ",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "жас",
+                "eng": "",
+                "aze": "yaş",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              }
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number4": 91,
+            "number3": 68,
+            "number2": 4,
+            "number1": 5
+          },
+          "description": {
+            "with_audio": true,
+            "type": "text",
+            "content": {
+              "with_audio_player": false,
+              "uzb": "Abdualining uyida 4 kishi bor.\r\nBu yil to'rt kishining yoshlarining yig'indisi 91 yosh.\r\nAbdualining otasi onasidan 5 yosh katta, Abdualining o'zi esa singlisidan 4 yosh katta.\r\nOlti yil oldingi barch…",
+              "rus": "В доме Лео 4 человека.\r\nВ этом году сумма возрастов всех четверых составляет 91 год.\r\nОтец Лео старше матери на 5 лет, а сам Лео старше сестры на 4 года.\r\nЕсли шесть лет назад сумма возрастов четверых…",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "",
+              "kaz": "Арманның үйінде 4 адам бар. Биыл төртеуінің жастарының қосындысы 91 жас.\r\nАрманның әкесі анасынан 5 жас үлкен, Арман өзі қарындасынан 4 жасқа үлкен.\r\nАлты жыл бұрын барлығының жастарының қосындысы 68 …",
+              "eng": "",
+              "aze": "Aslanın evində 4 nəfər yaşayır.\r\nBu il dördünün də yaşlarının cəmi 91-dir.\r\nAslanın atası anasından 5 yaş, özü isə bacısından 4 yaş böyükdür.\r\nƏgər 6 il əvvəl dörd nəfərin yaşlarının cəmi 68 idisə, bu…",
+              "arsa": "",
+              "arjd": "",
+              "areg": ""
+            }
+          },
+          "type": "Elixir.Task_6_12_3_10",
+          "position": 0,
+          "id": "cx-6_12_3_10-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "41;;36;;9;;5",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            41,
+            36,
+            9,
+            5
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "41;;36;;9;;5"
+        ],
+        "truncated": true,
+        "layoutByPayload": "text.multi.stack.n4.beforeAfter",
+        "inputExtras": [],
+        "kazOnlyLabels": true,
+        "group": "grade-6"
+      },
+      {
+        "id": "6_9_1_9",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 40,
+            "input4": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "Erkli oʻzgaruvchi:",
+                "rus": "независимая переменная:",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "Эркүзөк өзгөрмө:",
+                "kaz": "тәуелсіз айнымалы:",
+                "eng": " an independent variable:",
+                "aze": "Sərbəst dəyişən:",
+                "arsa": "",
+                "arjd": "",
+                "areg": "المتغير المستقل:"
+              },
+              "after": ""
+            },
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "Erksiz oʻzgaruvchi:",
+                "rus": "зависимая переменная:",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "Асылыктуу өзгөрмө:",
+                "kaz": "тәуелді айнымалы:",
+                "eng": "dependent variable:",
+                "aze": "Asılı dəyişən:",
+                "arsa": "",
+                "arjd": "",
+                "areg": "المتغير التابع:"
+              },
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "P = 98 bo'lsa, a =",
+                "rus": "если P = 98, то a =",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "P = 98 болсо, анда a =",
+                "kaz": "P = 98 болса, a =",
+                "eng": "if P = 98, then a =",
+                "aze": "P = 98 olarsa; a =",
+                "arsa": "",
+                "arjd": "إذا كان محيط المربع P = 98 سم، فإن طول الضلع S = ",
+                "areg": "إذا كان محيط المربع P = 98 سم، فإن طول الضلع a = "
+              },
+              "after": {
+                "with_audio_player": false,
+                "uzb": "cm",
+                "rus": "см",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "см",
+                "kaz": "см",
+                "eng": "cm",
+                "aze": "sm",
+                "arsa": "سم",
+                "arjd": "cm",
+                "areg": "سم"
+              }
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "P = 48 bo'lsa, a =",
+                "rus": "если P = 48, то a =",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "P = 48 болсо, анда a =",
+                "kaz": "P = 48 болса, a =",
+                "eng": "if P = 48, then a =",
+                "aze": "P = 48 olarsa; a =",
+                "arsa": "",
+                "arjd": "إذا كان محيط المربع P = 48 سم، فإن طول الضلع S = ",
+                "areg": "إذا كان محيط المربع P = 48 سم، فإن طول الضلع a = "
+              },
+              "after": {
+                "with_audio_player": false,
+                "uzb": "cm",
+                "rus": "см",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "см",
+                "kaz": "см",
+                "eng": "cm",
+                "aze": "sm",
+                "arsa": "سم",
+                "arjd": "cm",
+                "areg": "سم"
+              }
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {},
+          "description": {
+            "with_audio": true,
+            "type": "text",
+            "content": {
+              "with_audio_player": false,
+              "uzb": "Agar kvadratning perimetri 48 cm va 98 cm bo'lsa, (a) tomonini toping.\r\n",
+              "rus": "Если периметр квадрата равен 48 см и 98 см, то найдите его сторону.\r\n",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "Эгерде квадраттын периметри 48 см жана 98 см болсо, анда анын жагын табыңыз.\r\n",
+              "kaz": "Егер шаршының периметрі 48 см және 98 см болса, онда (a) қабырғасын табыңыз.\r\n",
+              "eng": "If the perimeter of the square is 48 cm and 98 cm, then find its side.\r\n",
+              "aze": "Əgər kvadratın perimetri 48 və 98 sm-dirsə, kvadratın tərəfini tapın.\r\n",
+              "arsa": "إذا كان لدينا مربعان، المربع الأول محيطه (cm)48، والمربع الثاني محيطه (cm)98، فجد طول ضلع كل منهما (s)، ثم أجب عن الأسئلة الآتية.",
+              "arjd": "إذا كان لدينا مربعان، المربع الأول محيطه (cm)48، والمربع الثاني محيطه (cm)98، فجد طول ضلع كل منهما (s)، ثم أجب عن الأسئلة الآتية.",
+              "areg": "إذا كان لدينا مربعان، المربع الأول محيطه 48 سم، والمربع الثاني محيطه 98 سم، فأوجد طول ضلع كل منهما a، ثم أجب عن الأسئلة التالية.\r\n"
+            }
+          },
+          "type": "Elixir.Task_6_9_1_9",
+          "position": 0,
+          "id": "cx-6_9_1_9-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "12;;24,5;;a;;P",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            12,
+            {
+              "sign": 1,
+              "module_name": "Elixir.MyDecimal",
+              "integer_part": 24,
+              "exp": -1,
+              "decimal_part": 5,
+              "coef": 245,
+              "_struct": "MyDecimal"
+            },
+            "a",
+            "P"
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "MyDecimal",
+          "int",
+          "str"
+        ],
+        "answerRuleOwned": false,
+        "accepted": [
+          "12;;24,5;;a;;P"
+        ],
+        "truncated": false,
+        "layoutByPayload": "text.multi.stack.n4.beforeAfter",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-6"
+      }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+[
+  {
+    "group": "grade-2",
+    "count": 1,
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 30,
+        "input3": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": "",
+          "after": ""
+        },
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": "",
+          "after": " + "
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": "",
+          "after": " = "
+        },
+        "inline": true
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": null,
+      "fields": {
+        "number3": 3,
+        "number2": 5,
+        "number1": 5
+      },
+      "description": {
+        "with_audio": true,
+        "type": "text",
+        "content": {
+          "with_audio_player": false,
+          "uzb": "G'ulom  ikkita son o‘yladi. Ularning kattasini xona qo‘shiluvchilariga quyidagicha ajratdi:\r\n55 = 50 + 5.\r\nAgar kichik son katta sondan 3 o‘nlikka kam bo‘lsa, kichik son xona qo‘shiluvchilariga qanday…",
+          "rus": "Сэм придумал два числа. Большое он разложил на разрядные слагаемые так:\r\n55 = 50 + 5.\r\nЕсли меньшее число на 3 десятка меньше большого, как разложить меньшее число на разрядные слагаемые?\r\n",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "",
+          "kaz": "Самат екі сан ойлады. Оның үлкенін разрядтық қосылғыштарға төмендегідей жіктеді:\r\n55 = 50 + 5.\r\nКіші сан үлкен саннан 3 ондыққа кем болса, кіші сан разрядтық қосылғыштарға қалай жіктеледі?\r\n",
+          "eng": "",
+          "aze": "Samir iki ədəd düşündü. Böyük ədədi mərtəbə toplananlarına belə ayırdı:\r\n55 = 50 + 5.\r\nƏgər kiçik ədəd böyük ədəddən 3 onluq azdırsa, kiçik ədədi mərtəbə toplananlarına necə ayırmaq olar?\r\n",
+          "arsa": "",
+          "arjd": "",
+          "areg": ""
+        }
+      },
+      "type": "Elixir.Task_2_2_10_16",
+      "position": 0,
+      "id": "cx-2_2_10_16-0",
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "25;;20;;5",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      }
+    }
+  }
+]

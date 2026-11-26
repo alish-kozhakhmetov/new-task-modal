@@ -1,0 +1,231 @@
+{
+  "attemptsCount": null,
+  "isPrimary": true,
+  "hasVideoUrl": false,
+  "isPenalty": false,
+  "answerInput": {
+    "type": 50,
+    "input5": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "\\(∠DOA = \\)",
+        "rus": "\\(∠DOA = \\)",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "\\(∠DOA = \\)",
+        "kaz": "\\(∠DOA = \\)",
+        "eng": "\\(∠DOA = \\)",
+        "aze": "\\(∠DOA = \\)",
+        "arsa": "\\(m∠DOA = \\)",
+        "arjd": "\\(m∠DOA = \\)",
+        "areg": "\\(m∠DOA = \\)"
+      },
+      "after": "\\(^{\\circ}\\)"
+    },
+    "input4": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "\\(∠DOB = \\)",
+        "rus": "\\(∠DOB = \\)",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "\\(∠DOB = \\)",
+        "kaz": "\\(∠DOB = \\)",
+        "eng": "\\(∠DOB = \\)",
+        "aze": "\\(∠DOB = \\)",
+        "arsa": "\\(m∠DOB = \\)",
+        "arjd": "\\(m∠DOB = \\)",
+        "areg": "\\(m∠DOB = \\)"
+      },
+      "after": "\\(^{\\circ}\\)"
+    },
+    "input3": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "\\(∠DOH = \\)",
+        "rus": "\\(∠DOH = \\)",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "\\(∠DOH = \\)",
+        "kaz": "\\(∠DOH = \\)",
+        "eng": "\\(∠DOH = \\)",
+        "aze": "\\(∠DOH = \\)",
+        "arsa": "\\(m∠DOH = \\)",
+        "arjd": "\\(m∠DOH = \\)",
+        "areg": "\\(m∠DOH = \\)"
+      },
+      "after": "\\(^{\\circ}\\)"
+    },
+    "input2": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "\\(∠HOA = \\)",
+        "rus": "\\(∠HOA = \\)",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "\\(∠HOA = \\)",
+        "kaz": "\\(∠HOA = \\)",
+        "eng": "\\(∠HOA = \\)",
+        "aze": "\\(∠HOA = \\)",
+        "arsa": "\\(m∠HOA = \\)",
+        "arjd": "\\(m∠HOA = \\)",
+        "areg": "\\(m∠HOA = \\)"
+      },
+      "after": "\\(^{\\circ}\\)"
+    },
+    "input1": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "\\(∠AOB = \\)",
+        "rus": "\\(∠AOB = \\)",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "\\(∠AOB = \\)",
+        "kaz": "\\(∠AOB = \\)",
+        "eng": "\\(∠AOB = \\)",
+        "aze": "\\(∠AOB = \\)",
+        "arsa": "\\(m∠AOB = \\)",
+        "arjd": "\\(m∠AOB = \\)",
+        "areg": "\\(m∠AOB = \\)"
+      },
+      "after": "\\(^{\\circ}\\)"
+    },
+    "inline": false
+  },
+  "difficulty": null,
+  "result": "none",
+  "title": null,
+  "fields": {
+    "number3": 60,
+    "number2": 45,
+    "number1": 24,
+    "letter5": "D",
+    "letter4": "H",
+    "letter3": "A",
+    "letter2": "B",
+    "letter1": "O"
+  },
+  "description": {
+    "type": "complex",
+    "parts": [
+      {
+        "type": 10,
+        "content": {
+          "with_audio_player": false,
+          "uzb": "Burchaklarning gradus o'lchovlarini yozing.",
+          "rus": "Запишите градусную меру углов.",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "Бурчтардын градустук ченин жазыңыз.",
+          "kaz": "Бұрыштардың градустық өлшемдерін жазыңыз.",
+          "eng": "Write the degree measure of the angles.",
+          "aze": "Bucaqların dərəcə ölçüsünü yazın.",
+          "arsa": "اكتب قياس كل زاوية من الزوايا التالية",
+          "arjd": "اكتب (بالدرجات) قياس الزوايا الموضّحة أمامك.",
+          "areg": "اكتب قياس درجة كل زاوية من الزوايا التالية."
+        }
+      },
+      {
+        "type": 50,
+        "showProtractor": false,
+        "showOverallAngle": false,
+        "list": [
+          {
+            "text": "",
+            "isTextVisible": false,
+            "isCurveVisible": false,
+            "dot": {
+              "letter": "B"
+            },
+            "degree": 12
+          },
+          {
+            "text": "24°",
+            "isTextVisible": true,
+            "isCurveVisible": true,
+            "dot": {
+              "letter": "A"
+            },
+            "degree": 24
+          },
+          {
+            "text": "45°",
+            "isTextVisible": true,
+            "isCurveVisible": true,
+            "dot": {
+              "letter": "H"
+            },
+            "degree": 45
+          },
+          {
+            "text": "60°",
+            "isTextVisible": true,
+            "isCurveVisible": true,
+            "dot": {
+              "letter": "D"
+            },
+            "degree": 60
+          }
+        ],
+        "centerPointLetter": "O"
+      }
+    ],
+    "isCalculatorClosed": false,
+    "isAnswerCellHidden": false
+  },
+  "type": "Elixir.Task_5_6_5_3",
+  "position": 0,
+  "id": "cx-5_6_5_3-0",
+  "hint1": null,
+  "hint2": null,
+  "videoId": null,
+  "videoUrl": null,
+  "solution": {
+    "type": "formula",
+    "answer": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "24;;45;;60;;129;;105",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    },
+    "content": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    }
+  }
+}

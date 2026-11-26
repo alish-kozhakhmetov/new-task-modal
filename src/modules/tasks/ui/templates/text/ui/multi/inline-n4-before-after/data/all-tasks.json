@@ -1,0 +1,194 @@
+{
+  "defaultGrade": 11,
+  "grades": [
+    11
+  ],
+  "byGrade": {
+    "11": [
+      {
+        "id": "11_4_6_9",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 40,
+            "input4": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": "\\()\\)"
+            },
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": "\\( ; \\)"
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\( ; \\)",
+                "rus": "\\( ; \\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\( ; \\)",
+                "kaz": "\\( ; \\)",
+                "eng": "\\( ; \\)",
+                "aze": "\\( ; \\)",
+                "arsa": "\\( ; \\)",
+                "arjd": "\\( ; \\)",
+                "areg": "\\( ; \\)"
+              },
+              "after": {
+                "with_audio_player": false,
+                "uzb": "\\() \\ va \\ (\\)",
+                "rus": "\\() \\ и \\ (\\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\() \\ жана \\ (\\)",
+                "kaz": "\\() \\ және \\ (\\)",
+                "eng": "\\() \\ and \\ (\\)",
+                "aze": "\\() \\ və \\ (\\)",
+                "arsa": ") \\ ، \\ (",
+                "arjd": ") \\ و \\ (",
+                "areg": ") \\ ، \\ ("
+              }
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\((\\)",
+                "rus": "\\((\\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\((\\)",
+                "kaz": "\\((\\)",
+                "eng": "\\((\\)",
+                "aze": "\\((\\)",
+                "arsa": "\\((\\)",
+                "arjd": "\\((\\)",
+                "areg": "\\((\\)"
+              },
+              "after": ""
+            },
+            "inline": true
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "Tenglamalar sistemasini yeching.",
+            "rus": "Решите систему уравнений:",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Теңдемелер системасын чыгарыңыз.",
+            "kaz": "Теңдеулер жүйесін шешіңіз:",
+            "eng": "Solve system of equations:",
+            "aze": "Tənliklər sistemini həll edin:",
+            "arsa": "حل نظام المعادلات الآتي:",
+            "arjd": "حل نظام المعادلات الآتي:",
+            "areg": "حِل نظام معادلتين"
+          },
+          "fields": {
+            "number2": 5,
+            "number1": 6
+          },
+          "description": {
+            "with_audio": true,
+            "type": "text",
+            "content": "\\(\\left\\{ \\begin{array}{l}\r\n\\sqrt{x + y} + \\sqrt{x - y} = 6\\\\\\sqrt{x^{2} - y^{2}} = 5\r\n\\end{array} \\right.\r\n\\)"
+          },
+          "type": "Elixir.Task_11_4_6_9",
+          "position": 0,
+          "id": "cx-11_4_6_9-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "13;;-12;;13;;12",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "answers": [
+            {
+              "separator": true,
+              "answers": [
+                13,
+                -12,
+                13,
+                12
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                13,
+                12,
+                13,
+                -12
+              ],
+              "_struct": "MultipleTaskAnswer"
+            }
+          ],
+          "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+        },
+        "answerElixirType": "TaskAnswers.AnyOfThemTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "13;;-12;;13;;12",
+          "13;;12;;13;;-12"
+        ],
+        "truncated": false,
+        "layoutByPayload": "text.multi.inline.n4.beforeAfter",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-11"
+      }
+    ]
+  }
+}

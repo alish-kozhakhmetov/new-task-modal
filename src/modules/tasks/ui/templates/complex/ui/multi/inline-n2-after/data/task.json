@@ -1,0 +1,168 @@
+{
+  "attemptsCount": null,
+  "isPrimary": true,
+  "hasVideoUrl": false,
+  "isPenalty": false,
+  "answerInput": {
+    "type": 20,
+    "input2": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": "",
+      "after": {
+        "with_audio_player": false,
+        "uzb": "cm",
+        "rus": "см",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "см",
+        "kaz": "см",
+        "eng": "cm",
+        "aze": "sm",
+        "arsa": "سم",
+        "arjd": "cm",
+        "areg": "سم"
+      }
+    },
+    "input1": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": "",
+      "after": {
+        "with_audio_player": false,
+        "uzb": "dm",
+        "rus": "дм",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "",
+        "kaz": "дм",
+        "eng": "dm",
+        "aze": "dm",
+        "arsa": "",
+        "arjd": "dm",
+        "areg": "دسم"
+      }
+    },
+    "inline": true
+  },
+  "difficulty": null,
+  "result": "none",
+  "title": null,
+  "fields": {
+    "number1": 14
+  },
+  "description": {
+    "type": "complex",
+    "parts": [
+      {
+        "type": 10,
+        "content": {
+          "with_audio_player": false,
+          "uzb": "Rasmda berilgan kesmaning uzunligi necha dm necha cm? 1 katak = 1 cm deb hisoblang.",
+          "rus": "Какова длина отрезка, приведённого на рисунке, в дм и см? Считайте 1 клетка = 1 см.",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "",
+          "kaz": "Cуретте берілген кесіндінің ұзындығы неше дм неше см? 1 торкөз  = 1 см деп есептеңіз.\r\n",
+          "eng": "",
+          "aze": "Şəkildə göstərilən parçanın uzunluğu neçə dm və neçə sm-dir? Hesablayın: 1 xana = 1 sm.",
+          "arsa": "",
+          "arjd": "",
+          "areg": ""
+        }
+      },
+      {
+        "yAxisLabel": "y",
+        "xAxisLabel": "x",
+        "type": 110,
+        "tickStepYMultiply": 1,
+        "tickStepXMultiply": 1,
+        "tickStep": 1,
+        "stepSize": 30,
+        "startNumber": false,
+        "showCells": true,
+        "showAxis": false,
+        "reduceHeight": 2,
+        "points": [],
+        "notClickableDots": true,
+        "minPosition": -8,
+        "maxPosition": 8,
+        "limitedPoint": 0,
+        "isLine": false,
+        "isFullFilled": false,
+        "isFillingLimitedByAxis": false,
+        "intervals": [],
+        "fillingFunctions": [],
+        "figures": [
+          {
+            "type": 30,
+            "showDotLetters": true,
+            "point2": {
+              "y": 0,
+              "x": 7,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": ""
+            },
+            "point1": {
+              "y": 0,
+              "x": -7,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": ""
+            },
+            "lineColor": "black",
+            "dotRadius": 4,
+            "degree": 0,
+            "dashed": false
+          }
+        ],
+        "drawingFigure": 30,
+        "displayedNumbers": [],
+        "disabledPoints": [],
+        "canFill": false,
+        "canDrawMultipleFigures": false,
+        "allowedFigures": []
+      }
+    ],
+    "isCalculatorClosed": false,
+    "isAnswerCellHidden": false
+  },
+  "type": "Elixir.Task_2_10_2_25",
+  "position": 0,
+  "id": "cx-2_10_2_25-0",
+  "hint1": null,
+  "hint2": null,
+  "videoId": null,
+  "videoUrl": null,
+  "solution": {
+    "type": "formula",
+    "answer": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "1;;4",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    },
+    "content": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    }
+  }
+}

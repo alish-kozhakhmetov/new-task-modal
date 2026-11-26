@@ -1,0 +1,2272 @@
+[
+  {
+    "group": "grade-1",
+    "count": 1,
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 20,
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "Tanga:",
+            "rus": "Тенге:",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Сом:",
+            "kaz": "Теңге:",
+            "eng": "Cent:",
+            "aze": "Qəpik:",
+            "arsa": "",
+            "arjd": "",
+            "areg": "جنيه:"
+          },
+          "after": ""
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "Tangalar soni:",
+            "rus": "Количество монет:",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Монеталардын саны:",
+            "kaz": "Монеталар саны: ",
+            "eng": "Number of coins:",
+            "aze": "Sikkələrin sayı:",
+            "arsa": "",
+            "arjd": "",
+            "areg": "عدد العملات:"
+          },
+          "after": ""
+        },
+        "inline": false
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": null,
+      "fields": {
+        "numbers": [
+          20,
+          20,
+          20,
+          20
+        ]
+      },
+      "description": {
+        "type": "complex",
+        "parts": [
+          {
+            "type": 10,
+            "content": {
+              "with_audio_player": false,
+              "uzb": "Rasmdagi tangalarning sonini va umumiy narxini ko'rsating.",
+              "rus": "Укажите количество тенге и количество монет на картинке.",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "Сүрөттөгү акчанын саны менен монетанын санын көрсөтүңүз.",
+              "kaz": "Суреттегі теңге саны мен монеталардың санын көрсетіңіз.",
+              "eng": "Count the amount of cent and the number of coins in the picture.",
+              "aze": "Şəkildəki qəpiklərin sayını və sikkələrin dəyərini göstərin.",
+              "arsa": "",
+              "arjd": "",
+              "areg": "اجمع العملات الورقية من النقود التي تكون  في الصورة"
+            }
+          },
+          {
+            "with_number": "",
+            "type": 160,
+            "size": 50,
+            "repeat_quantity": 1,
+            "manually_set_size": false,
+            "is_wrap_content": false,
+            "is_vertical": false,
+            "countable": false,
+            "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +26332 chars</text></svg>",
+            "background_image": null
+          }
+        ],
+        "isCalculatorClosed": false,
+        "isAnswerCellHidden": false
+      },
+      "type": "Elixir.Task_1_20_1_15",
+      "position": 0,
+      "id": "cx-1_20_1_15-0",
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "4;;80",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      }
+    }
+  },
+  {
+    "group": "grade-2",
+    "count": 3,
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 20,
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "To‘garakka nechta qiz bola qatnashadi?",
+            "rus": "Сколько девочек участвуют в кружке?",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "",
+            "kaz": "Үйірмеге неше қыз қатысады?",
+            "eng": "",
+            "aze": "Dərnəyə neçə qız qatılır?",
+            "arsa": "",
+            "arjd": "",
+            "areg": ""
+          },
+          "after": ""
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "To‘garakka nechta o‘g‘il bola qatnashadi?",
+            "rus": "Сколько мальчиков участвуют в кружке?",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "",
+            "kaz": "Үйірмеге неше ұл қатысады?",
+            "eng": "",
+            "aze": "Dərnəyə neçə oğlan qatılır? ",
+            "arsa": "",
+            "arjd": "",
+            "areg": ""
+          },
+          "after": ""
+        },
+        "inline": false
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": null,
+      "fields": {
+        "number2": 20,
+        "number1": 80
+      },
+      "description": {
+        "type": "complex",
+        "parts": [
+          {
+            "type": 10,
+            "content": {
+              "with_audio_player": false,
+              "uzb": "Doiraviy diagrammada «dzyudo» to‘garagiga qatnashadigan o‘g‘il bolalar va qiz bolalar soni ko‘rsatilgan:",
+              "rus": "На круговой диаграмме показано количество мальчиков и девочек, участвующих в кружке «дзюдо».",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "",
+              "kaz": "Дөңгелек диаграммада «дзюдо» үйірмесіне қатысатын ұлдар мен қыздардың саны көрсетілген.\r\n",
+              "eng": "",
+              "aze": "Dairəvi diaqramda «cüdo» dərnəyində iştirak edən oğlan və qızların sayı göstərilib.",
+              "arsa": "",
+              "arjd": "",
+              "areg": ""
+            }
+          },
+          {
+            "with_number": "",
+            "type": 160,
+            "size": 50,
+            "repeat_quantity": 1,
+            "manually_set_size": false,
+            "is_wrap_content": false,
+            "is_vertical": false,
+            "countable": false,
+            "content": {
+              "with_audio_player": false,
+              "uzb": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +982 chars</text></svg>",
+              "rus": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +982 chars</text></svg>",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "",
+              "kaz": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +971 chars</text></svg>",
+              "eng": "",
+              "aze": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +974 chars</text></svg>",
+              "arsa": "",
+              "arjd": "",
+              "areg": ""
+            },
+            "background_image": null
+          }
+        ],
+        "isCalculatorClosed": false,
+        "isAnswerCellHidden": false
+      },
+      "type": "Elixir.Task_2_13_5_3",
+      "position": 0,
+      "id": "cx-2_13_5_3-0",
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "80;;20",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      }
+    }
+  },
+  {
+    "group": "grade-3",
+    "count": 4,
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 20,
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "",
+            "rus": "",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "",
+            "kaz": "Ең үлкен сан: ",
+            "eng": "",
+            "aze": "",
+            "arsa": "",
+            "arjd": "",
+            "areg": ""
+          },
+          "after": ""
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "",
+            "rus": "",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "",
+            "kaz": "Ең кіші сан: ",
+            "eng": "",
+            "aze": "",
+            "arsa": "",
+            "arjd": "",
+            "areg": ""
+          },
+          "after": ""
+        },
+        "inline": false
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": null,
+      "fields": {
+        "number3": 7,
+        "number2": 6,
+        "number1": 5
+      },
+      "description": {
+        "type": "complex",
+        "parts": [
+          {
+            "type": 10,
+            "content": {
+              "with_audio_player": false,
+              "uzb": "",
+              "rus": "",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "",
+              "kaz": "5; 6; 7 цифрларын пайдаланып, цифрлары қайталанбайтын үш таңбалы сандар жазыңыз.\r\n",
+              "eng": "",
+              "aze": "",
+              "arsa": "",
+              "arjd": "",
+              "areg": ""
+            }
+          }
+        ],
+        "isCalculatorClosed": false,
+        "isAnswerCellHidden": false
+      },
+      "type": "Elixir.Task_3_14_16_19",
+      "position": 0,
+      "id": "cx-3_14_16_19-0",
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "567;;765",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      }
+    }
+  },
+  {
+    "group": "grade-4",
+    "count": 1,
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 20,
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "y = ",
+            "rus": "y = ",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "y = ",
+            "kaz": "y = ",
+            "eng": "y = ",
+            "aze": "y = ",
+            "arsa": "y = ",
+            "arjd": "y = ",
+            "areg": "y = "
+          },
+          "after": ""
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "x = ",
+            "rus": "x = ",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "x = ",
+            "kaz": "x = ",
+            "eng": "x = ",
+            "aze": "x = ",
+            "arsa": "x = ",
+            "arjd": "x = ",
+            "areg": "x = "
+          },
+          "after": ""
+        },
+        "inline": false
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": null,
+      "fields": {
+        "numbers": [
+          [
+            6,
+            7,
+            2
+          ],
+          [
+            1,
+            5,
+            9
+          ],
+          [
+            8,
+            3,
+            4
+          ]
+        ],
+        "list_of_numbers": [
+          [
+            6,
+            7,
+            2
+          ],
+          [
+            1,
+            "\\(y\\)",
+            9
+          ],
+          [
+            8,
+            3,
+            "\\(x\\)"
+          ]
+        ],
+        "correct_answer_y": 5,
+        "correct_answer_x": 4
+      },
+      "description": {
+        "type": "complex",
+        "parts": [
+          {
+            "type": 10,
+            "content": {
+              "with_audio_player": false,
+              "uzb": "Sehrli kvadratdagi 1 dan 9 gacha sonlarni vertikal, gorizontal va diagonal bo'yicha qo'shsa bir xil qiymatni beradi.\r\\(\\\\\\)\\(x\\) va \\(y\\) ning o'rniga mos keladigan sonlarni toping.\r\\(\\\\\\)",
+              "rus": "Если числа от 1 до 9 в магическом квадрате сложить по вертикали и по горизонтали, получится одно и то же значение.\r\\(\\\\\\)Найдите значения, которые соответствуют позициям \\(x\\) и \\(y\\).\r\\(\\\\\\)",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "",
+              "kaz": "Сиқырлы шаршыдағы 1-ден 9-ға дейінгі сандарды тігінен, көлденеңінен және диагональ бойынша (қиғаштап) қосса, бірдей мәнді береді.\r\\(\\\\\\)\\(x\\)–тің және \\(y\\)–тің орнына сәйкес келетін сандарды табыңыз.…",
+              "eng": "",
+              "aze": "Sehirli qəfəsdə 1-dən 9-a qədər ədədləri həm şaquli, həm üfüqi, həm də diaqonal boyunca topladıqda eyni qiymət alınır.\r\\(\\\\\\)\\(x\\) və \\(y\\)-in yerinə uyğun gələn ədədi tapın.\r\\(\\\\\\)",
+              "arsa": "",
+              "arjd": "",
+              "areg": ""
+            }
+          },
+          {
+            "width": "100%",
+            "type": 120,
+            "tableAlign": "center",
+            "rows": [
+              {
+                "width": null,
+                "rowspan_list": [],
+                "rowspan_at": 0,
+                "rowspan": 1,
+                "colspan_list": [],
+                "colspan_at": 0,
+                "colspan": 1,
+                "cells": [
+                  "6",
+                  "7",
+                  "2"
+                ],
+                "border_bottom": null
+              },
+              {
+                "width": null,
+                "rowspan_list": [],
+                "rowspan_at": 0,
+                "rowspan": 1,
+                "colspan_list": [],
+                "colspan_at": 0,
+                "colspan": 1,
+                "cells": [
+                  "1",
+                  "\\(y\\)",
+                  "9"
+                ],
+                "border_bottom": null
+              },
+              {
+                "width": null,
+                "rowspan_list": [],
+                "rowspan_at": 0,
+                "rowspan": 1,
+                "colspan_list": [],
+                "colspan_at": 0,
+                "colspan": 1,
+                "cells": [
+                  "8",
+                  "3",
+                  "\\(x\\)"
+                ],
+                "border_bottom": null
+              }
+            ],
+            "removePadding": false,
+            "removeBorders": false,
+            "padding": null,
+            "marginBottom": null,
+            "isAnswerCellHidden": true,
+            "columnHeaders": [],
+            "columnAlign": "center",
+            "bottomVarticalAlign": false,
+            "border": ""
+          }
+        ],
+        "isCalculatorClosed": false,
+        "isAnswerCellHidden": false
+      },
+      "type": "Elixir.Task_4_13_3_2",
+      "position": 0,
+      "id": "cx-4_13_3_2-0",
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "4;;5",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      }
+    }
+  },
+  {
+    "group": "grade-5",
+    "count": 5,
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 20,
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "\\(y = \\)",
+            "rus": "\\(y = \\)",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "\\(y = \\)",
+            "kaz": "\\(y = \\)",
+            "eng": "\\(y = \\)",
+            "aze": "\\(y = \\)",
+            "arsa": "",
+            "arjd": "\\(y = \\)",
+            "areg": "y = "
+          },
+          "after": ""
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "\\(x = \\)",
+            "rus": "\\(x = \\)",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "\\(x = \\)",
+            "kaz": "\\(x = \\)",
+            "eng": "\\(x = \\)",
+            "aze": "\\(x = \\)",
+            "arsa": "",
+            "arjd": "\\(x = \\)",
+            "areg": "x = "
+          },
+          "after": ""
+        },
+        "inline": false
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": null,
+      "fields": {
+        "g": 8,
+        "f": 9,
+        "e": 4,
+        "d": 5,
+        "c": 7,
+        "b": 6,
+        "a": 3
+      },
+      "description": {
+        "type": "complex",
+        "parts": [
+          {
+            "type": 10,
+            "content": {
+              "with_audio_player": false,
+              "uzb": "Quyidagi maʼlumotlardan foydalanib, Eyler-Venn diagrammasidagi \\(x\\) va \\(y\\) oʻrniga tegishli sonni yozing:",
+              "rus": "Используя следующую информацию, впишите соответствующее число вместо \\(x\\) и \\(y\\) на диаграмме Эйлера–Венна.",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "",
+              "kaz": "Келесі ақпараттарды қолданып, Эйлер-Венн диаграммасындағы \\(x\\) және \\(y\\)-тің орнына тиісті элементтер санын жазыңыз:",
+              "eng": "",
+              "aze": "Aşağıdakı məlumatdan istifadə edərək Eyler–Venn diaqramında \\(x\\) və \\(y\\) yerinə uyğun ədədi yazın.",
+              "arsa": "",
+              "arjd": "",
+              "areg": ""
+            }
+          },
+          {
+            "type": 10,
+            "content": {
+              "with_audio_player": false,
+              "uzb": "\\(n(A) = 24,\r\\)\\(\\\\\\)\\(n(B) = 18,\r\\)\\(\\\\\\)\\(n(C) = 23,\r\\)\\(\\\\\\)\\(n(A∩B) = 9,\r\\)\\(\\\\\\)\\(n(B∩C) = 7,\r\\)\\(\\\\\\)\\(n(A∩C) = 10,\r\\)\\(\\\\\\)\\(n(A∩B∩C) = 3.\\)",
+              "rus": "\\(n(A) = 24,\r\\)\\(\\\\\\)\\(n(B) = 18,\r\\)\\(\\\\\\)\\(n(C) = 23,\r\\)\\(\\\\\\)\\(n(A∩B) = 9,\r\\)\\(\\\\\\)\\(n(B∩C) = 7,\r\\)\\(\\\\\\)\\(n(A∩C) = 10,\r\\)\\(\\\\\\)\\(n(A∩B∩C) = 3.\\)",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "\\(n(A) = 24,\r\\)\\(\\\\\\)\\(n(B) = 18,\r\\)\\(\\\\\\)\\(n(C) = 23,\r\\)\\(\\\\\\)\\(n(A∩B) = 9,\r\\)\\(\\\\\\)\\(n(B∩C) = 7,\r\\)\\(\\\\\\)\\(n(A∩C) = 10,\r\\)\\(\\\\\\)\\(n(A∩B∩C) = 3.\\)",
+              "kaz": "\\(n(A) = 24,\r\\)\\(\\\\\\)\\(n(B) = 18,\r\\)\\(\\\\\\)\\(n(C) = 23,\r\\)\\(\\\\\\)\\(n(A∩B) = 9,\r\\)\\(\\\\\\)\\(n(B∩C) = 7,\r\\)\\(\\\\\\)\\(n(A∩C) = 10,\r\\)\\(\\\\\\)\\(n(A∩B∩C) = 3.\\)",
+              "eng": "\\(n(A) = 24,\r\\)\\(\\\\\\)\\(n(B) = 18,\r\\)\\(\\\\\\)\\(n(C) = 23,\r\\)\\(\\\\\\)\\(n(A∩B) = 9,\r\\)\\(\\\\\\)\\(n(B∩C) = 7,\r\\)\\(\\\\\\)\\(n(A∩C) = 10,\r\\)\\(\\\\\\)\\(n(A∩B∩C) = 3.\\)",
+              "aze": "\\(n(A) = 24,\r\\)\\(\\\\\\)\\(n(B) = 18,\r\\)\\(\\\\\\)\\(n(C) = 23,\r\\)\\(\\\\\\)\\(n(A∩B) = 9,\r\\)\\(\\\\\\)\\(n(B∩C) = 7,\r\\)\\(\\\\\\)\\(n(A∩C) = 10,\r\\)\\(\\\\\\)\\(n(A∩B∩C) = 3.\\)",
+              "arsa": "\\(n(A) = 24,\r\\)\\(\\\\\\)\\(n(B) = 18,\r\\)\\(\\\\\\)\\(n(C) = 23,\r\\)\\(\\\\\\)\\(n(A∩B) = 9,\r\\)\\(\\\\\\)\\(n(B∩C) = 7,\r\\)\\(\\\\\\)\\(n(A∩C) = 10,\r\\)\\(\\\\\\)\\(n(A∩B∩C) = 3.\\)",
+              "arjd": "\\(n(A) = 24,\r\\)\\(\\\\\\)\\(n(B) = 18,\r\\)\\(\\\\\\)\\(n(C) = 23,\r\\)\\(\\\\\\)\\(n(A∩B) = 9,\r\\)\\(\\\\\\)\\(n(B∩C) = 7,\r\\)\\(\\\\\\)\\(n(A∩C) = 10,\r\\)\\(\\\\\\)\\(n(A∩B∩C) = 3.\\)",
+              "areg": "\\(n(A) = 24,\r\\)\\(\\\\\\)\\(n(B) = 18,\r\\)\\(\\\\\\)\\(n(C) = 23,\r\\)\\(\\\\\\)\\(n(A∩B) = 9,\r\\)\\(\\\\\\)\\(n(B∩C) = 7,\r\\)\\(\\\\\\)\\(n(A∩C) = 10,\r\\)\\(\\\\\\)\\(n(A∩B∩C) = 3.\\)"
+            },
+            "center": false
+          },
+          {
+            "yAxisLabel": "y",
+            "xAxisLabel": "x",
+            "type": 110,
+            "tickStepYMultiply": 1,
+            "tickStepXMultiply": 1,
+            "tickStep": 1,
+            "stepSize": 30,
+            "startNumber": false,
+            "showCells": false,
+            "showAxis": false,
+            "reduceHeight": 1,
+            "points": [],
+            "notClickableDots": true,
+            "minPosition": -3,
+            "maxPosition": 4,
+            "limitedPoint": 0,
+            "isLine": false,
+            "isFullFilled": false,
+            "isFillingLimitedByAxis": false,
+            "intervals": [],
+            "fillingFunctions": [],
+            "figures": [
+              {
+                "type": 60,
+                "strokeColor": "red",
+                "radius": 2,
+                "innerColor": "transparent",
+                "dashed": false,
+                "centerPoint": {
+                  "y": 2,
+                  "x": 1.2,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                }
+              },
+              {
+                "type": 60,
+                "strokeColor": "black",
+                "radius": 2,
+                "innerColor": "transparent",
+                "dashed": false,
+                "centerPoint": {
+                  "y": 2,
+                  "x": -1.2,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                }
+              },
+              {
+                "type": 60,
+                "strokeColor": "#00BFFF",
+                "radius": 2,
+                "innerColor": "transparent",
+                "dashed": false,
+                "centerPoint": {
+                  "y": -0.2,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                }
+              },
+              {
+                "y": 2,
+                "x": 2,
+                "type": 100,
+                "textAnchor": null,
+                "text": "5",
+                "isLatex": false,
+                "fontWeight": null,
+                "fontSize": 23,
+                "dominantBaseline": null,
+                "degree": 0
+              },
+              {
+                "y": 2.3,
+                "x": 0,
+                "type": 100,
+                "textAnchor": null,
+                "text": "6",
+                "isLatex": false,
+                "fontWeight": null,
+                "fontSize": 23,
+                "dominantBaseline": null,
+                "degree": 0
+              },
+              {
+                "y": 2.7,
+                "x": -2.2,
+                "type": 100,
+                "textAnchor": null,
+                "text": "\\(x\\)",
+                "isLatex": true,
+                "fontWeight": null,
+                "fontSize": 30,
+                "dominantBaseline": null,
+                "degree": 0
+              },
+              {
+                "y": 1.15,
+                "x": 0,
+                "type": 100,
+                "textAnchor": null,
+                "text": "3",
+                "isLatex": false,
+                "fontWeight": null,
+                "fontSize": 23,
+                "dominantBaseline": null,
+                "degree": 0
+              },
+              {
+                "y": 0.6,
+                "x": 1,
+                "type": 100,
+                "textAnchor": null,
+                "text": "4",
+                "isLatex": false,
+                "fontWeight": null,
+                "fontSize": 23,
+                "dominantBaseline": null,
+                "degree": 0
+              },
+              {
+                "y": 0.6,
+                "x": -1,
+                "type": 100,
+                "textAnchor": null,
+                "text": "7",
+                "isLatex": false,
+                "fontWeight": null,
+                "fontSize": 23,
+                "dominantBaseline": null,
+                "degree": 0
+              },
+              {
+                "y": -0.2,
+                "x": -0.2,
+                "type": 100,
+                "textAnchor": null,
+                "text": "\\(y\\)",
+                "isLatex": true,
+                "fontWeight": null,
+                "fontSize": 30,
+                "dominantBaseline": null,
+                "degree": 0
+              },
+              {
+                "y": 4.5,
+                "x": -1.5,
+                "type": 100,
+                "textAnchor": null,
+                "text": "A",
+                "isLatex": false,
+                "fontWeight": null,
+                "fontSize": 23,
+                "dominantBaseline": null,
+                "degree": 0
+              },
+              {
+                "y": 4.5,
+                "x": 1.5,
+                "type": 100,
+                "textAnchor": null,
+                "text": "B",
+                "isLatex": false,
+                "fontWeight": null,
+                "fontSize": 23,
+                "dominantBaseline": null,
+                "degree": 0
+              },
+              {
+                "y": -2.5,
+                "x": 0.6,
+                "type": 100,
+                "textAnchor": null,
+                "text": "C",
+                "isLatex": false,
+                "fontWeight": null,
+                "fontSize": 23,
+                "dominantBaseline": null,
+                "degree": 0
+              }
+            ],
+            "drawingFigure": 0,
+            "displayedNumbers": [],
+            "disabledPoints": [],
+            "canFill": false,
+            "canDrawMultipleFigures": false,
+            "allowedFigures": []
+          }
+        ],
+        "isCalculatorClosed": false,
+        "isAnswerCellHidden": false
+      },
+      "type": "Elixir.Task_5_5_4_9",
+      "position": 0,
+      "id": "cx-5_5_4_9-0",
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "8;;9",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      }
+    }
+  },
+  {
+    "group": "grade-6",
+    "count": 6,
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 20,
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "Ko'rinmas qirralarning soni:",
+            "rus": "Количество невидимых ребер:",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Көрүнбөгөн грандарынын саны:",
+            "kaz": "Көрінбейтін қырларының саны:",
+            "eng": "Number of invisible edges:",
+            "aze": "Görünməyən tillərin sayı:",
+            "arsa": "",
+            "arjd": "",
+            "areg": " عدد الأحرف غير المرئية: "
+          },
+          "after": ""
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "Ko'rinadigan qirralarning soni:",
+            "rus": "Количество видимых ребер:",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Көрүнгөн грандарынын саны:",
+            "kaz": "Көрінетін қырларының саны:",
+            "eng": "Number of visible edges:",
+            "aze": "Görünən tillərin sayı:",
+            "arsa": "",
+            "arjd": "",
+            "areg": " عدد الأحرف المرئية: "
+          },
+          "after": ""
+        },
+        "inline": false
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": null,
+      "fields": {},
+      "description": {
+        "type": "complex",
+        "parts": [
+          {
+            "type": 10,
+            "content": {
+              "with_audio_player": false,
+              "uzb": "Kubni tekislikda tasvirlaganda uning ko'rinadigan va ko'rinmas qirralari sonini hisoblang:\r\n",
+              "rus": "Вычислите количество видимых и невидимых ребер куба при изображении его на плоскости.\r\n",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "Кубду тегиздикте сүрөттөөдө анын көрүнгөн жана көрүнбөгөн кырларынын санын эсептеңиз.\r\n",
+              "kaz": "Кубты жазықтықта кескіндегенде оның көрінетін қырларының және көрінбейтін қырларының санын есептеңіз.\r\n",
+              "eng": "Calculate the number of visible and invisible edges of a cube when it is projected onto a plane.\r\n",
+              "aze": "Müstəvidə kubun görünən və görünməyən tillərinin sayını sayın.",
+              "arsa": "كم عدد الأحرف المرئية وغير المرئية في المجسم التالي",
+              "arjd": "كم عدد الأحرف المرئية وغير المرئية في المجسم التالي",
+              "areg": "كم عدد الأحرف المرئية وغير المرئية في المجسم التالي؟"
+            }
+          },
+          {
+            "yAxisLabel": "y",
+            "xAxisLabel": "x",
+            "type": 110,
+            "tickStepYMultiply": 1,
+            "tickStepXMultiply": 1,
+            "tickStep": 1,
+            "stepSize": 30,
+            "startNumber": false,
+            "showCells": false,
+            "showAxis": false,
+            "reduceHeight": 1,
+            "points": [],
+            "notClickableDots": true,
+            "minPosition": -2,
+            "maxPosition": 2,
+            "limitedPoint": 0,
+            "isLine": false,
+            "isFullFilled": false,
+            "isFillingLimitedByAxis": false,
+            "intervals": [],
+            "fillingFunctions": [],
+            "figures": [
+              {
+                "type": 50,
+                "showPointsLetter": false,
+                "rotateDegree": 0,
+                "points": [
+                  {
+                    "y": 1,
+                    "x": -2,
+                    "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                    "letter": ""
+                  },
+                  {
+                    "y": -2,
+                    "x": -2,
+                    "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                    "letter": ""
+                  },
+                  {
+                    "y": -2,
+                    "x": 1,
+                    "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                    "letter": ""
+                  },
+                  {
+                    "y": 1,
+                    "x": 1,
+                    "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                    "letter": ""
+                  }
+                ],
+                "fill": "transparent",
+                "borderColor": "black"
+              },
+              {
+                "type": 50,
+                "showPointsLetter": false,
+                "rotateDegree": 0,
+                "points": [
+                  {
+                    "y": 1,
+                    "x": -2,
+                    "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                    "letter": ""
+                  },
+                  {
+                    "y": 2,
+                    "x": -0.5,
+                    "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                    "letter": ""
+                  },
+                  {
+                    "y": 2,
+                    "x": 2.5,
+                    "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                    "letter": ""
+                  },
+                  {
+                    "y": 1,
+                    "x": 1,
+                    "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                    "letter": ""
+                  }
+                ],
+                "fill": "transparent",
+                "borderColor": "black"
+              },
+              {
+                "type": 50,
+                "showPointsLetter": false,
+                "rotateDegree": 0,
+                "points": [
+                  {
+                    "y": 1,
+                    "x": 1,
+                    "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                    "letter": ""
+                  },
+                  {
+                    "y": 2,
+                    "x": 2.5,
+                    "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                    "letter": ""
+                  },
+                  {
+                    "y": -1,
+                    "x": 2.5,
+                    "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                    "letter": ""
+                  },
+                  {
+                    "y": -2,
+                    "x": 1,
+                    "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                    "letter": ""
+                  }
+                ],
+                "fill": "transparent",
+                "borderColor": "black"
+              },
+              {
+                "type": 30,
+                "showDotLetters": false,
+                "point2": {
+                  "y": 2,
+                  "x": -0.5,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "point1": {
+                  "y": -1,
+                  "x": -0.5,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "lineColor": "black",
+                "dotRadius": 0,
+                "degree": 0,
+                "dashed": true
+              },
+              {
+                "type": 30,
+                "showDotLetters": false,
+                "point2": {
+                  "y": -2,
+                  "x": -2,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "point1": {
+                  "y": -1,
+                  "x": -0.5,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "lineColor": "black",
+                "dotRadius": 0,
+                "degree": 0,
+                "dashed": true
+              },
+              {
+                "type": 30,
+                "showDotLetters": false,
+                "point2": {
+                  "y": -1,
+                  "x": 2.5,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "point1": {
+                  "y": -1,
+                  "x": -0.5,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "lineColor": "black",
+                "dotRadius": 0,
+                "degree": 0,
+                "dashed": true
+              }
+            ],
+            "drawingFigure": 0,
+            "displayedNumbers": [],
+            "disabledPoints": [],
+            "canFill": false,
+            "canDrawMultipleFigures": false,
+            "allowedFigures": []
+          }
+        ],
+        "isCalculatorClosed": false,
+        "isAnswerCellHidden": false
+      },
+      "type": "Elixir.Task_6_7_2_1",
+      "position": 0,
+      "id": "cx-6_7_2_1-0",
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "9;;3",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      }
+    }
+  },
+  {
+    "group": "grade-7",
+    "count": 5,
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 20,
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "Funksiyaning eng katta qiymati:",
+            "rus": "Наибольшее значение функции:",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Функциянын эң  чоң мааниси:",
+            "kaz": "Функцияның ең үлкен мәні:",
+            "eng": "The maximum value of the function:",
+            "aze": "Funksiyanın ən böyük qiyməti:",
+            "arsa": "أكبر قيمة للدالة:",
+            "arjd": "أكبر قيمة للدالة: ",
+            "areg": "أكبر قيمة للدالة: "
+          },
+          "after": ""
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "Funksiyaning eng kichik qiymati:",
+            "rus": "Наименьшее значение функции:",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Функциянын эң  кичине мааниси:",
+            "kaz": "Функцияның ең кіші мәні:",
+            "eng": "The minimum value of the function:",
+            "aze": "Funksiyanın ən kiçik qiyməti:",
+            "arsa": "أصغر قيمة للدالة:",
+            "arjd": "أصغر قيمة للدالة: ",
+            "areg": "أصغر قيمة للدالة: "
+          },
+          "after": ""
+        },
+        "inline": false
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": null,
+      "fields": {
+        "y2": 10,
+        "y1": -2
+      },
+      "description": {
+        "type": "complex",
+        "parts": [
+          {
+            "type": 10,
+            "content": {
+              "with_audio_player": false,
+              "uzb": "Grafikning rang bilan ajratilgan qismidan foydalanib, funksiyaning eng katta va eng kichik qiymatlarini toping.",
+              "rus": "Используя выделенную цветом часть графика, найдите наибольшее и наименьшее значения функции.\r\n",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "Графиктин боёк менен бөлүнгөн бөлүгун колдонуп, функциянын эң чоң жана эң кичине маанилерин табыңыз.\r\n",
+              "kaz": "Графиктің түспен белгіленген бөлігін қолданып, функцияның ең үлкен және ең кіші мәндерін табыңыз.\r\n",
+              "eng": "Using the highlighted portion of the graph, find the largest and smallest values ​​of the function.\r\n",
+              "aze": "Qrafikin rənglənmiş hissəsindən istifadə edərək funksiyanın ən böyük və ən kiçik qiymətlərini tapın.\r\n",
+              "arsa": "أوجد القيمتين الكبرى والصغرى للدالة الآتية باستخدام الجزء الملون من رسمها البياني.",
+              "arjd": "جد القيمتين الكبرى والصغرى للدالة الآتية باستخدام الجزء الملون من رسمها البياني.",
+              "areg": "أوجد القيمتين الكبرى والصغرى للدالة التالية باستخدام الجزء الملون من رسمها البياني."
+            }
+          },
+          {
+            "yAxisLabel": "y",
+            "xAxisLabel": "x",
+            "type": 110,
+            "tickStepYMultiply": 1,
+            "tickStepXMultiply": 1,
+            "tickStep": 1,
+            "stepSize": 30,
+            "startNumber": false,
+            "showCells": true,
+            "showAxis": true,
+            "reduceHeight": 1,
+            "points": [],
+            "notClickableDots": true,
+            "minPosition": -10,
+            "maxPosition": 10,
+            "limitedPoint": 0,
+            "isLine": false,
+            "isFullFilled": false,
+            "isFillingLimitedByAxis": false,
+            "intervals": [],
+            "fillingFunctions": [],
+            "figures": [
+              {
+                "vertex": {
+                  "y": 0,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "type": 130,
+                "point": {
+                  "y": 1,
+                  "x": 1,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "dashed": true
+              },
+              {
+                "type": 120,
+                "strokeWidth": 3,
+                "startPoint": -1.2599210498948732,
+                "formula": "x^3",
+                "endPoint": 2.154434690031884,
+                "color": "#eb34d8"
+              },
+              {
+                "type": 10,
+                "showOnlyLetter": false,
+                "showDashes": false,
+                "showCoordinate": false,
+                "radius": 4,
+                "point": {
+                  "y": -2,
+                  "x": -1.2599210498948732,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "color": "#eb34d8",
+                "borderColor": null
+              },
+              {
+                "type": 10,
+                "showOnlyLetter": false,
+                "showDashes": false,
+                "showCoordinate": false,
+                "radius": 4,
+                "point": {
+                  "y": 10,
+                  "x": 2.154434690031884,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "color": "#eb34d8",
+                "borderColor": null
+              }
+            ],
+            "drawingFigure": 0,
+            "displayedNumbers": [],
+            "disabledPoints": [],
+            "canFill": false,
+            "canDrawMultipleFigures": false,
+            "allowedFigures": []
+          }
+        ],
+        "isCalculatorClosed": false,
+        "isAnswerCellHidden": false
+      },
+      "type": "Elixir.Task_7_3_16_1",
+      "position": 0,
+      "id": "cx-7_3_16_1-0",
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "-2;;10",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      }
+    }
+  },
+  {
+    "group": "grade-8",
+    "count": 2,
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 20,
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "\\(x_2 =\\)",
+            "rus": "\\(x_2 =\\)",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "\\(x_2 =\\)",
+            "kaz": "\\(x_2 =\\)",
+            "eng": "\\(x_2 =\\)",
+            "aze": "\\(x_2 =\\)",
+            "arsa": "\\(x_2 =\\)",
+            "arjd": "\\(x_2 =\\)",
+            "areg": "\\(x_2 =\\)"
+          },
+          "after": ""
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "\\(x_1 =\\)",
+            "rus": "\\(x_1 =\\)",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "\\(x_1 =\\)",
+            "kaz": "\\(x_1 =\\)",
+            "eng": "\\(x_1 =\\)",
+            "aze": "\\(x_1 =\\)",
+            "arsa": "\\(x_1 =\\)",
+            "arjd": "\\(x_1 =\\)",
+            "areg": "\\(x_1 =\\)"
+          },
+          "after": ""
+        },
+        "inline": false
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": {
+        "with_audio_player": false,
+        "uzb": "Viet teoremasiga teskari bo'lgan teoremadan foydalanib, kvadrat tenglamaning ildizlarini toping.",
+        "rus": "Используя теорему, обратную теореме Виета, найдите корни квадратного уравнения.",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "Виеттин теоремасын колдонуп, квадраттык теңдеменин тамырларын табыңыз.",
+        "kaz": "Виет теоремасына кері теореманы қолданып, теңдеудің түбірлерін табыңыз.",
+        "eng": "",
+        "aze": "Viyet teoreminin tərsindən istifadə edərək kvadrat tənliyin köklərini tapın.",
+        "arsa": "أوجد حلي المعادلة التربيعية باستخدام النظرية العكسية لنظرية فييت.",
+        "arjd": "باستخدام النظرية العكسية لنظرية فييتا، أوجد جذْرَي المعادلة التربيعية.",
+        "areg": "باستخدام النظرية العكسية لنظرية فييت، أوجد جذْرَي المعادلة التربيعية."
+      },
+      "fields": {
+        "x2": 2,
+        "x1": 1,
+        "number": 2,
+        "letter": "n"
+      },
+      "description": {
+        "type": "complex",
+        "parts": [
+          {
+            "type": 10,
+            "content": "\\(x^2  -\\) 3\\(n\\)\\(x\\) + 2\\(n\\)\\(^2\\) = 0\r\n"
+          },
+          {
+            "type": 10,
+            "content": "\\(n\\) = 2"
+          }
+        ],
+        "isCalculatorClosed": false,
+        "isAnswerCellHidden": false
+      },
+      "type": "Elixir.Task_8_2_10_5",
+      "position": 0,
+      "id": "cx-8_2_10_5-0",
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "2;;4",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      }
+    }
+  },
+  {
+    "group": "grade-10",
+    "count": 7,
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 20,
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "Qoldiqning qiymati: ",
+            "rus": "Значение остатка: ",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Калдыктын мааниси: ",
+            "kaz": "Қалдықтың мәні: ",
+            "eng": "Remainder value: ",
+            "aze": "Qalıq: ",
+            "arsa": "",
+            "arjd": "",
+            "areg": "الباقي: "
+          },
+          "after": ""
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "Bo'linmaning qiymati: ",
+            "rus": "Значение частного: ",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Тийиндинин мааниси: ",
+            "kaz": "Бөліндінің мәні: ",
+            "eng": "Quotient value: ",
+            "aze": "Qismət:",
+            "arsa": "",
+            "arjd": "",
+            "areg": "ناتج القسمة: "
+          },
+          "after": ""
+        },
+        "inline": false
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": null,
+      "fields": {
+        "number3": 4,
+        "number2": 16,
+        "number1": 7
+      },
+      "description": {
+        "type": "complex",
+        "parts": [
+          {
+            "type": 10,
+            "content": {
+              "with_audio_player": false,
+              "uzb": "Quyida \\(x^2 + 7x - 16\\) ko‘phadni (\\(x\\) + 4) ikkihadga burchak usulda bo‘lish ko‘rsatilgan.\r\nBerilgan ustuncha yordamida bo‘linmaning qiymatini va qoldiqni toping.\r\n",
+              "rus": "В следующей таблице показан метод  деления уголком многочлена \\(x^2 + 7x - 16\\) на двучлен (\\(x\\) + 4).\r\nЗапишите значение частного и остатка по данной таблице.\r\n",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "Төмөнкү таблицада \\(x^2 + 7x - 16\\) көп мүчөнү (\\(x\\) + 4) эки мүчөгө бурч ыкмасы менен бөлүү көрсөтүлгөн.\r\nБерилген таблицадан тийиндинин жана калдыктын маанисин жазыңыз.\r\n",
+              "kaz": "Келесі кестеде \\(x^2 + 7x - 16\\) көпмүшелігін (\\(x\\) + 4) екімүшесіне бұрыштап бөлу әдісі көрсетелген.\r\nБерілген кесте бойынша бөліндінің мәні мен қалдықты жазыңыз.\r\n",
+              "eng": "",
+              "aze": "Cədvəldə \\(x^2 + 7x - 16\\) çoxhədlisinin (\\(x\\) + 4) ikihədlisinə bölünməsi üçün göstərilən metoddan istifadə edilmişdir. Cədvəldəki nəticələrə əsasən qismətin və qalığın qiymətini qeyd edin.\r\n",
+              "arsa": "",
+              "arjd": "",
+              "areg": ""
+            }
+          },
+          {
+            "yAxisLabel": "y",
+            "xAxisLabel": "x",
+            "type": 110,
+            "tickStepYMultiply": 1,
+            "tickStepXMultiply": 1,
+            "tickStep": 1,
+            "stepSize": 30,
+            "startNumber": false,
+            "showCells": false,
+            "showAxis": false,
+            "reduceHeight": 1,
+            "points": [],
+            "notClickableDots": true,
+            "minPosition": -3,
+            "maxPosition": 3,
+            "limitedPoint": 0,
+            "isLine": false,
+            "isFullFilled": false,
+            "isFillingLimitedByAxis": false,
+            "intervals": [],
+            "fillingFunctions": [],
+            "figures": [
+              {
+                "type": 30,
+                "showDotLetters": false,
+                "point2": {
+                  "y": 3,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "point1": {
+                  "y": -3,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "lineColor": "black",
+                "dotRadius": 0,
+                "degree": 0,
+                "dashed": false
+              },
+              {
+                "type": 30,
+                "showDotLetters": false,
+                "point2": {
+                  "y": 2,
+                  "x": 2,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "point1": {
+                  "y": 2,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "lineColor": "black",
+                "dotRadius": 0,
+                "degree": 0,
+                "dashed": false
+              },
+              {
+                "type": 30,
+                "showDotLetters": false,
+                "point2": {
+                  "y": 1,
+                  "x": -1,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "point1": {
+                  "y": 1,
+                  "x": -3.5,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "lineColor": "black",
+                "dotRadius": 0,
+                "degree": 0,
+                "dashed": false
+              },
+              {
+                "type": 30,
+                "showDotLetters": false,
+                "point2": {
+                  "y": -0.5,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "point1": {
+                  "y": -0.5,
+                  "x": -2,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "lineColor": "black",
+                "dotRadius": 0,
+                "degree": 0,
+                "dashed": false
+              },
+              {
+                "y": 3,
+                "x": 0.2,
+                "type": 100,
+                "textAnchor": null,
+                "text": "\\(x + 4\\)",
+                "isLatex": true,
+                "fontWeight": null,
+                "fontSize": 18,
+                "dominantBaseline": null,
+                "degree": 0
+              },
+              {
+                "y": 3,
+                "x": -3.4,
+                "type": 100,
+                "textAnchor": null,
+                "text": "\\(x^2 + 7x - 16\\)",
+                "isLatex": true,
+                "fontWeight": null,
+                "fontSize": 18,
+                "dominantBaseline": null,
+                "degree": 0
+              },
+              {
+                "y": 2,
+                "x": -3.4,
+                "type": 100,
+                "textAnchor": null,
+                "text": "\\(x^2 + 4x\\)",
+                "isLatex": true,
+                "fontWeight": null,
+                "fontSize": 18,
+                "dominantBaseline": null,
+                "degree": 0
+              },
+              {
+                "y": 1,
+                "x": -2,
+                "type": 100,
+                "textAnchor": null,
+                "text": "\\(3x - 16\\)",
+                "isLatex": true,
+                "fontWeight": null,
+                "fontSize": 18,
+                "dominantBaseline": null,
+                "degree": 0
+              },
+              {
+                "y": 0.3,
+                "x": -2,
+                "type": 100,
+                "textAnchor": null,
+                "text": "\\(3x + 12\\)",
+                "isLatex": true,
+                "fontWeight": null,
+                "fontSize": 18,
+                "dominantBaseline": null,
+                "degree": 0
+              },
+              {
+                "y": -1,
+                "x": -0.8,
+                "type": 100,
+                "textAnchor": null,
+                "text": "-28",
+                "isLatex": false,
+                "fontWeight": null,
+                "fontSize": 18,
+                "dominantBaseline": null,
+                "degree": 0
+              },
+              {
+                "y": 1.8,
+                "x": 0.2,
+                "type": 100,
+                "textAnchor": null,
+                "text": "\\(x + 3\\)",
+                "isLatex": true,
+                "fontWeight": null,
+                "fontSize": 18,
+                "dominantBaseline": null,
+                "degree": 0
+              }
+            ],
+            "drawingFigure": 0,
+            "displayedNumbers": [],
+            "disabledPoints": [],
+            "canFill": false,
+            "canDrawMultipleFigures": false,
+            "allowedFigures": []
+          }
+        ],
+        "isCalculatorClosed": false,
+        "isAnswerCellHidden": false
+      },
+      "type": "Elixir.Task_10_6_4_1",
+      "position": 0,
+      "id": "cx-10_6_4_1-0",
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "x + 3;;-28",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      }
+    }
+  },
+  {
+    "group": "grade-11",
+    "count": 1,
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 20,
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "\\(M_0 = \\)",
+            "rus": "\\(M_0 = \\)",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "\\(M_0 = \\)",
+            "kaz": "\\(M_0 = \\)",
+            "eng": "\\(M_0 = \\)",
+            "aze": "\\(M_0 = \\)",
+            "arsa": "\\(M_0 = \\)",
+            "arjd": "\\(M_0 = \\)",
+            "areg": "\\(M_0 = \\)"
+          },
+          "after": ""
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "\\(M_0 = \\)",
+            "rus": "\\(M_0 = \\)",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "\\(M_0 = \\)",
+            "kaz": "\\(M_0 = \\)",
+            "eng": "\\(M_0 = \\)",
+            "aze": "\\(M_0 = \\)",
+            "arsa": "\\(M_0 = \\)",
+            "arjd": "\\(M_0 = \\)",
+            "areg": "\\(M_0 = \\)"
+          },
+          "after": ""
+        },
+        "inline": false
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": null,
+      "fields": {
+        "numbers2": [
+          1,
+          3,
+          6,
+          7
+        ],
+        "numbers1": [
+          1,
+          5,
+          2,
+          5
+        ]
+      },
+      "description": {
+        "type": "complex",
+        "parts": [
+          {
+            "type": 10,
+            "content": {
+              "with_audio_player": false,
+              "uzb": "Tasodifiy miqdorning ma'lumotlariga mos chastotalar jadvali berilgan:",
+              "rus": "Дана таблица частот для некоторых данных случайной величины:",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "",
+              "kaz": "Кездейсоқ шаманың белгілі бір мәліметтеріне сәйкес жиілік кестесі берілген:",
+              "eng": "Given is a frequency table for some random variable data:",
+              "aze": "Bəzi təsadüfi kəmiyyətlər üçün tezlik cədvəli verilmişdir:",
+              "arsa": "",
+              "arjd": "",
+              "areg": ""
+            }
+          },
+          {
+            "width": "100%",
+            "type": 120,
+            "tableAlign": "center",
+            "rows": [
+              {
+                "width": null,
+                "rowspan_list": [],
+                "rowspan_at": 0,
+                "rowspan": 1,
+                "colspan_list": [],
+                "colspan_at": 0,
+                "colspan": 1,
+                "cells": [
+                  {
+                    "with_audio_player": false,
+                    "uzb": "Sonlar, \\(x_i\\)",
+                    "rus": "Числа, \\(x_i\\)",
+                    "module_name": "Elixir.Helpers.Translation",
+                    "kgz": "",
+                    "kaz": "Сандар, \\(x_i\\)",
+                    "eng": "Numbers, \\(x_i\\)",
+                    "aze": "Ədəd, \\(x_i\\)",
+                    "arsa": "",
+                    "arjd": "",
+                    "areg": ""
+                  },
+                  "1",
+                  "3",
+                  "6",
+                  "7"
+                ],
+                "border_bottom": null
+              },
+              {
+                "width": null,
+                "rowspan_list": [],
+                "rowspan_at": 0,
+                "rowspan": 1,
+                "colspan_list": [],
+                "colspan_at": 0,
+                "colspan": 1,
+                "cells": [
+                  {
+                    "with_audio_player": false,
+                    "uzb": "Chastotasi, \\(n_i\\)",
+                    "rus": "Частота, \\(n_i\\)",
+                    "module_name": "Elixir.Helpers.Translation",
+                    "kgz": "",
+                    "kaz": "Жиілігі, \\(n_i\\)",
+                    "eng": "Frequency, \\(n_i\\)",
+                    "aze": "Tezlik, \\(n_i\\)",
+                    "arsa": "",
+                    "arjd": "",
+                    "areg": ""
+                  },
+                  "1",
+                  "5",
+                  "2",
+                  "5"
+                ],
+                "border_bottom": null
+              }
+            ],
+            "removePadding": false,
+            "removeBorders": false,
+            "padding": null,
+            "marginBottom": null,
+            "isAnswerCellHidden": true,
+            "columnHeaders": [],
+            "columnAlign": "center",
+            "bottomVarticalAlign": false,
+            "border": ""
+          },
+          {
+            "type": 10,
+            "content": {
+              "with_audio_player": false,
+              "uzb": "Berilgan jadvaldan tanlanma modasini aniqlang.",
+              "rus": "Определите моду выборки по данной таблице.",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "",
+              "kaz": "Берілген кестеден таңдалымның модасын анықтаңыз.",
+              "eng": "Determine the mode of the sample from this table.",
+              "aze": "Verilmiş cədvələ əsasən seçimin modasını tapın.",
+              "arsa": "",
+              "arjd": "",
+              "areg": ""
+            }
+          }
+        ],
+        "isCalculatorClosed": false,
+        "isAnswerCellHidden": false
+      },
+      "type": "Elixir.Task_11_2_2_11",
+      "position": 0,
+      "id": "cx-11_2_2_11-0",
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "3;;7",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      }
+    }
+  },
+  {
+    "group": "grade-13",
+    "count": 2,
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 20,
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "\\(k=1: \\sqrt{z}=\\)",
+            "rus": "\\(k=1: \\sqrt{z}=\\)",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "\\(k=1: \\sqrt{z}=\\)",
+            "kaz": "\\(k=1: \\sqrt{z}=\\)",
+            "eng": "\\(k=1: \\sqrt{z}=\\)",
+            "aze": "\\(k=1: \\sqrt{z}=\\)",
+            "arsa": "\\(k=1: \\sqrt{z}=\\)",
+            "arjd": "\\(k=1: \\sqrt{z}=\\)",
+            "areg": "\\(k=1: \\sqrt{z}=\\)"
+          },
+          "after": ""
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "\\(k=0: \\sqrt{z}=\\)",
+            "rus": "\\(k=0: \\sqrt{z}=\\)",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "\\(k=0: \\sqrt{z}=\\)",
+            "kaz": "\\(k=0: \\sqrt{z}=\\)",
+            "eng": "\\(k=0: \\sqrt{z}=\\)",
+            "aze": "\\(k=0: \\sqrt{z}=\\)",
+            "arsa": "\\(k=0: \\sqrt{z}=\\)",
+            "arjd": "\\(k=0: \\sqrt{z}=\\)",
+            "areg": "\\(k=0: \\sqrt{z}=\\)"
+          },
+          "after": ""
+        },
+        "inline": false
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": null,
+      "fields": {
+        "radius": 1,
+        "number2": 0,
+        "number1": 1
+      },
+      "description": {
+        "type": "complex",
+        "parts": [
+          {
+            "type": 10,
+            "content": "\\(z = 1\\)",
+            "center": true
+          },
+          {
+            "type": 10,
+            "content": {
+              "with_audio_player": false,
+              "uzb": "",
+              "rus": "",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "",
+              "kaz": "Муавр формуласын қолданып берілген комплекс санның квадрат түбірінің барлық мәндерді есептеңіз (жауабыңыз ретінде соңғы шыққан мәнді жазыңыз).",
+              "eng": "",
+              "aze": "",
+              "arsa": "",
+              "arjd": "",
+              "areg": ""
+            }
+          }
+        ],
+        "isCalculatorClosed": false,
+        "isAnswerCellHidden": false
+      },
+      "type": "Elixir.Task_13_1_5_18",
+      "position": 0,
+      "id": "cx-13_1_5_18-0",
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "1;;-1",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      }
+    }
+  }
+]

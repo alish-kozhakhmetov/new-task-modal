@@ -1,0 +1,2799 @@
+{
+  "defaultGrade": 1,
+  "grades": [
+    0,
+    1,
+    2,
+    5
+  ],
+  "byGrade": {
+    "0": [
+      {
+        "id": "0_9_16_1",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 15,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 15,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 15,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": "x1",
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "Hisoblang. Bo‘sh kataklarni to‘ldiring.",
+            "rus": "Вычислите. Заполните пустые ячейки.",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Эсептеңиз. Бош чакмакты толтуруңуз.",
+            "kaz": "Есептеңіз. Бос ұяшықтарды толтырыңыз.",
+            "eng": "Calculate. Fill in the empty cells.",
+            "aze": "Hesablayın. Boşluqları doldurun.",
+            "arsa": "",
+            "arjd": "",
+            "areg": "احسب ما يلي. املأ المربعات الفارغة."
+          },
+          "fields": {
+            "number2": 1,
+            "number1": 6,
+            "image_position": 5,
+            "difficulty": "x1"
+          },
+          "description": {
+            "withAudio": true,
+            "type": "answerCell",
+            "textBefore": "",
+            "textAfter": "",
+            "tableBefore": {
+              "width": "100%",
+              "type": 120,
+              "tableAlign": "center",
+              "rows": [
+                {
+                  "width": null,
+                  "rowspan_list": [],
+                  "rowspan_at": 0,
+                  "rowspan": 1,
+                  "colspan_list": [],
+                  "colspan_at": 0,
+                  "colspan": 1,
+                  "cells": [
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +129591 chars</text></svg>",
+                    ""
+                  ],
+                  "border_bottom": null
+                }
+              ],
+              "removePadding": false,
+              "removeBorders": true,
+              "padding": null,
+              "marginBottom": null,
+              "isAnswerCellHidden": true,
+              "columnHeaders": [],
+              "columnAlign": "center",
+              "bottomVarticalAlign": false,
+              "border": ""
+            },
+            "isColumn": false,
+            "imageBefore": "",
+            "content": "answercell − answercell = answercell",
+            "answerCellMargin": ""
+          },
+          "type": "Elixir.Task_0_9_16_1",
+          "position": 0,
+          "id": "cx-0_9_16_1-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "6;;1;;5",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            6,
+            1,
+            5
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "6;;1;;5"
+        ],
+        "truncated": true,
+        "layoutByPayload": "answerCell.multi.stack.n3.plain",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-0"
+      },
+      {
+        "id": "0_9_5_6",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 15,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 15,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 15,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": "x1",
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number2": 2,
+            "number1": 4,
+            "difficulty": "x1"
+          },
+          "description": {
+            "withAudio": true,
+            "type": "answerCell",
+            "textBefore": {
+              "with_audio_player": false,
+              "uzb": "4 ta nuqtaga 2 ta nuqtani qo‘shing. Jami nechta nuqta bo'ladi? Bo‘sh joylarni to‘ldiring.",
+              "rus": "Добавьте к 4 точкам 2 точки. Сколько теперь точек? Заполните пробелы.",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "4 чекитке 2 чекитти кошуңуз. Эми канча чекит болду? Бош калтырылганды толтуруңуз.",
+              "kaz": "4 нүктеге 2 нүктені қосыңыз. Барлығы неше нүкте болады? Бос орындарды толтырыңыз.",
+              "eng": "",
+              "aze": "4 xala 2 xal əlavə edin. İndi neçə xal var? Boşluqları doldurun.",
+              "arsa": "",
+              "arjd": "",
+              "areg": "أضِف إلى 4 نقاط نقاط نقطة نقطتان. كم أصبح عدد النقاط؟ املأ الفراغ."
+            },
+            "textAfter": "",
+            "tableBefore": null,
+            "isColumn": false,
+            "imageBefore": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +1413 chars</text></svg>",
+            "content": "answercell + answercell = answercell",
+            "answerCellMargin": ""
+          },
+          "type": "Elixir.Task_0_9_5_6",
+          "position": 0,
+          "id": "cx-0_9_5_6-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "4;;2;;6",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            4,
+            2,
+            6
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "4;;2;;6"
+        ],
+        "truncated": true,
+        "layoutByPayload": "answerCell.multi.stack.n3.plain",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-0"
+      },
+      {
+        "id": "0_9_5_2",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 15,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 15,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 15,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number2": 2,
+            "number1": 5,
+            "item2": "yellow_butterfly",
+            "item1": "green_butterfly"
+          },
+          "description": {
+            "withAudio": true,
+            "type": "answerCell",
+            "textBefore": {
+              "with_audio_player": false,
+              "uzb": "5 ta yashil kapalakka 2 ta sariq kapalakni qo‘shing. Jami nechta kapalak bo‘ladi? Bo‘sh joylarni to‘ldiring.",
+              "rus": "Добавьте к 5 зеленым бабочкам 2 желтые бабочки. Сколько теперь бабочек? Заполните пробелы.\r\n",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "5 жашыл көпөлөккө 2 сары көпөлөктү кошуңуз. Эми канча көпөлөк болду? Бош калтырылганды толтуруңуз.",
+              "kaz": "5 жасыл көбелекке 2 сары көбелекті қосыңыз. Неше көбелек болды? Бос орындарды толтырыңыз.",
+              "eng": "",
+              "aze": "5 yaşıl kəpənəyə 2 sarı kəpənək əlavə edin. İndi neçə kəpənək oldu? Boşluqları doldurun.",
+              "arsa": "",
+              "arjd": "",
+              "areg": "أضِف إلى 5 فراشات فراشات خضراء فراشتين صفراوين. كم أصبح عدد الفراشات؟ املأ الفراغ.\r\n"
+            },
+            "textAfter": "",
+            "tableBefore": {
+              "width": "100%",
+              "type": 120,
+              "tableAlign": "center",
+              "rows": [
+                {
+                  "width": null,
+                  "rowspan_list": [],
+                  "rowspan_at": 0,
+                  "rowspan": 1,
+                  "colspan_list": [],
+                  "colspan_at": 0,
+                  "colspan": 1,
+                  "cells": [
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +63452 chars</text></svg>",
+                    ""
+                  ],
+                  "border_bottom": null
+                }
+              ],
+              "removePadding": false,
+              "removeBorders": true,
+              "padding": null,
+              "marginBottom": null,
+              "isAnswerCellHidden": true,
+              "columnHeaders": [],
+              "columnAlign": "center",
+              "bottomVarticalAlign": false,
+              "border": ""
+            },
+            "isColumn": false,
+            "imageBefore": "",
+            "content": "answercell + answercell = answercell",
+            "answerCellMargin": ""
+          },
+          "type": "Elixir.Task_0_9_5_2",
+          "position": 0,
+          "id": "cx-0_9_5_2-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "5;;2;;7",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": [
+          {
+            "separator": true,
+            "answers": [
+              5,
+              2,
+              7
+            ],
+            "_struct": "MultipleTaskAnswer"
+          },
+          {
+            "separator": true,
+            "answers": [
+              2,
+              5,
+              7
+            ],
+            "_struct": "MultipleTaskAnswer"
+          }
+        ],
+        "answerElixirType": "list (any-of match)",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "5;;2;;7",
+          "2;;5;;7"
+        ],
+        "truncated": true,
+        "layoutByPayload": "answerCell.multi.stack.n3.plain",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-0"
+      }
+    ],
+    "1": [
+      {
+        "id": "1_1_10_12",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "Savolga mos bo'sh kataklarni to'ldiring.",
+            "rus": "Заполните пустые ячейки в соответствии с вопросом.",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Суроолорго ылайык бош уячаларды толтуруңуз.",
+            "kaz": "Сұраққа сәйкес бос ұяшықтарды толтырыңыз.",
+            "eng": "",
+            "aze": "Suala uyğun olaraq boş yerləri doldurun.",
+            "arsa": "",
+            "arjd": "",
+            "areg": "املأ الفراغ وفقًا للسؤال."
+          },
+          "fields": {
+            "number": 3
+          },
+          "description": {
+            "withAudio": true,
+            "type": "answerCell",
+            "textBefore": {
+              "with_audio_player": false,
+              "uzb": "4 ta doira bor edi.\r\n3 ta doirani chizib tashladi.\r\n",
+              "rus": "Было 4 круга. 3 круга зачеркнули:\r\n",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "4 тегерек болгон. \r\n3 тегеректи сызып салышты.\r\n",
+              "kaz": "4 дөңгелек бар еді.\r\n3 дөңгелекті сызып тастады:\r\n",
+              "eng": "",
+              "aze": "4 dairə var idi,\r\nsonra 3 dairənin üstündən xətt çəkildi:\r\n",
+              "arsa": "",
+              "arjd": "",
+              "areg": "كان 4 دوائر. وحذفنا 3:\r\n"
+            },
+            "textAfter": {
+              "with_audio_player": false,
+              "uzb": "Chizilmagan nechta doira qoldi?",
+              "rus": "Сколько незачеркнутых кругов осталось?",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "Сызылбаган канча тегерек калды?",
+              "kaz": "Сызылмаған неше дөңгелек қалды?",
+              "eng": "",
+              "aze": "Xətt çəkilməmiş neçə dairə qaldı?",
+              "arsa": "",
+              "arjd": "",
+              "areg": "كم دائرة غير محذوفة بقيت؟"
+            },
+            "tableBefore": {
+              "width": "100%",
+              "type": 120,
+              "tableAlign": "center",
+              "rows": [
+                {
+                  "width": null,
+                  "rowspan_list": [],
+                  "rowspan_at": 0,
+                  "rowspan": 1,
+                  "colspan_list": [],
+                  "colspan_at": 0,
+                  "colspan": 1,
+                  "cells": [
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +1874 chars</text></svg>"
+                  ],
+                  "border_bottom": null
+                }
+              ],
+              "removePadding": false,
+              "removeBorders": true,
+              "padding": null,
+              "marginBottom": null,
+              "isAnswerCellHidden": true,
+              "columnHeaders": [],
+              "columnAlign": "center",
+              "bottomVarticalAlign": false,
+              "border": ""
+            },
+            "isColumn": false,
+            "imageBefore": "",
+            "content": "answercell − answercell = answercell",
+            "answerCellMargin": "0 7px"
+          },
+          "type": "Elixir.Task_1_1_10_12",
+          "position": 0,
+          "id": "cx-1_1_10_12-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "4;;3;;1",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            4,
+            3,
+            1
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "4;;3;;1"
+        ],
+        "truncated": true,
+        "layoutByPayload": "answerCell.multi.stack.n3.plain",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-1"
+      },
+      {
+        "id": "1_1_12_5",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "Nuqtalarni sanash orqali hisoblang.",
+            "rus": "Посчитайте точки и вычислите.",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Чекиттерди санаңыз жана эсептеңиз.",
+            "kaz": "Нүктелерді санау арқылы есептеңіз.",
+            "eng": "",
+            "aze": "Nöqtələri sayaraq hesablayın.",
+            "arsa": "",
+            "arjd": "",
+            "areg": "عدّ النقاط واحسب."
+          },
+          "fields": {
+            "number2": 2,
+            "number1": 1
+          },
+          "description": {
+            "withAudio": true,
+            "type": "answerCell",
+            "textBefore": "",
+            "textAfter": "",
+            "tableBefore": null,
+            "isColumn": true,
+            "imageBefore": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +1700 chars</text></svg>",
+            "content": "1 + 2 = answercell\r\n3 − 2 = answercell\r\n3 − 1 = answercell\r\n",
+            "answerCellMargin": "0 7px"
+          },
+          "type": "Elixir.Task_1_1_12_5",
+          "position": 0,
+          "id": "cx-1_1_12_5-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "3;;1;;2",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            3,
+            1,
+            2
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "3;;1;;2"
+        ],
+        "truncated": true,
+        "layoutByPayload": "answerCell.multi.stack.n3.plain",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-1"
+      },
+      {
+        "id": "1_1_14_9",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "Rasmga qarab hisoblang.",
+            "rus": "Посмотрите на рисунок и посчитайте.",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Сүрөткө көңүл буруңуз жана санаңыз.",
+            "kaz": "Суретке қарап есептеңіз.",
+            "eng": "",
+            "aze": "Şəklə əsasən hesablayın.",
+            "arsa": "",
+            "arjd": "",
+            "areg": "انظر إلى الصورة وعدّ."
+          },
+          "fields": {},
+          "description": {
+            "withAudio": true,
+            "type": "answerCell",
+            "textBefore": {
+              "with_audio_player": false,
+              "uzb": "Jami nechta o'quvchi musiqa asbobidan foydalanmoqda?\r\nNechta o'g'il bola bor?\r\nNechta qiz bola bor?\r\n",
+              "rus": "Сколько всего детей играют на инструментах?\r\nСколько мальчиков?\r\nСколько девочек?\r\n",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "Инструментте канча бала ойноп жатат? \r\nКанча эркек бала? \r\nКанча кыз?\r\n",
+              "kaz": "Барлығы неше бала аспапта ойнайды?\r\nНеше ұл бар?\r\nНеше қыз бар?\r\n",
+              "eng": "",
+              "aze": "Ümumilikdə neçə uşaq alətdə ifa edir?\r\nNeçə oğlan var?\r\nNeçə qız var?\r\n",
+              "arsa": "",
+              "arjd": "",
+              "areg": "كم عدد الأطفال الذين يعزفون على الآلات الموسيقية؟ كم عدد الأولاد؟ كم عدد البنات؟\r\n"
+            },
+            "textAfter": "",
+            "tableBefore": null,
+            "isColumn": true,
+            "imageBefore": {
+              "with_audio_player": false,
+              "uzb": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +113450 chars</text></svg>",
+              "rus": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +227589 chars</text></svg>",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "",
+              "kaz": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +227589 chars</text></svg>",
+              "eng": "",
+              "aze": "",
+              "arsa": "",
+              "arjd": "",
+              "areg": ""
+            },
+            "content": "4 + 2 = answercell\r\n6 − 2 = answercell\r\n6 − 4 = answercell\r\n",
+            "answerCellMargin": "0 7px"
+          },
+          "type": "Elixir.Task_1_1_14_9",
+          "position": 0,
+          "id": "cx-1_1_14_9-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "6;;4;;2",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            6,
+            4,
+            2
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "6;;4;;2"
+        ],
+        "truncated": true,
+        "layoutByPayload": "answerCell.multi.stack.n3.plain",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-1"
+      },
+      {
+        "id": "1_1_20_4",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {},
+          "description": {
+            "withAudio": true,
+            "type": "answerCell",
+            "textBefore": {
+              "with_audio_player": false,
+              "uzb": "Rasmga qarab qo'shish amaliga ifoda tuzing.",
+              "rus": "Посмотрите на рисунок и составьте выражение на сложение.",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "Сүрөттү караңыз жана кошууга карата туюнтма түзүңүз.",
+              "kaz": "Суретке қарап қосу амалына өрнек құрастырыңыз.",
+              "eng": "",
+              "aze": "Şəklə baxın və toplama ilə bağlı ifadə qurun.",
+              "arsa": "",
+              "arjd": "",
+              "areg": "انظر إلى الصورة واكتب تعبيرًا للجمع."
+            },
+            "textAfter": "",
+            "tableBefore": null,
+            "isColumn": false,
+            "imageBefore": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +100346 chars</text></svg>",
+            "content": {
+              "with_audio_player": false,
+              "uzb": "answercell + answercell = answercell = 1 o‘nlik",
+              "rus": "answercell + answercell = answercell = 1 десяток",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "",
+              "kaz": "answercell + answercell = answercell = 1 ондық",
+              "eng": "",
+              "aze": "answercell + answercell = answercell = 1 onluq",
+              "arsa": "",
+              "arjd": "",
+              "areg": ""
+            },
+            "answerCellMargin": ""
+          },
+          "type": "Elixir.Task_1_1_20_4",
+          "position": 0,
+          "id": "cx-1_1_20_4-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "5;;5;;10",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            5,
+            5,
+            10
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "5;;5;;10"
+        ],
+        "truncated": true,
+        "layoutByPayload": "answerCell.multi.stack.n3.plain",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-1"
+      },
+      {
+        "id": "1_1_24_12",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": "x1",
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number": 9,
+            "difficulty": "x1"
+          },
+          "description": {
+            "withAudio": true,
+            "type": "answerCell",
+            "textBefore": {
+              "with_audio_player": false,
+              "uzb": "2, 3, 4, 5 sonlaridan foydalangan holda tenglik to'g'ri bo'lishi uchun, bo'sh katakchalarga qaysi sonlarni joylashtirishimiz kerak (bitta sonni birnechabor foydalansak bo'ladi).\r\n",
+              "rus": "Используя только числа 2, 3, 4, 5, заполните пустые клетки так, чтобы равенство стало верным (одно число можно использовать несколько раз).\r\n",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "Барабардык туура болгондой кылып, 2, 3, 4, 5 сандарын гана колдонуп, бош чакмакты толтуруңуз (бир санды бир нече жолу колдонууга болот)\r\n",
+              "kaz": "2, 3, 4, 5 сандарын ғана қоланып, теңдік тура болатындай бос ұяшықтарды толтырыңыз (бір санды бірнеше рет қолдануға болады).\r\n",
+              "eng": "",
+              "aze": "Yalnız 2, 3, 4, 5 rəqəmlərindən istifadə etməklə bərabərliyin doğru olması üçün boş xanaları doldurun (bir rəqəm birdən çox istifadə oluna bilər).\r\n",
+              "arsa": "",
+              "arjd": "",
+              "areg": "باستخدام الأعداد 2، 3، 4، 5 فقط، املأ الفراغ لكي تصبح المعادلة صحيحة (يمكن استخدام عدد واحد عدة مرات).\r\n"
+            },
+            "textAfter": "",
+            "tableBefore": null,
+            "isColumn": false,
+            "imageBefore": "",
+            "content": "answercell + answercell + answercell = 9",
+            "answerCellMargin": "0 7px"
+          },
+          "type": "Elixir.Task_1_1_24_12",
+          "position": 0,
+          "id": "cx-1_1_24_12-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "3;;3;;3",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "answers": [
+            {
+              "separator": true,
+              "answers": [
+                3,
+                3,
+                3
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                2,
+                2,
+                5
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                2,
+                5,
+                2
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                5,
+                2,
+                2
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                2,
+                3,
+                4
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                2,
+                4,
+                3
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                3,
+                2,
+                4
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                3,
+                4,
+                2
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                4,
+                3,
+                2
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                4,
+                2,
+                3
+              ],
+              "_struct": "MultipleTaskAnswer"
+            }
+          ],
+          "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+        },
+        "answerElixirType": "TaskAnswers.AnyOfThemTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "3;;3;;3",
+          "2;;2;;5",
+          "2;;5;;2",
+          "5;;2;;2",
+          "2;;3;;4",
+          "2;;4;;3",
+          "3;;2;;4",
+          "3;;4;;2",
+          "4;;3;;2",
+          "4;;2;;3"
+        ],
+        "truncated": false,
+        "layoutByPayload": "answerCell.multi.stack.n3.plain",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-1"
+      },
+      {
+        "id": "1_1_24_20",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {},
+          "description": {
+            "withAudio": true,
+            "type": "answerCell",
+            "textBefore": "",
+            "textAfter": {
+              "with_audio_player": false,
+              "uzb": "Gullar soniga bog'liq bo'lgan bo'sh katakchalarni to'ldiring.",
+              "rus": "Заполните пустые ячейки в зависимости от количества цветов.",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "Гүлдөрдүн санына жараша бош уячаларды толтуруңуз.",
+              "kaz": "Гүлдердің санына байланысты бос ұяшықтарды толтырыңыз.",
+              "eng": "",
+              "aze": "Çiçəklərin sayına görə boş xanaları doldurun.",
+              "arsa": "",
+              "arjd": "",
+              "areg": "املأ الفراغ حسب عدد الألوان."
+            },
+            "tableBefore": null,
+            "isColumn": false,
+            "imageBefore": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +30012 chars</text></svg>",
+            "content": "8 = answercell + answercell + answercell",
+            "answerCellMargin": "0 7px"
+          },
+          "type": "Elixir.Task_1_1_24_20",
+          "position": 0,
+          "id": "cx-1_1_24_20-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "3;;3;;2",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "answers": [
+            {
+              "separator": true,
+              "answers": [
+                3,
+                3,
+                2
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                3,
+                2,
+                3
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                2,
+                3,
+                3
+              ],
+              "_struct": "MultipleTaskAnswer"
+            }
+          ],
+          "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+        },
+        "answerElixirType": "TaskAnswers.AnyOfThemTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "3;;3;;2",
+          "3;;2;;3",
+          "2;;3;;3"
+        ],
+        "truncated": true,
+        "layoutByPayload": "answerCell.multi.stack.n3.plain",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-1"
+      },
+      {
+        "id": "1_1_27_9",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number": 2
+          },
+          "description": {
+            "withAudio": true,
+            "type": "answerCell",
+            "textBefore": {
+              "with_audio_player": false,
+              "uzb": "Rasmga diqqat bilan qarang. Bo'sh kataklarga tegishli sonlarni yozing.",
+              "rus": "Внимательно посмотрите на рисунок. Запишите нужные числа в пустые ячейки.",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "Сүрөткө көңүл буруңуз. Бош уячага керектүү санды жазыңыз.",
+              "kaz": "Суретке мұқият қараңыз. Бос ұяшықтарға тиісті сандарды жазыңыз.",
+              "eng": "",
+              "aze": "Şəklə diqqətlə baxın. Boş yerlərə uyğun ədədləri yazın.",
+              "arsa": "",
+              "arjd": "",
+              "areg": "انظر إلى الصورة جيدًا. اكتب الأعداد المناسبة في الفراغ."
+            },
+            "textAfter": "",
+            "tableBefore": {
+              "width": "100%",
+              "type": 120,
+              "tableAlign": "center",
+              "rows": [
+                {
+                  "width": null,
+                  "rowspan_list": [],
+                  "rowspan_at": 0,
+                  "rowspan": 1,
+                  "colspan_list": [],
+                  "colspan_at": 0,
+                  "colspan": 1,
+                  "cells": [
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +12196 chars</text></svg>",
+                    "+",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +4185 chars</text></svg>"
+                  ],
+                  "border_bottom": null
+                }
+              ],
+              "removePadding": false,
+              "removeBorders": true,
+              "padding": null,
+              "marginBottom": null,
+              "isAnswerCellHidden": true,
+              "columnHeaders": [],
+              "columnAlign": "center",
+              "bottomVarticalAlign": false,
+              "border": ""
+            },
+            "isColumn": false,
+            "imageBefore": "",
+            "content": "answercell + answercell = answercell",
+            "answerCellMargin": "0 7px"
+          },
+          "type": "Elixir.Task_1_1_27_9",
+          "position": 0,
+          "id": "cx-1_1_27_9-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "7;;2;;9",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "answers": [
+            {
+              "separator": true,
+              "answers": [
+                7,
+                2,
+                9
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                2,
+                7,
+                9
+              ],
+              "_struct": "MultipleTaskAnswer"
+            }
+          ],
+          "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+        },
+        "answerElixirType": "TaskAnswers.AnyOfThemTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "7;;2;;9",
+          "2;;7;;9"
+        ],
+        "truncated": true,
+        "layoutByPayload": "answerCell.multi.stack.n3.plain",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-1"
+      },
+      {
+        "id": "1_14_1_6",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number2": 3,
+            "number1": 4
+          },
+          "description": {
+            "withAudio": true,
+            "type": "answerCell",
+            "textBefore": {
+              "with_audio_player": false,
+              "uzb": "Rasmga e’tibor bering. Ifoda tuzib, uning qiymatini toping.",
+              "rus": "Обратите внимание на картинку. Составьте выражение и найдите его значение.",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "",
+              "kaz": "Суретке назар аударыңыз. Өрнек құрастырып мәнін табыңыз.",
+              "eng": "",
+              "aze": "",
+              "arsa": "",
+              "arjd": "",
+              "areg": ""
+            },
+            "textAfter": {
+              "with_audio_player": false,
+              "uzb": "Jami nechta qo‘y bor?",
+              "rus": "Сколько всего овец?",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "",
+              "kaz": "Барлығы неше қой бар?",
+              "eng": "",
+              "aze": "",
+              "arsa": "",
+              "arjd": "",
+              "areg": ""
+            },
+            "tableBefore": null,
+            "isColumn": false,
+            "imageBefore": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +397306 chars</text></svg>",
+            "content": "answercell + answercell = answercell",
+            "answerCellMargin": "0 7px"
+          },
+          "type": "Elixir.Task_1_14_1_6",
+          "position": 0,
+          "id": "cx-1_14_1_6-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "4;;3;;7",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": [
+          {
+            "separator": true,
+            "answers": [
+              4,
+              3,
+              7
+            ],
+            "_struct": "MultipleTaskAnswer"
+          },
+          {
+            "separator": true,
+            "answers": [
+              3,
+              4,
+              7
+            ],
+            "_struct": "MultipleTaskAnswer"
+          }
+        ],
+        "answerElixirType": "list (any-of match)",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "4;;3;;7",
+          "3;;4;;7"
+        ],
+        "truncated": true,
+        "layoutByPayload": "answerCell.multi.stack.n3.plain",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-1"
+      }
+    ],
+    "2": [
+      {
+        "id": "2_2_24_3",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "Doiralarni sanang va bo‘sh katakni to‘ldiring.",
+            "rus": "Посчитайте круги и заполните пустые ячейки.",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Тегеректерди санап, бош орундарды толтуруңуз.",
+            "kaz": "Дөңгелектерді санап, бос ұяшықты толықтырыңыз.",
+            "eng": "Count the circles and fill the empty cells.",
+            "aze": "Dairələri sayın və boş xanaları doldurun.",
+            "arsa": "",
+            "arjd": "",
+            "areg": "عد الدوائر واملأ المربعات الفارغة"
+          },
+          "fields": {
+            "number": 27,
+            "color": "2DC90A"
+          },
+          "description": {
+            "withAudio": true,
+            "type": "answerCell",
+            "textBefore": "",
+            "textAfter": "",
+            "tableBefore": {
+              "width": "100%",
+              "type": 120,
+              "tableAlign": "center",
+              "rows": [
+                {
+                  "width": null,
+                  "rowspan_list": [],
+                  "rowspan_at": 0,
+                  "rowspan": 1,
+                  "colspan_list": [],
+                  "colspan_at": 0,
+                  "colspan": 1,
+                  "cells": [
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>"
+                  ],
+                  "border_bottom": null
+                },
+                {
+                  "width": null,
+                  "rowspan_list": [],
+                  "rowspan_at": 0,
+                  "rowspan": 1,
+                  "colspan_list": [],
+                  "colspan_at": 0,
+                  "colspan": 1,
+                  "cells": [
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>"
+                  ],
+                  "border_bottom": null
+                },
+                {
+                  "width": null,
+                  "rowspan_list": [],
+                  "rowspan_at": 0,
+                  "rowspan": 1,
+                  "colspan_list": [],
+                  "colspan_at": 0,
+                  "colspan": 1,
+                  "cells": [
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>"
+                  ],
+                  "border_bottom": null
+                },
+                {
+                  "width": null,
+                  "rowspan_list": [],
+                  "rowspan_at": 0,
+                  "rowspan": 1,
+                  "colspan_list": [],
+                  "colspan_at": 0,
+                  "colspan": 1,
+                  "cells": [
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>"
+                  ],
+                  "border_bottom": null
+                },
+                {
+                  "width": null,
+                  "rowspan_list": [],
+                  "rowspan_at": 0,
+                  "rowspan": 1,
+                  "colspan_list": [],
+                  "colspan_at": 0,
+                  "colspan": 1,
+                  "cells": [
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>"
+                  ],
+                  "border_bottom": null
+                },
+                {
+                  "width": null,
+                  "rowspan_list": [],
+                  "rowspan_at": 0,
+                  "rowspan": 1,
+                  "colspan_list": [],
+                  "colspan_at": 0,
+                  "colspan": 1,
+                  "cells": [
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +160 chars</text></svg>"
+                  ],
+                  "border_bottom": null
+                }
+              ],
+              "removePadding": true,
+              "removeBorders": false,
+              "padding": null,
+              "marginBottom": null,
+              "isAnswerCellHidden": true,
+              "columnHeaders": [],
+              "columnAlign": "center",
+              "bottomVarticalAlign": false,
+              "border": ""
+            },
+            "isColumn": false,
+            "imageBefore": "",
+            "content": {
+              "with_audio_player": false,
+              "uzb": "answercell o‘nlik + answercell birlik = answercell",
+              "rus": "answercell дес. + answercell ед. = answercell",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "answercell ондук + answercell бирдик = answercell",
+              "kaz": "answercell онд. + answercell бірл. = answercell",
+              "eng": "answercell tens + answercell ones = answercell",
+              "aze": "answercell onluq + answercell təklik = answercell",
+              "arsa": "",
+              "arjd": "",
+              "areg": "answercell عشرات + answercell آحاد = answercell"
+            },
+            "answerCellMargin": ""
+          },
+          "type": "Elixir.Task_2_2_24_3",
+          "position": 0,
+          "id": "cx-2_2_24_3-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "2;;7;;27",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "answers": [
+            {
+              "separator": true,
+              "answers": [
+                2,
+                7,
+                27
+              ],
+              "_struct": "MultipleTaskAnswer"
+            }
+          ],
+          "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+        },
+        "answerElixirType": "TaskAnswers.AnyOfThemTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "2;;7;;27"
+        ],
+        "truncated": true,
+        "layoutByPayload": "answerCell.multi.stack.n3.plain",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-2"
+      },
+      {
+        "id": "2_4_12_2",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "",
+            "rus": "Запишите в пустые ячейки нужные числа. Найдите значение суммы.",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "",
+            "kaz": "Бос орынға керекті сандарды қойыңыз. Қосындының мәнін табыңыз.",
+            "eng": "",
+            "aze": "Boş xanaya uyğun ədədləri yazın. Cəmin qiymətini tapın.",
+            "arsa": "",
+            "arjd": "",
+            "areg": ""
+          },
+          "fields": {
+            "number2": 34,
+            "number1": 16
+          },
+          "description": {
+            "withAudio": true,
+            "type": "answerCell",
+            "textBefore": {
+              "with_audio_player": false,
+              "uzb": "16 l chelakdagi suvga bochkadan 18 l suv olib quyilgandan keyin, chelakda necha l suv bo‘ldi?",
+              "rus": "В ведре было 16 л воды. После добавления 18 л из бочки, сколько литров воды стало в ведре?",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "",
+              "kaz": "16 л шелектегі суға бөшкеден 18 л су алып құйғаннан кейін, шелекте неше л су болды?",
+              "eng": "",
+              "aze": "16 l vedrədəki suya çəlləkdən 18 l su əlavə edildikdən sonra vedrədə neçə litr su oldu?",
+              "arsa": "",
+              "arjd": "",
+              "areg": ""
+            },
+            "textAfter": "",
+            "tableBefore": null,
+            "isColumn": false,
+            "imageBefore": {
+              "with_audio_player": false,
+              "uzb": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +6664 chars</text></svg>",
+              "rus": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +6664 chars</text></svg>",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +6664 chars</text></svg>",
+              "kaz": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +6664 chars</text></svg>",
+              "eng": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +6664 chars</text></svg>",
+              "aze": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +6664 chars</text></svg>",
+              "arsa": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +6662 chars</text></svg>",
+              "arjd": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +6664 chars</text></svg>",
+              "areg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +6668 chars</text></svg>"
+            },
+            "content": {
+              "with_audio_player": false,
+              "uzb": "answercell \\(\\ \\) l + \\(\\ \\) answercell \\(\\ \\) l = \\(\\ \\) answercell \\(\\ \\) l",
+              "rus": "answercell \\(\\ \\) л + \\(\\ \\) answercell \\(\\ \\) л = \\(\\ \\) answercell \\(\\ \\) л",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "answercell \\(\\ \\) л + \\(\\ \\) answercell \\(\\ \\) л = \\(\\ \\) answercell \\(\\ \\) л",
+              "kaz": "answercell \\(\\ \\) л + \\(\\ \\) answercell \\(\\ \\) л = \\(\\ \\) answercell \\(\\ \\) л",
+              "eng": "answercell \\(\\ \\) L + \\(\\ \\) answercell \\(\\ \\) L = \\(\\ \\) answercell \\(\\ \\) L",
+              "aze": "answercell \\(\\ \\) l + \\(\\ \\) answercell \\(\\ \\) l = \\(\\ \\) answercell \\(\\ \\) l",
+              "arsa": "answercell \\(\\ \\)  + \\(\\ \\) answercell \\(\\ \\)  = \\(\\ \\) answercell \\(\\ \\) ",
+              "arjd": "answercell \\(\\ \\) L + \\(\\ \\) answercell \\(\\ \\) L = \\(\\ \\) answercell \\(\\ \\) L",
+              "areg": "answercell \\(\\ \\) لتر + \\(\\ \\) answercell \\(\\ \\) لتر = \\(\\ \\) answercell \\(\\ \\) لتر"
+            },
+            "answerCellMargin": ""
+          },
+          "type": "Elixir.Task_2_4_12_2",
+          "position": 0,
+          "id": "cx-2_4_12_2-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "16;;18;;34",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "answers": [
+            {
+              "separator": true,
+              "answers": [
+                16,
+                18,
+                34
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                18,
+                16,
+                34
+              ],
+              "_struct": "MultipleTaskAnswer"
+            }
+          ],
+          "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+        },
+        "answerElixirType": "TaskAnswers.AnyOfThemTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "16;;18;;34",
+          "18;;16;;34"
+        ],
+        "truncated": true,
+        "layoutByPayload": "answerCell.multi.stack.n3.plain",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-2"
+      },
+      {
+        "id": "2_4_12_4",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "",
+            "rus": "Запишите в пустые ячейки нужные числа и найдите значение выражения.",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "",
+            "kaz": "Бос ұяға керекті сандарды жазып, өрнектің мәнін табыңыз.",
+            "eng": "",
+            "aze": "Boş xanalara lazım olan ədədləri yazın və ifadənin qiymətini tapın.",
+            "arsa": "",
+            "arjd": "",
+            "areg": ""
+          },
+          "fields": {
+            "number2": 16,
+            "number1": 27
+          },
+          "description": {
+            "withAudio": true,
+            "type": "answerCell",
+            "textBefore": {
+              "with_audio_player": false,
+              "uzb": "Ilhom musobaqada 27 ball to'pladi, Inom esa 16 ball to'pladi.\r\\(\\\\\\)Bolalar musobaqada jami necha ball to'plashgan?\r\\(\\\\\\)",
+              "rus": "Арчи набрал на соревновании 27 очков, а Эмиль 16 очков. Сколько всего очков набрали дети на соревновании?",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "",
+              "kaz": "Арман жарыста 27 ұпай жинады, ал Ерлан 16 ұпай жинады. Балалар жарыста барлығы қанша ұпай жинаған?\r\\(\\\\\\)",
+              "eng": "",
+              "aze": "Arzu yarışmada 27 xal, Emil isə 16 xal toplayıb. Uşaqlar yarışmada cəmi neçə xal toplayıblar?",
+              "arsa": "",
+              "arjd": "",
+              "areg": ""
+            },
+            "textAfter": "",
+            "tableBefore": null,
+            "isColumn": false,
+            "imageBefore": {
+              "with_audio_player": false,
+              "uzb": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +39022 chars</text></svg>",
+              "rus": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +39022 chars</text></svg>",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "",
+              "kaz": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +39023 chars</text></svg>",
+              "eng": "",
+              "aze": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +39021 chars</text></svg>",
+              "arsa": "",
+              "arjd": "",
+              "areg": ""
+            },
+            "content": "answercell \\(\\ \\) + \\(\\ \\) answercell \\(\\ \\) = \\(\\ \\) answercell",
+            "answerCellMargin": ""
+          },
+          "type": "Elixir.Task_2_4_12_4",
+          "position": 0,
+          "id": "cx-2_4_12_4-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "27;;16;;43",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "answers": [
+            {
+              "separator": true,
+              "answers": [
+                27,
+                16,
+                43
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                16,
+                27,
+                43
+              ],
+              "_struct": "MultipleTaskAnswer"
+            }
+          ],
+          "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+        },
+        "answerElixirType": "TaskAnswers.AnyOfThemTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "27;;16;;43",
+          "16;;27;;43"
+        ],
+        "truncated": true,
+        "layoutByPayload": "answerCell.multi.stack.n3.plain",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-2"
+      },
+      {
+        "id": "2_3_1_12",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "Ifodani tuzing va qiymatini toping.",
+            "rus": "Составьте выражение и найдите значение.",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Туюнтманы түзүп жана маанисин табыңыз",
+            "kaz": "Өрнекті құрастырып, мәнін табыңыз.",
+            "eng": "Create a numerical expression for the picture and solve it.",
+            "aze": "Boş xanaları uyğun əməl işarələri ilə doldurun:",
+            "arsa": "",
+            "arjd": "",
+            "areg": "اكتب تعبيرًا عدديًّا وفقًا للصورة، ثم أوجد الناتج."
+          },
+          "fields": {
+            "number2": 2,
+            "number1": 4,
+            "figure2": "airballoon_with_x",
+            "figure1": "airballoon"
+          },
+          "description": {
+            "withAudio": true,
+            "type": "answerCell",
+            "textBefore": "",
+            "textAfter": "",
+            "tableBefore": {
+              "width": "100%",
+              "type": 120,
+              "tableAlign": "center",
+              "rows": [
+                {
+                  "width": null,
+                  "rowspan_list": [],
+                  "rowspan_at": 0,
+                  "rowspan": 1,
+                  "colspan_list": [],
+                  "colspan_at": 0,
+                  "colspan": 1,
+                  "cells": [
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +5515 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +5515 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +5515 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +5515 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +5942 chars</text></svg>",
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +5942 chars</text></svg>"
+                  ],
+                  "border_bottom": null
+                }
+              ],
+              "removePadding": false,
+              "removeBorders": true,
+              "padding": null,
+              "marginBottom": null,
+              "isAnswerCellHidden": true,
+              "columnHeaders": [],
+              "columnAlign": "center",
+              "bottomVarticalAlign": false,
+              "border": ""
+            },
+            "isColumn": false,
+            "imageBefore": "",
+            "content": "answercell – answercell = answercell",
+            "answerCellMargin": "0 7px"
+          },
+          "type": "Elixir.Task_2_3_1_12",
+          "position": 0,
+          "id": "cx-2_3_1_12-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "6;;2;;4",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            6,
+            2,
+            4
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "6;;2;;4"
+        ],
+        "truncated": true,
+        "layoutByPayload": "answerCell.multi.stack.n3.plain",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-2"
+      },
+      {
+        "id": "2_4_16_2",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": "x1",
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "Berilgan sonni bir xil uchta qo‘shiluvchining yig‘indisi ko‘rinishida yozing.",
+            "rus": "Запишите данное число в виде суммы трёх одинаковых слагаемых.",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "",
+            "kaz": "Берілген санды бірдей үш қосылғыштың қосындысы түрінде жазыңыз.",
+            "eng": "",
+            "aze": "Verilmiş ədədi üç eyni toplananın cəmi şəklində yazın.",
+            "arsa": "",
+            "arjd": "",
+            "areg": ""
+          },
+          "fields": {
+            "number2": 10,
+            "number1": 30,
+            "difficulty": "x1"
+          },
+          "description": {
+            "withAudio": true,
+            "type": "answerCell",
+            "text_before": "",
+            "text_after": "",
+            "table_before": null,
+            "is_column": false,
+            "image_before": "",
+            "content": "30 = \\(\\ \\) answercell \\(\\ \\) + \\(\\ \\) answercell \\(\\ \\) + \\(\\ \\) answercell",
+            "answer_cell_margin": ""
+          },
+          "type": "Elixir.Task_2_4_16_2",
+          "position": 0,
+          "id": "cx-2_4_16_2-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "10;;10;;10",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            10,
+            10,
+            10
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "10;;10;;10"
+        ],
+        "truncated": false,
+        "layoutByPayload": "answerCell.multi.stack.n3.plain",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-2"
+      }
+    ],
+    "5": [
+      {
+        "id": "5_2_2_6",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number2": 2,
+            "number1": 3,
+            "number": 12
+          },
+          "description": {
+            "withAudio": true,
+            "type": "answerCell",
+            "textBefore": "",
+            "textAfter": "",
+            "tableBefore": null,
+            "isColumn": false,
+            "imageBefore": "",
+            "content": {
+              "with_audio_player": false,
+              "uzb": "12 ning \\(\\ \\) answercell \\(\\ \\) bo'luvchilari, ular orasida \\(\\ \\) answercell \\(\\ \\) tub va \\(\\ \\) answercell \\(\\ \\) murakkab sonlar nechta.\r\n",
+              "rus": "Число 12 имеет \\(\\ \\) answercell делители, включая \\(\\ \\) answercell простые и \\(\\ \\) answercell составные числа.\r\n",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "",
+              "kaz": "12-нің answercell бөлгіші бар, оның ішінде answercell жай сан, answercell құрама сан бар.\r\n",
+              "eng": "",
+              "aze": "12 ədədinin həm sadə, həm də mürəkkəb ədədlər daxil olmaqla bölənləri:\r\n",
+              "arsa": "",
+              "arjd": "",
+              "areg": ""
+            },
+            "answerCellMargin": ""
+          },
+          "type": "Elixir.Task_5_2_2_6",
+          "position": 0,
+          "id": "cx-5_2_2_6-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "6;;2;;3",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "answers": [
+            {
+              "separator": true,
+              "answers": [
+                6,
+                2,
+                3
+              ],
+              "_struct": "MultipleTaskAnswer"
+            }
+          ],
+          "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+        },
+        "answerElixirType": "TaskAnswers.AnyOfThemTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "6;;2;;3"
+        ],
+        "truncated": false,
+        "layoutByPayload": "answerCell.multi.stack.n3.plain",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-5"
+      }
+    ]
+  }
+}

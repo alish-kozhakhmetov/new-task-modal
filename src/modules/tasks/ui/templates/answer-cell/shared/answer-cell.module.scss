@@ -129,6 +129,23 @@
   }
 }
 
+// A column of answer lines (`isColumn`): useRowWrap does not run here, each
+// line is a segment of its own. A line wider than the phone puts its field
+// under the expression — «48 · 9 = (40 + 8) · 9 = 40 · 9 + 8 · 9 =» / «▢»
+// (5_1_61_4: the field went 35 px past a 390 px window, stream CX, 27.11).
+// A line that fits keeps its one-line width: fit-content is max-content then;
+// the field keeps its minimum on a line of its own instead of growing to it.
+.contentRowColumn > .segmentInput {
+  flex-wrap: wrap;
+  min-width: 0;
+  max-width: 100%;
+
+  .cellInput {
+    flex-grow: 0;
+    flex-basis: auto;
+  }
+}
+
 // Answer block after the condition (rule 7). Last in the file: a container
 // child selector outranks the plain class rules above.
 .container > .contentRow {

@@ -1,0 +1,366 @@
+{
+  "attemptsCount": null,
+  "isPrimary": true,
+  "hasVideoUrl": false,
+  "isPenalty": false,
+  "answerInput": {
+    "type": 30,
+    "input3": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "Bo'yalmagan qismning yuzi:",
+        "rus": "Площадь незакрашенной части:",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "Боёлбогон бөлүктүн аянты:",
+        "kaz": "Боялмаған бөліктің ауданы:",
+        "eng": "Area of ​​the unshaded part:",
+        "aze": "Boyanmamış hissənin sahəsi:",
+        "arsa": "",
+        "arjd": "",
+        "areg": "مساحة الجزء غير الملون:"
+      },
+      "after": {
+        "with_audio_player": false,
+        "uzb": "cm²",
+        "rus": "см²",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "см²",
+        "kaz": "см²",
+        "eng": "cm²",
+        "aze": "sm²",
+        "arsa": "سم\\(^2\\)",
+        "arjd": "sm²",
+        "areg": "سم²"
+      }
+    },
+    "input2": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "Bo'yalgan qismning yuzi:",
+        "rus": "Площадь закрашенной части:",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "Боелгон бөлүктүн аянты:",
+        "kaz": "Боялған бөліктің ауданы:",
+        "eng": "Area of ​​the shaded part:",
+        "aze": "Boyanmış hissənin sahəsi:",
+        "arsa": "",
+        "arjd": "",
+        "areg": "مساحة الجزء الملون:"
+      },
+      "after": {
+        "with_audio_player": false,
+        "uzb": "cm²",
+        "rus": "см²",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "см²",
+        "kaz": "см²",
+        "eng": "cm²",
+        "aze": "sm²",
+        "arsa": "سم\\(^2\\)",
+        "arjd": "sm²",
+        "areg": "سم²"
+      }
+    },
+    "input1": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "To'g'ri to'rtburchakning umumiy yuzi:",
+        "rus": "Общая площадь прямоугольника:",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "Төрт бурчтуктун жалпы аянты:",
+        "kaz": "Тіктөртбұрыштың жалпы ауданы:",
+        "eng": "Total area of ​​the rectangle:",
+        "aze": "Düzbucaqlının ümumi sahəsi:",
+        "arsa": "",
+        "arjd": "",
+        "areg": "المساحة الكلية للمستطيل:"
+      },
+      "after": {
+        "with_audio_player": false,
+        "uzb": "cm²",
+        "rus": "см²",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "см²",
+        "kaz": "см²",
+        "eng": "cm²",
+        "aze": "sm²",
+        "arsa": "سم\\(^2\\)",
+        "arjd": "sm²",
+        "areg": "سم²"
+      }
+    },
+    "inline": false
+  },
+  "difficulty": null,
+  "result": "none",
+  "title": {
+    "with_audio_player": false,
+    "uzb": "Berilgan shaklning yuzini toping.",
+    "rus": "Найдите площадь данной фигуры.",
+    "module_name": "Elixir.Helpers.Translation",
+    "kgz": "Фигуранын аянтын табыңыз.",
+    "kaz": "Берілген фигураның ауданын тап.",
+    "eng": "Find the area of ​​this figure.",
+    "aze": "Verilmiş fiqurun sahəsini tapın.",
+    "arsa": "",
+    "arjd": "",
+    "areg": "أوجد مساحة الشكل المقابل"
+  },
+  "fields": {
+    "number4": 5,
+    "number3": 4,
+    "number2": 6,
+    "number1": 10
+  },
+  "description": {
+    "type": "complex",
+    "parts": [
+      {
+        "yAxisLabel": "y",
+        "xAxisLabel": "x",
+        "type": 110,
+        "tickStepYMultiply": 1,
+        "tickStepXMultiply": 1,
+        "tickStep": 1,
+        "stepSize": 30,
+        "startNumber": false,
+        "showCells": false,
+        "showAxis": false,
+        "reduceHeight": 2,
+        "points": [],
+        "notClickableDots": true,
+        "minPosition": -5,
+        "maxPosition": 5,
+        "limitedPoint": 0,
+        "isLine": false,
+        "isFullFilled": false,
+        "isFillingLimitedByAxis": false,
+        "intervals": [],
+        "fillingFunctions": [],
+        "figures": [
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -2,
+                "x": -2.5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 2,
+                "x": -2.5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 2,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -2,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -2,
+                "x": -2.5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 0,
+                "x": -2.5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 0,
+                "x": 0,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -2,
+                "x": 0,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "y": 0,
+            "x": 3.7,
+            "type": 100,
+            "textAnchor": null,
+            "text": {
+              "with_audio_player": false,
+              "uzb": "6 cm",
+              "rus": "6 см",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "6 см",
+              "kaz": "6 см",
+              "eng": "6 cm",
+              "aze": "6 sm",
+              "arsa": "6 سم",
+              "arjd": "6 cm",
+              "areg": "6 سم"
+            },
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 2.5,
+            "x": 0,
+            "type": 100,
+            "textAnchor": null,
+            "text": {
+              "with_audio_player": false,
+              "uzb": "10 cm",
+              "rus": "10 см",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "10 см",
+              "kaz": "10 см",
+              "eng": "10 cm",
+              "aze": "10 sm",
+              "arsa": "10 سم",
+              "arjd": "10 cm",
+              "areg": "10 سم"
+            },
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -1,
+            "x": -3.5,
+            "type": 100,
+            "textAnchor": null,
+            "text": {
+              "with_audio_player": false,
+              "uzb": "4 cm",
+              "rus": "4 см",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "4 см",
+              "kaz": "4 см",
+              "eng": "4 cm",
+              "aze": "4 sm",
+              "arsa": "4 سم",
+              "arjd": "4 cm",
+              "areg": "4 سم"
+            },
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -2.5,
+            "x": -1.5,
+            "type": 100,
+            "textAnchor": null,
+            "text": {
+              "with_audio_player": false,
+              "uzb": "5 cm",
+              "rus": "5 см",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "5 см",
+              "kaz": "5 см",
+              "eng": "5 cm",
+              "aze": "5 sm",
+              "arsa": "5 سم",
+              "arjd": "5 cm",
+              "areg": "5 سم"
+            },
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          }
+        ],
+        "drawingFigure": 0,
+        "displayedNumbers": [],
+        "disabledPoints": [],
+        "canFill": false,
+        "canDrawMultipleFigures": false,
+        "allowedFigures": []
+      }
+    ],
+    "isCalculatorClosed": false,
+    "isAnswerCellHidden": false
+  },
+  "type": "Elixir.Task_3_10_15_4",
+  "position": 0,
+  "id": "cx-3_10_15_4-0",
+  "hint1": null,
+  "hint2": null,
+  "videoId": null,
+  "videoUrl": null,
+  "solution": {
+    "type": "formula",
+    "answer": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "60;;20;;40",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    },
+    "content": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    }
+  }
+}

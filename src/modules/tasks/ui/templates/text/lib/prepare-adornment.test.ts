@@ -33,6 +33,24 @@ describe('prepareAdornment', () => {
     })
   })
 
+  // GeoTask_7_2_8_2 of the local backend (stream CX, 27.11): «∠B = ∠▢» is
+  // two islands with prose between, not one wrapped value; stripped as one it
+  // showed «\angle\) B = \(\angle» to the pupil.
+  it('two islands with prose between keep their delimiters', () => {
+    expect(prepareAdornment('\\(\\angle\\) B = \\(\\angle\\)')).toEqual({
+      kind: 'math',
+      text: '\\(\\angle\\) B = \\(\\angle\\)',
+    })
+    expect(prepareAdornment('\\(\\angle\\)C = \\(\\angle\\)').text).toBe(
+      '\\(\\angle\\)C = \\(\\angle\\)',
+    )
+    // one island stays stripped
+    expect(prepareAdornment('\\(∆ABC = ∆\\)')).toEqual({
+      kind: 'plain',
+      text: '∆ABC = ∆',
+    })
+  })
+
   it('treats bare prose as plain', () => {
     expect(prepareAdornment('км')).toEqual({ kind: 'plain', text: 'км' })
   })

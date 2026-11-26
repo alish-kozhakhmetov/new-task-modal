@@ -1,0 +1,746 @@
+{
+  "attemptsCount": null,
+  "isPrimary": true,
+  "hasVideoUrl": false,
+  "isPenalty": false,
+  "answerInput": {
+    "up": "",
+    "type": 10,
+    "text": " ",
+    "svg": "",
+    "down": "",
+    "before": {
+      "with_audio_player": false,
+      "uzb": "\\(x\\) =",
+      "rus": "\\(x\\) =",
+      "module_name": "Elixir.Helpers.Translation",
+      "kgz": "\\(x\\) =",
+      "kaz": "\\(x\\) =",
+      "eng": "\\(x\\) =",
+      "aze": "\\(x\\) =",
+      "arsa": "\\(x\\) =",
+      "arjd": "\\(x\\) =",
+      "areg": "\\(x\\) ="
+    },
+    "after": ""
+  },
+  "difficulty": "x1",
+  "result": "none",
+  "title": null,
+  "fields": {
+    "number2": 5,
+    "number1": 3,
+    "difficulty": "x1"
+  },
+  "description": {
+    "type": "complex",
+    "parts": [
+      {
+        "type": 10,
+        "content": {
+          "with_audio_player": false,
+          "uzb": "Son va harf qanday rangga bo‘yalganiga qarab, tenglamani yeching",
+          "rus": "Посмотрите на цвета чисел и букв и решите уравнение.",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "Сандардын жана тамгалардын түстөрүнө карап, теңдемени чыгарыңыз.",
+          "kaz": "Сан мен әріп қандай түспен боялғанына қарап, теңдеуді шешіңіз.",
+          "eng": "Look at the color of the numbers and letters and solve the equation.",
+          "aze": "Ədədlərin və hərflərin rənglərinə baxın və tənliyi həll edin.",
+          "arsa": "",
+          "arjd": "",
+          "areg": "انظر إلى ألوان الأرقام والرموز في المربعات ، ثم حل المعادلة بناءا عليها"
+        }
+      },
+      {
+        "yAxisLabel": "y",
+        "xAxisLabel": "x",
+        "type": 110,
+        "tickStepYMultiply": 1,
+        "tickStepXMultiply": 1,
+        "tickStep": 1,
+        "stepSize": 30,
+        "startNumber": false,
+        "showCells": false,
+        "showAxis": false,
+        "reduceHeight": 1,
+        "points": [],
+        "notClickableDots": true,
+        "minPosition": -7,
+        "maxPosition": 7,
+        "limitedPoint": 0,
+        "isLine": false,
+        "isFullFilled": false,
+        "isFillingLimitedByAxis": false,
+        "intervals": [],
+        "fillingFunctions": [],
+        "figures": [
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 7,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 7,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 5,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 5,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "#90EE90",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 7,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 7,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 5,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 5,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "#eb34d8",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 7,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 7,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 5,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 5,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 4,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 4,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 2,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 2,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "#eb34d8",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 4,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 4,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 2,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 2,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 4,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 4,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 2,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 2,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "#90EE90",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 1,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 1,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -1,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -1,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "#eb34d8",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 1,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 1,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -1,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -1,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "#eb34d8",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -2,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -2,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -4,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -4,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "#90EE90",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -2,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -2,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -4,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -4,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "#eb34d8",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -2,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -2,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -4,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -4,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -5,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -5,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -7,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -7,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -5,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -5,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -7,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": -7,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "y": 6.35,
+            "x": -0.15,
+            "type": 100,
+            "textAnchor": null,
+            "text": {
+              "with_audio_player": false,
+              "uzb": "\\(x\\)",
+              "rus": "\\(x\\)",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "\\(x\\)",
+              "kaz": "\\(x\\)",
+              "eng": "\\(x\\)",
+              "aze": "\\(x\\)",
+              "arsa": "\\(x\\)",
+              "arjd": "\\(x\\)",
+              "areg": "س"
+            },
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 3.35,
+            "x": -4.15,
+            "type": 100,
+            "textAnchor": null,
+            "text": {
+              "with_audio_player": false,
+              "uzb": "\\(x\\)",
+              "rus": "\\(x\\)",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "\\(x\\)",
+              "kaz": "\\(x\\)",
+              "eng": "\\(x\\)",
+              "aze": "\\(x\\)",
+              "arsa": "\\(x\\)",
+              "arjd": "\\(x\\)",
+              "areg": "س"
+            },
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 0.35,
+            "x": -4.15,
+            "type": 100,
+            "textAnchor": null,
+            "text": {
+              "with_audio_player": false,
+              "uzb": "\\(x\\)",
+              "rus": "\\(x\\)",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "\\(x\\)",
+              "kaz": "\\(x\\)",
+              "eng": "\\(x\\)",
+              "aze": "\\(x\\)",
+              "arsa": "\\(x\\)",
+              "arjd": "\\(x\\)",
+              "areg": "س"
+            },
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 6,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "+",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 3,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 0,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -3,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "+",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 6,
+            "x": 2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 3,
+            "x": 2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "-",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -3,
+            "x": 2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -6,
+            "x": 2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 6,
+            "x": -4,
+            "type": 100,
+            "textAnchor": null,
+            "text": "3",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 6,
+            "x": 4,
+            "type": 100,
+            "textAnchor": null,
+            "text": "5",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          }
+        ],
+        "drawingFigure": 0,
+        "displayedNumbers": [],
+        "disabledPoints": [],
+        "canFill": false,
+        "canDrawMultipleFigures": false,
+        "allowedFigures": []
+      }
+    ],
+    "isCalculatorClosed": false,
+    "isAnswerCellHidden": false
+  },
+  "type": "Elixir.Task_1_6_11",
+  "position": 0,
+  "id": "cx-1_6_11-0",
+  "hint1": null,
+  "hint2": null,
+  "videoId": null,
+  "videoUrl": null,
+  "solution": {
+    "type": "formula",
+    "answer": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "2",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    },
+    "content": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    }
+  }
+}

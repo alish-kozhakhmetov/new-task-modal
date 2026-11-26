@@ -17,7 +17,17 @@ import { TextTaskDescription } from '../shared/text-task-description'
 import styles from '../shared/text-template.module.scss'
 
 import { maybeNormalizeBareMath } from './normalize-bare-math'
+import { prepareAdornment } from './prepare-adornment'
 import type { TextTask } from './types.task'
+
+/**
+ * A label TextAdornment draws: «Лео: », not a space. The Russian `after` of
+ * 6_12_3_10 is « » — drawn as nothing, it took the row's grid cell with it and
+ * the next label stood in its place (stream CX, 27.11); such a label keeps
+ * the empty cell instead.
+ */
+const shows = (label: string | undefined): label is string =>
+  Boolean(label && prepareAdornment(label).text)
 
 interface MultiTextTemplateConfig {
   /** templateId, e.g. `text.multi.stack.n2.beforeAfter`. */
@@ -118,7 +128,7 @@ export const createMultiTextTemplate = ({
         >
           {inputEntries.map(({ key, before, after }, index) => (
             <div key={key} className={styles.inputRow}>
-              {withBefore && before ? (
+              {withBefore && shows(before) ? (
                 <TextAdornment
                   data-testid="text-prefix"
                   className={styles.fieldLabel}
@@ -140,7 +150,7 @@ export const createMultiTextTemplate = ({
                     : undefined
                 }
               />
-              {withAfter && after ? (
+              {withAfter && shows(after) ? (
                 <TextAdornment
                   data-testid="text-suffix"
                   className={styles.suffix}

@@ -108,7 +108,13 @@
 .suffix,
 .fieldLabel {
   flex-shrink: 0;
-  white-space: nowrap;
+
+  // A label wider than the row wraps by words inside the row (rule 17)
+  // instead of running off the screen; one that fits keeps its one line,
+  // as with nowrap: the width is still max-content (stream CX, 26.11:
+  // «Сколько учеников добираются до школы на…» was cut at 375).
+  max-width: 100%;
+  white-space: normal;
 }
 
 .stack {
@@ -124,6 +130,18 @@
   flex-wrap: wrap;
   gap: 8px;
   align-items: center;
+
+  // Fields in a row (complex.multi.inline.*, new in stream CX): a field keeps
+  // its sign or unit and the pair moves to the next line whole (rule 14), as
+  // text.multi.inline does; the fields of the group are one width (rule 11).
+  > .inputRow {
+    flex-wrap: nowrap;
+  }
+
+  .input {
+    flex: 0 0 120px;
+    width: 120px;
+  }
 }
 
 .planeSvg,
@@ -165,4 +183,27 @@
 .container > .stack,
 .container > .inline {
   margin-top: var(--space-16);
+}
+
+// A table part wider than its room (table-part.tsx, useWrapTextWhenTooWide):
+// its text cells wrap by words and share the width instead of standing at 1%
+// on one line; a field keeps a field's width (72 px: «1 000» in 18 px with
+// the field's padding — 5_6_3_5 puts three fields and four formulas in a row).
+.tablePart[data-wrap-text] {
+  td:not(.tableInputCell) {
+    width: auto;
+    white-space: normal;
+  }
+
+  .tableInputCell > * {
+    min-width: to-rem(72px);
+  }
+
+  // a picture of the backend's own width (210–730 px, 3_11_9…12) shrinks with
+  // the column, keeping its proportions
+  td :global(svg) {
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+  }
 }

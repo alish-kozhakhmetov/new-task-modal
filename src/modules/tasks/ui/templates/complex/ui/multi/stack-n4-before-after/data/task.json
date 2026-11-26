@@ -1,0 +1,199 @@
+{
+  "attemptsCount": null,
+  "isPrimary": true,
+  "hasVideoUrl": false,
+  "isPenalty": false,
+  "answerInput": {
+    "type": 40,
+    "input4": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "\\(D(\\)",
+        "rus": "\\(D(\\)",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "\\(D(\\)",
+        "kaz": "\\(D(\\)",
+        "eng": "\\(D(\\)",
+        "aze": "\\(D(\\)",
+        "arsa": "\\(D(\\)",
+        "arjd": "\\(D(\\)",
+        "areg": "\\(D(\\)"
+      },
+      "after": "\\()\\)"
+    },
+    "input3": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "\\(C(\\)",
+        "rus": "\\(C(\\)",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "\\(C(\\)",
+        "kaz": "\\(C(\\)",
+        "eng": "\\(C(\\)",
+        "aze": "\\(C(\\)",
+        "arsa": "\\(C(\\)",
+        "arjd": "\\(C(\\)",
+        "areg": "\\(C(\\)"
+      },
+      "after": "\\()\\)"
+    },
+    "input2": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "\\(B(\\)",
+        "rus": "\\(B(\\)",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "\\(B(\\)",
+        "kaz": "\\(B(\\)",
+        "eng": "\\(B(\\)",
+        "aze": "\\(B(\\)",
+        "arsa": "\\(B(\\)",
+        "arjd": "\\(B(\\)",
+        "areg": "\\(B(\\)"
+      },
+      "after": "\\()\\)"
+    },
+    "input1": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "\\(A(\\)",
+        "rus": "\\(A(\\)",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "\\(A(\\)",
+        "kaz": "\\(A(\\)",
+        "eng": "\\(A(\\)",
+        "aze": "\\(A(\\)",
+        "arsa": "\\(A(\\)",
+        "arjd": "\\(A(\\)",
+        "areg": "\\(A(\\)"
+      },
+      "after": "\\()\\)"
+    },
+    "inline": false
+  },
+  "difficulty": null,
+  "result": "none",
+  "title": null,
+  "fields": {
+    "number4": 18,
+    "number3": 8,
+    "number2": 4,
+    "number1": 3
+  },
+  "description": {
+    "type": "complex",
+    "parts": [
+      {
+        "type": 10,
+        "content": {
+          "with_audio_player": false,
+          "uzb": "Sonlar nurida belgilangan nuqtalarning koordinatalarini toping.",
+          "rus": "Какие числа соответствуют точкам A, B, C и D на координатном луче?",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "Координаттык шоолада A, B, C жана D чекиттерине кайсы сандар дал келет?",
+          "kaz": "Координаталық сәуледе A, B, C және D нүктелеріне қандай сандар сәйкес келеді?",
+          "eng": "Which numbers correspond to the points A, B, C and D on the coordinate ray?",
+          "aze": "Hansı ədədlər koordinat oxunda A, B, C və D nöqtələrinə uyğundur?",
+          "arsa": "",
+          "arjd": "",
+          "areg": "اكتب الأعداد التي تمثل النقاط A ، B ، C ، D على خط الأعداد."
+        }
+      },
+      {
+        "width": "100%",
+        "type": 20,
+        "tickStep": 1,
+        "stepSize": 20,
+        "numbers": [
+          {
+            "position": 1
+          }
+        ],
+        "minPosition": 0,
+        "maxPosition": 22,
+        "letters": [],
+        "dots": [
+          {
+            "withNumber": false,
+            "position": 3,
+            "letter": "A"
+          },
+          {
+            "withNumber": false,
+            "position": 4,
+            "letter": "B"
+          },
+          {
+            "withNumber": false,
+            "position": 8,
+            "letter": "C"
+          },
+          {
+            "withNumber": false,
+            "position": 18,
+            "letter": "D"
+          }
+        ],
+        "divisionsIsVisible": true
+      }
+    ],
+    "isCalculatorClosed": false,
+    "isAnswerCellHidden": false
+  },
+  "type": "Elixir.Task_5_1_45_1",
+  "position": 0,
+  "id": "cx-5_1_45_1-0",
+  "hint1": null,
+  "hint2": null,
+  "videoId": null,
+  "videoUrl": null,
+  "solution": {
+    "type": "formula",
+    "answer": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "3;;4;;8;;18",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    },
+    "content": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    }
+  }
+}

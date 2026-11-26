@@ -72,6 +72,15 @@ describe('normalizeOperatorSigns', () => {
     expect(n('изд./ч *')).toBe(`изд./ч ${X}`)
   })
 
+  it('a star after «вместо» is the hidden digit of the condition, not times', () => {
+    // 5_1_55_2…9: the field's label before the answer
+    expect(n('цифра, стоящая вместо *')).toBe('цифра, стоящая вместо ❋')
+    expect(n('цифра, стоящая вместо * -')).toBe('цифра, стоящая вместо ❋ -')
+    // times at the edge of a label stays times
+    expect(n('изд./ч *')).toBe(`изд./ч ${X}`)
+    expect(n('5 * 3')).toBe(`5 ${X} 3`)
+  })
+
   it('long dash in prose, hyphens inside words stay', () => {
     expect(
       n('население Березники 1578700 человек, Нижневартовска – 254500 человек'),

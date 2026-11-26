@@ -1,0 +1,3895 @@
+{
+  "defaultGrade": 2,
+  "grades": [
+    2,
+    3,
+    4,
+    5,
+    11
+  ],
+  "byGrade": {
+    "2": [
+      {
+        "id": "2_4_2_4",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": {
+                "with_audio_player": false,
+                "uzb": "cm",
+                "rus": "см",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "см",
+                "kaz": "см",
+                "eng": "cm",
+                "aze": "sm",
+                "arsa": "سم",
+                "arjd": "cm",
+                "areg": "سم"
+              }
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": "="
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": "+"
+            },
+            "inline": true
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number2": 2,
+            "number1": 16
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "Chizma yordamida hisoblang.\r\\(\\\\\\)Salyangoz birinchi kuni 16 cm, ikkinchi kuni esa 2 cm yo'l yurdi.\r\\(\\\\\\)Salyangoz ikki kunda jami necha cm yo'l yurdi?\r\\(\\\\\\)",
+                  "rus": "Вычислите с помощью схемы. Улитка прошла 16 см в первый день и 2 см — во второй. Сколько сантиметров улитка прошла за два дня всего?\r\\(\\\\\\)",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Сұлбаның көмегімен есептеңіз. Ұлу бірінші күні 16 см, ал екінші күні 2 см жол жүрді. Ұлу екі күнде барлығы неше см жол жүрді?\r\\(\\\\\\)",
+                  "eng": "",
+                  "aze": "Sxemdən istifadə edərək hesablayın.\r\\(\\\\\\)İlbiz birinci gün 16 sm, ikinci gün isə 2 sm yol gedib.\r\\(\\\\\\)İlbiz iki gün ərzində cəmi neçə santimetr yol gedib?\r\\(\\\\\\)",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              },
+              {
+                "with_number": "",
+                "type": 160,
+                "size": 50,
+                "repeat_quantity": 1,
+                "manually_set_size": false,
+                "is_wrap_content": false,
+                "is_vertical": false,
+                "countable": false,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +1468 chars</text></svg>",
+                  "rus": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +1468 chars</text></svg>",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +1468 chars</text></svg>",
+                  "kaz": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +1468 chars</text></svg>",
+                  "eng": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +1468 chars</text></svg>",
+                  "aze": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +1468 chars</text></svg>",
+                  "arsa": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +1468 chars</text></svg>",
+                  "arjd": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +1468 chars</text></svg>",
+                  "areg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +1468 chars</text></svg>"
+                },
+                "background_image": null
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_2_4_2_4",
+          "position": 0,
+          "id": "cx-2_4_2_4-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "16;;2;;18",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": [
+          {
+            "separator": true,
+            "answers": [
+              16,
+              2,
+              18
+            ],
+            "_struct": "MultipleTaskAnswer"
+          },
+          {
+            "separator": true,
+            "answers": [
+              2,
+              16,
+              18
+            ],
+            "_struct": "MultipleTaskAnswer"
+          }
+        ],
+        "answerElixirType": "list (any-of match)",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "16;;2;;18",
+          "2;;16;;18"
+        ],
+        "truncated": true,
+        "layoutByPayload": "complex.multi.inline.n3.after",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-2"
+      },
+      {
+        "id": "2_4_4_2",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 15,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": "="
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": "+"
+            },
+            "inline": true
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number3": 2,
+            "number2": 20,
+            "number1": 30
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "Bo‘sh joylarga kerakli sonlarni yozing. Yig‘indining qiymatini toping.",
+                  "rus": "Запишите нужные числа в пустые ячейки. Найдите значение суммы.",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Бос орынға керекті сандарды қойыңыз. Қосындының мәнін табыңыз.",
+                  "eng": "",
+                  "aze": "Lazım olan ədədləri boş xanalara yazın. Cəmin qiymətini tapın.",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              },
+              {
+                "width": "44vh",
+                "type": 120,
+                "tableAlign": "center",
+                "rows": [
+                  {
+                    "width": null,
+                    "rowspan_list": [],
+                    "rowspan_at": 0,
+                    "rowspan": 1,
+                    "colspan_list": [],
+                    "colspan_at": 0,
+                    "colspan": 1,
+                    "cells": [
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>"
+                    ],
+                    "border_bottom": null
+                  },
+                  {
+                    "width": null,
+                    "rowspan_list": [],
+                    "rowspan_at": 0,
+                    "rowspan": 1,
+                    "colspan_list": [],
+                    "colspan_at": 0,
+                    "colspan": 1,
+                    "cells": [
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>"
+                    ],
+                    "border_bottom": null
+                  },
+                  {
+                    "width": null,
+                    "rowspan_list": [],
+                    "rowspan_at": 0,
+                    "rowspan": 1,
+                    "colspan_list": [],
+                    "colspan_at": 0,
+                    "colspan": 1,
+                    "cells": [
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>"
+                    ],
+                    "border_bottom": null
+                  },
+                  {
+                    "width": null,
+                    "rowspan_list": [],
+                    "rowspan_at": 0,
+                    "rowspan": 1,
+                    "colspan_list": [],
+                    "colspan_at": 0,
+                    "colspan": 1,
+                    "cells": [
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>"
+                    ],
+                    "border_bottom": null
+                  },
+                  {
+                    "width": null,
+                    "rowspan_list": [],
+                    "rowspan_at": 0,
+                    "rowspan": 1,
+                    "colspan_list": [],
+                    "colspan_at": 0,
+                    "colspan": 1,
+                    "cells": [
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>"
+                    ],
+                    "border_bottom": null
+                  },
+                  {
+                    "width": null,
+                    "rowspan_list": [],
+                    "rowspan_at": 0,
+                    "rowspan": 1,
+                    "colspan_list": [],
+                    "colspan_at": 0,
+                    "colspan": 1,
+                    "cells": [
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13795 chars</text></svg>"
+                    ],
+                    "border_bottom": null
+                  }
+                ],
+                "removePadding": true,
+                "removeBorders": false,
+                "padding": null,
+                "marginBottom": null,
+                "isAnswerCellHidden": true,
+                "columnHeaders": [],
+                "columnAlign": "center",
+                "bottomVarticalAlign": false,
+                "border": ""
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_2_4_4_2",
+          "position": 0,
+          "id": "cx-2_4_4_2-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "32;;20;;52",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": [
+          {
+            "separator": true,
+            "answers": [
+              32,
+              20,
+              52
+            ],
+            "_struct": "MultipleTaskAnswer"
+          },
+          {
+            "separator": true,
+            "answers": [
+              20,
+              32,
+              52
+            ],
+            "_struct": "MultipleTaskAnswer"
+          }
+        ],
+        "answerElixirType": "list (any-of match)",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "32;;20;;52",
+          "20;;32;;52"
+        ],
+        "truncated": true,
+        "layoutByPayload": "complex.multi.inline.n3.after",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-2"
+      },
+      {
+        "id": "2_1_1_30",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": {
+                "with_audio_player": false,
+                "uzb": "kg",
+                "rus": "кг",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "кг",
+                "kaz": "кг",
+                "eng": "kg",
+                "aze": "kq",
+                "arsa": "كغم",
+                "arjd": "kg",
+                "areg": "كجم"
+              }
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": {
+                "with_audio_player": false,
+                "uzb": " kg = ",
+                "rus": " кг = ",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": " кг = ",
+                "kaz": " кг = ",
+                "eng": " kg = ",
+                "aze": " kq = ",
+                "arsa": " كغم = ",
+                "arjd": " kg = ",
+                "areg": " كجم = "
+              }
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": {
+                "with_audio_player": false,
+                "uzb": " kg + ",
+                "rus": " кг + ",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": " кг + ",
+                "kaz": " кг + ",
+                "eng": " kg + ",
+                "aze": " kq + ",
+                "arsa": " كغم + ",
+                "arjd": " kg + ",
+                "areg": " كجم + "
+              }
+            },
+            "inline": true
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number2": 6,
+            "number1": 2
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "O‘rdakning vazni necha kilogramm? Ifoda tuzing va qiymatini toping.",
+                  "rus": "Сколько килограммов весит утка? Составьте выражение и найдите его значение.",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Үйректің салмағы неше килограмм? Өрнек құрастырып мәнін табыңыз.",
+                  "eng": "",
+                  "aze": "Ördəyin çəkisi neçə kiloqramdır? İfadə qurun və onun qiymətini tapın.",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              },
+              {
+                "with_number": "",
+                "type": 160,
+                "size": 50,
+                "repeat_quantity": 1,
+                "manually_set_size": false,
+                "is_wrap_content": false,
+                "is_vertical": false,
+                "countable": false,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +16354 chars</text></svg>",
+                  "rus": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +16354 chars</text></svg>",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +16354 chars</text></svg>",
+                  "kaz": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +16354 chars</text></svg>",
+                  "eng": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +16354 chars</text></svg>",
+                  "aze": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +16354 chars</text></svg>",
+                  "arsa": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +16356 chars</text></svg>",
+                  "arjd": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +16354 chars</text></svg>",
+                  "areg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +16356 chars</text></svg>"
+                },
+                "background_image": null
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_2_1_1_30",
+          "position": 0,
+          "id": "cx-2_1_1_30-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "2;;6;;8",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "answers": [
+            {
+              "separator": true,
+              "answers": [
+                2,
+                6,
+                8
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                6,
+                2,
+                8
+              ],
+              "_struct": "MultipleTaskAnswer"
+            }
+          ],
+          "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+        },
+        "answerElixirType": "TaskAnswers.AnyOfThemTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "2;;6;;8",
+          "6;;2;;8"
+        ],
+        "truncated": true,
+        "layoutByPayload": "complex.multi.inline.n3.after",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-2"
+      },
+      {
+        "id": "2_1_1_31",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": " = "
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": " + "
+            },
+            "inline": true
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "Masalaning chizmasiga qarab, yechimini yozing.",
+            "rus": "Посмотрите на схему задачи и запишите её решение.",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "",
+            "kaz": "Есептің сұлбасына қарап, шешуін жазыңыз.",
+            "eng": "",
+            "aze": "Tapşırığın sxeminə baxın və onun həllini yazın.",
+            "arsa": "",
+            "arjd": "",
+            "areg": ""
+          },
+          "fields": {
+            "number": 2
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "Sinfda 10 ta o'quvchi logika to‘garagiga, 2 ta o‘quvchi rassomchilik to‘garagiga qatnashadi. Sinfda to‘garaklarga qatnashadigan jami nechta o‘quvchi bor?",
+                  "rus": "В классе 10 учеников посещают кружок логики, 2 ученика кружок рисования. Сколько всего учеников класса посещают кружки?",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Сыныпта 10 оқушы логика үйірмесіне, 2 оқушы сурет үйірмесіне қатысады. Сыныпта үйірмелерге қатысатын барлығы неше оқушы бар?\r\n",
+                  "eng": "",
+                  "aze": "Sinifdə 10 şagird məntiq dərnəyinə, 2 şagird isə rəsm dərnəyinə gedir. Sinifdə ümumilikdə neçə şagird dərnəyə gedir?\r\n",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              },
+              {
+                "with_number": "",
+                "type": 160,
+                "size": 50,
+                "repeat_quantity": 1,
+                "manually_set_size": false,
+                "is_wrap_content": false,
+                "is_vertical": false,
+                "countable": false,
+                "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +9435 chars</text></svg>",
+                "background_image": null
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_2_1_1_31",
+          "position": 0,
+          "id": "cx-2_1_1_31-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "10;;2;;12",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "answers": [
+            {
+              "separator": true,
+              "answers": [
+                10,
+                2,
+                12
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                2,
+                10,
+                12
+              ],
+              "_struct": "MultipleTaskAnswer"
+            }
+          ],
+          "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+        },
+        "answerElixirType": "TaskAnswers.AnyOfThemTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "10;;2;;12",
+          "2;;10;;12"
+        ],
+        "truncated": true,
+        "layoutByPayload": "complex.multi.inline.n3.after",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-2"
+      },
+      {
+        "id": "2_2_24_5",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": " = "
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": " + "
+            },
+            "inline": true
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "Berilgan sonlarning grafik modeli asosida ifoda tuzing va qiymatini toping.",
+            "rus": "Глядя на графическую модель данного числа, постройте выражение и найдите его значение.\r\n",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Берилген сандардын графикалык моделинин негизинде туюнтманы түзүңүз жана маанисин табыңыз.\r\n",
+            "kaz": "Берілген сандардың графикалық моделіне қарап өрнек құрастырып, мәнін табыңыз.",
+            "eng": "Look at the place value model. Build an expression and find its value.",
+            "aze": "Qrafik modeli verilmiş ədədi rəqəmlərlə yazın.",
+            "arsa": "",
+            "arjd": "",
+            "areg": "أوجد ناتج جمع ما يلي باستخدام النماذج."
+          },
+          "fields": {
+            "number2": 2,
+            "number1": 42
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "width": "100%",
+                "type": 120,
+                "tableAlign": "center",
+                "rows": [
+                  {
+                    "width": null,
+                    "rowspan_list": [],
+                    "rowspan_at": 0,
+                    "rowspan": 1,
+                    "colspan_list": [],
+                    "colspan_at": 0,
+                    "colspan": 1,
+                    "cells": [
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +14588 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +588 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +1990 chars</text></svg>"
+                    ],
+                    "border_bottom": null
+                  }
+                ],
+                "removePadding": true,
+                "removeBorders": true,
+                "padding": null,
+                "marginBottom": null,
+                "isAnswerCellHidden": true,
+                "columnHeaders": [],
+                "columnAlign": "center",
+                "bottomVarticalAlign": false,
+                "border": ""
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_2_2_24_5",
+          "position": 0,
+          "id": "cx-2_2_24_5-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "42;;2;;44",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "answers": [
+            {
+              "separator": true,
+              "answers": [
+                42,
+                2,
+                44
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                2,
+                42,
+                44
+              ],
+              "_struct": "MultipleTaskAnswer"
+            }
+          ],
+          "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+        },
+        "answerElixirType": "TaskAnswers.AnyOfThemTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "42;;2;;44",
+          "2;;42;;44"
+        ],
+        "truncated": true,
+        "layoutByPayload": "complex.multi.inline.n3.after",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-2"
+      },
+      {
+        "id": "2_2_4_4",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": " + "
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": " = "
+            },
+            "inline": true
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number2": 2,
+            "number1": 3
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "Rasmdа necha dona olma bor? Olmalarning sonini xona qo'shiluvchilari yig'indisi ko'rinishida yozing:",
+                  "rus": "Сколько яблок на рисунке? Запишите количество яблок как сумму разрядных слагаемых.",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Суретте неше алма бар? Алмалардың санын разрядтық қосылғыштардың қосындысы түрінде жазыңыз:",
+                  "eng": "",
+                  "aze": "Şəkildə neçə alma var? Almaların sayını mərtəbə toplananlarının cəmi kimi yazın.",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              },
+              {
+                "width": "auto",
+                "type": 120,
+                "tableAlign": "center",
+                "rows": [
+                  {
+                    "width": null,
+                    "rowspan_list": [],
+                    "rowspan_at": 0,
+                    "rowspan": 1,
+                    "colspan_list": [],
+                    "colspan_at": 0,
+                    "colspan": 1,
+                    "cells": [
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +89666 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +89666 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +89666 chars</text></svg>",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +18509 chars</text></svg>"
+                    ],
+                    "border_bottom": null
+                  }
+                ],
+                "removePadding": false,
+                "removeBorders": true,
+                "padding": null,
+                "marginBottom": null,
+                "isAnswerCellHidden": true,
+                "columnHeaders": [],
+                "columnAlign": "center",
+                "bottomVarticalAlign": false,
+                "border": ""
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_2_2_4_4",
+          "position": 0,
+          "id": "cx-2_2_4_4-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "32;;2;;30",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "answers": [
+            {
+              "separator": true,
+              "answers": [
+                32,
+                2,
+                30
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                32,
+                30,
+                2
+              ],
+              "_struct": "MultipleTaskAnswer"
+            }
+          ],
+          "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+        },
+        "answerElixirType": "TaskAnswers.AnyOfThemTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "32;;2;;30",
+          "32;;30;;2"
+        ],
+        "truncated": true,
+        "layoutByPayload": "complex.multi.inline.n3.after",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-2"
+      },
+      {
+        "id": "2_6_12_7",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": " + 5 = "
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": " + "
+            },
+            "inline": true
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "Qo‘shishning guruhlash  xossasidan foydalanib, soddalashtirgan holda qiymatini toping.",
+            "rus": "Используя свойство сочетания сложения, упростите и найдите значение.",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "",
+            "kaz": "Қосудың терімділік қасиетін қолданып, ықшамдап, отырып мәнін табыңыз.",
+            "eng": "",
+            "aze": "Toplamanın qruplaşdırma xassəsindən istifadə edərək sadələşdirin və qiymətini tapın.",
+            "arsa": "",
+            "arjd": "",
+            "areg": ""
+          },
+          "fields": {
+            "number3": 10,
+            "number2": 5,
+            "number1": 50
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": "50 + 5 + 10"
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_2_6_12_7",
+          "position": 0,
+          "id": "cx-2_6_12_7-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "50;;10;;65",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "answers": [
+            {
+              "separator": true,
+              "answers": [
+                50,
+                10,
+                65
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                10,
+                50,
+                65
+              ],
+              "_struct": "MultipleTaskAnswer"
+            }
+          ],
+          "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+        },
+        "answerElixirType": "TaskAnswers.AnyOfThemTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "50;;10;;65",
+          "10;;50;;65"
+        ],
+        "truncated": false,
+        "layoutByPayload": "complex.multi.inline.n3.after",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-2"
+      },
+      {
+        "id": "2_1_1_32",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": " = "
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": " \\(-\\) "
+            },
+            "inline": true
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "Rasmga qarab, ifoda tuzing. Qiymatini toping.",
+            "rus": "Посмотрите на рисунок, составьте выражение и найдите значение.",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "",
+            "kaz": "Суретке қарап, өрнек құрыңыз. Мәнін табыңыз",
+            "eng": "",
+            "aze": "Şəklə baxın, ifadə qurun və qiymətini tapın.",
+            "arsa": "",
+            "arjd": "",
+            "areg": ""
+          },
+          "fields": {
+            "number2": 3,
+            "number1": 16
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "Onasi Donyorga 16 ta yo‘lli daftar, undan 3 taga kam katakli daftar sotib olib berdi.\r\nOnasi Donyorga nechta katak daftar sotib olib berdi?\r\n",
+                  "rus": "Мама купила Дэни 16 тетрадей в линию и на 3 меньше в клетку. Сколько тетрадей в клетку купила мама Дэни?\r\n",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Анасы Дәулетке 16 жолды дәптер, одан 3-ке кем тор көз дәптер сатып алып берді.\r\nАнасы Дәулетке қанша тор көз дәптер сатып алып берді?\r\n",
+                  "eng": "",
+                  "aze": "Ana İmran üçün 16 yaşıl dəftər, onlardan 3 ədəd az mavi dəftər alıb. Ana İmran üçün cəmi neçə dəftər alıb?",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              },
+              {
+                "with_number": "",
+                "type": 160,
+                "size": 50,
+                "repeat_quantity": 1,
+                "manually_set_size": false,
+                "is_wrap_content": false,
+                "is_vertical": false,
+                "countable": false,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +14493 chars</text></svg>",
+                  "rus": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +14488 chars</text></svg>",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +14485 chars</text></svg>",
+                  "eng": "",
+                  "aze": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +14481 chars</text></svg>",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                },
+                "background_image": null
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_2_1_1_32",
+          "position": 0,
+          "id": "cx-2_1_1_32-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "16;;3;;13",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            16,
+            3,
+            13
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "16;;3;;13"
+        ],
+        "truncated": true,
+        "layoutByPayload": "complex.multi.inline.n3.after",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-2"
+      },
+      {
+        "id": "2_1_5_19",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": " = "
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": " - "
+            },
+            "inline": true
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "Ifoda tuzing va qiymatini toping.",
+            "rus": "Составьте выражение и найдите его значение.",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "",
+            "kaz": "Өрнек құрастырып, мәнін табыңыз.",
+            "eng": "",
+            "aze": "İfadə qurun və onun qiymətini tapın.",
+            "arsa": "",
+            "arjd": "",
+            "areg": ""
+          },
+          "fields": {
+            "number2": 13,
+            "number1": 7
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "Buvijonning uyiga 13 kishi mehmonga keldi.\r\\(\\\\\\)Ularning 7 nafari kattalar, qolganlari esa bolalar.\r\\(\\\\\\)Buvijonning uyiga mehmonga necha nafar bola keldi?\r\\(\\\\\\)",
+                  "rus": "В дом бабушки пришли 13 гостей. Из них 7 взрослые, остальные дети.\r\\(\\\\\\)Сколько детей пришло в дом бабушки?\r\\(\\\\\\)",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Әжейдің үйіне 13 адам қонаққа келді. Олардың 7-сі ересек адамдар, қалғандары балалар. Әжейдің үйіне қонаққа қанша бала келді?\r\\(\\\\\\)",
+                  "eng": "",
+                  "aze": "Nənənin evinə 13 qonaq gəlib. Onlardan 7-i böyüklərdir, qalanları isə uşaqlardır.\r\\(\\\\\\)Nənənin evinə neçə uşaq gəlib?\r\\(\\\\\\)",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_2_1_5_19",
+          "position": 0,
+          "id": "cx-2_1_5_19-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "13;;7;;6",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            13,
+            7,
+            6
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "13;;7;;6"
+        ],
+        "truncated": false,
+        "layoutByPayload": "complex.multi.inline.n3.after",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-2"
+      },
+      {
+        "id": "2_4_1_13",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": {
+                "with_audio_player": false,
+                "uzb": "kg",
+                "rus": "кг",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "кг",
+                "kaz": "кг",
+                "eng": "kg",
+                "aze": "kq",
+                "arsa": "كغم",
+                "arjd": "kg",
+                "areg": "كجم"
+              }
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": {
+                "with_audio_player": false,
+                "uzb": "kg = ",
+                "rus": "кг = ",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "кг = ",
+                "kaz": "кг = ",
+                "eng": "kg = ",
+                "aze": "kq = ",
+                "arsa": "كغم = ",
+                "arjd": "kg = ",
+                "areg": "كجم = "
+              }
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": {
+                "with_audio_player": false,
+                "uzb": "kg – ",
+                "rus": "кг – ",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "кг – ",
+                "kaz": "кг – ",
+                "eng": "kg – ",
+                "aze": "kq – ",
+                "arsa": "كغم – ",
+                "arjd": "kg – ",
+                "areg": "كجم – "
+              }
+            },
+            "inline": true
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "Hisoblang.",
+            "rus": "Найдите значение выражения.",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Туюнтманын мааниин табыңыз.",
+            "kaz": "Есептеңіз.",
+            "eng": "",
+            "aze": "İfadənin qiymətini tapın.",
+            "arsa": "أحسب",
+            "arjd": "",
+            "areg": "احسب"
+          },
+          "fields": {
+            "number2": 6,
+            "number1": 60
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "Jamshidning vazni buvasining vaznidan 6 kg kam. Buvasining vazni 66 kg bo‘lsa, Jamshidning vazni necha kg?",
+                  "rus": "Вес Арни меньше веса дедушки на 6 кг. Вес дедушки 66 кг. Сколько кг весит Арни?",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Айболдың салмағы атасының салмағынан 6 кг кем. Атасының салмағы 66 кг Айболдың салмағы қанша кг?\r\n",
+                  "eng": "",
+                  "aze": "Arifin çəkisi babasının çəkisindən 6 kq azdır. Babanın çəkisi 66 kq-dır. Arif neçə kiloqramdır?",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              },
+              {
+                "width": "35vh",
+                "type": 120,
+                "tableAlign": "center",
+                "rows": [
+                  {
+                    "width": null,
+                    "rowspan_list": [],
+                    "rowspan_at": 0,
+                    "rowspan": 1,
+                    "colspan_list": [],
+                    "colspan_at": 0,
+                    "colspan": 1,
+                    "cells": [
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +13733 chars</text></svg>",
+                      "",
+                      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +11769 chars</text></svg>"
+                    ],
+                    "border_bottom": null
+                  }
+                ],
+                "removePadding": true,
+                "removeBorders": true,
+                "padding": null,
+                "marginBottom": null,
+                "isAnswerCellHidden": true,
+                "columnHeaders": [],
+                "columnAlign": "center",
+                "bottomVarticalAlign": true,
+                "border": ""
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_2_4_1_13",
+          "position": 0,
+          "id": "cx-2_4_1_13-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "66;;6;;60",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            66,
+            6,
+            60
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "66;;6;;60"
+        ],
+        "truncated": true,
+        "layoutByPayload": "complex.multi.inline.n3.after",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-2"
+      }
+    ],
+    "3": [
+      {
+        "id": "3_10_10_1",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": {
+                "with_audio_player": false,
+                "uzb": "",
+                "rus": "",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "алма",
+                "eng": "",
+                "aze": "",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              }
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": "="
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": "·"
+            },
+            "inline": true
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number2": 5,
+            "number1": 7
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "",
+                  "rus": "Вычислите удобным способом. Сколько яблок?",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Тиімді тәсілмен есептеңіз. Неше алма бар?",
+                  "eng": "",
+                  "aze": "",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              },
+              {
+                "with_number": "",
+                "type": 160,
+                "size": 50,
+                "repeat_quantity": 1,
+                "manually_set_size": false,
+                "is_wrap_content": false,
+                "is_vertical": false,
+                "countable": false,
+                "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +20088 chars</text></svg>",
+                "background_image": null
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_3_10_10_1",
+          "position": 0,
+          "id": "cx-3_10_10_1-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "7;;5;;35",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "answers": [
+            {
+              "separator": false,
+              "answers": [
+                7,
+                5,
+                35
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": false,
+              "answers": [
+                5,
+                7,
+                35
+              ],
+              "_struct": "MultipleTaskAnswer"
+            }
+          ],
+          "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+        },
+        "answerElixirType": "TaskAnswers.AnyOfThemTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "7;;5;;35",
+          "5;;7;;35"
+        ],
+        "truncated": true,
+        "layoutByPayload": "complex.multi.inline.n3.after",
+        "inputExtras": [],
+        "kazOnlyLabels": true,
+        "group": "grade-3"
+      },
+      {
+        "id": "3_10_8_24",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": {
+                "with_audio_player": false,
+                "uzb": "",
+                "rus": "",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "бірлік шаршы",
+                "eng": "",
+                "aze": "",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              }
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": "="
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": "·"
+            },
+            "inline": true
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number2": 9,
+            "number1": 7
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "",
+                  "rus": "",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Тиімді тәсілмен есептеңіз. Неше бірлік шаршы бар?\r\n",
+                  "eng": "",
+                  "aze": "",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              },
+              {
+                "with_number": "",
+                "type": 160,
+                "size": 50,
+                "repeat_quantity": 1,
+                "manually_set_size": false,
+                "is_wrap_content": false,
+                "is_vertical": false,
+                "countable": false,
+                "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +5448 chars</text></svg>",
+                "background_image": null
+              },
+              {
+                "width": "auto",
+                "type": 120,
+                "tableAlign": "center",
+                "rows": [
+                  {
+                    "width": null,
+                    "rowspan_list": [],
+                    "rowspan_at": 0,
+                    "rowspan": 1,
+                    "colspan_list": [],
+                    "colspan_at": 0,
+                    "colspan": 1,
+                    "cells": [
+                      {
+                        "with_audio_player": false,
+                        "uzb": "",
+                        "rus": "Ваш ответ:",
+                        "module_name": "Elixir.Helpers.Translation",
+                        "kgz": "",
+                        "kaz": "Жауабыңыз: ",
+                        "eng": "",
+                        "aze": "",
+                        "arsa": "",
+                        "arjd": "",
+                        "areg": ""
+                      },
+                      "answercell",
+                      " · ",
+                      "answercell",
+                      " = ",
+                      "answercell",
+                      {
+                        "with_audio_player": false,
+                        "uzb": "",
+                        "rus": "единичный квадрат",
+                        "module_name": "Elixir.Helpers.Translation",
+                        "kgz": "",
+                        "kaz": "бірлік шаршы",
+                        "eng": "",
+                        "aze": "",
+                        "arsa": "",
+                        "arjd": "",
+                        "areg": ""
+                      }
+                    ],
+                    "border_bottom": null
+                  }
+                ],
+                "removePadding": false,
+                "removeBorders": true,
+                "padding": null,
+                "marginBottom": null,
+                "isAnswerCellHidden": true,
+                "columnHeaders": [],
+                "columnAlign": "center",
+                "bottomVarticalAlign": false,
+                "border": ""
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": true
+          },
+          "type": "Elixir.Task_3_10_8_24",
+          "position": 0,
+          "id": "cx-3_10_8_24-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "7;;9;;63",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "answers": [
+            {
+              "separator": true,
+              "answers": [
+                7,
+                9,
+                63
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                9,
+                7,
+                63
+              ],
+              "_struct": "MultipleTaskAnswer"
+            }
+          ],
+          "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+        },
+        "answerElixirType": "TaskAnswers.AnyOfThemTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "7;;9;;63",
+          "9;;7;;63"
+        ],
+        "truncated": true,
+        "layoutByPayload": "complex.multi.inline.n3.after",
+        "inputExtras": [],
+        "kazOnlyLabels": true,
+        "group": "grade-3"
+      }
+    ],
+    "4": [
+      {
+        "id": "4_3_4_2_12",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": {
+                "with_audio_player": false,
+                "uzb": "\\(\\)",
+                "rus": "\\(\\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(\\)",
+                "kaz": "\\(мин.\\)",
+                "eng": "\\(\\)",
+                "aze": "\\(\\)",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              }
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": {
+                "with_audio_player": false,
+                "uzb": "\\(\\)",
+                "rus": "\\(\\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(\\)",
+                "kaz": "\\(сағ.\\)",
+                "eng": "\\(\\)",
+                "aze": "\\(\\)",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              }
+            },
+            "inline": true
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "start_minute": 50,
+            "start_hour": 3,
+            "end_minute": 30,
+            "end_hour": 4
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "",
+                  "rus": "",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Концерт кешке басталып, таңға таяу аяқталды. Суретте концерттің басталу және аяқталу уақыты көрсетілген.",
+                  "eng": "",
+                  "aze": "",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              },
+              {
+                "with_number": "",
+                "type": 160,
+                "size": 50,
+                "repeat_quantity": 1,
+                "manually_set_size": false,
+                "is_wrap_content": false,
+                "is_vertical": false,
+                "countable": false,
+                "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +7154 chars</text></svg>",
+                "background_image": null
+              },
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "",
+                  "rus": "",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Концерттің ұзақтығы қанша уақыт болды?",
+                  "eng": "",
+                  "aze": "",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_4_3_4_2_12",
+          "position": 0,
+          "id": "cx-4_3_4_2_12-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "11;;40",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            11,
+            40
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "11;;40"
+        ],
+        "truncated": true,
+        "layoutByPayload": "complex.multi.inline.n3.after",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-4"
+      }
+    ],
+    "5": [
+      {
+        "id": "5_3_9_7",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": "\\(=\\)"
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": "\\(+\\)"
+            },
+            "inline": true
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number2": 0,
+            "number1": 3,
+            "figure2": [
+              {
+                "type": 60,
+                "stroke_color": "black",
+                "radius": 2,
+                "inner_color": "transparent",
+                "dashed": false,
+                "center_point": {
+                  "y": 0,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                }
+              },
+              {
+                "x_axis_rotation": 0,
+                "type": 110,
+                "sweep_flag": 1,
+                "stroke_width": 0,
+                "show_dots": false,
+                "ry": 2,
+                "rx": 2,
+                "rotate_degree": 0,
+                "m_point": {
+                  "y": -2,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "large_arc_flag": 0,
+                "fill": "#fff200",
+                "end_point": {
+                  "y": -1.41,
+                  "x": -1.41,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "dashed": false,
+                "center_point": {
+                  "y": 0,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "border_color": "black"
+              },
+              {
+                "type": 30,
+                "show_dot_letters": false,
+                "point2": {
+                  "y": 0,
+                  "x": 2,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "point1": {
+                  "y": 0,
+                  "x": -2,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "line_color": "black",
+                "dot_radius": 0,
+                "degree": 0,
+                "dashed": false
+              },
+              {
+                "type": 30,
+                "show_dot_letters": false,
+                "point2": {
+                  "y": -2,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "point1": {
+                  "y": 2,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "line_color": "black",
+                "dot_radius": 0,
+                "degree": 0,
+                "dashed": false
+              },
+              {
+                "type": 30,
+                "show_dot_letters": false,
+                "point2": {
+                  "y": -1.42,
+                  "x": 1.41,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "point1": {
+                  "y": 1.41,
+                  "x": -1.42,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "line_color": "black",
+                "dot_radius": 0,
+                "degree": 0,
+                "dashed": false
+              },
+              {
+                "type": 30,
+                "show_dot_letters": false,
+                "point2": {
+                  "y": -1.42,
+                  "x": -1.41,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "point1": {
+                  "y": 1.41,
+                  "x": 1.42,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "line_color": "black",
+                "dot_radius": 0,
+                "degree": 0,
+                "dashed": false
+              }
+            ],
+            "figure1": [
+              {
+                "type": 60,
+                "stroke_color": "black",
+                "radius": 2,
+                "inner_color": "transparent",
+                "dashed": false,
+                "center_point": {
+                  "y": 0,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                }
+              },
+              {
+                "x_axis_rotation": 0,
+                "type": 110,
+                "sweep_flag": 1,
+                "stroke_width": 0,
+                "show_dots": false,
+                "ry": 2,
+                "rx": 2,
+                "rotate_degree": 0,
+                "m_point": {
+                  "y": 2,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "large_arc_flag": 0,
+                "fill": "#0045bc",
+                "end_point": {
+                  "y": -2,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "dashed": false,
+                "center_point": {
+                  "y": 0,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "border_color": "black"
+              },
+              {
+                "type": 30,
+                "show_dot_letters": false,
+                "point2": {
+                  "y": 0,
+                  "x": 2,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "point1": {
+                  "y": 0,
+                  "x": -2,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "line_color": "black",
+                "dot_radius": 0,
+                "degree": 0,
+                "dashed": false
+              },
+              {
+                "type": 30,
+                "show_dot_letters": false,
+                "point2": {
+                  "y": -2,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "point1": {
+                  "y": 2,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "line_color": "black",
+                "dot_radius": 0,
+                "degree": 0,
+                "dashed": false
+              },
+              {
+                "type": 30,
+                "show_dot_letters": false,
+                "point2": {
+                  "y": -1.42,
+                  "x": 1.41,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "point1": {
+                  "y": 1.41,
+                  "x": -1.42,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "line_color": "black",
+                "dot_radius": 0,
+                "degree": 0,
+                "dashed": false
+              },
+              {
+                "type": 30,
+                "show_dot_letters": false,
+                "point2": {
+                  "y": -1.42,
+                  "x": -1.41,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "point1": {
+                  "y": 1.41,
+                  "x": 1.42,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "line_color": "black",
+                "dot_radius": 0,
+                "degree": 0,
+                "dashed": false
+              }
+            ],
+            "figure": [
+              {
+                "type": 60,
+                "stroke_color": "black",
+                "radius": 2,
+                "inner_color": "transparent",
+                "dashed": false,
+                "center_point": {
+                  "y": 0,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                }
+              },
+              {
+                "x_axis_rotation": 0,
+                "type": 110,
+                "sweep_flag": 1,
+                "stroke_width": 0,
+                "show_dots": false,
+                "ry": 2,
+                "rx": 2,
+                "rotate_degree": 0,
+                "m_point": {
+                  "y": 2,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "large_arc_flag": 0,
+                "fill": "#0045bc",
+                "end_point": {
+                  "y": -2,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "dashed": false,
+                "center_point": {
+                  "y": 0,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "border_color": "black"
+              },
+              {
+                "type": 60,
+                "stroke_color": "black",
+                "radius": 2,
+                "inner_color": "transparent",
+                "dashed": false,
+                "center_point": {
+                  "y": 0,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                }
+              },
+              {
+                "x_axis_rotation": 0,
+                "type": 110,
+                "sweep_flag": 1,
+                "stroke_width": 0,
+                "show_dots": false,
+                "ry": 2,
+                "rx": 2,
+                "rotate_degree": 0,
+                "m_point": {
+                  "y": -2,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "large_arc_flag": 0,
+                "fill": "#fff200",
+                "end_point": {
+                  "y": -1.41,
+                  "x": -1.41,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "dashed": false,
+                "center_point": {
+                  "y": 0,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "border_color": "black"
+              },
+              {
+                "type": 30,
+                "show_dot_letters": false,
+                "point2": {
+                  "y": 0,
+                  "x": 2,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "point1": {
+                  "y": 0,
+                  "x": -2,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "line_color": "black",
+                "dot_radius": 0,
+                "degree": 0,
+                "dashed": false
+              },
+              {
+                "type": 30,
+                "show_dot_letters": false,
+                "point2": {
+                  "y": -2,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "point1": {
+                  "y": 2,
+                  "x": 0,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "line_color": "black",
+                "dot_radius": 0,
+                "degree": 0,
+                "dashed": false
+              },
+              {
+                "type": 30,
+                "show_dot_letters": false,
+                "point2": {
+                  "y": -1.42,
+                  "x": 1.41,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "point1": {
+                  "y": 1.41,
+                  "x": -1.42,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "line_color": "black",
+                "dot_radius": 0,
+                "degree": 0,
+                "dashed": false
+              },
+              {
+                "type": 30,
+                "show_dot_letters": false,
+                "point2": {
+                  "y": -1.42,
+                  "x": -1.41,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "point1": {
+                  "y": 1.41,
+                  "x": 1.42,
+                  "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                  "letter": ""
+                },
+                "line_color": "black",
+                "dot_radius": 0,
+                "degree": 0,
+                "dashed": false
+              }
+            ]
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "Rasmga qarab tenglik tuzing.",
+                  "rus": "По картинке составьте равенство.",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Суретке қарап теңдік құрастырыңыз.",
+                  "eng": "",
+                  "aze": "Şəklə əsasən tənlik qurun.",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              },
+              {
+                "width": "auto",
+                "type": 210,
+                "content": [
+                  {
+                    "yAxisLabel": "y",
+                    "xAxisLabel": "x",
+                    "type": 110,
+                    "tickStepYMultiply": 1,
+                    "tickStepXMultiply": 1,
+                    "tickStep": 1,
+                    "stepSize": 30,
+                    "startNumber": false,
+                    "showCells": false,
+                    "showAxis": false,
+                    "reduceHeight": 1,
+                    "points": [],
+                    "notClickableDots": true,
+                    "minPosition": -1.1,
+                    "maxPosition": 1.1,
+                    "limitedPoint": 0,
+                    "isLine": false,
+                    "isFullFilled": false,
+                    "isFillingLimitedByAxis": false,
+                    "intervals": [],
+                    "fillingFunctions": [],
+                    "figures": [
+                      {
+                        "type": 60,
+                        "strokeColor": "black",
+                        "radius": 2,
+                        "innerColor": "transparent",
+                        "dashed": false,
+                        "centerPoint": {
+                          "y": 0,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        }
+                      },
+                      {
+                        "xAxisRotation": 0,
+                        "type": 110,
+                        "sweepFlag": 1,
+                        "strokeWidth": 0,
+                        "showDots": false,
+                        "ry": 2,
+                        "rx": 2,
+                        "rotateDegree": 0,
+                        "mPoint": {
+                          "y": 2,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "largeArcFlag": 0,
+                        "fill": "#0045bc",
+                        "endPoint": {
+                          "y": -2,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "dashed": false,
+                        "centerPoint": {
+                          "y": 0,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "borderColor": "black"
+                      },
+                      {
+                        "type": 30,
+                        "showDotLetters": false,
+                        "point2": {
+                          "y": 0,
+                          "x": 2,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "point1": {
+                          "y": 0,
+                          "x": -2,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "lineColor": "black",
+                        "dotRadius": 0,
+                        "degree": 0,
+                        "dashed": false
+                      },
+                      {
+                        "type": 30,
+                        "showDotLetters": false,
+                        "point2": {
+                          "y": -2,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "point1": {
+                          "y": 2,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "lineColor": "black",
+                        "dotRadius": 0,
+                        "degree": 0,
+                        "dashed": false
+                      },
+                      {
+                        "type": 30,
+                        "showDotLetters": false,
+                        "point2": {
+                          "y": -1.42,
+                          "x": 1.41,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "point1": {
+                          "y": 1.41,
+                          "x": -1.42,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "lineColor": "black",
+                        "dotRadius": 0,
+                        "degree": 0,
+                        "dashed": false
+                      },
+                      {
+                        "type": 30,
+                        "showDotLetters": false,
+                        "point2": {
+                          "y": -1.42,
+                          "x": -1.41,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "point1": {
+                          "y": 1.41,
+                          "x": 1.42,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "lineColor": "black",
+                        "dotRadius": 0,
+                        "degree": 0,
+                        "dashed": false
+                      }
+                    ],
+                    "drawingFigure": 0,
+                    "displayedNumbers": [],
+                    "disabledPoints": [],
+                    "canFill": false,
+                    "canDrawMultipleFigures": false,
+                    "allowedFigures": []
+                  },
+                  {
+                    "yAxisLabel": "y",
+                    "xAxisLabel": "x",
+                    "type": 110,
+                    "tickStepYMultiply": 1,
+                    "tickStepXMultiply": 1,
+                    "tickStep": 1,
+                    "stepSize": 30,
+                    "startNumber": false,
+                    "showCells": false,
+                    "showAxis": false,
+                    "reduceHeight": 1,
+                    "points": [],
+                    "notClickableDots": true,
+                    "minPosition": -1,
+                    "maxPosition": 1,
+                    "limitedPoint": 0,
+                    "isLine": false,
+                    "isFullFilled": false,
+                    "isFillingLimitedByAxis": false,
+                    "intervals": [],
+                    "fillingFunctions": [],
+                    "figures": [
+                      {
+                        "type": 50,
+                        "showPointsLetter": false,
+                        "rotateDegree": 0,
+                        "points": [
+                          {
+                            "y": 0.625,
+                            "x": -0.125,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          },
+                          {
+                            "y": 0.625,
+                            "x": 0.125,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          },
+                          {
+                            "y": 0.125,
+                            "x": 0.125,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          },
+                          {
+                            "y": 0.125,
+                            "x": 0.625,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          },
+                          {
+                            "y": -0.125,
+                            "x": 0.625,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          },
+                          {
+                            "y": -0.125,
+                            "x": 0.125,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          },
+                          {
+                            "y": -0.625,
+                            "x": 0.125,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          },
+                          {
+                            "y": -0.625,
+                            "x": -0.125,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          },
+                          {
+                            "y": -0.125,
+                            "x": -0.125,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          },
+                          {
+                            "y": -0.125,
+                            "x": -0.625,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          },
+                          {
+                            "y": 0.125,
+                            "x": -0.625,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          },
+                          {
+                            "y": 0.125,
+                            "x": -0.125,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          }
+                        ],
+                        "fill": "black",
+                        "borderColor": "black"
+                      }
+                    ],
+                    "drawingFigure": 0,
+                    "displayedNumbers": [],
+                    "disabledPoints": [],
+                    "canFill": false,
+                    "canDrawMultipleFigures": false,
+                    "allowedFigures": []
+                  },
+                  {
+                    "yAxisLabel": "y",
+                    "xAxisLabel": "x",
+                    "type": 110,
+                    "tickStepYMultiply": 1,
+                    "tickStepXMultiply": 1,
+                    "tickStep": 1,
+                    "stepSize": 30,
+                    "startNumber": false,
+                    "showCells": false,
+                    "showAxis": false,
+                    "reduceHeight": 1,
+                    "points": [],
+                    "notClickableDots": true,
+                    "minPosition": -1.1,
+                    "maxPosition": 1.1,
+                    "limitedPoint": 0,
+                    "isLine": false,
+                    "isFullFilled": false,
+                    "isFillingLimitedByAxis": false,
+                    "intervals": [],
+                    "fillingFunctions": [],
+                    "figures": [
+                      {
+                        "type": 60,
+                        "strokeColor": "black",
+                        "radius": 2,
+                        "innerColor": "transparent",
+                        "dashed": false,
+                        "centerPoint": {
+                          "y": 0,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        }
+                      },
+                      {
+                        "xAxisRotation": 0,
+                        "type": 110,
+                        "sweepFlag": 1,
+                        "strokeWidth": 0,
+                        "showDots": false,
+                        "ry": 2,
+                        "rx": 2,
+                        "rotateDegree": 0,
+                        "mPoint": {
+                          "y": -2,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "largeArcFlag": 0,
+                        "fill": "#fff200",
+                        "endPoint": {
+                          "y": -1.41,
+                          "x": -1.41,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "dashed": false,
+                        "centerPoint": {
+                          "y": 0,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "borderColor": "black"
+                      },
+                      {
+                        "type": 30,
+                        "showDotLetters": false,
+                        "point2": {
+                          "y": 0,
+                          "x": 2,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "point1": {
+                          "y": 0,
+                          "x": -2,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "lineColor": "black",
+                        "dotRadius": 0,
+                        "degree": 0,
+                        "dashed": false
+                      },
+                      {
+                        "type": 30,
+                        "showDotLetters": false,
+                        "point2": {
+                          "y": -2,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "point1": {
+                          "y": 2,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "lineColor": "black",
+                        "dotRadius": 0,
+                        "degree": 0,
+                        "dashed": false
+                      },
+                      {
+                        "type": 30,
+                        "showDotLetters": false,
+                        "point2": {
+                          "y": -1.42,
+                          "x": 1.41,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "point1": {
+                          "y": 1.41,
+                          "x": -1.42,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "lineColor": "black",
+                        "dotRadius": 0,
+                        "degree": 0,
+                        "dashed": false
+                      },
+                      {
+                        "type": 30,
+                        "showDotLetters": false,
+                        "point2": {
+                          "y": -1.42,
+                          "x": -1.41,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "point1": {
+                          "y": 1.41,
+                          "x": 1.42,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "lineColor": "black",
+                        "dotRadius": 0,
+                        "degree": 0,
+                        "dashed": false
+                      }
+                    ],
+                    "drawingFigure": 0,
+                    "displayedNumbers": [],
+                    "disabledPoints": [],
+                    "canFill": false,
+                    "canDrawMultipleFigures": false,
+                    "allowedFigures": []
+                  },
+                  {
+                    "yAxisLabel": "y",
+                    "xAxisLabel": "x",
+                    "type": 110,
+                    "tickStepYMultiply": 1,
+                    "tickStepXMultiply": 1,
+                    "tickStep": 1,
+                    "stepSize": 30,
+                    "startNumber": false,
+                    "showCells": false,
+                    "showAxis": false,
+                    "reduceHeight": 1,
+                    "points": [],
+                    "notClickableDots": true,
+                    "minPosition": -1,
+                    "maxPosition": 1,
+                    "limitedPoint": 0,
+                    "isLine": false,
+                    "isFullFilled": false,
+                    "isFillingLimitedByAxis": false,
+                    "intervals": [],
+                    "fillingFunctions": [],
+                    "figures": [
+                      {
+                        "type": 50,
+                        "showPointsLetter": false,
+                        "rotateDegree": 0,
+                        "points": [
+                          {
+                            "y": 0.375,
+                            "x": -0.625,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          },
+                          {
+                            "y": 0.375,
+                            "x": 0.625,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          },
+                          {
+                            "y": 0.125,
+                            "x": 0.625,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          },
+                          {
+                            "y": 0.125,
+                            "x": -0.625,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          }
+                        ],
+                        "fill": "black",
+                        "borderColor": "black"
+                      },
+                      {
+                        "type": 50,
+                        "showPointsLetter": false,
+                        "rotateDegree": 0,
+                        "points": [
+                          {
+                            "y": -0.125,
+                            "x": -0.625,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          },
+                          {
+                            "y": -0.125,
+                            "x": 0.625,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          },
+                          {
+                            "y": -0.375,
+                            "x": 0.625,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          },
+                          {
+                            "y": -0.375,
+                            "x": -0.625,
+                            "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                            "letter": ""
+                          }
+                        ],
+                        "fill": "black",
+                        "borderColor": "black"
+                      }
+                    ],
+                    "drawingFigure": 0,
+                    "displayedNumbers": [],
+                    "disabledPoints": [],
+                    "canFill": false,
+                    "canDrawMultipleFigures": false,
+                    "allowedFigures": []
+                  },
+                  {
+                    "yAxisLabel": "y",
+                    "xAxisLabel": "x",
+                    "type": 110,
+                    "tickStepYMultiply": 1,
+                    "tickStepXMultiply": 1,
+                    "tickStep": 1,
+                    "stepSize": 30,
+                    "startNumber": false,
+                    "showCells": false,
+                    "showAxis": false,
+                    "reduceHeight": 1,
+                    "points": [],
+                    "notClickableDots": true,
+                    "minPosition": -1.1,
+                    "maxPosition": 1.1,
+                    "limitedPoint": 0,
+                    "isLine": false,
+                    "isFullFilled": false,
+                    "isFillingLimitedByAxis": false,
+                    "intervals": [],
+                    "fillingFunctions": [],
+                    "figures": [
+                      {
+                        "type": 60,
+                        "strokeColor": "black",
+                        "radius": 2,
+                        "innerColor": "transparent",
+                        "dashed": false,
+                        "centerPoint": {
+                          "y": 0,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        }
+                      },
+                      {
+                        "xAxisRotation": 0,
+                        "type": 110,
+                        "sweepFlag": 1,
+                        "strokeWidth": 0,
+                        "showDots": false,
+                        "ry": 2,
+                        "rx": 2,
+                        "rotateDegree": 0,
+                        "mPoint": {
+                          "y": 2,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "largeArcFlag": 0,
+                        "fill": "#0045bc",
+                        "endPoint": {
+                          "y": -2,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "dashed": false,
+                        "centerPoint": {
+                          "y": 0,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "borderColor": "black"
+                      },
+                      {
+                        "type": 60,
+                        "strokeColor": "black",
+                        "radius": 2,
+                        "innerColor": "transparent",
+                        "dashed": false,
+                        "centerPoint": {
+                          "y": 0,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        }
+                      },
+                      {
+                        "xAxisRotation": 0,
+                        "type": 110,
+                        "sweepFlag": 1,
+                        "strokeWidth": 0,
+                        "showDots": false,
+                        "ry": 2,
+                        "rx": 2,
+                        "rotateDegree": 0,
+                        "mPoint": {
+                          "y": -2,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "largeArcFlag": 0,
+                        "fill": "#fff200",
+                        "endPoint": {
+                          "y": -1.41,
+                          "x": -1.41,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "dashed": false,
+                        "centerPoint": {
+                          "y": 0,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "borderColor": "black"
+                      },
+                      {
+                        "type": 30,
+                        "showDotLetters": false,
+                        "point2": {
+                          "y": 0,
+                          "x": 2,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "point1": {
+                          "y": 0,
+                          "x": -2,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "lineColor": "black",
+                        "dotRadius": 0,
+                        "degree": 0,
+                        "dashed": false
+                      },
+                      {
+                        "type": 30,
+                        "showDotLetters": false,
+                        "point2": {
+                          "y": -2,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "point1": {
+                          "y": 2,
+                          "x": 0,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "lineColor": "black",
+                        "dotRadius": 0,
+                        "degree": 0,
+                        "dashed": false
+                      },
+                      {
+                        "type": 30,
+                        "showDotLetters": false,
+                        "point2": {
+                          "y": -1.42,
+                          "x": 1.41,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "point1": {
+                          "y": 1.41,
+                          "x": -1.42,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "lineColor": "black",
+                        "dotRadius": 0,
+                        "degree": 0,
+                        "dashed": false
+                      },
+                      {
+                        "type": 30,
+                        "showDotLetters": false,
+                        "point2": {
+                          "y": -1.42,
+                          "x": -1.41,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "point1": {
+                          "y": 1.41,
+                          "x": 1.42,
+                          "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                          "letter": ""
+                        },
+                        "lineColor": "black",
+                        "dotRadius": 0,
+                        "degree": 0,
+                        "dashed": false
+                      }
+                    ],
+                    "drawingFigure": 0,
+                    "displayedNumbers": [],
+                    "disabledPoints": [],
+                    "canFill": false,
+                    "canDrawMultipleFigures": false,
+                    "allowedFigures": []
+                  }
+                ]
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_5_3_9_7",
+          "position": 0,
+          "id": "cx-5_3_9_7-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "\\frac{1}{2};;\\frac{1}{8};;\\frac{5}{8}",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "answers": [
+            {
+              "separator": true,
+              "answers": [
+                {
+                  "sign": 1,
+                  "module_name": "Elixir.Fraction",
+                  "integer": 0,
+                  "b": 2,
+                  "a": 1,
+                  "_struct": "Fraction"
+                },
+                {
+                  "sign": 1,
+                  "module_name": "Elixir.Fraction",
+                  "integer": 0,
+                  "b": 8,
+                  "a": 1,
+                  "_struct": "Fraction"
+                },
+                {
+                  "sign": 1,
+                  "module_name": "Elixir.Fraction",
+                  "integer": 0,
+                  "b": 8,
+                  "a": 5,
+                  "_struct": "Fraction"
+                }
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                "\\frac{4}{8}",
+                "\\frac{1}{8}",
+                "\\frac{5}{8}"
+              ],
+              "_struct": "MultipleTaskAnswer"
+            }
+          ],
+          "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+        },
+        "answerElixirType": "TaskAnswers.AnyOfThemTaskAnswer",
+        "answerKinds": [
+          "Fraction",
+          "str"
+        ],
+        "answerRuleOwned": false,
+        "accepted": [
+          "\\frac{1}{2};;\\frac{1}{8};;\\frac{5}{8}",
+          "\\frac{4}{8};;\\frac{1}{8};;\\frac{5}{8}"
+        ],
+        "truncated": false,
+        "layoutByPayload": "complex.multi.inline.n3.after",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-5"
+      }
+    ],
+    "11": [
+      {
+        "id": "11_3_5_21",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": "\\(\\)"
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": "\\(;\\)"
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": "\\(;\\)"
+            },
+            "inline": true
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "Sonlarni o'sish tartibi bilan joylashtiring.",
+            "rus": "Расположите числа в порядке возрастания.",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "",
+            "kaz": "Сандарды өсу ретімен орналастырыңыз.",
+            "eng": "Arrange the numbers in ascending order.",
+            "aze": "Ədədləri artan sıra ilə düzün.",
+            "arsa": "",
+            "arjd": "",
+            "areg": ""
+          },
+          "fields": {},
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "width": "35%",
+                "type": 120,
+                "tableAlign": "center",
+                "rows": [
+                  {
+                    "width": null,
+                    "rowspan_list": [],
+                    "rowspan_at": 0,
+                    "rowspan": 1,
+                    "colspan_list": [],
+                    "colspan_at": 0,
+                    "colspan": 1,
+                    "cells": [
+                      "\\(\\sqrt[3]{4}\\)",
+                      "",
+                      "\\(\\sqrt{3}\\)",
+                      "",
+                      "\\(\\sqrt{2}\\)"
+                    ],
+                    "border_bottom": null
+                  }
+                ],
+                "removePadding": false,
+                "removeBorders": true,
+                "padding": null,
+                "marginBottom": null,
+                "isAnswerCellHidden": true,
+                "columnHeaders": [],
+                "columnAlign": "center",
+                "bottomVarticalAlign": false,
+                "border": ""
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_11_3_5_21",
+          "position": 0,
+          "id": "cx-11_3_5_21-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "\\sqrt{2};;\\sqrt[3]{4};;\\sqrt{3}",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            "\\sqrt{2}",
+            "\\sqrt[3]{4}",
+            "\\sqrt{3}"
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "str"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "\\sqrt{2};;\\sqrt[3]{4};;\\sqrt{3}"
+        ],
+        "truncated": false,
+        "layoutByPayload": "complex.multi.inline.n3.after",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-11"
+      }
+    ]
+  }
+}

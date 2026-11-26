@@ -1,0 +1,130 @@
+{
+  "attemptsCount": null,
+  "isPrimary": true,
+  "hasVideoUrl": false,
+  "isPenalty": false,
+  "answerInput": {
+    "type": 20,
+    "input2": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": "",
+      "after": {
+        "with_audio_player": false,
+        "uzb": "dm",
+        "rus": "дм",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "",
+        "kaz": "дм",
+        "eng": "dm",
+        "aze": "dm",
+        "arsa": "",
+        "arjd": "dm",
+        "areg": "دسم"
+      }
+    },
+    "input1": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": "",
+      "after": {
+        "with_audio_player": false,
+        "uzb": "cm",
+        "rus": "см",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "см",
+        "kaz": "см",
+        "eng": "cm",
+        "aze": "sm",
+        "arsa": "سم",
+        "arjd": "cm",
+        "areg": "سم"
+      }
+    },
+    "inline": false
+  },
+  "difficulty": null,
+  "result": "none",
+  "title": {
+    "with_audio_player": false,
+    "uzb": "Bo'sh joyga kerakli sonni yozing.",
+    "rus": "Заполните пустое место нужным числом.",
+    "module_name": "Elixir.Helpers.Translation",
+    "kgz": "Бош орунга керектүү санды толтуруңуз.",
+    "kaz": "Бос орынға керекті санды жазыңыз.",
+    "eng": "",
+    "aze": "Boşluğa tələb olunan ədədi yazın.",
+    "arsa": "",
+    "arjd": "",
+    "areg": ""
+  },
+  "fields": {
+    "number2": 4,
+    "number1": 6
+  },
+  "description": {
+    "withAudio": true,
+    "type": "answerCell",
+    "text_before": "",
+    "text_after": "",
+    "table_before": null,
+    "is_column": false,
+    "image_before": "",
+    "content": {
+      "with_audio_player": false,
+      "uzb": "6 cm + 4 cm = answercell = answercell ",
+      "rus": "6 см + 4 см = answercell = answercell ",
+      "module_name": "Elixir.Helpers.Translation",
+      "kgz": "6 см + 4 см = answercell = answercell ",
+      "kaz": "6 см + 4 см = answercell = answercell ",
+      "eng": "6 cm + 4 cm = answercell = answercell ",
+      "aze": "6 sm + 4 sm = answercell = answercell ",
+      "arsa": "6 سم + 4 سم = answercell = answercell ",
+      "arjd": "6 cm + 4 cm = answercell = answercell ",
+      "areg": "6 سم + 4 سم = answercell = answercell "
+    },
+    "answer_cell_margin": ""
+  },
+  "type": "Elixir.Task_1_5_2_19",
+  "position": 0,
+  "id": "cx-1_5_2_19-0",
+  "hint1": null,
+  "hint2": null,
+  "videoId": null,
+  "videoUrl": null,
+  "solution": {
+    "type": "formula",
+    "answer": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "10;;1",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    },
+    "content": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+# Stream CX stand: shots are looked at locally (Read), not kept in git;
+# the reruns of single forms are summed up in PILOT-LOG.md
+shots/
+verify-results.*.fix*.json
+verify-results.*.probe*.json

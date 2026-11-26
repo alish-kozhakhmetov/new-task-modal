@@ -1,0 +1,104 @@
+{
+  "attemptsCount": null,
+  "isPrimary": true,
+  "hasVideoUrl": false,
+  "isPenalty": false,
+  "answerInput": {
+    "type": 30,
+    "input3": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": "",
+      "after": ""
+    },
+    "input2": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": "",
+      "after": " + 5 = "
+    },
+    "input1": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": "",
+      "after": " + "
+    },
+    "inline": true
+  },
+  "difficulty": null,
+  "result": "none",
+  "title": {
+    "with_audio_player": false,
+    "uzb": "Qo‘shishning guruhlash  xossasidan foydalanib, soddalashtirgan holda qiymatini toping.",
+    "rus": "Используя свойство сочетания сложения, упростите и найдите значение.",
+    "module_name": "Elixir.Helpers.Translation",
+    "kgz": "",
+    "kaz": "Қосудың терімділік қасиетін қолданып, ықшамдап, отырып мәнін табыңыз.",
+    "eng": "",
+    "aze": "Toplamanın qruplaşdırma xassəsindən istifadə edərək sadələşdirin və qiymətini tapın.",
+    "arsa": "",
+    "arjd": "",
+    "areg": ""
+  },
+  "fields": {
+    "number3": 10,
+    "number2": 5,
+    "number1": 50
+  },
+  "description": {
+    "type": "complex",
+    "parts": [
+      {
+        "type": 10,
+        "content": "50 + 5 + 10"
+      }
+    ],
+    "isCalculatorClosed": false,
+    "isAnswerCellHidden": false
+  },
+  "type": "Elixir.Task_2_6_12_7",
+  "position": 0,
+  "id": "cx-2_6_12_7-0",
+  "hint1": null,
+  "hint2": null,
+  "videoId": null,
+  "videoUrl": null,
+  "solution": {
+    "type": "formula",
+    "answer": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "50;;10;;65",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    },
+    "content": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    }
+  }
+}
