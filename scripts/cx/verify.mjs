@@ -165,12 +165,13 @@ const mutate = (parts) => {
   const num = /^(-?)(\d+)([.,]\d+)?$/.exec(out[last])
   // a number: its whole part plus one (an appended digit may vanish in a float);
   // else its last digit changed — «\frac{3}{4}» + «1» reads as ×1 and the
-  // checker rightly accepts it (27.11: 30 false «wrong answer accepted»)
+  // checker rightly accepts it (27.11: 30 false «wrong answer accepted»); never
+  // to 0 — a zero denominator crashes the checker instead of rejecting
   const lastDigit = /(\d)(?!.*\d)/s
   out[last] = num
     ? `${num[1]}${Number(num[2]) + 1}${num[3] ?? ''}`
     : lastDigit.test(out[last])
-      ? out[last].replace(lastDigit, (d) => String((Number(d) + 7) % 10))
+      ? out[last].replace(lastDigit, (d) => (d === '9' ? '8' : String(Number(d) + 1)))
       : `${out[last]}1`
   return out
 }
