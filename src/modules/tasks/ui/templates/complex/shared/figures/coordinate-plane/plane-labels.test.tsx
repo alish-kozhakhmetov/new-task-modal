@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/no-container, testing-library/no-node-access -- labels are SVG <text>: no roles to query by */
 import { render } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 

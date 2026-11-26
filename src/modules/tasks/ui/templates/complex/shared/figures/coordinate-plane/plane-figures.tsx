@@ -433,7 +433,12 @@ export const PlaneFigure = ({
       // A Translation of numbers ({rus: 30}, Task_5_2_11_4) translates to a
       // number: the label is its text, whatever came back.
       const raw = translate(figure.text) as unknown
-      const label = raw == null ? '' : String(raw)
+      const label =
+        typeof raw === 'string'
+          ? raw
+          : typeof raw === 'number'
+            ? String(raw)
+            : ''
       if (!labelText(label)) return null
       // A label in the condition's size, not the payload's (4_11_10_4 sent
       // 13 for «7см» next to its «A» and «B» in 18): rules 1 and 73, row 57.
