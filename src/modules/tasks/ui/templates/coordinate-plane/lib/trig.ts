@@ -313,7 +313,20 @@ export const trigShapes = (
   axes: TrigAxes,
 ): Shape[] => {
   const params = trigParamsOf(type, toTrigWire(axes, p1), toTrigWire(axes, p2))
-  const f = params && trigCurve(type, params)
+  return params ? trigCurveShapes(type, params, axes) : []
+}
+
+/**
+ * The curve of given a, b, c, d as polylines in cells — the pupil's (from two
+ * clicks, above) and the condition's: a figure 190…240 of a drawing carries
+ * a, b, c, d itself (Task_10_2_7_1: y = sin x, the pupil reads it).
+ */
+export const trigCurveShapes = (
+  type: number,
+  params: TrigParams,
+  axes: TrigAxes,
+): Shape[] => {
+  const f = trigCurve(type, params)
   if (!f) return []
   const { X, Y } = axes
   const out: Shape[] = []

@@ -3804,6 +3804,51 @@
         "canDrawMultipleFigures": false,
         "allowedFigures": []
       }
+    },
+    {
+      "id": "Task_10_2_7_1",
+      "seed": 1,
+      "path": "description.parts[1]",
+      "plane": {
+        "yAxisLabel": "y",
+        "xAxisLabel": "x",
+        "type": 110,
+        "tickStepYMultiply": 1,
+        "tickStepXMultiply": 1,
+        "tickStep": 1,
+        "stepSize": 20,
+        "startNumber": false,
+        "showCells": true,
+        "showAxis": true,
+        "reduceHeight": 1,
+        "points": [],
+        "notClickableDots": true,
+        "minPosition": -5,
+        "maxPosition": 5,
+        "limitedPoint": 0,
+        "isLine": false,
+        "isFullFilled": false,
+        "isFillingLimitedByAxis": false,
+        "intervals": [],
+        "fillingFunctions": [],
+        "figures": [
+          {
+            "type": 190,
+            "dashed": false,
+            "d": 0,
+            "color": "green",
+            "c": 0,
+            "b": 1,
+            "a": 1
+          }
+        ],
+        "drawingFigure": 0,
+        "displayedNumbers": [],
+        "disabledPoints": [],
+        "canFill": false,
+        "canDrawMultipleFigures": false,
+        "allowedFigures": []
+      }
     }
   ]
 }
