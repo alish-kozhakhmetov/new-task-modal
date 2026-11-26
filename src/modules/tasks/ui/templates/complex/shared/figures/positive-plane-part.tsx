@@ -149,16 +149,40 @@ export const PositivePlanePart = ({ part, deps }: Props) => {
     >
       <g data-plane-layer="grid" stroke={GRID_INK} strokeWidth={STROKE.grid}>
         {xs.map((i) => (
-          <line key={`gx-${i}`} x1={px(i * multX)} y1={0} x2={px(i * multX)} y2={yLen} />
+          <line
+            key={`gx-${i}`}
+            x1={px(i * multX)}
+            y1={0}
+            x2={px(i * multX)}
+            y2={yLen}
+          />
         ))}
         {ys.map((i) => (
-          <line key={`gy-${i}`} x1={PADDING} y1={py(i * multY)} x2={width} y2={py(i * multY)} />
+          <line
+            key={`gy-${i}`}
+            x1={PADDING}
+            y1={py(i * multY)}
+            x2={width}
+            y2={py(i * multY)}
+          />
         ))}
       </g>
 
       <g data-plane-layer="axes" stroke={INK}>
-        <line x1={PADDING} y1={yLen} x2={width} y2={yLen} strokeWidth={STROKE.data} />
-        <line x1={PADDING} y1={yLen} x2={PADDING} y2={0} strokeWidth={STROKE.data} />
+        <line
+          x1={PADDING}
+          y1={yLen}
+          x2={width}
+          y2={yLen}
+          strokeWidth={STROKE.data}
+        />
+        <line
+          x1={PADDING}
+          y1={yLen}
+          x2={PADDING}
+          y2={0}
+          strokeWidth={STROKE.data}
+        />
         {xs.map((i) => (
           <line
             key={`tx-${i}`}

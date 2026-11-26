@@ -155,7 +155,12 @@ export interface ComplexEulerEllipsePart {
   ry: number
   name?: string
   color?: string | null
-  dots?: Array<{ x: number; y: number; label?: string | number; fontSize?: number }>
+  dots?: Array<{
+    x: number
+    y: number
+    label?: string | number
+    fontSize?: number
+  }>
   ellipses?: ComplexEulerEllipsePart[]
 }
 
