@@ -5,9 +5,17 @@ import { normalizeComplexPart } from '../lib/normalize-complex-part'
 import type {
   ComplexAngleListPart,
   ComplexCoordinatePlanePart,
+  ComplexEulerEllipsePart,
+  ComplexFrequencyHistogramPart,
+  ComplexFrequencyPolygonPart,
+  ComplexHexagonPart,
   ComplexImagePart,
+  ComplexIntervalNumberLinePart,
+  ComplexItemsFlexPart,
   ComplexNumberLinePart,
   ComplexPart,
+  ComplexPositivePlanePart,
+  ComplexRectanglePart,
   ComplexTablePart,
   ComplexTaskDescription,
   ComplexTextPart,
@@ -17,8 +25,19 @@ import styles from './complex.module.scss'
 import { AngleListPart } from './figures/angle-list-part'
 import { CoordinatePlanePart } from './figures/coordinate-plane-part'
 import { EquationPart } from './figures/equation-part'
+import {
+  FrequencyHistogramPart,
+  FrequencyPolygonPart,
+} from './figures/frequency-chart-part'
+import {
+  EulerEllipsePart,
+  HexagonPart,
+  RectanglePart,
+} from './figures/geometry-parts'
 import { ImagePart } from './figures/image-part'
+import { IntervalNumberLinePart } from './figures/interval-number-line-part'
 import { NumberLinePart } from './figures/number-line-part'
+import { PositivePlanePart } from './figures/positive-plane-part'
 import {
   type ComplexTableAnswerBindings,
   TablePart,
@@ -61,6 +80,69 @@ const renderPart = (
       return <NumberLinePart key={index} part={part as ComplexNumberLinePart} />
     case FigureType.AngleList:
       return <AngleListPart key={index} part={part as ComplexAngleListPart} />
+    case FigureType.IntervalNumberLine:
+      return (
+        <IntervalNumberLinePart
+          key={index}
+          part={part as ComplexIntervalNumberLinePart}
+        />
+      )
+    case FigureType.PositiveCoordinatePlane:
+      return (
+        <PositivePlanePart
+          key={index}
+          part={part as ComplexPositivePlanePart}
+          deps={deps}
+        />
+      )
+    case FigureType.EulerEllipse:
+      return (
+        <EulerEllipsePart key={index} part={part as ComplexEulerEllipsePart} />
+      )
+    case FigureType.Rectangle:
+      return <RectanglePart key={index} part={part as ComplexRectanglePart} />
+    case FigureType.Hexagon:
+      return <HexagonPart key={index} part={part as ComplexHexagonPart} />
+    case FigureType.FrequencyHistogram:
+      return (
+        <FrequencyHistogramPart
+          key={index}
+          part={part as ComplexFrequencyHistogramPart}
+          deps={deps}
+        />
+      )
+    case FigureType.FrequencyPolygon:
+      return (
+        <FrequencyPolygonPart
+          key={index}
+          part={part as ComplexFrequencyPolygonPart}
+          deps={deps}
+        />
+      )
+    case FigureType.ItemsFlex:
+      // A row of parts side by side (Matheducator `ItemsFlex`); each child is
+      // drawn as it would be on its own. One row, no wrap (rule 78): pictures
+      // narrower than the column shrink together instead of breaking the row.
+      return (
+        <div
+          key={index}
+          className={styles.itemsFlex}
+          data-figure-type="210"
+          data-testid="complex-items-flex-part"
+        >
+          {((part as ComplexItemsFlexPart).content ?? []).map((child, i) =>
+            renderPart(
+              child,
+              deps,
+              i,
+              tableAnswerBindings,
+              tableSolutionAnswers,
+              nextSolutionIndex,
+              equationLayout,
+            ),
+          )}
+        </div>
+      )
     case FigureType.CoordinatePlane:
       return (
         <CoordinatePlanePart
@@ -97,6 +179,17 @@ const renderPart = (
       )
   }
 }
+
+/**
+ * One display-only part of a condition, for templates that borrow the
+ * complex figures: the test draws its `figures`, its `table` and figure
+ * variants through it (Matheducator draws them with the same components).
+ */
+export const renderConditionPart = (
+  raw: ComplexPart | Record<string, unknown>,
+  deps: TaskModalDependencies,
+  index: number,
+) => renderPart(raw as ComplexPart, deps, index, null, null, undefined, false)
 
 export const ComplexDescription = ({
   description,

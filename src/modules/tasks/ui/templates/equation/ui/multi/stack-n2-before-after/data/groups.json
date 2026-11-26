@@ -1,0 +1,135 @@
+[
+  {
+    "group": "equation_multi_stack_n2_beforeAfter_1",
+    "count": 1,
+    "tasks": [
+      {
+        "id": "10_4_1_10"
+      }
+    ],
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 20,
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "\\(x_2 =\\)",
+            "rus": "\\(x_2 =\\)",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "\\(x_2 =\\)",
+            "kaz": "\\(x_2 =\\)",
+            "eng": "\\(x_2 =\\)",
+            "aze": "\\(x_2 =\\)",
+            "arsa": "\\(x_2 =\\)",
+            "arjd": "\\(x_2 =\\)",
+            "areg": "\\(x_2 =\\)"
+          },
+          "after": "\\(, k∈Z\\)"
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "\\(x_1 =\\)",
+            "rus": "\\(x_1 =\\)",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "\\(x_1 =\\)",
+            "kaz": "\\(x_1 =\\)",
+            "eng": "\\(x_1 =\\)",
+            "aze": "\\(x_1 =\\)",
+            "arsa": "\\(x_1 =\\)",
+            "arjd": "\\(x_1 =\\)",
+            "areg": "\\(x_1 =\\)"
+          },
+          "after": "\\(, k∈Z\\)"
+        },
+        "inline": false
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": {
+        "with_audio_player": false,
+        "uzb": "Tenglamani yeching.",
+        "rus": "Решите уравнение.",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "Теңдемени чыгарыңыз.",
+        "kaz": "Теңдеуді шешіңіз.",
+        "eng": "Solve the equation.",
+        "aze": "Tənliyi həll edin.",
+        "arsa": "حل المعادلة الآتية، ثم اكتب الناتج في المربع.",
+        "arjd": "حل المعادلة التالية:",
+        "areg": "حل المعادلة التالية"
+      },
+      "fields": {
+        "number": 3,
+        "degree": 60
+      },
+      "description": {
+        "type": "equation",
+        "content": {
+          "with_audio_player": false,
+          "uzb": "2\\cos{ (x + \\frac{\\pi}{3}) } - 1 = 0",
+          "rus": "2\\cos{ (x + \\frac{\\pi}{3}) } - 1 = 0",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "2\\cos{ (x + \\frac{\\pi}{3}) } - 1 = 0",
+          "kaz": "2\\cos{ (x + \\frac{\\pi}{3}) } - 1 = 0",
+          "eng": "2\\cos{ (x + \\frac{\\pi}{3}) } - 1 = 0",
+          "aze": "2\\cos{ (x + \\frac{\\pi}{3}) } - 1 = 0",
+          "arsa": "2\\cos{ (x + \\frac{\\pi}{3}) } - 1 = 0",
+          "arjd": "2\\cos{ (x + \\frac{\\pi}{3}) } - 1 = 0",
+          "areg": "2\\cos{ (x + \\frac{\\pi}{3}) } – 1 = 0"
+        }
+      },
+      "type": "Elixir.Task_10_4_1_10",
+      "position": 0,
+      "id": "eq-fixture-task_10_4_1_10",
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "\\(2{\\pi}k;;-\\frac{2\\pi}{3}+2{\\pi}k\\)",
+          "kgz": "\\(2{\\pi}k;;-\\frac{2\\pi}{3}+2{\\pi}k\\)",
+          "uzb": "\\(2{\\pi}k;;-\\frac{2\\pi}{3}+2{\\pi}k\\)",
+          "eng": "\\(2{\\pi}k;;-\\frac{2\\pi}{3}+2{\\pi}k\\)",
+          "rus": "\\(2{\\pi}k;;-\\frac{2\\pi}{3}+2{\\pi}k\\)",
+          "kaz": "\\(2{\\pi}k;;-\\frac{2\\pi}{3}+2{\\pi}k\\)",
+          "arjd": "\\(2{\\pi}k;;-\\frac{2\\pi}{3}+2{\\pi}k\\)",
+          "arsa": "\\(2{\\pi}k;;-\\frac{2\\pi}{3}+2{\\pi}k\\)",
+          "areg": "\\(2{\\pi}k;;-\\frac{2\\pi}{3}+2{\\pi}k\\)",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      },
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "_fixtureSource": "variants.json (generator run 02.08)"
+    }
+  }
+]

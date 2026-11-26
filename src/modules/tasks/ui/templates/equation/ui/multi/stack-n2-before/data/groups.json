@@ -1,0 +1,136 @@
+[
+  {
+    "group": "equation_multi_stack_n2_before_1",
+    "count": 1,
+    "tasks": [
+      {
+        "id": "7_2_9_2"
+      }
+    ],
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 20,
+        "inline": false,
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "aze": "Çoxhədlinin hədlərinin sayı:",
+            "kgz": "Көп мүчөнүн мүчөлөрүнүн саны:",
+            "uzb": "Ko'phadning hadlari soni:",
+            "eng": "The number of terms of the polynomial:",
+            "rus": "Количество членов многочлена:",
+            "kaz": "Көпмүшенің мүшелер саны:",
+            "arjd": "",
+            "arsa": "",
+            "areg": "عدد حدود كثير الحدود:",
+            "module_name": "Elixir.Helpers.Translation"
+          },
+          "after": ""
+        },
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "aze": "Çoxhədlinin dərəcəsi:",
+            "kgz": "Көп мүчөнүн даражасы:",
+            "uzb": "Ko`phadning darajasi",
+            "eng": "Degree of the polynomial:",
+            "rus": "Степень многочлена:",
+            "kaz": "Көпмүшенің дәрежесі:",
+            "arjd": "",
+            "arsa": "",
+            "areg": "درجة كثير الحدود:",
+            "module_name": "Elixir.Helpers.Translation"
+          },
+          "after": ""
+        }
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": {
+        "with_audio_player": false,
+        "aze": "Çoxhədlinin hədlərinin sayını və dərəcəsini tapın.",
+        "kgz": "Көп мүчөнүн мүчөлөрүнүн санын жана даражасын аныктаңыз.",
+        "uzb": "Ko'phadning hadlar sonini va darajasini aniqlang.",
+        "eng": "Determine the number of terms and degree of the polynomial.",
+        "rus": "Определите количество членов и степень многочлена.",
+        "kaz": "Көпмүшенің мүшелер санын және дәрежесін анықтаңыз.",
+        "arjd": "",
+        "arsa": "اكتب عدد حدود المقدار الجبري ودرجته",
+        "areg": "اكتب عدد حدود المقدار الجبري ودرجته",
+        "module_name": "Elixir.Helpers.Translation"
+      },
+      "fields": {
+        "letter": "x",
+        "number1": 5,
+        "number2": 8
+      },
+      "description": {
+        "type": "equation",
+        "content": {
+          "with_audio_player": false,
+          "aze": "x^2 + 5x + 8",
+          "kgz": "x^2 + 5x + 8",
+          "uzb": "x^2 + 5x + 8",
+          "eng": "x^2 + 5x + 8",
+          "rus": "x^2 + 5x + 8",
+          "kaz": "x^2 + 5x + 8",
+          "arjd": "x^2 + 5x + 8",
+          "arsa": "x^2 + 5x + 8",
+          "areg": "x^2 + 5x + 8",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      },
+      "type": "Elixir.Task_7_2_9_2",
+      "position": 0,
+      "id": "eq-fixture-task_7_2_9_2",
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "\\(3;;2\\)",
+          "kgz": "\\(3;;2\\)",
+          "uzb": "\\(3;;2\\)",
+          "eng": "\\(3;;2\\)",
+          "rus": "\\(3;;2\\)",
+          "kaz": "\\(3;;2\\)",
+          "arjd": "\\(3;;2\\)",
+          "arsa": "\\(3;;2\\)",
+          "areg": "\\(3;;2\\)",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      },
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "_fixtureSource": "source: task_types/7-grade/chapter2/task_7_2_9_2.ex"
+    }
+  }
+]

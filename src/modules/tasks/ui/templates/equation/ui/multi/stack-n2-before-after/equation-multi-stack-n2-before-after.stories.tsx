@@ -1,0 +1,91 @@
+import type { Meta, StoryObj } from '@storybook/react-vite'
+
+import {
+  HIDDEN_TASK_ARGTYPES,
+  STORY_DOCS,
+  storyDocs,
+  templateDocs,
+} from '../../../../shared/storybook/story-docs'
+import {
+  getGroupControlOptions,
+  renderDefaultStory,
+  renderWithSolutionStory,
+  type EquationStoryMetaArgs,
+  type TemplateGroupFixture,
+  getOpenInTrainerControls,
+  normalizeAllTasksFile,
+  type AllTasksFile,
+} from '../../../shared/lib/storybook'
+import type { EquationTask } from '../../../shared/lib/types.task'
+
+import allTasksJson from './data/all-tasks.json'
+import groupsJson from './data/groups.json'
+import fixture from './data/task.json'
+import readme from './README.md?raw'
+
+import { EquationMultiStackN2BeforeAfter as Template } from '.'
+
+const task = fixture as unknown as EquationTask
+const groups = groupsJson as unknown as TemplateGroupFixture[]
+const { groupIds, defaultGroup } = getGroupControlOptions(groups)
+const allTasks = allTasksJson as unknown as AllTasksFile
+const normalizedTasks = normalizeAllTasksFile(allTasks)
+const openInTrainer = getOpenInTrainerControls(groups)
+
+const ROOT_TITLE = 'Templates/Equation/multi/stack-n2-before-after'
+
+const meta = {
+  title: 'Templates/Equation/multi/stack-n2-before-after',
+  component: Template,
+  args: {
+    group: defaultGroup,
+    taskId: openInTrainer.defaultTaskId,
+  },
+  argTypes: {
+    ...HIDDEN_TASK_ARGTYPES,
+    group: {
+      control: 'select',
+      options: groupIds,
+      description: 'Пример из data/groups.json',
+    },
+    taskId: {
+      control: 'select',
+      options: openInTrainer.allTaskIds,
+      description: 'Конкретная задача (id) из all-tasks.json',
+    },
+  },
+  parameters: templateDocs(readme),
+} satisfies Meta<EquationStoryMetaArgs>
+
+export default meta
+type Story = StoryObj<EquationStoryMetaArgs>
+
+export const Default: Story = {
+  parameters: storyDocs(STORY_DOCS.default),
+  render: ({ group, taskId }) =>
+    renderDefaultStory({
+      Template,
+      groups,
+      fallbackTask: task,
+      group,
+      taskId,
+      allTasks,
+      grade: normalizedTasks.defaultGrade,
+      rootTitle: ROOT_TITLE,
+    }),
+}
+
+export const WithSolution: Story = {
+  parameters: storyDocs(STORY_DOCS.withSolution),
+  render: ({ group, taskId }) =>
+    renderWithSolutionStory({
+      Template,
+      groups,
+      fallbackTask: task,
+      group,
+      taskId,
+      allTasks,
+      grade: normalizedTasks.defaultGrade,
+      rootTitle: ROOT_TITLE,
+    }),
+}

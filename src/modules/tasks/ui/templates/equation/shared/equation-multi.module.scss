@@ -1,0 +1,35 @@
+// equation.multi, stack: «подпись · поле · подпись» rows on one grid, so the
+// fields stand one under another and are one width (rules 16, 20) — for
+// `x_1 =` / `y_1 =` as well as for word labels. The field takes the rest of
+// the row, as the lone field of equation.beforeAfter does: the answers here
+// are expressions (`\frac{\pi}{12} - \pi k + \frac{\pi n}{2}`), not numbers.
+.stackGrid {
+  display: grid;
+
+  // A long label («Стандартный вид одночлена:», Task_7_2_1_1) shrinks to its
+  // longest word and wraps instead of pushing the field off a 343px column
+  // (rule 13); it wraps by words only (rule 22).
+  grid-template-columns:
+    minmax(min-content, max-content)
+    minmax(120px, 1fr)
+    max-content;
+  gap: var(--space-8);
+  align-items: center;
+
+  // Condition → answer 24 (rule 7): the container's gap is 8.
+  margin-top: var(--space-16);
+}
+
+.row {
+  display: contents;
+}
+
+.label {
+  overflow-wrap: normal;
+  white-space: normal;
+}
+
+.field {
+  width: auto;
+  min-width: 0;
+}

@@ -8,7 +8,7 @@ import { EquationContent } from '../equation-content'
 import { EquationSolution } from '../equation-solution'
 import styles from '../equation.module.scss'
 
-import type { EquationTask } from './types.task'
+import type { EquationTask, SimpleEquationAnswerInput } from './types.task'
 
 interface EquationTemplateConfig {
   /** templateId, e.g. `equation.before`. */
@@ -48,7 +48,9 @@ export const createEquationTemplate = ({
         <TaskTitle title={task.title} deps={deps} />
         <EquationContent description={task.description} deps={deps} />
         <EquationAnswerRow
-          answerInput={task.answerInput}
+          answerInput={
+            task.answerInput as SimpleEquationAnswerInput | undefined
+          }
           deps={deps}
           answer={answer}
           mode="input"

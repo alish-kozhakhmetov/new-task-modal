@@ -365,6 +365,62 @@ export const TEMPLATE_MAP = {
         (module) => ({ default: module.EquationBefore }),
       ),
     ),
+  [TemplateTypes.Equation.Plain]: () =>
+    wrapEquation(() =>
+      import('@/modules/tasks/ui/templates/equation/ui/plain').then(
+        (module) => ({ default: module.EquationPlain }),
+      ),
+    ),
+  [TemplateTypes.Equation.After]: () =>
+    wrapEquation(() =>
+      import('@/modules/tasks/ui/templates/equation/ui/after').then(
+        (module) => ({ default: module.EquationAfter }),
+      ),
+    ),
+  [TemplateTypes.Equation.BeforeAfter]: () =>
+    wrapEquation(() =>
+      import('@/modules/tasks/ui/templates/equation/ui/before-after').then(
+        (module) => ({ default: module.EquationBeforeAfter }),
+      ),
+    ),
+  [TemplateTypes.Equation.Multi.Stack.N2Before]: () =>
+    wrapEquation(() =>
+      import(
+        '@/modules/tasks/ui/templates/equation/ui/multi/stack-n2-before'
+      ).then((module) => ({ default: module.EquationMultiStackN2Before })),
+    ),
+  [TemplateTypes.Equation.Multi.Stack.N2BeforeAfter]: () =>
+    wrapEquation(() =>
+      import(
+        '@/modules/tasks/ui/templates/equation/ui/multi/stack-n2-before-after'
+      ).then((module) => ({ default: module.EquationMultiStackN2BeforeAfter })),
+    ),
+  [TemplateTypes.Equation.Multi.Stack.N3Before]: () =>
+    wrapEquation(() =>
+      import(
+        '@/modules/tasks/ui/templates/equation/ui/multi/stack-n3-before'
+      ).then((module) => ({ default: module.EquationMultiStackN3Before })),
+    ),
+  [TemplateTypes.Equation.Multi.Stack.N4Before]: () =>
+    wrapEquation(() =>
+      import(
+        '@/modules/tasks/ui/templates/equation/ui/multi/stack-n4-before'
+      ).then((module) => ({ default: module.EquationMultiStackN4Before })),
+    ),
+  [TemplateTypes.Equation.Multi.Stack.N4BeforeAfter]: () =>
+    wrapEquation(() =>
+      import(
+        '@/modules/tasks/ui/templates/equation/ui/multi/stack-n4-before-after'
+      ).then((module) => ({ default: module.EquationMultiStackN4BeforeAfter })),
+    ),
+  [TemplateTypes.Equation.Multi.Inline.N2BeforeAfter]: () =>
+    wrapEquation(() =>
+      import(
+        '@/modules/tasks/ui/templates/equation/ui/multi/inline-n2-before-after'
+      ).then((module) => ({
+        default: module.EquationMultiInlineN2BeforeAfter,
+      })),
+    ),
 } satisfies Record<string, unknown>
 
 export type TemplateType = Awaited<

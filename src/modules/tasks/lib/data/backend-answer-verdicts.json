@@ -1,0 +1,5106 @@
+{
+  "_source": "matheducator TaskChecker.user_answer_correct?/2 run locally on compiled beams; task rebuilt from its Poison-round-tripped fields as task_controller.check_user_answer does. Rebuilt by scripts/backend-answer-verdicts/build.py.",
+  "_fields": "type — the backend's own reference record, typed by the pupil; accepted / rejected — wire strings the checker accepted / rejected for that task instance.",
+  "cases": [
+    {
+      "rule": "ans:float",
+      "id": "Task_10_10_1_10",
+      "grade": 10,
+      "seed": 1,
+      "type": "0,1",
+      "accepted": ["0,1", "0.1"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_10_10_1_10",
+      "grade": 10,
+      "seed": 2,
+      "type": "0,1",
+      "accepted": ["0,1", "0.1"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_10_10_1_7",
+      "grade": 10,
+      "seed": 1,
+      "type": "0,2",
+      "accepted": ["0,2", "0.2"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_10_10_1_7",
+      "grade": 10,
+      "seed": 2,
+      "type": "0,5",
+      "accepted": ["0,5", "0.5"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_10_10_1_9",
+      "grade": 10,
+      "seed": 1,
+      "type": "0,2",
+      "accepted": ["0,2", "0.2"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_10_10_1_9",
+      "grade": 10,
+      "seed": 2,
+      "type": "0,2",
+      "accepted": ["0,2", "0.2"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_10_10_2_5",
+      "grade": 10,
+      "seed": 1,
+      "type": "1",
+      "accepted": ["1", "1.0"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_10_10_2_5",
+      "grade": 10,
+      "seed": 2,
+      "type": "-3,3",
+      "accepted": ["-3,3", "-3.3"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_10_10_2_8",
+      "grade": 10,
+      "seed": 1,
+      "type": "-0,3",
+      "accepted": ["-0,3"],
+      "rejected": ["-0.2999999999999998"]
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_10_10_2_8",
+      "grade": 10,
+      "seed": 2,
+      "type": "4",
+      "accepted": ["4", "4.0"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_10_10_3_7",
+      "grade": 10,
+      "seed": 1,
+      "type": "8",
+      "accepted": ["8", "8.0"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_10_10_3_7",
+      "grade": 10,
+      "seed": 2,
+      "type": "16,8",
+      "accepted": ["16,8", "16.8"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_10_10_3_8",
+      "grade": 10,
+      "seed": 1,
+      "type": "74,73",
+      "accepted": ["74,73", "74.73"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_10_10_3_8",
+      "grade": 10,
+      "seed": 2,
+      "type": "69,93",
+      "accepted": ["69,93", "69.93"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_10_1_7_2",
+      "grade": 10,
+      "seed": 1,
+      "type": "-7;7",
+      "accepted": ["-7;7", "7;-7", "\\pm7"],
+      "rejected": ["-7,7", "7"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_10_1_7_2",
+      "grade": 10,
+      "seed": 2,
+      "type": "-7;7",
+      "accepted": ["-7;7", "7;-7", "\\pm7"],
+      "rejected": ["-7,7", "7"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_10_1_8_4",
+      "grade": 10,
+      "seed": 1,
+      "type": "-1;6",
+      "accepted": ["-1;6", "6;-1"],
+      "rejected": ["-1,6", "6"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_10_1_8_4",
+      "grade": 10,
+      "seed": 2,
+      "type": "-4;-2",
+      "accepted": ["-2;-4", "-4;-2"],
+      "rejected": ["-2", "-4,-2"]
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_10_5_8_1",
+      "grade": 10,
+      "seed": 1,
+      "type": "0,5",
+      "accepted": ["0,5", "0.5"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_10_5_8_1",
+      "grade": 10,
+      "seed": 2,
+      "type": "0,5",
+      "accepted": ["0,5", "0.5"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_10_5_8_5",
+      "grade": 10,
+      "seed": 1,
+      "type": "0,02",
+      "accepted": ["0,02"],
+      "rejected": ["0.020000000000000018"]
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_10_5_8_5",
+      "grade": 10,
+      "seed": 2,
+      "type": "0,02",
+      "accepted": ["0,02"],
+      "rejected": ["0.020000000000000018"]
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_10_8_12_3",
+      "grade": 10,
+      "seed": 1,
+      "type": "2,75",
+      "accepted": ["2,75", "2.75"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_10_8_12_3",
+      "grade": 10,
+      "seed": 2,
+      "type": "4,75",
+      "accepted": ["4,75", "4.75"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_10_9_1_14",
+      "grade": 10,
+      "seed": 3,
+      "type": "-1;1",
+      "accepted": ["-1;1", "1;-1", "\\pm1"],
+      "rejected": ["-1,1", "1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_10_9_1_14",
+      "grade": 10,
+      "seed": 4,
+      "type": "-1;1",
+      "accepted": ["-1;1", "1;-1", "\\pm1"],
+      "rejected": ["-1,1", "1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_10_9_1_15",
+      "grade": 10,
+      "seed": 1,
+      "type": "-4;4",
+      "accepted": ["-4;4", "4;-4", "\\pm4"],
+      "rejected": ["-4,4", "4"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_10_9_1_15",
+      "grade": 10,
+      "seed": 2,
+      "type": "-2;2",
+      "accepted": ["-2;2", "2;-2", "\\pm2"],
+      "rejected": ["-2,2", "2"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_10_9_1_17",
+      "grade": 10,
+      "seed": 1,
+      "type": "6;2",
+      "accepted": ["2;6", "6;2"],
+      "rejected": ["2", "6,2"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_10_9_1_17",
+      "grade": 10,
+      "seed": 2,
+      "type": "6;2",
+      "accepted": ["2;6", "6;2"],
+      "rejected": ["2", "6,2"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_10_9_1_3",
+      "grade": 10,
+      "seed": 1,
+      "type": "-6;6",
+      "accepted": ["-6;6", "6;-6", "\\pm6"],
+      "rejected": ["-6,6", "6"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_10_9_1_3",
+      "grade": 10,
+      "seed": 2,
+      "type": "-3;3",
+      "accepted": ["-3;3", "3;-3", "\\pm3"],
+      "rejected": ["-3,3", "3"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_10_9_1_8",
+      "grade": 10,
+      "seed": 1,
+      "type": "1;-3",
+      "accepted": ["-3;1", "1;-3"],
+      "rejected": ["-3", "1,-3"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_10_9_1_8",
+      "grade": 10,
+      "seed": 2,
+      "type": "1;-3",
+      "accepted": ["-3;1", "1;-3"],
+      "rejected": ["-3", "1,-3"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_10_9_1_9",
+      "grade": 10,
+      "seed": 1,
+      "type": "-3;3",
+      "accepted": ["-3;3", "3;-3", "\\pm3"],
+      "rejected": ["-3,3", "3"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_10_9_1_9",
+      "grade": 10,
+      "seed": 2,
+      "type": "-3;3",
+      "accepted": ["-3;3", "3;-3", "\\pm3"],
+      "rejected": ["-3,3", "3"]
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_11_1_9_2",
+      "grade": 11,
+      "seed": 1,
+      "type": "51,5",
+      "accepted": ["51,5", "51.5"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_11_1_9_2",
+      "grade": 11,
+      "seed": 2,
+      "type": "51,5",
+      "accepted": ["51,5", "51.5"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_11_2_4_7",
+      "grade": 11,
+      "seed": 1,
+      "type": "1,63",
+      "accepted": ["1,63", "1.63"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_11_2_4_7",
+      "grade": 11,
+      "seed": 2,
+      "type": "1,71",
+      "accepted": ["1,71", "1.71"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_11_4_2_9",
+      "grade": 11,
+      "seed": 1,
+      "type": "-4;4\\frac{3}{4}",
+      "accepted": ["-4;4\\frac{3}{4}", "-4;\\frac{19}{4}", "4\\frac{3}{4};-4"],
+      "rejected": ["-4,4\\frac{3}{4}", "4\\frac{3}{4}"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_11_4_2_9",
+      "grade": 11,
+      "seed": 2,
+      "type": "-4;4\\frac{3}{4}",
+      "accepted": ["-4;4\\frac{3}{4}", "-4;\\frac{19}{4}", "4\\frac{3}{4};-4"],
+      "rejected": ["-4,4\\frac{3}{4}", "4\\frac{3}{4}"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_11_7_1_12",
+      "grade": 11,
+      "seed": 1,
+      "type": "-2;1",
+      "accepted": ["-2;1", "1;-2"],
+      "rejected": ["-2,1", "1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_11_7_1_12",
+      "grade": 11,
+      "seed": 2,
+      "type": "-2;1",
+      "accepted": ["-2;1", "1;-2"],
+      "rejected": ["-2,1", "1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_11_7_1_13",
+      "grade": 11,
+      "seed": 1,
+      "type": "-4;1",
+      "accepted": ["-4;1", "1;-4"],
+      "rejected": ["-4,1", "1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_11_7_1_13",
+      "grade": 11,
+      "seed": 2,
+      "type": "-4;1",
+      "accepted": ["-4;1", "1;-4"],
+      "rejected": ["-4,1", "1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_11_7_2_9",
+      "grade": 11,
+      "seed": 1,
+      "type": "-4;-1",
+      "accepted": ["-1;-4", "-4;-1"],
+      "rejected": ["-1", "-4,-1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_11_7_2_9",
+      "grade": 11,
+      "seed": 2,
+      "type": "-5;-1",
+      "accepted": ["-1;-5", "-5;-1"],
+      "rejected": ["-1", "-5,-1"]
+    },
+    {
+      "rule": "ans:EquationSystemsTaskAnswer",
+      "id": "Task_11_7_6_8",
+      "grade": 11,
+      "seed": 1,
+      "type": "(1;2);(2;1)",
+      "accepted": ["(1;2),(2;1)", "(1;2);(2;1)"],
+      "rejected": ["1;2;2;1"]
+    },
+    {
+      "rule": "ans:EquationSystemsTaskAnswer",
+      "id": "Task_11_7_6_8",
+      "grade": 11,
+      "seed": 2,
+      "type": "(4;2);(2;4)",
+      "accepted": ["(4;2),(2;4)", "(4;2);(2;4)"],
+      "rejected": ["4;2;2;4"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_10_2",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{3}{8}",
+      "accepted": ["\\frac{3}{8}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_15_2",
+      "grade": 5,
+      "seed": 1,
+      "type": "1\\frac{3}{4}",
+      "accepted": ["1\\frac{3}{4}"],
+      "rejected": ["\\frac{7}{4}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_16_10",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{3}{14}",
+      "accepted": ["\\frac{3}{14}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_16_11",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{2}{9}",
+      "accepted": ["\\frac{2}{9}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_16_12",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{2}{3}",
+      "accepted": ["\\frac{2}{3}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_17_1",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{7}{10}",
+      "accepted": ["\\frac{7}{10}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_17_12",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{2}{1}",
+      "accepted": ["2", "\\frac{2}{1}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_17_13",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{142}{153}",
+      "accepted": ["\\frac{142}{153}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_17_3",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{3}{4}",
+      "accepted": ["\\frac{3}{4}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_17_4",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{17}{36}",
+      "accepted": ["\\frac{17}{36}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_18_5",
+      "grade": 5,
+      "seed": 1,
+      "type": "2\\frac{77}{81}",
+      "accepted": ["2\\frac{77}{81}"],
+      "rejected": ["\\frac{239}{81}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_18_6",
+      "grade": 5,
+      "seed": 1,
+      "type": "4\\frac{4}{81}",
+      "accepted": ["4\\frac{4}{81}"],
+      "rejected": ["\\frac{328}{81}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_1_10",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{7}{8}",
+      "accepted": ["\\frac{7}{8}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_1_11",
+      "grade": 5,
+      "seed": 1,
+      "type": "-\\frac{1}{8}",
+      "accepted": ["-\\frac{1}{8}"],
+      "rejected": ["\\frac{-1}{8}", "\\frac{1}{-8}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_1_12",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{1}{4}",
+      "accepted": ["\\frac{1}{4}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_1_13",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{3}{4}",
+      "accepted": ["\\frac{3}{4}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_1_14",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{1}{2}",
+      "accepted": ["\\frac{1}{2}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_1_15",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{1}{2}",
+      "accepted": ["\\frac{1}{2}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_1_16",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{5}{18}",
+      "accepted": ["\\frac{5}{18}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_1_17",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{1}{10}",
+      "accepted": ["\\frac{1}{10}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_1_4",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{4}{9}",
+      "accepted": ["\\frac{4}{9}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_1_5",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{13}{16}",
+      "accepted": ["\\frac{13}{16}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_1_6",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{1}{8}",
+      "accepted": ["\\frac{1}{8}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_1_7",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{7}{18}",
+      "accepted": ["\\frac{7}{18}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_20_3",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{6}{1}",
+      "accepted": ["\\frac{6}{1}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_20_5",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{2}{5}",
+      "accepted": ["\\frac{2}{5}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_21_10",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{1}{6}",
+      "accepted": ["\\frac{1}{6}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_22_4",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{7}{10}",
+      "accepted": ["\\frac{7}{10}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_22_5",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{13}{22}",
+      "accepted": ["\\frac{13}{22}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_22_6",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{5}{53}",
+      "accepted": ["\\frac{5}{53}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_22_7",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{10}{17}",
+      "accepted": ["\\frac{10}{17}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_22_8",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{9}{32}",
+      "accepted": ["\\frac{9}{32}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_23_1",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{48}{175}",
+      "accepted": ["\\frac{48}{175}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_23_2",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{205}{294}",
+      "accepted": ["\\frac{205}{294}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_23_3",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{715}{1113}",
+      "accepted": ["\\frac{715}{1113}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_23_4",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{2899}{3297}",
+      "accepted": ["\\frac{2899}{3297}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_23_5",
+      "grade": 5,
+      "seed": 1,
+      "type": "3\\frac{14}{19}",
+      "accepted": ["3\\frac{14}{19}"],
+      "rejected": ["\\frac{71}{19}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_23_6",
+      "grade": 5,
+      "seed": 1,
+      "type": "2\\frac{26}{33}",
+      "accepted": ["2\\frac{26}{33}"],
+      "rejected": ["\\frac{92}{33}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_25",
+      "grade": 5,
+      "seed": 1,
+      "type": "2\\frac{23}{24}",
+      "accepted": ["2\\frac{23}{24}"],
+      "rejected": ["\\frac{71}{24}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_26_1",
+      "grade": 5,
+      "seed": 1,
+      "type": "12\\frac{13}{30}",
+      "accepted": ["12\\frac{13}{30}"],
+      "rejected": ["\\frac{373}{30}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_26_11",
+      "grade": 5,
+      "seed": 1,
+      "type": "5\\frac{240}{281}",
+      "accepted": ["5\\frac{240}{281}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_26_3",
+      "grade": 5,
+      "seed": 1,
+      "type": "2\\frac{1}{8}",
+      "accepted": ["2\\frac{1}{8}"],
+      "rejected": ["\\frac{17}{8}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_32_1",
+      "grade": 5,
+      "seed": 1,
+      "type": "1\\frac{8}{135}",
+      "accepted": ["1\\frac{8}{135}"],
+      "rejected": ["\\frac{143}{135}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_32_2",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{73}{135}",
+      "accepted": ["\\frac{73}{135}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_37_1",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{3}{14}",
+      "accepted": ["\\frac{3}{14}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_37_2",
+      "grade": 5,
+      "seed": 1,
+      "type": "2",
+      "accepted": ["2"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_37_3",
+      "grade": 5,
+      "seed": 1,
+      "type": "4\\frac{2}{3}",
+      "accepted": ["4\\frac{2}{3}"],
+      "rejected": ["\\frac{14}{3}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_37_4",
+      "grade": 5,
+      "seed": 1,
+      "type": "4\\frac{7}{8}",
+      "accepted": ["4\\frac{7}{8}"],
+      "rejected": ["\\frac{39}{8}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_37_5",
+      "grade": 5,
+      "seed": 1,
+      "type": "2\\frac{2}{9}",
+      "accepted": ["2\\frac{2}{9}"],
+      "rejected": ["\\frac{20}{9}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_38_6",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{4}{9}",
+      "accepted": ["\\frac{4}{9}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_38_7",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{5}{6}",
+      "accepted": ["\\frac{5}{6}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_38_8",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{10}{19}",
+      "accepted": ["\\frac{10}{19}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_39_1",
+      "grade": 5,
+      "seed": 1,
+      "type": "14",
+      "accepted": ["14"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_39_2",
+      "grade": 5,
+      "seed": 1,
+      "type": "14",
+      "accepted": ["14"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_39_3",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{7}{24}",
+      "accepted": ["\\frac{7}{24}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_39_4",
+      "grade": 5,
+      "seed": 1,
+      "type": "105",
+      "accepted": ["105"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_40_1",
+      "grade": 5,
+      "seed": 1,
+      "type": "63",
+      "accepted": ["63"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_40_2",
+      "grade": 5,
+      "seed": 1,
+      "type": "36",
+      "accepted": ["36"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_40_3",
+      "grade": 5,
+      "seed": 1,
+      "type": "10",
+      "accepted": ["10"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_40_4",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{7}{12}",
+      "accepted": ["\\frac{7}{12}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_40_5",
+      "grade": 5,
+      "seed": 1,
+      "type": "44",
+      "accepted": ["44"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_40_6",
+      "grade": 5,
+      "seed": 1,
+      "type": "15",
+      "accepted": ["15"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_40_7",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{1}{2}",
+      "accepted": ["\\frac{1}{2}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_40_8",
+      "grade": 5,
+      "seed": 1,
+      "type": "110",
+      "accepted": ["110"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_41",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{9}{4}",
+      "accepted": ["\\frac{9}{4}"],
+      "rejected": ["2\\frac{1}{4}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_43_1",
+      "grade": 5,
+      "seed": 1,
+      "type": "6\\frac{3}{4}",
+      "accepted": ["6\\frac{3}{4}"],
+      "rejected": ["\\frac{27}{4}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_43_2",
+      "grade": 5,
+      "seed": 1,
+      "type": "3\\frac{5}{6}",
+      "accepted": ["3\\frac{5}{6}"],
+      "rejected": ["\\frac{23}{6}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_43_3",
+      "grade": 5,
+      "seed": 1,
+      "type": "11\\frac{17}{24}",
+      "accepted": ["11\\frac{17}{24}"],
+      "rejected": ["\\frac{281}{24}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_43_4",
+      "grade": 5,
+      "seed": 1,
+      "type": "6\\frac{11}{15}",
+      "accepted": ["6\\frac{11}{15}"],
+      "rejected": ["\\frac{101}{15}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_43_5",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{23}{24}",
+      "accepted": ["\\frac{23}{24}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_43_6",
+      "grade": 5,
+      "seed": 1,
+      "type": "1\\frac{1}{36}",
+      "accepted": ["1\\frac{1}{36}"],
+      "rejected": ["\\frac{37}{36}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_43_7",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{3}{5}",
+      "accepted": ["\\frac{3}{5}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_43_8",
+      "grade": 5,
+      "seed": 1,
+      "type": "5\\frac{49}{90}",
+      "accepted": ["5\\frac{49}{90}"],
+      "rejected": ["\\frac{499}{90}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_44_1",
+      "grade": 5,
+      "seed": 1,
+      "type": "4\\frac{3}{40}",
+      "accepted": ["4\\frac{3}{40}"],
+      "rejected": ["\\frac{163}{40}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_44_2",
+      "grade": 5,
+      "seed": 1,
+      "type": "12\\frac{3}{4}",
+      "accepted": ["12\\frac{3}{4}"],
+      "rejected": ["\\frac{51}{4}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_44_3",
+      "grade": 5,
+      "seed": 1,
+      "type": "6",
+      "accepted": ["6"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_44_4",
+      "grade": 5,
+      "seed": 1,
+      "type": "3\\frac{1}{6}",
+      "accepted": ["3\\frac{1}{6}"],
+      "rejected": ["\\frac{19}{6}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_44_5",
+      "grade": 5,
+      "seed": 1,
+      "type": "9\\frac{20}{21}",
+      "accepted": ["9\\frac{20}{21}"],
+      "rejected": ["\\frac{209}{21}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_44_6",
+      "grade": 5,
+      "seed": 1,
+      "type": "1\\frac{125}{168}",
+      "accepted": ["1\\frac{125}{168}"],
+      "rejected": ["\\frac{293}{168}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_45_14",
+      "grade": 5,
+      "seed": 1,
+      "type": "16",
+      "accepted": ["16"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_45_15",
+      "grade": 5,
+      "seed": 1,
+      "type": "9",
+      "accepted": ["9"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_46_1",
+      "grade": 5,
+      "seed": 1,
+      "type": "3\\frac{31}{100}",
+      "accepted": ["3\\frac{31}{100}"],
+      "rejected": ["\\frac{331}{100}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_46_10",
+      "grade": 5,
+      "seed": 1,
+      "type": "1\\frac{1}{3}",
+      "accepted": ["1\\frac{1}{3}"],
+      "rejected": ["\\frac{4}{3}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_46_2",
+      "grade": 5,
+      "seed": 1,
+      "type": "44\\frac{1}{10}",
+      "accepted": ["44\\frac{1}{10}"],
+      "rejected": ["\\frac{441}{10}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_46_3",
+      "grade": 5,
+      "seed": 1,
+      "type": "9\\frac{2}{5}",
+      "accepted": ["9\\frac{2}{5}"],
+      "rejected": ["\\frac{47}{5}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_46_4",
+      "grade": 5,
+      "seed": 1,
+      "type": "29\\frac{3}{5}",
+      "accepted": ["29\\frac{3}{5}"],
+      "rejected": ["\\frac{148}{5}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_46_5",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{7}{15}",
+      "accepted": ["\\frac{7}{15}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_46_6",
+      "grade": 5,
+      "seed": 1,
+      "type": "8\\frac{1}{2}",
+      "accepted": ["8\\frac{1}{2}"],
+      "rejected": ["\\frac{17}{2}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_46_7",
+      "grade": 5,
+      "seed": 1,
+      "type": "45\\frac{1}{14}",
+      "accepted": ["45\\frac{1}{14}"],
+      "rejected": ["\\frac{631}{14}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_46_8",
+      "grade": 5,
+      "seed": 1,
+      "type": "7\\frac{3}{10}",
+      "accepted": ["7\\frac{3}{10}"],
+      "rejected": ["\\frac{73}{10}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_46_9",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{41}{60}",
+      "accepted": ["\\frac{41}{60}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_1",
+      "grade": 5,
+      "seed": 1,
+      "type": "18\\frac{2}{3}",
+      "accepted": ["18\\frac{2}{3}"],
+      "rejected": ["\\frac{56}{3}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_10",
+      "grade": 5,
+      "seed": 1,
+      "type": "15",
+      "accepted": ["15"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_11",
+      "grade": 5,
+      "seed": 1,
+      "type": "30",
+      "accepted": ["30"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_12",
+      "grade": 5,
+      "seed": 1,
+      "type": "77\\frac{1}{2}",
+      "accepted": ["77\\frac{1}{2}"],
+      "rejected": ["\\frac{155}{2}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_13",
+      "grade": 5,
+      "seed": 1,
+      "type": "4\\frac{11}{20}",
+      "accepted": ["4\\frac{11}{20}"],
+      "rejected": ["\\frac{91}{20}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_14",
+      "grade": 5,
+      "seed": 1,
+      "type": "4\\frac{2}{3}",
+      "accepted": ["4\\frac{2}{3}"],
+      "rejected": ["\\frac{14}{3}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_15",
+      "grade": 5,
+      "seed": 1,
+      "type": "30",
+      "accepted": ["30"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_16",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{7}{10}",
+      "accepted": ["\\frac{7}{10}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_17",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{31}{45}",
+      "accepted": ["\\frac{31}{45}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_18",
+      "grade": 5,
+      "seed": 1,
+      "type": "36\\frac{1}{2}",
+      "accepted": ["36\\frac{1}{2}"],
+      "rejected": ["\\frac{73}{2}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_19",
+      "grade": 5,
+      "seed": 1,
+      "type": "10\\frac{10}{11}",
+      "accepted": ["10\\frac{10}{11}"],
+      "rejected": ["\\frac{120}{11}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_2",
+      "grade": 5,
+      "seed": 1,
+      "type": "84",
+      "accepted": ["84"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_20",
+      "grade": 5,
+      "seed": 1,
+      "type": "12",
+      "accepted": ["12"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_21",
+      "grade": 5,
+      "seed": 1,
+      "type": "84",
+      "accepted": ["84"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_3",
+      "grade": 5,
+      "seed": 1,
+      "type": "140",
+      "accepted": ["140"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_4",
+      "grade": 5,
+      "seed": 1,
+      "type": "21\\frac{7}{9}",
+      "accepted": ["21\\frac{7}{9}"],
+      "rejected": ["\\frac{196}{9}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_5",
+      "grade": 5,
+      "seed": 1,
+      "type": "105",
+      "accepted": ["105"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_6",
+      "grade": 5,
+      "seed": 1,
+      "type": "79",
+      "accepted": ["79"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_7",
+      "grade": 5,
+      "seed": 1,
+      "type": "1260",
+      "accepted": ["1260"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_8",
+      "grade": 5,
+      "seed": 1,
+      "type": "8",
+      "accepted": ["8"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_47_9",
+      "grade": 5,
+      "seed": 1,
+      "type": "6",
+      "accepted": ["6"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_48_1",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{1}{8}",
+      "accepted": ["\\frac{1}{8}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_48_2",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{11}{18};;\\frac{1}{18}",
+      "accepted": ["\\frac{11}{18};;\\frac{1}{18}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_48_3",
+      "grade": 5,
+      "seed": 1,
+      "type": "1\\frac{1}{6}",
+      "accepted": ["1\\frac{1}{6}"],
+      "rejected": ["\\frac{7}{6}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_48_4",
+      "grade": 5,
+      "seed": 1,
+      "type": "2\\frac{5}{6};;2\\frac{1}{6}",
+      "accepted": ["2\\frac{5}{6};;2\\frac{1}{6}"],
+      "rejected": [
+        "2\\frac{5}{6};;\\frac{13}{6}",
+        "\\frac{17}{6};;2\\frac{1}{6}"
+      ]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_48_5",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{3}{10};;\\frac{7}{10};;1\\frac{1}{10};;1\\frac{3}{10}",
+      "accepted": [
+        "\\frac{3}{10};;\\frac{7}{10};;1\\frac{1}{10};;1\\frac{3}{10}"
+      ],
+      "rejected": [
+        "\\frac{3}{10};;\\frac{7}{10};;1\\frac{1}{10};;\\frac{13}{10}",
+        "\\frac{3}{10};;\\frac{7}{10};;\\frac{11}{10};;1\\frac{3}{10}"
+      ]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_48_6",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{5}{6};;1\\frac{1}{6};;1\\frac{5}{6};;2\\frac{5}{6}",
+      "accepted": ["\\frac{5}{6};;1\\frac{1}{6};;1\\frac{5}{6};;2\\frac{5}{6}"],
+      "rejected": [
+        "\\frac{5}{6};;1\\frac{1}{6};;1\\frac{5}{6};;\\frac{17}{6}",
+        "\\frac{5}{6};;1\\frac{1}{6};;\\frac{11}{6};;2\\frac{5}{6}",
+        "\\frac{5}{6};;\\frac{7}{6};;1\\frac{5}{6};;2\\frac{5}{6}"
+      ]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_48_7",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{1}{3};;\\frac{3}{8};;\\frac{11}{6};;\\frac{15}{8}",
+      "accepted": ["\\frac{1}{3};;\\frac{3}{8};;\\frac{11}{6};;\\frac{15}{8}"],
+      "rejected": [
+        "\\frac{1}{3};;\\frac{3}{8};;1\\frac{5}{6};;\\frac{15}{8}",
+        "\\frac{1}{3};;\\frac{3}{8};;\\frac{11}{6};;1\\frac{7}{8}"
+      ]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_7_2",
+      "grade": 5,
+      "seed": 1,
+      "type": "15\\frac{1}{4}",
+      "accepted": ["15\\frac{1}{4}"],
+      "rejected": ["\\frac{61}{4}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_7_3",
+      "grade": 5,
+      "seed": 1,
+      "type": "4\\frac{1}{5}",
+      "accepted": ["4\\frac{1}{5}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_8_2",
+      "grade": 5,
+      "seed": 1,
+      "type": "2",
+      "accepted": ["2"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_8_3",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{1}{5}",
+      "accepted": ["\\frac{1}{5}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_9_11",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{1}{7}",
+      "accepted": ["\\frac{1}{7}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_9_13",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{1}{8}",
+      "accepted": ["\\frac{1}{8}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_9_18",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{2}{9}",
+      "accepted": ["\\frac{2}{9}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_9_2",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{4}{7}",
+      "accepted": ["\\frac{4}{7}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_3_9_3",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{1}{8}",
+      "accepted": ["\\frac{1}{8}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_3_9_5",
+      "grade": 5,
+      "seed": 2,
+      "type": "\\frac{7}{8}",
+      "accepted": ["\\frac{7}{8}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_4_12_7",
+      "grade": 5,
+      "seed": 1,
+      "type": "9\\frac{1}{10}",
+      "accepted": ["9\\frac{1}{10}"],
+      "rejected": ["\\frac{91}{10}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_4_12_8",
+      "grade": 5,
+      "seed": 1,
+      "type": "6\\frac{1}{5}",
+      "accepted": ["6\\frac{1}{5}"],
+      "rejected": ["\\frac{31}{5}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_4_12_9",
+      "grade": 5,
+      "seed": 1,
+      "type": "6\\frac{1}{5}",
+      "accepted": ["6\\frac{1}{5}"],
+      "rejected": ["\\frac{31}{5}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_5_19",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{7}{100}",
+      "accepted": ["\\frac{7}{100}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_5_20",
+      "grade": 5,
+      "seed": 1,
+      "type": "7",
+      "accepted": ["7"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_5_22",
+      "grade": 5,
+      "seed": 1,
+      "type": "50",
+      "accepted": ["50"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_5_6_1_16",
+      "grade": 5,
+      "seed": 1,
+      "type": "150",
+      "accepted": ["150", "150.0"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_5_6_1_16",
+      "grade": 5,
+      "seed": 2,
+      "type": "150",
+      "accepted": ["150", "150.0"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_6_1_21",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{89}{100};;0,89;;89",
+      "accepted": ["\\frac{89}{100};;0,89;;89"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_6_2_14",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{1}{8}",
+      "accepted": ["\\frac{1}{8}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_6_2_15",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{69}{500}",
+      "accepted": ["\\frac{69}{500}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_6_2_16",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{69}{500}",
+      "accepted": ["\\frac{69}{500}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_5_6_2_17",
+      "grade": 5,
+      "seed": 1,
+      "type": "67\\frac{4}{5}",
+      "accepted": ["67\\frac{4}{5}"],
+      "rejected": ["\\frac{339}{5}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_6_3_14",
+      "grade": 5,
+      "seed": 1,
+      "type": "3\\frac{11}{28}",
+      "accepted": ["3\\frac{11}{28}"],
+      "rejected": ["\\frac{95}{28}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_6_3_15",
+      "grade": 5,
+      "seed": 1,
+      "type": "1",
+      "accepted": ["1"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_6_3_16",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{12}{25}",
+      "accepted": ["\\frac{12}{25}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_6_3_9",
+      "grade": 5,
+      "seed": 1,
+      "type": "5\\frac{15}{97}",
+      "accepted": ["5\\frac{15}{97}"],
+      "rejected": ["\\frac{500}{97}"]
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_5_9_10_5",
+      "grade": 5,
+      "seed": 1,
+      "type": "105",
+      "accepted": ["105", "105.0"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_5_9_10_5",
+      "grade": 5,
+      "seed": 2,
+      "type": "24",
+      "accepted": ["24", "24.0"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_9_1_5",
+      "grade": 5,
+      "seed": 1,
+      "type": "\\frac{48}{48}",
+      "accepted": ["1", "\\frac{48}{48}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_9_8_12",
+      "grade": 5,
+      "seed": 1,
+      "type": "21\\frac{9}{11}",
+      "accepted": ["21\\frac{9}{11}"],
+      "rejected": ["\\frac{240}{11}"]
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_5_9_8_14",
+      "grade": 5,
+      "seed": 1,
+      "type": "272,5",
+      "accepted": ["272,5", "272.5"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_5_9_8_14",
+      "grade": 5,
+      "seed": 2,
+      "type": "50",
+      "accepted": ["50", "50.0"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_9_8_16",
+      "grade": 5,
+      "seed": 1,
+      "type": "54\\frac{6}{11}",
+      "accepted": ["54\\frac{6}{11}"],
+      "rejected": ["\\frac{600}{11}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_9_8_18",
+      "grade": 5,
+      "seed": 1,
+      "type": "16\\frac{4}{11}",
+      "accepted": ["16\\frac{4}{11}"],
+      "rejected": ["\\frac{180}{11}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_5_9_8_19",
+      "grade": 5,
+      "seed": 1,
+      "type": "21\\frac{9}{11}",
+      "accepted": ["21\\frac{9}{11}"],
+      "rejected": ["\\frac{240}{11}"]
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_5_9_9_4",
+      "grade": 5,
+      "seed": 1,
+      "type": "300",
+      "accepted": ["300", "300.0"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_5_9_9_4",
+      "grade": 5,
+      "seed": 3,
+      "type": "2400",
+      "accepted": ["2.4e3", "2400"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_1_10",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{7}{30};;\\frac{13}{10}",
+      "accepted": [
+        "-\\frac{7}{30};;1\\frac{3}{10}",
+        "-\\frac{7}{30};;\\frac{13}{10}"
+      ],
+      "rejected": [
+        "\\frac{-7}{30};;1\\frac{3}{10}",
+        "\\frac{-7}{30};;\\frac{13}{10}",
+        "\\frac{7}{-30};;1\\frac{3}{10}",
+        "\\frac{7}{-30};;\\frac{13}{10}"
+      ]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_1_13",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{7}{11};;\\frac{1}{11}",
+      "accepted": ["\\frac{7}{11};;\\frac{1}{11}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_1_14",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{9}{7};;-\\frac{12}{7}",
+      "accepted": [
+        "1\\frac{2}{7};;-1\\frac{5}{7}",
+        "\\frac{9}{7};;-\\frac{12}{7}"
+      ],
+      "rejected": [
+        "1\\frac{2}{7};;-\\frac{12}{7}",
+        "\\frac{9}{7};;-1\\frac{5}{7}",
+        "\\frac{9}{7};;\\frac{-12}{7}",
+        "\\frac{9}{7};;\\frac{12}{-7}"
+      ]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_1_16",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{5}{3};;-\\frac{10}{3}",
+      "accepted": [
+        "1\\frac{2}{3};;-3\\frac{1}{3}",
+        "\\frac{5}{3};;-\\frac{10}{3}"
+      ],
+      "rejected": [
+        "1\\frac{2}{3};;-\\frac{10}{3}",
+        "\\frac{5}{3};;-3\\frac{1}{3}",
+        "\\frac{5}{3};;\\frac{-10}{3}",
+        "\\frac{5}{3};;\\frac{10}{-3}"
+      ]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_1_17",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{27}{5};;\\frac{22}{5}",
+      "accepted": [
+        "5\\frac{2}{5};;4\\frac{2}{5}",
+        "\\frac{27}{5};;\\frac{22}{5}"
+      ],
+      "rejected": [
+        "5\\frac{2}{5};;\\frac{22}{5}",
+        "\\frac{27}{5};;4\\frac{2}{5}"
+      ]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_1_18",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{157}{23};;-\\frac{84}{23}",
+      "accepted": [
+        "6\\frac{19}{23};;-3\\frac{15}{23}",
+        "\\frac{157}{23};;-\\frac{84}{23}"
+      ],
+      "rejected": [
+        "6\\frac{19}{23};;-\\frac{84}{23}",
+        "\\frac{157}{23};;-3\\frac{15}{23}",
+        "\\frac{157}{23};;\\frac{-84}{23}",
+        "\\frac{157}{23};;\\frac{84}{-23}"
+      ]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_1_19",
+      "grade": 6,
+      "seed": 3,
+      "type": "\\frac{12}{1};;\\frac{6}{1}",
+      "accepted": [
+        "12;;6",
+        "12;;\\frac{6}{1}",
+        "\\frac{12}{1};;6",
+        "\\frac{12}{1};;\\frac{6}{1}"
+      ],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_1_20",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{32}{31};;-\\frac{4}{31}",
+      "accepted": [
+        "1\\frac{1}{31};;-\\frac{4}{31}",
+        "\\frac{32}{31};;-\\frac{4}{31}"
+      ],
+      "rejected": [
+        "1\\frac{1}{31};;\\frac{-4}{31}",
+        "1\\frac{1}{31};;\\frac{4}{-31}",
+        "\\frac{32}{31};;\\frac{-4}{31}",
+        "\\frac{32}{31};;\\frac{4}{-31}"
+      ]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_1_21",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{12}{1};;-\\frac{10}{1}",
+      "accepted": [
+        "-12;;-10",
+        "-12;;-\\frac{10}{1}",
+        "-\\frac{12}{1};;-10",
+        "-\\frac{12}{1};;-\\frac{10}{1}"
+      ],
+      "rejected": [
+        "-\\frac{12}{1};;\\frac{-10}{1}",
+        "-\\frac{12}{1};;\\frac{10}{-1}",
+        "\\frac{-12}{1};;-\\frac{10}{1}",
+        "\\frac{12}{-1};;-\\frac{10}{1}"
+      ]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_1_22",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{9}{2};;\\frac{5}{2}",
+      "accepted": [
+        "4\\frac{1}{2};;2\\frac{1}{2}",
+        "\\frac{9}{2};;\\frac{5}{2}"
+      ],
+      "rejected": ["4\\frac{1}{2};;\\frac{5}{2}", "\\frac{9}{2};;2\\frac{1}{2}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_1_23",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{4}{5};;\\frac{33}{5}",
+      "accepted": [
+        "\\frac{4}{5};;6\\frac{3}{5}",
+        "\\frac{4}{5};;\\frac{33}{5}"
+      ],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_1_24",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{123}{4};;\\frac{65}{4}",
+      "accepted": [
+        "30\\frac{3}{4};;16\\frac{1}{4}",
+        "\\frac{123}{4};;\\frac{65}{4}"
+      ],
+      "rejected": [
+        "30\\frac{3}{4};;\\frac{65}{4}",
+        "\\frac{123}{4};;16\\frac{1}{4}"
+      ]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_1_25",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{269}{39};;\\frac{21}{13}",
+      "accepted": [
+        "6\\frac{35}{39};;1\\frac{8}{13}",
+        "\\frac{269}{39};;\\frac{21}{13}"
+      ],
+      "rejected": [
+        "6\\frac{35}{39};;\\frac{21}{13}",
+        "\\frac{269}{39};;1\\frac{8}{13}"
+      ]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_1_5",
+      "grade": 6,
+      "seed": 1,
+      "type": "3;;-1",
+      "accepted": ["3;;-1"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_1_7",
+      "grade": 6,
+      "seed": 1,
+      "type": "4;;-21",
+      "accepted": ["4;;-21"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_1_8",
+      "grade": 6,
+      "seed": 1,
+      "type": "-2;;-20",
+      "accepted": ["-2;;-20"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_1_9",
+      "grade": 6,
+      "seed": 1,
+      "type": "-1;;4",
+      "accepted": ["-1;;4"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_2_11",
+      "grade": 6,
+      "seed": 1,
+      "type": "-5;;-\\frac{21}{2}",
+      "accepted": ["-5;;-10\\frac{1}{2}", "-5;;-\\frac{21}{2}"],
+      "rejected": ["-5;;\\frac{-21}{2}", "-5;;\\frac{21}{-2}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_2_14",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{96}{7};;-\\frac{60}{7}",
+      "accepted": [
+        "13\\frac{5}{7};;-8\\frac{4}{7}",
+        "\\frac{96}{7};;-\\frac{60}{7}"
+      ],
+      "rejected": [
+        "13\\frac{5}{7};;-\\frac{60}{7}",
+        "\\frac{96}{7};;-8\\frac{4}{7}",
+        "\\frac{96}{7};;\\frac{-60}{7}",
+        "\\frac{96}{7};;\\frac{60}{-7}"
+      ]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_2_15",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{144}{23};;\\frac{60}{23}",
+      "accepted": [
+        "6\\frac{6}{23};;2\\frac{14}{23}",
+        "\\frac{144}{23};;\\frac{60}{23}"
+      ],
+      "rejected": [
+        "6\\frac{6}{23};;\\frac{60}{23}",
+        "\\frac{144}{23};;2\\frac{14}{23}"
+      ]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_2_17",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{1}{2};;-3",
+      "accepted": ["\\frac{1}{2};;-3"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_2_18",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{23}{5};;11",
+      "accepted": ["-4\\frac{3}{5};;11", "-\\frac{23}{5};;11"],
+      "rejected": ["\\frac{-23}{5};;11", "\\frac{23}{-5};;11"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_2_20",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{140}{3};;-3",
+      "accepted": ["46\\frac{2}{3};;-3", "\\frac{140}{3};;-3"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_2_22",
+      "grade": 6,
+      "seed": 1,
+      "type": "10;;-\\frac{7}{6}",
+      "accepted": ["10;;-1\\frac{1}{6}", "10;;-\\frac{7}{6}"],
+      "rejected": ["10;;\\frac{-7}{6}", "10;;\\frac{7}{-6}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_2_23",
+      "grade": 6,
+      "seed": 1,
+      "type": "2;;2,4",
+      "accepted": ["2;;2,4", "2;;2\\frac{2}{5}", "2;;\\frac{12}{5}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_2_24",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{153}{19};;\\frac{30}{19}",
+      "accepted": [
+        "8\\frac{1}{19};;1\\frac{11}{19}",
+        "\\frac{153}{19};;\\frac{30}{19}"
+      ],
+      "rejected": [
+        "8\\frac{1}{19};;\\frac{30}{19}",
+        "\\frac{153}{19};;1\\frac{11}{19}"
+      ]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_2_25",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{40}{7};;\\frac{52}{7}",
+      "accepted": [
+        "5\\frac{5}{7};;7\\frac{3}{7}",
+        "\\frac{40}{7};;\\frac{52}{7}"
+      ],
+      "rejected": [
+        "5\\frac{5}{7};;\\frac{52}{7}",
+        "\\frac{40}{7};;7\\frac{3}{7}"
+      ]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_2_26",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{16}{29};;-\\frac{186}{29}",
+      "accepted": [
+        "\\frac{16}{29};;-6\\frac{12}{29}",
+        "\\frac{16}{29};;-\\frac{186}{29}"
+      ],
+      "rejected": [
+        "\\frac{16}{29};;\\frac{-186}{29}",
+        "\\frac{16}{29};;\\frac{186}{-29}"
+      ]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_2_4",
+      "grade": 6,
+      "seed": 1,
+      "type": "3;;2\\frac{2}{3}",
+      "accepted": ["3;;2\\frac{2}{3}"],
+      "rejected": ["3;;\\frac{8}{3}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_2_6",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{4}{5};;3",
+      "accepted": ["-\\frac{4}{5};;3"],
+      "rejected": ["\\frac{-4}{5};;3", "\\frac{4}{-5};;3"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_2_7",
+      "grade": 6,
+      "seed": 1,
+      "type": "3;;-2\\frac{2}{3}",
+      "accepted": ["3;;-2\\frac{2}{3}"],
+      "rejected": ["3;;-\\frac{8}{3}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_2_8",
+      "grade": 6,
+      "seed": 1,
+      "type": "11;;-7",
+      "accepted": ["11;;-7"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_10_2_9",
+      "grade": 6,
+      "seed": 1,
+      "type": "-5;;14",
+      "accepted": ["-5;;14"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_10_5_1",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{7}{9}",
+      "accepted": ["\\frac{7}{9}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_10_5_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{7}{9}",
+      "accepted": ["\\frac{7}{9}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_6_12_10_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "5,625",
+      "accepted": ["5,625", "5.625"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_6_12_10_2",
+      "grade": 6,
+      "seed": 2,
+      "type": "1,875",
+      "accepted": ["1,875", "1.875"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_6_12_10_8",
+      "grade": 6,
+      "seed": 1,
+      "type": "85",
+      "accepted": ["85"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_6_12_10_8",
+      "grade": 6,
+      "seed": 2,
+      "type": "85",
+      "accepted": ["85"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_6_12_10_9",
+      "grade": 6,
+      "seed": 1,
+      "type": "130,2",
+      "accepted": ["130,2", "130.2"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_6_12_10_9",
+      "grade": 6,
+      "seed": 2,
+      "type": "27,3",
+      "accepted": ["27,3", "27.3"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_6_12_3_8",
+      "grade": 6,
+      "seed": 1,
+      "type": "4,25",
+      "accepted": ["4,25", "4.25"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_6_12_3_8",
+      "grade": 6,
+      "seed": 2,
+      "type": "4,05",
+      "accepted": ["4,05", "4.05"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_6_12_5_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "13,6",
+      "accepted": ["13,6", "13.6"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_6_12_5_2",
+      "grade": 6,
+      "seed": 2,
+      "type": "13,2",
+      "accepted": ["13,2", "13.2"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_12_5_6",
+      "grade": 6,
+      "seed": 1,
+      "type": "1\\frac{11}{15}",
+      "accepted": ["1\\frac{11}{15}"],
+      "rejected": ["\\frac{26}{15}"]
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_6_12_7_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "138",
+      "accepted": ["138", "138.0"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_6_12_7_2",
+      "grade": 6,
+      "seed": 2,
+      "type": "156",
+      "accepted": ["156"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_11_6",
+      "grade": 6,
+      "seed": 1,
+      "type": "2",
+      "accepted": ["2"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_14_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "2\\frac{80}{107}",
+      "accepted": ["2\\frac{80}{107}"],
+      "rejected": ["\\frac{294}{107}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_1_14_5",
+      "grade": 6,
+      "seed": 1,
+      "type": "13\\frac{1}{3}",
+      "accepted": ["13\\frac{1}{3}"],
+      "rejected": ["\\frac{40}{3}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_14_9",
+      "grade": 6,
+      "seed": 1,
+      "type": "2\\frac{31}{40}",
+      "accepted": ["2\\frac{31}{40}"],
+      "rejected": ["\\frac{111}{40}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_1_1",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{13}{7}",
+      "accepted": ["\\frac{13}{7}"],
+      "rejected": ["1\\frac{6}{7}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_1_1_12",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{1}{2}",
+      "accepted": ["\\frac{1}{2}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_1_1_2_16",
+      "grade": 6,
+      "seed": 1,
+      "type": "44\\frac{4}{9}",
+      "accepted": ["44\\frac{4}{9}"],
+      "rejected": ["\\frac{400}{9}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_1_2_17",
+      "grade": 6,
+      "seed": 1,
+      "type": "25",
+      "accepted": ["25"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_1_1_2_18",
+      "grade": 6,
+      "seed": 1,
+      "type": "25",
+      "accepted": ["25"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_1_23_16",
+      "grade": 6,
+      "seed": 1,
+      "type": "1\\frac{1}{2}",
+      "accepted": ["1\\frac{1}{2}"],
+      "rejected": ["\\frac{3}{2}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_25_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{1}{460000}",
+      "accepted": ["\\frac{1}{460000}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_25_6",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{1}{1800000}",
+      "accepted": ["\\frac{1}{1800000}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_26_3",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{1}{12}",
+      "accepted": ["\\frac{1}{12}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_1_26_5",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{23}{24}",
+      "accepted": ["\\frac{23}{24}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_2_1_14",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{25}{2}",
+      "accepted": ["12\\frac{1}{2}", "\\frac{25}{2}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_1_2_2_8",
+      "grade": 6,
+      "seed": 1,
+      "type": "60",
+      "accepted": ["60"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_2_4_14",
+      "grade": 6,
+      "seed": 1,
+      "type": "2\\frac{1}{2}",
+      "accepted": ["2\\frac{1}{2}"],
+      "rejected": ["\\frac{5}{2}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_1_2_4_22",
+      "grade": 6,
+      "seed": 1,
+      "type": "4",
+      "accepted": ["4"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_2_4_23",
+      "grade": 6,
+      "seed": 1,
+      "type": "3\\frac{11}{28}",
+      "accepted": ["3\\frac{11}{28}"],
+      "rejected": ["\\frac{95}{28}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_1_2_4_24",
+      "grade": 6,
+      "seed": 4,
+      "type": "\\frac{2}{3}",
+      "accepted": ["\\frac{2}{3}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_2_4_26",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{20}{1}",
+      "accepted": ["20", "\\frac{20}{1}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_2_4_27",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{50}{1}",
+      "accepted": ["50", "\\frac{50}{1}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_2_4_34",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{80}{1}",
+      "accepted": ["80", "\\frac{80}{1}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_1_2_4_35",
+      "grade": 6,
+      "seed": 1,
+      "type": "50",
+      "accepted": ["50"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_1_2_4_36",
+      "grade": 6,
+      "seed": 1,
+      "type": "6440",
+      "accepted": ["6440"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_1_2_4_37",
+      "grade": 6,
+      "seed": 1,
+      "type": "6440",
+      "accepted": ["6440"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_1_2_4_38",
+      "grade": 6,
+      "seed": 1,
+      "type": "469",
+      "accepted": ["469"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_1_2_4_39",
+      "grade": 6,
+      "seed": 1,
+      "type": "96",
+      "accepted": ["96"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_2_4_4",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{34}{25}",
+      "accepted": ["1\\frac{9}{25}", "\\frac{34}{25}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_1_2_4_40",
+      "grade": 6,
+      "seed": 1,
+      "type": "190",
+      "accepted": ["190"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_1_2_4_42",
+      "grade": 6,
+      "seed": 1,
+      "type": "47",
+      "accepted": ["47"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_1_2_4_43",
+      "grade": 6,
+      "seed": 1,
+      "type": "31536",
+      "accepted": ["31536"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_2_5_11",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{340}{1}",
+      "accepted": ["340", "\\frac{340}{1}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_2_5_12",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{290}{1}",
+      "accepted": ["290", "\\frac{290}{1}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_1_2_5_13",
+      "grade": 6,
+      "seed": 1,
+      "type": "40",
+      "accepted": ["40"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_4_1",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{1}{2}",
+      "accepted": ["\\frac{1}{2}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_4_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{3}{1}",
+      "accepted": ["3", "\\frac{3}{1}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_4_3",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{3}{8}",
+      "accepted": ["\\frac{3}{8}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_4_4",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{3}{1}",
+      "accepted": ["3", "\\frac{3}{1}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_5_1",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{1}{2}",
+      "accepted": ["\\frac{1}{2}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_5_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{15}{14}",
+      "accepted": ["\\frac{15}{14}"],
+      "rejected": ["1\\frac{1}{14}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_6",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{14}{5}",
+      "accepted": ["\\frac{14}{5}"],
+      "rejected": ["2\\frac{4}{5}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_8_1",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{5}{16}",
+      "accepted": ["\\frac{5}{16}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_9_1",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{1}{6}",
+      "accepted": ["\\frac{1}{6}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_9_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{2}{11}",
+      "accepted": ["\\frac{2}{11}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_1_9_3",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{1}{460000}",
+      "accepted": ["\\frac{1}{460000}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_100",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{1}{5}",
+      "accepted": ["-\\frac{1}{5}"],
+      "rejected": ["\\frac{-1}{5}", "\\frac{1}{-5}"]
+    },
+    {
+      "rule": "ans:PeriodicNumber",
+      "id": "Task_6_2_111",
+      "grade": 6,
+      "seed": 1,
+      "type": "0,(4)",
+      "accepted": ["0,(4)", "0.(4)"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:PeriodicNumber",
+      "id": "Task_6_2_111",
+      "grade": 6,
+      "seed": 2,
+      "type": "0,(6)",
+      "accepted": ["0,(6)", "0.(6)"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_116",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{5}{9}",
+      "accepted": ["\\frac{5}{9}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_117",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{13}{90}",
+      "accepted": ["\\frac{13}{90}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_118",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{64}{9}",
+      "accepted": ["7\\frac{1}{9}", "\\frac{64}{9}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_119",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{677}{90}",
+      "accepted": ["7\\frac{47}{90}", "\\frac{677}{90}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_120_1",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{32}{3}",
+      "accepted": ["10\\frac{2}{3}", "\\frac{32}{3}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_120_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{14}{9}",
+      "accepted": ["1\\frac{5}{9}", "\\frac{14}{9}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_121",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{8}{9}",
+      "accepted": ["\\frac{8}{9}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_122",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{667}{99}",
+      "accepted": ["6\\frac{73}{99}", "\\frac{667}{99}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_2_125_3",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{1}{4}",
+      "accepted": ["\\frac{1}{4}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_2_125_5",
+      "grade": 6,
+      "seed": 1,
+      "type": "-23\\frac{5}{6}",
+      "accepted": ["-23\\frac{5}{6}"],
+      "rejected": ["23\\frac{5}{6}", "\\frac{143}{6}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_2_125_6",
+      "grade": 6,
+      "seed": 1,
+      "type": "-23\\frac{7}{15}",
+      "accepted": ["-23\\frac{7}{15}"],
+      "rejected": ["-\\frac{352}{15}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_125_8",
+      "grade": 6,
+      "seed": 1,
+      "type": "-21\\frac{1}{2}",
+      "accepted": ["-21\\frac{1}{2}"],
+      "rejected": ["-\\frac{43}{2}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_126_14",
+      "grade": 6,
+      "seed": 1,
+      "type": "-4\\frac{14}{15}",
+      "accepted": ["-4\\frac{14}{15}"],
+      "rejected": ["4\\frac{14}{15}", "\\frac{74}{15}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_126_15",
+      "grade": 6,
+      "seed": 1,
+      "type": "8\\frac{11}{15}",
+      "accepted": ["8\\frac{11}{15}"],
+      "rejected": ["\\frac{131}{15}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_2_126_7",
+      "grade": 6,
+      "seed": 1,
+      "type": "20\\frac{1}{3}",
+      "accepted": ["20\\frac{1}{3}"],
+      "rejected": ["\\frac{61}{3}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_2_126_8",
+      "grade": 6,
+      "seed": 1,
+      "type": "9\\frac{8}{21}",
+      "accepted": ["9\\frac{8}{21}"],
+      "rejected": ["\\frac{197}{21}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_128_10",
+      "grade": 6,
+      "seed": 1,
+      "type": "2",
+      "accepted": ["2"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_2_128_11",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{1}{10}",
+      "accepted": ["-\\frac{1}{10}"],
+      "rejected": ["\\frac{-1}{10}", "\\frac{1}{-10}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_128_9",
+      "grade": 6,
+      "seed": 1,
+      "type": "2",
+      "accepted": ["2"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_130_8",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{3}{4}",
+      "accepted": ["\\frac{3}{4}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_130_9",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{4}{5}",
+      "accepted": ["-\\frac{4}{5}"],
+      "rejected": ["\\frac{-4}{5}", "\\frac{4}{-5}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_133_6",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{113}{360}",
+      "accepted": ["\\frac{113}{360}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_133_7",
+      "grade": 6,
+      "seed": 1,
+      "type": "16",
+      "accepted": ["16"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_13_5",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{49}{6}",
+      "accepted": ["8\\frac{1}{6}", "\\frac{49}{6}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_38",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{5}{7}",
+      "accepted": ["-\\frac{5}{7}"],
+      "rejected": ["\\frac{-5}{7}", "\\frac{5}{-7}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_41",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{131}{10}",
+      "accepted": ["-13\\frac{1}{10}", "-\\frac{131}{10}"],
+      "rejected": ["\\frac{-131}{10}", "\\frac{131}{-10}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_44_1",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{89}{5}",
+      "accepted": ["-17\\frac{4}{5}", "-\\frac{89}{5}"],
+      "rejected": ["\\frac{-89}{5}", "\\frac{89}{-5}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_44_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{85}{8}",
+      "accepted": ["-10\\frac{5}{8}", "-\\frac{85}{8}"],
+      "rejected": ["\\frac{-85}{8}", "\\frac{85}{-8}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_59_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{59}{6}",
+      "accepted": ["-9\\frac{5}{6}", "-\\frac{59}{6}"],
+      "rejected": ["\\frac{-59}{6}", "\\frac{59}{-6}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_2_66",
+      "grade": 6,
+      "seed": 1,
+      "type": "-14\\frac{7}{15}",
+      "accepted": ["-14\\frac{7}{15}"],
+      "rejected": ["-\\frac{217}{15}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_2_67",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{23}{40}",
+      "accepted": ["-\\frac{23}{40}"],
+      "rejected": ["\\frac{-23}{40}", "\\frac{23}{-40}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_6_1",
+      "grade": 6,
+      "seed": 1,
+      "type": "-13\\frac{5}{6}",
+      "accepted": ["-13\\frac{5}{6}"],
+      "rejected": ["-\\frac{83}{6}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_6_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{1}{10}",
+      "accepted": ["-\\frac{1}{10}"],
+      "rejected": ["\\frac{-1}{10}", "\\frac{1}{-10}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_6_3",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{7}{30}",
+      "accepted": ["-\\frac{7}{30}"],
+      "rejected": ["\\frac{-7}{30}", "\\frac{7}{-30}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_2_71",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{7}{9}",
+      "accepted": ["-\\frac{7}{9}"],
+      "rejected": ["\\frac{-7}{9}", "\\frac{7}{-9}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_74_1",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{19}{16}",
+      "accepted": ["1\\frac{3}{16}", "\\frac{19}{16}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_74_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{7}{5}",
+      "accepted": ["-1\\frac{2}{5}", "-\\frac{7}{5}"],
+      "rejected": ["\\frac{-7}{5}", "\\frac{7}{-5}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_75_1",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{25}{3}",
+      "accepted": ["8\\frac{1}{3}", "\\frac{25}{3}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_75_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{69}{10}",
+      "accepted": ["-6\\frac{9}{10}", "-\\frac{69}{10}"],
+      "rejected": ["\\frac{-69}{10}", "\\frac{69}{-10}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_81",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{3}{2}",
+      "accepted": ["-1\\frac{1}{2}", "-\\frac{3}{2}"],
+      "rejected": ["\\frac{-3}{2}", "\\frac{3}{-2}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_2_84_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "-1",
+      "accepted": ["-1"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_2_84_4",
+      "grade": 6,
+      "seed": 1,
+      "type": "3",
+      "accepted": ["3"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_6_2_87_3",
+      "grade": 6,
+      "seed": 1,
+      "type": "1,25",
+      "accepted": ["1,25", "1.25"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_6_2_87_3",
+      "grade": 6,
+      "seed": 2,
+      "type": "3,5",
+      "accepted": ["3,5", "3.5"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_90_1",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{4}{3}",
+      "accepted": ["-1\\frac{1}{3}", "-\\frac{4}{3}"],
+      "rejected": ["\\frac{-4}{3}", "\\frac{4}{-3}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_90_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{4}{15}",
+      "accepted": ["-\\frac{4}{15}"],
+      "rejected": ["\\frac{-4}{15}", "\\frac{4}{-15}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_2_94",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{8}{1}",
+      "accepted": ["8", "\\frac{8}{1}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_3_10_3",
+      "grade": 6,
+      "seed": 1,
+      "type": "3\\frac{1}{2}",
+      "accepted": ["3\\frac{1}{2}"],
+      "rejected": ["\\frac{7}{2}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_3_10_4",
+      "grade": 6,
+      "seed": 1,
+      "type": "-3\\frac{1}{2}",
+      "accepted": ["-3\\frac{1}{2}"],
+      "rejected": ["-\\frac{7}{2}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_3_11_1",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{5}{8}",
+      "accepted": ["-\\frac{5}{8}"],
+      "rejected": ["\\frac{-5}{8}", "\\frac{5}{-8}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_3_11_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{6}{5}",
+      "accepted": ["-1\\frac{1}{5}", "-\\frac{6}{5}"],
+      "rejected": ["\\frac{-6}{5}", "\\frac{6}{-5}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_3_12_1",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{5}{7}",
+      "accepted": ["\\frac{5}{7}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_3_12_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{153}{25}",
+      "accepted": ["6\\frac{3}{25}", "\\frac{153}{25}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_3_12_3",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{383}{16}",
+      "accepted": ["-23\\frac{15}{16}", "-\\frac{383}{16}"],
+      "rejected": ["\\frac{-383}{16}", "\\frac{383}{-16}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_3_2_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{1}{8}",
+      "accepted": ["-\\frac{1}{8}"],
+      "rejected": ["\\frac{-1}{8}", "\\frac{1}{-8}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_3_2_3",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{11}{5}",
+      "accepted": ["2\\frac{1}{5}", "\\frac{11}{5}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_3_7_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "3\\frac{1}{6}",
+      "accepted": ["3\\frac{1}{6}"],
+      "rejected": ["\\frac{19}{6}"]
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_4_11_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{2}{7}",
+      "accepted": ["\\frac{2}{7}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_4_11_3",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{1}{5}",
+      "accepted": ["-\\frac{1}{5}"],
+      "rejected": ["\\frac{-1}{5}", "\\frac{1}{-5}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_4_18_4",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{8}{11}",
+      "accepted": ["\\frac{8}{11}"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_4_18_5",
+      "grade": 6,
+      "seed": 1,
+      "type": "-1\\frac{3}{31}",
+      "accepted": ["-1\\frac{3}{31}"],
+      "rejected": ["-\\frac{34}{31}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_4_3_1",
+      "grade": 6,
+      "seed": 1,
+      "type": "54",
+      "accepted": ["54"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_4_3_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{9}{2}",
+      "accepted": ["4\\frac{1}{2}", "\\frac{9}{2}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_4_3_3",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{9}{1}",
+      "accepted": ["9", "\\frac{9}{1}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_4_3_4",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{2}{1}",
+      "accepted": ["2", "\\frac{2}{1}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_4_6_1",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{37}{5}",
+      "accepted": ["7\\frac{2}{5}", "\\frac{37}{5}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_4_6_2",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{22}{5}",
+      "accepted": ["4\\frac{2}{5}", "\\frac{22}{5}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_4_6_3",
+      "grade": 6,
+      "seed": 1,
+      "type": "-\\frac{3}{1}",
+      "accepted": ["-3", "-\\frac{3}{1}"],
+      "rejected": ["\\frac{-3}{1}", "\\frac{3}{-1}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_6_24_6",
+      "grade": 6,
+      "seed": 1,
+      "type": "4\\frac{4}{5}",
+      "accepted": ["4\\frac{4}{5}"],
+      "rejected": ["\\frac{24}{5}"]
+    },
+    {
+      "rule": "ans:fraction-5-6",
+      "id": "Task_6_8_9_1",
+      "grade": 6,
+      "seed": 1,
+      "type": "\\frac{4}{9}",
+      "accepted": ["\\frac{4}{9}"],
+      "rejected": []
+    },
+    {
+      "rule": "scan:fraction-5-6",
+      "id": "Task_6_9_4_4",
+      "grade": 6,
+      "seed": 1,
+      "type": "-4;;-2;;0;;2;;4",
+      "accepted": ["-4;;-2;;0;;2;;4"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_7_3_3_2",
+      "grade": 7,
+      "seed": 1,
+      "type": "-5;5",
+      "accepted": ["-5;5", "5;-5", "\\pm5"],
+      "rejected": ["-5,5", "5"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_7_3_3_2",
+      "grade": 7,
+      "seed": 2,
+      "type": "-7;7",
+      "accepted": ["-7;7", "7;-7", "\\pm7"],
+      "rejected": ["-7,7", "7"]
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_7_7_12_17",
+      "grade": 7,
+      "seed": 1,
+      "type": "36",
+      "accepted": ["36"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_7_7_12_17",
+      "grade": 7,
+      "seed": 2,
+      "type": "36",
+      "accepted": ["36"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_7_7_2_10",
+      "grade": 7,
+      "seed": 1,
+      "type": "1,5",
+      "accepted": ["1,5", "1.5"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_7_7_2_10",
+      "grade": 7,
+      "seed": 2,
+      "type": "1",
+      "accepted": ["1", "1.0"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_7_7_2_11",
+      "grade": 7,
+      "seed": 1,
+      "type": "1,2",
+      "accepted": ["1,2", "1.2"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:float",
+      "id": "Task_7_7_2_11",
+      "grade": 7,
+      "seed": 2,
+      "type": "0,8",
+      "accepted": ["0,8", "0.8"],
+      "rejected": []
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_14_2",
+      "grade": 8,
+      "seed": 1,
+      "type": "-1;1",
+      "accepted": ["-1;1", "1;-1", "\\pm1"],
+      "rejected": ["-1,1", "1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_14_2",
+      "grade": 8,
+      "seed": 2,
+      "type": "-1;1",
+      "accepted": ["-1;1", "1;-1", "\\pm1"],
+      "rejected": ["-1,1", "1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_14_6",
+      "grade": 8,
+      "seed": 1,
+      "type": "-\\frac{1}{9};\\frac{1}{9}",
+      "accepted": [
+        "-\\frac{1}{9};\\frac{1}{9}",
+        "\\frac{1}{9};-\\frac{1}{9}",
+        "\\pm\\frac{1}{9}"
+      ],
+      "rejected": [
+        "-\\frac{1}{9},\\frac{1}{9}",
+        "\\frac{-1}{9};\\frac{1}{9}",
+        "\\frac{1}{-9};\\frac{1}{9}",
+        "\\frac{1}{9}"
+      ]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_14_6",
+      "grade": 8,
+      "seed": 2,
+      "type": "-\\frac{1}{9};\\frac{1}{9}",
+      "accepted": [
+        "-\\frac{1}{9};\\frac{1}{9}",
+        "\\frac{1}{9};-\\frac{1}{9}",
+        "\\pm\\frac{1}{9}"
+      ],
+      "rejected": [
+        "-\\frac{1}{9},\\frac{1}{9}",
+        "\\frac{-1}{9};\\frac{1}{9}",
+        "\\frac{1}{-9};\\frac{1}{9}",
+        "\\frac{1}{9}"
+      ]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_15_10",
+      "grade": 8,
+      "seed": 1,
+      "type": "-6;1",
+      "accepted": ["-6;1", "1;-6"],
+      "rejected": ["-6,1", "1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_15_10",
+      "grade": 8,
+      "seed": 2,
+      "type": "-6;1",
+      "accepted": ["-6;1", "1;-6"],
+      "rejected": ["-6,1", "1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_15_2",
+      "grade": 8,
+      "seed": 1,
+      "type": "\\frac{2}{3};0",
+      "accepted": ["0;\\frac{2}{3}", "\\frac{2}{3};0"],
+      "rejected": ["0", "\\frac{2}{3},0"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_15_2",
+      "grade": 8,
+      "seed": 2,
+      "type": "\\frac{2}{3};0",
+      "accepted": ["0;\\frac{2}{3}", "\\frac{2}{3};0"],
+      "rejected": ["0", "\\frac{2}{3},0"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_15_4",
+      "grade": 8,
+      "seed": 1,
+      "type": "-3;4",
+      "accepted": ["-3;4", "4;-3"],
+      "rejected": ["-3,4", "4"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_15_4",
+      "grade": 8,
+      "seed": 2,
+      "type": "-3;4",
+      "accepted": ["-3;4", "4;-3"],
+      "rejected": ["-3,4", "4"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_15_5",
+      "grade": 8,
+      "seed": 1,
+      "type": "-1;3",
+      "accepted": ["-1;3", "3;-1"],
+      "rejected": ["-1,3", "3"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_15_5",
+      "grade": 8,
+      "seed": 2,
+      "type": "-1;3",
+      "accepted": ["-1;3", "3;-1"],
+      "rejected": ["-1,3", "3"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_15_6",
+      "grade": 8,
+      "seed": 1,
+      "type": "0;-6",
+      "accepted": ["-6;0", "0;-6"],
+      "rejected": ["-6", "0,-6"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_15_6",
+      "grade": 8,
+      "seed": 2,
+      "type": "0;-6",
+      "accepted": ["-6;0", "0;-6"],
+      "rejected": ["-6", "0,-6"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_15_7",
+      "grade": 8,
+      "seed": 1,
+      "type": "-5;4",
+      "accepted": ["-5;4", "4;-5"],
+      "rejected": ["-5,4", "4"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_15_7",
+      "grade": 8,
+      "seed": 2,
+      "type": "-3;2",
+      "accepted": ["-3;2", "2;-3"],
+      "rejected": ["-3,2", "2"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_15_8",
+      "grade": 8,
+      "seed": 1,
+      "type": "-1;-2",
+      "accepted": ["-1;-2", "-2;-1"],
+      "rejected": ["-1,-2", "-2"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_15_8",
+      "grade": 8,
+      "seed": 2,
+      "type": "-4;-2",
+      "accepted": ["-2;-4", "-4;-2"],
+      "rejected": ["-2", "-4,-2"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_15_9",
+      "grade": 8,
+      "seed": 1,
+      "type": "-3;1",
+      "accepted": ["-3;1", "1;-3"],
+      "rejected": ["-3,1", "1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_15_9",
+      "grade": 8,
+      "seed": 2,
+      "type": "-3;1",
+      "accepted": ["-3;1", "1;-3"],
+      "rejected": ["-3,1", "1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_16_12",
+      "grade": 8,
+      "seed": 1,
+      "type": "0;7",
+      "accepted": ["0;7", "7;0"],
+      "rejected": ["0,7", "7"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_16_12",
+      "grade": 8,
+      "seed": 2,
+      "type": "0;9",
+      "accepted": ["0;9", "9;0"],
+      "rejected": ["0,9", "9"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_16_13",
+      "grade": 8,
+      "seed": 1,
+      "type": "2;9",
+      "accepted": ["2;9", "9;2"],
+      "rejected": ["2,9", "9"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_16_13",
+      "grade": 8,
+      "seed": 2,
+      "type": "2;8",
+      "accepted": ["2;8", "8;2"],
+      "rejected": ["2,8", "8"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_16_14",
+      "grade": 8,
+      "seed": 1,
+      "type": "\\frac{5}{7};6",
+      "accepted": ["6;\\frac{5}{7}", "\\frac{5}{7};6"],
+      "rejected": ["6", "\\frac{5}{7},6"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_16_14",
+      "grade": 8,
+      "seed": 2,
+      "type": "\\frac{5}{7};6",
+      "accepted": ["6;\\frac{5}{7}", "\\frac{5}{7};6"],
+      "rejected": ["6", "\\frac{5}{7},6"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_16_2",
+      "grade": 8,
+      "seed": 1,
+      "type": "9;5",
+      "accepted": ["5;9", "9;5"],
+      "rejected": ["5", "9,5"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_16_2",
+      "grade": 8,
+      "seed": 2,
+      "type": "3;2",
+      "accepted": ["2;3", "3;2"],
+      "rejected": ["2", "3,2"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_16_5",
+      "grade": 8,
+      "seed": 1,
+      "type": "-3;-1",
+      "accepted": ["-1;-3", "-3;-1"],
+      "rejected": ["-1", "-3,-1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_16_5",
+      "grade": 8,
+      "seed": 2,
+      "type": "-3;1",
+      "accepted": ["-3;1", "1;-3"],
+      "rejected": ["-3,1", "1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_16_6",
+      "grade": 8,
+      "seed": 1,
+      "type": "-1\\frac{1}{4};1\\frac{1}{4}",
+      "accepted": [
+        "-1\\frac{1}{4};1\\frac{1}{4}",
+        "-1\\frac{1}{4};\\frac{5}{4}",
+        "-\\frac{5}{4};1\\frac{1}{4}",
+        "1\\frac{1}{4};-1\\frac{1}{4}",
+        "\\pm1\\frac{1}{4}"
+      ],
+      "rejected": ["-1\\frac{1}{4},1\\frac{1}{4}", "1\\frac{1}{4}"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_16_6",
+      "grade": 8,
+      "seed": 2,
+      "type": "-1\\frac{1}{4};1\\frac{1}{4}",
+      "accepted": [
+        "-1\\frac{1}{4};1\\frac{1}{4}",
+        "-1\\frac{1}{4};\\frac{5}{4}",
+        "-\\frac{5}{4};1\\frac{1}{4}",
+        "1\\frac{1}{4};-1\\frac{1}{4}",
+        "\\pm1\\frac{1}{4}"
+      ],
+      "rejected": ["-1\\frac{1}{4},1\\frac{1}{4}", "1\\frac{1}{4}"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_16_7",
+      "grade": 8,
+      "seed": 1,
+      "type": "-4;5",
+      "accepted": ["-4;5", "5;-4"],
+      "rejected": ["-4,5", "5"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_16_7",
+      "grade": 8,
+      "seed": 2,
+      "type": "-4;5",
+      "accepted": ["-4;5", "5;-4"],
+      "rejected": ["-4,5", "5"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_16_8",
+      "grade": 8,
+      "seed": 1,
+      "type": "0;1",
+      "accepted": ["0;1", "1;0"],
+      "rejected": ["0,1", "1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_16_8",
+      "grade": 8,
+      "seed": 2,
+      "type": "0;1",
+      "accepted": ["0;1", "1;0"],
+      "rejected": ["0,1", "1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_17_1",
+      "grade": 8,
+      "seed": 1,
+      "type": "-5;5",
+      "accepted": ["-5;5", "5;-5", "\\pm5"],
+      "rejected": ["-5,5", "5"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_17_1",
+      "grade": 8,
+      "seed": 2,
+      "type": "-7;7",
+      "accepted": ["-7;7", "7;-7", "\\pm7"],
+      "rejected": ["-7,7", "7"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_17_2",
+      "grade": 8,
+      "seed": 1,
+      "type": "-8;8",
+      "accepted": ["-8;8", "8;-8", "\\pm8"],
+      "rejected": ["-8,8", "8"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_17_2",
+      "grade": 8,
+      "seed": 2,
+      "type": "-8;8",
+      "accepted": ["-8;8", "8;-8", "\\pm8"],
+      "rejected": ["-8,8", "8"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_18_11",
+      "grade": 8,
+      "seed": 1,
+      "type": "-6;5",
+      "accepted": ["-6;5", "5;-6"],
+      "rejected": ["-6,5", "5"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_18_11",
+      "grade": 8,
+      "seed": 2,
+      "type": "-8;7",
+      "accepted": ["-8;7", "7;-8"],
+      "rejected": ["-8,7", "7"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_18_13",
+      "grade": 8,
+      "seed": 1,
+      "type": "-8;8",
+      "accepted": ["-8;8", "8;-8", "\\pm8"],
+      "rejected": ["-8,8", "8"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_18_13",
+      "grade": 8,
+      "seed": 2,
+      "type": "-8;8",
+      "accepted": ["-8;8", "8;-8", "\\pm8"],
+      "rejected": ["-8,8", "8"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_18_7",
+      "grade": 8,
+      "seed": 1,
+      "type": "0;5",
+      "accepted": ["0;5", "5;0"],
+      "rejected": ["0,5", "5"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_18_7",
+      "grade": 8,
+      "seed": 2,
+      "type": "0;7",
+      "accepted": ["0;7", "7;0"],
+      "rejected": ["0,7", "7"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_18_9",
+      "grade": 8,
+      "seed": 1,
+      "type": "-3;-\\frac{1}{2}",
+      "accepted": ["-3;-\\frac{1}{2}", "-\\frac{1}{2};-3"],
+      "rejected": [
+        "-3,-\\frac{1}{2}",
+        "-3;\\frac{-1}{2}",
+        "-3;\\frac{1}{-2}",
+        "-\\frac{1}{2}"
+      ]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_18_9",
+      "grade": 8,
+      "seed": 2,
+      "type": "-1\\frac{1}{6};-1",
+      "accepted": [
+        "-1;-1\\frac{1}{6}",
+        "-1\\frac{1}{6};-1",
+        "-\\frac{7}{6};-1"
+      ],
+      "rejected": ["-1", "-1\\frac{1}{6},-1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_1",
+      "grade": 8,
+      "seed": 1,
+      "type": "-8;8",
+      "accepted": ["-8;8", "8;-8", "\\pm8"],
+      "rejected": ["-8,8", "8"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_1",
+      "grade": 8,
+      "seed": 2,
+      "type": "-8;8",
+      "accepted": ["-8;8", "8;-8", "\\pm8"],
+      "rejected": ["-8,8", "8"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_11",
+      "grade": 8,
+      "seed": 1,
+      "type": "-\\frac{3}{8};\\frac{3}{8}",
+      "accepted": [
+        "-\\frac{3}{8};\\frac{3}{8}",
+        "\\frac{3}{8};-\\frac{3}{8}",
+        "\\pm\\frac{3}{8}"
+      ],
+      "rejected": [
+        "-\\frac{3}{8},\\frac{3}{8}",
+        "\\frac{-3}{8};\\frac{3}{8}",
+        "\\frac{3}{-8};\\frac{3}{8}",
+        "\\frac{3}{8}"
+      ]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_11",
+      "grade": 8,
+      "seed": 2,
+      "type": "-\\frac{3}{8};\\frac{3}{8}",
+      "accepted": [
+        "-\\frac{3}{8};\\frac{3}{8}",
+        "\\frac{3}{8};-\\frac{3}{8}",
+        "\\pm\\frac{3}{8}"
+      ],
+      "rejected": [
+        "-\\frac{3}{8},\\frac{3}{8}",
+        "\\frac{-3}{8};\\frac{3}{8}",
+        "\\frac{3}{-8};\\frac{3}{8}",
+        "\\frac{3}{8}"
+      ]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_13",
+      "grade": 8,
+      "seed": 1,
+      "type": "0;5",
+      "accepted": ["0;5", "5;0"],
+      "rejected": ["0,5", "5"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_13",
+      "grade": 8,
+      "seed": 2,
+      "type": "0;7",
+      "accepted": ["0;7", "7;0"],
+      "rejected": ["0,7", "7"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_14",
+      "grade": 8,
+      "seed": 1,
+      "type": "0;-5",
+      "accepted": ["-5;0", "0;-5"],
+      "rejected": ["-5", "0,-5"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_14",
+      "grade": 8,
+      "seed": 2,
+      "type": "0;-7",
+      "accepted": ["-7;0", "0;-7"],
+      "rejected": ["-7", "0,-7"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_15",
+      "grade": 8,
+      "seed": 1,
+      "type": "2;11",
+      "accepted": ["11;2", "2;11"],
+      "rejected": ["11", "2,11"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_15",
+      "grade": 8,
+      "seed": 2,
+      "type": "20;17",
+      "accepted": ["17;20", "20;17"],
+      "rejected": ["17", "20,17"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_16",
+      "grade": 8,
+      "seed": 1,
+      "type": "-2;11",
+      "accepted": ["-2;11", "11;-2"],
+      "rejected": ["-2,11", "11"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_16",
+      "grade": 8,
+      "seed": 2,
+      "type": "-20;17",
+      "accepted": ["-20;17", "17;-20"],
+      "rejected": ["-20,17", "17"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_17",
+      "grade": 8,
+      "seed": 1,
+      "type": "-5;5",
+      "accepted": ["-5;5", "5;-5", "\\pm5"],
+      "rejected": ["-5,5", "5"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_17",
+      "grade": 8,
+      "seed": 2,
+      "type": "-7;7",
+      "accepted": ["-7;7", "7;-7", "\\pm7"],
+      "rejected": ["-7,7", "7"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_18",
+      "grade": 8,
+      "seed": 1,
+      "type": "3;-\\frac{5}{13}",
+      "accepted": ["-\\frac{5}{13};3", "3;-\\frac{5}{13}"],
+      "rejected": [
+        "-\\frac{5}{13}",
+        "3,-\\frac{5}{13}",
+        "3;\\frac{-5}{13}",
+        "3;\\frac{5}{-13}"
+      ]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_18",
+      "grade": 8,
+      "seed": 2,
+      "type": "3;-\\frac{5}{13}",
+      "accepted": ["-\\frac{5}{13};3", "3;-\\frac{5}{13}"],
+      "rejected": [
+        "-\\frac{5}{13}",
+        "3,-\\frac{5}{13}",
+        "3;\\frac{-5}{13}",
+        "3;\\frac{5}{-13}"
+      ]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_19",
+      "grade": 8,
+      "seed": 1,
+      "type": "0;11",
+      "accepted": ["0;11", "11;0"],
+      "rejected": ["0,11", "11"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_19",
+      "grade": 8,
+      "seed": 2,
+      "type": "0;17",
+      "accepted": ["0;17", "17;0"],
+      "rejected": ["0,17", "17"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_2",
+      "grade": 8,
+      "seed": 1,
+      "type": "-0,7;0,7",
+      "accepted": ["-0,7;0,7", "0,7;-0,7", "\\pm0,7"],
+      "rejected": ["-0,7,0,7", "0,7"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_2",
+      "grade": 8,
+      "seed": 2,
+      "type": "-0,7;0,7",
+      "accepted": ["-0,7;0,7", "0,7;-0,7", "\\pm0,7"],
+      "rejected": ["-0,7,0,7", "0,7"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_20",
+      "grade": 8,
+      "seed": 1,
+      "type": "-3,5;-1",
+      "accepted": ["-1;-3,5", "-3,5;-1"],
+      "rejected": ["-1", "-3,5,-1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_20",
+      "grade": 8,
+      "seed": 2,
+      "type": "-4,5;-1",
+      "accepted": ["-1;-4,5", "-4,5;-1"],
+      "rejected": ["-1", "-4,5,-1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_21",
+      "grade": 8,
+      "seed": 1,
+      "type": "0;5",
+      "accepted": ["0;5", "5;0"],
+      "rejected": ["0,5", "5"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_21",
+      "grade": 8,
+      "seed": 2,
+      "type": "0;7",
+      "accepted": ["0;7", "7;0"],
+      "rejected": ["0,7", "7"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_22",
+      "grade": 8,
+      "seed": 1,
+      "type": "0;-3",
+      "accepted": ["-3;0", "0;-3"],
+      "rejected": ["-3", "0,-3"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_22",
+      "grade": 8,
+      "seed": 2,
+      "type": "0;-3",
+      "accepted": ["-3;0", "0;-3"],
+      "rejected": ["-3", "0,-3"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_23",
+      "grade": 8,
+      "seed": 1,
+      "type": "0;3",
+      "accepted": ["0;3", "3;0"],
+      "rejected": ["0,3", "3"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_23",
+      "grade": 8,
+      "seed": 2,
+      "type": "0;3",
+      "accepted": ["0;3", "3;0"],
+      "rejected": ["0,3", "3"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_24",
+      "grade": 8,
+      "seed": 1,
+      "type": "0;12",
+      "accepted": ["0;12", "12;0"],
+      "rejected": ["0,12", "12"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_24",
+      "grade": 8,
+      "seed": 2,
+      "type": "0;12",
+      "accepted": ["0;12", "12;0"],
+      "rejected": ["0,12", "12"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_26",
+      "grade": 8,
+      "seed": 1,
+      "type": "-5;5",
+      "accepted": ["-5;5", "5;-5", "\\pm5"],
+      "rejected": ["-5,5", "5"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_26",
+      "grade": 8,
+      "seed": 2,
+      "type": "-7;7",
+      "accepted": ["-7;7", "7;-7", "\\pm7"],
+      "rejected": ["-7,7", "7"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_3",
+      "grade": 8,
+      "seed": 1,
+      "type": "-8;8",
+      "accepted": ["-8;8", "8;-8", "\\pm8"],
+      "rejected": ["-8,8", "8"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_3",
+      "grade": 8,
+      "seed": 2,
+      "type": "-8;8",
+      "accepted": ["-8;8", "8;-8", "\\pm8"],
+      "rejected": ["-8,8", "8"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_5",
+      "grade": 8,
+      "seed": 1,
+      "type": "-8;8",
+      "accepted": ["-8;8", "8;-8", "\\pm8"],
+      "rejected": ["-8,8", "8"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_5",
+      "grade": 8,
+      "seed": 2,
+      "type": "-8;8",
+      "accepted": ["-8;8", "8;-8", "\\pm8"],
+      "rejected": ["-8,8", "8"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_6",
+      "grade": 8,
+      "seed": 1,
+      "type": "-10;10",
+      "accepted": ["-10;10", "10;-10", "\\pm10"],
+      "rejected": ["-10,10", "10"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_6",
+      "grade": 8,
+      "seed": 2,
+      "type": "-9;9",
+      "accepted": ["-9;9", "9;-9", "\\pm9"],
+      "rejected": ["-9,9", "9"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_8",
+      "grade": 8,
+      "seed": 1,
+      "type": "-6;6",
+      "accepted": ["-6;6", "6;-6", "\\pm6"],
+      "rejected": ["-6,6", "6"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_8",
+      "grade": 8,
+      "seed": 2,
+      "type": "-8;8",
+      "accepted": ["-8;8", "8;-8", "\\pm8"],
+      "rejected": ["-8,8", "8"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_9",
+      "grade": 8,
+      "seed": 1,
+      "type": "-6;6",
+      "accepted": ["-6;6", "6;-6", "\\pm6"],
+      "rejected": ["-6,6", "6"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_4_9",
+      "grade": 8,
+      "seed": 2,
+      "type": "-8;8",
+      "accepted": ["-8;8", "8;-8", "\\pm8"],
+      "rejected": ["-8,8", "8"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_6_10",
+      "grade": 8,
+      "seed": 1,
+      "type": "-1;1\\frac{1}{5}",
+      "accepted": ["-1;1\\frac{1}{5}", "-1;\\frac{6}{5}", "1\\frac{1}{5};-1"],
+      "rejected": ["-1,1\\frac{1}{5}", "1\\frac{1}{5}"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_6_10",
+      "grade": 8,
+      "seed": 2,
+      "type": "-2;2\\frac{1}{3}",
+      "accepted": ["-2;2\\frac{1}{3}", "-2;\\frac{7}{3}", "2\\frac{1}{3};-2"],
+      "rejected": ["-2,2\\frac{1}{3}", "2\\frac{1}{3}"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_6_11",
+      "grade": 8,
+      "seed": 1,
+      "type": "-3;12",
+      "accepted": ["-3;12", "12;-3"],
+      "rejected": ["-3,12", "12"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_6_11",
+      "grade": 8,
+      "seed": 2,
+      "type": "-3;11",
+      "accepted": ["-3;11", "11;-3"],
+      "rejected": ["-3,11", "11"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_6_15",
+      "grade": 8,
+      "seed": 1,
+      "type": "-7;2",
+      "accepted": ["-7;2", "2;-7"],
+      "rejected": ["-7,2", "2"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_6_15",
+      "grade": 8,
+      "seed": 2,
+      "type": "-9;2",
+      "accepted": ["-9;2", "2;-9"],
+      "rejected": ["-9,2", "2"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_6_16",
+      "grade": 8,
+      "seed": 1,
+      "type": "-33;20",
+      "accepted": ["-33;20", "20;-33"],
+      "rejected": ["-33,20", "20"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_6_16",
+      "grade": 8,
+      "seed": 2,
+      "type": "-33;20",
+      "accepted": ["-33;20", "20;-33"],
+      "rejected": ["-33,20", "20"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_6_7",
+      "grade": 8,
+      "seed": 1,
+      "type": "-8;7",
+      "accepted": ["-8;7", "7;-8"],
+      "rejected": ["-8,7", "7"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_6_7",
+      "grade": 8,
+      "seed": 2,
+      "type": "-8;7",
+      "accepted": ["-8;7", "7;-8"],
+      "rejected": ["-8,7", "7"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_6_8",
+      "grade": 8,
+      "seed": 1,
+      "type": "-\\frac{2}{5};1",
+      "accepted": ["-\\frac{2}{5};1", "1;-\\frac{2}{5}"],
+      "rejected": ["-\\frac{2}{5},1", "1", "\\frac{-2}{5};1", "\\frac{2}{-5};1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_2_6_8",
+      "grade": 8,
+      "seed": 2,
+      "type": "-2;-1",
+      "accepted": ["-1;-2", "-2;-1"],
+      "rejected": ["-1", "-2,-1"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_3_8_5",
+      "grade": 8,
+      "seed": 1,
+      "type": "1;5",
+      "accepted": ["1;5", "5;1"],
+      "rejected": ["1,5", "5"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_8_3_8_5",
+      "grade": 8,
+      "seed": 2,
+      "type": "2;4",
+      "accepted": ["2;4", "4;2"],
+      "rejected": ["2,4", "4"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_9_3_20_4",
+      "grade": 9,
+      "seed": 1,
+      "type": "-2;2",
+      "accepted": ["-2;2", "2;-2", "\\pm2"],
+      "rejected": ["-2,2", "2"]
+    },
+    {
+      "rule": "ans:TaskAnswers.TwoAnswersTaskAnswer",
+      "id": "Task_9_3_20_4",
+      "grade": 9,
+      "seed": 2,
+      "type": "-5;5",
+      "accepted": ["-5;5", "5;-5", "\\pm5"],
+      "rejected": ["-5,5", "5"]
+    }
+  ],
+  "minusInsideFraction": [
+    {
+      "id": "Task_5_3_1_11",
+      "grade": 5,
+      "seed": 1,
+      "accepted": "-\\frac{1}{8}",
+      "minusInNumerator": "\\frac{-1}{8}",
+      "minusInDenominator": "\\frac{1}{-8}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_1_10",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{7}{30};;\\frac{13}{10}",
+      "minusInNumerator": "\\frac{-7}{30};;\\frac{13}{10}",
+      "minusInDenominator": "\\frac{7}{-30};;\\frac{13}{10}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_1_13",
+      "grade": 6,
+      "seed": 3,
+      "accepted": "\\frac{3}{5};;-\\frac{2}{5}",
+      "minusInNumerator": "\\frac{3}{5};;\\frac{-2}{5}",
+      "minusInDenominator": "\\frac{3}{5};;\\frac{2}{-5}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_1_14",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "\\frac{9}{7};;-\\frac{12}{7}",
+      "minusInNumerator": "\\frac{9}{7};;\\frac{-12}{7}",
+      "minusInDenominator": "\\frac{9}{7};;\\frac{12}{-7}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_1_16",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "\\frac{5}{3};;-\\frac{10}{3}",
+      "minusInNumerator": "\\frac{5}{3};;\\frac{-10}{3}",
+      "minusInDenominator": "\\frac{5}{3};;\\frac{10}{-3}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_1_17",
+      "grade": 6,
+      "seed": 3,
+      "accepted": "-\\frac{120}{1};;\\frac{48}{1}",
+      "minusInNumerator": "\\frac{-120}{1};;\\frac{48}{1}",
+      "minusInDenominator": "\\frac{120}{-1};;\\frac{48}{1}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_1_18",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "\\frac{157}{23};;-\\frac{84}{23}",
+      "minusInNumerator": "\\frac{157}{23};;\\frac{-84}{23}",
+      "minusInDenominator": "\\frac{157}{23};;\\frac{84}{-23}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_1_19",
+      "grade": 6,
+      "seed": 4,
+      "accepted": "\\frac{330}{7};;-\\frac{68}{7}",
+      "minusInNumerator": "\\frac{330}{7};;\\frac{-68}{7}",
+      "minusInDenominator": "\\frac{330}{7};;\\frac{68}{-7}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_1_20",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "\\frac{32}{31};;-\\frac{4}{31}",
+      "minusInNumerator": "\\frac{32}{31};;\\frac{-4}{31}",
+      "minusInDenominator": "\\frac{32}{31};;\\frac{4}{-31}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_1_21",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{12}{1};;-\\frac{10}{1}",
+      "minusInNumerator": "-\\frac{12}{1};;\\frac{-10}{1}",
+      "minusInDenominator": "-\\frac{12}{1};;\\frac{10}{-1}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_1_23",
+      "grade": 6,
+      "seed": 3,
+      "accepted": "-\\frac{15}{13};;\\frac{46}{13}",
+      "minusInNumerator": "\\frac{-15}{13};;\\frac{46}{13}",
+      "minusInDenominator": "\\frac{15}{-13};;\\frac{46}{13}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_1_25",
+      "grade": 6,
+      "seed": 7,
+      "accepted": "\\frac{873}{73};;-\\frac{180}{73}",
+      "minusInNumerator": "\\frac{873}{73};;\\frac{-180}{73}",
+      "minusInDenominator": "\\frac{873}{73};;\\frac{180}{-73}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_2_11",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-5;;-\\frac{21}{2}",
+      "minusInNumerator": "-5;;\\frac{-21}{2}",
+      "minusInDenominator": "-5;;\\frac{21}{-2}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_2_14",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "\\frac{96}{7};;-\\frac{60}{7}",
+      "minusInNumerator": "\\frac{96}{7};;\\frac{-60}{7}",
+      "minusInDenominator": "\\frac{96}{7};;\\frac{60}{-7}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_2_15",
+      "grade": 6,
+      "seed": 2,
+      "accepted": "\\frac{59}{11};;-\\frac{8}{11}",
+      "minusInNumerator": "\\frac{59}{11};;\\frac{-8}{11}",
+      "minusInDenominator": "\\frac{59}{11};;\\frac{8}{-11}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_2_18",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{23}{5};;11",
+      "minusInNumerator": "\\frac{-23}{5};;11",
+      "minusInDenominator": "\\frac{23}{-5};;11",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_2_22",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "10;;-\\frac{7}{6}",
+      "minusInNumerator": "10;;\\frac{-7}{6}",
+      "minusInDenominator": "10;;\\frac{7}{-6}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_2_26",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "\\frac{16}{29};;-\\frac{186}{29}",
+      "minusInNumerator": "\\frac{16}{29};;\\frac{-186}{29}",
+      "minusInDenominator": "\\frac{16}{29};;\\frac{186}{-29}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_2_4",
+      "grade": 6,
+      "seed": 3,
+      "accepted": "5;;-\\frac{3}{4}",
+      "minusInNumerator": "5;;\\frac{-3}{4}",
+      "minusInDenominator": "5;;\\frac{3}{-4}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_2_6",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{4}{5};;3",
+      "minusInNumerator": "\\frac{-4}{5};;3",
+      "minusInDenominator": "\\frac{4}{-5};;3",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_2_7",
+      "grade": 6,
+      "seed": 7,
+      "accepted": "2;;-\\frac{3}{4}",
+      "minusInNumerator": "2;;\\frac{-3}{4}",
+      "minusInDenominator": "2;;\\frac{3}{-4}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_10_2_8",
+      "grade": 6,
+      "seed": 5,
+      "accepted": "3;;-\\frac{4}{5}",
+      "minusInNumerator": "3;;\\frac{-4}{5}",
+      "minusInDenominator": "3;;\\frac{4}{-5}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_2_100",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{1}{5}",
+      "minusInNumerator": "\\frac{-1}{5}",
+      "minusInDenominator": "\\frac{1}{-5}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_2_128_11",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{1}{10}",
+      "minusInNumerator": "\\frac{-1}{10}",
+      "minusInDenominator": "\\frac{1}{-10}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_2_130_9",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{4}{5}",
+      "minusInNumerator": "\\frac{-4}{5}",
+      "minusInDenominator": "\\frac{4}{-5}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_2_38",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{5}{7}",
+      "minusInNumerator": "\\frac{-5}{7}",
+      "minusInDenominator": "\\frac{5}{-7}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_2_41",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{131}{10}",
+      "minusInNumerator": "\\frac{-131}{10}",
+      "minusInDenominator": "\\frac{131}{-10}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_2_44_1",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{89}{5}",
+      "minusInNumerator": "\\frac{-89}{5}",
+      "minusInDenominator": "\\frac{89}{-5}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_2_44_2",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{85}{8}",
+      "minusInNumerator": "\\frac{-85}{8}",
+      "minusInDenominator": "\\frac{85}{-8}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_2_59_2",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{59}{6}",
+      "minusInNumerator": "\\frac{-59}{6}",
+      "minusInDenominator": "\\frac{59}{-6}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_2_67",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{23}{40}",
+      "minusInNumerator": "\\frac{-23}{40}",
+      "minusInDenominator": "\\frac{23}{-40}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_2_6_2",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{1}{10}",
+      "minusInNumerator": "\\frac{-1}{10}",
+      "minusInDenominator": "\\frac{1}{-10}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_2_6_3",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{7}{30}",
+      "minusInNumerator": "\\frac{-7}{30}",
+      "minusInDenominator": "\\frac{7}{-30}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_2_71",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{7}{9}",
+      "minusInNumerator": "\\frac{-7}{9}",
+      "minusInDenominator": "\\frac{7}{-9}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_2_74_1",
+      "grade": 6,
+      "seed": 2,
+      "accepted": "-\\frac{139}{16}",
+      "minusInNumerator": "\\frac{-139}{16}",
+      "minusInDenominator": "\\frac{139}{-16}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_2_74_2",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{7}{5}",
+      "minusInNumerator": "\\frac{-7}{5}",
+      "minusInDenominator": "\\frac{7}{-5}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_2_75_1",
+      "grade": 6,
+      "seed": 5,
+      "accepted": "-\\frac{5}{6}",
+      "minusInNumerator": "\\frac{-5}{6}",
+      "minusInDenominator": "\\frac{5}{-6}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_2_75_2",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{69}{10}",
+      "minusInNumerator": "\\frac{-69}{10}",
+      "minusInDenominator": "\\frac{69}{-10}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_2_81",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{3}{2}",
+      "minusInNumerator": "\\frac{-3}{2}",
+      "minusInDenominator": "\\frac{3}{-2}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_2_90_1",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{4}{3}",
+      "minusInNumerator": "\\frac{-4}{3}",
+      "minusInDenominator": "\\frac{4}{-3}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_2_90_2",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{4}{15}",
+      "minusInNumerator": "\\frac{-4}{15}",
+      "minusInDenominator": "\\frac{4}{-15}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_3_10_4",
+      "grade": 6,
+      "seed": 7,
+      "accepted": "-\\frac{1}{2}",
+      "minusInNumerator": "\\frac{-1}{2}",
+      "minusInDenominator": "\\frac{1}{-2}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_3_11_1",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{5}{8}",
+      "minusInNumerator": "\\frac{-5}{8}",
+      "minusInDenominator": "\\frac{5}{-8}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_3_11_2",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{6}{5}",
+      "minusInNumerator": "\\frac{-6}{5}",
+      "minusInDenominator": "\\frac{6}{-5}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_3_12_3",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{383}{16}",
+      "minusInNumerator": "\\frac{-383}{16}",
+      "minusInDenominator": "\\frac{383}{-16}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_3_2_2",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{1}{8}",
+      "minusInNumerator": "\\frac{-1}{8}",
+      "minusInDenominator": "\\frac{1}{-8}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_4_11_3",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{1}{5}",
+      "minusInNumerator": "\\frac{-1}{5}",
+      "minusInDenominator": "\\frac{1}{-5}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_4_18_4",
+      "grade": 6,
+      "seed": 2,
+      "accepted": "-\\frac{16}{37}",
+      "minusInNumerator": "\\frac{-16}{37}",
+      "minusInDenominator": "\\frac{16}{-37}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_6_4_6_3",
+      "grade": 6,
+      "seed": 1,
+      "accepted": "-\\frac{3}{1}",
+      "minusInNumerator": "\\frac{-3}{1}",
+      "minusInDenominator": "\\frac{3}{-1}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_8_2_14_6",
+      "grade": 8,
+      "seed": 1,
+      "accepted": "-\\frac{1}{9};\\frac{1}{9}",
+      "minusInNumerator": "\\frac{-1}{9};\\frac{1}{9}",
+      "minusInDenominator": "\\frac{1}{-9};\\frac{1}{9}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_8_2_15_2",
+      "grade": 8,
+      "seed": 3,
+      "accepted": "1\\frac{1}{3};-\\frac{2}{3}",
+      "minusInNumerator": "1\\frac{1}{3};\\frac{-2}{3}",
+      "minusInDenominator": "1\\frac{1}{3};\\frac{2}{-3}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_8_2_18_9",
+      "grade": 8,
+      "seed": 1,
+      "accepted": "-3;-\\frac{1}{2}",
+      "minusInNumerator": "-3;\\frac{-1}{2}",
+      "minusInDenominator": "-3;\\frac{1}{-2}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_8_2_4_11",
+      "grade": 8,
+      "seed": 1,
+      "accepted": "-\\frac{3}{8};\\frac{3}{8}",
+      "minusInNumerator": "\\frac{-3}{8};\\frac{3}{8}",
+      "minusInDenominator": "\\frac{3}{-8};\\frac{3}{8}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_8_2_4_18",
+      "grade": 8,
+      "seed": 1,
+      "accepted": "3;-\\frac{5}{13}",
+      "minusInNumerator": "3;\\frac{-5}{13}",
+      "minusInDenominator": "3;\\frac{5}{-13}",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_8_2_6_11",
+      "grade": 8,
+      "seed": 4,
+      "accepted": "-\\frac{3}{4};2",
+      "minusInNumerator": "\\frac{-3}{4};2",
+      "minusInDenominator": "\\frac{3}{-4};2",
+      "minusInDenominatorOk": false
+    },
+    {
+      "id": "Task_8_2_6_8",
+      "grade": 8,
+      "seed": 1,
+      "accepted": "-\\frac{2}{5};1",
+      "minusInNumerator": "\\frac{-2}{5};1",
+      "minusInDenominator": "\\frac{2}{-5};1",
+      "minusInDenominatorOk": false
+    }
+  ]
+}

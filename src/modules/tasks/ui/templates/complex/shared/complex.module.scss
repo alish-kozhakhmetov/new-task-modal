@@ -132,6 +132,21 @@
   height: auto;
 }
 
+// ItemsFlex (part type 210): one row; children shrink to the column together.
+.itemsFlex {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--space-8);
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+
+  > * {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+}
+
 .angleListSvg {
   display: block;
   width: 100%;

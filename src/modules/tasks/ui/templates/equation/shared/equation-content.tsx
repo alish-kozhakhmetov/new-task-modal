@@ -2,6 +2,7 @@ import type { TaskModalDependencies } from '@/modules/task-modal/model/types/pro
 import { MathText } from '@/ui/math-text/math-text'
 
 import styles from './equation.module.scss'
+import { toEquationTex } from './lib/equation-tex'
 import type { EquationTaskDescription } from './lib/types.task'
 
 interface Props {
@@ -16,7 +17,7 @@ export const EquationContent = ({ description, deps }: Props) => {
 
   return (
     <div className={styles.content} data-testid="equation-content">
-      <MathText>{text}</MathText>
+      <MathText>{toEquationTex(text)}</MathText>
     </div>
   )
 }
