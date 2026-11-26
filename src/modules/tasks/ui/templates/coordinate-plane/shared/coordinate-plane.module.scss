@@ -1,0 +1,51 @@
+// Rhythm (rule 7): parts of the condition 8px apart, condition → answer 24.
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.planeWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-16);
+}
+
+.plane {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  touch-action: manipulation;
+  cursor: crosshair;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &[data-interactive='false'] {
+    cursor: default;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  justify-content: center;
+}
+
+// Several figures: the row of figures over the row of actions.
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.notice {
+  color: var(--text-secondary);
+  text-align: center;
+}

@@ -1,0 +1,202 @@
+{
+ "id": "cp-Task_10_2_7_1",
+ "type": "Elixir.Task_10_2_7_1",
+ "title": null,
+ "description": {
+  "type": "complex",
+  "parts": [
+   {
+    "type": 10,
+    "content": {
+     "rus": "Какая часть данной на рисунке функции возрастающая на промежутке \\([-\\frac{\\pi}{2};\\pi]\\)?\n",
+     "module_name": "Elixir.Helpers.Translation",
+     "kaz": "\\([-\\frac{\\pi}{2};\\pi]\\) аралығында суретте берілген функция графигінің қай бөлігі өспелі?\n",
+     "eng": "",
+     "_struct": "Helpers.Translation"
+    },
+    "_struct": "ComplexTaskDescription.Text"
+   },
+   {
+    "yAxisLabel": "y",
+    "xAxisLabel": "x",
+    "type": 110,
+    "tickStepYMultiply": 1,
+    "tickStepXMultiply": 1,
+    "tickStep": 1,
+    "stepSize": 20,
+    "startNumber": false,
+    "showCells": true,
+    "showAxis": true,
+    "reduceHeight": 1,
+    "points": [],
+    "notClickableDots": true,
+    "minPosition": -5,
+    "maxPosition": 5,
+    "limitedPoint": 0,
+    "isLine": false,
+    "isFullFilled": false,
+    "isFillingLimitedByAxis": false,
+    "intervals": [],
+    "fillingFunctions": [],
+    "figures": [
+     {
+      "type": 190,
+      "dashed": false,
+      "d": 0,
+      "color": "green",
+      "c": 0,
+      "b": 1,
+      "a": 1
+     }
+    ],
+    "drawingFigure": 0,
+    "displayedNumbers": [],
+    "disabledPoints": [],
+    "canFill": false,
+    "canDrawMultipleFigures": false,
+    "allowedFigures": []
+   }
+  ],
+  "isCalculatorClosed": false,
+  "isAnswerCellHidden": false
+ },
+ "answerInput": {
+  "up": "",
+  "type": 10,
+  "text": " ",
+  "svg": "",
+  "down": "",
+  "before": "",
+  "after": "",
+  "_struct": "TaskAnswerInput"
+ },
+ "solution": {
+  "type": "complex",
+  "parts": [
+   {
+    "yAxisLabel": "y",
+    "xAxisLabel": "x",
+    "type": 110,
+    "tickStepYMultiply": 1,
+    "tickStepXMultiply": 1,
+    "tickStep": 1,
+    "stepSize": 20,
+    "startNumber": false,
+    "showCells": true,
+    "showAxis": true,
+    "reduceHeight": 1,
+    "points": [],
+    "notClickableDots": true,
+    "minPosition": -12,
+    "maxPosition": 4,
+    "limitedPoint": 0,
+    "isLine": false,
+    "isFullFilled": false,
+    "isFillingLimitedByAxis": false,
+    "intervals": [],
+    "fillingFunctions": [],
+    "figures": [
+     {
+      "type": 190,
+      "dashed": false,
+      "d": 0,
+      "color": "green",
+      "c": 0,
+      "b": 1,
+      "a": 1
+     },
+     {
+      "type": 120,
+      "strokeWidth": 2,
+      "startPoint": -3,
+      "formula": "y = 2 * sin(0.5*x)",
+      "endPoint": 3,
+      "color": "red"
+     },
+     {
+      "type": 30,
+      "showDotLetters": false,
+      "point2": {
+       "y": 20,
+       "x": -3,
+       "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+       "letter": "",
+       "_struct": "CustomeTypes.CoordinatePlane.Point"
+      },
+      "point1": {
+       "y": -20,
+       "x": -3,
+       "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+       "letter": "",
+       "_struct": "CustomeTypes.CoordinatePlane.Point"
+      },
+      "lineColor": "red",
+      "dotRadius": 0,
+      "degree": 0,
+      "dashed": true
+     },
+     {
+      "type": 30,
+      "showDotLetters": false,
+      "point2": {
+       "y": 20,
+       "x": 6,
+       "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+       "letter": "",
+       "_struct": "CustomeTypes.CoordinatePlane.Point"
+      },
+      "point1": {
+       "y": -20,
+       "x": 6,
+       "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+       "letter": "",
+       "_struct": "CustomeTypes.CoordinatePlane.Point"
+      },
+      "lineColor": "red",
+      "dotRadius": 0,
+      "degree": 0,
+      "dashed": true
+     }
+    ],
+    "drawingFigure": 0,
+    "displayedNumbers": [],
+    "disabledPoints": [],
+    "canFill": false,
+    "canDrawMultipleFigures": false,
+    "allowedFigures": []
+   }
+  ],
+  "answer": "\\([-\\frac{\\pi}{2};\\frac{\\pi}{2}]\\)",
+  "_struct": "ComplexTaskSolution"
+ },
+ "fields": {},
+ "_source": "local backend (be.sh + local-backend/hs), gen.exs seed 1, 27.11.2026",
+ "_backend": {
+  "id": "Task_10_2_7_1",
+  "seed": 1,
+  "answer": {
+   "to": {
+    "transform_fn": null,
+    "lower_case?": false,
+    "letters": [],
+    "letter_start_value": 1,
+    "check_difference?": false,
+    "answer": "\\frac{\\pi}{2}",
+    "_struct": "ExpressionTaskAnswer"
+   },
+   "including_to": true,
+   "including_from": true,
+   "from": {
+    "transform_fn": null,
+    "lower_case?": false,
+    "letters": [],
+    "letter_start_value": 1,
+    "check_difference?": false,
+    "answer": "-\\frac{\\pi}{2}",
+    "_struct": "ExpressionTaskAnswer"
+   },
+   "_struct": "IntervalTaskAnswer"
+  },
+  "answerType": "IntervalTaskAnswer"
+ }
+}

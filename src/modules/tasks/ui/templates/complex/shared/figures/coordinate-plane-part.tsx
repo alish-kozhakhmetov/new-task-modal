@@ -1,6 +1,8 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 
 import type { TaskModalDependencies } from '@/modules/task-modal/model/types/props'
+import { trigAxesOf } from '@/modules/tasks/ui/templates/coordinate-plane/lib/trig'
+import { TrigConditionPlane } from '@/modules/tasks/ui/templates/coordinate-plane/shared/trig-condition-plane'
 
 import type { ComplexCoordinatePlanePart } from '../../lib/types.task'
 import styles from '../complex.module.scss'
@@ -47,12 +49,30 @@ const toOptions = (part: ComplexCoordinatePlanePart): PlaneOptions => ({
   reduceHeight: part.reduceHeight,
 })
 
-/** Display-only CoordinatePlane (no click / draw for grade 4). */
-export const CoordinatePlanePart = ({
-  part,
-  deps,
-  fitToContent = true,
-}: Props) => {
+/**
+ * Display-only CoordinatePlane (no click / draw for grade 4). A drawing with
+ * a sine, cosine, tangent… goes on the trigonometric axes, as in the old
+ * window (TrigConditionPlane).
+ */
+export const CoordinatePlanePart = (props: Props) => {
+  const { part, deps } = props
+  const figures = Array.isArray(part.figures)
+    ? (part.figures as Record<string, unknown>[])
+    : []
+  const trig = trigAxesOf({ figures })
+  if (trig)
+    return (
+      <TrigConditionPlane
+        base={toOptions(part)}
+        axes={trig}
+        figures={figures}
+        deps={deps}
+      />
+    )
+  return <CartesianPlanePart {...props} />
+}
+
+const CartesianPlanePart = ({ part, deps, fitToContent = true }: Props) => {
   const declared = toOptions(part)
   const translate = (value: unknown) => deps.global.translateTasks(value)
 

@@ -13,6 +13,7 @@ import {
   type PlaneOptions,
   type PlanePoint,
 } from './plane-math'
+import { labelText, SvgLabelRuns } from './svg-math-label'
 
 const asPoint = (value: unknown): PlanePoint | null => {
   if (!value || typeof value !== 'object') return null
@@ -429,12 +430,20 @@ export const PlaneFigure = ({
       const x = typeof figure.x === 'number' ? figure.x : 0
       const y = typeof figure.y === 'number' ? figure.y : 0
       const d = fromPointToDot(options, x, y)
-      const label = translate(figure.text)
-      if (!label) return null
+      // A Translation of numbers ({rus: 30}, Task_5_2_11_4) translates to a
+      // number: the label is its text, whatever came back.
+      const raw = translate(figure.text) as unknown
+      const label =
+        typeof raw === 'string'
+          ? raw
+          : typeof raw === 'number'
+            ? String(raw)
+            : ''
+      if (!labelText(label)) return null
       // A label in the condition's size, not the payload's (4_11_10_4 sent
       // 13 for «7см» next to its «A» and «B» in 18): rules 1 and 73, row 57.
       const fontSize = sized(options, LABEL_PX)
-      const fraction = parseFraction(label)
+      const fraction = parseFraction(labelText(label))
       const text =
         fraction && !figure.degree ? (
           <SvgFraction
@@ -458,13 +467,49 @@ export const PlaneFigure = ({
                 : undefined
             }
           >
-            {label}
+            <SvgLabelRuns label={label} />
           </text>
         )
       if (labelKey == null) return text
       return (
         <g {...{ [LABEL_ATTR]: labelKey }} data-x={d.x} data-y={d.y}>
           {text}
+        </g>
+      )
+    }
+    case PlaneFigureType.Ellipse: {
+      // Figures.CoordinatePlane.Ellipse: centre and semi-axes in cells, as the
+      // old window's Ellipse.js (rx · stepSize); `backDashed` draws the far
+      // half dashed — a solid around a body (5_7_10_1, FIG 26.11).
+      const center = asPoint(figure.centerPoint)
+      if (
+        !center ||
+        typeof figure.rx !== 'number' ||
+        typeof figure.ry !== 'number'
+      )
+        return null
+      const d = fromPointToDot(options, center.x, center.y)
+      const rx = Math.abs(figure.rx) * options.stepSize
+      const ry = Math.abs(figure.ry) * options.stepSize
+      const stroke = paint(figure.borderColor ?? figure.strokeColor, INK)
+      if (!figure.backDashed)
+        return (
+          <ellipse
+            cx={d.x}
+            cy={d.y}
+            rx={rx}
+            ry={ry}
+            fill="none"
+            stroke={stroke}
+            strokeWidth={STROKE.data}
+          />
+        )
+      const half = (sweep: 0 | 1) =>
+        `M${d.x - rx},${d.y} A${rx} ${ry} 0 0 ${sweep} ${d.x + rx},${d.y}`
+      return (
+        <g fill="none" stroke={stroke} strokeWidth={STROKE.data}>
+          <path d={half(0)} />
+          <path d={half(1)} strokeDasharray="5" />
         </g>
       )
     }

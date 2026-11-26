@@ -97,9 +97,10 @@ export const TextTemplateTrainer = ({
 }: Props) => {
   const withHints = trainerOptions?.withHints
   const withTheory = trainerOptions?.withTheory
+  const isCorrect = trainerOptions?.isCorrect
   const resolvedOptions = useMemo(
-    () => ({ withHints, withTheory }),
-    [withHints, withTheory],
+    () => ({ withHints, withTheory, isCorrect }),
+    [withHints, withTheory, isCorrect],
   )
   const baseProps = useMemo(
     () => makeTrainerProps(task, resolvedOptions),

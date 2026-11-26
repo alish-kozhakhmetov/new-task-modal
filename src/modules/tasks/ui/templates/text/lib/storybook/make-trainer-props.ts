@@ -182,6 +182,12 @@ export const STORY_THEORY_VIDEO_URL = `https://youtube.com/embed/${STORY_THEORY_
 export type MakeTrainerPropsOptions = {
   withHints?: boolean
   withTheory?: boolean
+  /**
+   * Verdict on the submitted answer instead of the fixture's solution string —
+   * for answers that are not a string to compare (the coordinate plane sends
+   * points and figures; its stories pass a port of the backend checker).
+   */
+  isCorrect?: (answer: unknown) => boolean
 }
 
 /** Zustand TaskModalState for a single-task Storybook trainer session (input mode). */
@@ -281,7 +287,9 @@ export const makeTrainerProps = (
           // No real network call — fixture-backed mock computes synchronously.
           await Promise.resolve()
           const user = normalizeTrainerAnswer(String(submitted.answer ?? ''))
-          const isCorrect = expectedAnswer.length > 0 && user === expectedAnswer
+          const isCorrect = options.isCorrect
+            ? options.isCorrect(submitted.answer)
+            : expectedAnswer.length > 0 && user === expectedAnswer
           lastStoryCheck = {
             taskId: task.id,
             sent: String(submitted.answer ?? ''),

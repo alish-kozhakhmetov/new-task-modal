@@ -116,7 +116,10 @@ export const localeOf = (language?: string) =>
   LANGUAGES[language ?? DEFAULT_LANGUAGE]?.locale ?? null
 
 export const resolveWordForms = (text: string, language?: string): string => {
-  if (!text.includes('|')) return text
+  // The host returns a language's value as is: a Translation of numbers
+  // ({rus: 30}, a label of Task_5_2_11_4) comes back a number, and
+  // `includes` on it emptied the whole window (CX, 26.11).
+  if (typeof text !== 'string' || !text.includes('|')) return text
   const locale = localeOf(language)
   if (!locale) return text
   return text
