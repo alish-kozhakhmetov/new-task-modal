@@ -8,7 +8,7 @@
  * - answers of the backend — `graph_function` strings it evaluates with
  *   `Code.eval_string` after `normalize_expression`: `y = x^2`, `y=5x^2`
  *   (implicit multiplication), `y = :math.sqrt(5.0 * (x - (0))) + (0)`,
- *   `x=0*y`.
+ *   `x=0*y`, `y=\log_{\frac{1}{4}}x`.
  *
  * No `eval`, no `Function`: a recursive-descent parser over a closed list of
  * names. Anything else throws, and callers treat a throw as «not drawable».
@@ -48,6 +48,13 @@ const tokenize = (source: string): Token[] => {
       .replace(/\\d?frac\{([^{}]*)\}\{([^{}]*)\}/g, '(($1)/($2))')
       .replace(/\\sqrt\{([^{}]*)\}/g, 'sqrt($1)')
   }
+  // a logarithm to a base (LogarithmGraphTaskAnswer): `\log_8x`,
+  // `\log_{\frac{1}{4}}x` (its fraction already rewritten above)
+  s = s.replace(
+    /\\log_(?:\{([^{}]*)\}|(\d+(?:\.\d+)?))\s*([a-z]|\d+(?:\.\d+)?|\([^()]*\))/gi,
+    (_, braced: string | undefined, bare: string | undefined, arg: string) =>
+      `(log(${arg})/log(${braced ?? bare}))`,
+  )
   s = s.replace(/[{}]/g, (c) => (c === '{' ? '(' : ')'))
   const out: Token[] = []
   let i = 0

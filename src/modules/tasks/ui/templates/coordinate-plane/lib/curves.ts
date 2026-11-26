@@ -3,7 +3,11 @@ import { compileExpression } from './expression'
 import type { Pt } from './plane-answer'
 
 /** The visible field in plane units, a little wider so curves leave the edge. */
-export type Field = { min: number; max: number }
+/**
+ * `limitedPoint` — the plane's asymptote level for the exponent
+ * (options.limitedPoint of the old window's ExponentialGraph.js).
+ */
+export type Field = { min: number; max: number; limitedPoint?: number }
 
 export type Shape =
   | { kind: 'polyline'; points: Pt[] }
@@ -116,6 +120,29 @@ export const figureShapes = (
         field.max,
       )
       return lines([...left, ...right])
+    }
+    case DrawingFigure.AsymptoteLine:
+      // the old window draws it as a line (DrawingFigure.js, AsymptoteLine)
+      return figureShapes(DrawingFigure.Line, p1, p2, field)
+    case DrawingFigure.ExponentialGraph: {
+      // ExponentialGraph.js: y = b·e^(a·x) + L through both points, L the
+      // plane's asymptote level; both points on one side of it
+      const level = field.limitedPoint ?? 0
+      const u1 = p1.y - level
+      const u2 = p2.y - level
+      if (!dx || !u1 || !u2 || Math.sign(u1) !== Math.sign(u2)) return []
+      const a = (Math.log(Math.abs(u2)) - Math.log(Math.abs(u1))) / dx
+      const f = (x: number) =>
+        level + Math.sign(u1) * Math.abs(u1) * Math.exp(a * (x - p1.x))
+      return lines(sample(f, field))
+    }
+    case DrawingFigure.LogarithmGraph: {
+      // LogarithmGraph.js: y = k·ln x + m through both points, asymptote x = 0
+      // (the old window drew it only for x > 0)
+      if (p1.x <= 0 || p2.x <= 0 || !dx) return []
+      const k = dy / (Math.log(p2.x) - Math.log(p1.x))
+      const f = (x: number) => p1.y + k * (Math.log(x) - Math.log(p1.x))
+      return lines(sample(f, field, 1e-3, field.max))
     }
     case DrawingFigure.RootFunction: {
       if (!dx) return []

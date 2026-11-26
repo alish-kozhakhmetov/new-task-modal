@@ -26,6 +26,8 @@ export interface CoordinatePlaneFigure {
   canFill?: boolean
   /** The shaded region is bounded by the axes too (Task_7_3_50_*). */
   isFillingLimitedByAxis?: boolean
+  /** The exponent's asymptote level (y = aˣ + limitedPoint), 11_6_1. */
+  limitedPoint?: number
   notClickableDots?: boolean
   isLine?: boolean
   points?: unknown[]

@@ -110,6 +110,23 @@ export const FIGURE_NAMES: Record<
     kaz: 'Түбір графигі',
     eng: 'Square root',
   },
+  // the old dictionary says «степенная функция» for 270 — it is the
+  // exponential one (y = aˣ), «показательная»
+  [DrawingFigure.ExponentialGraph]: {
+    rus: 'Показательная функция',
+    kaz: 'Көрсеткіштік функция',
+    eng: 'Exponential function',
+  },
+  [DrawingFigure.AsymptoteLine]: {
+    rus: 'Асимптота',
+    kaz: 'Асимптота түзуі',
+    eng: 'Asymptote',
+  },
+  [DrawingFigure.LogarithmGraph]: {
+    rus: 'Логарифм',
+    kaz: 'Логарифм',
+    eng: 'Logarithm',
+  },
 }
 
 export const PANEL_WORDS = {

@@ -55,8 +55,10 @@ describe('mode of a plane — from its flags', () => {
     [{ drawingFigure: 90 }, 'figure'],
     [{ drawingFigure: 5, canDrawMultipleFigures: true }, 'multi'],
     [{ drawingFigure: 20, canDrawMultipleFigures: true }, 'multi'],
-    // exponent and logarithm curves are not drawn yet
-    [{ drawingFigure: 5, allowedFigures: [270, 280, 290] }, 'unsupported'],
+    // the exponent or the logarithm with its asymptote (11_6_1, 11_6_4)
+    [{ drawingFigure: 5, allowedFigures: [280, 270] }, 'multi'],
+    // a figure this window does not draw is not offered
+    [{ drawingFigure: 5, allowedFigures: [280, 999] }, 'unsupported'],
     [{ drawingFigure: 20, canFill: true }, 'multi'],
     // shading on the trigonometric axes: none in lessons, not drawn
     [{ drawingFigure: 190, canFill: true }, 'unsupported'],
@@ -65,6 +67,21 @@ describe('mode of a plane — from its flags', () => {
     [{ drawingFigure: 0 }, 'unsupported'],
   ])('%o → %s', (figure, kind) => {
     expect(planeModeOf(figure).kind).toBe(kind)
+  })
+})
+
+describe('exponent and logarithm', () => {
+  it('offer the curve first, then its asymptote', () => {
+    expect(
+      planeModeOf({ drawingFigure: 5, allowedFigures: [280, 290] }),
+    ).toMatchObject({ kind: 'multi', fixed: null, choices: [290, 280] })
+  })
+
+  it('read the base of a logarithm as the backend writes it', () => {
+    const log = (s: string, x: number) => compileGraphFunction(s).rhs({ x })
+    expect(log('y=\\log_8x', 8)).toBe(1)
+    expect(log('y=\\log_{\\frac{1}{4}}x', 4)).toBe(-1)
+    expect(log('y=\\log_7x', 1)).toBe(0)
   })
 })
 

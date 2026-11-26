@@ -318,6 +318,8 @@ export const InteractivePlane = ({
   const field: Field = {
     min: options.minPosition - options.tickStep,
     max: options.maxPosition + options.tickStep,
+    limitedPoint:
+      typeof figure.limitedPoint === 'number' ? figure.limitedPoint : 0,
   }
   const svgRef = useRef<SVGSVGElement>(null)
   const [ghost, setGhost] = useState<Pt | null>(null)

@@ -25,13 +25,16 @@ export const TWO_POINT_FIGURES: Record<
   [DrawingFigure.Cotangent]: { first: 'center', second: 'onGraph' },
   [DrawingFigure.Arcsin]: { first: 'center', second: 'end' },
   [DrawingFigure.Arccos]: { first: 'center', second: 'end' },
+  [DrawingFigure.ExponentialGraph]: { first: 'onGraph', second: 'onGraph' },
+  [DrawingFigure.AsymptoteLine]: { first: 'point', second: 'point' },
+  [DrawingFigure.LogarithmGraph]: { first: 'onGraph', second: 'onGraph' },
 }
 
 /**
  * What the pupil may add on a plane with drawingFigure Any — the old
  * DrawingFigureChooser.jsx without the exponent, the logarithm and the
- * asymptote, which no generator of this window needs (they come with
- * allowedFigures, see planeModeOf).
+ * asymptote: the planes that need them name them in allowedFigures
+ * (11_6_1: 270 and 280, 11_6_4: 290 and 280), see planeModeOf.
  */
 export const CHOOSER = [
   DrawingFigure.Line,
@@ -62,8 +65,11 @@ export type PlaneMode =
       many: boolean
       fill: boolean
     }
-  /** Shown, not answerable here yet (exponent and logarithm). */
+  /** Shown, not answerable here (a typed answer, trigonometry off its axes…). */
   | { kind: 'unsupported'; reason: string }
+
+const ASYMPTOTE_LAST = (t: number) =>
+  t === DrawingFigure.AsymptoteLine ? 1 : 0
 
 interface ModeInput {
   drawingFigure?: number
@@ -85,14 +91,24 @@ export const planeModeOf = (figure: ModeInput): PlaneMode => {
   const type = Number(figure.drawingFigure ?? DrawingFigure.None)
   const fill = Boolean(figure.canFill)
   if (fill || figure.canDrawMultipleFigures || type === DrawingFigure.Any) {
-    // exponent, logarithm and their asymptote (allowedFigures 270/280/290)
-    // need curves this window does not draw yet
-    if ((figure.allowedFigures ?? []).some((t) => !TWO_POINT_FIGURES[t]))
-      return { kind: 'unsupported', reason: 'exponent' }
+    const allowed = figure.allowedFigures ?? []
+    if (allowed.some((t) => !TWO_POINT_FIGURES[t]))
+      return { kind: 'unsupported', reason: 'allowed' }
     if (trigAxesOf(figure))
       return { kind: 'unsupported', reason: fill ? 'fill' : 'multiple' }
     const many =
       Boolean(figure.canDrawMultipleFigures) || type === DrawingFigure.Any
+    // the exponent or the logarithm and its asymptote: the curve first
+    if (type === DrawingFigure.Any && allowed.length)
+      return {
+        kind: 'multi',
+        fixed: null,
+        choices: [...allowed].sort(
+          (a, b) => ASYMPTOTE_LAST(a) - ASYMPTOTE_LAST(b),
+        ),
+        many,
+        fill,
+      }
     if (type === DrawingFigure.Any)
       return { kind: 'multi', fixed: null, choices: [...CHOOSER], many, fill }
     if (TWO_POINT_FIGURES[type] && !isTrigType(type))

@@ -230,6 +230,39 @@ export const solveFigures = (
       const out = graphs.map((g) => solveFigures(g))
       return out.every((f) => f?.length === 1) ? out.map((f) => f![0]) : null
     }
+    case 'ExponentialGraphTaskAnswer':
+    case 'LogarithmGraphTaskAnswer': {
+      // the curve through two of its nodes, then its asymptote: y = c for
+      // the exponent, x = c for the logarithm (the module finds it by type)
+      const curve =
+        typeof a.graph_function === 'string'
+          ? graphFunctionPoints(a.graph_function)
+          : null
+      if (!curve) return null
+      const exponent = structOf(a) === 'ExponentialGraphTaskAnswer'
+      const c = Number(exponent ? a.asymptote_point_y : a.asymptote_point_x)
+      if (!Number.isFinite(c)) return null
+      return [
+        {
+          type: exponent
+            ? DrawingFigure.ExponentialGraph
+            : DrawingFigure.LogarithmGraph,
+          points: curve,
+        },
+        {
+          type: DrawingFigure.AsymptoteLine,
+          points: exponent
+            ? [
+                { x: 0, y: c },
+                { x: 1, y: c },
+              ]
+            : [
+                { x: c, y: 0 },
+                { x: c, y: 1 },
+              ],
+        },
+      ]
+    }
     case 'PolygonTaskAnswer': {
       const pts = (a.points as unknown[]).map(p)
       if (pts.length < 2) return null

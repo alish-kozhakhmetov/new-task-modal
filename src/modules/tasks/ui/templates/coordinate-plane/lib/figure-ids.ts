@@ -29,4 +29,8 @@ export const DrawingFigure = {
   Cotangent: 220,
   Arcsin: 230,
   Arccos: 240,
+  // grade 11 (11_6_1, 11_6_4): the curve and its asymptote, by two clicks each
+  ExponentialGraph: 270,
+  AsymptoteLine: 280,
+  LogarithmGraph: 290,
 } as const

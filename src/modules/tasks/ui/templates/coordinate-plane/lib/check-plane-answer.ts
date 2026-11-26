@@ -259,6 +259,38 @@ export const checkPlaneAnswer = (
       }
     }
 
+    case 'ExponentialGraphTaskAnswer':
+    case 'LogarithmGraphTaskAnswer': {
+      // two figures; the asymptote (280) found by type, both its points on
+      // y = asymptote_point_y (exponent) or x = asymptote_point_x
+      // (logarithm); the other figure, of any type, with every point on the
+      // graph. No asymptote at all is a raise on the backend (a match on
+      // nil); here — false.
+      const figs = userFigures(wire)
+      if (!figs || figs.length !== 2) return false
+      const asymptote = figs.find((f) => f.type === DrawingFigure.AsymptoteLine)
+      if (!asymptote || asymptote.points.length !== 2) return false
+      const exponent = kind === 'ExponentialGraphTaskAnswer'
+      const c = toNum(
+        exponent ? answer.asymptote_point_y : answer.asymptote_point_x,
+      )
+      if (!asymptote.points.every((q) => (exponent ? q.y : q.x) === c))
+        return false
+      const same = (f: UserFigure) =>
+        f.type === asymptote.type &&
+        f.points.length === asymptote.points.length &&
+        f.points.every((q, i) => eq(q, asymptote.points[i]))
+      const curve = figs.find((f) => !same(f))
+      if (!curve) return false
+      try {
+        return curve.points.every(
+          (q) => evalAt(String(answer.graph_function), q.x) === q.y,
+        )
+      } catch {
+        return false
+      }
+    }
+
     case 'PolygonTaskAnswer': {
       // only segments, and their distinct ends are the vertices (any order)
       const figs = userFigures(wire)

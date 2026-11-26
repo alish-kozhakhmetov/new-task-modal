@@ -159,4 +159,6 @@ export const NEEDS_DIFFERENT_X: ReadonlySet<number> = new Set([
   DrawingFigure.ModuleX,
   DrawingFigure.Hyperbola,
   DrawingFigure.RootFunction,
+  DrawingFigure.ExponentialGraph,
+  DrawingFigure.LogarithmGraph,
 ])
