@@ -91,7 +91,8 @@
     "answerCell.multi.stack.n2.after",
     "answerCell.multi.inline.n4.plain",
     "answerCell.multi.stack.n3.beforeAfter",
-    "answerCell.multi.stack.n3.after"
+    "answerCell.multi.stack.n3.after",
+    "answerCell.multi.inline.n4.after"
   ],
   "comparison": ["comparison.plain"],
   "test": ["test.plain"],

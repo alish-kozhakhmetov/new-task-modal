@@ -49,6 +49,7 @@ export const TemplateTypes = {
         N3Plain: 'answerCell.multi.inline.n3.plain',
         N3After: 'answerCell.multi.inline.n3.after',
         N4Plain: 'answerCell.multi.inline.n4.plain',
+        N4After: 'answerCell.multi.inline.n4.after',
         N5Plain: 'answerCell.multi.inline.n5.plain',
       },
       Stack: {

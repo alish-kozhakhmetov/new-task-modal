@@ -632,6 +632,12 @@ export const TEMPLATE_MAP = {
         '@/modules/tasks/ui/templates/complex/ui/multi/inline-n5-plain'
       ).then((module) => ({ default: module.ComplexMultiInlineN5Plain })),
     ),
+  [TemplateTypes.AnswerCell.Multi.Inline.N4After]: () =>
+    wrapAnswerCell(() =>
+      import(
+        '@/modules/tasks/ui/templates/answer-cell/ui/multi/inline-n4-after'
+      ).then((module) => ({ default: module.AnswerCellMultiInlineN4After })),
+    ),
 } satisfies Record<string, unknown>
 
 export type TemplateType = Awaited<
