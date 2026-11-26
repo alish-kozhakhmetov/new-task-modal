@@ -124,7 +124,15 @@ const map = {
     '14_9',
     '14_10',
   ],
-  [TemplateTypes.Table.Mixed]: ['2_10', '2_8', '2_9'],
+  /**
+   * 2_8, 2_9, 2_10 are out until the template follows the task's own type:
+   * the production backend (master) sends their condition as `complex`
+   * (text + table 120), the test backend as `table`. Under `table.mixed`
+   * the master data renders the title alone, no answer field, so the pupil
+   * is stuck. Out of available-tasks they open in the old window. To bring
+   * them back, pick the template by `description.type` (`complex.plain`
+   * for master data), then map them again.
+   */
   [TemplateTypes.Table.MultiRow]: ['9_9'],
   [TemplateTypes.Complex.After]: [
     '6_1',
