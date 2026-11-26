@@ -211,7 +211,6 @@ const availableTasks={
   "4_10_14_7": true,
   "4_10_14_9": true,
   "4_10_14_10": true,
-  "4_10_9_9": true,
   "4_10_6_1": true,
   "4_10_6_2": true,
   "4_10_6_3": true,
