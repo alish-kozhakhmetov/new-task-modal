@@ -93,10 +93,9 @@ export const Calculator = ({
     <Slider
       className={className}
       ref={ref}
-      slideLabels={[
-        ...PAGE_LABELS,
-        ...(extraKeys ? [SIGNS_LABEL] : []),
-      ].map((label) => translate(label))}
+      slideLabels={[...PAGE_LABELS, ...(extraKeys ? [SIGNS_LABEL] : [])].map(
+        (label) => translate(label),
+      )}
       slides={[
         <Keyboard
           key={CALC_MODE.LETTERS}

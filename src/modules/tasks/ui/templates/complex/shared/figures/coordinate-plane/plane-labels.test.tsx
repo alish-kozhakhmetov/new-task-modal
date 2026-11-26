@@ -100,7 +100,7 @@ describe('a drawing to read on the trigonometric axes', () => {
   it('Task_10_2_7_1: y = sin x is drawn on the axes with π (it was an empty −5…5 grid)', () => {
     const { container } = draw(planeOf('Task_10_2_7_1'))
     const svg = container.querySelector('svg')!
-    expect(svg.getAttribute('data-plane-axes')).toBe('trig')
+    expect(svg).toHaveAttribute('data-plane-axes', 'trig')
     const curve = container.querySelectorAll('path[data-trig-curve="190"]')
     expect(curve.length).toBeGreaterThan(0)
     const texts = [...container.querySelectorAll('text')].map(
