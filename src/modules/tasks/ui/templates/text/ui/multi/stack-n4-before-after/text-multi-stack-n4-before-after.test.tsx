@@ -2,7 +2,11 @@ import { screen } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 
 import { classifyTextTemplate } from '../../../lib/classify-text-template'
-import { makeSolution, renderTemplate } from '../../../lib/testing/test-utils'
+import {
+  makeSolution,
+  makeTranslation,
+  renderTemplate,
+} from '../../../lib/testing/test-utils'
 import type { TextTask } from '../../../lib/types.task'
 
 import allTasksJson from './data/all-tasks.json'
@@ -54,6 +58,51 @@ describe('text.multi.stack.n4.beforeAfter', () => {
     expect(screen.getAllByTestId('math-input')).toHaveLength(4)
     expect(screen.getAllByTestId('text-prefix').length).toBeGreaterThan(0)
     expect(screen.getAllByTestId('text-suffix').length).toBeGreaterThan(0)
+  })
+
+  // Task_6_12_3_10 of the local backend (stream CX, 27.11): «Отец: ▢», the
+  // Russian `after` is a space. TextAdornment draws nothing for it, the row
+  // lost its third grid cell and the next label took it: «Отец: ▢ Мама:» /
+  // «▢ Лео: ▢» — and the last field went past a 390 px window.
+  it('пустая подпись справа держит свою клетку: подпись и поле в одной строке', () => {
+    const person = (rus: string) => ({
+      type: 10,
+      text: ' ',
+      up: '',
+      down: '',
+      before: { ...makeTranslation(rus), kaz: rus },
+      after: { ...makeTranslation(' '), kaz: 'жас' },
+    })
+    const family = {
+      ...task,
+      answerInput: {
+        type: 40,
+        input1: person('Отец: '),
+        input2: person('Мама: '),
+        input3: person('Лео: '),
+        input4: person('Сестренка: '),
+      },
+    } as unknown as TextTask
+
+    renderTemplate(Template, family)
+
+    // three grid cells a row: label, field, unit (or its empty place)
+    const grid = screen.getByTestId('text-inputs')
+    // the grid's cells are the rows' children (`display: contents` rows)
+    // eslint-disable-next-line testing-library/no-node-access
+    const cells = [...grid.querySelectorAll(':scope > div > *')]
+    expect(cells).toHaveLength(12)
+    expect(
+      cells.map(
+        (c) => c.getAttribute('data-testid') ?? c.tagName.toLowerCase(),
+      ),
+    ).toEqual(
+      Array.from({ length: 4 }, () => [
+        'text-prefix',
+        'math-input',
+        'span',
+      ]).flat(),
+    )
   })
 
   it('solution-ветка вместо режима ввода', () => {
