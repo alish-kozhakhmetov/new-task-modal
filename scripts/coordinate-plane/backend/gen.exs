@@ -1,7 +1,7 @@
 # Coordinate-plane tasks as the API gives them, from the local backend (G3's
 # be.sh: the monolith's generators and TaskChecker, no test server).
 #
-#   be.sh -pa ~/Documents/Projects/qalan/local-backend/hs \
+#   QALAN_BE_MODULES=<master>/be/common:<master>/be/hs be.sh \
 #     scripts/coordinate-plane/backend/gen.exs ids.txt gen.jsonl [seeds]
 #
 # `seeds` — comma-separated, default `1`; 27.11 the corpus is `1,2,3`

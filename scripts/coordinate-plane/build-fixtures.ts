@@ -8,8 +8,11 @@
  *   tsx scripts/coordinate-plane/build-fixtures.ts verdicts <verdicts.jsonl>
  *     → data/backend-verdicts.json
  *
- * gen.jsonl and verdicts.jsonl come from the local backend (G3's be.sh: the
- * monolith's generators and TaskChecker, test.qalan.kz is not touched):
+ * gen.jsonl and verdicts.jsonl come from the local backend (the monolith's
+ * generators and TaskChecker, test.qalan.kz is not touched). Since 27.11
+ * grades 5–11 run on origin/master, as production does — be.sh of
+ * feat/grade-5-pilot with QALAN_BE_MODULES=<master common>:<master hs>, no
+ * `-pa` over G3's modules (it would mix versions); grades 1–4 on G3's build:
  * backend/gen.exs dumps the tasks, backend/check.exs judges candidates.jsonl
  * with TaskChecker.user_answer_correct? on the task rebuilt from its fields.
  * The procedure is in qalan-docs/trainer/specs/coordinate-plane.md
@@ -77,7 +80,10 @@ const shrink = (v: unknown): unknown => {
   return v
 }
 
-const [cmd, file] = process.argv.slice(2)
+// a third argument: write the fixtures there instead of the package's data
+// (a second backend — origin/master — judged without touching the corpus)
+const [cmd, file, outDir] = process.argv.slice(2)
+const OUT = outDir ?? DATA
 const lines = readFileSync(file, 'utf8')
   .split('\n')
   .filter(Boolean)
@@ -194,11 +200,11 @@ if (cmd === 'tasks') {
       push(label, toAnswerString(mode, { points: pts }))
   }
   writeFileSync(
-    join(DATA, 'all-tasks.json'),
+    join(OUT, 'all-tasks.json'),
     JSON.stringify(tasks, null, 1) + '\n',
   )
   // compact: three seeds of every task, read by the test only
-  writeFileSync(join(DATA, 'seed-tasks.json'), JSON.stringify(seedTasks) + '\n')
+  writeFileSync(join(OUT, 'seed-tasks.json'), JSON.stringify(seedTasks) + '\n')
   writeFileSync(
     join(dirname(file), 'candidates.jsonl'),
     candidates.join('\n') + '\n',
@@ -216,7 +222,7 @@ if (cmd === 'tasks') {
   }))
   // one row per line: diffs stay readable, the file stays small
   writeFileSync(
-    join(DATA, 'backend-verdicts.json'),
+    join(OUT, 'backend-verdicts.json'),
     '[\n' + rows.map((r) => JSON.stringify(r)).join(',\n') + '\n]\n',
   )
   console.log(

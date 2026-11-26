@@ -1,6 +1,6 @@
 # The real TaskChecker on the answers the prototype's window would send.
 #
-#   be.sh -pa ~/Documents/Projects/qalan/local-backend/hs \
+#   QALAN_BE_MODULES=<master>/be/common:<master>/be/hs be.sh \
 #     scripts/coordinate-plane/backend/check.exs candidates.jsonl verdicts.jsonl
 #
 # candidates.jsonl (build-fixtures.ts `tasks`): {id, fields, wire, label}. The

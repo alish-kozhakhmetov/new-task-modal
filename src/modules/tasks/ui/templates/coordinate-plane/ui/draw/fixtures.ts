@@ -11,7 +11,10 @@ import seedTasksJson from './data/seed-tasks.json'
  * A real task of the backend with its answer: `_backend` names the generator,
  * the seed it ran with and answer/1 — what the stories check against.
  * Built by scripts/coordinate-plane/build-fixtures.ts from the compiled
- * backend (matheducator master 21.10).
+ * backend: grades 5–11 — origin/master as production runs it (build
+ * master-2611, 27.11; the corpus of 26.11 came from the test branch and
+ * differed in 92 generators), grades 1–4 — G3's build (no master build of
+ * primary school yet).
  */
 export type PlaneFixture = CoordinatePlaneTask & {
   _backend: { id: string; seed: number; answer: unknown; answerType: string }

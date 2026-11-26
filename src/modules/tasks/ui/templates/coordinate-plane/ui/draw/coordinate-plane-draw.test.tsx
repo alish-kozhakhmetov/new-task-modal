@@ -130,15 +130,11 @@ const single = answerable.filter(
  * one tick past it, as InteractivePlane snaps, and a filling point where one
  * is due. Facts of the generators, counted below, not drawn:
  * Task_11_5_5_25 seeds 1–2 ask for a circle of radius 9 on a −5…5 plane (no
- * node reachable); Task_5_8_8_6 seeds 2–3 ask to shade x² + y² ≥ 16 and
- * x² + y² ≤ 9 at once — the region is empty, no answer is right.
+ * node reachable). On the test branch also Task_5_8_8_6 seeds 2–3 (shade
+ * x² + y² ≥ 16 and x² + y² ≤ 9 at once — an empty region); master orders the
+ * radii, and the corpus is master's (27.11).
  */
-const UNSOLVABLE = new Set([
-  'Task_5_8_8_6#2',
-  'Task_5_8_8_6#3',
-  'Task_11_5_5_25#1',
-  'Task_11_5_5_25#2',
-])
+const UNSOLVABLE = new Set(['Task_11_5_5_25#1', 'Task_11_5_5_25#2'])
 const reachable = (t: PlaneFixture) => {
   const { field, figures, needsFill, fill } = solutionOf(t)
   const inField = (figures ?? []).every((g) =>
@@ -367,10 +363,6 @@ describe('the backend accepts what the window sends', () => {
         .filter((r) => !accepted(r) && !UNSOLVABLE.has(keyOf(r)))
         .map((r) => r.id),
     ).toEqual([])
-    // the empty region: whatever is drawn, the backend says «wrong»
-    expect(
-      solved.filter((r) => r.id === 'Task_5_8_8_6' && r.seed > 1).map(accepted),
-    ).toEqual([false, false])
   })
 
   it('the store string sent as is is refused: the wire answer must be an object', () => {
