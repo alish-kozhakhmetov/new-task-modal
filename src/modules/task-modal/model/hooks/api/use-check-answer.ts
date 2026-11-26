@@ -8,6 +8,7 @@ import {
 
 import { hostLanguage } from '../../lib/host-language'
 import { isApiError } from '../../lib/is-api-error'
+import { toWireAnswer } from '../../lib/to-wire-answer'
 import {
   useAppState,
   useSetAppState,
@@ -138,8 +139,20 @@ export const useCheckAnswer = ({ props, refs }: Args) => {
 
       // The language goes inside the task, as the old window sends it: the
       // site's Api.checkAnswer(task) reads it from there only (2.5.5).
+      // Boundary: the store keeps strings; calculateByImage leaves as an object.
+      const wireAnswer = toWireAnswer({
+        description: activeTask.description,
+        answer,
+        calculateByImageType: TaskDescriptionType.CalculateByImage,
+      }) as typeof answer
+
       const response = await api.checkAnswer(
-        { ...activeTask, answer, lockVersion, language: hostLanguage(global) },
+        {
+          ...activeTask,
+          answer: wireAnswer,
+          lockVersion,
+          language: hostLanguage(global),
+        },
         hostProps.lessonId,
       )
 

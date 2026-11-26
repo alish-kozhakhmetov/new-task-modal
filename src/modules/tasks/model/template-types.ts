@@ -84,4 +84,8 @@ export const TemplateTypes = {
   Equation: {
     Before: 'equation.before',
   },
+  CalculateByImage: {
+    Plain: 'calculateByImage.plain',
+    WithCell: 'calculateByImage.withCell',
+  },
 }

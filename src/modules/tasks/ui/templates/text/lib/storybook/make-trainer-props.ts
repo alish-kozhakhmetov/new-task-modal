@@ -153,6 +153,11 @@ export const STORY_THEORY_VIDEO_URL = `https://youtube.com/embed/${STORY_THEORY_
 export type MakeTrainerPropsOptions = {
   withHints?: boolean
   withTheory?: boolean
+  /**
+   * Own check for answers that are not a string (calculateByImage sends
+   * `{ list }`): replaces the string compare with `solution.answer`.
+   */
+  isCorrect?: (submitted: { answer?: unknown }) => boolean
 }
 
 /** Zustand TaskModalState for a single-task Storybook trainer session (input mode). */
@@ -252,7 +257,9 @@ export const makeTrainerProps = (
           // No real network call — fixture-backed mock computes synchronously.
           await Promise.resolve()
           const user = normalizeTrainerAnswer(String(submitted.answer ?? ''))
-          const isCorrect = expectedAnswer.length > 0 && user === expectedAnswer
+          const isCorrect = options.isCorrect
+            ? options.isCorrect(submitted)
+            : expectedAnswer.length > 0 && user === expectedAnswer
 
           if (isCorrect) {
             wrongAttemptsByTaskId.set(task.id, 0)
