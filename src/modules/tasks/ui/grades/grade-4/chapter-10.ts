@@ -132,8 +132,11 @@ const map = {
    * is stuck. Out of available-tasks they open in the old window. To bring
    * them back, pick the template by `description.type` (`complex.plain`
    * for master data), then map them again.
+   *
+   * 9_9 (`table.multiRow`) is out too: on a 390 px phone its table is
+   * 279 px wider than the window, and the answer field is reached only
+   * by scrolling the table sideways, which the pupil does not see.
    */
-  [TemplateTypes.Table.MultiRow]: ['9_9'],
   [TemplateTypes.Complex.After]: [
     '6_1',
     '6_2',
