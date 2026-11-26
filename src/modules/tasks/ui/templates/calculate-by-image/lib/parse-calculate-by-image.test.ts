@@ -74,6 +74,38 @@ describe('parseCalculateByImage', () => {
   })
 })
 
+describe('пирамида (vertical)', () => {
+  it('кольца в своих пропорциях, тонкое — не меньше 44 px (Task_1_1_2_9)', () => {
+    const model = parse('1_1_2_9')
+    expect(model.layout).toBe('column')
+    // drawn as the old screen draws it: width × height, letterboxed by the viewBox
+    const own = model.pool.map((item) => {
+      const tag = /<svg\b[^>]*>/i.exec(item.html)?.[0] ?? ''
+      const num = (re: RegExp) => Number(re.exec(tag)?.[1])
+      const [w, h] = [num(/\swidth="([\d.]+)/), num(/\sheight="([\d.]+)/)]
+      const box =
+        /viewBox="[-\d.]+[\s,]+[-\d.]+[\s,]+([\d.]+)[\s,]+([\d.]+)/.exec(tag)
+      const k = Math.min(w / Number(box?.[1]), h / Number(box?.[2]))
+      return { w: Number(box?.[1]) * k, h: Number(box?.[2]) * k }
+    })
+    // one factor for every ring: the rings keep their own proportions
+    const factors = model.pool.map(
+      (item, i) => (item.columnWidth ?? 0) / own[i].w,
+    )
+    const drawn = model.pool.map(
+      (item, i) => (item.columnWidth ?? 0) * (own[i].h / own[i].w),
+    )
+    expect(Math.max(...factors) / Math.min(...factors)).toBeLessThan(1.02)
+    expect(Math.min(...drawn)).toBeGreaterThanOrEqual(43)
+  })
+
+  it('без vertical ширины нет — предмет в своей клетке', () => {
+    expect(
+      parse('0_10_5_2').pool.every((item) => item.columnWidth == null),
+    ).toBe(true)
+  })
+})
+
 describe('ответ', () => {
   it('в сторе — номера в каталоге; мусор не читается', () => {
     expect(decodeZone('')).toBeNull()

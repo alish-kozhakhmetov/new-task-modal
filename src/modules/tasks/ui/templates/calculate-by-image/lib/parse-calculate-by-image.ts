@@ -27,6 +27,11 @@ export interface PoolItem extends CatalogItem {
    * Task_0_6_3_9): the box stays the tap size, the picture keeps its size.
    */
   scale: number
+  /**
+   * Pyramid (`vertical`): the picture's width in px for the zone, its own
+   * width times the task's one factor — rings keep their proportions.
+   */
+  columnWidth?: number
   /** Picture on the row button when it differs from the item (withCell `button`). */
   buttonHtml?: string
 }
@@ -138,11 +143,14 @@ const tablePart = (value: unknown): ComplexTablePart | null =>
     : null
 
 /**
- * Drawn height of the picture's own `<svg>` in px, as the old screen shows
- * it: `height`, or less when `width` letterboxes the viewBox (a butterfly
- * declared 50×310 over a square viewBox is drawn 50 high). `null` — no size.
+ * Drawn size of the picture's own `<svg>` in px, as the old screen shows it:
+ * `height` (and `width`), less when they letterbox the viewBox (a butterfly
+ * declared 50×310 over a square viewBox is drawn 50 high). `null` — no
+ * height.
  */
-const svgHeight = (html: string): number | null => {
+const svgSize = (
+  html: string,
+): { width: number | null; height: number } | null => {
   const tag = /<svg\b[^>]*>/i.exec(html)?.[0]
   if (!tag) return null
   const attr = (name: string) => {
@@ -157,10 +165,29 @@ const svgHeight = (html: string): number | null => {
   const width = attr('width')
   const box =
     /\sviewBox="\s*[-\d.]+[\s,]+[-\d.]+[\s,]+([\d.]+)[\s,]+([\d.]+)/i.exec(tag)
-  if (!width || !box) return height
+  if (!width || !box) return { width, height }
   const [vbWidth, vbHeight] = [Number(box[1]), Number(box[2])]
-  if (!(vbWidth > 0 && vbHeight > 0)) return height
-  return vbHeight * Math.min(width / vbWidth, height / vbHeight)
+  if (!(vbWidth > 0 && vbHeight > 0)) return { width, height }
+  const k = Math.min(width / vbWidth, height / vbHeight)
+  return { width: vbWidth * k, height: vbHeight * k }
+}
+
+const svgHeight = (html: string): number | null => svgSize(html)?.height ?? null
+
+/*
+ * Pyramid rings lie on each other in their own proportions, as on the
+ * picture of the task. One factor for the task: the thinnest ring becomes a
+ * 44px tap target (Task_1_1_2_9: rings 15–32px high, ×2.9); the zone's width
+ * caps the widest one.
+ */
+const TAP_MIN = 44
+
+const columnFactor = (
+  sizes: ({ width: number | null; height: number } | null)[],
+) => {
+  const heights = sizes.flatMap((size) => (size?.width ? [size.height] : []))
+  if (heights.length === 0) return null
+  return Math.max(1, TAP_MIN / Math.min(...heights))
 }
 
 /*
@@ -181,6 +208,9 @@ export const parseCalculateByImage = (
   const pictures = raw.map((item) => toText(item.image, translate))
   const heights = pictures.map(svgHeight)
   const tallest = Math.max(0, ...heights.map((h) => h ?? 0))
+  const isColumn = Boolean(description.vertical || description.isVertical)
+  const sizes = isColumn ? pictures.map(svgSize) : []
+  const factor = isColumn ? columnFactor(sizes) : null
   const catalog = raw.map((item, index) => ({
     ...item,
     html: pictures[index],
@@ -188,6 +218,10 @@ export const parseCalculateByImage = (
       heights[index] && tallest > 0
         ? Math.max(MIN_SCALE, heights[index] / tallest)
         : 1,
+    columnWidth:
+      factor && sizes[index]?.width
+        ? Math.round((sizes[index]?.width ?? 0) * factor)
+        : undefined,
     buttonHtml: index >= preplacedCount && button ? button : undefined,
   }))
   const preplaced = catalog.slice(0, preplacedCount)
@@ -198,12 +232,11 @@ export const parseCalculateByImage = (
       : DEFAULT_CAPACITY
   const perRow = Number(description.maxItemsPerRow)
 
-  const layout: ZoneLayout =
-    description.vertical || description.isVertical
-      ? 'column'
-      : description.isNotLegoTask === false
-        ? 'lego'
-        : 'row'
+  const layout: ZoneLayout = isColumn
+    ? 'column'
+    : description.isNotLegoTask === false
+      ? 'lego'
+      : 'row'
 
   return {
     pool: catalog.slice(preplacedCount),

@@ -45,10 +45,25 @@ interface Props {
   onRemove?: (zoneIndex: number) => void
 }
 
-const ItemImage = ({ html, scale = 1 }: { html: string; scale?: number }) => (
+const ItemImage = ({
+  html,
+  scale = 1,
+  width,
+}: {
+  html: string
+  scale?: number
+  /** Pyramid rings: own width in px, the height follows the picture. */
+  width?: number
+}) => (
   <span
-    className={styles.itemImage}
-    style={scale < 1 ? ({ '--cbi-scale': scale } as CSSProperties) : undefined}
+    className={clsx(styles.itemImage, width && styles.itemImageSized)}
+    style={
+      width
+        ? ({ '--cbi-w': `${width}px` } as CSSProperties)
+        : scale < 1
+          ? ({ '--cbi-scale': scale } as CSSProperties)
+          : undefined
+    }
     aria-hidden
     dangerouslySetInnerHTML={{ __html: html }}
   />
@@ -156,7 +171,11 @@ export const ItemBoard = ({
                   data-index={item.index}
                   onClick={() => onRemove(index)}
                 >
-                  <ItemImage html={item.html} scale={item.scale} />
+                  <ItemImage
+                    html={item.html}
+                    scale={item.scale}
+                    width={layout === 'column' ? item.columnWidth : undefined}
+                  />
                 </button>
               ) : (
                 <span
@@ -165,7 +184,11 @@ export const ItemBoard = ({
                   data-index={item.index}
                   data-locked={removable ? undefined : 'true'}
                 >
-                  <ItemImage html={item.html} scale={item.scale} />
+                  <ItemImage
+                    html={item.html}
+                    scale={item.scale}
+                    width={layout === 'column' ? item.columnWidth : undefined}
+                  />
                 </span>
               )}
             </Fragment>

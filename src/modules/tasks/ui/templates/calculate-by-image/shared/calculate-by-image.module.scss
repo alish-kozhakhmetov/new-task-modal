@@ -131,9 +131,13 @@ $item-max: to-rem(88px);
   gap: 0;
 }
 
-/* Pyramid rings: the first one at the bottom. */
+/*
+ * Pyramid rings: the first one at the bottom, each on the one below, in the
+ * picture's own proportions (`columnWidth`), as the task's picture shows it.
+ */
 .zoneItemsColumn {
   flex-flow: column-reverse nowrap;
+  gap: 0;
   align-items: center;
   justify-content: flex-start;
 }
@@ -167,6 +171,16 @@ $item-max: to-rem(88px);
   }
 }
 
+.itemImageSized {
+  width: var(--cbi-w);
+  height: auto;
+
+  :global(svg) {
+    width: 100%;
+    height: auto;
+  }
+}
+
 .poolGhost {
   display: contents;
   visibility: hidden;
@@ -191,6 +205,12 @@ $item-max: to-rem(88px);
   background: none;
   border: none;
   -webkit-tap-highlight-color: transparent;
+}
+
+/* Pyramid rings: the ring's own height instead of the tap box. */
+.zoneItemsColumn .zoneItem {
+  min-width: 0;
+  height: auto;
 }
 
 .zoneItemButton {
