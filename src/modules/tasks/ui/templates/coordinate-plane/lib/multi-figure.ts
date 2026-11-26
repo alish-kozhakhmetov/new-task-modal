@@ -13,7 +13,12 @@ import { NEEDS_DIFFERENT_X, type Pt } from './plane-answer'
  * compare the numbers first).
  */
 export type DrawnFigure = { type: number; points: Pt[] }
-export type MultiDraft = { figures: DrawnFigure[]; active: number }
+/** `fills` — the points that mark the shaded region (scenario F). */
+export type MultiDraft = {
+  figures: DrawnFigure[]
+  active: number
+  fills?: Pt[]
+}
 
 type MultiMode = Extract<PlaneMode, { kind: 'multi' }>
 
@@ -42,7 +47,7 @@ export const toMultiAnswer = (draft: MultiDraft): string => {
       type: f.type,
       dashed: false,
     })),
-    fillingPoints: [],
+    fillingPoints: (draft.fills ?? []).map(clean),
   })
 }
 
@@ -54,12 +59,14 @@ export const fromMultiAnswer = (
   try {
     const parsed = JSON.parse(answer) as {
       figures?: { type?: number; points?: Pt[] }[]
+      fillingPoints?: Pt[]
     }
     const figures = (parsed.figures ?? []).map((f) => ({
       type: Number(f.type),
       points: (f.points ?? []).map(clean),
     }))
-    if (figures.length) return { figures, active: figures.length - 1 }
+    const fills = (parsed.fillingPoints ?? []).map(clean)
+    if (figures.length) return { figures, active: figures.length - 1, fills }
   } catch {
     /* '' or not ours */
   }
@@ -108,9 +115,40 @@ export const FIGURE_NAMES: Record<
 export const PANEL_WORDS = {
   add: { rus: 'Добавить', kaz: 'Қосу', eng: 'Add' },
   remove: { rus: 'Удалить', kaz: 'Жою', eng: 'Delete' },
+  // old window fillGraph: «заливка», «бояу», «filling» — here a verb, a button
+  fill: { rus: 'Закрасить', kaz: 'Бояу', eng: 'Fill' },
   choose: {
     rus: 'Выберите график',
     kaz: 'Графикті таңдаңыз',
     eng: 'Choose graph',
   },
+}
+
+/**
+ * Which side of each figure a point lies on: lines and segments by the side
+ * of their line, circles inside or out, and the axes when the plane limits
+ * the shading by them (isFillingLimitedByAxis). Points with the same
+ * signature are one region — what the old window shaded from the pupil's
+ * filling point. Other curves do not bound a region here.
+ */
+export const regionSignature = (
+  figures: DrawnFigure[],
+  q: Pt,
+  byAxes: boolean,
+): string => {
+  const sign = (v: number) => (v > 1e-9 ? '+' : v < -1e-9 ? '-' : '0')
+  const parts = figures.filter(isFinished).map((f) => {
+    const [a, b] = f.points
+    if (f.type === DrawingFigure.Line || f.type === DrawingFigure.LineSegment)
+      return sign((b.x - a.x) * (q.y - a.y) - (b.y - a.y) * (q.x - a.x))
+    if (f.type === DrawingFigure.Circle)
+      return sign(
+        (q.x - a.x) ** 2 +
+          (q.y - a.y) ** 2 -
+          ((b.x - a.x) ** 2 + (b.y - a.y) ** 2),
+      )
+    return ''
+  })
+  if (byAxes) parts.push(sign(q.x), sign(q.y))
+  return parts.join('')
 }

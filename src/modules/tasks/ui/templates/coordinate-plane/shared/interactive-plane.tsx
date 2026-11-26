@@ -1,4 +1,5 @@
 import {
+  useId,
   useMemo,
   useRef,
   useState,
@@ -30,7 +31,7 @@ import {
   type Shape,
 } from '../lib/curves'
 import { DrawingFigure, type PlaneMode } from '../lib/drawing-figure'
-import type { DrawnFigure } from '../lib/multi-figure'
+import { regionSignature, type DrawnFigure } from '../lib/multi-figure'
 import { applyClick, type PlaneDraft, type Pt } from '../lib/plane-answer'
 import { trigAxesOf, trigShapes, type TrigAxes } from '../lib/trig'
 import type { CoordinatePlaneFigure } from '../lib/types.task'
@@ -59,6 +60,10 @@ interface Props {
    * drawn, not edited — the clicks go to `draft`, the active figure.
    */
   others?: DrawnFigure[]
+  /** The region to hatch: where `at` is among the figures (scenario F). */
+  shade?: { figures: DrawnFigure[]; at: Pt; byAxes: boolean }
+  /** Snap and walk by half a tick: the filling point of a narrow region. */
+  halfStep?: boolean
 }
 
 export const toPlaneOptions = (
@@ -103,12 +108,12 @@ const snap = (
   range: NodeRange,
   vx: number,
   vy: number,
+  t = options.tickStep,
 ): Pt | null => {
   const cell = options.stepSize / options.tickStep
   const start = options.stepSize
   const ux = options.minPosition + (vx - start) / cell
   const uy = options.maxPosition - (vy - start) / cell
-  const t = options.tickStep
   const x = Math.round(ux / t) * t
   const y = Math.round(uy / t) * t
   // half a cell of slack around the nodes, then clamp: an edge node stays reachable
@@ -176,6 +181,45 @@ const extraShapes = (f: Record<string, unknown>, field: Field): Shape[] => {
       : []
   }
   return []
+}
+
+/**
+ * The hatched region as one path: the field cut into quarter cells, those
+ * whose centre lies where the filling point does (regionSignature) joined
+ * row by row. Coarse at a curved edge by a quarter cell — the region reads,
+ * the backend checks only the filling point.
+ */
+const regionPath = (
+  shade: { figures: DrawnFigure[]; at: Pt; byAxes: boolean },
+  options: PlaneOptions,
+): string => {
+  const want = regionSignature(shade.figures, shade.at, shade.byAxes)
+  const h = options.tickStep / 4
+  const lo = options.minPosition
+  const hi = options.maxPosition
+  let d = ''
+  for (let y = lo; y < hi - 1e-9; y += h) {
+    let run: number | null = null
+    const close = (x: number) => {
+      if (run == null) return
+      const a = fromPointToDot(options, run, y + h)
+      const b = fromPointToDot(options, x, y)
+      d += `M${a.x.toFixed(1)},${a.y.toFixed(1)}H${b.x.toFixed(1)}V${b.y.toFixed(1)}H${a.x.toFixed(1)}Z`
+      run = null
+    }
+    for (let x = lo; x < hi - 1e-9; x += h) {
+      const inside =
+        regionSignature(
+          shade.figures,
+          { x: x + h / 2, y: y + h / 2 },
+          shade.byAxes,
+        ) === want
+      if (inside && run == null) run = x
+      if (!inside) close(x)
+    }
+    close(hi)
+  }
+  return d
 }
 
 const ShapeView = ({
@@ -256,7 +300,10 @@ export const InteractivePlane = ({
   readOnly = false,
   label,
   others = [],
+  shade,
+  halfStep = false,
 }: Props) => {
+  const hatchId = useId()
   const trig = useMemo(() => trigAxesOf(figure), [figure])
   const options = useMemo(() => {
     const base = toPlaneOptions(figure)
@@ -286,7 +333,13 @@ export const InteractivePlane = ({
     const ctm = svg?.getScreenCTM()
     if (!svg || !ctm) return null
     const p = new DOMPoint(e.clientX, e.clientY).matrixTransform(ctm.inverse())
-    const node = snap(options, range, p.x, p.y)
+    const node = snap(
+      options,
+      range,
+      p.x,
+      p.y,
+      options.tickStep / (halfStep ? 2 : 1),
+    )
     if (!targets || !node) return node
     const cell = options.stepSize / options.tickStep
     const raw = {
@@ -324,7 +377,7 @@ export const InteractivePlane = ({
 
   const onKeyDown = (e: KeyboardEvent<SVGSVGElement>) => {
     if (!interactive) return
-    const t = options.tickStep
+    const t = options.tickStep / (halfStep ? 2 : 1)
     const at = start()
     const move: Record<string, [number, number]> = {
       ArrowLeft: [-t, 0],
@@ -357,6 +410,11 @@ export const InteractivePlane = ({
           )
         : figureShapes(mode.figureType, draft.points[0], draft.points[1], field)
       : []
+
+  const hatch = useMemo(
+    () => (shade ? regionPath(shade, options) : ''),
+    [shade, options],
+  )
 
   const otherShapes: Shape[] = others.flatMap((f) =>
     f.points.length >= 2
@@ -424,6 +482,36 @@ export const InteractivePlane = ({
           )
         })}
       </g>
+      {hatch ? (
+        <g data-plane-layer="shade">
+          <defs>
+            <pattern
+              id={hatchId}
+              width={8}
+              height={8}
+              patternUnits="userSpaceOnUse"
+              patternTransform="rotate(45)"
+            >
+              <line
+                x1={0}
+                y1={0}
+                x2={0}
+                y2={8}
+                stroke={PUPIL_INK}
+                strokeWidth={STROKE.hair}
+              />
+            </pattern>
+          </defs>
+          <path
+            data-shade
+            data-testid="coordinate-plane-shade"
+            d={hatch}
+            fill={`url(#${hatchId})`}
+            stroke="none"
+            pointerEvents="none"
+          />
+        </g>
+      ) : null}
       <g data-plane-layer="pupil">
         {otherShapes.map((s, i) => (
           <ShapeView

@@ -57,7 +57,9 @@ describe('mode of a plane — from its flags', () => {
     [{ drawingFigure: 20, canDrawMultipleFigures: true }, 'multi'],
     // exponent and logarithm curves are not drawn yet
     [{ drawingFigure: 5, allowedFigures: [270, 280, 290] }, 'unsupported'],
-    [{ drawingFigure: 20, canFill: true }, 'unsupported'],
+    [{ drawingFigure: 20, canFill: true }, 'multi'],
+    // shading on the trigonometric axes: none in lessons, not drawn
+    [{ drawingFigure: 190, canFill: true }, 'unsupported'],
     [{ drawingFigure: 190 }, 'figure'],
     [{ drawingFigure: 250 }, 'unsupported'],
     [{ drawingFigure: 0 }, 'unsupported'],

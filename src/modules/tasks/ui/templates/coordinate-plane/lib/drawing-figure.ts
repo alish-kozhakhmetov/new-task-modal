@@ -49,12 +49,20 @@ export type PlaneMode =
   /** `trig` — drawn on the fixed trigonometric axes (lib/trig.ts). */
   | { kind: 'figure'; figureType: number; trig?: TrigAxes }
   /**
-   * Several figures, each by two clicks (scenario E): `fixed` — the type the
+   * Figures, each by two clicks (scenarios E and F): `fixed` — the type the
    * plane draws (lines, segments, circles), null — the pupil picks each
-   * figure's type from `choices` (drawingFigure Any).
+   * figure's type from `choices` (drawingFigure Any); `many` — more than one
+   * figure may be added; `fill` — the pupil then marks the region to shade
+   * (canFill: one filling point, InEqualitiesGraphTaskAnswer).
    */
-  | { kind: 'multi'; fixed: number | null; choices: number[] }
-  /** Shown, not answerable here yet (shading, exponent and logarithm). */
+  | {
+      kind: 'multi'
+      fixed: number | null
+      choices: number[]
+      many: boolean
+      fill: boolean
+    }
+  /** Shown, not answerable here yet (exponent and logarithm). */
   | { kind: 'unsupported'; reason: string }
 
 interface ModeInput {
@@ -75,18 +83,21 @@ interface ModeInput {
  */
 export const planeModeOf = (figure: ModeInput): PlaneMode => {
   const type = Number(figure.drawingFigure ?? DrawingFigure.None)
-  if (figure.canFill) return { kind: 'unsupported', reason: 'fill' }
-  if (figure.canDrawMultipleFigures || type === DrawingFigure.Any) {
+  const fill = Boolean(figure.canFill)
+  if (fill || figure.canDrawMultipleFigures || type === DrawingFigure.Any) {
     // exponent, logarithm and their asymptote (allowedFigures 270/280/290)
     // need curves this window does not draw yet
     if ((figure.allowedFigures ?? []).some((t) => !TWO_POINT_FIGURES[t]))
       return { kind: 'unsupported', reason: 'exponent' }
-    if (trigAxesOf(figure)) return { kind: 'unsupported', reason: 'multiple' }
+    if (trigAxesOf(figure))
+      return { kind: 'unsupported', reason: fill ? 'fill' : 'multiple' }
+    const many =
+      Boolean(figure.canDrawMultipleFigures) || type === DrawingFigure.Any
     if (type === DrawingFigure.Any)
-      return { kind: 'multi', fixed: null, choices: [...CHOOSER] }
+      return { kind: 'multi', fixed: null, choices: [...CHOOSER], many, fill }
     if (TWO_POINT_FIGURES[type] && !isTrigType(type))
-      return { kind: 'multi', fixed: type, choices: [type] }
-    return { kind: 'unsupported', reason: 'multiple' }
+      return { kind: 'multi', fixed: type, choices: [type], many, fill }
+    return { kind: 'unsupported', reason: fill ? 'fill' : 'multiple' }
   }
   if (type === DrawingFigure.Point) return { kind: 'point' }
   if (type === DrawingFigure.MultipleDots) return { kind: 'dots' }

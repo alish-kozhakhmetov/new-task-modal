@@ -24,6 +24,8 @@ export interface CoordinatePlaneFigure {
   allowedFigures?: number[]
   canDrawMultipleFigures?: boolean
   canFill?: boolean
+  /** The shaded region is bounded by the axes too (Task_7_3_50_*). */
+  isFillingLimitedByAxis?: boolean
   notClickableDots?: boolean
   isLine?: boolean
   points?: unknown[]
