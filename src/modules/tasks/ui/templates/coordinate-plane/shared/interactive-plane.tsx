@@ -454,6 +454,9 @@ export const InteractivePlane = ({
       height={height}
       viewBox={`0 0 ${length} ${height}`}
       fontSize={LABEL_PX}
+      // the axis numbers and letters have no colour of their own: SVG's
+      // default black vanished on the dark theme (snapshots 27.11)
+      fill={INK}
       role={interactive ? 'application' : 'img'}
       aria-label={label}
       tabIndex={interactive ? 0 : undefined}
