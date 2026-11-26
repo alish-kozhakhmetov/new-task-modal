@@ -146,3 +146,36 @@ describe('test.plain', () => {
     expect(screen.getByText('Слово сайта')).toBeInTheDocument()
   })
 })
+
+describe('test.plain — several correct options', () => {
+  // the backend sends the flag in the description (UserTaskDto), the old
+  // window reads it there; grade 5, 27.11: 46 generators drew radios
+  it('description.hasMultipleAnswers: checkboxes, not radios', () => {
+    renderTemplate(Template, {
+      ...task,
+      description: { ...task.description, hasMultipleAnswers: true },
+    })
+    expect(screen.getAllByRole('checkbox')).toHaveLength(4)
+    expect(screen.queryAllByRole('radio')).toHaveLength(0)
+  })
+
+  it('raw description.has_multiple_answers: checkboxes too', () => {
+    renderTemplate(Template, {
+      ...task,
+      description: {
+        ...task.description,
+        has_multiple_answers: true,
+      } as TestTask['description'],
+    })
+    expect(screen.getAllByRole('checkbox')).toHaveLength(4)
+  })
+
+  it('the flag false in the description: radios, as before', () => {
+    renderTemplate(Template, {
+      ...task,
+      description: { ...task.description, hasMultipleAnswers: false },
+    })
+    expect(screen.getAllByRole('radio')).toHaveLength(4)
+    expect(screen.queryAllByRole('checkbox')).toHaveLength(0)
+  })
+})
