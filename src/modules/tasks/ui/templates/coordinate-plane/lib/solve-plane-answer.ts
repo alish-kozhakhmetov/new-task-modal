@@ -1,6 +1,33 @@
 import { DrawingFigure } from './drawing-figure'
 import { compileGraphFunction } from './expression'
 import type { Pt } from './plane-answer'
+import {
+  fromTrigWire,
+  onTrigGrid,
+  trigAxesOf,
+  trigClicksFor,
+  type TrigAxes,
+} from './trig'
+
+const TRIG_ANSWERS: Record<string, number> = {
+  SinusTaskAnswer: DrawingFigure.Sinus,
+  CosinusTaskAnswer: DrawingFigure.Cosinus,
+  TangentTaskAnswer: DrawingFigure.Tangent,
+  CotangentTaskAnswer: DrawingFigure.Cotangent,
+  ArcsinTaskAnswer: DrawingFigure.Arcsin,
+  ArccosTaskAnswer: DrawingFigure.Arccos,
+}
+
+/** MyDecimal / Fraction as Poison writes them, or a plain number. */
+const numOf = (v: unknown): number => {
+  if (v && typeof v === 'object') {
+    const o = v as Record<string, number>
+    if ('coef' in o && 'exp' in o) return (o.sign ?? 1) * o.coef * 10 ** o.exp
+    if ('a' in o && 'b' in o)
+      return ((o.sign ?? 1) * ((o.integer ?? 0) * o.b + o.a)) / o.b
+  }
+  return Number(v)
+}
 
 /**
  * The clicks that answer a task, derived from the backend's answer — what a
@@ -9,9 +36,19 @@ import type { Pt } from './plane-answer'
  *
  * Returns null when the answer has a form this prototype does not draw.
  */
-export const solvePlaneAnswer = (answer: unknown): Pt[] | null => {
+export const solvePlaneAnswer = (
+  answer: unknown,
+  plane?: Parameters<typeof trigAxesOf>[0],
+): Pt[] | null => {
+  const trig = plane ? trigAxesOf(plane) : null
+  const pts = solveWire(answer, trig)
+  return trig && pts ? pts.map((p) => fromTrigWire(trig, p)) : pts
+}
+
+/** The solving clicks as the answer carries them (wire coordinates). */
+const solveWire = (answer: unknown, trig: TrigAxes | null): Pt[] | null => {
   if (Array.isArray(answer))
-    return answer.length ? solvePlaneAnswer(answer[0]) : null
+    return answer.length ? solveWire(answer[0], trig) : null
   if (!answer || typeof answer !== 'object') return null
   const a = answer as Record<string, unknown>
   const kind = (typeof a._struct === 'string' ? a._struct : '').replace(
@@ -41,11 +78,34 @@ export const solvePlaneAnswer = (answer: unknown): Pt[] | null => {
     return null
   }
 
+  if (TRIG_ANSWERS[kind]) {
+    if (!trig) return null
+    const round = (p: Pt) => ({
+      x: Math.round(p.x * 1e6) / 1e6,
+      y: Math.round(p.y * 1e6) / 1e6,
+    })
+    const pairs = trigClicksFor(TRIG_ANSWERS[kind], {
+      a: numOf(a.a),
+      b: numOf(a.b),
+      c: numOf(a.c),
+      d: numOf(a.d),
+    }).map((pair) => pair.map(round))
+    // nodes only, on the grid first, then one cell past it (the window's margin)
+    const node = (p: Pt) => Number.isInteger(p.x) && Number.isInteger(p.y)
+    const fits = (margin: number) =>
+      pairs.find((pair) =>
+        pair.every(
+          (p) => node(p) && onTrigGrid(trig, fromTrigWire(trig, p), margin),
+        ),
+      )
+    return fits(0) ?? fits(1) ?? null
+  }
+
   switch (kind) {
     case 'CustomeTypes.CoordinatePlane.Point':
       return [p(a)]
     case 'TaskAnswers.AnyOfThemTaskAnswer':
-      return Array.isArray(a.answers) ? solvePlaneAnswer(a.answers[0]) : null
+      return Array.isArray(a.answers) ? solveWire(a.answers[0], trig) : null
     case 'PointListTaskAnswer':
       return (a.points as unknown[]).map(p)
     case 'LineSegmentTaskAnswer':

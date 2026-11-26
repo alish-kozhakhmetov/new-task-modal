@@ -1,4 +1,5 @@
 import { DrawingFigure, type PlaneMode } from './drawing-figure'
+import { fromTrigWire, toTrigWire } from './trig'
 
 export type Pt = { x: number; y: number }
 
@@ -29,24 +30,42 @@ export const toAnswerString = (mode: PlaneMode, draft: PlaneDraft): string => {
       return `(${num(pts[0].x)};${num(pts[0].y)})`
     case 'dots':
       return JSON.stringify({ points: pts.map(clean) })
-    case 'figure':
+    case 'figure': {
       if (pts.length < 2) return ''
+      // the same x defines no parabola, hyperbola, sine…: no figure, no answer
+      // (the answer modules divide by x₂ − x₁ — a raise, a 500 for the pupil)
+      if (NEEDS_DIFFERENT_X.has(mode.figureType) && pts[0].x === pts[1].x)
+        return ''
+      const trig = mode.trig
+      const wire = trig ? (p: Pt) => clean(toTrigWire(trig, p)) : clean
       return JSON.stringify({
         figures: [
           {
-            points: pts.slice(0, 2).map(clean),
+            points: pts.slice(0, 2).map(wire),
             type: mode.figureType,
             dashed: false,
           },
         ],
         fillingPoints: [],
       })
+    }
     default:
       return ''
   }
 }
 
-export const fromAnswerString = (answer: string): PlaneDraft => {
+export const fromAnswerString = (
+  answer: string,
+  mode?: PlaneMode,
+): PlaneDraft => {
+  const draft = readAnswerString(answer)
+  const trig = mode?.kind === 'figure' ? mode.trig : undefined
+  return trig
+    ? { points: draft.points.map((p) => clean(fromTrigWire(trig, p))) }
+    : draft
+}
+
+const readAnswerString = (answer: string): PlaneDraft => {
   const s = answer.trim()
   if (!s) return { points: [] }
   const point = /^\(?\s*(-?[\d.]+)\s*[;,،]\s*(-?[\d.]+)\s*\)?$/.exec(s)
@@ -129,6 +148,12 @@ export const applyClick = (
 
 /** Ids of figures whose second point may not share the first one's x. */
 export const NEEDS_DIFFERENT_X: ReadonlySet<number> = new Set([
+  DrawingFigure.Sinus,
+  DrawingFigure.Cosinus,
+  DrawingFigure.Tangent,
+  DrawingFigure.Cotangent,
+  DrawingFigure.Arcsin,
+  DrawingFigure.Arccos,
   DrawingFigure.Parabola,
   DrawingFigure.CubicParabola,
   DrawingFigure.ModuleX,

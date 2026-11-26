@@ -82,7 +82,7 @@ if (cmd === 'tasks') {
     if (r.error || r.description?.type !== 'coordinatePlane') continue
     const mode = planeModeOf(r.description.figure)
     if (mode.kind === 'unsupported') continue
-    const solved = solvePlaneAnswer(r.answer)
+    const solved = solvePlaneAnswer(r.answer, r.description.figure)
     const task = {
       id: `cp-${r.id}-s${r.seed}`,
       type: r.type,
@@ -121,6 +121,8 @@ if (cmd === 'tasks') {
     )
     for (const [label, pts] of tries) {
       const store = toAnswerString(mode, { points: pts })
+      // no answer (two points on one x of a curve): «Проверить» stays off
+      if (!store) continue
       const wire = toWireAnswer(store)
       const row = { id: r.id, seed: r.seed, fields: r.fields, label, wire }
       candidates.push(JSON.stringify(row))

@@ -31,9 +31,11 @@ import {
 } from '../lib/curves'
 import { DrawingFigure, type PlaneMode } from '../lib/drawing-figure'
 import { applyClick, type PlaneDraft, type Pt } from '../lib/plane-answer'
+import { trigAxesOf, trigShapes, type TrigAxes } from '../lib/trig'
 import type { CoordinatePlaneFigure } from '../lib/types.task'
 
 import styles from './coordinate-plane.module.scss'
+import { TrigPlaneAxes, trigPlaneOptions, trigPlaneSize } from './trig-axes'
 
 /** The pupil's ink: brand, not the condition's black (rule: semantics, not palette). */
 const PUPIL_INK = 'var(--text-brand)'
@@ -67,18 +69,33 @@ export const toPlaneOptions = (
   reduceHeight: figure.reduceHeight,
 })
 
+/** The nodes a point may go to, per axis, in plane units. */
+type NodeRange = { x: [number, number]; y: [number, number] }
+
 /**
- * The nodes a point may go to: the field plus one tick beyond each edge — the
- * old window snapped within its whole viewBox, which runs a cell past the
- * field, and some answers sit there (Task_11_9_5_9: y = −6 on a −5…5 plane).
+ * The field plus one tick beyond each edge — the old window snapped within
+ * its whole viewBox, which runs a cell past the field, and some answers sit
+ * there (Task_11_9_5_9: y = −6 on a −5…5 plane). The trigonometric grid
+ * too: its viewBox is a cell wider than its 2X × 2Y cells on every side.
  */
-const nodeRange = (options: PlaneOptions) => ({
-  lo: options.minPosition - options.tickStep,
-  hi: options.maxPosition + options.tickStep,
-})
+const nodeRange = (options: PlaneOptions, trig: TrigAxes | null): NodeRange => {
+  if (trig)
+    return { x: [-trig.X - 1, trig.X + 1], y: [-trig.Y - 1, trig.Y + 1] }
+  const lo = options.minPosition - options.tickStep
+  const hi = options.maxPosition + options.tickStep
+  return { x: [lo, hi], y: [lo, hi] }
+}
+
+const clampTo = ([lo, hi]: [number, number], v: number) =>
+  Number(Math.min(hi, Math.max(lo, v)).toFixed(6))
 
 /** Screen pixel → nearest node of the plane, in plane units; null off the field. */
-const snap = (options: PlaneOptions, vx: number, vy: number): Pt | null => {
+const snap = (
+  options: PlaneOptions,
+  range: NodeRange,
+  vx: number,
+  vy: number,
+): Pt | null => {
   const cell = options.stepSize / options.tickStep
   const start = options.stepSize
   const ux = options.minPosition + (vx - start) / cell
@@ -86,12 +103,11 @@ const snap = (options: PlaneOptions, vx: number, vy: number): Pt | null => {
   const t = options.tickStep
   const x = Math.round(ux / t) * t
   const y = Math.round(uy / t) * t
-  const { lo, hi } = nodeRange(options)
   // half a cell of slack around the nodes, then clamp: an edge node stays reachable
-  if (ux < lo - t / 2 || ux > hi + t / 2 || uy < lo - t / 2 || uy > hi + t / 2)
-    return null
-  const clamp = (v: number) => Number(Math.min(hi, Math.max(lo, v)).toFixed(6))
-  return { x: clamp(x), y: clamp(y) }
+  const off = ([lo, hi]: [number, number], v: number) =>
+    v < lo - t / 2 || v > hi + t / 2
+  if (off(range.x, ux) || off(range.y, uy)) return null
+  return { x: clampTo(range.x, x), y: clampTo(range.y, y) }
 }
 
 /**
@@ -113,6 +129,15 @@ const dotTargets = (figure: CoordinatePlaneFigure): Pt[] | null => {
   })
   return pts.length ? pts.filter((p) => Number.isFinite(p.x + p.y)) : null
 }
+
+const TRIG_TYPES: ReadonlySet<number> = new Set([
+  DrawingFigure.Sinus,
+  DrawingFigure.Cosinus,
+  DrawingFigure.Tangent,
+  DrawingFigure.Cotangent,
+  DrawingFigure.Arcsin,
+  DrawingFigure.Arccos,
+])
 
 const nearest = (targets: Pt[], to: Pt) =>
   targets.reduce((best, p) =>
@@ -223,10 +248,16 @@ export const InteractivePlane = ({
   readOnly = false,
   label,
 }: Props) => {
-  const options = useMemo(() => toPlaneOptions(figure), [figure])
-  const length = planeLength(options)
+  const trig = useMemo(() => trigAxesOf(figure), [figure])
+  const options = useMemo(() => {
+    const base = toPlaneOptions(figure)
+    return trig ? trigPlaneOptions(base, trig) : base
+  }, [figure, trig])
+  const range = nodeRange(options, trig)
   // The whole declared field: the pupil may need any node of it (no fit to content).
-  const height = length
+  const { width: length, height } = trig
+    ? trigPlaneSize(options, trig)
+    : { width: planeLength(options), height: planeLength(options) }
   const field: Field = {
     min: options.minPosition - options.tickStep,
     max: options.maxPosition + options.tickStep,
@@ -246,7 +277,7 @@ export const InteractivePlane = ({
     const ctm = svg?.getScreenCTM()
     if (!svg || !ctm) return null
     const p = new DOMPoint(e.clientX, e.clientY).matrixTransform(ctm.inverse())
-    const node = snap(options, p.x, p.y)
+    const node = snap(options, range, p.x, p.y)
     if (!targets || !node) return node
     const cell = options.stepSize / options.tickStep
     const raw = {
@@ -295,14 +326,9 @@ export const InteractivePlane = ({
     if (move[e.key]) {
       e.preventDefault()
       const [dx, dy] = move[e.key]
-      const { lo, hi } = nodeRange(options)
-      const clamp = (v: number) => Math.min(hi, Math.max(lo, v))
       const next = targets
         ? stepAmong(targets, at, dx, dy)
-        : {
-            x: Number(clamp(at.x + dx).toFixed(6)),
-            y: Number(clamp(at.y + dy).toFixed(6)),
-          }
+        : { x: clampTo(range.x, at.x + dx), y: clampTo(range.y, at.y + dy) }
       setCursor(next)
       setGhost(next)
     } else if ((e.key === 'Enter' || e.key === ' ') && (cursor ?? ghost)) {
@@ -313,7 +339,14 @@ export const InteractivePlane = ({
 
   const pupilShapes: Shape[] =
     mode.kind === 'figure' && draft.points.length >= 2
-      ? figureShapes(mode.figureType, draft.points[0], draft.points[1], field)
+      ? mode.trig && TRIG_TYPES.has(mode.figureType)
+        ? trigShapes(
+            mode.figureType,
+            draft.points[0],
+            draft.points[1],
+            mode.trig,
+          )
+        : figureShapes(mode.figureType, draft.points[0], draft.points[1], field)
       : []
 
   return (
@@ -349,7 +382,11 @@ export const InteractivePlane = ({
       onPointerCancel={() => setGhost(null)}
       data-interactive={interactive ? 'true' : 'false'}
     >
-      <PlaneAxes options={options} />
+      {trig ? (
+        <TrigPlaneAxes options={options} axes={trig} />
+      ) : (
+        <PlaneAxes options={options} />
+      )}
       <g data-plane-layer="condition">
         {given.map((f, i) => {
           const extra = extraShapes(f, field)

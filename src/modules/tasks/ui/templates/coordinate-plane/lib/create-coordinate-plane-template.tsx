@@ -39,7 +39,9 @@ export const createCoordinatePlaneTemplate = ({ id }: Config) => {
     // Half a figure (one click of two) is not an answer: it stays here, and
     // the store's answer stays empty — «Check» is off until the figure is.
     const [pending, setPending] = useState<Pt[] | null>(null)
-    const draft = answer ? fromAnswerString(answer) : { points: pending ?? [] }
+    const draft = answer
+      ? fromAnswerString(answer, mode)
+      : { points: pending ?? [] }
     const text = deps.global.translateTasks(task.description.content)
     const solved = isActiveSolution(task.solution)
     const clearLabel = deps.global.translateTasks(CLEAR)

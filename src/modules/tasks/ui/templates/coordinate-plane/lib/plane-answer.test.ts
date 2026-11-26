@@ -55,7 +55,8 @@ describe('mode of a plane — from its flags', () => {
     [{ drawingFigure: 90 }, 'figure'],
     [{ drawingFigure: 5, canDrawMultipleFigures: true }, 'unsupported'],
     [{ drawingFigure: 20, canFill: true }, 'unsupported'],
-    [{ drawingFigure: 190 }, 'unsupported'],
+    [{ drawingFigure: 190 }, 'figure'],
+    [{ drawingFigure: 250 }, 'unsupported'],
     [{ drawingFigure: 0 }, 'unsupported'],
   ])('%o → %s', (figure, kind) => {
     expect(planeModeOf(figure).kind).toBe(kind)

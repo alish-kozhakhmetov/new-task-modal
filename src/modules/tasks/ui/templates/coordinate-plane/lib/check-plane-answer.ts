@@ -224,6 +224,134 @@ export const checkPlaneAnswer = (
       })
     }
 
+    case 'SinusTaskAnswer':
+    case 'CosinusTaskAnswer':
+    case 'TangentTaskAnswer':
+    case 'CotangentTaskAnswer':
+    case 'ArcsinTaskAnswer':
+    case 'ArccosTaskAnswer':
+      return trigCorrect(kind, answer, wire)
+
+    default:
+      return false
+  }
+}
+
+const sign = (v: number) => (v > 0 ? 1 : v < 0 ? -1 : 0)
+
+const TRIG_TYPE: Record<string, number> = {
+  SinusTaskAnswer: DrawingFigure.Sinus,
+  CosinusTaskAnswer: DrawingFigure.Cosinus,
+  TangentTaskAnswer: DrawingFigure.Tangent,
+  CotangentTaskAnswer: DrawingFigure.Cotangent,
+  ArcsinTaskAnswer: DrawingFigure.Arcsin,
+  ArccosTaskAnswer: DrawingFigure.Arccos,
+}
+
+/**
+ * The six answer modules of trigonometry/ (matheducator_task_common,
+ * task_answers/coordinate_plane/trigonometry/*.ex). Each rebuilds a, b, c,
+ * d from the two points in the old window's coordinates (lib/trig.ts) and
+ * compares them with its own; a division by zero there is a raise, here
+ * a refusal.
+ */
+const trigCorrect = (
+  kind: string,
+  answer: Record<string, unknown>,
+  wire: unknown,
+): boolean => {
+  const f = single(wire, TRIG_TYPE[kind])
+  if (!f) return false
+  const [{ x: x1, y: y1 }, { x: x2, y: y2 }] = f.points
+  const a = toNum(answer.a)
+  const b = toNum(answer.b)
+  const c = toNum(answer.c)
+  const d = toNum(answer.d)
+  if (x1 === x2) return false
+  switch (kind) {
+    case 'SinusTaskAnswer': {
+      const d1 = (y1 - 8) / 2
+      const b1 = 12 / ((x2 - x1) * 4)
+      const a1 = (y2 - 8) / 2 - d1
+      const c1 = -x1
+      const at = (x: number, A: number, B: number, C: number, D: number) =>
+        A * Math.sin((B * (30 * (x + C)) * Math.PI) / 180) + D
+      const near = (u: number, v: number) => Math.abs(u - v) <= 1e-9
+      return (
+        Math.abs(a) === Math.abs(a1) &&
+        Math.abs(b) === Math.abs(b1) &&
+        near(at(x1, a1, b1, c1, d1), at(x1, a, b, c, d)) &&
+        near(at(x2, a1, b1, c1, d1), at(x2, a, b, c, d)) &&
+        d === d1
+      )
+    }
+    case 'CosinusTaskAnswer': {
+      const d1 = (y1 - 8) / 2
+      const b1 = 12 / ((x2 - x1) * 4)
+      const a1 = (y2 - 8) / 2 - d1
+      const c1 = -x2
+      // normalize_c_argument: c = 0 stays 0, else c mod the half-period;
+      // a |b| below 1 divides by zero there — a raise
+      const norm = (B: number, C: number) => {
+        if (C === 0) return 0
+        const whole = Math.trunc(Math.abs(B)) * 2
+        if (!whole) return NaN
+        const period = Math.trunc(12 / whole)
+        const r = Math.trunc(C) % period
+        return C < 0 && r !== 0 ? r + period : r
+      }
+      return (
+        Math.abs(a) === Math.abs(a1) &&
+        Math.abs(b) === Math.abs(b1) &&
+        norm(b, c) === norm(b1, c1) &&
+        d === d1
+      )
+    }
+    case 'TangentTaskAnswer':
+    case 'CotangentTaskAnswer': {
+      const tan = kind === 'TangentTaskAnswer'
+      const d1 = (y1 - 2) / 2
+      const b1 = tan ? 4 / ((x2 - x1) * 4) : 4 / ((x1 - x2) * 4)
+      const a1 = (y2 - y1) / 2
+      const c1 = tan ? -x1 : Math.abs(x2 - x1) * 2 - x1
+      const norm = (C: number) => {
+        const r = Math.trunc(C) % 4
+        return C < 0 ? (r === 0 ? 0 : r + 4) : r
+      }
+      return (
+        Math.abs(a) === Math.abs(a1) &&
+        Math.abs(b) === Math.abs(b1) &&
+        norm(c) === norm(c1) &&
+        d === d1 &&
+        sign(a * b) === sign(a1 * b1)
+      )
+    }
+    case 'ArcsinTaskAnswer': {
+      const a1 = (y2 - y1) / 3
+      const b1 = 1 / ((x2 - x1) / 2)
+      const c1 = -x1 / 2
+      const d1 = y1
+      return (
+        Math.abs(a) === Math.abs(a1) &&
+        Math.abs(b) === Math.abs(b1) &&
+        c === c1 &&
+        d === d1 &&
+        sign(a * b) === sign(a1 * b1)
+      )
+    }
+    case 'ArccosTaskAnswer': {
+      const a1 = Math.abs((y2 - y1) / 3)
+      const b1 = (1 / ((x1 - x2) / 2)) * (y2 > y1 ? 1 : -1)
+      const c1 = -x1 / 2
+      const d1 = y2 - (y2 > y1 ? (y2 - y1) * 2 : 0)
+      return (
+        Math.abs(a) === Math.abs(a1) &&
+        Math.abs(b) === Math.abs(b1) &&
+        c === c1 &&
+        d === d1 &&
+        sign(a * b) === sign(a1 * b1)
+      )
+    }
     default:
       return false
   }

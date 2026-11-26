@@ -85,7 +85,7 @@ const accepted = (r: Verdict) => r.verdict === true
 const answerable = SEED_PLANE_TASKS.filter(
   (t) =>
     planeModeOf(t.description.figure).kind !== 'unsupported' &&
-    solvePlaneAnswer(t._backend.answer),
+    solvePlaneAnswer(t._backend.answer, t.description.figure),
 )
 
 describe('coordinatePlane.draw — real tasks solved through the window', () => {
@@ -94,6 +94,13 @@ describe('coordinatePlane.draw — real tasks solved through the window', () => 
       answerable.map((t) => planeModeOf(t.description.figure).kind),
     )
     expect([...kinds].sort()).toEqual(['dots', 'figure', 'point'])
+    // the trigonometric axes are in the corpus (scenario D′, grade 10)
+    expect(
+      answerable.filter((t) => {
+        const mode = planeModeOf(t.description.figure)
+        return mode.kind === 'figure' && mode.trig
+      }).length,
+    ).toBeGreaterThan(100)
     expect(answerable.length).toBeGreaterThan(90)
   })
 
@@ -120,7 +127,10 @@ describe('coordinatePlane.draw — real tasks solved through the window', () => 
       expect(plane.getAttribute('data-cursor')).toBeTruthy()
       const step = task.description.figure.tickStep || 1
       let at: Pt = { x: 0, y: 0 }
-      for (const p of solvePlaneAnswer(task._backend.answer)!) {
+      for (const p of solvePlaneAnswer(
+        task._backend.answer,
+        task.description.figure,
+      )!) {
         keyTo(plane, at, p, step)
         at = p
       }
@@ -163,12 +173,24 @@ describe('coordinatePlane.draw — real tasks solved through the window', () => 
 })
 
 describe('the backend accepts what the window sends', () => {
-  it('every raise is the local OTP regex, or a string where a map is due', () => {
+  /**
+   * A wrong cosine with |b₁| < 1 (the points more than a quarter period
+   * apart) divides by zero in CosinusTaskAnswer.normalize_c_argument — for
+   * the pupil that is a 500, not «wrong». A fact of the backend; the window
+   * sends what was drawn.
+   */
+  const COS_DIV_ZERO = 'raise: bad argument in arithmetic expression'
+
+  it('every raise is the local OTP regex, a string where a map is due, or the cosine division', () => {
     const raises = rows.filter((r) => typeof r.verdict === 'string')
     for (const r of raises)
       expect(
         String(r.verdict).startsWith(OTP_REGEX) ||
-          r.label === 'solved as string',
+          r.label === 'solved as string' ||
+          (r.verdict === COS_DIV_ZERO &&
+            r.label !== 'solved' &&
+            (r.wire as { figures?: { type: number }[] }).figures?.[0]?.type ===
+              200),
         `${r.id} ${r.label}: ${String(r.verdict)}`,
       ).toBe(true)
   })

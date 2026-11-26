@@ -1,35 +1,7 @@
-/**
- * What the pupil draws on a `coordinatePlane` task, and how.
- *
- * Ids mirror the backend enum `CoordinatePlaneDrawingFigure`
- * (matheducator_task_common/lib/enums/coordinate_plane_drawing_figure.ex).
- * The plane's `drawingFigure` decides the mechanic; there is no text field —
- * the old window lists `CoordinatePlane` among descriptions without tools and
- * sends what the pupil drew (TaskDescriptionAndAnswerInput.jsx, case
- * CoordinatePlane → onDrawingFinished).
- */
-export const DrawingFigure = {
-  None: 0,
-  Any: 5,
-  Point: 10,
-  MultipleDots: 15,
-  Line: 20,
-  LineSegment: 30,
-  Circle: 60,
-  Vector: 80,
-  Parabola: 90,
-  Function: 120,
-  CubicParabola: 130,
-  ModuleX: 140,
-  Hyperbola: 150,
-  RootFunction: 180,
-  Sinus: 190,
-  Cosinus: 200,
-  Tangent: 210,
-  Cotangent: 220,
-  Arcsin: 230,
-  Arccos: 240,
-} as const
+import { DrawingFigure } from './figure-ids'
+import { isTrigType, trigAxesOf, type TrigAxes } from './trig'
+
+export { DrawingFigure }
 
 /** A figure drawn by two clicks: what the first and the second click mean. */
 export const TWO_POINT_FIGURES: Record<
@@ -45,12 +17,21 @@ export const TWO_POINT_FIGURES: Record<
   [DrawingFigure.ModuleX]: { first: 'vertex', second: 'onGraph' },
   [DrawingFigure.Hyperbola]: { first: 'center', second: 'onGraph' },
   [DrawingFigure.RootFunction]: { first: 'start', second: 'onGraph' },
+  // trigonometry (Sinus.js … ArcCosinus.js): a point of the midline, then the
+  // point a quarter period away — the old window's two clicks
+  [DrawingFigure.Sinus]: { first: 'midline', second: 'peak' },
+  [DrawingFigure.Cosinus]: { first: 'midline', second: 'peak' },
+  [DrawingFigure.Tangent]: { first: 'center', second: 'onGraph' },
+  [DrawingFigure.Cotangent]: { first: 'center', second: 'onGraph' },
+  [DrawingFigure.Arcsin]: { first: 'center', second: 'end' },
+  [DrawingFigure.Arccos]: { first: 'center', second: 'end' },
 }
 
 export type PlaneMode =
   | { kind: 'point' }
   | { kind: 'dots' }
-  | { kind: 'figure'; figureType: number }
+  /** `trig` — drawn on the fixed trigonometric axes (lib/trig.ts). */
+  | { kind: 'figure'; figureType: number; trig?: TrigAxes }
   /** Shown, not answerable here yet (trigonometry, several figures, shading). */
   | { kind: 'unsupported'; reason: string }
 
@@ -59,6 +40,7 @@ interface ModeInput {
   canDrawMultipleFigures?: boolean
   canFill?: boolean
   allowedFigures?: number[]
+  figures?: Record<string, unknown>[]
 }
 
 /**
@@ -66,7 +48,8 @@ interface ModeInput {
  *
  * Measured on 261 generators in lessons (grades 1–11, backend source,
  * 26.11): point 17, several points 12, one figure by two clicks 132 (87
- * without trigonometry), several figures 57, shading 28, typed answer 15.
+ * without trigonometry, 45 on the trigonometric axes since 27.11), several
+ * figures 57, shading 28, typed answer 15.
  */
 export const planeModeOf = (figure: ModeInput): PlaneMode => {
   const type = Number(figure.drawingFigure ?? DrawingFigure.None)
@@ -75,7 +58,15 @@ export const planeModeOf = (figure: ModeInput): PlaneMode => {
     return { kind: 'unsupported', reason: 'multiple' }
   if (type === DrawingFigure.Point) return { kind: 'point' }
   if (type === DrawingFigure.MultipleDots) return { kind: 'dots' }
-  if (TWO_POINT_FIGURES[type]) return { kind: 'figure', figureType: type }
+  const trig = trigAxesOf(figure)
+  if (isTrigType(type))
+    return trig
+      ? { kind: 'figure', figureType: type, trig }
+      : { kind: 'unsupported', reason: 'trigonometry' }
+  if (TWO_POINT_FIGURES[type])
+    return trig
+      ? { kind: 'figure', figureType: type, trig }
+      : { kind: 'figure', figureType: type }
   if (type >= DrawingFigure.Sinus && type <= DrawingFigure.Arccos)
     return { kind: 'unsupported', reason: 'trigonometry' }
   return { kind: 'unsupported', reason: 'none' }
