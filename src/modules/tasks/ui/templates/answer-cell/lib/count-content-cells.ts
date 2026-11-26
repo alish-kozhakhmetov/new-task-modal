@@ -21,7 +21,7 @@ export const countContentCells = (
 ): number => {
   const desc = normalizeAnswerCellDescription(
     (description ?? {}) as Record<string, unknown>,
-  ) as AnswerCellTaskDescription
+  ) as unknown as AnswerCellTaskDescription
   const raw = desc.content
   const content =
     typeof raw === 'string' ? raw : isTranslation(raw) ? translate(raw) : ''
