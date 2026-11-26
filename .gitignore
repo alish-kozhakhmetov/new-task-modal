@@ -43,3 +43,6 @@ storybook-static
 !/public/stats-static/.gitkeep
 .vercel
 .env*
+
+# keys harness: temporary chapter maps, never commit (scripts/keys/harness-maps.mjs)
+/src/modules/tasks/ui/grades/__keys-harness__/

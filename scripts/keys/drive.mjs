@@ -32,13 +32,20 @@ for (const [layout, viewport] of [['phone', { width: 390, height: 844 }], ['wide
   if (layouts && !layouts.has(layout)) continue
   for (let i = 0; i < tasks.length; i++) {
     if (only && !only.has(i)) continue
-    const modes = ['keys', ...(/Interval|\\cup|\\infty/.test(tasks[i].ref ?? '') ? ['computer'] : [])]
+    const ref = tasks[i].ref ?? ''
+    // the computer's keyboard: an interval's brackets typed; a root as the
+    // letters «sqrt» (MathQuill's own command), the rest from our keys
+    const modes = [
+      'keys',
+      ...(/Interval|\\cup|\\infty/.test(ref) ? ['computer'] : []),
+      ...(/^[^\\]*(\\sqrt\{[^{}]*\}[^\\]*)+$/.test(ref) ? ['sqrt'] : []),
+    ]
     for (const mode of modes) {
       const p = await b.newPage({ viewport })
       p.setDefaultTimeout(8000)
       const errors = []
       p.on('pageerror', (e) => errors.push(String(e).slice(0, 200)))
-      await p.goto(`${BASE}/scripts/keys/harness/index.html?task=${i}&layout=${layout}`)
+      await p.goto(`${BASE}/scripts/keys/harness/index.html?task=${i}&layout=${layout}`, { timeout: 90000 })
       await p.waitForFunction(() => window.__keys?.ready, null, { timeout: 30000 })
       await p.waitForSelector('[data-calc]', { timeout: 30000 }).catch(() => errors.push('no keyboard'))
       await p.waitForTimeout(1500)
@@ -46,7 +53,27 @@ for (const [layout, viewport] of [['phone', { width: 390, height: 844 }], ['wide
       if (mode === 'keys') await p.screenshot({ path: path.join(OUT, `${name}-open.png`) })
       const plan = await p.evaluate(() => window.__keys.plan)
       const row = { i, task: tasks[i].taskType, layout, mode, ref: tasks[i].ref, plan: plan ? plan.length : null, errors }
-      if (plan) try {
+      if (mode === 'sqrt') try {
+        await p.locator('[data-input]').first().click()
+        await p.waitForTimeout(300)
+        // 0;-\sqrt{19} → «0;-» «sqrt» «19» →: every character from the keyboard
+        for (const part of ref.split(/(\\sqrt\{[^{}]*\})/).filter(Boolean)) {
+          const m = /^\\sqrt\{([^{}]*)\}$/.exec(part)
+          if (m) {
+            await p.keyboard.type('sqrt')
+            await p.keyboard.type(m[1])
+            await p.keyboard.press('ArrowRight')
+          } else await p.keyboard.type(part)
+        }
+        await p.waitForTimeout(300)
+        await p.screenshot({ path: path.join(OUT, `${name}-sqrt-typed.png`) })
+        await p.getByRole('button', { name: 'Проверить' }).click().catch((e) => errors.push(`check: ${String(e).slice(0, 120)}`))
+        await p.waitForTimeout(600)
+        row.sent = await p.evaluate(() => window.__keys.checks.at(-1) ?? null)
+      } catch (e) {
+        errors.push(String(e).slice(0, 160))
+      }
+      else if (plan) try {
         // a task that overflows keeps the keyboard closed until the field is tapped
         if (!(await p.locator('[data-calc]').first().isVisible().catch(() => false))) {
           await p.locator('[data-input]').first().click()
