@@ -43,3 +43,6 @@ storybook-static
 !/public/stats-static/.gitkeep
 .vercel
 .env*
+
+# grade-5 pilot: API answers of test.qalan.kz, not for git
+.pilot-cache/
