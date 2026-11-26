@@ -2,11 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { useMemo, type ComponentType } from 'react'
 
 import type { TaskComponentProps } from '@/modules/tasks/model/types'
+import { ComplexPlain } from '@/modules/tasks/ui/templates/complex/ui/plain'
 import { TextTemplateTrainer } from '@/modules/tasks/ui/templates/text/lib/storybook/text-template-trainer'
 import type { TextTask } from '@/modules/tasks/ui/templates/text/lib/types.task'
 
 import { planeModeOf } from '../../lib/drawing-figure'
 
+import readGraphJson from './data/read-graph-task.json'
 import {
   ALL_PLANE_TASKS,
   asTrainerTask,
@@ -19,19 +21,19 @@ import {
 import { CoordinatePlaneDraw } from '.'
 
 /**
- * Координатная плоскость — прототип на одобрение Алишера (26.11).
+ * Координатная плоскость — прототип на одобрение Алишера (26.11, 27.11).
  *
- * Каждая история — настоящая задача бэка (генератор указан в названии),
- * решаемая: «Проверить» сверяет ответ портом проверки бэка
- * (lib/check-plane-answer.ts). Порт сверен с настоящим TaskChecker локального
- * бэка на 553 ответах, а ответ, который окно шлёт по решению, бэк принял у 104
- * генераторов из уроков (data/backend-verdicts.json, тест рядом). Кубическую
- * параболу и y = ax² (11 генераторов 7 класса) локальный бэк не судит: на
- * OTP 29 падает регулярка в ExpressionTaskAnswer.replace_powers. Три ошибки —
- * показ решения.
+ * Каждая история — настоящая задача локального бэка (генератор указан в
+ * названии), решаемая: «Проверить» сверяет ответ портом проверки бэка
+ * (lib/check-plane-answer.ts). Порт сверен с настоящим TaskChecker на всех
+ * судимых ответах, а ответ, который окно шлёт по решению, бэк принял на трёх
+ * сидах каждого генератора (data/backend-verdicts.json, тест рядом). Задачи
+ * с «^» в формуле локальный бэк не судит: на OTP 29 падает регулярка в
+ * ExpressionTaskAnswer.replace_powers. Три ошибки — показ решения.
  *
- * Корень (тип 180) здесь не показан: в уроках он встречается только в задачах
- * «нарисуй несколько графиков на выбор» (сценарий E), их прототип не берёт.
+ * Сценарии: точка, несколько точек, фигура по двум точкам, тригонометрия
+ * (оси с π), несколько фигур и выбор типа (панель фигур), штриховка
+ * («Закрасить»), и «читай график» — плоскость в условии составной задачи.
  */
 const Template = CoordinatePlaneDraw as unknown as ComponentType<
   TaskComponentProps<TextTask>
@@ -88,6 +90,41 @@ export const CubicParabola = story(
 )
 export const ModuleX = story('Task_7_3_21_1', 'График модуля, 7 кл.')
 export const Hyperbola = story('Task_7_3_27_1', 'Гипербола, 7 кл.')
+
+// ── Тригонометрия: оси с π ────────────────────────────
+export const Sinus = story('Task_10_2_1_1', 'Синусоида, 10 кл.')
+
+// ── Несколько фигур и выбор типа ──────────────────────
+export const TwoLines = story('Task_7_3_54_1', 'Система: две прямые, 7 кл.')
+export const Triangle = story('GeoTask_9_2_9', 'Треугольник отрезками, 9 кл.')
+export const PickGraph = story('Task_8_3_13_1', 'Выбор графика: корень, 8 кл.')
+
+// ── Штриховка ─────────────────────────────────────────
+export const ShadeLines = story(
+  'Task_7_3_50_1',
+  'Штриховка: прямая и оси, 7 кл.',
+)
+export const ShadeRing = story('Task_5_8_8_6', 'Штриховка: кольцо, 5 кл.')
+
+// ── Читай график: плоскость в условии ─────────────────
+const readGraph = readGraphJson as unknown as TextTask
+const Complex = ComplexPlain as unknown as ComponentType<
+  TaskComponentProps<TextTask>
+>
+/**
+ * Task_10_2_7_1: y = sin x на осях с π, ответ — промежуток в поле составной
+ * задачи. До 27.11 общий рендер рисовал здесь пустую сетку −5…5.
+ */
+export const ReadGraph: StoryObj<Record<string, never>> = {
+  name: 'Читай график: синусоида в условии · Task_10_2_7_1',
+  render: () => (
+    <TextTemplateTrainer
+      Template={Complex}
+      task={readGraph}
+      forceCalcOpen={false}
+    />
+  ),
+}
 
 // ── Все задачи прототипа ──────────────────────────────
 const catalog = ALL_PLANE_TASKS.filter(

@@ -1,14 +1,15 @@
 /**
- * Snapshots of the coordinate-plane prototype from the static Storybook.
+ * Snapshots of the coordinate-plane prototype for review, from the static
+ * Storybook.
  *
- *   npx storybook build -o storybook-static
- *   python3 -m http.server 6107 -d storybook-static   (or any static server)
- *   tsx scripts/coordinate-plane/shots.ts http://127.0.0.1:6107 <out-dir>
+ *   npx storybook build -c .storybook-cp -o <dir>
+ *   python3 -m http.server 6107 -d <dir>        (or any static server)
+ *   tsx scripts/coordinate-plane/shots.ts http://127.0.0.1:6107 review [point,triangle]
  *
- * Every story at 390 and 1280 as it opens, then the states on the parabola at
- * 390: half a figure, entered, wrong, correct, and the solution after three
- * mistakes. Points are put with the keyboard (arrows + Enter), the same path a
- * pupil without a mouse takes.
+ * One story per scenario, solved the way a pupil without a mouse solves it
+ * (arrows + Enter; the panel's buttons for several figures and «Закрасить»),
+ * then shot at 390 and 1280, light and dark: `<scenario>-<width>-<theme>.png`,
+ * and the four on one sheet: `sheet-<scenario>.png`.
  */
 /* eslint-disable testing-library/prefer-screen-queries -- Playwright's page, not testing-library */
 import { mkdirSync, readFileSync } from 'node:fs'
@@ -17,10 +18,15 @@ import { fileURLToPath } from 'node:url'
 
 import { chromium, type Page } from 'playwright'
 
+import { planeModeOf } from '../../src/modules/tasks/ui/templates/coordinate-plane/lib/drawing-figure'
 import type { Pt } from '../../src/modules/tasks/ui/templates/coordinate-plane/lib/plane-answer'
-import { solvePlaneAnswer } from '../../src/modules/tasks/ui/templates/coordinate-plane/lib/solve-plane-answer'
+import {
+  solveFigures,
+  solveFill,
+  solvePlaneAnswer,
+} from '../../src/modules/tasks/ui/templates/coordinate-plane/lib/solve-plane-answer'
 
-const [base, out] = process.argv.slice(2)
+const [base, out, only] = process.argv.slice(2)
 mkdirSync(out, { recursive: true })
 const DATA = join(
   dirname(fileURLToPath(import.meta.url)),
@@ -28,10 +34,34 @@ const DATA = join(
 )
 type Fixture = {
   _backend: { id: string; answer: unknown }
-  description: { figure: { tickStep?: number } }
+  description: {
+    figure: Parameters<typeof planeModeOf>[0] & Record<string, number>
+  }
 }
 const tasks = JSON.parse(readFileSync(DATA, 'utf8')) as Fixture[]
-const byGen = new Map(tasks.map((t) => [t._backend.id, t]))
+// the story's task: the generator's first seed (fixtures.ts planeTask)
+const byGen = new Map<string, Fixture>()
+for (const t of tasks)
+  if (!byGen.has(t._backend.id)) byGen.set(t._backend.id, t)
+
+/** Scenario → generator → the story's export (index.json ids by export name). */
+const ALL_SCENARIOS: [string, string, string][] = [
+  ['point', 'Task_6_6_18_1', 'point-symmetry'],
+  ['segment', 'Task_6_6_19_1', 'segment'],
+  ['parabola', 'Task_8_3_6_1', 'parabola'],
+  ['sinus', 'Task_10_2_1_1', 'sinus'],
+  ['two-lines', 'Task_7_3_54_1', 'two-lines'],
+  ['triangle', 'GeoTask_9_2_9', 'triangle'],
+  ['pick-graph', 'Task_8_3_13_1', 'pick-graph'],
+  ['shade-lines', 'Task_7_3_50_1', 'shade-lines'],
+  ['shade-ring', 'Task_5_8_8_6', 'shade-ring'],
+  ['read-graph', 'Task_10_2_7_1', 'read-graph'],
+]
+
+// a third argument picks scenarios: `point,triangle`
+const SCENARIOS = ALL_SCENARIOS.filter(
+  ([name]) => !only || only.split(',').includes(name),
+)
 
 const index = (await (await fetch(`${base}/index.json`)).json()) as {
   entries: Record<
@@ -44,107 +74,156 @@ const stories = Object.values(index.entries).filter(
     e.type === 'story' && e.title.startsWith('Templates/CoordinatePlane/draw'),
 )
 
-const open = async (page: Page, id: string) => {
+const open = async (page: Page, id: string, plane: string) => {
   await page.goto(
     `${base}/iframe.html?id=${encodeURIComponent(id)}&viewMode=story`,
   )
-  await page
-    .locator('[data-testid=coordinate-plane-interactive]')
-    .waitFor({ timeout: 20000 })
+  await page.locator(`[data-testid=${plane}]`).waitFor({ timeout: 20000 })
   await page.waitForFunction('document.fonts.status === "loaded"')
   await page.waitForTimeout(300)
 }
 
-const put = async (page: Page, from: Pt, to: Pt, step: number) => {
-  const plane = page.locator('[data-testid=coordinate-plane-interactive]')
-  await plane.focus()
+const PLANE = '[data-testid=coordinate-plane-interactive]'
+
+/** Focus the plane afresh and walk the cursor from the origin to each point. */
+const put = async (page: Page, pts: Pt[], step: number) => {
+  await page.locator(PLANE).blur()
+  await page.locator(PLANE).focus()
+  // After a mouse click on a panel button a script focus is not
+  // :focus-visible, so the plane shows no cursor (a pupil Tabs back and gets
+  // one): step out and back to put the cursor at the origin.
+  if (!(await page.locator(PLANE).getAttribute('data-cursor'))) {
+    await page.keyboard.press('ArrowRight')
+    await page.keyboard.press('ArrowLeft')
+  }
+  const at = await page.locator(PLANE).getAttribute('data-cursor')
+  if (at !== '0;0') throw new Error(`cursor at ${at}, not the origin`)
+  let from: Pt = { x: 0, y: 0 }
   const n = (d: number) => Math.round(Math.abs(d) / step)
-  for (let i = 0; i < n(to.x - from.x); i++)
-    await page.keyboard.press(to.x > from.x ? 'ArrowRight' : 'ArrowLeft')
-  for (let i = 0; i < n(to.y - from.y); i++)
-    await page.keyboard.press(to.y > from.y ? 'ArrowUp' : 'ArrowDown')
-  await page.keyboard.press('Enter')
+  for (const to of pts) {
+    for (let i = 0; i < n(to.x - from.x); i++)
+      await page.keyboard.press(to.x > from.x ? 'ArrowRight' : 'ArrowLeft')
+    for (let i = 0; i < n(to.y - from.y); i++)
+      await page.keyboard.press(to.y > from.y ? 'ArrowUp' : 'ArrowDown')
+    await page.keyboard.press('Enter')
+    from = to
+  }
 }
 
-const generatorOf = (name: string) => /· (\S+)$/.exec(name)?.[1]
+const pointsOf = (pts: Pt[]) => pts.map((p) => `${p.x};${p.y}`).join(' ')
+
+/** The plane must show what was put: a shot of an unsolved plane is no proof. */
+const expectPoints = async (page: Page, pts: Pt[]) => {
+  const shown = await page.locator(PLANE).getAttribute('data-points')
+  if (shown !== pointsOf(pts))
+    throw new Error(`plane shows «${shown}», put «${pointsOf(pts)}»`)
+}
+
+const solve = async (page: Page, task: Fixture) => {
+  const f = task.description.figure
+  const step = f.tickStep || 1
+  const mode = planeModeOf(f)
+  if (mode.kind !== 'multi') {
+    const pts = solvePlaneAnswer(task._backend.answer, f) ?? []
+    await put(page, pts, step)
+    await expectPoints(page, pts)
+    return
+  }
+  const field = {
+    lo: (f.minPosition ?? -5) - step,
+    hi: (f.maxPosition ?? 5) + step,
+  }
+  const figures = solveFigures(task._backend.answer, field) ?? []
+  for (const [i, g] of figures.entries()) {
+    if (i > 0 || mode.fixed == null)
+      await page.getByTestId(`coordinate-plane-add-${g.type}`).click()
+    await put(page, g.points, step)
+    await expectPoints(page, g.points)
+  }
+  const drawn = await page.getByTestId('coordinate-plane-figure').count()
+  if (drawn !== figures.length)
+    throw new Error(`${drawn} figures on the panel, ${figures.length} solved`)
+  const fill = mode.fill
+    ? solveFill(task._backend.answer, {
+        lo: field.lo + step,
+        hi: field.hi - step,
+        step,
+      })
+    : null
+  if (fill) {
+    await page.getByTestId('coordinate-plane-fill').click()
+    await put(page, [fill], step / 2)
+    await expectPoints(page, [fill])
+  }
+}
+
+/** The package's dark theme: `[data-theme='dark']` (colors.scss), on the page's canvas. */
+const theme = (page: Page, dark: boolean) =>
+  page.evaluate(
+    `document.documentElement.dataset.theme = '${dark ? 'dark' : 'light'}';` +
+      `document.body.style.background = 'var(--bg-canvas)'`,
+  )
 
 const browser = await chromium.launch()
 try {
+  const shots: Record<string, Record<string, string>> = {}
   for (const width of [390, 1280]) {
     const page = await browser.newPage({
       viewport: { width, height: width < 768 ? 844 : 900 },
       deviceScaleFactor: 1,
     })
-    for (const s of stories) {
-      if (s.name.startsWith('Все задачи')) continue
-      await open(page, s.id)
-      await page.screenshot({
-        path: join(out, `${width}-${generatorOf(s.name) ?? s.id}.png`),
-        fullPage: true,
-      })
+    for (const [scenario, generator, slug] of SCENARIOS) {
+      const story = stories.find((s) => s.id.endsWith(`--${slug}`))
+      if (!story) throw new Error(`no story for ${generator}`)
+      const readOnly = scenario === 'read-graph'
+      await open(
+        page,
+        story.id,
+        readOnly
+          ? 'complex-coordinate-plane-part'
+          : 'coordinate-plane-interactive',
+      )
+      if (!readOnly) await solve(page, byGen.get(generator)!)
+      await page.mouse.move(0, 0)
+      await page.waitForTimeout(200)
+      for (const dark of [false, true]) {
+        await theme(page, dark)
+        await page.waitForTimeout(150)
+        const name = `${scenario}-${width}-${dark ? 'dark' : 'light'}`
+        const path = join(out, `${name}.png`)
+        await page.screenshot({ path, fullPage: true })
+        ;(shots[scenario] ??= {})[`${width} ${dark ? 'dark' : 'light'}`] =
+          readFileSync(path).toString('base64')
+      }
+      await theme(page, false)
     }
     await page.close()
   }
 
-  // states on one task: the parabola, phone width
-  const parabola = stories.find((s) => s.name.includes('Task_8_3_6_1'))!
-  const task = byGen.get('Task_8_3_6_1')!
-  const pts = solvePlaneAnswer(task._backend.answer)!
-  const step = task.description.figure.tickStep || 1
-  const page = await browser.newPage({
-    viewport: { width: 390, height: 844 },
-    deviceScaleFactor: 2,
+  // a sheet per scenario: the four shots side by side, to look at in one go
+  const sheet = await browser.newPage({
+    viewport: { width: 2000, height: 900 },
+    deviceScaleFactor: 1,
   })
-  await open(page, parabola.id)
-  await put(page, { x: 0, y: 0 }, pts[0], step)
-  await page.screenshot({ path: join(out, 'state-1-half.png'), fullPage: true })
-  // a wrong second point, then check
-  const wrong = { x: pts[1].x, y: pts[1].y + 1 }
-  await put(page, pts[0], wrong, step)
-  await page.screenshot({
-    path: join(out, 'state-2-entered-wrong.png'),
-    fullPage: true,
-  })
-  const check = page.getByRole('button', { name: 'Проверить' })
-  await check.click()
-  await page.waitForTimeout(600)
-  await page.screenshot({
-    path: join(out, 'state-3-wrong.png'),
-    fullPage: true,
-  })
-  // fix it: the third press moves the nearer point
-  await put(page, wrong, pts[1], step)
-  await page.waitForTimeout(200)
-  await page.screenshot({
-    path: join(out, 'state-4-fixed.png'),
-    fullPage: true,
-  })
-  if (await check.isEnabled()) await check.click()
-  await page.waitForTimeout(800)
-  await page.screenshot({
-    path: join(out, 'state-5-correct.png'),
-    fullPage: true,
-  })
-
-  // three mistakes → the solution
-  await open(page, parabola.id)
-  const bad = [
-    { x: pts[0].x + step, y: pts[0].y },
-    { x: pts[1].x + step, y: pts[1].y + step },
-  ]
-  await put(page, { x: 0, y: 0 }, bad[0], step)
-  await put(page, bad[0], bad[1], step)
-  for (let i = 0; i < 3; i++) {
-    const c = page.getByRole('button', { name: 'Проверить' })
-    if (!(await c.isVisible()) || !(await c.isEnabled())) break
-    await c.click()
-    await page.waitForTimeout(700)
+  for (const [scenario, generator] of SCENARIOS) {
+    const cells = Object.entries(shots[scenario])
+      .map(
+        ([label, b64]) =>
+          `<figure><figcaption>${label}</figcaption><img src="data:image/png;base64,${b64}"></figure>`,
+      )
+      .join('')
+    await sheet.setContent(
+      `<style>body{margin:0;padding:16px;background:#888;font:16px sans-serif;display:flex;gap:16px;align-items:flex-start}
+      figure{margin:0}figcaption{color:#fff;margin-bottom:6px}img{display:block;max-height:1400px;outline:1px solid #555}</style>
+      <h1 style="position:absolute;left:16px;bottom:0;margin:0;color:#fff;font-size:14px">${scenario} · ${generator}</h1>${cells}`,
+    )
+    await sheet.waitForTimeout(200)
+    await sheet.screenshot({
+      path: join(out, `sheet-${scenario}.png`),
+      fullPage: true,
+    })
   }
-  await page.screenshot({
-    path: join(out, 'state-6-no-lives.png'),
-    fullPage: true,
-  })
-  await page.close()
+  await sheet.close()
 } finally {
   await browser.close()
 }
