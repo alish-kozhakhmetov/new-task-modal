@@ -1,0 +1,10 @@
+{
+  "3_5_4_19": "answerCell.multi.inline.n2.plain draws one field of the two the text has («173 дня = □ месяцев □ дня»): the check is never sent (solver 26.11, 3 of 3 samples)",
+  "3_7_7_9": "test.plain: the figure (type 120, a table of pictures) is not drawn, «Unsupported figure type 120» on screen — FIG stream",
+  "3_7_7_11": "test.plain: the figure (type 120, a table of pictures) is not drawn, «Unsupported figure type 120» on screen — FIG stream",
+  "3_10_5_8": "test.plain: the figure (type 120, a table of pictures) is not drawn, «Unsupported figure type 120» on screen — FIG stream",
+  "3_10_5_9": "test.plain: the figure (type 120, a table of pictures) is not drawn, «Unsupported figure type 120» on screen — FIG stream",
+  "3_10_6_7": "test.plain: the figure (type 120, a table of pictures) is not drawn, «Unsupported figure type 120» on screen — FIG stream",
+  "3_10_6_8": "test.plain: the figure (type 120, a table of pictures) is not drawn, «Unsupported figure type 120» on screen — FIG stream",
+  "3_11_6": "complex.plain: the table of pictures is 2696 px wide in a 612 px column (pictures 730–980 px), the answer field is off screen to the right"
+}
