@@ -497,15 +497,30 @@ const tally = new Map()
 try {
   await Promise.all(
     Array.from({ length: Math.min(WORKERS, jobs.length) }, async () => {
-      const ctx = await browser.newContext({ viewport: { width: VW, height: VH }, locale: 'ru-RU' })
-      const page = await ctx.newPage()
+      const open = async () => {
+        const c = await browser.newContext({ viewport: { width: VW, height: VH }, locale: 'ru-RU' })
+        return { ctx: c, page: await c.newPage() }
+      }
+      let { ctx, page } = await open()
       while (next < jobs.length) {
         const job = jobs[next++]
         let res
+        // a page that stops answering (27.11: the grade-4 pass stood still at
+        // 150 of 1279, browser and node idle) costs one example, not the run
+        let timer
+        const stall = new Promise((_, reject) => {
+          timer = setTimeout(() => reject(new Error('timeout: no answer from the page in 90 s')), 90_000)
+        })
         try {
-          res = await verifyOne(page, job)
+          res = await Promise.race([verifyOne(page, job), stall])
         } catch (e) {
           res = { layout: job.layout.id, id: job.entry.id, verdict: 'verifier error', issues: [String(e.message ?? e).slice(0, 200)] }
+          if (/^timeout/.test(String(e.message))) {
+            await ctx.close().catch(() => {})
+            ;({ ctx, page } = await open())
+          }
+        } finally {
+          clearTimeout(timer)
         }
         results.push(res)
         tally.set(res.verdict, (tally.get(res.verdict) ?? 0) + 1)

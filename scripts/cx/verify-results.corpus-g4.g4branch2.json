@@ -1,0 +1,575 @@
+{
+ "at": "2026-11-26T22:23:32.887Z",
+ "viewport": "390x844",
+ "layout": "phone",
+ "route": "chapters",
+ "tally": {
+  "rendered": 28
+ },
+ "results": [
+  {
+   "layout": "(chapter map)",
+   "id": "Task_4_4_27-1",
+   "generator": "Task_4_4_27",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "table.plain",
+   "resolved": null,
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     146,
+     266
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/(chapter map)__Task_4_4_27-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "(chapter map)",
+   "id": "Task_4_4_29-1",
+   "generator": "Task_4_4_29",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "table.plain",
+   "resolved": null,
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     146,
+     266
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/(chapter map)__Task_4_4_29-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "(chapter map)",
+   "id": "Task_4_7_3_10-1",
+   "generator": "Task_4_7_3_10",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "comparison.plain",
+   "resolved": null,
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     107,
+     155
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/(chapter map)__Task_4_7_3_10-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "answerCell.plain",
+   "id": "Task_4_12_19_5-1",
+   "generator": "Task_4_12_19_5",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "answerCell.plain.center",
+   "resolved": "answerCell.plain",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     148,
+     374
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/answerCell.plain__Task_4_12_19_5-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "answerCell.plain",
+   "id": "Task_4_12_19_6-1",
+   "generator": "Task_4_12_19_6",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "answerCell.plain.center",
+   "resolved": "answerCell.plain",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     127,
+     374
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/answerCell.plain__Task_4_12_19_6-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "answerCell.plain",
+   "id": "Task_4_12_19_7-1",
+   "generator": "Task_4_12_19_7",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "answerCell.plain.center",
+   "resolved": "answerCell.plain",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     148,
+     374
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/answerCell.plain__Task_4_12_19_7-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "answerCell.plain",
+   "id": "Task_4_6_10_15-1",
+   "generator": "Task_4_6_10_15",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "answerCell.plain",
+   "resolved": "answerCell.plain",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     158,
+     357
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/answerCell.plain__Task_4_6_10_15-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "answerCell.plain",
+   "id": "Task_4_6_10_17-1",
+   "generator": "Task_4_6_10_17",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "answerCell.plain",
+   "resolved": "answerCell.plain",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     226,
+     357
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/answerCell.plain__Task_4_6_10_17-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "answerCell.plain",
+   "id": "Task_4_6_9_14-1",
+   "generator": "Task_4_6_9_14",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "answerCell.plain",
+   "resolved": "answerCell.plain",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     162,
+     356
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/answerCell.plain__Task_4_6_9_14-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "answerCell.plain",
+   "id": "Task_4_6_9_16-1",
+   "generator": "Task_4_6_9_16",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "answerCell.plain",
+   "resolved": "answerCell.plain",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     292,
+     374
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/answerCell.plain__Task_4_6_9_16-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "answerCell.plain",
+   "id": "Task_4_7_1_17-1",
+   "generator": "Task_4_7_1_17",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "answerCell.plain",
+   "resolved": "answerCell.plain",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     72,
+     356
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/answerCell.plain__Task_4_7_1_17-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "complex.after",
+   "id": "Task_4_11_10_1-1",
+   "generator": "Task_4_11_10_1",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "complex.after",
+   "resolved": "complex.after",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     16,
+     166
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/complex.after__Task_4_11_10_1-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "complex.after",
+   "id": "Task_4_11_10_2-1",
+   "generator": "Task_4_11_10_2",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "complex.after",
+   "resolved": "complex.after",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     16,
+     166
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/complex.after__Task_4_11_10_2-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "complex.after",
+   "id": "Task_4_11_10_3-1",
+   "generator": "Task_4_11_10_3",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "complex.after",
+   "resolved": "complex.after",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     16,
+     166
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/complex.after__Task_4_11_10_3-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "complex.multi.stack.n2.beforeAfter",
+   "id": "Task_4_7_18_6-1",
+   "generator": "Task_4_7_18_6",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "complex.multi.stack.n2.beforeAfter",
+   "resolved": "complex.multi.stack.n2.beforeAfter",
+   "inputs": 2,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     50,
+     200
+    ],
+    [
+     50,
+     200
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/complex.multi.stack.n2.beforeAfter__Task_4_7_18_6-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "text.after",
+   "id": "Task_4_10_10_3-1",
+   "generator": "Task_4_10_10_3",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "text.after",
+   "resolved": "text.after",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     16,
+     136
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/text.after__Task_4_10_10_3-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "text.after",
+   "id": "Task_4_10_10_4-1",
+   "generator": "Task_4_10_10_4",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "text.after",
+   "resolved": "text.after",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     16,
+     136
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/text.after__Task_4_10_10_4-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "text.after",
+   "id": "Task_4_10_10_5-1",
+   "generator": "Task_4_10_10_5",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "text.after",
+   "resolved": "text.after",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     16,
+     136
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/text.after__Task_4_10_10_5-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "text.after",
+   "id": "Task_4_6_7_7-1",
+   "generator": "Task_4_6_7_7",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "text.after",
+   "resolved": "text.after",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     16,
+     136
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/text.after__Task_4_6_7_7-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "text.after",
+   "id": "Task_4_6_7_9-1",
+   "generator": "Task_4_6_7_9",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "text.after",
+   "resolved": "text.after",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     16,
+     136
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/text.after__Task_4_6_7_9-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "text.before",
+   "id": "Task_4_12_7_6-1",
+   "generator": "Task_4_12_7_6",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "text.before",
+   "resolved": "text.before",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     50,
+     170
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/text.before__Task_4_12_7_6-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "text.before",
+   "id": "Task_4_12_7_7-1",
+   "generator": "Task_4_12_7_7",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "text.before",
+   "resolved": "text.before",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     49,
+     169
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/text.before__Task_4_12_7_7-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "text.plain",
+   "id": "Task_4_3_11_10-1",
+   "generator": "Task_4_3_11_10",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "text.plain",
+   "resolved": "text.plain",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     16,
+     374
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/text.plain__Task_4_3_11_10-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "text.plain",
+   "id": "Task_4_3_11_8-1",
+   "generator": "Task_4_3_11_8",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "text.plain",
+   "resolved": "text.plain",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     16,
+     374
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/text.plain__Task_4_3_11_8-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "text.plain",
+   "id": "Task_4_3_11_9-1",
+   "generator": "Task_4_3_11_9",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "text.plain",
+   "resolved": "text.plain",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     16,
+     374
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/text.plain__Task_4_3_11_9-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "text.plain",
+   "id": "Task_4_3_2_4-1",
+   "generator": "Task_4_3_2_4",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "text.plain",
+   "resolved": "text.plain",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     16,
+     374
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/text.plain__Task_4_3_2_4-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "text.plain",
+   "id": "Task_4_3_2_5-1",
+   "generator": "Task_4_3_2_5",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "text.plain",
+   "resolved": "text.plain",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     16,
+     374
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/text.plain__Task_4_3_2_5-1.png",
+   "verdict": "rendered"
+  },
+  {
+   "layout": "text.plain",
+   "id": "Task_4_7_12_12-1",
+   "generator": "Task_4_7_12_12",
+   "grade": 4,
+   "issues": [],
+   "existingLayout": true,
+   "templateId": "text.plain",
+   "resolved": "text.plain",
+   "inputs": 1,
+   "innerWidth": 390,
+   "fieldBoxes": [
+    [
+     16,
+     374
+    ]
+   ],
+   "shot": "scripts/cx/shots/g4branch2/text.plain__Task_4_7_12_12-1.png",
+   "verdict": "rendered"
+  }
+ ]
+}
