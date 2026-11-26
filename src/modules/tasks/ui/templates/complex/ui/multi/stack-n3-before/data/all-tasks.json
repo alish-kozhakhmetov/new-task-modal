@@ -1,0 +1,3137 @@
+{
+  "defaultGrade": 2,
+  "grades": [
+    2,
+    3,
+    4,
+    5,
+    7,
+    13
+  ],
+  "byGrade": {
+    "2": [
+      {
+        "id": "2_13_5_5",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "Yaylovda jami nechta sigir bor?",
+                "rus": "Сколько всего коров на пастбище?",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "Жайлауда барлығы неше сиыр бар?",
+                "eng": "",
+                "aze": "Cəmi neçə inək var?",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              },
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "Nechta sigirning shoxi yo‘q?",
+                "rus": "Сколько коров без рогов?",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "Неше сиырдың мүйізі жоқ?",
+                "eng": "",
+                "aze": "Neçə buynuzsuz inək var?",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              },
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "Nechta sigirning shoxi bor?",
+                "rus": "Сколько коров с рогами?",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "Неше сиырдың мүйізі бар?",
+                "eng": "",
+                "aze": "Neçə buynuzlu inək var?",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              },
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number2": 70,
+            "number1": 30
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "Hasan yaylovdagi shoxi bor va shoxi yo‘q sigirlarni sanab, ularning diagrammasini yasadi.",
+                  "rus": "Арнольд пересчитал коров с рогами и без рогов на пастбище и составил их диаграмму.",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Асан жайлаудағы мүйізі бар және мүйізі жоқ сиырларды санап, олардың диаграммасын жасады.\r\n",
+                  "eng": "",
+                  "aze": "Dairəvi diaqramda «cüdo» dərnəyində iştirak edən oğlan və qızların sayı göstərilib.",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              },
+              {
+                "with_number": "",
+                "type": 160,
+                "size": 50,
+                "repeat_quantity": 1,
+                "manually_set_size": false,
+                "is_wrap_content": false,
+                "is_vertical": false,
+                "countable": false,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +822 chars</text></svg>",
+                  "rus": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +820 chars</text></svg>",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +823 chars</text></svg>",
+                  "eng": "",
+                  "aze": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +820 chars</text></svg>",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                },
+                "background_image": null
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_2_13_5_5",
+          "position": 0,
+          "id": "cx-2_13_5_5-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "70;;30;;100",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            70,
+            30,
+            100
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "70;;30;;100"
+        ],
+        "truncated": true,
+        "layoutByPayload": "complex.multi.stack.n3.before",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-2"
+      },
+      {
+        "id": "2_2_25_6",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(Uchinchi\\)",
+                "rus": "\\(Третий\\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(Үчүнү\\)",
+                "kaz": "\\(Үшіншісі\\)",
+                "eng": "\\(third\\)",
+                "aze": "\\(Üçüncü\\)",
+                "arsa": "",
+                "arjd": "",
+                "areg": "الثالث"
+              },
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(Ikkinchi\\)",
+                "rus": "\\(Второй\\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(Экинчи\\)",
+                "kaz": "\\(Екіншісі\\)",
+                "eng": "\\(second\\)",
+                "aze": "\\(İkinci\\)",
+                "arsa": "",
+                "arjd": "",
+                "areg": "الثاني"
+              },
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(Birinchi\\)",
+                "rus": "\\(Первый\\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(Биринчи\\)",
+                "kaz": "\\(Біріншісі\\)",
+                "eng": "\\(first\\)",
+                "aze": "\\(Birinci\\)",
+                "arsa": "",
+                "arjd": "",
+                "areg": "الأول"
+              },
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number": 87
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "Son kesmasidan juft sonlarni topib, belgilang.",
+                  "rus": "Найдите четные числа в данном числовом отрезке. Укажите их в пустых ячейках ниже.",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "Сан түз сызыгынан жуп сандарды табыңыз жана аларды басыңыз.",
+                  "kaz": "Сан кесіндісінен жұп сандарды тауып, белгілеңіз.",
+                  "eng": "Select the even numbers in the number line.",
+                  "aze": "Verilmiş ədəd parçasında cüt ədədləri seçin və onları aşağıdakı boş xanalara yazın.",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": "حدد الأعداد الزوجية على خط الأعداد ثم اكتبها في المربعات الفارغة."
+                }
+              },
+              {
+                "yAxisLabel": "y",
+                "xAxisLabel": "x",
+                "type": 110,
+                "tickStepYMultiply": 1,
+                "tickStepXMultiply": 1,
+                "tickStep": 1,
+                "stepSize": 30,
+                "startNumber": false,
+                "showCells": false,
+                "showAxis": false,
+                "reduceHeight": 3,
+                "points": [],
+                "notClickableDots": true,
+                "minPosition": -5,
+                "maxPosition": 5,
+                "limitedPoint": 0,
+                "isLine": false,
+                "isFullFilled": false,
+                "isFillingLimitedByAxis": false,
+                "intervals": [],
+                "fillingFunctions": [],
+                "figures": [
+                  {
+                    "type": 50,
+                    "showPointsLetter": false,
+                    "rotateDegree": 0,
+                    "points": [
+                      {
+                        "y": 3.3,
+                        "x": -4,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": 2.7,
+                        "x": -4,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      }
+                    ],
+                    "fill": "transparent",
+                    "borderColor": "red"
+                  },
+                  {
+                    "type": 50,
+                    "showPointsLetter": false,
+                    "rotateDegree": 0,
+                    "points": [
+                      {
+                        "y": 3.3,
+                        "x": -2.5,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": 2.7,
+                        "x": -2.5,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      }
+                    ],
+                    "fill": "transparent",
+                    "borderColor": "red"
+                  },
+                  {
+                    "type": 50,
+                    "showPointsLetter": false,
+                    "rotateDegree": 0,
+                    "points": [
+                      {
+                        "y": 3.3,
+                        "x": -1,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": 2.7,
+                        "x": -1,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      }
+                    ],
+                    "fill": "transparent",
+                    "borderColor": "red"
+                  },
+                  {
+                    "type": 50,
+                    "showPointsLetter": false,
+                    "rotateDegree": 0,
+                    "points": [
+                      {
+                        "y": 3.3,
+                        "x": 0.5,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": 2.7,
+                        "x": 0.5,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      }
+                    ],
+                    "fill": "transparent",
+                    "borderColor": "red"
+                  },
+                  {
+                    "type": 50,
+                    "showPointsLetter": false,
+                    "rotateDegree": 0,
+                    "points": [
+                      {
+                        "y": 3.3,
+                        "x": 2,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": 2.7,
+                        "x": 2,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      }
+                    ],
+                    "fill": "transparent",
+                    "borderColor": "red"
+                  },
+                  {
+                    "type": 50,
+                    "showPointsLetter": false,
+                    "rotateDegree": 0,
+                    "points": [
+                      {
+                        "y": 3.3,
+                        "x": 3.5,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": 2.7,
+                        "x": 3.5,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      }
+                    ],
+                    "fill": "transparent",
+                    "borderColor": "red"
+                  },
+                  {
+                    "y": 2.3,
+                    "x": -4,
+                    "type": 100,
+                    "textAnchor": null,
+                    "text": "87",
+                    "isLatex": false,
+                    "fontWeight": null,
+                    "fontSize": 16,
+                    "dominantBaseline": null,
+                    "degree": 0
+                  },
+                  {
+                    "y": 2.3,
+                    "x": -2.5,
+                    "type": 100,
+                    "textAnchor": null,
+                    "text": "88",
+                    "isLatex": false,
+                    "fontWeight": null,
+                    "fontSize": 16,
+                    "dominantBaseline": null,
+                    "degree": 0
+                  },
+                  {
+                    "y": 2.3,
+                    "x": -1,
+                    "type": 100,
+                    "textAnchor": null,
+                    "text": "89",
+                    "isLatex": false,
+                    "fontWeight": null,
+                    "fontSize": 16,
+                    "dominantBaseline": null,
+                    "degree": 0
+                  },
+                  {
+                    "y": 2.3,
+                    "x": 0.5,
+                    "type": 100,
+                    "textAnchor": null,
+                    "text": "90",
+                    "isLatex": false,
+                    "fontWeight": null,
+                    "fontSize": 16,
+                    "dominantBaseline": null,
+                    "degree": 0
+                  },
+                  {
+                    "y": 2.3,
+                    "x": 2,
+                    "type": 100,
+                    "textAnchor": null,
+                    "text": "91",
+                    "isLatex": false,
+                    "fontWeight": null,
+                    "fontSize": 16,
+                    "dominantBaseline": null,
+                    "degree": 0
+                  },
+                  {
+                    "y": 2.3,
+                    "x": 3.5,
+                    "type": 100,
+                    "textAnchor": null,
+                    "text": "92",
+                    "isLatex": false,
+                    "fontWeight": null,
+                    "fontSize": 16,
+                    "dominantBaseline": null,
+                    "degree": 0
+                  },
+                  {
+                    "type": 30,
+                    "showDotLetters": false,
+                    "point2": {
+                      "y": 3,
+                      "x": 5,
+                      "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                      "letter": ""
+                    },
+                    "point1": {
+                      "y": 3,
+                      "x": -5,
+                      "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                      "letter": ""
+                    },
+                    "lineColor": "green",
+                    "dotRadius": 2,
+                    "degree": 0,
+                    "dashed": false
+                  }
+                ],
+                "drawingFigure": 0,
+                "displayedNumbers": [],
+                "disabledPoints": [],
+                "canFill": false,
+                "canDrawMultipleFigures": false,
+                "allowedFigures": []
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_2_2_25_6",
+          "position": 0,
+          "id": "cx-2_2_25_6-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "88;;90;;92",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            88,
+            90,
+            92
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "88;;90;;92"
+        ],
+        "truncated": false,
+        "layoutByPayload": "complex.multi.stack.n3.before",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-2"
+      }
+    ],
+    "3": [
+      {
+        "id": "3_3_6_11",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(k - h = \\)",
+                "rus": "\\(k - h = \\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(k - h = \\)",
+                "kaz": "\\(k - h = \\)",
+                "eng": "\\(k - h = \\)",
+                "aze": "\\(k - h = \\)",
+                "arsa": "\\(k - h = \\)",
+                "arjd": "\\(k - h = \\)",
+                "areg": "\\(k - h = \\)"
+              },
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(k - e = \\)",
+                "rus": "\\(k - e = \\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(k - e = \\)",
+                "kaz": "\\(k - e = \\)",
+                "eng": "\\(k - e = \\)",
+                "aze": "\\(k - e = \\)",
+                "arsa": "\\(k - e = \\)",
+                "arjd": "\\(k - e = \\)",
+                "areg": "\\(k - e = \\)"
+              },
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(e + h = \\)",
+                "rus": "\\(e + h = \\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(e + h = \\)",
+                "kaz": "\\(e + h = \\)",
+                "eng": "\\(e + h = \\)",
+                "aze": "\\(e + h = \\)",
+                "arsa": "\\(e + h = \\)",
+                "arjd": "\\(e + h = \\)",
+                "areg": "\\(e + h = \\)"
+              },
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "letters": [
+              "k",
+              "e",
+              "h"
+            ]
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "",
+                  "rus": "",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Суретте \\(k\\) шаршыcының бөліктері көрсетілген.",
+                  "eng": "",
+                  "aze": "",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              },
+              {
+                "with_number": "",
+                "type": 160,
+                "size": 50,
+                "repeat_quantity": 1,
+                "manually_set_size": false,
+                "is_wrap_content": false,
+                "is_vertical": false,
+                "countable": false,
+                "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +911 chars</text></svg>",
+                "background_image": null
+              },
+              {
+                "type": 10,
+                "content": "\\(\\\\\\)"
+              },
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "",
+                  "rus": "",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Өрнектерді толықтырыңыз. (әріптер \\(abc\\) батырмасының ішінде)",
+                  "eng": "",
+                  "aze": "",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_3_3_6_11",
+          "position": 0,
+          "id": "cx-3_3_6_11-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "k;;h;;e",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            "k",
+            "h",
+            "e"
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "str"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "k;;h;;e"
+        ],
+        "truncated": true,
+        "layoutByPayload": "complex.multi.stack.n3.before",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-3"
+      }
+    ],
+    "4": [
+      {
+        "id": "4_13_3_3",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "C = ",
+                "rus": "C = ",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "C = ",
+                "kaz": "C = ",
+                "eng": "C = ",
+                "aze": "C = ",
+                "arsa": "C = ",
+                "arjd": "C = ",
+                "areg": "C = "
+              },
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "B = ",
+                "rus": "B = ",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "B = ",
+                "kaz": "B = ",
+                "eng": "B = ",
+                "aze": "B = ",
+                "arsa": "B = ",
+                "arjd": "B = ",
+                "areg": "B = "
+              },
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "A = ",
+                "rus": "A = ",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "A = ",
+                "kaz": "A = ",
+                "eng": "A = ",
+                "aze": "A = ",
+                "arsa": "A = ",
+                "arjd": "A = ",
+                "areg": "A = "
+              },
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "numbers": [
+              [
+                6,
+                7,
+                2
+              ],
+              [
+                1,
+                5,
+                9
+              ],
+              [
+                8,
+                3,
+                4
+              ]
+            ],
+            "list_of_numbers": [
+              [
+                "B",
+                7,
+                2
+              ],
+              [
+                1,
+                5,
+                9
+              ],
+              [
+                8,
+                "A",
+                "C"
+              ]
+            ],
+            "correct_answer_c": 4,
+            "correct_answer_b": 6,
+            "correct_answer_a": 3
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "Sehrli kvadratdagi 1 dan 9 gacha sonlarni vertikal, gorizontal va diagonal bo'yicha qo'shsa bir xil qiymatni beradi.\r\\(\\\\\\)A,B,C ning o'rniga mos keladigan sonlarni toping.\r\\(\\\\\\)",
+                  "rus": "Если числа от 1 до 9 в магическом квадрате сложить по вертикали и по горизонтали, получится одно и то же значение.\r\\(\\\\\\)Найдите значения, которые соответствуют позициям A, B, C.\r\\(\\\\\\)",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Сиқырлы шаршыдағы 1-ден 9-ға дейінгі сандарды тігінен, көлденеңінен және диагональ бойынша (қиғаштап) қосса, бірдей мәнді береді.\r\\(\\\\\\)A, B, C-ның орнына сәйкес келетін сандарды табыңыз.\r\\(\\\\\\)",
+                  "eng": "",
+                  "aze": "Sehirli qəfəsdə 1-dən 9-a qədər ədədləri həm şaquli, həm üfüqi, həm də diaqonal boyunca topladıqda eyni qiymət alınır.\r\\(\\\\\\)A, B və C-nin yerinə uyğun gələn ədədi tapın.\r\\(\\\\\\)",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              },
+              {
+                "width": "100%",
+                "type": 120,
+                "tableAlign": "center",
+                "rows": [
+                  {
+                    "width": null,
+                    "rowspan_list": [],
+                    "rowspan_at": 0,
+                    "rowspan": 1,
+                    "colspan_list": [],
+                    "colspan_at": 0,
+                    "colspan": 1,
+                    "cells": [
+                      "B",
+                      "7",
+                      "2"
+                    ],
+                    "border_bottom": null
+                  },
+                  {
+                    "width": null,
+                    "rowspan_list": [],
+                    "rowspan_at": 0,
+                    "rowspan": 1,
+                    "colspan_list": [],
+                    "colspan_at": 0,
+                    "colspan": 1,
+                    "cells": [
+                      "1",
+                      "5",
+                      "9"
+                    ],
+                    "border_bottom": null
+                  },
+                  {
+                    "width": null,
+                    "rowspan_list": [],
+                    "rowspan_at": 0,
+                    "rowspan": 1,
+                    "colspan_list": [],
+                    "colspan_at": 0,
+                    "colspan": 1,
+                    "cells": [
+                      "8",
+                      "A",
+                      "C"
+                    ],
+                    "border_bottom": null
+                  }
+                ],
+                "removePadding": false,
+                "removeBorders": false,
+                "padding": null,
+                "marginBottom": null,
+                "isAnswerCellHidden": true,
+                "columnHeaders": [],
+                "columnAlign": "center",
+                "bottomVarticalAlign": false,
+                "border": ""
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_4_13_3_3",
+          "position": 0,
+          "id": "cx-4_13_3_3-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "3;;6;;4",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            3,
+            6,
+            4
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "3;;6;;4"
+        ],
+        "truncated": false,
+        "layoutByPayload": "complex.multi.stack.n3.before",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-4"
+      }
+    ],
+    "5": [
+      {
+        "id": "5_2_10_3",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "Eng kichik bo‘luvchisi:",
+                "rus": "Наименьший делитель:",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "Ең кіші бөлгіші: ",
+                "eng": "",
+                "aze": "Ən kiçik böləni:",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              },
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "Eng katta bo‘luvchisi:",
+                "rus": "Наибольший делитель:",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "Ең үлкен бөлгіші: ",
+                "eng": "",
+                "aze": "Ən böyük böləni:",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              },
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "Eng kichik karralisi:",
+                "rus": "Наименьшее кратное:",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "Ең кіші еселігі: ",
+                "eng": "",
+                "aze": "Ən kiçik bölünəni:",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              },
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number": 39
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "39 sonining:",
+                  "rus": "Для числа 39:\r\n",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "39 санының:\r\n",
+                  "eng": "",
+                  "aze": "39 ədədi üçün:",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_5_2_10_3",
+          "position": 0,
+          "id": "cx-5_2_10_3-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "39;;39;;1",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            39,
+            39,
+            1
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "39;;39;;1"
+        ],
+        "truncated": false,
+        "layoutByPayload": "complex.multi.stack.n3.before",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-5"
+      },
+      {
+        "id": "5_3_2_6",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(z = \\)",
+                "rus": "\\(z = \\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(z = \\)",
+                "kaz": "\\(z = \\)",
+                "eng": "\\(z = \\)",
+                "aze": "\\(z = \\)",
+                "arsa": "\\(z = \\)",
+                "arjd": "\\(z = \\)",
+                "areg": "\\(z = \\)"
+              },
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(y = \\)",
+                "rus": "\\(y = \\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(y = \\)",
+                "kaz": "\\(y = \\)",
+                "eng": "\\(y = \\)",
+                "aze": "\\(y = \\)",
+                "arsa": "\\(y = \\)",
+                "arjd": "\\(y = \\)",
+                "areg": "\\(y = \\)"
+              },
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(x = \\)",
+                "rus": "\\(x = \\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(x = \\)",
+                "kaz": "\\(x = \\)",
+                "eng": "\\(x = \\)",
+                "aze": "\\(x = \\)",
+                "arsa": "\\(x = \\)",
+                "arjd": "\\(x = \\)",
+                "areg": "\\(x = \\)"
+              },
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": {
+            "with_audio_player": false,
+            "uzb": "Noma'lumni toping.",
+            "rus": "Найдите неизвестное.",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Белгисиз нерсени табыңыз.",
+            "kaz": "Белгісізді табыңыз.",
+            "eng": "",
+            "aze": "Məchulu tapın.",
+            "arsa": "",
+            "arjd": "",
+            "areg": ""
+          },
+          "fields": {
+            "number5": 9,
+            "number4": 8,
+            "number3": 4,
+            "number2": 13,
+            "number1": 5
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": "\\(\\frac{5}{13}=\\frac{20}{x}=\\frac{y}{104}=\\frac{z}{117}\\)"
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_5_3_2_6",
+          "position": 0,
+          "id": "cx-5_3_2_6-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "52;;40;;45",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            52,
+            40,
+            45
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "52;;40;;45"
+        ],
+        "truncated": false,
+        "layoutByPayload": "complex.multi.stack.n3.before",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-5"
+      },
+      {
+        "id": "5_5_4_10",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "Yulduzcha =",
+                "rus": "Звёздочка =",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "Жұлдызша = ",
+                "eng": "",
+                "aze": "Ulduz =",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              },
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "Uchburchak =",
+                "rus": "Треугольник =",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "Үшбұрыш = ",
+                "eng": "",
+                "aze": "Üçbucaq =",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              },
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "Doira =",
+                "rus": "Круг =",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "Дөңгелек = ",
+                "eng": "",
+                "aze": "Dairə =",
+                "arsa": "",
+                "arjd": "",
+                "areg": ""
+              },
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "g": 8,
+            "f": 3,
+            "e": 2,
+            "d": 5,
+            "c": 1,
+            "b": 4,
+            "a": 9
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "Quyidagi maʼlumotlardan foydalanib, Eyler-Venn diagrammasini toʻldiring:",
+                  "rus": "Используя следующую информацию, заполните диаграмму Эйлера–Венна.",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Келесі ақпараттарды қолданып, Эйлер-Венн диаграммасындағы элементтер санын толықтырыңыз:",
+                  "eng": "",
+                  "aze": "Aşağıdakı məlumatdan istifadə edərək Eyler–Venn diaqramını doldurun.",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              },
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "\\(n(A) = 22,\r\\)\\(\\\\\\)\\(n(B) = 20,\r\\)\\(\\\\\\)\\(n(C) = 15,\r\\)\\(\\\\\\)\\(n(A∩B) = 13,\r\\)\\(\\\\\\)\\(n(B∩C) = 11,\r\\)\\(\\\\\\)\\(n(A∩C) = 10,\r\\)\\(\\\\\\)\\(n(A∩B∩C) = 9.\\)",
+                  "rus": "\\(n(A) = 22,\r\\)\\(\\\\\\)\\(n(B) = 20,\r\\)\\(\\\\\\)\\(n(C) = 15,\r\\)\\(\\\\\\)\\(n(A∩B) = 13,\r\\)\\(\\\\\\)\\(n(B∩C) = 11,\r\\)\\(\\\\\\)\\(n(A∩C) = 10,\r\\)\\(\\\\\\)\\(n(A∩B∩C) = 9.\\)",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "\\(n(A) = 22,\r\\)\\(\\\\\\)\\(n(B) = 20,\r\\)\\(\\\\\\)\\(n(C) = 15,\r\\)\\(\\\\\\)\\(n(A∩B) = 13,\r\\)\\(\\\\\\)\\(n(B∩C) = 11,\r\\)\\(\\\\\\)\\(n(A∩C) = 10,\r\\)\\(\\\\\\)\\(n(A∩B∩C) = 9.\\)",
+                  "kaz": "\\(n(A) = 22,\r\\)\\(\\\\\\)\\(n(B) = 20,\r\\)\\(\\\\\\)\\(n(C) = 15,\r\\)\\(\\\\\\)\\(n(A∩B) = 13,\r\\)\\(\\\\\\)\\(n(B∩C) = 11,\r\\)\\(\\\\\\)\\(n(A∩C) = 10,\r\\)\\(\\\\\\)\\(n(A∩B∩C) = 9.\\)",
+                  "eng": "\\(n(A) = 22,\r\\)\\(\\\\\\)\\(n(B) = 20,\r\\)\\(\\\\\\)\\(n(C) = 15,\r\\)\\(\\\\\\)\\(n(A∩B) = 13,\r\\)\\(\\\\\\)\\(n(B∩C) = 11,\r\\)\\(\\\\\\)\\(n(A∩C) = 10,\r\\)\\(\\\\\\)\\(n(A∩B∩C) = 9.\\)",
+                  "aze": "\\(n(A) = 22,\r\\)\\(\\\\\\)\\(n(B) = 20,\r\\)\\(\\\\\\)\\(n(C) = 15,\r\\)\\(\\\\\\)\\(n(A∩B) = 13,\r\\)\\(\\\\\\)\\(n(B∩C) = 11,\r\\)\\(\\\\\\)\\(n(A∩C) = 10,\r\\)\\(\\\\\\)\\(n(A∩B∩C) = 9.\\)",
+                  "arsa": "\\(n(A) = 22,\r\\)\\(\\\\\\)\\(n(B) = 20,\r\\)\\(\\\\\\)\\(n(C) = 15,\r\\)\\(\\\\\\)\\(n(A∩B) = 13,\r\\)\\(\\\\\\)\\(n(B∩C) = 11,\r\\)\\(\\\\\\)\\(n(A∩C) = 10,\r\\)\\(\\\\\\)\\(n(A∩B∩C) = 9.\\)",
+                  "arjd": "\\(n(A) = 22,\r\\)\\(\\\\\\)\\(n(B) = 20,\r\\)\\(\\\\\\)\\(n(C) = 15,\r\\)\\(\\\\\\)\\(n(A∩B) = 13,\r\\)\\(\\\\\\)\\(n(B∩C) = 11,\r\\)\\(\\\\\\)\\(n(A∩C) = 10,\r\\)\\(\\\\\\)\\(n(A∩B∩C) = 9.\\)",
+                  "areg": "\\(n(A) = 22,\r\\)\\(\\\\\\)\\(n(B) = 20,\r\\)\\(\\\\\\)\\(n(C) = 15,\r\\)\\(\\\\\\)\\(n(A∩B) = 13,\r\\)\\(\\\\\\)\\(n(B∩C) = 11,\r\\)\\(\\\\\\)\\(n(A∩C) = 10,\r\\)\\(\\\\\\)\\(n(A∩B∩C) = 9.\\)"
+                },
+                "center": false
+              },
+              {
+                "with_number": "",
+                "type": 160,
+                "size": 50,
+                "repeat_quantity": 1,
+                "manually_set_size": false,
+                "is_wrap_content": false,
+                "is_vertical": false,
+                "countable": false,
+                "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"240\" height=\"72\" viewBox=\"0 0 240 72\" data-cx-placeholder=\"truncated\"><rect x=\"1\" y=\"1\" width=\"238\" height=\"70\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#9ca3af\" stroke-dasharray=\"6 4\"/><text x=\"120\" y=\"32\" text-anchor=\"middle\" font-size=\"13\" fill=\"#6b7280\">рисунок урезан выгрузкой</text><text x=\"120\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9ca3af\">fixture: +1989 chars</text></svg>",
+                "background_image": null
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_5_5_4_10",
+          "position": 0,
+          "id": "cx-5_5_4_10-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "8;;2;;3",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            8,
+            2,
+            3
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "8;;2;;3"
+        ],
+        "truncated": true,
+        "layoutByPayload": "complex.multi.stack.n3.before",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-5"
+      },
+      {
+        "id": "5_8_2_2",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "Diametri:",
+                "rus": "Диаметр:",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "Диаметр:",
+                "eng": "Diameter:",
+                "aze": "Diametr:",
+                "arsa": "قطر:",
+                "arjd": "قطر:",
+                "areg": "قطر:"
+              },
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "Radiusi:",
+                "rus": "Радиус(ы):",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "Радиус(тар):",
+                "eng": "Radius(es):",
+                "aze": "Radius(lar):",
+                "arsa": "نصف القطر:",
+                "arjd": "نصف القطر:",
+                "areg": "نصف القطر:"
+              },
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "Markazi:",
+                "rus": "Центр:",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "",
+                "kaz": "Центр:",
+                "eng": "Center:",
+                "aze": "Mərkəz:",
+                "arsa": "مركز:",
+                "arjd": "مركز:",
+                "areg": "مركز:"
+              },
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "letter3": "D",
+            "letter2": "B",
+            "letter1": "A"
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "Aylananing har bir elementini aniqlang:",
+                  "rus": "Определите каждую часть окружности:",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "Айлананын ар бир бөлүгүн аныктаңыз:",
+                  "kaz": "Шеңбердің әр бөліктерін анықтаңыз:",
+                  "eng": "Define each part of the circle:",
+                  "aze": "Çevrənin hər bir hissəsini müəyyən edin:",
+                  "arsa": "اكتب رمز كل من مركز الدائرة ونصف قطرها وقطرها.",
+                  "arjd": "اختر كل جزء من أجزاء الدائرة:",
+                  "areg": "حدّد مركز الدائرة ونصف قطرها وقطرها."
+                }
+              },
+              {
+                "yAxisLabel": "y",
+                "xAxisLabel": "x",
+                "type": 110,
+                "tickStepYMultiply": 1,
+                "tickStepXMultiply": 1,
+                "tickStep": 1,
+                "stepSize": 30,
+                "startNumber": false,
+                "showCells": false,
+                "showAxis": false,
+                "reduceHeight": 1,
+                "points": [],
+                "notClickableDots": true,
+                "minPosition": -3,
+                "maxPosition": 3,
+                "limitedPoint": 0,
+                "isLine": false,
+                "isFullFilled": false,
+                "isFillingLimitedByAxis": false,
+                "intervals": [],
+                "fillingFunctions": [],
+                "figures": [
+                  {
+                    "type": 60,
+                    "strokeColor": "black",
+                    "radius": 3,
+                    "innerColor": "transparent",
+                    "dashed": false,
+                    "centerPoint": {
+                      "y": 0,
+                      "x": 0,
+                      "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                      "letter": ""
+                    }
+                  },
+                  {
+                    "type": 30,
+                    "showDotLetters": true,
+                    "point2": {
+                      "y": 0,
+                      "x": 3,
+                      "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                      "letter": "D"
+                    },
+                    "point1": {
+                      "y": 0,
+                      "x": -3,
+                      "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                      "letter": "B"
+                    },
+                    "lineColor": "black",
+                    "dotRadius": 4,
+                    "degree": 0,
+                    "dashed": false
+                  },
+                  {
+                    "type": 10,
+                    "showOnlyLetter": true,
+                    "showDashes": false,
+                    "showCoordinate": false,
+                    "radius": 4,
+                    "point": {
+                      "y": 0,
+                      "x": 0,
+                      "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                      "letter": "A"
+                    },
+                    "color": "green",
+                    "borderColor": null
+                  }
+                ],
+                "drawingFigure": 0,
+                "displayedNumbers": [],
+                "disabledPoints": [],
+                "canFill": false,
+                "canDrawMultipleFigures": false,
+                "allowedFigures": []
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_5_8_2_2",
+          "position": 0,
+          "id": "cx-5_8_2_2-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "A;;AB, AD;;DB",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            "A",
+            {
+              "answers": [
+                "AB, AD",
+                "AD, AB",
+                "AB, DA",
+                "DA, AB",
+                "BA, AD",
+                "AD, BA",
+                "BA, DA",
+                "DA, BA",
+                "AB; AD",
+                "AD; AB",
+                "AB; DA",
+                "DA; AB",
+                "BA; AD",
+                "AD; BA",
+                "BA; DA",
+                "DA; BA"
+              ],
+              "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+            },
+            {
+              "answers": [
+                "DB",
+                "BD"
+              ],
+              "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+            }
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "str"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "A;;AB, AD;;DB"
+        ],
+        "truncated": false,
+        "layoutByPayload": "complex.multi.stack.n3.before",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-5"
+      },
+      {
+        "id": "5_2_11_4",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(z = \\)",
+                "rus": "\\(z = \\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(z = \\)",
+                "kaz": "\\(z = \\)",
+                "eng": "\\(z = \\)",
+                "aze": "\\(z = \\)",
+                "arsa": "\\(z = \\)",
+                "arjd": "\\(z = \\)",
+                "areg": "\\(z = \\)"
+              },
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(y = \\)",
+                "rus": "\\(y = \\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(y = \\)",
+                "kaz": "\\(y = \\)",
+                "eng": "\\(y = \\)",
+                "aze": "\\(y = \\)",
+                "arsa": "\\(y = \\)",
+                "arjd": "\\(y = \\)",
+                "areg": "\\(y = \\)"
+              },
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(x = \\)",
+                "rus": "\\(x = \\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(x = \\)",
+                "kaz": "\\(x = \\)",
+                "eng": "\\(x = \\)",
+                "aze": "\\(x = \\)",
+                "arsa": "\\(x = \\)",
+                "arjd": "\\(x = \\)",
+                "areg": "\\(x = \\)"
+              },
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number3": 3,
+            "number2": 2,
+            "number1": 7
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "Chizma yordamida sonni tub ko‘paytuvchilarning ko‘paytmasi shaklida yozing.",
+                  "rus": "С помощью схемы запишите число в виде произведения простых множителей.",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Сызбаның көмегімен санды жай көбейткіштердің көбейтіндісі түрінде жазыңыз.",
+                  "eng": "",
+                  "aze": "Sxemdən istifadə edərək ədədi sadə vuruqların hasili şəklində yazın.",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              },
+              {
+                "yAxisLabel": "y",
+                "xAxisLabel": "x",
+                "type": 110,
+                "tickStepYMultiply": 1,
+                "tickStepXMultiply": 1,
+                "tickStep": 1,
+                "stepSize": 30,
+                "startNumber": false,
+                "showCells": false,
+                "showAxis": false,
+                "reduceHeight": 1,
+                "points": [],
+                "notClickableDots": true,
+                "minPosition": -3,
+                "maxPosition": 4.1,
+                "limitedPoint": 0,
+                "isLine": false,
+                "isFullFilled": false,
+                "isFillingLimitedByAxis": false,
+                "intervals": [],
+                "fillingFunctions": [],
+                "figures": [
+                  {
+                    "type": 50,
+                    "showPointsLetter": false,
+                    "rotateDegree": 0,
+                    "points": [
+                      {
+                        "y": 3,
+                        "x": -1,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": 2,
+                        "x": -1,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": 2,
+                        "x": 1,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": 3,
+                        "x": 1,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      }
+                    ],
+                    "fill": "transparent",
+                    "borderColor": "black"
+                  },
+                  {
+                    "type": 50,
+                    "showPointsLetter": false,
+                    "rotateDegree": 0,
+                    "points": [
+                      {
+                        "y": 1,
+                        "x": -3,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": 0,
+                        "x": -3,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": 0,
+                        "x": -1,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": 1,
+                        "x": -1,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      }
+                    ],
+                    "fill": "transparent",
+                    "borderColor": "black"
+                  },
+                  {
+                    "type": 50,
+                    "showPointsLetter": false,
+                    "rotateDegree": 0,
+                    "points": [
+                      {
+                        "y": 1,
+                        "x": 1,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": 0,
+                        "x": 1,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": 0,
+                        "x": 3,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": 1,
+                        "x": 3,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      }
+                    ],
+                    "fill": "transparent",
+                    "borderColor": "black"
+                  },
+                  {
+                    "type": 50,
+                    "showPointsLetter": false,
+                    "rotateDegree": 0,
+                    "points": [
+                      {
+                        "y": 1,
+                        "x": 2,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": 2,
+                        "x": 0,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      }
+                    ],
+                    "fill": "transparent",
+                    "borderColor": "black"
+                  },
+                  {
+                    "type": 50,
+                    "showPointsLetter": false,
+                    "rotateDegree": 0,
+                    "points": [
+                      {
+                        "y": 1,
+                        "x": -2,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": 2,
+                        "x": 0,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      }
+                    ],
+                    "fill": "transparent",
+                    "borderColor": "black"
+                  },
+                  {
+                    "type": 50,
+                    "showPointsLetter": false,
+                    "rotateDegree": 0,
+                    "points": [
+                      {
+                        "y": -1,
+                        "x": -1,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": -2,
+                        "x": -1,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": -2,
+                        "x": 1,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": -1,
+                        "x": 1,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      }
+                    ],
+                    "fill": "transparent",
+                    "borderColor": "black"
+                  },
+                  {
+                    "type": 50,
+                    "showPointsLetter": false,
+                    "rotateDegree": 0,
+                    "points": [
+                      {
+                        "y": -1,
+                        "x": 3,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": -2,
+                        "x": 3,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": -2,
+                        "x": 5,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": -1,
+                        "x": 5,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      }
+                    ],
+                    "fill": "transparent",
+                    "borderColor": "black"
+                  },
+                  {
+                    "type": 50,
+                    "showPointsLetter": false,
+                    "rotateDegree": 0,
+                    "points": [
+                      {
+                        "y": 0,
+                        "x": 2,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": -1,
+                        "x": 4,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      }
+                    ],
+                    "fill": "transparent",
+                    "borderColor": "black"
+                  },
+                  {
+                    "type": 50,
+                    "showPointsLetter": false,
+                    "rotateDegree": 0,
+                    "points": [
+                      {
+                        "y": 0,
+                        "x": 2,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      },
+                      {
+                        "y": -1,
+                        "x": 0,
+                        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                        "letter": ""
+                      }
+                    ],
+                    "fill": "transparent",
+                    "borderColor": "black"
+                  },
+                  {
+                    "y": 2.5,
+                    "x": 0,
+                    "type": 100,
+                    "textAnchor": null,
+                    "text": {
+                      "with_audio_player": false,
+                      "uzb": 42,
+                      "rus": 42,
+                      "module_name": "Elixir.Helpers.Translation",
+                      "kgz": 42,
+                      "kaz": 42,
+                      "eng": 42,
+                      "aze": 42,
+                      "arsa": 42,
+                      "arjd": 42,
+                      "areg": 42
+                    },
+                    "isLatex": false,
+                    "fontWeight": null,
+                    "fontSize": 18,
+                    "dominantBaseline": null,
+                    "degree": 0
+                  },
+                  {
+                    "y": 0.5,
+                    "x": -2,
+                    "type": 100,
+                    "textAnchor": null,
+                    "text": {
+                      "with_audio_player": false,
+                      "uzb": 3,
+                      "rus": 3,
+                      "module_name": "Elixir.Helpers.Translation",
+                      "kgz": 3,
+                      "kaz": 3,
+                      "eng": 3,
+                      "aze": 3,
+                      "arsa": 3,
+                      "arjd": 3,
+                      "areg": 3
+                    },
+                    "isLatex": false,
+                    "fontWeight": null,
+                    "fontSize": 18,
+                    "dominantBaseline": null,
+                    "degree": 0
+                  },
+                  {
+                    "y": 0.8,
+                    "x": 1.8,
+                    "type": 100,
+                    "textAnchor": null,
+                    "text": "\\(x\\)",
+                    "isLatex": true,
+                    "fontWeight": null,
+                    "fontSize": 18,
+                    "dominantBaseline": null,
+                    "degree": 0
+                  },
+                  {
+                    "y": -1.2,
+                    "x": -0.2,
+                    "type": 100,
+                    "textAnchor": null,
+                    "text": "\\(y\\)",
+                    "isLatex": true,
+                    "fontWeight": null,
+                    "fontSize": 18,
+                    "dominantBaseline": null,
+                    "degree": 0
+                  },
+                  {
+                    "y": -1.2,
+                    "x": 3.8,
+                    "type": 100,
+                    "textAnchor": null,
+                    "text": "\\(z\\)",
+                    "isLatex": true,
+                    "fontWeight": null,
+                    "fontSize": 18,
+                    "dominantBaseline": null,
+                    "degree": 0
+                  }
+                ],
+                "drawingFigure": 0,
+                "displayedNumbers": [],
+                "disabledPoints": [],
+                "canFill": false,
+                "canDrawMultipleFigures": false,
+                "allowedFigures": []
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_5_2_11_4",
+          "position": 0,
+          "id": "cx-5_2_11_4-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "14;;7;;2",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": [
+          {
+            "separator": true,
+            "answers": [
+              14,
+              7,
+              2
+            ],
+            "_struct": "MultipleTaskAnswer"
+          },
+          {
+            "separator": true,
+            "answers": [
+              14,
+              2,
+              7
+            ],
+            "_struct": "MultipleTaskAnswer"
+          }
+        ],
+        "answerElixirType": "list (any-of match)",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "14;;7;;2",
+          "14;;2;;7"
+        ],
+        "truncated": false,
+        "layoutByPayload": "complex.multi.stack.n3.before",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-5"
+      }
+    ],
+    "7": [
+      {
+        "id": "7_3_6_1",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(c =\\)",
+                "rus": "\\(c =\\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(c =\\)",
+                "kaz": "\\(c =\\)",
+                "eng": "\\(c =\\)",
+                "aze": "\\(c =\\)",
+                "arsa": "\\(c =\\)",
+                "arjd": "\\(c =\\)",
+                "areg": "\\(c =\\)"
+              },
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(b =\\)",
+                "rus": "\\(b =\\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(b =\\)",
+                "kaz": "\\(b =\\)",
+                "eng": "\\(b =\\)",
+                "aze": "\\(b =\\)",
+                "arsa": "\\(b =\\)",
+                "arjd": "\\(b =\\)",
+                "areg": "\\(b =\\)"
+              },
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(a =\\)",
+                "rus": "\\(a =\\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(a =\\)",
+                "kaz": "\\(a =\\)",
+                "eng": "\\(a =\\)",
+                "aze": "\\(a =\\)",
+                "arsa": "\\(a =\\)",
+                "arjd": "\\(a =\\)",
+                "areg": "\\(a =\\)"
+              },
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number2": 2,
+            "number1": 2,
+            "coef": 2
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "\\(y = 2x^2\\) funksiya grafigi bilan mos tushadigan nuqtalarning noma'lum kordinatalarini aniqlang.\r\n",
+                  "rus": "Найдите неизвестную координату точек, соответствующих графику функции \\(y = 2x^2\\)\r\n",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "\\(y = 2x^2\\) функциясынын графигине тиешелүү чекиттердин белгисиз координаталарын табыңыз.\r\n",
+                  "kaz": "\\(y = 2x^2\\) функциясы графигіне тиісті нүктелердің белгісіз координатасын табыңыз.\r\n",
+                  "eng": "Find the unknown coordinates of the points corresponding to the graph of the function \\(y = 2x^2\\)",
+                  "aze": "\\(y = 2x^2\\) funksiyasının qrafikinə aid nöqtələrin məchul koordinatını tapın.",
+                  "arsa": "أوجد الإحداثيات المجهولة للنقاط التي تقع على منحنى الدالة\\(y = 2x^2\\).",
+                  "arjd": "جد الإحداثيات المجهولة للنقاط التي تنتمي إلى منحنى الاقتران \\(y = 2x^2\\).",
+                  "areg": "أوجد الإحداثيات المجهولة للنقاط التي تنتمي إلى منحنى الدالة \\(y = 2x^2\\)."
+                }
+              },
+              {
+                "yAxisLabel": "y",
+                "xAxisLabel": "x",
+                "type": 110,
+                "tickStepYMultiply": 1,
+                "tickStepXMultiply": 1,
+                "tickStep": 1,
+                "stepSize": 20,
+                "startNumber": false,
+                "showCells": true,
+                "showAxis": true,
+                "reduceHeight": 1,
+                "points": [],
+                "notClickableDots": true,
+                "minPosition": -10,
+                "maxPosition": 10,
+                "limitedPoint": 0,
+                "isLine": false,
+                "isFullFilled": false,
+                "isFillingLimitedByAxis": false,
+                "intervals": [],
+                "fillingFunctions": [],
+                "figures": [
+                  {
+                    "vertex": {
+                      "y": 0,
+                      "x": 0,
+                      "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                      "letter": ""
+                    },
+                    "type": 90,
+                    "point": {
+                      "y": 72,
+                      "x": 6,
+                      "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                      "letter": ""
+                    },
+                    "dashed": false
+                  },
+                  {
+                    "type": 10,
+                    "showOnlyLetter": false,
+                    "showDashes": false,
+                    "showCoordinate": false,
+                    "radius": 4,
+                    "point": {
+                      "y": 2,
+                      "x": -1,
+                      "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                      "letter": ""
+                    },
+                    "color": "green",
+                    "borderColor": null
+                  },
+                  {
+                    "type": 10,
+                    "showOnlyLetter": false,
+                    "showDashes": false,
+                    "showCoordinate": false,
+                    "radius": 4,
+                    "point": {
+                      "y": 2,
+                      "x": 1,
+                      "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                      "letter": ""
+                    },
+                    "color": "green",
+                    "borderColor": null
+                  },
+                  {
+                    "type": 10,
+                    "showOnlyLetter": false,
+                    "showDashes": false,
+                    "showCoordinate": false,
+                    "radius": 4,
+                    "point": {
+                      "y": 8,
+                      "x": 2,
+                      "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                      "letter": ""
+                    },
+                    "color": "green",
+                    "borderColor": null
+                  },
+                  {
+                    "type": 10,
+                    "showOnlyLetter": true,
+                    "showDashes": false,
+                    "showCoordinate": false,
+                    "radius": 0,
+                    "point": {
+                      "y": 1.5,
+                      "x": -1.5,
+                      "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                      "letter": "(α;2)"
+                    },
+                    "color": "green",
+                    "borderColor": null
+                  },
+                  {
+                    "type": 10,
+                    "showOnlyLetter": true,
+                    "showDashes": false,
+                    "showCoordinate": false,
+                    "radius": 0,
+                    "point": {
+                      "y": 1.5,
+                      "x": 1.5,
+                      "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                      "letter": "(c;2)"
+                    },
+                    "color": "green",
+                    "borderColor": null
+                  },
+                  {
+                    "type": 10,
+                    "showOnlyLetter": true,
+                    "showDashes": false,
+                    "showCoordinate": false,
+                    "radius": 0,
+                    "point": {
+                      "y": 7.5,
+                      "x": 2.5,
+                      "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                      "letter": "(2;b)"
+                    },
+                    "color": "green",
+                    "borderColor": null
+                  }
+                ],
+                "drawingFigure": 0,
+                "displayedNumbers": [],
+                "disabledPoints": [],
+                "canFill": false,
+                "canDrawMultipleFigures": false,
+                "allowedFigures": []
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_7_3_6_1",
+          "position": 0,
+          "id": "cx-7_3_6_1-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "-1;;8;;1",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            -1,
+            8,
+            1
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "-1;;8;;1"
+        ],
+        "truncated": false,
+        "layoutByPayload": "complex.multi.stack.n3.before",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-7"
+      }
+    ],
+    "13": [
+      {
+        "id": "13_1_5_16",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(k=2: \\sqrt[3]{z}=\\)",
+                "rus": "\\(k=2: \\sqrt[3]{z}=\\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(k=2: \\sqrt[3]{z}=\\)",
+                "kaz": "\\(k=2: \\sqrt[3]{z}=\\)",
+                "eng": "\\(k=2: \\sqrt[3]{z}=\\)",
+                "aze": "\\(k=2: \\sqrt[3]{z}=\\)",
+                "arsa": "\\(k=2: \\sqrt[3]{z}=\\)",
+                "arjd": "\\(k=2: \\sqrt[3]{z}=\\)",
+                "areg": "\\(k=2: \\sqrt[3]{z}=\\)"
+              },
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(k=1: \\sqrt[3]{z}=\\)",
+                "rus": "\\(k=1: \\sqrt[3]{z}=\\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(k=1: \\sqrt[3]{z}=\\)",
+                "kaz": "\\(k=1: \\sqrt[3]{z}=\\)",
+                "eng": "\\(k=1: \\sqrt[3]{z}=\\)",
+                "aze": "\\(k=1: \\sqrt[3]{z}=\\)",
+                "arsa": "\\(k=1: \\sqrt[3]{z}=\\)",
+                "arjd": "\\(k=1: \\sqrt[3]{z}=\\)",
+                "areg": "\\(k=1: \\sqrt[3]{z}=\\)"
+              },
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(k=0: \\sqrt[3]{z}=\\)",
+                "rus": "\\(k=0: \\sqrt[3]{z}=\\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(k=0: \\sqrt[3]{z}=\\)",
+                "kaz": "\\(k=0: \\sqrt[3]{z}=\\)",
+                "eng": "\\(k=0: \\sqrt[3]{z}=\\)",
+                "aze": "\\(k=0: \\sqrt[3]{z}=\\)",
+                "arsa": "\\(k=0: \\sqrt[3]{z}=\\)",
+                "arjd": "\\(k=0: \\sqrt[3]{z}=\\)",
+                "areg": "\\(k=0: \\sqrt[3]{z}=\\)"
+              },
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "radius": "\\sqrt{8}",
+            "number2": -2,
+            "number1": 2
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": "\\(z=2-2i\\)",
+                "center": true
+              },
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "",
+                  "rus": "",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Муавр формуласын қолданып берілген комплекс санды үшінші дәрежелі түбір астынан шығарғандағы барлық мәндерді есептеңіз\r\n          (жауабыңызды көрсеткіштік формада жазыңыз).",
+                  "eng": "",
+                  "aze": "",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_13_1_5_16",
+          "position": 0,
+          "id": "cx-13_1_5_16-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "\\sqrt[3]{2\\sqrt{2}}(\\cos{ \\frac{7\\pi }{12} }+i\\sin{ \\frac{7\\pi }{12} });;\\sqrt[3]{2\\sqrt{2}}(\\cos{ \\frac{15\\pi }{12} }+i\\sin{ \\frac{15\\pi }{12} });;\\sqrt[3]{2\\sqrt{2}}(\\cos{ \\frac{23\\pi }{12} }+i\\sin{ \\frac{23\\pi }{12} })",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            {
+              "answers": [
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos{ \\frac{7\\pi }{12} }+i\\sin{ \\frac{7\\pi }{12} })",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos\\frac{7\\pi }{12}+i\\sin\\frac{7\\pi }{12})",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos\\frac{\\pi }{4}-i\\sin\\frac{\\pi }{4})",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos(\\frac{\\pi }{4})-i\\sin(\\frac{\\pi }{4}))",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos(\\frac{7\\pi }{12})+\\sin(\\frac{7\\pi }{12})i)",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos(\\frac{7\\pi }{12})+i\\sin(\\frac{7\\pi }{12}))",
+                "\\sqrt[3]{\\sqrt{8}}(\\cos{ \\frac{7\\pi }{12} }+i\\sin{ \\frac{7\\pi }{12} })",
+                "\\sqrt[3]{\\sqrt{8}}(\\cos\\frac{7\\pi }{12}+i\\sin\\frac{7\\pi }{12})",
+                "\\sqrt[3]{\\sqrt{8}}(\\cos\\frac{\\pi }{4}-i\\sin\\frac{\\pi }{4})",
+                "\\sqrt[3]{\\sqrt{8}}(\\cos(\\frac{\\pi }{4})-i\\sin(\\frac{\\pi }{4}))",
+                "\\sqrt[3]{\\sqrt{8}}(\\cos(\\frac{7\\pi }{12})+\\sin(\\frac{7\\pi }{12})i)",
+                "\\sqrt[3]{\\sqrt{8}}(\\cos(\\frac{7\\pi }{12})+i\\sin(\\frac{7\\pi }{12}))",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos{ (-\\frac{\\pi }{12}) }+i\\sin{ (-\\frac{\\pi }{12}) })",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos-\\frac{\\pi }{12}+i\\sin-\\frac{\\pi }{12})",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos\\frac{\\pi }{4}-i\\sin\\frac{\\pi }{4})",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos(\\frac{\\pi }{4})-i\\sin(\\frac{\\pi }{4}))",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos(-\\frac{\\pi }{12})+\\sin(-\\frac{\\pi }{12})i)",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos(-\\frac{\\pi }{12})+i\\sin(-\\frac{\\pi }{12}))",
+                "\\sqrt[3]{\\sqrt{8}}(\\cos{ (-\\frac{\\pi }{12}) }+i\\sin{ (-\\frac{\\pi }{12}) })",
+                "\\sqrt[3]{\\sqrt{8}}(\\cos-\\frac{\\pi }{12}+i\\sin-\\frac{\\pi }{12})",
+                "\\sqrt[3]{\\sqrt{8}}(\\cos\\frac{\\pi }{4}-i\\sin\\frac{\\pi }{4})",
+                "\\sqrt[3]{\\sqrt{8}}(\\cos(\\frac{\\pi }{4})-i\\sin(\\frac{\\pi }{4}))",
+                "\\sqrt[3]{\\sqrt{8}}(\\cos(-\\frac{\\pi }{12})+\\sin(-\\frac{\\pi }{12})i)",
+                "\\sqrt[3]{\\sqrt{8}}(\\cos(-\\frac{\\pi }{12})+i\\sin(-\\frac{\\pi }{12}))"
+              ],
+              "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+            },
+            {
+              "answers": [
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos{ \\frac{15\\pi }{12} }+i\\sin{ \\frac{15\\pi }{12} })",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos{ \\frac{5\\pi }{4} }+i\\sin{ \\frac{5\\pi }{4} })",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos{ \\frac{7\\pi }{12} }+i\\sin{ \\frac{7\\pi }{12} })",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos\\frac{15\\pi }{12}+i\\sin\\frac{15\\pi }{12})",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos\\frac{5\\pi }{4}+i\\sin\\frac{5\\pi }{4})",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos\\frac{7\\pi }{12}+i\\sin\\frac{7\\pi }{12})",
+                "\\sqrt[3]{\\sqrt{8}}(\\cos\\frac{15\\pi }{12}+i\\sin\\frac{15\\pi }{12})",
+                "\\sqrt[3]{\\sqrt{8}}(\\cos\\frac{5\\pi }{4}+i\\sin\\frac{5\\pi }{4})",
+                "\\sqrt[3]{\\sqrt{8}}(\\cos\\frac{7\\pi }{12}+i\\sin\\frac{7\\pi }{12})"
+              ],
+              "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+            },
+            {
+              "answers": [
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos{ \\frac{23\\pi }{12} }+i\\sin{ \\frac{23\\pi }{12} })",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos{ \\frac{15\\pi }{12} }+i\\sin{ \\frac{15\\pi }{12} })",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos{ \\frac{5\\pi }{4} }+i\\sin{ \\frac{5\\pi }{4} })",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos\\frac{23\\pi }{12}+i\\sin\\frac{23\\pi }{12})",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos\\frac{15\\pi }{12}+i\\sin\\frac{15\\pi }{12})",
+                "\\sqrt[3]{2\\sqrt{2}}(\\cos\\frac{5\\pi }{4}+i\\sin\\frac{5\\pi }{4})",
+                "\\sqrt[3]{\\sqrt{8}}(\\cos\\frac{23\\pi }{12}+i\\sin\\frac{23\\pi }{12})",
+                "\\sqrt[3]{\\sqrt{8}}(\\cos\\frac{15\\pi }{12}+i\\sin\\frac{15\\pi }{12})",
+                "\\sqrt[3]{\\sqrt{8}}(\\cos\\frac{5\\pi }{4}+i\\sin\\frac{5\\pi }{4})"
+              ],
+              "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+            }
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "str"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "\\sqrt[3]{2\\sqrt{2}}(\\cos{ \\frac{7\\pi }{12} }+i\\sin{ \\frac{7\\pi }{12} });;\\sqrt[3]{2\\sqrt{2}}(\\cos{ \\frac{15\\pi }{12} }+i\\sin{ \\frac{15\\pi }{12} });;\\sqrt[3]{2\\sqrt{2}}(\\cos{ \\frac{23\\pi }{12} }+i\\sin{ \\frac{23\\pi }{12} })"
+        ],
+        "truncated": false,
+        "layoutByPayload": "complex.multi.stack.n3.before",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-13"
+      },
+      {
+        "id": "13_2_2_3_5",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(x_3 = \\)",
+                "rus": "\\(x_3 = \\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(x_3 = \\)",
+                "kaz": "\\(x_3 = \\)",
+                "eng": "\\(x_3 = \\)",
+                "aze": "\\(x_3 = \\)",
+                "arsa": "\\(x_3 = \\)",
+                "arjd": "\\(x_3 = \\)",
+                "areg": "\\(x_3 = \\)"
+              },
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(x_2 = \\)",
+                "rus": "\\(x_2 = \\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(x_2 = \\)",
+                "kaz": "\\(x_2 = \\)",
+                "eng": "\\(x_2 = \\)",
+                "aze": "\\(x_2 = \\)",
+                "arsa": "\\(x_2 = \\)",
+                "arjd": "\\(x_2 = \\)",
+                "areg": "\\(x_2 = \\)"
+              },
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": {
+                "with_audio_player": false,
+                "uzb": "\\(x_1 = \\)",
+                "rus": "\\(x_1 = \\)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "\\(x_1 = \\)",
+                "kaz": "\\(x_1 = \\)",
+                "eng": "\\(x_1 = \\)",
+                "aze": "\\(x_1 = \\)",
+                "arsa": "\\(x_1 = \\)",
+                "arjd": "\\(x_1 = \\)",
+                "areg": "\\(x_1 = \\)"
+              },
+              "after": ""
+            },
+            "inline": false
+          },
+          "difficulty": "x1",
+          "result": "none",
+          "title": null,
+          "fields": {
+            "x": [
+              7,
+              6,
+              8
+            ],
+            "list": [
+              6,
+              4,
+              2,
+              6,
+              12,
+              5,
+              12,
+              8,
+              11
+            ],
+            "difficulty": "x1",
+            "d": [
+              82,
+              154,
+              220
+            ]
+          },
+          "description": {
+            "type": "complex",
+            "parts": [
+              {
+                "type": 10,
+                "content": "\\(\\left\\{ \\begin{array}{l}\r\n6x_1+4x_2+2x_3=82\\\\6x_1+12x_2+5x_3=154\\\\12x_1+8x_2+11x_3=220\r\n\\end{array} \\right.\r\n\\)"
+              },
+              {
+                "type": 10,
+                "content": {
+                  "with_audio_player": false,
+                  "uzb": "",
+                  "rus": "",
+                  "module_name": "Elixir.Helpers.Translation",
+                  "kgz": "",
+                  "kaz": "Берілген сызықтық теңдеулер жүйесін Гаусс әдісі арқылы шешіңіз.",
+                  "eng": "",
+                  "aze": "",
+                  "arsa": "",
+                  "arjd": "",
+                  "areg": ""
+                }
+              }
+            ],
+            "isCalculatorClosed": false,
+            "isAnswerCellHidden": false
+          },
+          "type": "Elixir.Task_13_2_2_3_5",
+          "position": 0,
+          "id": "cx-13_2_2_3_5-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "7;;6;;8",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            7,
+            6,
+            8
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "7;;6;;8"
+        ],
+        "truncated": false,
+        "layoutByPayload": "complex.multi.stack.n3.before",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-13"
+      }
+    ]
+  }
+}

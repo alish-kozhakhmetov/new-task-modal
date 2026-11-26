@@ -1,0 +1,113 @@
+{
+  "attemptsCount": null,
+  "isPrimary": true,
+  "hasVideoUrl": false,
+  "isPenalty": false,
+  "answerInput": {
+    "type": 40,
+    "input4": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": "",
+      "after": ""
+    },
+    "input3": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": "",
+      "after": ""
+    },
+    "input2": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": "",
+      "after": ""
+    },
+    "input1": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": "",
+      "after": ""
+    },
+    "inline": false
+  },
+  "difficulty": null,
+  "result": "none",
+  "title": null,
+  "fields": {
+    "number3": 50,
+    "number2": 30,
+    "number1": 2
+  },
+  "description": {
+    "withAudio": true,
+    "type": "answerCell",
+    "textBefore": {
+      "with_audio_player": false,
+      "uzb": "",
+      "rus": "",
+      "module_name": "Elixir.Helpers.Translation",
+      "kgz": "",
+      "kaz": "Бірінші қосылғыш 10 мен 2-нің қосындысы, екінші қосылғыш \\(x\\)-ке тең, қосындының мәні 50 – 30.\r\n",
+      "eng": "",
+      "aze": "Birinci toplanan 10 və 2-nin cəminə, ikinci toplanan \\(x\\)-ə bərabərdir, cəmin qiyməti 50 – 30.\r\n",
+      "arsa": "",
+      "arjd": "",
+      "areg": ""
+    },
+    "textAfter": "",
+    "tableBefore": null,
+    "isColumn": false,
+    "imageBefore": "",
+    "content": "answercell + answercell + \\(x\\) = answercell - answercell",
+    "answerCellMargin": ""
+  },
+  "type": "Elixir.Task_2_3_38_10",
+  "position": 0,
+  "id": "cx-2_3_38_10-0",
+  "hint1": null,
+  "hint2": null,
+  "videoId": null,
+  "videoUrl": null,
+  "solution": {
+    "type": "formula",
+    "answer": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "10;;2;;50;;30",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    },
+    "content": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    }
+  }
+}

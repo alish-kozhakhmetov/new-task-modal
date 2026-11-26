@@ -1,0 +1,210 @@
+{
+  "attemptsCount": null,
+  "isPrimary": true,
+  "hasVideoUrl": false,
+  "isPenalty": false,
+  "answerInput": {
+    "type": 50,
+    "input5": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "erkli o'zgaruvchi:",
+        "rus": "независимая переменная величина:",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "көз каранды эмес чоңдук:",
+        "kaz": "тәуелсіз айнымалы шама:",
+        "eng": "independent variable:",
+        "aze": "sərbəst dəyişən:",
+        "arsa": "",
+        "arjd": "",
+        "areg": "المتغير المستقل:"
+      },
+      "after": ""
+    },
+    "input4": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "erksiz o'zgaruvchi:",
+        "rus": "зависимая переменная величина:",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "көз каранды чоңдук:",
+        "kaz": "тәуелді айнымалы шама:",
+        "eng": "dependent variable:",
+        "aze": "asılı dəyişən:",
+        "arsa": "",
+        "arjd": "",
+        "areg": "المتغير التابع: "
+      },
+      "after": ""
+    },
+    "input3": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "5 soatda bosib o'tilgan masofa:",
+        "rus": "Путь, пройденный за 5 часов:",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "5 саатта басып өткөн  жол:",
+        "kaz": "5 сағатта жүрген жол:",
+        "eng": "Distance traveled in 5 hours:",
+        "aze": "5 saata qət edilən məsafə:",
+        "arsa": "",
+        "arjd": "",
+        "areg": "المسافة التي قطعها راكب الدراجة خلال 5 ساعات:"
+      },
+      "after": {
+        "with_audio_player": false,
+        "uzb": "km",
+        "rus": "км",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "",
+        "kaz": "км",
+        "eng": "km",
+        "aze": "km",
+        "arsa": "كلم",
+        "arjd": "km",
+        "areg": "كم"
+      }
+    },
+    "input2": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "3 soatda bosib o'tilgan masofa:",
+        "rus": "Путь, пройденный за 3 часа:",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "3 саатта басып өткөн  жол:",
+        "kaz": "3 сағатта жүрген жол:",
+        "eng": "Distance traveled in 3 hours:",
+        "aze": "3 saata qət edilən məsafə:",
+        "arsa": "",
+        "arjd": "",
+        "areg": "المسافة التي قطعها راكب الدراجة خلال 3 ساعات: "
+      },
+      "after": {
+        "with_audio_player": false,
+        "uzb": "km",
+        "rus": "км",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "",
+        "kaz": "км",
+        "eng": "km",
+        "aze": "km",
+        "arsa": "كلم",
+        "arjd": "km",
+        "areg": "كم"
+      }
+    },
+    "input1": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "2 soatda bosib o'tilgan masofa:",
+        "rus": "Путь, пройденный за 2 часа:",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "2 саатта басып өткөн жол:",
+        "kaz": "2 сағатта жүрген жол:",
+        "eng": "Distance traveled in 2 hours:",
+        "aze": "2 saata qət edilən məsafə:",
+        "arsa": "",
+        "arjd": "",
+        "areg": "المسافة التي قطعها راكب الدراجة خلال ساعتين: "
+      },
+      "after": {
+        "with_audio_player": false,
+        "uzb": "km",
+        "rus": "км",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "",
+        "kaz": "км",
+        "eng": "km",
+        "aze": "km",
+        "arsa": "كلم",
+        "arjd": "km",
+        "areg": "كم"
+      }
+    },
+    "inline": false
+  },
+  "difficulty": null,
+  "result": "none",
+  "title": null,
+  "fields": {
+    "number": 20
+  },
+  "description": {
+    "with_audio": true,
+    "type": "text",
+    "content": {
+      "with_audio_player": false,
+      "uzb": "Velosipedchi 20 km/soat tezlikda 2 soat, 3 soat, 5 soatda necha kilometr yo‘l bosib o‘tadi?\r\nS - yo'l, v - tezlik, t - vaqt\r\n",
+      "rus": "Сколько километров велосипедист проехал за 2 часа, за 3 часа, за 5 часов со скоростью 20 км/ч?\r\nS - путь, v - скорость, t - время\r\n",
+      "module_name": "Elixir.Helpers.Translation",
+      "kgz": "Велосипедчен 20 км/саат ылдамдыкта 2 саатта, 3 саатта, 5 саатта канча километр жол жүрдү?\r\nS - жол, v - ылдамдык, t - убакыт\r\n",
+      "kaz": "Велосипедші 20 км/сағ жылдамдықпен 2 сағатта, 3 сағатта, 5 сағатта неше километр жол жүрді?\r\nS - жол, v - жылдамдық, t - уақыт\r\n",
+      "eng": "How many kilometres did a cyclist travel in 2 hours, 3 hours, 5 hours at a speed of 20 km/h?\r\nS is the path, v is the speed, t is the time.\r\n",
+      "aze": "Velosipedçi 20 km/saat sürətlə 2 saata, 3 saata və 5 saata neçə kilometr yol getdi?\r\nS - yol, v - sürət, t - vaxt\r\n",
+      "arsa": "إذا كان راكب الدراجة يتحرك بسرعة (km/h)20، فأجب عن الأسئلة التالية. حيث S هي المسافة، وv هي السرعة، وt هي الزمن.",
+      "arjd": "إذا كان راكب الدراجة يتحرك بسرعة (km/h)20، فأجب عن الأسئلة التالية. حيث S هي المسافة، وv هي السرعة، وt هي الزمن.\r\n",
+      "areg": "إذا كان راكب الدراجة يتحرك بسرعة 20 كم/ ساعة، فأجب عن الأسئلة التالية. حيث S هي المسافة، وv هي السرعة، وt هي الزمن.\r\n"
+    }
+  },
+  "type": "Elixir.Task_6_9_1_1",
+  "position": 0,
+  "id": "cx-6_9_1_1-0",
+  "hint1": null,
+  "hint2": null,
+  "videoId": null,
+  "videoUrl": null,
+  "solution": {
+    "type": "formula",
+    "answer": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "40;;60;;100;;S;;t",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    },
+    "content": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    }
+  }
+}

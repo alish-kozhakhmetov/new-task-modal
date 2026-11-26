@@ -1,0 +1,168 @@
+{
+  "defaultGrade": 3,
+  "grades": [
+    3
+  ],
+  "byGrade": {
+    "3": [
+      {
+        "id": "3_1_6",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 30,
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": {
+                "with_audio_player": false,
+                "uzb": "birliklar",
+                "rus": "единиц|а|ы",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "бирдик",
+                "kaz": "бірлік",
+                "eng": "one(s)",
+                "aze": "təklik",
+                "arsa": "",
+                "arjd": "",
+                "areg": "آحاد"
+              }
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": {
+                "with_audio_player": false,
+                "uzb": "o'nlik",
+                "rus": "десятки",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "ондуктар",
+                "kaz": "ондық",
+                "eng": "ten(s)",
+                "aze": "onluq",
+                "arsa": "",
+                "arjd": "",
+                "areg": "عشرات"
+              }
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": {
+                "with_audio_player": false,
+                "uzb": "yuzliklar",
+                "rus": "сот(ня|ни|ен)",
+                "module_name": "Elixir.Helpers.Translation",
+                "kgz": "жүздүк",
+                "kaz": "жүздік",
+                "eng": "hundred(s)",
+                "aze": "yüzlük",
+                "arsa": "",
+                "arjd": "",
+                "areg": "مئات"
+              }
+            },
+            "inline": false
+          },
+          "difficulty": "x1",
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number": 124,
+            "difficulty": "x1"
+          },
+          "description": {
+            "with_audio": true,
+            "type": "text",
+            "content": {
+              "with_audio_player": false,
+              "uzb": "Bir yuz yigirma to'rt sonining xona tarkibini aniqlang.",
+              "rus": "Определите разрядный состав числа сто двадцать четыре.",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "Жүз жыйырма төрт санынын разряддык  курамын  аныктаңыз",
+              "kaz": "Жүз жиырма төрт санының разрядтық құрамын анықтаңыз.",
+              "eng": "Find the place value of each digit in the number one hundred and twenty-four.",
+              "aze": "Yüz iyirmi dörd ədədində mərtəbə vahidlərini müəyyən edin.\r\n",
+              "arsa": "",
+              "arjd": "",
+              "areg": "اكتب العدد «مائة وأربعة وعشرون» بصيغة الوحدات"
+            }
+          },
+          "type": "Elixir.Task_3_1_6",
+          "position": 0,
+          "id": "cx-3_1_6-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "1;;2;;4",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "separator": true,
+          "answers": [
+            1,
+            2,
+            4
+          ],
+          "_struct": "MultipleTaskAnswer"
+        },
+        "answerElixirType": "MultipleTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "1;;2;;4"
+        ],
+        "truncated": false,
+        "layoutByPayload": "text.multi.stack.n3.after",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-3"
+      }
+    ]
+  }
+}

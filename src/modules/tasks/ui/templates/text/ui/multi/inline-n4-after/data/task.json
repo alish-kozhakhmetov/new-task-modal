@@ -1,0 +1,107 @@
+{
+  "attemptsCount": null,
+  "isPrimary": true,
+  "hasVideoUrl": false,
+  "isPenalty": false,
+  "answerInput": {
+    "type": 40,
+    "input4": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": "",
+      "after": ""
+    },
+    "input3": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": "",
+      "after": ") = "
+    },
+    "input2": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": "",
+      "after": " + "
+    },
+    "input1": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": "",
+      "after": " – ("
+    },
+    "inline": true
+  },
+  "difficulty": null,
+  "result": "none",
+  "title": null,
+  "fields": {
+    "number3": 10,
+    "number2": 50,
+    "number1": 62
+  },
+  "description": {
+    "with_audio": true,
+    "type": "text",
+    "content": {
+      "with_audio_player": false,
+      "uzb": "62 – (50 + 10) ifodasidagi qo‘shiluvchilarning o‘rinlarini almashtirib, qiymatini toping.",
+      "rus": "Поменяйте местами слагаемые в выражении 62 – (50 + 10) и найдите значение.",
+      "module_name": "Elixir.Helpers.Translation",
+      "kgz": "",
+      "kaz": "62 – (50 + 10) өрнегіндегі қосылғыштардың орындарын ауыстырып, мәнін табыңыз.",
+      "eng": "",
+      "aze": "62 – (50 + 10) ifadəsində toplananların yerlərini dəyişin və qiymətini tapın.",
+      "arsa": "",
+      "arjd": "",
+      "areg": ""
+    }
+  },
+  "type": "Elixir.Task_2_6_12_6",
+  "position": 0,
+  "id": "cx-2_6_12_6-0",
+  "hint1": null,
+  "hint2": null,
+  "videoId": null,
+  "videoUrl": null,
+  "solution": {
+    "type": "formula",
+    "answer": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "62;;10;;50;;2",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    },
+    "content": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    }
+  }
+}

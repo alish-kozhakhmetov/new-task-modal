@@ -1,0 +1,162 @@
+{
+  "attemptsCount": null,
+  "isPrimary": true,
+  "hasVideoUrl": false,
+  "isPenalty": false,
+  "answerInput": {
+    "type": 40,
+    "input4": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "Tub son:",
+        "rus": "Простое число:",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "",
+        "kaz": "Жай сан:",
+        "eng": "",
+        "aze": "Sadə ədəd:",
+        "arsa": "",
+        "arjd": "",
+        "areg": ""
+      },
+      "after": ""
+    },
+    "input3": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "Murakkab son:",
+        "rus": "Составное число:",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "",
+        "kaz": "Құрама сан:",
+        "eng": "",
+        "aze": "Mürəkkəb ədəd:",
+        "arsa": "",
+        "arjd": "",
+        "areg": ""
+      },
+      "after": ""
+    },
+    "input2": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "Toq son:",
+        "rus": "Нечётное число:",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "",
+        "kaz": "Тақ сан:",
+        "eng": "",
+        "aze": "Tək ədəd:",
+        "arsa": "",
+        "arjd": "",
+        "areg": ""
+      },
+      "after": ""
+    },
+    "input1": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "Juft son:",
+        "rus": "Чётное число:",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "",
+        "kaz": "Жұп сан:",
+        "eng": "",
+        "aze": "Cüt ədəd:",
+        "arsa": "",
+        "arjd": "",
+        "areg": ""
+      },
+      "after": ""
+    },
+    "inline": false
+  },
+  "difficulty": null,
+  "result": "none",
+  "title": null,
+  "fields": {
+    "number4": 3,
+    "number3": 5,
+    "number2": 13,
+    "number1": 5
+  },
+  "description": {
+    "type": "complex",
+    "parts": [
+      {
+        "type": 10,
+        "content": {
+          "with_audio_player": false,
+          "uzb": "0, 15, 2, 13, 10, 1 sonlarining ichida (bir nechta son bo‘lsa, ularni nuqta-vergul bilan ajratib, o‘sish tartibida yozing).\r\n",
+          "rus": "Среди чисел 0, 15, 2, 13,10, 1 (если нужно указать несколько чисел, запишите их в порядке возрастания, разделяя точкой с запятой).\r\n",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "",
+          "kaz": "0, 15, 2, 13, 10, 1 сандарынның ішінде(Бірнеше сан жазу керек болса, нүктелі үтірмен бөліп өсу ретімен жазыңыз).\r\n",
+          "eng": "",
+          "aze": "0, 15, 2, 13,10, 1  ədədləri arasında (əgər bir neçə ədəd göstərmək lazımdırsa, onları artma sırası ilə yazın və nöqtəli vergüllə ayırın).",
+          "arsa": "",
+          "arjd": "",
+          "areg": ""
+        }
+      }
+    ],
+    "isCalculatorClosed": false,
+    "isAnswerCellHidden": false
+  },
+  "type": "Elixir.Task_5_2_11_1",
+  "position": 0,
+  "id": "cx-5_2_11_1-0",
+  "hint1": null,
+  "hint2": null,
+  "videoId": null,
+  "videoUrl": null,
+  "solution": {
+    "type": "formula",
+    "answer": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "0;2;10;;1;13;15;;10;15;;2;13",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    },
+    "content": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    }
+  }
+}

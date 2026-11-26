@@ -1,0 +1,176 @@
+{
+  "defaultGrade": 5,
+  "grades": [
+    5
+  ],
+  "byGrade": {
+    "5": [
+      {
+        "id": "5_2_4_2",
+        "task": {
+          "attemptsCount": null,
+          "isPrimary": true,
+          "hasVideoUrl": false,
+          "isPenalty": false,
+          "answerInput": {
+            "type": 50,
+            "input5": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input4": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input3": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input2": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "input1": {
+              "up": "",
+              "type": 10,
+              "text": " ",
+              "svg": "",
+              "down": "",
+              "before": "",
+              "after": ""
+            },
+            "inline": true
+          },
+          "difficulty": null,
+          "result": "none",
+          "title": null,
+          "fields": {
+            "number3": 6,
+            "number2": 5,
+            "number1": 3
+          },
+          "description": {
+            "withAudio": true,
+            "type": "answerCell",
+            "textBefore": {
+              "with_audio_player": false,
+              "uzb": "Bo'linishning asosiy xossalaridan foydalanib, amallarni bajaring.",
+              "rus": "Выполните операцию, используя основные свойства делимости.",
+              "module_name": "Elixir.Helpers.Translation",
+              "kgz": "",
+              "kaz": "Бөлінгіштіктің негізгі қасиеттерін пайдалана отырып, амалды орындаңыз.",
+              "eng": "",
+              "aze": "Əsas bölmə əlamətlərindən istifadə edərək əməliyyatı yerinə yetirin.",
+              "arsa": "",
+              "arjd": "",
+              "areg": ""
+            },
+            "textAfter": "",
+            "tableBefore": null,
+            "isColumn": false,
+            "imageBefore": "",
+            "content": "(15 + 18) : 3 =\r\nanswercell:3 + answercell : 3 =\r\nanswercell + answercell = answercell\r\n",
+            "answerCellMargin": ""
+          },
+          "type": "Elixir.Task_5_2_4_2",
+          "position": 0,
+          "id": "cx-5_2_4_2-0",
+          "hint1": null,
+          "hint2": null,
+          "videoId": null,
+          "videoUrl": null,
+          "solution": {
+            "type": "formula",
+            "answer": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "15;;18;;5;;6;;11",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            },
+            "content": {
+              "with_audio_player": false,
+              "aze": "",
+              "kgz": "",
+              "uzb": "",
+              "eng": "",
+              "rus": "",
+              "kaz": "",
+              "arjd": "",
+              "arsa": "",
+              "areg": "",
+              "module_name": "Elixir.Helpers.Translation"
+            }
+          }
+        },
+        "backendAnswer": {
+          "answers": [
+            {
+              "separator": true,
+              "answers": [
+                15,
+                18,
+                5,
+                6,
+                11
+              ],
+              "_struct": "MultipleTaskAnswer"
+            },
+            {
+              "separator": true,
+              "answers": [
+                18,
+                15,
+                6,
+                5,
+                11
+              ],
+              "_struct": "MultipleTaskAnswer"
+            }
+          ],
+          "_struct": "TaskAnswers.AnyOfThemTaskAnswer"
+        },
+        "answerElixirType": "TaskAnswers.AnyOfThemTaskAnswer",
+        "answerKinds": [
+          "int"
+        ],
+        "answerRuleOwned": true,
+        "accepted": [
+          "15;;18;;5;;6;;11",
+          "18;;15;;6;;5;;11"
+        ],
+        "truncated": false,
+        "layoutByPayload": "answerCell.multi.inline.n5.plain",
+        "inputExtras": [],
+        "kazOnlyLabels": false,
+        "group": "grade-5"
+      }
+    ]
+  }
+}

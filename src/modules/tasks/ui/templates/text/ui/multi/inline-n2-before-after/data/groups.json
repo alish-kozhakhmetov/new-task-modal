@@ -1,0 +1,387 @@
+[
+  {
+    "group": "grade-3",
+    "count": 1,
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 20,
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "Fil",
+            "rus": "Слон",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Пил",
+            "kaz": "Піл",
+            "eng": "Elephant",
+            "aze": "Fil",
+            "arsa": "",
+            "arjd": "",
+            "areg": "فيل"
+          },
+          "after": {
+            "with_audio_player": false,
+            "uzb": "yil",
+            "rus": "год|года|лет",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "жыл",
+            "kaz": "жыл",
+            "eng": "years",
+            "aze": "il",
+            "arsa": "",
+            "arjd": "",
+            "areg": "سنة"
+          }
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "Kit",
+            "rus": "Кит",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "Кит",
+            "kaz": "Кит",
+            "eng": "Whale",
+            "aze": "Balina",
+            "arsa": "",
+            "arjd": "",
+            "areg": "حوت"
+          },
+          "after": {
+            "with_audio_player": false,
+            "uzb": "yil",
+            "rus": "год|года|лет",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "жыл",
+            "kaz": "жыл",
+            "eng": "years",
+            "aze": "il",
+            "arsa": "",
+            "arjd": "",
+            "areg": "سنة"
+          }
+        },
+        "inline": true
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": null,
+      "fields": {
+        "number2": 26,
+        "number1": 13
+      },
+      "description": {
+        "with_audio": true,
+        "type": "text",
+        "content": {
+          "with_audio_player": false,
+          "uzb": "Timsoh 13 yil yashaydi.\r\nKit undan 2 marta ko'p yashaydi, fil esa kitga qaraganda 26 yil ko'p yashaydi.\r\nKit bilan fil necha yil yashaydi?\r\n",
+          "rus": "Крокодил живет 13 лет.\r\nКит живет в 2 раза дольше, чем крокодил, а слон живет на 26 лет больше, чем кит.\r\nСколько лет живут кит и слон?\r\n",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "Крокодил 13 жыл жашайт.\r\nКит крокодилден 2 эсе көп  жыл жашайт, пил болсо киттен 26 жыл көп жашайт.\r\nКит жана  пил канча жыл жашайт?\r\n",
+          "kaz": "Қолтырауын 13 жыл өмір сүреді.\r\nКит одан 2 есе артық жыл өмір сүреді, ал піл китке қарағанда 26 жыл артық өмір сүреді.\r\nКит пен піл неше жыл өмір сүреді?\r\n",
+          "eng": "A crocodile lives for 13 years.\r\nA whale lives twice as long as a crocodile, and an elephant lives 26 years longer than a whale.\r\nHow many years do a whale and an elephant live?\r\n",
+          "aze": "Timsah 13 il yaşayır. Balina timsahdan 2 dəfə, fil balinadan 26 il çox yaşayır. Balina və fil neçə il yaşayır?\r\n",
+          "arsa": "",
+          "arjd": "",
+          "areg": "يعيش التمساح لمدة 13 عامًا.\r\nيعيش الحوت ضعف مدة حياة التمساح،\r\nبينما يعيش الفيل 26 عامًا أكثر من الحوت.\r\nكم سنة يعيش الحوت والفيل؟\r\n"
+        }
+      },
+      "type": "Elixir.Task_3_5_10_8",
+      "position": 0,
+      "id": "cx-3_5_10_8-0",
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "26;;52",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      }
+    }
+  },
+  {
+    "group": "grade-6",
+    "count": 2,
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 20,
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": "",
+          "after": {
+            "with_audio_player": false,
+            "uzb": "l",
+            "rus": "л",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "л",
+            "kaz": "л",
+            "eng": "L",
+            "aze": "l",
+            "arsa": "",
+            "arjd": "L",
+            "areg": " "
+          }
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "V",
+            "rus": "V",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "V",
+            "kaz": "V",
+            "eng": "V",
+            "aze": "V",
+            "arsa": "V",
+            "arjd": "V",
+            "areg": "لتر V"
+          },
+          "after": ""
+        },
+        "inline": true
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": {
+        "with_audio_player": false,
+        "uzb": "Tengsizlik ko'rinishida ifodalang:",
+        "rus": "Запишите в виде неравенств:",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "Барабарсыздык түрүндө жазыңыз:",
+        "kaz": "Теңсіздіктер түрінде жазыңыз:",
+        "eng": "Write as an inequality:",
+        "aze": "Bərabərsizlik şəklində yazın:",
+        "arsa": "اكتب على شكل متباينة: ",
+        "arjd": "اكتب على شكل متباينة:",
+        "areg": "اكتب على شكل متباينة"
+      },
+      "fields": {
+        "number": 6,
+        "comparison": ">"
+      },
+      "description": {
+        "with_audio": true,
+        "type": "text",
+        "content": {
+          "with_audio_player": false,
+          "uzb": "Idishdagi suyuqlik hajmi 6 litrdan ortiq.",
+          "rus": "Объем жидкости в сосуде больше 6 литров.",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "Идиштеги суюктуктун көлөмү 6 литрден чоң",
+          "kaz": "Ыдыстағы сұйықтың көлемі 6 л-ден артық",
+          "eng": "The volume of liquid in the vessel is greater than 6 litres.",
+          "aze": "Qabdakı mayenin həcmi 6 litrdən çoxdur.",
+          "arsa": " حجم سائل في الوعاء أكبر من 6 لترات.",
+          "arjd": "حجم سائل في الوعاء أكبر من 6 لترات.",
+          "areg": "حجم سائل في الوعاء أكبر من 6 لترات."
+        }
+      },
+      "type": "Elixir.Task_6_5_2_1",
+      "position": 0,
+      "id": "cx-6_5_2_1-0",
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": ">;;6",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      }
+    }
+  },
+  {
+    "group": "grade-11",
+    "count": 1,
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 20,
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "\\( ; \\)",
+            "rus": "\\( ; \\)",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "\\( ; \\)",
+            "kaz": "\\( ; \\)",
+            "eng": "\\( ; \\)",
+            "aze": "\\( ; \\)",
+            "arsa": "\\( ; \\)",
+            "arjd": "\\( ; \\)",
+            "areg": "\\( ; \\)"
+          },
+          "after": ")"
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": {
+            "with_audio_player": false,
+            "uzb": "\\((\\)",
+            "rus": "\\((\\)",
+            "module_name": "Elixir.Helpers.Translation",
+            "kgz": "\\((\\)",
+            "kaz": "\\((\\)",
+            "eng": "\\((\\)",
+            "aze": "\\((\\)",
+            "arsa": "\\((\\)",
+            "arjd": "\\((\\)",
+            "areg": "\\((\\)"
+          },
+          "after": ""
+        },
+        "inline": true
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": {
+        "with_audio_player": false,
+        "uzb": "Tenglamalar sistemasini yeching.",
+        "rus": "Решите систему уравнений:",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "Теңдемелер системасын чыгарыңыз.",
+        "kaz": "Теңдеулер жүйесін шешіңіз:",
+        "eng": "Solve system of equations:",
+        "aze": "Tənliklər sistemini həll edin:",
+        "arsa": "حل نظام المعادلات الآتي:",
+        "arjd": "حل نظام المعادلات الآتي:",
+        "areg": "حِل نظام معادلتين"
+      },
+      "fields": {
+        "number3": 27,
+        "number2": 6,
+        "number1": 8
+      },
+      "description": {
+        "with_audio": true,
+        "type": "text",
+        "content": "\\(\\left\\{ \\begin{array}{l}\r\n\\sqrt{x} + \\sqrt{y} = 8\\\\6\\sqrt{x} - \\sqrt{y} = 27\r\n\\end{array} \\right.\r\n\\)"
+      },
+      "type": "Elixir.Task_11_4_6_1",
+      "position": 0,
+      "id": "cx-11_4_6_1-0",
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "25;;9",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      }
+    }
+  }
+]

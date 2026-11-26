@@ -1,0 +1,98 @@
+[
+  {
+    "group": "grade-10",
+    "count": 2,
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "type": 20,
+        "input2": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": "",
+          "after": ""
+        },
+        "input1": {
+          "up": "",
+          "type": 10,
+          "text": " ",
+          "svg": "",
+          "down": "",
+          "before": "",
+          "after": ""
+        },
+        "inline": false
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": null,
+      "fields": {
+        "number6": 8,
+        "number5": 9,
+        "number4": 2,
+        "number3": 6,
+        "number2": 4,
+        "number1": 3
+      },
+      "description": {
+        "with_audio": true,
+        "type": "text",
+        "content": {
+          "with_audio_player": false,
+          "uzb": "\\((x + 3)(4x - 24)(2x + 18)\\) va \\((x - 6)(x + 9)(8x + 1)\\) ko‘phadlarning umumiy ildizlarini yozing.\r\n",
+          "rus": "Напишите общие корни многочленов  \\((x + 3)(4x - 24)(2x + 18)\\) и \\((x - 6)(x + 9)(8x + 1)\\).\r\n",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "\\((x + 3)(4x - 24)(2x + 18)\\) жана \\((x - 6)(x + 9)(8x + 1)\\) көп мүчөлөрдүн жалпы тамырларын жазыңыз.\r\n",
+          "kaz": "\\((x + 3)(4x - 24)(2x + 18)\\) және \\((x - 6)(x + 9)(8x + 1)\\) көпмүшелерінің ортақ түбірлерін жазыңыз.\r\n",
+          "eng": "",
+          "aze": "\\((x + 3)(4x - 24)(2x + 18)\\) və \\((x - 6)(x + 9)(8x + 1)\\) çoxhədlilərin ortaq köklərini yazın.\r\n",
+          "arsa": "",
+          "arjd": "",
+          "areg": ""
+        }
+      },
+      "type": "Elixir.Task_10_6_6_4",
+      "position": 0,
+      "id": "cx-10_6_6_4-0",
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "6;;-9",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      }
+    }
+  }
+]

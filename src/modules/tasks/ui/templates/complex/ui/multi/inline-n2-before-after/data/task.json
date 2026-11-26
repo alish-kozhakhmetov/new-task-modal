@@ -1,0 +1,119 @@
+{
+  "attemptsCount": null,
+  "isPrimary": true,
+  "hasVideoUrl": false,
+  "isPenalty": false,
+  "answerInput": {
+    "type": 20,
+    "input2": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": "",
+      "after": "20 "
+    },
+    "input1": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "90 ",
+        "rus": "90 ",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "90 ",
+        "kaz": "90 ",
+        "eng": "90 ",
+        "aze": "90 ",
+        "arsa": "90 ",
+        "arjd": "90 ",
+        "areg": "90 "
+      },
+      "after": "59 "
+    },
+    "inline": true
+  },
+  "difficulty": null,
+  "result": "none",
+  "title": {
+    "with_audio_player": false,
+    "uzb": "Sonli ifodaning amal belgilarini qo‘ying.",
+    "rus": "Поставьте знак действия в числовом выражении.",
+    "module_name": "Elixir.Helpers.Translation",
+    "kgz": "",
+    "kaz": "Санды өрнектің амал таңбасын қойыңыз.",
+    "eng": "",
+    "aze": "Ədədi ifadədə əməl işarəsini qoyun:",
+    "arsa": "",
+    "arjd": "",
+    "areg": ""
+  },
+  "fields": {
+    "number3": 20,
+    "number2": 59,
+    "number1": 90
+  },
+  "description": {
+    "type": "complex",
+    "parts": [
+      {
+        "type": 10,
+        "content": {
+          "with_audio_player": false,
+          "uzb": "90 ni 59 ga kamaytirib, 20 sonini ayiring.",
+          "rus": "Из 90 вычтите 59, затем уменьшите на 20.",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "",
+          "kaz": "90-нан 59 санын шегеріп, 20 санын азайтыңыз.\r\n",
+          "eng": "",
+          "aze": "90-dan 59 çıxın, sonra 20 azaldın.",
+          "arsa": "",
+          "arjd": "",
+          "areg": ""
+        }
+      }
+    ],
+    "isCalculatorClosed": false,
+    "isAnswerCellHidden": false
+  },
+  "type": "Elixir.Task_2_6_12_1",
+  "position": 0,
+  "id": "cx-2_6_12_1-0",
+  "hint1": null,
+  "hint2": null,
+  "videoId": null,
+  "videoUrl": null,
+  "solution": {
+    "type": "formula",
+    "answer": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "-;;-",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    },
+    "content": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    }
+  }
+}

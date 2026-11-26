@@ -1,0 +1,387 @@
+{
+  "attemptsCount": null,
+  "isPrimary": true,
+  "hasVideoUrl": false,
+  "isPenalty": false,
+  "answerInput": {
+    "type": 30,
+    "input3": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "\\(Uchinchi\\)",
+        "rus": "\\(Третий\\)",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "\\(Үчүнү\\)",
+        "kaz": "\\(Үшіншісі\\)",
+        "eng": "\\(third\\)",
+        "aze": "\\(Üçüncü\\)",
+        "arsa": "",
+        "arjd": "",
+        "areg": "الثالث"
+      },
+      "after": ""
+    },
+    "input2": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "\\(Ikkinchi\\)",
+        "rus": "\\(Второй\\)",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "\\(Экинчи\\)",
+        "kaz": "\\(Екіншісі\\)",
+        "eng": "\\(second\\)",
+        "aze": "\\(İkinci\\)",
+        "arsa": "",
+        "arjd": "",
+        "areg": "الثاني"
+      },
+      "after": ""
+    },
+    "input1": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "\\(Birinchi\\)",
+        "rus": "\\(Первый\\)",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "\\(Биринчи\\)",
+        "kaz": "\\(Біріншісі\\)",
+        "eng": "\\(first\\)",
+        "aze": "\\(Birinci\\)",
+        "arsa": "",
+        "arjd": "",
+        "areg": "الأول"
+      },
+      "after": ""
+    },
+    "inline": false
+  },
+  "difficulty": null,
+  "result": "none",
+  "title": null,
+  "fields": {
+    "number": 87
+  },
+  "description": {
+    "type": "complex",
+    "parts": [
+      {
+        "type": 10,
+        "content": {
+          "with_audio_player": false,
+          "uzb": "Son kesmasidan juft sonlarni topib, belgilang.",
+          "rus": "Найдите четные числа в данном числовом отрезке. Укажите их в пустых ячейках ниже.",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "Сан түз сызыгынан жуп сандарды табыңыз жана аларды басыңыз.",
+          "kaz": "Сан кесіндісінен жұп сандарды тауып, белгілеңіз.",
+          "eng": "Select the even numbers in the number line.",
+          "aze": "Verilmiş ədəd parçasında cüt ədədləri seçin və onları aşağıdakı boş xanalara yazın.",
+          "arsa": "",
+          "arjd": "",
+          "areg": "حدد الأعداد الزوجية على خط الأعداد ثم اكتبها في المربعات الفارغة."
+        }
+      },
+      {
+        "yAxisLabel": "y",
+        "xAxisLabel": "x",
+        "type": 110,
+        "tickStepYMultiply": 1,
+        "tickStepXMultiply": 1,
+        "tickStep": 1,
+        "stepSize": 30,
+        "startNumber": false,
+        "showCells": false,
+        "showAxis": false,
+        "reduceHeight": 3,
+        "points": [],
+        "notClickableDots": true,
+        "minPosition": -5,
+        "maxPosition": 5,
+        "limitedPoint": 0,
+        "isLine": false,
+        "isFullFilled": false,
+        "isFillingLimitedByAxis": false,
+        "intervals": [],
+        "fillingFunctions": [],
+        "figures": [
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 3.3,
+                "x": -4,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 2.7,
+                "x": -4,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "red"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 3.3,
+                "x": -2.5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 2.7,
+                "x": -2.5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "red"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 3.3,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 2.7,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "red"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 3.3,
+                "x": 0.5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 2.7,
+                "x": 0.5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "red"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 3.3,
+                "x": 2,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 2.7,
+                "x": 2,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "red"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 3.3,
+                "x": 3.5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              },
+              {
+                "y": 2.7,
+                "x": 3.5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": ""
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "red"
+          },
+          {
+            "y": 2.3,
+            "x": -4,
+            "type": 100,
+            "textAnchor": null,
+            "text": "87",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 16,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 2.3,
+            "x": -2.5,
+            "type": 100,
+            "textAnchor": null,
+            "text": "88",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 16,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 2.3,
+            "x": -1,
+            "type": 100,
+            "textAnchor": null,
+            "text": "89",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 16,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 2.3,
+            "x": 0.5,
+            "type": 100,
+            "textAnchor": null,
+            "text": "90",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 16,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 2.3,
+            "x": 2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "91",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 16,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 2.3,
+            "x": 3.5,
+            "type": 100,
+            "textAnchor": null,
+            "text": "92",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 16,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "type": 30,
+            "showDotLetters": false,
+            "point2": {
+              "y": 3,
+              "x": 5,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": ""
+            },
+            "point1": {
+              "y": 3,
+              "x": -5,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": ""
+            },
+            "lineColor": "green",
+            "dotRadius": 2,
+            "degree": 0,
+            "dashed": false
+          }
+        ],
+        "drawingFigure": 0,
+        "displayedNumbers": [],
+        "disabledPoints": [],
+        "canFill": false,
+        "canDrawMultipleFigures": false,
+        "allowedFigures": []
+      }
+    ],
+    "isCalculatorClosed": false,
+    "isAnswerCellHidden": false
+  },
+  "type": "Elixir.Task_2_2_25_6",
+  "position": 0,
+  "id": "cx-2_2_25_6-0",
+  "hint1": null,
+  "hint2": null,
+  "videoId": null,
+  "videoUrl": null,
+  "solution": {
+    "type": "formula",
+    "answer": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "88;;90;;92",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    },
+    "content": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    }
+  }
+}
