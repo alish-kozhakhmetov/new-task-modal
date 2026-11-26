@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+import { toCheckerAnswer } from '@/modules/tasks/lib/checker-answer'
 import { collectMultiInputValues } from '@/modules/tasks/lib/get-multiple-input-handlers'
 import {
   joinMultiAnswer,
@@ -138,8 +139,15 @@ export const useCheckAnswer = ({ props, refs }: Args) => {
 
       // The language goes inside the task, as the old window sends it: the
       // site's Api.checkAnswer(task) reads it from there only (2.5.5).
+      // The answer goes in the record the backend's checker accepts — only
+      // the request carries it; the field and `prevAnswer` keep what was typed.
       const response = await api.checkAnswer(
-        { ...activeTask, answer, lockVersion, language: hostLanguage(global) },
+        {
+          ...activeTask,
+          answer: toCheckerAnswer(answer),
+          lockVersion,
+          language: hostLanguage(global),
+        },
         hostProps.lessonId,
       )
 
