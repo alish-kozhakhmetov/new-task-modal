@@ -20,7 +20,7 @@ import type { Task } from '@/types/api/task'
 
 declare global {
   interface Window {
-    __pilot: { checks: string[]; ready: boolean; error?: string }
+    __pilot: { checks: (string | string[])[]; ready: boolean; error?: string }
   }
 }
 

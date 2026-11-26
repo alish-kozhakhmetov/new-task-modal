@@ -22,6 +22,12 @@ const SOLVE = path.join(CACHE, 'solve')
 const files = fs.readdirSync(SOLVE).filter((f) => f.endsWith('.json'))
 const jobs = []
 const wrongOf = (sent) => {
+  // a list of letters (a test with several correct options): the last pick
+  // swapped for an option that is not picked — same length, wrong set
+  if (Array.isArray(sent)) {
+    const other = 'ABCDEFGHIJ'.split('').find((l) => !sent.includes(l))
+    return sent.length > 1 ? [...sent.slice(0, -1), other] : [other]
+  }
   const s = String(sent)
   if (/^[A-Z](,[A-Z])*$/.test(s)) return s === 'A' ? 'B' : 'A'
   // a comparison sign: the other sign, not a malformed answer

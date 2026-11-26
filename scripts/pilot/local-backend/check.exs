@@ -6,6 +6,22 @@
 #
 #   elixir -pa <ebins> check.exs <in.jsonl> <out.jsonl>
 [in_file, out_file] = System.argv()
+# The decimal separator lives in the process dictionary (DecimalFormat,
+# default :dot); prod's DecimalFormatPlug sets :comma for Kazakhstan before
+# the task is generated and before it is checked, and generators since the
+# «task fixes» of 24.11 depend on it. Everything here runs in this one
+# process, so it is set once; a spawned Task would need its own call.
+# QALAN_DECIMAL_SEPARATOR=dot gives the module's default instead.
+sep =
+  case System.get_env("QALAN_DECIMAL_SEPARATOR", "comma") do
+    "comma" -> :comma
+    "dot" -> :dot
+    other -> raise "QALAN_DECIMAL_SEPARATOR is comma or dot, not #{other}"
+  end
+
+if Code.ensure_loaded?(DecimalFormat), do: apply(DecimalFormat, :set_separator, [sep])
+IO.puts(:stderr, "decimal separator: #{inspect(if Code.ensure_loaded?(DecimalFormat), do: apply(DecimalFormat, :get_separator, []), else: :no_decimal_format)}")
+
 {:ok, out} = File.open(out_file, [:write, :utf8])
 
 File.stream!(in_file)
