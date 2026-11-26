@@ -8,6 +8,7 @@ import { AnswerCellRow } from '../shared/answer-cell-row'
 import { AnswerCellSolution } from '../shared/answer-cell-solution'
 import styles from '../shared/answer-cell.module.scss'
 
+import { countContentCells } from './count-content-cells'
 import type { AnswerCellTask } from './types.task'
 
 interface MultiAnswerCellTemplateConfig {
@@ -54,11 +55,15 @@ export const createMultiAnswerCellTemplate = ({
     }
 
     const separator = deps.helpers.TaskHelper.multipleTaskAnswerSeparator
+    // As many slots as the content draws cells (see countContentCells).
+    const cells = countContentCells(task.description, (value) =>
+      deps.global.translateTasks(value),
+    )
     const { bindRef, handleChange } = getMultipleInputHandlers({
       onChange,
       separator,
       mathInput,
-      inputCount,
+      inputCount: cells > 0 ? Math.min(cells, inputCount) : inputCount,
     })
 
     return (
