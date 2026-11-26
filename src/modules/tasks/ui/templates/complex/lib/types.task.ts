@@ -98,6 +98,128 @@ export interface ComplexTablePart {
   [key: string]: unknown
 }
 
+/** A point of the interval line: a number or `"infinity"` (Matheducator). */
+export interface IntervalLineDot {
+  position: number | 'infinity'
+  label?: string | number | null
+  inclusive?: boolean
+  color?: string | null
+}
+
+/** Interval on a number line, part type 40 (`Figures.IntervalNumberLine`). */
+export interface ComplexIntervalNumberLinePart {
+  type: 40
+  tickStep?: number
+  stepSize?: number
+  minPosition?: number
+  maxPosition?: number
+  name?: string
+  latexName?: boolean
+  showInfinities?: boolean
+  intervals?: Array<{
+    from: IntervalLineDot
+    to: IntervalLineDot
+    numbersUp?: boolean
+    dashesUp?: boolean
+  }>
+  numbers?: IntervalLineDot[]
+  dots?: IntervalLineDot[]
+  signs?: unknown[]
+  dividers?: unknown[]
+  highlighted?: unknown
+}
+
+/** One axis of the positive quarter plane (part type 130). */
+export interface PositivePlaneAxis {
+  ticksQuantity?: number
+  ticks?: Array<string | number | Translation>
+  tickStepMultiply?: number
+  stepSize?: number
+  label?: Translation | string
+}
+
+/** Quarter plane x ≥ 0, y ≥ 0 with labelled axes, part type 130. */
+export interface ComplexPositivePlanePart {
+  type: 130
+  xAxis: PositivePlaneAxis
+  yAxis: PositivePlaneAxis
+  figures?: Array<Record<string, unknown>>
+}
+
+/** Euler–Venn ellipse, part type 30, nested through `ellipses`. */
+export interface ComplexEulerEllipsePart {
+  type: 30
+  x: number
+  y: number
+  rx: number
+  ry: number
+  name?: string
+  color?: string | null
+  dots?: Array<{ x: number; y: number; label?: string | number; fontSize?: number }>
+  ellipses?: ComplexEulerEllipsePart[]
+}
+
+/** Rectangle with letters at the corners, part type 60. */
+export interface ComplexRectanglePart {
+  type: 60
+  width: number
+  height: number
+  topLeft?: string
+  topRight?: string
+  bottomLeft?: string
+  bottomRight?: string
+}
+
+/** Regular hexagon, letters counter-clockwise from the right vertex, type 70. */
+export interface ComplexHexagonPart {
+  type: 70
+  sideLength: number
+  letters?: string[]
+}
+
+/** Display-only frequency histogram (bars), part type 200. */
+export interface ComplexFrequencyHistogramPart {
+  type: 200
+  minX: number
+  maxX: number
+  minY: number
+  maxY: number
+  stepSizeX: number
+  stepSizeY: number
+  xName?: Translation | string
+  yName?: Translation | string
+  isXText?: boolean
+  xLabels?: Array<Translation | string>
+  isYText?: boolean
+  yLabels?: Array<Translation | string>
+  isCentered?: boolean
+  frequencyValue?: boolean
+  frequencies?: Array<{ x: { x1: number; x2: number }; y: number }>
+  barColor?: string
+  barColorList?: string[]
+}
+
+/** Display-only frequency polygon (broken line), part type 190. */
+export interface ComplexFrequencyPolygonPart {
+  type: 190
+  minX: number
+  maxX: number
+  minY: number
+  maxY: number
+  stepSizeX: number
+  stepSizeY: number
+  xName?: Translation | string
+  yName?: Translation | string
+  points?: Array<{ x: number; y: number }>
+}
+
+/** A row of parts side by side, part type 210 (`ItemsFlex`). */
+export interface ComplexItemsFlexPart {
+  type: 210
+  width?: string
+  content?: ComplexPart[]
+}
+
 export type ComplexPart =
   | ComplexTextPart
   | ComplexImagePart
@@ -105,6 +227,14 @@ export type ComplexPart =
   | ComplexAngleListPart
   | ComplexCoordinatePlanePart
   | ComplexTablePart
+  | ComplexIntervalNumberLinePart
+  | ComplexPositivePlanePart
+  | ComplexEulerEllipsePart
+  | ComplexRectanglePart
+  | ComplexHexagonPart
+  | ComplexFrequencyHistogramPart
+  | ComplexFrequencyPolygonPart
+  | ComplexItemsFlexPart
   | { type: number; [key: string]: unknown }
 
 export interface ComplexTaskDescription {
