@@ -19,6 +19,7 @@
  * A generator whose samples disagree takes the template that covers all of
  * them, else it is listed.
  */
+import { spawnSync } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
 
@@ -180,6 +181,32 @@ for (const l of lessons) {
   }
 }
 
+/**
+ * --source=inventory: the inventory's «rules»/«open» generators the cached lessons
+ * have not shown yet, on the layout of Amirali's live map (31.07). Marked so the
+ * solver knows they wait for a live sample; on chapter I of grade 5 that map and
+ * the pilot's classifier agreed on 93 of 93 generators (26.11).
+ */
+const fromInventory = new Set<string>()
+if (args.source === 'inventory') {
+  for (const [type, f] of inventory) {
+    if (gens.has(type) || !(f.st === 'rules' || f.st === 'open') || !f.tpl || !SHIPPED.has(f.tpl)) continue
+    const p = parseType(type)
+    if (!p || p.grade !== GRADE) continue
+    fromInventory.add(type)
+    gens.set(type, {
+      type,
+      key: `${p.grade}_${p.chapter}_${p.id}`,
+      ...p,
+      tasks: 0,
+      lessons: new Set(),
+      curriculumChapters: new Set(),
+      verdicts: new Map(),
+      samples: [{ template: f.tpl, reason: `inventory: ${f.code}, no live sample yet`, classified: f.tpl }],
+    })
+  }
+}
+
 /** One template per generator: the one all samples agree on, or one that covers every sample. */
 const decide = (g: Gen): Verdict => {
   if (!g.samples.length) return { template: null, reason: 'no description in the lesson (solved / empty)', classified: null }
@@ -202,9 +229,25 @@ const decide = (g: Gen): Verdict => {
   return { template: null, reason: `samples disagree: ${ids.join(', ')}`, classified: ids.join('+') }
 }
 
+/**
+ * test.plain draws only text, angle-list and image figures (TestFigures); a
+ * figure of another type shows «Unsupported figure type», a figure as an answer
+ * option an empty option. scripts/pilot/test-figures-scan.py lists the test
+ * generators whose source builds such figures (44 of 44 broken samples found,
+ * the 10 more it flags rendered empty options or no table, 26.11).
+ */
+const TEST_FIGURES_FILE = path.join(CACHE, 'test-figures.json')
+const testFigures: Record<string, { figures: number[] | null }> = fs.existsSync(TEST_FIGURES_FILE)
+  ? JSON.parse(fs.readFileSync(TEST_FIGURES_FILE, 'utf8'))
+  : {}
+
 /** The pilot's own verdict, then the inventory's border: rules/open only, exact only. */
 const gate = (g: Gen, v: Verdict): Verdict => {
   const f = inventory.get(g.type)
+  const figs = testFigures[g.key]?.figures
+  if (v.template === 'test.plain' && figs?.length)
+    return { template: null, reason: `almost: fig:test.figures ${figs.join(',')} (the test template draws 10, 50, 160)`, classified: v.classified }
+  if (fromInventory.has(g.type)) return v
   if (!v.template) return v
   if (v.reason !== 'exact')
     return { template: null, reason: `almost: layout:${v.classified} (2.5.8 has only ${v.template})`, classified: v.classified }
@@ -231,6 +274,7 @@ for (const g of gens.values()) {
     template: v.template,
     reason: v.reason,
     classified: v.classified,
+    live: !fromInventory.has(g.type),
     inventory: f ? { st: f.st, code: f.code, tpl: f.tpl } : null,
     sampleVerdicts: Object.fromEntries(g.verdicts),
   })
@@ -248,7 +292,8 @@ for (const x of out) {
   const r = String(x.reason)
     .replace(/^cover .*/, 'cover')
     .replace(/^(variant missing: \w+).*/, '$1')
-    .replace(/ \((2\.5\.8 has only|pilot classifier:) .*\)$/, '')
+    .replace(/ \((2\.5\.8 has only|pilot classifier:|the test template) .*\)$/, '')
+    .replace(/^(almost: fig:test\.figures) .*/, '$1')
   const e = byReason.get(r) ?? { g: 0, t: 0 }
   e.g++
   e.t += Number(x.tasks)
@@ -259,11 +304,11 @@ for (const [r, e] of [...byReason.entries()].sort((a, b) => b[1].t - a[1].t)) co
 const tplDiff = out.filter((x) => {
   const inv = x.inventory as { tpl?: string } | null
   const c = String(x.classified ?? '')
-  return inv?.tpl && !inv.tpl.endsWith('.?') && c && !c.includes('+') && inv.tpl !== c
+  return x.live && inv?.tpl && !inv.tpl.endsWith('.?') && c && !c.includes('+') && inv.tpl !== c
 })
 const tplSame = out.filter((x) => {
   const inv = x.inventory as { tpl?: string } | null
-  return inv?.tpl && !inv.tpl.endsWith('.?') && x.classified && inv.tpl === x.classified
+  return x.live && inv?.tpl && !inv.tpl.endsWith('.?') && x.classified && inv.tpl === x.classified
 })
 console.log(`inventory layout = pilot classifier: ${tplSame.length}, differs: ${tplDiff.length}`)
 for (const x of tplDiff) console.log(`  ${x.key}: inventory ${(x.inventory as { tpl: string }).tpl}, today ${x.classified}`)
@@ -335,4 +380,7 @@ for (const [f, m] of files) {
     `import { TemplateTypes } from '../../../model/template-types.ts'\n\nconst map = {\n${entries.join('\n')}\n}\n\nexport default map\n`,
   )
 }
+// The maps go through the package's eslint (prettier) like the hand-written grade 4 maps, so the written files pass `pnpm lint`.
+const lint = spawnSync('npx', ['eslint', '--fix', ...files.keys()], { cwd: root, stdio: 'inherit' })
+if (lint.status !== 0) console.log('eslint --fix left problems in the written maps, see above')
 console.log(`written ${files.size} chapter files: +${added} generators, ${kept} already mapped, ${removed} excluded`)

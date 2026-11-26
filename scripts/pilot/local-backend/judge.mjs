@@ -4,7 +4,7 @@
  * same task with a wrong answer must be rejected, or the check proves
  * nothing. Writes the verdict back into each solve/<lesson>-<index>.json.
  *
- *   node scripts/pilot/local-backend/judge.mjs --grade=3
+ *   node scripts/pilot/local-backend/judge.mjs --grade=3 [--pa=<more modules>]
  */
 import { execFileSync } from 'node:child_process'
 import fs from 'node:fs'
@@ -15,14 +15,23 @@ const HERE = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(HERE, '../../..')
 const args = Object.fromEntries(process.argv.slice(2).map((a) => { const [k, ...v] = a.replace(/^--/, '').split('='); return [k, v.join('=') || 'true'] }))
 const GRADE = Number(args.grade ?? 3)
-const CACHE = path.join(ROOT, '.pilot-cache', `grade-${GRADE}`)
+// --cache=<dir>: a cache of its own under .pilot-cache (a local-backend run beside the live lessons)
+const CACHE = path.join(ROOT, '.pilot-cache', args.cache && /^[\w.-]+$/.test(args.cache) ? args.cache : `grade-${GRADE}`)
 const SOLVE = path.join(CACHE, 'solve')
 
 const files = fs.readdirSync(SOLVE).filter((f) => f.endsWith('.json'))
 const jobs = []
 const wrongOf = (sent) => {
+  // a list of letters (a test with several correct options): the last pick
+  // swapped for an option that is not picked — same length, wrong set
+  if (Array.isArray(sent)) {
+    const other = 'ABCDEFGHIJ'.split('').find((l) => !sent.includes(l))
+    return sent.length > 1 ? [...sent.slice(0, -1), other] : [other]
+  }
   const s = String(sent)
   if (/^[A-Z](,[A-Z])*$/.test(s)) return s === 'A' ? 'B' : 'A'
+  // a comparison sign: the other sign, not a malformed answer
+  if (/^[<>=]$/.test(s)) return s === '<' ? '>' : '<'
   return s.replace(/\d/, (d) => String((Number(d) + 1) % 10)) !== s ? s.replace(/\d/, (d) => String((Number(d) + 1) % 10)) : `${s}9`
 }
 for (const f of files) {
@@ -34,7 +43,8 @@ for (const f of files) {
 const inFile = path.join(CACHE, 'judge-in.jsonl')
 const outFile = path.join(CACHE, 'judge-out.jsonl')
 fs.writeFileSync(inFile, jobs.map((j) => JSON.stringify(j)).join('\n') + '\n')
-execFileSync(path.join(HERE, 'be.sh'), [path.join(HERE, 'check.exs'), inFile, outFile], {
+// --pa=<dir>: more compiled modules (5–11 grades: ~/Documents/Projects/qalan/local-backend/hs)
+execFileSync(path.join(HERE, 'be.sh'), [...(args.pa ? ['-pa', args.pa] : []), path.join(HERE, 'check.exs'), inFile, outFile], {
   env: { ...process.env, PATH: `/opt/homebrew/opt/erlang/bin:${process.env.PATH}` },
   stdio: ['ignore', 'ignore', 'inherit'],
   maxBuffer: 1 << 30,

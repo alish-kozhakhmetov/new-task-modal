@@ -20,7 +20,7 @@ import type { Task } from '@/types/api/task'
 
 declare global {
   interface Window {
-    __pilot: { checks: string[]; ready: boolean; error?: string }
+    __pilot: { checks: (string | string[])[]; ready: boolean; error?: string }
   }
 }
 
@@ -38,10 +38,15 @@ const grade = q.get('grade') ?? '5'
 const lessonId = q.get('lesson')
 const index = Number(q.get('task') ?? 0)
 const layout = (q.get('layout') as 'wide' | 'phone') ?? 'wide'
+/** lessons (live, from test) or offline (the fixtures' examples) */
+const dir = q.get('dir') === 'offline' ? 'offline' : 'lessons'
+/** a cache of its own under .pilot-cache (solve.mjs --cache), else the grade's */
+const cacheParam = q.get('cache')
+const cache = cacheParam && /^[\w.-]+$/.test(cacheParam) ? cacheParam : `grade-${grade}`
 
 const run = async () => {
   const data = (await fetch(
-    `/.pilot-cache/grade-${grade}/lessons/${lessonId}.json`,
+    `/.pilot-cache/${cache}/${dir}/${lessonId}.json`,
   ).then((r) => r.json())) as { tasks: Task[] }
   const tasks = data.tasks.map((t) => ({ ...t }))
   const activeTask = tasks[index]

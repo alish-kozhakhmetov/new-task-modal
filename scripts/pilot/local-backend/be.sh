@@ -12,4 +12,8 @@ ROOT="$(cd "$(dirname "$0")/../../.." && pwd)"
 B="${QALAN_MONOLITH:-$HOME/Documents/Projects/qalan/matheducator-student-platform}/matheducator_task_common/_build/dev/lib"
 PA=()
 for d in certifi decimal hackney httpoison idna metrics mimerl parse_trans poison ssl_verify_fun unicode_util_compat; do PA+=(-pa "$B/$d/ebin"); done
-exec elixir "${PA[@]}" -pa "$ROOT/.pilot-cache/g3-backend/common" -pa "$ROOT/.pilot-cache/g3-backend/g3" "$@"
+# QALAN_BE_MODULES=<dir>:<dir>…: other compiled modules in place of G3's two
+# (e.g. a build of origin/master: its own common and high school), same order
+IFS=: read -r -a MODS <<< "${QALAN_BE_MODULES:-$ROOT/.pilot-cache/g3-backend/common:$ROOT/.pilot-cache/g3-backend/g3}"
+for m in "${MODS[@]}"; do PA+=(-pa "$m"); done
+exec elixir "${PA[@]}" "$@"

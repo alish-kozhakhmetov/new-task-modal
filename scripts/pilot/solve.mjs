@@ -7,7 +7,7 @@
  * or, with --verify=local, against the reference itself.
  *
  *   node scripts/pilot/solve.mjs --grade=5 [--chapters=170,171] [--lessons=1511]
- *        [--workers=4] [--verify=sandbox|local] [--refs=<file>] [--force]
+ *        [--workers=4] [--verify=collect|sandbox|local] [--refs=<file>] [--force] [--cache=<dir>]
  *
  * Needs the vite dev server on :5191 (npx vite --port 5191 --host 127.0.0.1).
  * One result per task in .pilot-cache/grade-N/solve/<lesson>-<index>.json.
@@ -28,11 +28,14 @@ const args = Object.fromEntries(
   }),
 )
 const GRADE = Number(args.grade ?? 5)
-const CACHE = path.join(ROOT, '.pilot-cache', `grade-${GRADE}`)
-const OUT = path.join(CACHE, 'solve')
+// --cache=<dir>: a cache of its own under .pilot-cache (a local-backend run beside the live lessons)
+const CACHE = path.join(ROOT, '.pilot-cache', args.cache && /^[\w.-]+$/.test(args.cache) ? args.cache : `grade-${GRADE}`)
+const DIR = args.dir === 'offline' ? 'offline' : 'lessons'
+const OUT = path.join(CACHE, DIR === 'offline' ? 'solve-offline' : 'solve')
 const BASE = args.base ?? 'http://127.0.0.1:5191'
 const WORKERS = Number(args.workers ?? 4)
-const VERIFY = args.verify ?? 'sandbox'
+// test.qalan.kz only when asked by name: by default the answers are collected for the local checker
+const VERIFY = args.verify ?? 'collect'
 const chapters = args.chapters ? new Set(args.chapters.split(',').map(Number)) : null
 const lessonsOnly = args.lessons ? new Set(args.lessons.split(',').map(Number)) : null
 fs.mkdirSync(OUT, { recursive: true })
@@ -146,11 +149,12 @@ export function keysOf(part) {
     }
     const cmd = /^\\([a-zA-Z]+)/.exec(s.slice(i))
     if (cmd) {
-      const c = cmd[1]
       const map = { cdot: '*', times: '*', div: ':', le: '≤', ge: '≥', neq: '≠', ne: '≠', pi: 'π', circ: '°', degree: '°', percent: '%' }
-      if (!(c in map)) throw new Error(`no key for \\${c}`)
+      // a command glued to a letter of the answer: «3\cdotc» is \cdot, then c
+      const c = cmd[1] in map ? cmd[1] : ['cdot', 'times', 'div'].find((k) => cmd[1].startsWith(k))
+      if (!c) throw new Error(`no key for \\${cmd[1]}`)
       acts.push({ type: map[c] })
-      i += cmd[0].length
+      i += 1 + c.length
       continue
     }
     if (s.startsWith('\\%', i)) {
@@ -183,6 +187,7 @@ export function keysOf(part) {
 const RAW = /\\(frac|cdot|left|right|begin|text|times|div|sqrt|over|mathrm|dfrac)\b|\\\(|\\\)|\$\$|\\\\/
 async function solveOne(page, job) {
   const res = { lesson: job.lessonId, index: job.index, type: job.task.type, chapterId: job.chapterId, issues: [] }
+  if (job.task.__truncated) res.truncated = true
   const m = mapping.get(job.task.type)
   res.mapped = m?.template ?? null
   const ref = extraRefs[`${job.lessonId}/${job.index}`] ?? refs[`${job.lessonId}/${job.task.id}`]?.answer ?? null
@@ -200,7 +205,7 @@ async function solveOne(page, job) {
   page.on('console', onConsole)
   page.on('pageerror', onPageError)
   try {
-    await page.goto(`${BASE}/scripts/pilot/harness/index.html?grade=${GRADE}&lesson=${job.lessonId}&task=${job.index}`)
+    await page.goto(`${BASE}/scripts/pilot/harness/index.html?grade=${GRADE}&lesson=${job.lessonId}&task=${job.index}&dir=${DIR}${args.cache ? `&cache=${encodeURIComponent(args.cache)}` : ''}${args.layout ? `&layout=${args.layout}` : ''}`)
     const shown = await page
       .waitForSelector('[data-template-id], [data-testid="task-unavailable"], .task-modal [class*="unavailable"]', { timeout: 20000 })
       .catch(() => null)
@@ -229,6 +234,11 @@ async function solveOne(page, job) {
         active: document.activeElement?.tagName ?? null,
         unavailable: /нет шаблона|не умеет|пока нет|старом окне/i.test(document.querySelector('.task-modal')?.innerText ?? '') && !tpl,
         overflow,
+        // a choice option with nothing in it (a figure the window does not draw)
+        emptyOptions: [...document.querySelectorAll('.task-modal input[type=radio], .task-modal input[type=checkbox]')].filter((i) => {
+          const box = i.closest('label') ?? i.parentElement
+          return box && !(box.innerText ?? '').trim() && !box.querySelector('img, svg, canvas, mjx-container')
+        }).length,
         pilotError: window.__pilot?.error ?? null,
       }
     })
@@ -245,6 +255,7 @@ async function solveOne(page, job) {
     if (probe.text.length < 3) res.issues.push('empty condition')
     if (probe.overflow > 4) res.issues.push(`overflow ${probe.overflow}px`)
     if (!probe.inputs && !probe.radios && !probe.checkboxes) res.issues.push('no place for the answer')
+    if (probe.emptyOptions) res.issues.push(`empty choice options: ${probe.emptyOptions}`)
     // adornments of the data on screen
     const ai = job.task.answerInput
     const tr = (v) => (typeof v === 'string' ? v : v && typeof v === 'object' ? v.rus ?? '' : '')
@@ -279,7 +290,9 @@ async function solveOne(page, job) {
         if (!letters.every((l) => /^[A-Z]$/.test(l))) throw new Error(`choice reference not letters: ${ref}`)
         for (const l of letters) await page.keyboard.press(l.toLowerCase())
       } else {
-        const parts = answerParts(ref)
+        let parts = answerParts(ref)
+        // a reference of several fields joined by a single «;» (MultipleTaskAnswer without separator)
+        if (parts.length === 1 && probe.inputs > 1 && parts[0].split(';').length === probe.inputs) parts = parts[0].split(';')
         if (parts.length > probe.inputs && probe.inputs === 1) {
           // several values into one field, as the reference writes them
           parts.splice(0, parts.length, parts.join(';'))
@@ -353,10 +366,11 @@ async function solveOne(page, job) {
 }
 
 // ---------- the run
-const lessonFiles = fs.readdirSync(path.join(CACHE, 'lessons'))
+const lessonFiles = fs.readdirSync(path.join(CACHE, DIR)).filter((f) => f !== 'refs.json')
 const jobs = []
 for (const f of lessonFiles) {
-  const l = JSON.parse(fs.readFileSync(path.join(CACHE, 'lessons', f), 'utf8'))
+  const l = JSON.parse(fs.readFileSync(path.join(CACHE, DIR, f), 'utf8'))
+  if (!Array.isArray(l.tasks)) continue // a lesson test failed to give
   if (chapters && !chapters.has(Number(l.chapterId))) continue
   if (lessonsOnly && !lessonsOnly.has(Number(l.lessonId))) continue
   l.tasks.forEach((task, index) => {

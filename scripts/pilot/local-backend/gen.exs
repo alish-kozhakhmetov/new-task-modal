@@ -5,12 +5,30 @@
 # the sandbox would answer (`answerString`: InvokeTask.answer, lists joined
 # by « || »).
 #
-#   elixir -pa <ebins> gen.exs <types.txt> <out.jsonl> <samples>
-[list_file, out_file, k] = System.argv()
-# Kazakhstan request process: DecimalFormatPlug sets :comma before generation and check;
-# the separator lives in this process's dictionary (no Task.async here or in the generators).
-if Code.ensure_loaded?(DecimalFormat), do: apply(DecimalFormat, :set_separator, [:comma])
+#   elixir -pa <ebins> gen.exs <types.txt> <out.jsonl> <samples> [salt]
+# salt: the seeds' third part (default 20261126, G3's run); another salt, other samples
+[list_file, out_file, k | rest] = System.argv()
 k = String.to_integer(k)
+salt = case rest do
+  [x | _] -> String.to_integer(x)
+  [] -> 20261126
+end
+# The decimal separator lives in the process dictionary (DecimalFormat,
+# default :dot); prod's DecimalFormatPlug sets :comma for Kazakhstan before
+# the task is generated and before it is checked, and generators since the
+# «task fixes» of 24.11 depend on it. Everything here runs in this one
+# process, so it is set once; a spawned Task would need its own call.
+# QALAN_DECIMAL_SEPARATOR=dot gives the module's default instead.
+sep =
+  case System.get_env("QALAN_DECIMAL_SEPARATOR", "comma") do
+    "comma" -> :comma
+    "dot" -> :dot
+    other -> raise "QALAN_DECIMAL_SEPARATOR is comma or dot, not #{other}"
+  end
+
+if Code.ensure_loaded?(DecimalFormat), do: apply(DecimalFormat, :set_separator, [sep])
+IO.puts(:stderr, "decimal separator: #{inspect(if Code.ensure_loaded?(DecimalFormat), do: apply(DecimalFormat, :get_separator, []), else: :no_decimal_format)}")
+
 types = File.read!(list_file) |> String.split("\n", trim: true)
 {:ok, out} = File.open(out_file, [:write, :utf8])
 
@@ -20,7 +38,7 @@ answer_string = fn task ->
 end
 
 for type <- types, s <- 1..k do
-  :rand.seed(:exsss, {s, :erlang.phash2(type), 20261126})
+  :rand.seed(:exsss, {s, :erlang.phash2(type), salt})
   mod = String.to_atom("Elixir." <> type)
 
   line =
@@ -50,7 +68,7 @@ for type <- types, s <- 1..k do
 
           if ok == [], do: raise("no new/0 and no difficulty :x1…:x40")
           d = Enum.at(ok, rem(s - 1, length(ok)))
-          :rand.seed(:exsss, {s, :erlang.phash2(type), 20261126})
+          :rand.seed(:exsss, {s, :erlang.phash2(type), salt})
           {Kernel.apply(mod, :new, [d]), Atom.to_string(d)}
         end
 
