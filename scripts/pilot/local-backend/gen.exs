@@ -7,6 +7,9 @@
 #
 #   elixir -pa <ebins> gen.exs <types.txt> <out.jsonl> <samples>
 [list_file, out_file, k] = System.argv()
+# Kazakhstan request process: DecimalFormatPlug sets :comma before generation and check;
+# the separator lives in this process's dictionary (no Task.async here or in the generators).
+if Code.ensure_loaded?(DecimalFormat), do: apply(DecimalFormat, :set_separator, [:comma])
 k = String.to_integer(k)
 types = File.read!(list_file) |> String.split("\n", trim: true)
 {:ok, out} = File.open(out_file, [:write, :utf8])

@@ -6,6 +6,9 @@
 #
 #   elixir -pa <ebins> check.exs <in.jsonl> <out.jsonl>
 [in_file, out_file] = System.argv()
+# Kazakhstan request process: DecimalFormatPlug sets :comma before generation and check;
+# the separator lives in this process's dictionary (no Task.async here or in the generators).
+if Code.ensure_loaded?(DecimalFormat), do: apply(DecimalFormat, :set_separator, [:comma])
 {:ok, out} = File.open(out_file, [:write, :utf8])
 
 File.stream!(in_file)
