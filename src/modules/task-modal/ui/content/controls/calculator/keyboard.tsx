@@ -98,6 +98,7 @@ export const Keyboard = ({ keys, mode, onKeyPress }: Props) => {
               [styles.number]: isNumberKey,
               [styles.letterKey]: isLetters,
               [styles.mainKey]: isMain,
+              [styles.fnKey]: symbol.fn,
             })}
           >
             {symbol.icon ? <symbol.icon /> : symbol.title}

@@ -7,36 +7,57 @@ import { Slider } from '@/ui/slider/slider'
 import { Keyboard } from './keyboard'
 import { CALC_MODE } from './model/constants'
 import { ARROW_UP_ACTION, LETTERS } from './model/symbols/letters'
-import { MAIN } from './model/symbols/main'
-import type { CalculatorSymbol } from './model/symbols/types'
+import { keyboardForTask } from './model/symbols/signs'
+import type { CalculatorSymbol, MainPanelSymbol } from './model/symbols/types'
 
 /** Names of the keyboard pages, for their pagination dots. */
 const PAGE_LABELS = [
   { rus: 'Буквы', kaz: 'Әріптер', eng: 'Letters' },
   { rus: 'Цифры', kaz: 'Цифрлар', eng: 'Digits' },
 ]
+/** The task's own signs (DS «Additional»), after the digits. */
+const SIGNS_LABEL = { rus: 'Знаки', kaz: 'Таңбалар', eng: 'Signs' }
 
 interface Props {
   global: Global
   onInput: (input: string) => void
+  /** The active task's type: it picks the signs (model/symbols/signs.ts). */
+  taskType?: string
   ref?: RefObject<HTMLDivElement | null>
   className?: string
 }
 
-export const Calculator = ({ global, onInput, ref, className }: Props) => {
+export const Calculator = ({
+  global,
+  onInput,
+  taskType,
+  ref,
+  className,
+}: Props) => {
   const [isUppercase, setIsUppercase] = useState(false)
 
   const translate = global.translate
 
-  const mainKeys = useMemo(() => {
-    return MAIN.map((symbol) => {
-      if (symbol.withTranslation) {
-        return { ...symbol, title: translate(symbol.title) }
-      }
+  const layout = useMemo(() => keyboardForTask(taskType), [taskType])
 
-      return symbol
-    })
-  }, [translate])
+  const translated = useMemo(
+    () => (keys: MainPanelSymbol[]) =>
+      keys.map((symbol) =>
+        symbol.withTranslation
+          ? { ...symbol, title: translate(symbol.title) }
+          : symbol,
+      ),
+    [translate],
+  )
+
+  const mainKeys = useMemo(
+    () => translated(layout.main),
+    [translated, layout.main],
+  )
+  const extraKeys = useMemo(
+    () => (layout.extra ? translated(layout.extra) : null),
+    [translated, layout.extra],
+  )
 
   const letterKeys = useMemo(() => {
     return LETTERS.map((symbol) => {
@@ -72,7 +93,10 @@ export const Calculator = ({ global, onInput, ref, className }: Props) => {
     <Slider
       className={className}
       ref={ref}
-      slideLabels={PAGE_LABELS.map((label) => translate(label))}
+      slideLabels={[
+        ...PAGE_LABELS,
+        ...(extraKeys ? [SIGNS_LABEL] : []),
+      ].map((label) => translate(label))}
       slides={[
         <Keyboard
           key={CALC_MODE.LETTERS}
@@ -86,6 +110,16 @@ export const Calculator = ({ global, onInput, ref, className }: Props) => {
           keys={mainKeys}
           onKeyPress={handleKeyPress}
         />,
+        ...(extraKeys
+          ? [
+              <Keyboard
+                key="signs"
+                mode={CALC_MODE.MAIN}
+                keys={extraKeys}
+                onKeyPress={handleKeyPress}
+              />,
+            ]
+          : []),
       ]}
     />
   )
