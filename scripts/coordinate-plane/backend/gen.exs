@@ -2,13 +2,18 @@
 # be.sh: the monolith's generators and TaskChecker, no test server).
 #
 #   be.sh -pa ~/Documents/Projects/qalan/local-backend/hs \
-#     scripts/coordinate-plane/backend/gen.exs ids.txt gen.jsonl
+#     scripts/coordinate-plane/backend/gen.exs ids.txt gen.jsonl [seeds]
 #
-# Seed 1 for each generator (`:rand.seed(:exsss, {seed, 7, 11})`). The task is
+# `seeds` — comma-separated, default `1`; 27.11 the corpus is `1,2,3`
+# (`:rand.seed(:exsss, {seed, 7, 11})` before each generator). The task is
 # rebuilt from its Poison-encoded fields as task_controller does, and every
 # payload is taken from the rebuilt task — what the pupil's window receives.
 # `fields` is kept so check.exs judges the very same task.
-[ids_file, out_file] = System.argv()
+{ids_file, out_file, seeds} =
+  case System.argv() do
+    [i, o] -> {i, o, [1]}
+    [i, o, s] -> {i, o, s |> String.split(",", trim: true) |> Enum.map(&String.to_integer/1)}
+  end
 # the Kazakhstan request: DecimalFormatPlug sets :comma before generation and check
 if Code.ensure_loaded?(DecimalFormat), do: apply(DecimalFormat, :set_separator, [:comma])
 
@@ -36,9 +41,8 @@ end
 
 File.write!(out_file, "")
 
-for id <- File.read!(ids_file) |> String.split("\n", trim: true) do
+for id <- File.read!(ids_file) |> String.split("\n", trim: true), seed <- seeds do
   mod = String.to_atom("Elixir." <> id)
-  seed = 1
 
   res =
     try do
@@ -77,7 +81,7 @@ for id <- File.read!(ids_file) |> String.split("\n", trim: true) do
            end)
       }
     rescue
-      e -> %{"id" => id, "error" => Exception.message(e) |> String.slice(0, 300)}
+      e -> %{"id" => id, "seed" => seed, "error" => Exception.message(e) |> String.slice(0, 300)}
     end
 
   File.write!(out_file, Poison.encode!(res) <> "\n", [:append])

@@ -2,7 +2,9 @@
  * Fixtures of the coordinate-plane prototype from REAL backend payloads.
  *
  *   tsx scripts/coordinate-plane/build-fixtures.ts tasks <gen.jsonl>
- *     → data/all-tasks.json (tasks the prototype answers) + candidates.jsonl
+ *     → data/all-tasks.json (seed 1 of every task the prototype answers, with
+ *       its solution: the stories), data/seed-tasks.json (every seed, no
+ *       solution: the test) + candidates.jsonl
  *   tsx scripts/coordinate-plane/build-fixtures.ts verdicts <verdicts.jsonl>
  *     → data/backend-verdicts.json
  *
@@ -74,29 +76,40 @@ const lines = readFileSync(file, 'utf8')
 
 if (cmd === 'tasks') {
   const tasks: unknown[] = []
+  const seedTasks: unknown[] = []
   const candidates: string[] = []
   for (const r of lines) {
     if (r.error || r.description?.type !== 'coordinatePlane') continue
     const mode = planeModeOf(r.description.figure)
     if (mode.kind === 'unsupported') continue
     const solved = solvePlaneAnswer(r.answer)
-    tasks.push(
-      shrink({
-        id: `cp-${r.id}`,
-        type: r.type,
-        title: r.title,
-        description: r.description,
-        answerInput: r.answerInput,
-        solution: r.solution,
-        fields: {},
-        _backend: {
-          id: r.id,
-          seed: r.seed,
-          answer: r.answer,
-          answerType: r.answerType,
-        },
-      }),
-    )
+    const task = {
+      id: `cp-${r.id}-s${r.seed}`,
+      type: r.type,
+      title: r.title,
+      description: r.description,
+      answerInput: r.answerInput,
+      fields: {},
+      _backend: {
+        id: r.id,
+        seed: r.seed,
+        answer: r.answer,
+        answerType: r.answerType,
+      },
+    }
+    seedTasks.push(shrink(task))
+    // the stories' file keeps its key order: id … answerInput, solution, fields
+    const { fields, _backend, ...head } = task
+    if (r.seed === 1)
+      tasks.push(
+        shrink({
+          ...head,
+          id: `cp-${r.id}`,
+          solution: r.solution,
+          fields,
+          _backend,
+        }),
+      )
     if (!solved) continue
     const shift = (pts: Pt[], i: number, dx: number, dy: number) =>
       pts.map((p, j) => (j === i ? { x: p.x + dx, y: p.y + dy } : p))
@@ -122,21 +135,27 @@ if (cmd === 'tasks') {
     join(DATA, 'all-tasks.json'),
     JSON.stringify(tasks, null, 1) + '\n',
   )
+  // compact: three seeds of every task, read by the test only
+  writeFileSync(join(DATA, 'seed-tasks.json'), JSON.stringify(seedTasks) + '\n')
   writeFileSync(
     join(dirname(file), 'candidates.jsonl'),
     candidates.join('\n') + '\n',
   )
-  console.log(`tasks ${tasks.length}, candidates ${candidates.length}`)
+  console.log(
+    `tasks ${tasks.length}, seed tasks ${seedTasks.length}, candidates ${candidates.length}`,
+  )
 } else if (cmd === 'verdicts') {
-  const rows = lines.map(({ id, label, wire, verdict }) => ({
+  const rows = lines.map(({ id, seed, label, wire, verdict }) => ({
     id,
+    seed,
     label,
     wire,
     verdict,
   }))
+  // one row per line: diffs stay readable, the file stays small
   writeFileSync(
     join(DATA, 'backend-verdicts.json'),
-    JSON.stringify(rows, null, 1) + '\n',
+    '[\n' + rows.map((r) => JSON.stringify(r)).join(',\n') + '\n]\n',
   )
   console.log(
     `verdicts ${rows.length}, true ${rows.filter((r) => r.verdict === true).length}`,

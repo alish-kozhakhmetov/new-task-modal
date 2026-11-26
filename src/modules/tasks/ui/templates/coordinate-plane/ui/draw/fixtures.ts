@@ -5,6 +5,7 @@ import { toWireAnswer } from '../../lib/plane-answer'
 import type { CoordinatePlaneTask } from '../../lib/types.task'
 
 import allTasksJson from './data/all-tasks.json'
+import seedTasksJson from './data/seed-tasks.json'
 
 /**
  * A real task of the backend with its answer: `_backend` names the generator,
@@ -16,7 +17,14 @@ export type PlaneFixture = CoordinatePlaneTask & {
   _backend: { id: string; seed: number; answer: unknown; answerType: string }
 }
 
+/** Seed 1 of every task, with its solution: what the stories show. */
 export const ALL_PLANE_TASKS = allTasksJson as unknown as PlaneFixture[]
+
+/** Seeds 1–3 of every task, without the solution: what the test solves. */
+export const SEED_PLANE_TASKS = seedTasksJson as unknown as PlaneFixture[]
+
+/** Key of a task of the corpus and of its verdicts: generator and seed. */
+export const keyOf = (r: { id: string; seed: number }) => `${r.id}#${r.seed}`
 
 export const planeTask = (generator: string): PlaneFixture => {
   const task = ALL_PLANE_TASKS.find((t) => t._backend.id === generator)

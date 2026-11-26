@@ -10,7 +10,7 @@ import { toWireAnswer, type Pt } from '../../lib/plane-answer'
 import { solvePlaneAnswer } from '../../lib/solve-plane-answer'
 
 import verdicts from './data/backend-verdicts.json'
-import { ALL_PLANE_TASKS, type PlaneFixture } from './fixtures'
+import { SEED_PLANE_TASKS, keyOf, type PlaneFixture } from './fixtures'
 
 import { CoordinatePlaneDraw as Template } from '.'
 
@@ -62,7 +62,13 @@ const keyTo = (plane: Element, from: Pt, to: Pt, step: number) => {
  * backend/check.exs) on the answers the window sends: the solving points,
  * reversed, one point off, and the store's JSON string sent as is.
  */
-type Verdict = { id: string; label: string; wire: unknown; verdict: unknown }
+type Verdict = {
+  id: string
+  seed: number
+  label: string
+  wire: unknown
+  verdict: unknown
+}
 const rows = verdicts as Verdict[]
 /**
  * The local backend runs on OTP 29 (PCRE2): ExpressionTaskAnswer.replace_powers
@@ -76,7 +82,7 @@ const judged = rows.filter(
 /** A raise on a valid request is a 500 for the pupil: not accepted. */
 const accepted = (r: Verdict) => r.verdict === true
 
-const answerable = ALL_PLANE_TASKS.filter(
+const answerable = SEED_PLANE_TASKS.filter(
   (t) =>
     planeModeOf(t.description.figure).kind !== 'unsupported' &&
     solvePlaneAnswer(t._backend.answer),
@@ -91,7 +97,18 @@ describe('coordinatePlane.draw — real tasks solved through the window', () => 
     expect(answerable.length).toBeGreaterThan(90)
   })
 
-  it.each(answerable.map((t) => [t._backend.id, t] as const))(
+  it('covers every generator with three seeds', () => {
+    const seeds = new Map<string, Set<number>>()
+    for (const t of answerable)
+      seeds.set(
+        t._backend.id,
+        (seeds.get(t._backend.id) ?? new Set()).add(t._backend.seed),
+      )
+    const short = [...seeds].filter(([, s]) => s.size < 3).map(([id]) => id)
+    expect(short).toEqual([])
+  })
+
+  it.each(answerable.map((t) => [keyOf(t._backend), t] as const))(
     '%s: the keyboard puts the solving points, the backend port accepts',
     (_, task) => {
       const onAnswer = vi.fn()
@@ -114,8 +131,9 @@ describe('coordinatePlane.draw — real tasks solved through the window', () => 
       )
       // the very answer the window sent is the one TaskChecker accepted
       const record = rows.find(
-        (r) => r.id === task._backend.id && r.label === 'solved',
+        (r) => keyOf(r) === keyOf(task._backend) && r.label === 'solved',
       )
+      expect(record, 'a verdict of the backend for this seed').toBeTruthy()
       expect(record?.wire).toEqual(toWireAnswer(last))
       // accepted, or not judged locally (the OTP regex, see above)
       expect(
@@ -169,18 +187,18 @@ describe('the backend accepts what the window sends', () => {
 })
 
 describe('the port of the backend checker agrees with the backend', () => {
-  const byId = new Map(ALL_PLANE_TASKS.map((t) => [t._backend.id, t]))
+  const byKey = new Map(SEED_PLANE_TASKS.map((t) => [keyOf(t._backend), t]))
 
   it('the verdicts carry both answers: a check that only ever says «yes» proves nothing', () => {
     expect(judged.filter(accepted).length).toBeGreaterThan(80)
     expect(judged.filter((r) => !accepted(r)).length).toBeGreaterThan(80)
   })
 
-  it.each(judged.map((r) => [`${r.id} · ${r.label}`, r] as const))(
+  it.each(judged.map((r) => [`${keyOf(r)} · ${r.label}`, r] as const))(
     '%s',
     (_, row) => {
-      const task = byId.get(row.id)
-      expect(task, `fixture ${row.id}`).toBeTruthy()
+      const task = byKey.get(keyOf(row))
+      expect(task, `fixture ${keyOf(row)}`).toBeTruthy()
       expect(checkPlaneAnswer(task!._backend.answer, row.wire)).toBe(
         accepted(row),
       )
