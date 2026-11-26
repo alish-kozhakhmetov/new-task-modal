@@ -1,0 +1,288 @@
+/* stylelint-disable selector-class-pattern */
+
+/*
+ * Rhythm (package-parity, rules 7–8): parts of the condition 8, condition →
+ * answer 24, answer rows 12. One text size 18/23 (rule 1).
+ * Colours and radii only from DS tokens. No glows, blur or see-through
+ * layers: solid fills and clear edges only (Alisher, twice).
+ */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.condition {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.text {
+  @include body-medium-regular;
+
+  display: block;
+  color: var(--text-primary);
+}
+
+.imageBefore {
+  display: flex;
+  justify-content: center;
+
+  :global(svg) {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.answer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+/*
+ * Item size follows the old screen's «items per row» over the zone width,
+ * kept between the 44px tap minimum and 88px. Browsers without container
+ * units take the 56px line.
+ */
+$item-min: to-rem(44px);
+$item-max: to-rem(88px);
+
+.board {
+  --cbi-item: clamp(
+    #{$item-min},
+    calc(100cqi / var(--cbi-per-row, 5) - var(--space-8)),
+    #{$item-max}
+  );
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  container-type: inline-size;
+
+  @supports not (width: 1cqi) {
+    --cbi-item: #{to-rem(56px)};
+  }
+}
+
+.zone {
+  position: relative;
+  min-height: calc(var(--cbi-item) + 2 * var(--space-12));
+  padding: var(--space-12);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-l);
+}
+
+/* An empty zone shows it is waiting (math-illustrations §7): dashed, not blank. */
+.zoneEmpty {
+  border-style: dashed;
+}
+
+.zoneWithPicture {
+  padding: 0;
+  overflow: hidden;
+}
+
+.zonePicture {
+  display: block;
+  line-height: 0;
+
+  :global(svg) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.zoneItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  place-content: flex-start flex-start;
+  align-items: center;
+
+  .zoneWithPicture & {
+    position: absolute;
+    inset: 0;
+    place-content: center;
+    padding: var(--space-12);
+  }
+}
+
+/* Items laid out from a share of the picture's height (old `isFromTop`). */
+.zoneItemsFromTop {
+  .zoneWithPicture & {
+    align-content: flex-start;
+  }
+}
+
+/* Too many to lie on the picture: under it, inside the same zone. */
+.zoneItemsBelow {
+  .zoneWithPicture & {
+    position: static;
+    place-content: flex-start;
+  }
+}
+
+/* Lego bricks join into one bar. */
+.zoneItemsLego {
+  gap: 0;
+}
+
+/*
+ * Pyramid rings: the first one at the bottom, each on the one below, in the
+ * picture's own proportions (`columnWidth`), as the task's picture shows it.
+ */
+.zoneItemsColumn {
+  flex-flow: column-reverse nowrap;
+  gap: 0;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.separator {
+  @include body-medium-regular;
+
+  align-self: flex-end;
+  margin-left: calc(-1 * var(--space-4));
+  color: var(--text-primary);
+}
+
+.pool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.itemImage {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  :global(svg) {
+    width: auto;
+    max-width: 100%;
+    height: calc(100% * var(--cbi-scale, 1));
+  }
+}
+
+.itemImageSized {
+  width: var(--cbi-w);
+  height: auto;
+
+  :global(svg) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.poolGhost {
+  display: contents;
+  visibility: hidden;
+
+  .itemImage {
+    visibility: hidden;
+  }
+}
+
+.zoneItem,
+.poolItem {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  min-width: max(#{$item-min}, var(--cbi-item));
+  max-width: 100%;
+  height: max(#{$item-min}, var(--cbi-item));
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Pyramid rings: the ring's own height instead of the tap box. */
+.zoneItemsColumn .zoneItem {
+  min-width: 0;
+  height: auto;
+}
+
+.zoneItemButton {
+  cursor: pointer;
+  border-radius: var(--radius-m);
+
+  &:focus-visible {
+    outline: 2px solid var(--border-focus);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &:active {
+      transform: none;
+    }
+  }
+}
+
+.poolItem {
+  padding: var(--space-4);
+  cursor: pointer;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-m);
+  transition: transform 120ms ease-out;
+
+  &:focus-visible {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 2px;
+  }
+
+  /*
+   * Zone full or taps used up: grey picture on the disabled fill — solid,
+   * not see-through.
+   */
+  &:disabled {
+    cursor: default;
+    background: var(--bg-disabled);
+    border-color: var(--border-subtle);
+
+    .itemImage {
+      filter: grayscale(1);
+    }
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.96);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+/* One-time row: the place of a taken item stays, dashed and empty. */
+.poolItemTaken {
+  cursor: default;
+  background: var(--bg-canvas);
+  border-style: dashed;
+}
+
+.field {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.input {
+  flex: 0 1 auto;
+  min-width: to-rem(120px);
+}

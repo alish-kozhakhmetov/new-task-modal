@@ -185,7 +185,8 @@ export type MakeTrainerPropsOptions = {
   /**
    * Verdict on the submitted answer instead of the fixture's solution string —
    * for answers that are not a string to compare (the coordinate plane sends
-   * points and figures; its stories pass a port of the backend checker).
+   * points and figures, calculateByImage sends `{ list }`; their stories pass a
+   * port of the backend checker).
    */
   isCorrect?: (answer: unknown) => boolean
 }

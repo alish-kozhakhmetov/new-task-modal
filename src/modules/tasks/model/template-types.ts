@@ -146,4 +146,8 @@ export const TemplateTypes = {
       },
     },
   },
+  CalculateByImage: {
+    Plain: 'calculateByImage.plain',
+    WithCell: 'calculateByImage.withCell',
+  },
 }

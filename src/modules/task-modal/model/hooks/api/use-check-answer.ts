@@ -10,6 +10,7 @@ import { toCheckerTestAnswer } from '@/modules/tasks/lib/test-multiple-answers'
 
 import { hostLanguage } from '../../lib/host-language'
 import { isApiError } from '../../lib/is-api-error'
+import { toWireAnswer } from '../../lib/to-wire-answer'
 import {
   useAppState,
   useSetAppState,
@@ -142,12 +143,22 @@ export const useCheckAnswer = ({ props, refs }: Args) => {
       // site's Api.checkAnswer(task) reads it from there only (2.5.5).
       // The answer goes in the record the backend's checker accepts — only
       // the request carries it; the field and `prevAnswer` keep what was typed.
+      // A test with several correct options goes as a list of letters, the
+      // record the checker accepts (test-multiple-answers.ts). Then the
+      // boundary: the store keeps strings; calculateByImage leaves as an object.
+      const checkerAnswer = toCheckerAnswer(
+        toCheckerTestAnswer(activeTask, answer),
+      )
+      const wireAnswer = toWireAnswer({
+        description: activeTask.description,
+        answer: checkerAnswer,
+        calculateByImageType: TaskDescriptionType.CalculateByImage,
+      }) as typeof checkerAnswer
+
       const response = await api.checkAnswer(
         {
           ...activeTask,
-          // A test with several correct options goes as a list of letters,
-          // the record the checker accepts (test-multiple-answers.ts).
-          answer: toCheckerAnswer(toCheckerTestAnswer(activeTask, answer)),
+          answer: wireAnswer,
           lockVersion,
           language: hostLanguage(global),
         },
