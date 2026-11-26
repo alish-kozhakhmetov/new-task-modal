@@ -77,6 +77,7 @@ export const CheckboxGroup = ({
             name={name}
             value={option.value}
             label={option.label}
+            figure={option.figure}
             checked={picked.includes(option.value)}
             onChange={() => toggle(option.value)}
             disabled={disabled || option.disabled}
