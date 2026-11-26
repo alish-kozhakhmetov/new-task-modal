@@ -81,22 +81,27 @@ async function sandboxLogin() {
 }
 let sandboxN = 100000 + Math.floor(Math.random() * 1000)
 async function sandboxJudge(task, answer) {
-  for (let attempt = 0; attempt < 3; attempt++) {
-    const r = await fetch(`${API}/tasks/testing${sandboxN++}/answers`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-client-version': '1.8', Authorization: `Bearer ${TOKEN}` },
-      body: JSON.stringify({ type: task.type, fields: task.fields, answer, language: 'rus' }),
-    })
-    let j = await r.json().catch(() => null)
-    if (j?.message && typeof j.message === 'object') j = j.message
-    if (r.status >= 500 && attempt < 2) {
-      await new Promise((res) => setTimeout(res, 2000 * (attempt + 1)))
+  // test goes down for minutes at a time (502): wait it out, the check is idempotent
+  for (let attempt = 0; ; attempt++) {
+    let r = null
+    try {
+      r = await fetch(`${API}/tasks/testing${sandboxN++}/answers`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-client-version': '1.8', Authorization: `Bearer ${TOKEN}` },
+        body: JSON.stringify({ type: task.type, fields: task.fields, answer, language: 'rus' }),
+      })
+    } catch {
+      r = null
+    }
+    if ((!r || r.status === 502 || r.status === 503 || r.status === 504) && attempt < 45) {
+      await new Promise((res) => setTimeout(res, 20000))
       continue
     }
+    let j = await r.json().catch(() => null)
+    if (j?.message && typeof j.message === 'object') j = j.message
     if (!j) return { ok: false, status: r.status, result: null }
     return { ok: j.result === 30, status: r.status, result: j.result ?? null, answerString: j.answerString ?? null }
   }
-  return { ok: false, status: 0, result: null }
 }
 
 // ---------- the pupil's keys for a reference
@@ -251,9 +256,10 @@ async function solveOne(page, job) {
       }
     }
     // the window writes some units its own way: «тг» as «₸»
-    const flat = probe.text.replace(/\s+/g, '').replace(/₸/g, 'тг')
+    // and maths letters in italic (𝑥 → x): compare by NFKC
+    const flat = probe.text.normalize('NFKC').replace(/\s+/g, '').replace(/₸/g, 'тг').replace(/❋/g, '*')
     for (const a of adorn) {
-      const plain = stripLatex(a).replace(/\s+/g, '').replace(/₸/g, 'тг')
+      const plain = stripLatex(a).normalize('NFKC').replace(/\s+/g, '').replace(/₸/g, 'тг')
       if (plain && !/[\\{}^_$]/.test(plain) && plain.length <= 30 && !flat.includes(plain)) res.issues.push(`adornment not on screen: «${plain}»`)
     }
 

@@ -34,7 +34,28 @@ const args = Object.fromEntries(
 )
 const GRADE = Number(args.grade ?? 5)
 const CACHE = path.join(root, '.pilot-cache', `grade-${GRADE}`)
+/** generators the solver showed broken: { "5_1_55_2": "why" } — kept out of the maps */
+const EXCLUDE_FILE = path.join(import.meta.dirname, `grade-${GRADE}-exclude.json`)
+const EXCLUDE: Record<string, string> = fs.existsSync(EXCLUDE_FILE) ? JSON.parse(fs.readFileSync(EXCLUDE_FILE, 'utf8')) : {}
 const chaptersFilter = args.chapters ? new Set(String(args.chapters).split(',').map(Number)) : null
+
+/**
+ * The grades inventory (qalan-docs/trainer/grades-inventory/inventory.json, built
+ * on 2.5.8): the work list and the streams' borders. Only a generator the
+ * inventory calls «rules» or «open» goes into the maps here; «almost» (a
+ * layout, a part of the figure, a key or an answer rule that 2.5.8 lacks) is
+ * another stream's work and is listed with its code, even when a shipped
+ * template of the family would draw it (wave1-common.md, 26.11).
+ */
+const INVENTORY =
+  (args.inventory as string | undefined) ??
+  path.join(process.env.HOME ?? '', 'Documents/Projects/qalan/assets/qalan-docs/trainer/grades-inventory/inventory.json')
+type Form = { g: number; st: string; code: string; tpl?: string; ids: string[] }
+const inventory = new Map<string, Form>()
+if (fs.existsSync(INVENTORY)) {
+  for (const f of JSON.parse(fs.readFileSync(INVENTORY, 'utf8')).forms as Form[])
+    if (f.g === GRADE) for (const id of f.ids) inventory.set(`Elixir.${id}`, f)
+} else console.warn(`no inventory at ${INVENTORY}: every exact generator is mapped`)
 
 /** runtime value → `TemplateTypes.X.Y` expression for codegen */
 const exprOf = new Map<string, string>()
@@ -159,6 +180,32 @@ for (const l of lessons) {
   }
 }
 
+/**
+ * --source=inventory: the inventory's «rules»/«open» generators the cached lessons
+ * have not shown yet, on the layout of Amirali's live map (31.07). Marked so the
+ * solver knows they wait for a live sample; on chapter I of grade 5 that map and
+ * the pilot's classifier agreed on 93 of 93 generators (26.11).
+ */
+const fromInventory = new Set<string>()
+if (args.source === 'inventory') {
+  for (const [type, f] of inventory) {
+    if (gens.has(type) || !(f.st === 'rules' || f.st === 'open') || !f.tpl || !SHIPPED.has(f.tpl)) continue
+    const p = parseType(type)
+    if (!p || p.grade !== GRADE) continue
+    fromInventory.add(type)
+    gens.set(type, {
+      type,
+      key: `${p.grade}_${p.chapter}_${p.id}`,
+      ...p,
+      tasks: 0,
+      lessons: new Set(),
+      curriculumChapters: new Set(),
+      verdicts: new Map(),
+      samples: [{ template: f.tpl, reason: `inventory: ${f.code}, no live sample yet`, classified: f.tpl }],
+    })
+  }
+}
+
 /** One template per generator: the one all samples agree on, or one that covers every sample. */
 const decide = (g: Gen): Verdict => {
   if (!g.samples.length) return { template: null, reason: 'no description in the lesson (solved / empty)', classified: null }
@@ -181,9 +228,24 @@ const decide = (g: Gen): Verdict => {
   return { template: null, reason: `samples disagree: ${ids.join(', ')}`, classified: ids.join('+') }
 }
 
+/** The pilot's own verdict, then the inventory's border: rules/open only, exact only. */
+const gate = (g: Gen, v: Verdict): Verdict => {
+  const f = inventory.get(g.type)
+  if (fromInventory.has(g.type)) return v
+  if (!v.template) return v
+  if (v.reason !== 'exact')
+    return { template: null, reason: `almost: layout:${v.classified} (2.5.8 has only ${v.template})`, classified: v.classified }
+  if (!f) return { ...v, reason: 'exact, not in inventory' }
+  if (f.st === 'rules' || f.st === 'open') return v
+  return { template: null, reason: `${f.st}: ${f.code} (pilot classifier: ${v.template})`, classified: v.classified }
+}
+
 const out: Array<Record<string, unknown>> = []
 for (const g of gens.values()) {
-  const v = decide(g)
+  const v = EXCLUDE[g.key]
+    ? { template: null, reason: `excluded: ${EXCLUDE[g.key]}`, classified: decide(g).classified }
+    : gate(g, decide(g))
+  const f = inventory.get(g.type)
   out.push({
     type: g.type,
     key: g.key,
@@ -196,6 +258,8 @@ for (const g of gens.values()) {
     template: v.template,
     reason: v.reason,
     classified: v.classified,
+    live: !fromInventory.has(g.type),
+    inventory: f ? { st: f.st, code: f.code, tpl: f.tpl } : null,
     sampleVerdicts: Object.fromEntries(g.verdicts),
   })
 }
@@ -209,13 +273,28 @@ console.log(`lessons ${lessons.length}, generators ${out.length}, tasks ${sum(ou
 console.log(`mapped ${mapped.length} generators / ${sum(mapped)} tasks; not: ${out.length - mapped.length} / ${sum(out) - sum(mapped)}`)
 const byReason = new Map<string, { g: number; t: number }>()
 for (const x of out) {
-  const r = String(x.reason).replace(/^cover .*/, 'cover').replace(/^(variant missing: \w+).*/, '$1')
+  const r = String(x.reason)
+    .replace(/^cover .*/, 'cover')
+    .replace(/^(variant missing: \w+).*/, '$1')
+    .replace(/ \((2\.5\.8 has only|pilot classifier:) .*\)$/, '')
   const e = byReason.get(r) ?? { g: 0, t: 0 }
   e.g++
   e.t += Number(x.tasks)
   byReason.set(r, e)
 }
 for (const [r, e] of [...byReason.entries()].sort((a, b) => b[1].t - a[1].t)) console.log(`  ${r.padEnd(48)} ${String(e.g).padStart(4)} gen ${String(e.t).padStart(5)} tasks`)
+// the inventory's layout (Amirali's live map, 31.07) against the pilot's classifier on today's samples
+const tplDiff = out.filter((x) => {
+  const inv = x.inventory as { tpl?: string } | null
+  const c = String(x.classified ?? '')
+  return inv?.tpl && !inv.tpl.endsWith('.?') && c && !c.includes('+') && inv.tpl !== c
+})
+const tplSame = out.filter((x) => {
+  const inv = x.inventory as { tpl?: string } | null
+  return inv?.tpl && !inv.tpl.endsWith('.?') && x.classified && inv.tpl === x.classified
+})
+console.log(`inventory layout = pilot classifier: ${tplSame.length}, differs: ${tplDiff.length}`)
+for (const x of tplDiff) console.log(`  ${x.key}: inventory ${(x.inventory as { tpl: string }).tpl}, today ${x.classified}`)
 const otherGrades = out.filter((x) => x.grade !== GRADE)
 if (otherGrades.length) console.log(`generators of other grades in these lessons: ${otherGrades.map((x) => x.key).join(' ')}`)
 
@@ -240,6 +319,18 @@ const load = async (g: number, ch: number) => {
 }
 let added = 0
 let kept = 0
+let removed = 0
+for (const x of out) {
+  if (!String(x.reason).startsWith('excluded') || x.grade === 4) continue
+  if (chaptersFilter && !(x.curriculumChapters as number[]).some((c) => chaptersFilter.has(c))) continue
+  const m = await load(Number(x.grade), Number(x.chapter))
+  for (const [tpl, ids] of m) {
+    const left = ids.filter((i) => String(i) !== String(x.id))
+    if (left.length !== ids.length) removed++
+    if (left.length) m.set(tpl, left)
+    else m.delete(tpl)
+  }
+}
 for (const x of chosen) {
   if (x.grade === 4) continue // grade 4 is not touched by the pilot
   const m = await load(Number(x.grade), Number(x.chapter))
@@ -272,4 +363,4 @@ for (const [f, m] of files) {
     `import { TemplateTypes } from '../../../model/template-types.ts'\n\nconst map = {\n${entries.join('\n')}\n}\n\nexport default map\n`,
   )
 }
-console.log(`written ${files.size} chapter files: +${added} generators, ${kept} already mapped`)
+console.log(`written ${files.size} chapter files: +${added} generators, ${kept} already mapped, ${removed} excluded`)

@@ -77,7 +77,7 @@ const redact = (s) =>
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
 let TOKEN = ''
-async function api(p, { method = 'GET', body } = {}) {
+async function api(p, { method = 'GET', body, noRetry = false } = {}) {
   // test goes down for minutes at a time (502 from Cloudflare): wait it out,
   // up to ~15 minutes per request; the requests are idempotent
   for (let attempt = 0; ; attempt++) {
@@ -97,7 +97,7 @@ async function api(p, { method = 'GET', body } = {}) {
       r = null
     }
     const down = !r || r.status === 502 || r.status === 503 || r.status === 504
-    if (down && attempt < 45) {
+    if (down && !noRetry && attempt < 45) {
       if (attempt % 6 === 0) console.log(`  test is down (${r?.status ?? 'network'}) on ${p.split('?')[0]}, waiting`)
       await sleep(20000)
       continue
@@ -141,6 +141,17 @@ async function login() {
     pupilGrade: u.pupil?.class?.grade ?? u.pupil?.grade ?? null,
   })
   return u
+}
+
+/** test is up: a cheap GET answers without 5xx (waits up to ~15 min) */
+async function healthy() {
+  for (let i = 0; i < 45; i++) {
+    const r = await fetch(`${API}/chatMessages/last`, { headers: { 'x-client-version': '1.8', Authorization: `Bearer ${TOKEN}` } }).catch(() => null)
+    if (r && r.status < 500) return true
+    if (i % 6 === 0) console.log(`  test is down (${r?.status ?? 'network'}), waiting`)
+    await sleep(20000)
+  }
+  return false
 }
 
 async function pool(items, n, fn) {
@@ -205,27 +216,45 @@ async function main() {
   if (!args.lessons) return
 
   const lessonDir = path.join(CACHE, `grade-${GRADE}`, 'lessons')
-  const todo = lessons.filter((x) => !fs.existsSync(path.join(lessonDir, `${x.lesson.id}.json`)))
+  const isDone = (id) => {
+    const f = path.join(lessonDir, `${id}.json`)
+    if (!fs.existsSync(f)) return false
+    return args['retry-failed'] ? JSON.parse(fs.readFileSync(f, 'utf8')).status === 200 : true
+  }
+  const todo = lessons.filter((x) => !isDone(x.lesson.id))
   console.log(`lessons to fetch: ${todo.length} (cached: ${lessons.length - todo.length})`)
   let done = 0
   const failed = []
-  await pool(todo, 2, async (x) => {
-    const r = await api(`/lessons/${x.lesson.id}/tasks?language=rus`)
+  // one lesson at a time, test healthy before each; a lesson that answers
+  // 5xx is cached with its status and not asked again (it may be the one
+  // that takes test down: --retry-failed asks once more)
+  const suspects = []
+  await pool(todo, 1, async (x) => {
+    if (!(await healthy())) throw new Error('test stays down')
+    const t0 = Date.now()
+    const r = await api(`/lessons/${x.lesson.id}/tasks?language=rus`, { noRetry: true })
     const j = unwrap(r.json)
     const tasks = Array.isArray(j) ? j : j?.tasks
-    // a failed lesson is cached too, with its status: no second GET
     writeJson(path.join(lessonDir, `${x.lesson.id}.json`), {
       chapterId: x.chapterId,
       lessonId: x.lesson.id,
       lessonTitle: x.lesson.title?.rus ?? x.lesson.title,
       status: r.status,
+      ms: Date.now() - t0,
       error: r.status === 200 ? null : r.text,
       tasks: tasks ?? [],
     })
-    if (r.status !== 200) failed.push(`${x.lesson.id}:${r.status}`)
+    if (r.status !== 200) {
+      failed.push(`${x.lesson.id}:${r.status}`)
+      // did test go down right after it?
+      const after = await fetch(`${API}/chatMessages/last`, { headers: { 'x-client-version': '1.8', Authorization: `Bearer ${TOKEN}` } }).catch(() => null)
+      suspects.push(`${x.lesson.id}: HTTP ${r.status} in ${Date.now() - t0} ms, test after it: ${after?.status ?? 'network'}`)
+      console.log(`  lesson ${x.lesson.id}: HTTP ${r.status} (${Date.now() - t0} ms), test after: ${after?.status ?? 'network'}`)
+    }
     done++
-    if (done % 20 === 0) console.log(`  ${done}/${todo.length}`)
+    if (done % 10 === 0) console.log(`  ${done}/${todo.length}`)
   })
+  if (suspects.length) writeJson(path.join(CACHE, `grade-${GRADE}`, 'lesson-failures.json'), suspects)
   console.log(`lessons fetched: ${done}, failed: ${failed.length} ${failed.join(' ')}`)
 
   if (!args.answers) return
@@ -243,20 +272,27 @@ async function main() {
   }
   console.log(`references to fetch: ${jobs.length}`)
   let n = 0
-  await pool(jobs, 4, async (job, k) => {
+  let sinceDown = 0
+  await pool(jobs, 2, async (job, k) => {
     const r = await api(`/tasks/testing${k}/answers`, {
       method: 'POST',
+      noRetry: true,
       body: { type: job.type, fields: job.fields, answer: '0', language: 'rus' },
     })
     const j = unwrap(r.json) || {}
     if (j.answerString != null && j.answerString !== 'error') refs[job.key] = { answer: String(j.answerString), result: j.result }
     else if (j.result === 30) refs[job.key] = { answer: '0', result: 30 }
-    else refs[job.key] = { answer: null, status: r.status, result: j.result ?? null, error: j.answerString === 'error' ? 'error' : r.text.slice(0, 120) }
+    else if (r.status >= 500 || r.status === 0) {
+      // not cached: asked again on the next run
+      console.log(`  sandbox ${job.type}: HTTP ${r.status}`)
+      await healthy()
+    } else refs[job.key] = { answer: null, status: r.status, result: j.result ?? null, error: j.answerString === 'error' ? 'error' : r.text.slice(0, 120) }
     n++
     if (n % 200 === 0) {
       console.log(`  ${n}/${jobs.length}`)
       writeJson(refFile, refs)
     }
+    sinceDown++
   })
   writeJson(refFile, refs)
   const got = Object.values(refs).filter((x) => x.answer != null).length
