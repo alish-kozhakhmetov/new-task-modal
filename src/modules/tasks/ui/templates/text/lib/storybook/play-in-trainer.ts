@@ -16,6 +16,8 @@ import type { TextTask } from '../types.task'
 import { pickTask, resolveTrainerGroup } from './create-text-template-stories'
 import {
   getFixtureAnswerString,
+  getLastStoryCheck,
+  resetLastStoryCheck,
   STORY_THEORY_VIDEO_ID,
 } from './make-trainer-props'
 import type { TemplateGroupFixture } from './render-template-groups'
@@ -161,13 +163,20 @@ const getMathQuillField = (field: HTMLElement): MathQuillField => {
   return mathField
 }
 
+/**
+ * LaTeX source (`\frac{\pi}{2}`, `[a،b]`, `a||b`, `\ `) cannot be typed key by
+ * key: `typedText` turns `\`, `{`, `[`, `|` into its own commands
+ * (`\left\{…\right\}`, `\frac{…}{ }`), so the field would hold another answer.
+ */
+const LATEX_SOURCE = /[\\{}[\]| ]/
+
 const setMathFieldLatex = (field: HTMLElement, value: string) => {
   const mathField = getMathQuillField(field)
   mathField.focus?.()
   // Clear then type so the `edit` handler always sees a change.
   mathField.latex('')
   if (value.length === 0) return
-  if (mathField.typedText) {
+  if (mathField.typedText && !LATEX_SOURCE.test(value)) {
     for (const char of value) {
       mathField.typedText(char)
     }
@@ -193,6 +202,21 @@ const fillAllMathFields = async (
   }
 }
 
+/**
+ * Success of a correct-answer play: the story's check judged the answer the
+ * window sent equal to the fixture's `solution.answer` (`getLastStoryCheck`).
+ * Fields typed in the wrong order send `b;;a` — the button still goes
+ * disabled, this assertion does not pass.
+ */
+const expectCheckAccepted = async () => {
+  await waitFor(() => expect(getLastStoryCheck()).not.toBeNull())
+  const verdict = getLastStoryCheck()
+  await expect(
+    verdict?.correct,
+    `check rejected the sent answer «${verdict?.sent ?? ''}», normalized solution.answer «${verdict?.expected ?? ''}»`,
+  ).toBe(true)
+}
+
 const submitCheck = async (
   canvasElement: HTMLElement,
   user: ReturnType<typeof makeStoryUser>,
@@ -206,9 +230,9 @@ const submitCheck = async (
 /**
  * Shared `play` for every domain's `InTrainer` story: enters the fixture's
  * correct `task.solution` answer and clicks "Проверить", then asserts the
- * trainer accepted it (the check button resets to disabled — see
- * `handleCorrectAnswer` in `use-check-answer.ts`, which clears the input on
- * a correct check).
+ * check's verdict: the answer the window sent matched `solution.answer`
+ * (`expectCheckAccepted`). The check button going disabled is not proof —
+ * it is disabled after a wrong answer too (same answer blocked).
  *
  * Most domains answer via `MathInput`(s) (`[data-input]`), so the raw
  * solution text (split on the multi-input separator) is typed into them.
@@ -242,7 +266,9 @@ export const runPlayCorrectAnswerForTask =
 
     await waitFor(() => expect(checkButton).toBeEnabled())
     await settle(DEV_STEP_DELAY_MS)
+    resetLastStoryCheck()
     await user.click(checkButton)
+    await expectCheckAccepted()
     await waitFor(() => expect(checkButton).toBeDisabled())
     await settle(DEV_STEP_DELAY_MS)
   }
@@ -293,7 +319,9 @@ export const makePlayCorrectAnswerInTrainer = (args: MakePlayArgs) =>
       PLAY_CASES_CORRECT[1].label,
       async () => {
         await settle(DEV_STEP_DELAY_MS)
+        resetLastStoryCheck()
         await user.click(checkButton)
+        await expectCheckAccepted()
         await waitFor(() => expect(checkButton).toBeDisabled())
         await settle(DEV_STEP_DELAY_MS)
       },

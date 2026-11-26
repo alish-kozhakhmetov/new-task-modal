@@ -57,13 +57,42 @@ const STORY_USER: User = {
 /** Per-task wrong-attempt counter for heart animation (3 → 2 → 1 → solution). */
 const wrongAttemptsByTaskId = new Map<string, number>()
 
+/**
+ * What the story's local check last judged: the answer the window sent
+ * against the fixture's `solution.answer`. A play's success is this verdict,
+ * not the «Проверить» button going disabled — it goes disabled after a wrong
+ * answer too (same answer blocked).
+ */
+export interface StoryCheckVerdict {
+  taskId: string
+  sent: string
+  expected: string
+  correct: boolean
+}
+
+let lastStoryCheck: StoryCheckVerdict | null = null
+
+export const getLastStoryCheck = (): StoryCheckVerdict | null => lastStoryCheck
+
+export const resetLastStoryCheck = () => {
+  lastStoryCheck = null
+}
+
 /** Mentor chat socket handlers registered via `joinToRoom` (Storybook echo). */
 type SocketHandler = { when: string; execute: (payload: unknown) => void }
 let mentorSocketHandlers: SocketHandler[] = []
 
-/** Normalize answers for Storybook local check (strips `\(...\)`, whitespace). */
+/**
+ * Normalize answers for Storybook local check (strips `\(...\)`, whitespace,
+ * braces around a lone command). The field writes `2\pi k` for the fixture's
+ * `2{\pi}k`; the backend's TaskChecker takes both (Task_10_2_10_1,
+ * Task_10_4_1_10, local backend 27.11: 8 of 8).
+ */
 export const normalizeTrainerAnswer = (value: string): string =>
-  stripMathDelimiters(value).replace(/\s+/g, '').toLowerCase()
+  stripMathDelimiters(value)
+    .replace(/\{(\\[a-zA-Z]+)\}/g, '$1')
+    .replace(/\s+/g, '')
+    .toLowerCase()
 
 /** Plain answer text (Translation-unwrapped) backing a fixture's `solution`. */
 export const getFixtureAnswerString = (
@@ -253,6 +282,12 @@ export const makeTrainerProps = (
           await Promise.resolve()
           const user = normalizeTrainerAnswer(String(submitted.answer ?? ''))
           const isCorrect = expectedAnswer.length > 0 && user === expectedAnswer
+          lastStoryCheck = {
+            taskId: task.id,
+            sent: String(submitted.answer ?? ''),
+            expected: expectedAnswer,
+            correct: isCorrect,
+          }
 
           if (isCorrect) {
             wrongAttemptsByTaskId.set(task.id, 0)
