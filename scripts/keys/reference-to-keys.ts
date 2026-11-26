@@ -33,7 +33,16 @@ const GREEK = new Set([
   'phi',
 ])
 
-const AS_IS = new Set(['infty', 'cup', 'pi', 'cdot', 'varnothing'])
+const AS_IS = new Set([
+  'infty',
+  'cup',
+  'pi',
+  'cdot',
+  'varnothing',
+  'pm',
+  'le',
+  'ge',
+])
 const FUNCTIONS: Record<string, string> = {
   sin: '\\sin',
   cos: '\\cos',
@@ -70,8 +79,11 @@ export const referenceToKeys = (
   const ref = reference
     // left-to-right marks around the pairs of a system (EquationSystemsTaskAnswer)
     .replace(/\u200e/g, '')
-    // ±√29 is typed as its two answers: √29; −√29 (TwoAnswersTaskAnswer takes it)
-    .replace(/^\\pm(.+)$/, '$1;-$1')
+    // ±√29 without a ± key is typed as its two answers: √29; −√29
+    // (TwoAnswersTaskAnswer takes it, TrigonometryTaskAnswer doesn't)
+    .replace(/^\\pm(.+)$/, (m, rest) =>
+      o.has('\\pm') ? m : `${rest};-${rest}`,
+    )
   const out: string[] = []
   let i = 0
   const parens: number[] = []
@@ -103,6 +115,15 @@ export const referenceToKeys = (
       const name = m[1]
       i += m[0].length
       if (name === 'left' || name === 'right') return true
+      // ∅: one key; the backend's generators spell it either way
+      if (name === 'leq' || name === 'geq') {
+        out.push(`\\${name.slice(0, 2)}`)
+        return true
+      }
+      if (name === 'emptyset') {
+        out.push('\\varnothing')
+        return true
+      }
       if (name === 'frac' || name === 'dfrac' || name === 'tfrac') {
         out.push('\\frac')
         if (!readGroup()) return false
@@ -128,9 +149,17 @@ export const referenceToKeys = (
       }
       if (name === 'log') {
         const b = /^_(?:\{(\w+)\}|(\w))/.exec(ref.slice(i))
-        if (!b) return false
-        i += b[0].length
-        out.push('\\log', ...(b[1] ?? b[2]).split(''), 'Right')
+        if (b) {
+          i += b[0].length
+          out.push('\\log', ...(b[1] ?? b[2]).split(''), 'Right')
+          return true
+        }
+        // a base that is itself a formula: log_{4/125} 125
+        if (!ref.startsWith('_{', i)) return false
+        out.push('\\log')
+        i++
+        if (!readGroup()) return false
+        out.push('Right')
         return true
       }
       if (name === 'overrightarrow') {
@@ -148,6 +177,8 @@ export const referenceToKeys = (
         if (OPERATOR_NAMES[g[1]]) return fn([OPERATOR_NAMES[g[1]]])
         return false
       }
+      // ln, lg: typed from the letters — MathQuill makes \ln and \lg itself
+      if (name === 'ln' || name === 'lg') return fn(name.split(''))
       if (name === 'tan') return fn(TG_KEY[o.tg].tg)
       if (name === 'cot') return fn(TG_KEY[o.tg].ctg)
       if (FUNCTIONS[name]) return fn([FUNCTIONS[name]])
@@ -157,18 +188,25 @@ export const referenceToKeys = (
       }
       return false
     }
-    if (ref.startsWith('^{\\circ}', i)) {
+    if (ref.startsWith('^{\\circ}', i) || ref.startsWith('^\\circ', i)) {
       out.push('^{\\circ}')
-      i += '^{\\circ}'.length
+      i += ref.startsWith('^{', i) ? '^{\\circ}'.length : '^\\circ'.length
       return true
     }
     if (c === '^') {
       const m = /^\^(?:\{(\d+)\}|(\d))/.exec(ref.slice(i))
-      if (!m) return false
-      const p = m[1] ?? m[2]
-      if ((p === '2' || p === '3') && o.has(`^${p}`)) out.push(`^${p}`)
-      else out.push('^{}', ...p.split(''), 'Right')
-      i += m[0].length
+      if (m) {
+        const p = m[1] ?? m[2]
+        if ((p === '2' || p === '3') && o.has(`^${p}`)) out.push(`^${p}`)
+        else out.push('^{}', ...p.split(''), 'Right')
+        i += m[0].length
+        return true
+      }
+      // any other power: xⁿ, then what the power holds — 2ˣ, (−1)ᵏ, e^{x²−4x}
+      out.push('^{}')
+      i++
+      if (!readGroup()) return false
+      out.push('Right')
       return true
     }
     if (c === '{') {
@@ -189,14 +227,16 @@ export const referenceToKeys = (
       i++
       return true
     }
-    const word = /[a-z]/.test(ref[i - 1] ?? '') ? null : BARE_FUNCTION.exec(ref.slice(i))
+    const word = /[a-z]/.test(ref[i - 1] ?? '')
+      ? null
+      : BARE_FUNCTION.exec(ref.slice(i))
     if (word) {
       i += word[0].length
       if (word[1] === 'tg') return fn(TG_KEY[o.tg].tg)
       if (word[1] === 'ctg') return fn(TG_KEY[o.tg].ctg)
       return fn([OPERATOR_NAMES[word[1]] ?? FUNCTIONS[word[1]]])
     }
-    if (/[0-9a-zA-Z+\-;,()[\]=]/.test(c)) {
+    if (/[0-9a-zA-Z+\-;,()[\]=<>|]/.test(c)) {
       out.push(c)
       i++
       return true
@@ -253,6 +293,8 @@ export const referenceToTyping = (
   })
   if (!keys) return null
   return keys.map((k) =>
-    k.length === 1 && /[0-9a-zA-Z+\-;,()[\]=]/.test(k) ? { type: k } : { key: k },
+    k.length === 1 && /[0-9a-zA-Z+\-;,()[\]=]/.test(k)
+      ? { type: k }
+      : { key: k },
   )
 }

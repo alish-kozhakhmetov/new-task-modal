@@ -14,7 +14,7 @@
  * generator, and the keyboard doesn't hint the shape of the answer (∪ is
  * there in an interval task without a union too).
  *
- * Grade 4 never gets a set: its keyboard stays as released (signs.test.ts).
+ * Grades 0–4 never get a set: their keyboard stays as released (signs.test.ts).
  */
 import fs from 'node:fs'
 import path from 'node:path'
@@ -32,48 +32,81 @@ const coverage = JSON.parse(fs.readFileSync(args.coverage, 'utf8'))
 const variants = JSON.parse(fs.readFileSync(args.variants, 'utf8'))
 
 const INTERVAL_TYPES = new Set(['IntervalTaskAnswer', 'UnionTaskAnswer'])
-const INTERVAL = /\\cup|\\infty/
+// ∞ ∪, «no solutions» ∅, a point {2}, a closed end [ ] — what the interval
+// page types. \sqrt[3] is a root, not a bracket: stripped before the test.
+const INTERVAL = /\\cup|\\infty|\\varnothing|\\emptyset|\\\{|\[|\]/
 // sin cos tg ctg and their arcs; «tg» as a word, not inside one
 const TRIG_FN =
   /\\(sin|cos|tan|cot|arcsin|arccos)(?![a-z])|\\operatorname\{(arc)?c?tg\}|(?<![a-z])(arc)?c?tg(?![a-z])/
 const PI = /\\pi(?![a-z])/
+// a power other than the released x² and x³: a⁴, c¹⁹, 5³⁻ˣ, eˣ
+const POWER = /\^\{?(?![23]\}?(?![0-9]))[0-9a-z]/
+const ROOT = /\\sqrt/
+// a matrix is typed in a grid the window doesn't have; a picture is counted
+const NO_KEYS = new Set(['MultipleChoice', 'MatrixHelper', 'TaskAnswers.CalculateByImageTaskAnswer'])
 
 /** The set of one generator: its answer type, then the signs of its samples. */
-const pick = (type, text, grade) => {
+const pick = (type, raw, grade) => {
   // a graph drawn on the plane, not typed: y = log₄x is the curve's label
-  if (type.startsWith('TaskAnswers.CoordinatePlane.')) return null
+  if (type.startsWith('TaskAnswers.CoordinatePlane.') || NO_KEYS.has(type)) return null
+  const text = raw.replace(/\\sqrt\[[^\]]*\]/g, '\\sqrt')
   if (INTERVAL_TYPES.has(type) || INTERVAL.test(text)) {
     // an interval of a trigonometric inequality: (−π/4 + πk; arctg 7 + πk)
     return TRIG_FN.test(text) ? 'intervalTrig' : 'interval'
   }
   if (type === 'TaskAnswers.TrigonometryTaskAnswer') return 'trigonometry'
   if (TRIG_FN.test(text)) return 'trigonometry'
-  // C = 2πR in grade 6 wants π, not sin and arctg beside it
-  if (PI.test(text)) return grade <= 8 ? 'pi' : 'trigonometry'
-  if (/\\overrightarrow|\\vec\b/.test(text)) return 'vector'
+  // C = 2πR in grade 6 wants π, not sin and arctg beside it; π with a root
+  // or a power — the trigonometry page, it has all three
+  if (PI.test(text))
+    return grade <= 8 && !ROOT.test(text) && !POWER.test(text) ? 'pi' : 'trigonometry'
+  if (/\\overrightarrow|\\vec(?![a-z])/.test(text)) return 'vector'
   if (/\\circ/.test(text)) return 'degree'
-  if (/\\sqrt/.test(text) || type === 'Grade11.Formula.RootHelper') return 'root'
-  if (/\\log/.test(text)) return 'log'
+  // log with its base; ln and lg come from the letters (MathQuill makes \ln),
+  // their |x| from the log page: 7ln|x| + C
+  const bars = /(?<!\|)\|(?!\|)/.test(text)
+  if (/\\log/.test(text) || (bars && /\\(ln|lg)/.test(text))) return 'log'
+  if (bars || /\\(le|ge|leq|geq)(?![a-z])/.test(text)) return 'compare'
+  if (ROOT.test(text) || POWER.test(text) || type === 'Grade11.Formula.RootHelper') return 'root'
   return null
 }
 
 const key = (taskType) => taskType.replace(/^Elixir\./, '').replace(/^Task_/, '')
 const grade = (k) => Number(/^(\d+)_/.exec(k)?.[1] ?? NaN)
 
-const text = new Map()
-const addText = (k, t) => text.set(k, `${text.get(k) ?? ''} ${t}`)
-for (const v of variants) addText(key(v.taskType), JSON.stringify(v.answer ?? ''))
+// the signs of a generator: its backend samples (current), else variants.json
 const samples = args.samples
   ? fs.readFileSync(args.samples, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l))
   : []
-for (const r of samples) addText(key(r.id), JSON.stringify(r.refs))
+const sampled = new Map()
+const kindOf = new Map()
+for (const r of samples) {
+  if (r.error) continue
+  const k = key(r.id)
+  // an answer drawn, not typed, comes as JSON: {"functions":["x=-4","x=3"]}
+  const typed = r.refs.map((x) => x ?? '').filter((x) => !x.startsWith('{"'))
+  sampled.set(k, `${sampled.get(k) ?? ''} ${typed.join(' ')}`)
+  if (r.kind) kindOf.set(k, r.kind)
+}
+// variants.json (02.08): string answers only — an object's JSON has [ ] of its own
+const fromVariants = new Map()
+for (const v of variants) {
+  const k = key(v.taskType)
+  const a = [v.answer].flat().filter((x) => typeof x === 'string').join(' ')
+  fromVariants.set(k, `${fromVariants.get(k) ?? ''} ${a}`)
+}
+// a sign seen in either: a few samples of today's backend miss a rare form
+const textOf = (k) => `${sampled.get(k) ?? ''} ${fromVariants.get(k) ?? ''}`
 
-const SETS = ['interval', 'intervalTrig', 'trigonometry', 'pi', 'vector', 'degree', 'root', 'log']
+const SETS = ['interval', 'intervalTrig', 'trigonometry', 'pi', 'vector', 'degree', 'root', 'log', 'compare']
 const sets = Object.fromEntries(SETS.map((n) => [n, new Set()]))
-for (const g of coverage.generators) {
-  const k = key(g.taskType)
-  if (grade(k) === 4 || g.answerElixirType === 'MultipleChoice') continue
-  const s = pick(g.answerElixirType ?? '', text.get(k) ?? '', grade(k))
+const typeOf = new Map(coverage.generators.map((g) => [key(g.taskType), g.answerElixirType ?? '']))
+for (const k of new Set([...typeOf.keys(), ...sampled.keys()])) {
+  // grades 0–4 keep the released keyboard; the keys are for 5–13
+  if (!(grade(k) >= 5 && grade(k) <= 13)) continue
+  // the sampled kind is today's; coverage.json is 02.08
+  const type = kindOf.get(k) ?? typeOf.get(k) ?? ''
+  const s = pick(type, textOf(k), grade(k))
   if (s) sets[s].add(k)
 }
 
@@ -87,7 +120,7 @@ fs.writeFileSync(
   `/**
  * GENERATED by scripts/keys/generate-task-keys.mjs — do not edit by hand.
  * Source: coverage.json ${coverage._sourceCommit ?? ''} (answer type of each
- * generator), variants.json${samples.length ? ` and ${samples.length} backend samples` : ''} (sample answers).
+ * generator), ${samples.length ? `${samples.length} backend samples (${sampled.size} generators), variants.json for the rest` : 'variants.json'} (sample answers).
  * ${counts}.
  */
 export const TASK_KEY_SETS = {
