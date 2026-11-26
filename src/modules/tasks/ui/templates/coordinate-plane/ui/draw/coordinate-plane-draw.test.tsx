@@ -7,7 +7,12 @@ import { makeDeps } from '@/modules/tasks/ui/templates/shared/testing/make-task-
 import { checkPlaneAnswer } from '../../lib/check-plane-answer'
 import { planeModeOf } from '../../lib/drawing-figure'
 import { toWireAnswer, type Pt } from '../../lib/plane-answer'
-import { solveFigures, solvePlaneAnswer } from '../../lib/solve-plane-answer'
+import {
+  fillPredicate,
+  solveFigures,
+  solveFill,
+  solvePlaneAnswer,
+} from '../../lib/solve-plane-answer'
 
 import verdicts from './data/backend-verdicts.json'
 import { SEED_PLANE_TASKS, keyOf, type PlaneFixture } from './fixtures'
@@ -82,30 +87,70 @@ const judged = rows.filter(
 /** A raise on a valid request is a 500 for the pupil: not accepted. */
 const accepted = (r: Verdict) => r.verdict === true
 
+/**
+ * What a pupil who solved a plane of figures draws (E, F): the figures, and
+ * on a plane to shade the filling point when the answer asks for one.
+ */
+const solutionOf = (t: PlaneFixture) => {
+  const f = t.description.figure
+  const step = f.tickStep || 1
+  const field = {
+    lo: (f.minPosition ?? -5) - step,
+    hi: (f.maxPosition ?? 5) + step,
+  }
+  const mode = planeModeOf(f)
+  const fill = mode.kind === 'multi' && mode.fill
+  return {
+    field,
+    step,
+    figures: solveFigures(t._backend.answer, field),
+    needsFill: fill && fillPredicate(t._backend.answer, field) != null,
+    fill: fill
+      ? solveFill(t._backend.answer, {
+          lo: field.lo + step,
+          hi: field.hi - step,
+          step,
+        })
+      : null,
+  }
+}
+
 const answerable = SEED_PLANE_TASKS.filter((t) => {
   const kind = planeModeOf(t.description.figure).kind
   if (kind === 'unsupported') return false
   return kind === 'multi'
-    ? solveFigures(t._backend.answer)
+    ? solutionOf(t).figures
     : solvePlaneAnswer(t._backend.answer, t.description.figure)
 })
 const single = answerable.filter(
   (t) => planeModeOf(t.description.figure).kind !== 'multi',
 )
 /**
- * A figure the window can draw: its nodes within the field and one tick past
- * it, as InteractivePlane snaps. Task_11_5_5_25 asks for a circle of radius 9
- * on a −5…5 plane (seeds 1, 2): no node of it is reachable — a fact of the
- * generator, counted below, not drawn.
+ * A solution the window can draw: the figures' nodes within the field and
+ * one tick past it, as InteractivePlane snaps, and a filling point where one
+ * is due. Facts of the generators, counted below, not drawn:
+ * Task_11_5_5_25 seeds 1–2 ask for a circle of radius 9 on a −5…5 plane (no
+ * node reachable); Task_5_8_8_6 seeds 2–3 ask to shade x² + y² ≥ 16 and
+ * x² + y² ≤ 9 at once — the region is empty, no answer is right.
  */
+const UNSOLVABLE = new Set([
+  'Task_5_8_8_6#2',
+  'Task_5_8_8_6#3',
+  'Task_11_5_5_25#1',
+  'Task_11_5_5_25#2',
+])
 const reachable = (t: PlaneFixture) => {
-  const f = t.description.figure
-  const step = f.tickStep || 1
-  const lo = (f.minPosition ?? -5) - step
-  const hi = (f.maxPosition ?? 5) + step
-  return (solveFigures(t._backend.answer) ?? []).every((g) =>
-    g.points.every((p) => p.x >= lo && p.x <= hi && p.y >= lo && p.y <= hi),
+  const { field, figures, needsFill, fill } = solutionOf(t)
+  const inField = (figures ?? []).every((g) =>
+    g.points.every(
+      (p) =>
+        p.x >= field.lo &&
+        p.x <= field.hi &&
+        p.y >= field.lo &&
+        p.y <= field.hi,
+    ),
   )
+  return inField && (!needsFill || fill != null)
 }
 const allMulti = answerable.filter(
   (t) => planeModeOf(t.description.figure).kind === 'multi',
@@ -146,7 +191,9 @@ describe('coordinatePlane.draw — real tasks solved through the window', () => 
     expect(multi.length).toBeGreaterThan(120)
     expect(
       allMulti.filter((t) => !reachable(t)).map((t) => keyOf(t._backend)),
-    ).toEqual(['Task_11_5_5_25#1', 'Task_11_5_5_25#2'])
+    ).toEqual([...UNSOLVABLE])
+    // a plane to shade (scenario F): lines and circles, then the region
+    expect(multi.filter((t) => solutionOf(t).fill).length).toBeGreaterThan(20)
     // the trigonometric axes are in the corpus (scenario D′, grade 10)
     expect(
       answerable.filter((t) => {
@@ -204,8 +251,8 @@ describe('coordinatePlane.draw — real tasks solved through the window', () => 
       const mode = planeModeOf(task.description.figure)
       if (mode.kind !== 'multi') throw new Error('not a multi-figure plane')
       const plane = screen.getByTestId('coordinate-plane-interactive')
-      const step = task.description.figure.tickStep || 1
-      const figures = solveFigures(task._backend.answer)!
+      const { step, figures: solved, fill } = solutionOf(task)
+      const figures = solved!
       figures.forEach((f, i) => {
         // a fixed plane opens with its first figure; any other is added
         if (i > 0 || mode.fixed == null)
@@ -221,6 +268,16 @@ describe('coordinatePlane.draw — real tasks solved through the window', () => 
           at = p
         }
       })
+      if (fill) {
+        // «Закрасить»: the clicks go half a cell apart, to the region
+        fireEvent.click(screen.getByTestId('coordinate-plane-fill'))
+        focusPlane(plane)
+        keyTo(plane, { x: 0, y: 0 }, fill, step / 2)
+      }
+      // the region is hatched once the filling point is put, and only then
+      expect(screen.queryByTestId('coordinate-plane-shade') != null).toBe(
+        fill != null,
+      )
       const last = onAnswer.mock.calls.at(-1)?.[0] as string
       expect(figureCount(last)).toBe(figures.length)
       expect(checkPlaneAnswer(task._backend.answer, toWireAnswer(last))).toBe(
@@ -305,7 +362,15 @@ describe('the backend accepts what the window sends', () => {
   it('the solving points are accepted for every judged task', () => {
     const solved = judged.filter((r) => r.label === 'solved')
     expect(solved.length).toBeGreaterThan(100)
-    expect(solved.filter((r) => !accepted(r)).map((r) => r.id)).toEqual([])
+    expect(
+      solved
+        .filter((r) => !accepted(r) && !UNSOLVABLE.has(keyOf(r)))
+        .map((r) => r.id),
+    ).toEqual([])
+    // the empty region: whatever is drawn, the backend says «wrong»
+    expect(
+      solved.filter((r) => r.id === 'Task_5_8_8_6' && r.seed > 1).map(accepted),
+    ).toEqual([false, false])
   })
 
   it('the store string sent as is is refused: the wire answer must be an object', () => {

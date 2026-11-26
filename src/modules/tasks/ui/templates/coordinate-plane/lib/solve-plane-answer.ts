@@ -1,5 +1,5 @@
 import { DrawingFigure } from './drawing-figure'
-import { compileGraphFunction } from './expression'
+import { compileGraphFunction, compileInequality } from './expression'
 import type { Pt } from './plane-answer'
 import {
   fromTrigWire,
@@ -191,9 +191,21 @@ const structOf = (answer: unknown) => {
  */
 export const solveFigures = (
   answer: unknown,
+  field?: { lo: number; hi: number },
 ): { type: number; points: Pt[] }[] | null => {
-  if (Array.isArray(answer))
-    return answer.length ? solveFigures(answer[0]) : null
+  // a list: any element is accepted — the first the plane can draw
+  if (Array.isArray(answer)) {
+    const all = answer.map((a) => solveFigures(a, field))
+    const fits = (figs: { points: Pt[] }[] | null) =>
+      figs != null &&
+      (!field ||
+        figs.every((f) =>
+          f.points.every((p) =>
+            [p.x, p.y].every((v) => v >= field.lo && v <= field.hi),
+          ),
+        ))
+    return all.find(fits) ?? all.find(Boolean) ?? null
+  }
   if (!answer || typeof answer !== 'object') return null
   const a = answer as Record<string, unknown>
   const p = (v: unknown): Pt => {
@@ -202,7 +214,7 @@ export const solveFigures = (
   }
   switch (structOf(a)) {
     case 'TaskAnswers.AnyOfThemTaskAnswer':
-      return Array.isArray(a.answers) ? solveFigures(a.answers[0]) : null
+      return Array.isArray(a.answers) ? solveFigures(a.answers, field) : null
     case 'GraphFunctionTaskAnswer': {
       const fns = a.functions as string[]
       if (!Array.isArray(fns) || !fns.length) return null
@@ -211,7 +223,8 @@ export const solveFigures = (
         ? out.map((points) => ({ type: DrawingFigure.Line, points: points! }))
         : null
     }
-    case 'EquationsGraphTaskAnswer': {
+    case 'EquationsGraphTaskAnswer':
+    case 'InEqualitiesGraphTaskAnswer': {
       const graphs = a.graphs as unknown[]
       if (!Array.isArray(graphs) || !graphs.length) return null
       const out = graphs.map((g) => solveFigures(g))
@@ -258,4 +271,74 @@ export const figureTypeOfAnswer = (answer: unknown): number | null => {
   if (kind === 'TaskAnswers.AnyOfThemTaskAnswer')
     return figureTypeOfAnswer((a!.answers as unknown[])[0])
   return map[kind] ?? null
+}
+
+/** The inequalities answer a list or an AnyOfThem picks for `figures`. */
+const inequalitiesOf = (
+  answer: unknown,
+  field?: { lo: number; hi: number },
+): string[] | null => {
+  if (Array.isArray(answer)) {
+    // the element solveFigures drew
+    const want = JSON.stringify(solveFigures(answer, field))
+    const hit: unknown = (answer as unknown[]).find(
+      (a) => JSON.stringify(solveFigures(a)) === want,
+    )
+    return hit ? inequalitiesOf(hit, field) : null
+  }
+  const a = answer as Record<string, unknown> | null
+  if (!a) return null
+  if (structOf(a) === 'TaskAnswers.AnyOfThemTaskAnswer')
+    return inequalitiesOf(a.answers, field)
+  return structOf(a) === 'InEqualitiesGraphTaskAnswer'
+    ? (a.functions as string[])
+    : null
+}
+
+const holdsAll = (fns: string[]): ((p: Pt) => boolean) | null => {
+  try {
+    const all = fns.map(compileInequality)
+    return (p) => all.every((f) => f(p))
+  } catch {
+    return null
+  }
+}
+
+/** Does a filling point satisfy every inequality of the answer. */
+export const fillPredicate = (
+  answer: unknown,
+  field: { lo: number; hi: number },
+): ((p: Pt) => boolean) | null => {
+  const fns = inequalitiesOf(answer, field)
+  return fns?.length ? holdsAll(fns) : null
+}
+
+/**
+ * The filling point of a plane to shade (scenario F): a point half a tick
+ * apart that satisfies every inequality, its four neighbours too when one
+ * such exists (inside the region, off its edge). Null when the answer
+ * shades nothing (a GraphFunction on a canFill plane).
+ */
+export const solveFill = (
+  answer: unknown,
+  field: { lo: number; hi: number; step: number },
+): Pt | null => {
+  const holds = fillPredicate(answer, field)
+  if (!holds) return null
+  const h = field.step / 2
+  let any: Pt | null = null
+  for (let y = field.lo; y <= field.hi + 1e-9; y += h)
+    for (let x = field.lo; x <= field.hi + 1e-9; x += h) {
+      const p = { x: Math.round(x * 1e6) / 1e6, y: Math.round(y * 1e6) / 1e6 }
+      if (!holds(p)) continue
+      any ??= p
+      const around: Pt[] = [
+        { x: p.x + h, y: p.y },
+        { x: p.x - h, y: p.y },
+        { x: p.x, y: p.y + h },
+        { x: p.x, y: p.y - h },
+      ]
+      if (around.every(holds)) return p
+    }
+  return any
 }

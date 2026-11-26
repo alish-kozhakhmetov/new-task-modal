@@ -207,3 +207,25 @@ export const compileGraphFunction = (
   if (!m) return { defines: 'y', rhs: compileExpression(source) }
   return { defines: m[1] as 'x' | 'y', rhs: compileExpression(m[2]) }
 }
+
+const COMPARE: Record<string, (a: number, b: number) => boolean> = {
+  '<=': (a, b) => a <= b,
+  '>=': (a, b) => a >= b,
+  '<': (a, b) => a < b,
+  '>': (a, b) => a > b,
+}
+
+/**
+ * A backend inequality of InEqualitiesGraphTaskAnswer (`x^2 + y^2 <= 9`,
+ * `y > 2*x - 3`), as it `Code.eval_string`s it at the filling point.
+ */
+export const compileInequality = (
+  source: string,
+): ((vars: Vars) => boolean) => {
+  const m = /^(.*?)(<=|>=|<|>)(.*)$/s.exec(source)
+  if (!m) throw new Error(`not an inequality: ${source}`)
+  const lhs = compileExpression(m[1])
+  const rhs = compileExpression(m[3])
+  const cmp = COMPARE[m[2]]
+  return (vars) => cmp(lhs(vars), rhs(vars))
+}

@@ -1,5 +1,5 @@
 import { DrawingFigure } from './drawing-figure'
-import { compileGraphFunction } from './expression'
+import { compileGraphFunction, compileInequality } from './expression'
 import type { Pt } from './plane-answer'
 
 /**
@@ -232,6 +232,31 @@ export const checkPlaneAnswer = (
       return graphs.every((g) =>
         figs.some((f) => checkPlaneAnswer(g, { figures: [f] })),
       )
+    }
+
+    case 'InEqualitiesGraphTaskAnswer': {
+      // the graphs as EquationsGraph, then exactly filling_points_quantity
+      // points, each satisfying every inequality
+      const figs = userFigures(wire)
+      const graphs = (answer.graphs as unknown[]) ?? []
+      if (!figs || figs.length !== graphs.length) return false
+      const fills =
+        isObj(wire) && Array.isArray(wire.fillingPoints)
+          ? wire.fillingPoints.map((p) => pt(p)!)
+          : []
+      const quantity = Number(answer.filling_points_quantity ?? 1)
+      if (!fills.length || fills.length !== quantity) return false
+      const drawn = graphs.every((g) =>
+        figs.some((f) => checkPlaneAnswer(g, { figures: [f] })),
+      )
+      try {
+        const fns = ((answer.functions as string[]) ?? []).map(
+          compileInequality,
+        )
+        return drawn && fills.every((p) => fns.every((f) => f(p)))
+      } catch {
+        return false
+      }
     }
 
     case 'PolygonTaskAnswer': {

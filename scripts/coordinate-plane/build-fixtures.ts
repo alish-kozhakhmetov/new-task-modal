@@ -30,7 +30,9 @@ import {
   type Pt,
 } from '../../src/modules/tasks/ui/templates/coordinate-plane/lib/plane-answer'
 import {
+  fillPredicate,
   solveFigures,
+  solveFill,
   solvePlaneAnswer,
 } from '../../src/modules/tasks/ui/templates/coordinate-plane/lib/solve-plane-answer'
 
@@ -131,27 +133,52 @@ if (cmd === 'tasks') {
     }
     if (mode.kind === 'multi') {
       // several figures (scenario E): the solved set, its order reversed,
-      // one figure missing, one point of the last figure off
-      const figs = solveFigures(r.answer)
+      // one figure missing, one point of the last figure off; a plane to
+      // shade (F) — with the filling point, without it, and outside
+      const f = r.description.figure as {
+        minPosition?: number
+        maxPosition?: number
+        tickStep?: number
+      }
+      const step = f.tickStep || 1
+      const field = {
+        lo: (f.minPosition ?? -5) - step,
+        hi: (f.maxPosition ?? 5) + step,
+      }
+      const figs = solveFigures(r.answer, field)
       if (!figs) continue
+      const inner = { lo: field.lo + step, hi: field.hi - step, step }
+      const fill = mode.fill ? solveFill(r.answer, inner) : null
+      const holds = mode.fill ? fillPredicate(r.answer, field) : null
+      const corners: Pt[] = [
+        { x: inner.lo, y: inner.lo },
+        { x: inner.hi, y: inner.hi },
+        { x: inner.lo, y: inner.hi },
+        { x: inner.hi, y: inner.lo },
+      ]
+      const outside = holds ? corners.find((p) => !holds(p)) : undefined
+      const fills = fill ? [fill] : []
       const last = figs.length - 1
-      const tries: [string, DrawnFigure[]][] = [['solved', figs]]
+      const tries: [string, DrawnFigure[], Pt[]][] = [['solved', figs, fills]]
       if (figs.length > 1) {
-        tries.push(['figures reversed', [...figs].reverse()])
-        tries.push(['one figure missing', figs.slice(0, last)])
+        tries.push(['figures reversed', [...figs].reverse(), fills])
+        tries.push(['one figure missing', figs.slice(0, last), fills])
       }
       // off the figure: across a vertical line, else up (y+1 along x = 0
       // is still the line — the backend rightly accepts it)
-      const off = (f: DrawnFigure) =>
-        f.points[0].x === f.points[1].x
-          ? shift(f.points, 1, 1, 0)
-          : shift(f.points, 1, 0, 1)
+      const off = (g: DrawnFigure) =>
+        g.points[0].x === g.points[1].x
+          ? shift(g.points, 1, 1, 0)
+          : shift(g.points, 1, 0, 1)
       tries.push([
         'last point off',
-        figs.map((f, i) => (i === last ? { ...f, points: off(f) } : f)),
+        figs.map((g, i) => (i === last ? { ...g, points: off(g) } : g)),
+        fills,
       ])
-      for (const [label, figures] of tries)
-        push(label, toMultiAnswer({ figures, active: 0 }))
+      if (fill) tries.push(['no filling point', figs, []])
+      if (outside) tries.push(['filling point outside', figs, [outside]])
+      for (const [label, figures, points] of tries)
+        push(label, toMultiAnswer({ figures, active: 0, fills: points }))
       continue
     }
     if (!solved) continue
