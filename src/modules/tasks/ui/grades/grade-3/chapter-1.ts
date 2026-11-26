@@ -1,0 +1,43 @@
+import { TemplateTypes } from '../../../model/template-types.ts'
+
+const map = {
+  [TemplateTypes.AnswerCell.Plain]: [54, 55, 56],
+  [TemplateTypes.ColumnOperation.Plain]: [21, 22, 23],
+  [TemplateTypes.Comparison.Plain]: [11],
+  [TemplateTypes.Complex.Plain]: [7, 14, 15, 16, 17, 18, 19, 20],
+  [TemplateTypes.Table.Grid]: ['58_1'],
+  [TemplateTypes.Table.MultiRow]: [53],
+  [TemplateTypes.Test.Plain]: [2, 12, 13],
+  [TemplateTypes.Text.After]: [36, 41, 42, 43, 52],
+  [TemplateTypes.Text.Plain]: [
+    1,
+    3,
+    4,
+    5,
+    8,
+    9,
+    10,
+    31,
+    32,
+    33,
+    34,
+    35,
+    37,
+    38,
+    39,
+    40,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    '58_2',
+    '58_3',
+    '58_4',
+  ],
+}
+
+export default map
