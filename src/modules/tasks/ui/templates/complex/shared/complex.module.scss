@@ -108,7 +108,13 @@
 .suffix,
 .fieldLabel {
   flex-shrink: 0;
-  white-space: nowrap;
+
+  // A label wider than the row wraps by words inside the row (rule 17)
+  // instead of running off the screen; one that fits keeps its one line,
+  // as with nowrap: the width is still max-content (stream CX, 26.11:
+  // «Сколько учеников добираются до школы на…» was cut at 375).
+  max-width: 100%;
+  white-space: normal;
 }
 
 .stack {
@@ -124,6 +130,18 @@
   flex-wrap: wrap;
   gap: 8px;
   align-items: center;
+
+  // Fields in a row (complex.multi.inline.*, new in stream CX): a field keeps
+  // its sign or unit and the pair moves to the next line whole (rule 14), as
+  // text.multi.inline does; the fields of the group are one width (rule 11).
+  > .inputRow {
+    flex-wrap: nowrap;
+  }
+
+  .input {
+    flex: 0 0 120px;
+    width: 120px;
+  }
 }
 
 .planeSvg,
