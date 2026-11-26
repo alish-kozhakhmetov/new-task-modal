@@ -14,6 +14,7 @@ import {
   type TextTemplateStoryMetaArgs,
   exampleFromTask,
   trainerFolderDocsParameters,
+  type AllTasksFile,
 } from '../../../lib/storybook'
 import type { TextTask as Task } from '../../../lib/types.task'
 
@@ -61,7 +62,7 @@ export const Correct = makeInTrainerCorrectStory({
   Template,
   groups,
   fallbackTask: task,
-  allTasks: allTasksJson,
+  allTasks: allTasksJson as unknown as AllTasksFile,
   rootTitle: ROOT_TITLE,
 })
 

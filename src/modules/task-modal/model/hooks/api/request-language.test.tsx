@@ -38,10 +38,13 @@ const siteGlobal = (language: string, host = 'test.qalan.kz') => ({
 })
 
 // The site's Api.checkAnswer(task) (api/Api.js): what goes to the backend is
-// read from the task object; any argument after it is never looked at.
-const sitePayload = (task: Task & { applicationType?: unknown }) => {
+// read from the task object; any argument after it is never looked at. The
+// answer is typed loosely: checkAnswer takes a list for multi-answer tests.
+const sitePayload = (
+  task: Omit<Task, 'answer'> & { answer?: unknown; applicationType?: unknown },
+) => {
   const { fields, answer, lockVersion, language, type, applicationType } =
-    task as Task & { language?: string; applicationType?: unknown }
+    task as typeof task & { language?: string }
   return { fields, answer, lockVersion, language, type, applicationType }
 }
 

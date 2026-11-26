@@ -1,6 +1,10 @@
 import type { ComponentType } from 'react'
 
 import type { TaskComponentProps } from '@/modules/tasks/model/types'
+import type {
+  AllTasksFile as TextAllTasksFile,
+  TemplateGroupFixture as TextGroupFixture,
+} from '@/modules/tasks/ui/templates/text/lib/storybook'
 import {
   makePlayCorrectAnswerInTrainer as makeTextPlayCorrectAnswerInTrainer,
   makePlayWrongAnswerInTrainer as makeTextPlayWrongAnswerInTrainer,
@@ -19,9 +23,11 @@ import {
   renderWithSolutionStory as renderTextWithSolutionStory,
   type TrainerLaunch,
 } from '@/modules/tasks/ui/templates/text/lib/storybook'
-import type {
-  AllTasksFile as TextAllTasksFile,
-  TemplateGroupFixture as TextGroupFixture,
+import {
+  getGroupControlOptions as getTextGroupControlOptions,
+  getOpenInTrainerControls as getTextOpenInTrainerControls,
+  renderDataAllGroupsStory as renderTextDataAllGroupsStory,
+  renderDataOneTaskStory as renderTextDataOneTaskStory,
 } from '@/modules/tasks/ui/templates/text/lib/storybook'
 import type { TextTask } from '@/modules/tasks/ui/templates/text/lib/types.task'
 
@@ -30,12 +36,8 @@ import type { AnswerCellTask } from '../types.task'
 export {
   ALL_GROUPS,
   getAllTasksForGrade,
-  getGroupControlOptions,
-  getOpenInTrainerControls,
   normalizeAllTasksFile,
-  renderDataAllGroupsStory,
   renderDataAllTasksStory,
-  renderDataOneTaskStory,
 } from '@/modules/tasks/ui/templates/text/lib/storybook'
 
 export type { AllTasksFile } from '@/modules/tasks/ui/templates/text/lib/storybook'
@@ -73,6 +75,37 @@ const asTextTemplate = (
 
 const asTextGroups = (groups: TemplateGroupFixture[]): TextGroupFixture[] =>
   groups as unknown as TextGroupFixture[]
+
+/** The text helpers, typed for answer-cell groups (the text ones take text tasks). */
+export const getGroupControlOptions = (groups: TemplateGroupFixture[]) =>
+  getTextGroupControlOptions(asTextGroups(groups))
+
+export const getOpenInTrainerControls = (groups: TemplateGroupFixture[]) =>
+  getTextOpenInTrainerControls(asTextGroups(groups))
+
+type TextDataOneTaskArgs = Parameters<typeof renderTextDataOneTaskStory>[0]
+
+export const renderDataOneTaskStory = ({
+  groups,
+  fallbackTask,
+  ...rest
+}: Omit<TextDataOneTaskArgs, 'groups' | 'fallbackTask'> & {
+  groups: TemplateGroupFixture[]
+  fallbackTask: AnswerCellTask
+}) =>
+  renderTextDataOneTaskStory({
+    ...rest,
+    groups: asTextGroups(groups),
+    fallbackTask: asTextTask(fallbackTask),
+  })
+
+export const renderDataAllGroupsStory = ({
+  rootTitle,
+  groups,
+}: {
+  rootTitle: string
+  groups: TemplateGroupFixture[]
+}) => renderTextDataAllGroupsStory({ rootTitle, groups: asTextGroups(groups) })
 
 interface SharedArgs {
   Template: ComponentType<TaskComponentProps<AnswerCellTask>>
