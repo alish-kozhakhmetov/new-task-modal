@@ -7,6 +7,7 @@ import {
   makeInTrainerShowAnswerStory,
   type TemplateGroupFixture,
   type EquationStoryMetaArgs,
+  type AllTasksFile,
   exampleFromTask,
   trainerFolderDocsParameters,
 } from '../../shared/lib/storybook'
@@ -47,7 +48,7 @@ export const Correct = makeInTrainerCorrectStory({
   Template,
   groups,
   fallbackTask: task,
-  allTasks: allTasksJson,
+  allTasks: allTasksJson as unknown as AllTasksFile,
   rootTitle: ROOT_TITLE,
 })
 

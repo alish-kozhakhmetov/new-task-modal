@@ -6,7 +6,10 @@ import {
   makeSolution,
   renderTemplate,
 } from '../../shared/lib/testing/test-utils'
-import type { EquationTask } from '../../shared/lib/types.task'
+import type {
+  EquationTask,
+  SimpleEquationAnswerInput,
+} from '../../shared/lib/types.task'
 
 import fixture from './data/task.json'
 
@@ -39,11 +42,14 @@ describe('equation.before', () => {
       typeof task.description.content === 'string'
         ? task.description.content
         : ((task.description.content as { rus?: string }).rus ?? '')
+    // equation.before has one field: the simple answerInput, not input1..N
+    const answerInput = task.answerInput as
+      | SimpleEquationAnswerInput
+      | undefined
     const before =
-      typeof task.answerInput?.before === 'string'
-        ? task.answerInput.before
-        : ((task.answerInput?.before as { rus?: string } | undefined)?.rus ??
-          '')
+      typeof answerInput?.before === 'string'
+        ? answerInput.before
+        : ((answerInput?.before as { rus?: string } | undefined)?.rus ?? '')
 
     expect(screen.getByTestId('equation-content')).toHaveTextContent(content)
     expect(screen.getByTestId('equation-before')).toHaveTextContent(before)

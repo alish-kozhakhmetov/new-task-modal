@@ -1,4 +1,5 @@
-import type { TaskSolution, Translation } from '@/types/api/task'
+import type { TaskSolutionValue } from '@/modules/tasks/lib/solution-types'
+import type { Translation } from '@/types/api/task'
 
 /**
  * Backend payload for `description.type === 'equation'` tasks.
@@ -62,5 +63,6 @@ export interface EquationTask {
   isPenalty?: boolean
   isPrimary?: boolean
   answer?: string | null
-  solution?: TaskSolution | string | null
+  /** What `isActiveSolution` and the solution views take. */
+  solution?: TaskSolutionValue
 }

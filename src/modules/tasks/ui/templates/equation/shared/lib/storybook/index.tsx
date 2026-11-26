@@ -2,6 +2,8 @@ import type { ComponentType } from 'react'
 
 import type { TaskComponentProps } from '@/modules/tasks/model/types'
 import {
+  getGroupControlOptions as getTextGroupControlOptions,
+  getOpenInTrainerControls as getTextOpenInTrainerControls,
   makePlayCorrectAnswerInTrainer as makeTextPlayCorrectAnswerInTrainer,
   makePlayWrongAnswerInTrainer as makeTextPlayWrongAnswerInTrainer,
   makeInTrainerCorrectStory as makeTextInTrainerCorrectStory,
@@ -30,8 +32,6 @@ import type { EquationTask } from '../types.task'
 export {
   ALL_GROUPS,
   getAllTasksForGrade,
-  getGroupControlOptions,
-  getOpenInTrainerControls,
   normalizeAllTasksFile,
   renderDataAllGroupsStory,
   renderDataAllTasksStory,
@@ -72,6 +72,13 @@ const asTextTemplate = (
 
 const asTextGroups = (groups: TemplateGroupFixture[]): TextGroupFixture[] =>
   groups as unknown as TextGroupFixture[]
+
+/** The text helpers, typed for equation groups (the text ones take text tasks). */
+export const getGroupControlOptions = (groups: TemplateGroupFixture[]) =>
+  getTextGroupControlOptions(asTextGroups(groups))
+
+export const getOpenInTrainerControls = (groups: TemplateGroupFixture[]) =>
+  getTextOpenInTrainerControls(asTextGroups(groups))
 
 interface SharedArgs {
   Template: ComponentType<TaskComponentProps<EquationTask>>

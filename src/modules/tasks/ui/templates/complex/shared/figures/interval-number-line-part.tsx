@@ -139,12 +139,7 @@ export const IntervalNumberLinePart = ({ part }: Props) => {
     const text = labelOf(d)
     if (text === null) return null
     return (
-      <Label
-        key={key}
-        x={xAt(Number(d.position))}
-        y={labelY(up)}
-        text={text}
-      />
+      <Label key={key} x={xAt(Number(d.position))} y={labelY(up)} text={text} />
     )
   }
 
