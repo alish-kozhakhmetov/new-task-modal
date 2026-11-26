@@ -32,8 +32,9 @@ import { CoordinatePlaneDraw } from '.'
  * ExpressionTaskAnswer.replace_powers. Три ошибки — показ решения.
  *
  * Сценарии: точка, несколько точек, фигура по двум точкам, тригонометрия
- * (оси с π), несколько фигур и выбор типа (панель фигур), штриховка
- * («Закрасить»), и «читай график» — плоскость в условии составной задачи.
+ * (оси с π), несколько фигур и выбор типа (панель фигур), показательная
+ * функция и логарифм с асимптотой, штриховка («Закрасить»), и «читай
+ * график» — плоскость в условии составной задачи.
  */
 const Template = CoordinatePlaneDraw as unknown as ComponentType<
   TaskComponentProps<TextTask>
@@ -98,6 +99,11 @@ export const Sinus = story('Task_10_2_1_1', 'Синусоида, 10 кл.')
 export const TwoLines = story('Task_7_3_54_1', 'Система: две прямые, 7 кл.')
 export const Triangle = story('GeoTask_9_2_9', 'Треугольник отрезками, 9 кл.')
 export const PickGraph = story('Task_8_3_13_1', 'Выбор графика: корень, 8 кл.')
+export const Exponent = story(
+  'Task_11_6_1_6',
+  'Показательная и асимптота, 11 кл.',
+)
+export const Logarithm = story('Task_11_6_4_2', 'Логарифм и асимптота, 11 кл.')
 
 // ── Штриховка ─────────────────────────────────────────
 export const ShadeLines = story(

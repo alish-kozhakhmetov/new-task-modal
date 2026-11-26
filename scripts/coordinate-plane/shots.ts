@@ -53,6 +53,8 @@ const ALL_SCENARIOS: [string, string, string][] = [
   ['two-lines', 'Task_7_3_54_1', 'two-lines'],
   ['triangle', 'GeoTask_9_2_9', 'triangle'],
   ['pick-graph', 'Task_8_3_13_1', 'pick-graph'],
+  ['exponent', 'Task_11_6_1_6', 'exponent'],
+  ['logarithm', 'Task_11_6_4_2', 'logarithm'],
   ['shade-lines', 'Task_7_3_50_1', 'shade-lines'],
   ['shade-ring', 'Task_5_8_8_6', 'shade-ring'],
   ['read-graph', 'Task_10_2_7_1', 'read-graph'],
