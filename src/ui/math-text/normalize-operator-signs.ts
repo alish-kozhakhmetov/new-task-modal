@@ -29,6 +29,9 @@
  *   end of a label right before a field («изд./ч *») become `×`;
  * - a lone `/` between fields (a label of its own) becomes `÷`; a slash inside
  *   text («1/2», «км/ч») is a fraction or a unit and stays;
+ * - a `*` right after «вместо» is the star a digit hides under in the
+ *   condition, not times: «цифра, стоящая вместо *» (5_1_55_*, the other
+ *   languages write `❋` there) becomes `❋`, as the condition draws it;
  * - `тг` next to a number or alone becomes `₸` (Halvar draws its own glyph);
  *   the word «тенге»/«теңге» in prose stays a word;
  * - a label that opens with `- ` before a word is the dash after a field:
@@ -175,6 +178,9 @@ const TENGE = /(^|[\s\d(])тг(?=$|[\s.,;:)])/gu
 // 4_4_55, the same in every language; nothing else starts this way.
 const LEADING_DASH_BEFORE_WORD = /^(\s*)[-–](\s+)(?=\p{L})/u
 const EDGE_TIMES = new RegExp(String.raw`(^\s*|\s)[·⋅*](\s*$|\s+)`, 'gu')
+// Grade 5, «Округление натуральных чисел II» (lesson 1517): the field's label
+// names the star of the condition; kk/uz/az write ❋ there, ru writes *.
+const STAR_PLACEHOLDER = /(вместо\s+)\*(?=\s*(?:-\s*)?$|\s)/gu
 
 const normalizeSegment = (text: string): string => {
   const trimmed = text.trim()
@@ -185,6 +191,7 @@ const normalizeSegment = (text: string): string => {
   if (trimmed === '/') return text.replace(trimmed, DIVIDE)
 
   return text
+    .replace(STAR_PLACEHOLDER, '$1❋')
     .replace(TENGE, '$1₸')
     .replace(DASH_BETWEEN, `$1$2${MINUS}$3`)
     .replace(HYPHEN_AFTER_UNIT, `$1$2${MINUS}$3`)
