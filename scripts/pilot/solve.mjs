@@ -29,7 +29,8 @@ const args = Object.fromEntries(
 )
 const GRADE = Number(args.grade ?? 5)
 const CACHE = path.join(ROOT, '.pilot-cache', `grade-${GRADE}`)
-const OUT = path.join(CACHE, 'solve')
+const DIR = args.dir === 'offline' ? 'offline' : 'lessons'
+const OUT = path.join(CACHE, DIR === 'offline' ? 'solve-offline' : 'solve')
 const BASE = args.base ?? 'http://127.0.0.1:5191'
 const WORKERS = Number(args.workers ?? 4)
 const VERIFY = args.verify ?? 'sandbox'
@@ -183,6 +184,7 @@ export function keysOf(part) {
 const RAW = /\\(frac|cdot|left|right|begin|text|times|div|sqrt|over|mathrm|dfrac)\b|\\\(|\\\)|\$\$|\\\\/
 async function solveOne(page, job) {
   const res = { lesson: job.lessonId, index: job.index, type: job.task.type, chapterId: job.chapterId, issues: [] }
+  if (job.task.__truncated) res.truncated = true
   const m = mapping.get(job.task.type)
   res.mapped = m?.template ?? null
   const ref = extraRefs[`${job.lessonId}/${job.index}`] ?? refs[`${job.lessonId}/${job.task.id}`]?.answer ?? null
@@ -200,7 +202,7 @@ async function solveOne(page, job) {
   page.on('console', onConsole)
   page.on('pageerror', onPageError)
   try {
-    await page.goto(`${BASE}/scripts/pilot/harness/index.html?grade=${GRADE}&lesson=${job.lessonId}&task=${job.index}`)
+    await page.goto(`${BASE}/scripts/pilot/harness/index.html?grade=${GRADE}&lesson=${job.lessonId}&task=${job.index}&dir=${DIR}`)
     const shown = await page
       .waitForSelector('[data-template-id], [data-testid="task-unavailable"], .task-modal [class*="unavailable"]', { timeout: 20000 })
       .catch(() => null)
@@ -229,6 +231,11 @@ async function solveOne(page, job) {
         active: document.activeElement?.tagName ?? null,
         unavailable: /нет шаблона|не умеет|пока нет|старом окне/i.test(document.querySelector('.task-modal')?.innerText ?? '') && !tpl,
         overflow,
+        // a choice option with nothing in it (a figure the window does not draw)
+        emptyOptions: [...document.querySelectorAll('.task-modal input[type=radio], .task-modal input[type=checkbox]')].filter((i) => {
+          const box = i.closest('label') ?? i.parentElement
+          return box && !(box.innerText ?? '').trim() && !box.querySelector('img, svg, canvas, mjx-container')
+        }).length,
         pilotError: window.__pilot?.error ?? null,
       }
     })
@@ -245,6 +252,7 @@ async function solveOne(page, job) {
     if (probe.text.length < 3) res.issues.push('empty condition')
     if (probe.overflow > 4) res.issues.push(`overflow ${probe.overflow}px`)
     if (!probe.inputs && !probe.radios && !probe.checkboxes) res.issues.push('no place for the answer')
+    if (probe.emptyOptions) res.issues.push(`empty choice options: ${probe.emptyOptions}`)
     // adornments of the data on screen
     const ai = job.task.answerInput
     const tr = (v) => (typeof v === 'string' ? v : v && typeof v === 'object' ? v.rus ?? '' : '')
@@ -346,10 +354,11 @@ async function solveOne(page, job) {
 }
 
 // ---------- the run
-const lessonFiles = fs.readdirSync(path.join(CACHE, 'lessons'))
+const lessonFiles = fs.readdirSync(path.join(CACHE, DIR)).filter((f) => f !== 'refs.json')
 const jobs = []
 for (const f of lessonFiles) {
-  const l = JSON.parse(fs.readFileSync(path.join(CACHE, 'lessons', f), 'utf8'))
+  const l = JSON.parse(fs.readFileSync(path.join(CACHE, DIR, f), 'utf8'))
+  if (!Array.isArray(l.tasks)) continue // a lesson test failed to give
   if (chapters && !chapters.has(Number(l.chapterId))) continue
   if (lessonsOnly && !lessonsOnly.has(Number(l.lessonId))) continue
   l.tasks.forEach((task, index) => {

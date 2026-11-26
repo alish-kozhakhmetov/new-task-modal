@@ -1,1 +1,5 @@
-{}
+{
+  "5_1_57_1": "complex.beforeAfter: LaTeX inside the SVG of the image part is not typeset, the rectangle's labels lose «a =» and «b =» (offline sample, variants.json 02.08)",
+  "5_5_4_8": "complex.plain: LaTeX inside the SVG of the image part shows raw, «\\(x\\)» on the Euler–Venn diagram (offline sample, variants.json 02.08)",
+  "5_6_2_20": "complex.multi.stack.n2.after: the long label pushes both fields out of the window, 247 px past the right edge at 1440 (offline sample, variants.json 02.08)"
+}

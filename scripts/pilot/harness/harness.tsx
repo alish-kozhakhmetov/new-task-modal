@@ -38,10 +38,12 @@ const grade = q.get('grade') ?? '5'
 const lessonId = q.get('lesson')
 const index = Number(q.get('task') ?? 0)
 const layout = (q.get('layout') as 'wide' | 'phone') ?? 'wide'
+/** lessons (live, from test) or offline (the fixtures' examples) */
+const dir = q.get('dir') === 'offline' ? 'offline' : 'lessons'
 
 const run = async () => {
   const data = (await fetch(
-    `/.pilot-cache/grade-${grade}/lessons/${lessonId}.json`,
+    `/.pilot-cache/grade-${grade}/${dir}/${lessonId}.json`,
   ).then((r) => r.json())) as { tasks: Task[] }
   const tasks = data.tasks.map((t) => ({ ...t }))
   const activeTask = tasks[index]
