@@ -62,7 +62,10 @@ const solveWire = (answer: unknown, trig: TrigAxes | null): Pt[] | null => {
   const onGraph = (vertex: Pt, fn: string): Pt[] | null => {
     try {
       const { rhs } = compileGraphFunction(fn)
-      for (const dx of [1, -1, 2, -2, 3, -3, 4, 4]) {
+      // near first; up to 10 for y = √(5x) (Task_8_3_13_1: x = 5)
+      const dxs = [1, -1, 2, -2, 3, -3, 4, -4]
+      for (let d = 5; d <= 10; d += 1) dxs.push(d, -d)
+      for (const dx of dxs) {
         const x = vertex.x + dx
         const y = rhs({ x })
         if (
@@ -131,25 +134,102 @@ const solveWire = (answer: unknown, trig: TrigAxes | null): Pt[] | null => {
     case 'RootFunctionTaskAnswer':
       return onGraph(p(a.vertex_point), String(a.graph_function))
     case 'GraphFunctionTaskAnswer': {
-      // one function → two points of it (several functions: not this prototype)
+      // one function → two points of it (several: solveFigures)
       const fns = a.functions as string[]
       if (!Array.isArray(fns) || fns.length !== 1) return null
-      try {
-        const { defines, rhs } = compileGraphFunction(fns[0])
-        const pts: Pt[] = []
-        for (const t of [0, 1, -1, 2, -2, 3, -3]) {
-          const v = defines === 'x' ? rhs({ y: t }) : rhs({ x: t })
-          if (Number.isInteger(v) && Math.abs(v) <= 10)
-            pts.push(defines === 'x' ? { x: v, y: t } : { x: t, y: v })
-          if (pts.length === 2) return pts
-        }
-      } catch {
-        return null
-      }
-      return null
+      return graphFunctionPoints(fns[0])
     }
     default:
       return null
+  }
+}
+
+/**
+ * Two nodes of a line `y = …` or `x = …` (GraphFunctionTaskAnswer checks the
+ * clicks one by one against the function). The near nodes first, so a line
+ * through the origin is drawn there; |t| up to 10 for a slope like 5/9
+ * (Task_6_6_16_5: x = 3 and x = −6).
+ */
+const graphFunctionPoints = (fn: string): Pt[] | null => {
+  try {
+    const { defines, rhs } = compileGraphFunction(fn)
+    const pts: Pt[] = []
+    const ts = [0, 1, -1, 2, -2, 3, -3]
+    for (let t = 4; t <= 10; t += 1) ts.push(t, -t)
+    for (const t of ts) {
+      const v = defines === 'x' ? rhs({ y: t }) : rhs({ x: t })
+      if (Number.isInteger(v) && Math.abs(v) <= 10)
+        pts.push(defines === 'x' ? { x: v, y: t } : { x: t, y: v })
+      if (pts.length === 2) return pts
+    }
+  } catch {
+    return null
+  }
+  return null
+}
+
+const structOf = (answer: unknown) => {
+  const a = answer as Record<string, unknown> | null
+  return (typeof a?._struct === 'string' ? a._struct : '').replace(
+    /^TaskAnswers\.CoordinatePlane\./,
+    '',
+  )
+}
+
+/**
+ * The figures that answer a task with several (scenario E), in the order the
+ * answer module reads them — what a pupil who solved it draws:
+ *
+ * - GraphFunctionTaskAnswer of n functions → n lines, figures[i] ↔
+ *   functions[i] (the module compares by index; a list answer carries the
+ *   permutations, the first is taken);
+ * - EquationsGraphTaskAnswer → one figure per graph (any order is accepted);
+ * - PolygonTaskAnswer → its sides as segments, vertex to vertex;
+ * - any single figure → that figure (a plane where the pupil picks the type).
+ *
+ * Null when a part has a form the window does not draw.
+ */
+export const solveFigures = (
+  answer: unknown,
+): { type: number; points: Pt[] }[] | null => {
+  if (Array.isArray(answer))
+    return answer.length ? solveFigures(answer[0]) : null
+  if (!answer || typeof answer !== 'object') return null
+  const a = answer as Record<string, unknown>
+  const p = (v: unknown): Pt => {
+    const o = v as Record<string, number>
+    return { x: Number(o.x), y: Number(o.y) }
+  }
+  switch (structOf(a)) {
+    case 'TaskAnswers.AnyOfThemTaskAnswer':
+      return Array.isArray(a.answers) ? solveFigures(a.answers[0]) : null
+    case 'GraphFunctionTaskAnswer': {
+      const fns = a.functions as string[]
+      if (!Array.isArray(fns) || !fns.length) return null
+      const out = fns.map((fn) => graphFunctionPoints(fn))
+      return out.every(Boolean)
+        ? out.map((points) => ({ type: DrawingFigure.Line, points: points! }))
+        : null
+    }
+    case 'EquationsGraphTaskAnswer': {
+      const graphs = a.graphs as unknown[]
+      if (!Array.isArray(graphs) || !graphs.length) return null
+      const out = graphs.map((g) => solveFigures(g))
+      return out.every((f) => f?.length === 1) ? out.map((f) => f![0]) : null
+    }
+    case 'PolygonTaskAnswer': {
+      const pts = (a.points as unknown[]).map(p)
+      if (pts.length < 2) return null
+      return pts.map((q, i) => ({
+        type: DrawingFigure.LineSegment,
+        points: [q, pts[(i + 1) % pts.length]],
+      }))
+    }
+    default: {
+      const type = figureTypeOfAnswer(a)
+      const points = solveWire(a, null)
+      return type != null && points?.length === 2 ? [{ type, points }] : null
+    }
   }
 }
 

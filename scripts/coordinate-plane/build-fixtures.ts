@@ -21,11 +21,18 @@ import { fileURLToPath } from 'node:url'
 
 import { planeModeOf } from '../../src/modules/tasks/ui/templates/coordinate-plane/lib/drawing-figure'
 import {
+  toMultiAnswer,
+  type DrawnFigure,
+} from '../../src/modules/tasks/ui/templates/coordinate-plane/lib/multi-figure'
+import {
   toAnswerString,
   toWireAnswer,
   type Pt,
 } from '../../src/modules/tasks/ui/templates/coordinate-plane/lib/plane-answer'
-import { solvePlaneAnswer } from '../../src/modules/tasks/ui/templates/coordinate-plane/lib/solve-plane-answer'
+import {
+  solveFigures,
+  solvePlaneAnswer,
+} from '../../src/modules/tasks/ui/templates/coordinate-plane/lib/solve-plane-answer'
 
 /** One line of the generator dump (gen.exs) or of the verdicts. */
 export interface GenRow {
@@ -110,28 +117,54 @@ if (cmd === 'tasks') {
           _backend,
         }),
       )
-    if (!solved) continue
     const shift = (pts: Pt[], i: number, dx: number, dy: number) =>
       pts.map((p, j) => (j === i ? { x: p.x + dx, y: p.y + dy } : p))
+    const push = (label: string, store: string) => {
+      if (!store) return
+      const wire = toWireAnswer(store)
+      const row = { id: r.id, seed: r.seed, fields: r.fields, label, wire }
+      candidates.push(JSON.stringify(row))
+      if (label === 'solved' && typeof wire !== 'string')
+        candidates.push(
+          JSON.stringify({ ...row, label: 'solved as string', wire: store }),
+        )
+    }
+    if (mode.kind === 'multi') {
+      // several figures (scenario E): the solved set, its order reversed,
+      // one figure missing, one point of the last figure off
+      const figs = solveFigures(r.answer)
+      if (!figs) continue
+      const last = figs.length - 1
+      const tries: [string, DrawnFigure[]][] = [['solved', figs]]
+      if (figs.length > 1) {
+        tries.push(['figures reversed', [...figs].reverse()])
+        tries.push(['one figure missing', figs.slice(0, last)])
+      }
+      // off the figure: across a vertical line, else up (y+1 along x = 0
+      // is still the line — the backend rightly accepts it)
+      const off = (f: DrawnFigure) =>
+        f.points[0].x === f.points[1].x
+          ? shift(f.points, 1, 1, 0)
+          : shift(f.points, 1, 0, 1)
+      tries.push([
+        'last point off',
+        figs.map((f, i) => (i === last ? { ...f, points: off(f) } : f)),
+      ])
+      for (const [label, figures] of tries)
+        push(label, toMultiAnswer({ figures, active: 0 }))
+      continue
+    }
+    if (!solved) continue
     const tries: [string, Pt[]][] = [['solved', solved]]
     if (solved.length > 1) tries.push(['reversed', [...solved].reverse()])
     tries.push(
       ['last y+1', shift(solved, solved.length - 1, 0, 1)],
       ['first x+1', shift(solved, 0, 1, 0)],
     )
-    for (const [label, pts] of tries) {
-      const store = toAnswerString(mode, { points: pts })
-      // no answer (two points on one x of a curve): «Проверить» stays off
-      if (!store) continue
-      const wire = toWireAnswer(store)
-      const row = { id: r.id, seed: r.seed, fields: r.fields, label, wire }
-      candidates.push(JSON.stringify(row))
-      // what the store holds today, sent as is: a JSON string, not an object
-      if (label === 'solved' && typeof wire !== 'string')
-        candidates.push(
-          JSON.stringify({ ...row, label: 'solved as string', wire: store }),
-        )
-    }
+    // no answer (two points on one x of a curve): «Проверить» stays off;
+    // «solved as string» — what the store holds, sent as is: not an object
+    for (const [label, pts] of tries)
+      push(label, toAnswerString(mode, { points: pts }))
   }
   writeFileSync(
     join(DATA, 'all-tasks.json'),

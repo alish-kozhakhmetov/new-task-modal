@@ -7,7 +7,7 @@ import { makeDeps } from '@/modules/tasks/ui/templates/shared/testing/make-task-
 import { checkPlaneAnswer } from '../../lib/check-plane-answer'
 import { planeModeOf } from '../../lib/drawing-figure'
 import { toWireAnswer, type Pt } from '../../lib/plane-answer'
-import { solvePlaneAnswer } from '../../lib/solve-plane-answer'
+import { solveFigures, solvePlaneAnswer } from '../../lib/solve-plane-answer'
 
 import verdicts from './data/backend-verdicts.json'
 import { SEED_PLANE_TASKS, keyOf, type PlaneFixture } from './fixtures'
@@ -82,18 +82,71 @@ const judged = rows.filter(
 /** A raise on a valid request is a 500 for the pupil: not accepted. */
 const accepted = (r: Verdict) => r.verdict === true
 
-const answerable = SEED_PLANE_TASKS.filter(
-  (t) =>
-    planeModeOf(t.description.figure).kind !== 'unsupported' &&
-    solvePlaneAnswer(t._backend.answer, t.description.figure),
+const answerable = SEED_PLANE_TASKS.filter((t) => {
+  const kind = planeModeOf(t.description.figure).kind
+  if (kind === 'unsupported') return false
+  return kind === 'multi'
+    ? solveFigures(t._backend.answer)
+    : solvePlaneAnswer(t._backend.answer, t.description.figure)
+})
+const single = answerable.filter(
+  (t) => planeModeOf(t.description.figure).kind !== 'multi',
 )
+/**
+ * A figure the window can draw: its nodes within the field and one tick past
+ * it, as InteractivePlane snaps. Task_11_5_5_25 asks for a circle of radius 9
+ * on a −5…5 plane (seeds 1, 2): no node of it is reachable — a fact of the
+ * generator, counted below, not drawn.
+ */
+const reachable = (t: PlaneFixture) => {
+  const f = t.description.figure
+  const step = f.tickStep || 1
+  const lo = (f.minPosition ?? -5) - step
+  const hi = (f.maxPosition ?? 5) + step
+  return (solveFigures(t._backend.answer) ?? []).every((g) =>
+    g.points.every((p) => p.x >= lo && p.x <= hi && p.y >= lo && p.y <= hi),
+  )
+}
+const allMulti = answerable.filter(
+  (t) => planeModeOf(t.description.figure).kind === 'multi',
+)
+const multi = allMulti.filter(reachable)
+
+/** The very answer the window sent is the one TaskChecker judged. */
+const expectBackendAccepted = (task: PlaneFixture, last: string) => {
+  const record = rows.find(
+    (r) => keyOf(r) === keyOf(task._backend) && r.label === 'solved',
+  )
+  expect(record, 'a verdict of the backend for this seed').toBeTruthy()
+  expect(record?.wire).toEqual(toWireAnswer(last))
+  // accepted, or not judged locally (the OTP regex, see above)
+  expect(
+    record?.verdict === true || String(record?.verdict).startsWith(OTP_REGEX),
+  ).toBe(true)
+}
+
+/** How many figures a store answer of several carries. */
+const figureCount = (answer: unknown) =>
+  (JSON.parse(String(answer)) as { figures: unknown[] }).figures.length
+
+/** Tab onto the plane afresh: the cursor shows at the origin. */
+const focusPlane = (plane: Element) => {
+  act(() => (plane as unknown as SVGSVGElement).blur())
+  fireEvent.keyDown(document.body, { key: 'Tab' })
+  act(() => (plane as unknown as SVGSVGElement).focus())
+}
 
 describe('coordinatePlane.draw — real tasks solved through the window', () => {
   it('has the scenarios it claims (a gate that can fail: an empty corpus is a failure)', () => {
     const kinds = new Set(
       answerable.map((t) => planeModeOf(t.description.figure).kind),
     )
-    expect([...kinds].sort()).toEqual(['dots', 'figure', 'point'])
+    expect([...kinds].sort()).toEqual(['dots', 'figure', 'multi', 'point'])
+    // several figures (scenario E): lines, segments, the pupil's pick
+    expect(multi.length).toBeGreaterThan(120)
+    expect(
+      allMulti.filter((t) => !reachable(t)).map((t) => keyOf(t._backend)),
+    ).toEqual(['Task_11_5_5_25#1', 'Task_11_5_5_25#2'])
     // the trigonometric axes are in the corpus (scenario D′, grade 10)
     expect(
       answerable.filter((t) => {
@@ -115,7 +168,7 @@ describe('coordinatePlane.draw — real tasks solved through the window', () => 
     expect(short).toEqual([])
   })
 
-  it.each(answerable.map((t) => [keyOf(t._backend), t] as const))(
+  it.each(single.map((t) => [keyOf(t._backend), t] as const))(
     '%s: the keyboard puts the solving points, the backend port accepts',
     (_, task) => {
       const onAnswer = vi.fn()
@@ -139,19 +192,73 @@ describe('coordinatePlane.draw — real tasks solved through the window', () => 
       expect(checkPlaneAnswer(task._backend.answer, toWireAnswer(last))).toBe(
         true,
       )
-      // the very answer the window sent is the one TaskChecker accepted
-      const record = rows.find(
-        (r) => keyOf(r) === keyOf(task._backend) && r.label === 'solved',
-      )
-      expect(record, 'a verdict of the backend for this seed').toBeTruthy()
-      expect(record?.wire).toEqual(toWireAnswer(last))
-      // accepted, or not judged locally (the OTP regex, see above)
-      expect(
-        record?.verdict === true ||
-          String(record?.verdict).startsWith(OTP_REGEX),
-      ).toBe(true)
+      expectBackendAccepted(task, last)
     },
   )
+
+  it.each(multi.map((t) => [keyOf(t._backend), t] as const))(
+    '%s: figure by figure — add, Tab back, the keyboard puts its points',
+    (_, task) => {
+      const onAnswer = vi.fn()
+      render(<Host task={task} onAnswer={onAnswer} />)
+      const mode = planeModeOf(task.description.figure)
+      if (mode.kind !== 'multi') throw new Error('not a multi-figure plane')
+      const plane = screen.getByTestId('coordinate-plane-interactive')
+      const step = task.description.figure.tickStep || 1
+      const figures = solveFigures(task._backend.answer)!
+      figures.forEach((f, i) => {
+        // a fixed plane opens with its first figure; any other is added
+        if (i > 0 || mode.fixed == null)
+          fireEvent.click(screen.getByTestId(`coordinate-plane-add-${f.type}`))
+        const pressed = screen
+          .getAllByTestId('coordinate-plane-figure')
+          .map((b) => b.getAttribute('aria-pressed'))
+        expect(pressed.indexOf('true')).toBe(i)
+        focusPlane(plane)
+        let at: Pt = { x: 0, y: 0 }
+        for (const p of f.points) {
+          keyTo(plane, at, p, step)
+          at = p
+        }
+      })
+      const last = onAnswer.mock.calls.at(-1)?.[0] as string
+      expect(figureCount(last)).toBe(figures.length)
+      expect(checkPlaneAnswer(task._backend.answer, toWireAnswer(last))).toBe(
+        true,
+      )
+      expectBackendAccepted(task, last)
+    },
+  )
+
+  it('several figures: a half figure is not sent, «Удалить» takes the active one', () => {
+    const task = multi.find((t) => {
+      const mode = planeModeOf(t.description.figure)
+      return mode.kind === 'multi' && mode.fixed === 20
+    })!
+    const onAnswer = vi.fn()
+    render(<Host task={task} onAnswer={onAnswer} />)
+    const plane = screen.getByTestId('coordinate-plane-interactive')
+    focusPlane(plane)
+    keyTo(plane, { x: 0, y: 0 }, { x: 1, y: 1 }, 1)
+    // one point of a line: no answer yet, and no second figure to add
+    expect(onAnswer).not.toHaveBeenCalled()
+    expect(screen.getByTestId('coordinate-plane-add-20')).toBeDisabled()
+    keyTo(plane, { x: 1, y: 1 }, { x: 2, y: 2 }, 1)
+    const one = onAnswer.mock.calls.at(-1)?.[0] as string
+    expect(figureCount(one)).toBe(1)
+    fireEvent.click(screen.getByTestId('coordinate-plane-add-20'))
+    focusPlane(plane)
+    keyTo(plane, { x: 0, y: 0 }, { x: 0, y: 1 }, 1)
+    // the second line is half: the answer is still the first one
+    expect(onAnswer.mock.calls.at(-1)?.[0]).toBe(one)
+    keyTo(plane, { x: 0, y: 1 }, { x: 1, y: 3 }, 1)
+    expect(figureCount(onAnswer.mock.calls.at(-1)?.[0] as string)).toBe(2)
+    fireEvent.click(screen.getByTestId('coordinate-plane-remove'))
+    expect(onAnswer.mock.calls.at(-1)?.[0]).toBe(one)
+    fireEvent.click(screen.getByTestId('coordinate-plane-clear'))
+    expect(onAnswer).toHaveBeenLastCalledWith('')
+    expect(screen.getAllByTestId('coordinate-plane-figure')).toHaveLength(1)
+  })
 
   it('«Стереть» empties the answer', () => {
     const task = answerable.find(

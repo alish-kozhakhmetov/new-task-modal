@@ -224,6 +224,29 @@ export const checkPlaneAnswer = (
       })
     }
 
+    case 'EquationsGraphTaskAnswer': {
+      // as many figures as graphs, and every graph drawn by one of them alone
+      const figs = userFigures(wire)
+      const graphs = (answer.graphs as unknown[]) ?? []
+      if (!figs || figs.length !== graphs.length) return false
+      return graphs.every((g) =>
+        figs.some((f) => checkPlaneAnswer(g, { figures: [f] })),
+      )
+    }
+
+    case 'PolygonTaskAnswer': {
+      // only segments, and their distinct ends are the vertices (any order)
+      const figs = userFigures(wire)
+      if (!figs) return false
+      if (!figs.every((f) => f.type === DrawingFigure.LineSegment)) return false
+      const key = (p: Pt) => `${p.x};${p.y}`
+      const got = [...new Set(figs.flatMap((f) => f.points.map(key)))].sort()
+      const want = ((answer.points as unknown[]) ?? [])
+        .map((p) => key(pt(p)!))
+        .sort()
+      return got.length === want.length && got.every((k, i) => k === want[i])
+    }
+
     case 'SinusTaskAnswer':
     case 'CosinusTaskAnswer':
     case 'TangentTaskAnswer':
