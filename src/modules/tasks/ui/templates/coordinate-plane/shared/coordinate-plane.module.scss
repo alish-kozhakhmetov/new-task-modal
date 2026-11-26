@@ -33,8 +33,16 @@
 
 .tools {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-8);
   justify-content: center;
+}
+
+// Several figures: the row of figures over the row of actions.
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
 }
 
 .notice {

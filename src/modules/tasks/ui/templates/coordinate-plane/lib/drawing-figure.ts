@@ -27,12 +27,34 @@ export const TWO_POINT_FIGURES: Record<
   [DrawingFigure.Arccos]: { first: 'center', second: 'end' },
 }
 
+/**
+ * What the pupil may add on a plane with drawingFigure Any — the old
+ * DrawingFigureChooser.jsx without the exponent, the logarithm and the
+ * asymptote, which no generator of this window needs (they come with
+ * allowedFigures, see planeModeOf).
+ */
+export const CHOOSER = [
+  DrawingFigure.Line,
+  DrawingFigure.LineSegment,
+  DrawingFigure.Parabola,
+  DrawingFigure.CubicParabola,
+  DrawingFigure.Hyperbola,
+  DrawingFigure.Circle,
+  DrawingFigure.RootFunction,
+] as const
+
 export type PlaneMode =
   | { kind: 'point' }
   | { kind: 'dots' }
   /** `trig` — drawn on the fixed trigonometric axes (lib/trig.ts). */
   | { kind: 'figure'; figureType: number; trig?: TrigAxes }
-  /** Shown, not answerable here yet (trigonometry, several figures, shading). */
+  /**
+   * Several figures, each by two clicks (scenario E): `fixed` — the type the
+   * plane draws (lines, segments, circles), null — the pupil picks each
+   * figure's type from `choices` (drawingFigure Any).
+   */
+  | { kind: 'multi'; fixed: number | null; choices: number[] }
+  /** Shown, not answerable here yet (shading, exponent and logarithm). */
   | { kind: 'unsupported'; reason: string }
 
 interface ModeInput {
@@ -54,8 +76,18 @@ interface ModeInput {
 export const planeModeOf = (figure: ModeInput): PlaneMode => {
   const type = Number(figure.drawingFigure ?? DrawingFigure.None)
   if (figure.canFill) return { kind: 'unsupported', reason: 'fill' }
-  if (figure.canDrawMultipleFigures || type === DrawingFigure.Any)
+  if (figure.canDrawMultipleFigures || type === DrawingFigure.Any) {
+    // exponent, logarithm and their asymptote (allowedFigures 270/280/290)
+    // need curves this window does not draw yet
+    if ((figure.allowedFigures ?? []).some((t) => !TWO_POINT_FIGURES[t]))
+      return { kind: 'unsupported', reason: 'exponent' }
+    if (trigAxesOf(figure)) return { kind: 'unsupported', reason: 'multiple' }
+    if (type === DrawingFigure.Any)
+      return { kind: 'multi', fixed: null, choices: [...CHOOSER] }
+    if (TWO_POINT_FIGURES[type] && !isTrigType(type))
+      return { kind: 'multi', fixed: type, choices: [type] }
     return { kind: 'unsupported', reason: 'multiple' }
+  }
   if (type === DrawingFigure.Point) return { kind: 'point' }
   if (type === DrawingFigure.MultipleDots) return { kind: 'dots' }
   const trig = trigAxesOf(figure)

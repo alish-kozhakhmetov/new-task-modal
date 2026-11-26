@@ -8,6 +8,7 @@ import { Button, ButtonColor } from '@/ui/button/button'
 
 import styles from '../shared/coordinate-plane.module.scss'
 import { InteractivePlane } from '../shared/interactive-plane'
+import { MultiFigurePlane } from '../shared/multi-figure-plane'
 
 import { planeModeOf } from './drawing-figure'
 import { fromAnswerString, toAnswerString, type Pt } from './plane-answer'
@@ -24,8 +25,9 @@ const CLEAR = { rus: 'Стереть', kaz: 'Өшіру', eng: 'Clear' }
 /**
  * A task answered on the coordinate plane: the condition's text, the plane,
  * and «Clear». The answer is what the pupil put on the plane — one point,
- * several points or a figure by two points (lib/drawing-figure.ts); there is
- * no text field and no calculator (TASK_DESCRIPTIONS_WITHOUT_CALC).
+ * several points, a figure by two points or several figures
+ * (lib/drawing-figure.ts); there is no text field and no calculator
+ * (TASK_DESCRIPTIONS_WITHOUT_CALC).
  */
 export const createCoordinatePlaneTemplate = ({ id }: Config) => {
   const CoordinatePlaneTemplate = ({
@@ -50,22 +52,35 @@ export const createCoordinatePlaneTemplate = ({ id }: Config) => {
       <div className={styles.root} data-template-id={id}>
         <TaskTitle title={task.title} deps={deps} />
         <TaskTitle title={task.description.content} deps={deps} />
-        <div className={styles.planeWrap}>
-          <InteractivePlane
+        {mode.kind === 'multi' ? (
+          <MultiFigurePlane
             figure={figure}
             mode={mode}
-            draft={draft}
+            answer={answer}
+            onChange={onChange}
             deps={deps}
             readOnly={solved}
             label={text}
-            onDraftChange={(next) => {
-              const value = toAnswerString(mode, next)
-              setPending(value ? null : next.points)
-              onChange(value)
-            }}
+            clearLabel={clearLabel}
           />
-        </div>
-        {!solved && mode.kind !== 'unsupported' ? (
+        ) : (
+          <div className={styles.planeWrap}>
+            <InteractivePlane
+              figure={figure}
+              mode={mode}
+              draft={draft}
+              deps={deps}
+              readOnly={solved}
+              label={text}
+              onDraftChange={(next) => {
+                const value = toAnswerString(mode, next)
+                setPending(value ? null : next.points)
+                onChange(value)
+              }}
+            />
+          </div>
+        )}
+        {!solved && mode.kind !== 'unsupported' && mode.kind !== 'multi' ? (
           <div className={styles.tools}>
             <Button
               color={ButtonColor.Gray}

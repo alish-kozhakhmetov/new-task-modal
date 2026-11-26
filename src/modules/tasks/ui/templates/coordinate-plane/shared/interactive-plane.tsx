@@ -30,6 +30,7 @@ import {
   type Shape,
 } from '../lib/curves'
 import { DrawingFigure, type PlaneMode } from '../lib/drawing-figure'
+import type { DrawnFigure } from '../lib/multi-figure'
 import { applyClick, type PlaneDraft, type Pt } from '../lib/plane-answer'
 import { trigAxesOf, trigShapes, type TrigAxes } from '../lib/trig'
 import type { CoordinatePlaneFigure } from '../lib/types.task'
@@ -40,6 +41,8 @@ import { TrigPlaneAxes, trigPlaneOptions, trigPlaneSize } from './trig-axes'
 /** The pupil's ink: brand, not the condition's black (rule: semantics, not palette). */
 const PUPIL_INK = 'var(--text-brand)'
 const POINT_R = 5
+/** A point of a figure that is not the active one: smaller, same ink. */
+const OTHER_R = 3.5
 const GHOST_R = 7
 
 interface Props {
@@ -51,6 +54,11 @@ interface Props {
   readOnly?: boolean
   /** Accessible name of the plane: the task's own text. */
   label?: string
+  /**
+   * The pupil's other figures (several on one plane, lib/multi-figure.ts):
+   * drawn, not edited — the clicks go to `draft`, the active figure.
+   */
+  others?: DrawnFigure[]
 }
 
 export const toPlaneOptions = (
@@ -247,6 +255,7 @@ export const InteractivePlane = ({
   deps,
   readOnly = false,
   label,
+  others = [],
 }: Props) => {
   const trig = useMemo(() => trigAxesOf(figure), [figure])
   const options = useMemo(() => {
@@ -349,6 +358,12 @@ export const InteractivePlane = ({
         : figureShapes(mode.figureType, draft.points[0], draft.points[1], field)
       : []
 
+  const otherShapes: Shape[] = others.flatMap((f) =>
+    f.points.length >= 2
+      ? figureShapes(f.type, f.points[0], f.points[1], field)
+      : [],
+  )
+
   return (
     <svg
       ref={svgRef}
@@ -410,6 +425,29 @@ export const InteractivePlane = ({
         })}
       </g>
       <g data-plane-layer="pupil">
+        {otherShapes.map((s, i) => (
+          <ShapeView
+            key={`o${i}`}
+            shape={s}
+            options={options}
+            color={PUPIL_INK}
+          />
+        ))}
+        {others.flatMap((f, i) =>
+          f.points.map((p, j) => {
+            const d = fromPointToDot(options, p.x, p.y)
+            return (
+              <circle
+                key={`op${i}-${j}`}
+                data-other-point={`${p.x};${p.y}`}
+                cx={d.x}
+                cy={d.y}
+                r={OTHER_R}
+                fill={PUPIL_INK}
+              />
+            )
+          }),
+        )}
         {pupilShapes.map((s, i) => (
           <ShapeView
             key={`s${i}`}

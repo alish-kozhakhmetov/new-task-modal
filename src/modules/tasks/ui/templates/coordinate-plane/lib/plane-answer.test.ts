@@ -53,7 +53,10 @@ describe('mode of a plane — from its flags', () => {
     [{ drawingFigure: 10 }, 'point'],
     [{ drawingFigure: 15 }, 'dots'],
     [{ drawingFigure: 90 }, 'figure'],
-    [{ drawingFigure: 5, canDrawMultipleFigures: true }, 'unsupported'],
+    [{ drawingFigure: 5, canDrawMultipleFigures: true }, 'multi'],
+    [{ drawingFigure: 20, canDrawMultipleFigures: true }, 'multi'],
+    // exponent and logarithm curves are not drawn yet
+    [{ drawingFigure: 5, allowedFigures: [270, 280, 290] }, 'unsupported'],
     [{ drawingFigure: 20, canFill: true }, 'unsupported'],
     [{ drawingFigure: 190 }, 'figure'],
     [{ drawingFigure: 250 }, 'unsupported'],
