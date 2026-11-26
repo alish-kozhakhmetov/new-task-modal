@@ -313,6 +313,36 @@ describe('coordinatePlane.draw — real tasks solved through the window', () => 
     expect(screen.getAllByTestId('coordinate-plane-figure')).toHaveLength(1)
   })
 
+  it('keeps its keys: Enter and the arrows do not reach the modal, which checks the answer on Enter', () => {
+    // actions.tsx hears Enter natively on the task root and checks the
+    // answer: a pupil putting the second figure's point lost a life (27.11)
+    const task = multi.find((t) => {
+      const mode = planeModeOf(t.description.figure)
+      return mode.kind === 'multi' && mode.fixed === 20
+    })!
+    const onAnswer = vi.fn()
+    const heard = vi.fn<(key: string) => void>()
+    render(
+      <div data-testid="task-root">
+        <Host task={task} onAnswer={onAnswer} />
+      </div>,
+    )
+    screen
+      .getByTestId('task-root')
+      .addEventListener('keydown', (e: KeyboardEvent) => {
+        heard(e.key)
+      })
+    const plane = screen.getByTestId('coordinate-plane-interactive')
+    focusPlane(plane)
+    keyTo(plane, { x: 0, y: 0 }, { x: 1, y: 1 }, 1)
+    keyTo(plane, { x: 1, y: 1 }, { x: 2, y: 2 }, 1)
+    fireEvent.click(screen.getByTestId('coordinate-plane-add-20'))
+    focusPlane(plane)
+    keyTo(plane, { x: 0, y: 0 }, { x: 0, y: 1 }, 1)
+    expect(figureCount(onAnswer.mock.calls.at(-1)?.[0] as string)).toBe(1)
+    expect(heard).not.toHaveBeenCalled()
+  })
+
   it('«Стереть» empties the answer', () => {
     const task = answerable.find(
       (t) => planeModeOf(t.description.figure).kind === 'point',

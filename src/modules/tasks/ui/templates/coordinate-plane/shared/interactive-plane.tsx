@@ -1,10 +1,11 @@
 import {
+  useEffect,
   useId,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
   type FocusEvent,
-  type KeyboardEvent,
   type PointerEvent,
 } from 'react'
 
@@ -375,7 +376,12 @@ export const InteractivePlane = ({
     setGhost(at)
   }
 
-  const onKeyDown = (e: KeyboardEvent<SVGSVGElement>) => {
+  // The plane's keys are its own: Enter puts a point, the arrows move the
+  // cursor. The modal checks the answer on Enter anywhere in the task
+  // (actions.tsx, a native listener on its root), so the keys are heard
+  // natively here and stopped before they get there — React's onKeyDown
+  // would come after the modal's listener, from the React root above it.
+  const onKeyDown = (e: KeyboardEvent) => {
     if (!interactive) return
     const t = options.tickStep / (halfStep ? 2 : 1)
     const at = start()
@@ -387,17 +393,31 @@ export const InteractivePlane = ({
     }
     if (move[e.key]) {
       e.preventDefault()
+      e.stopPropagation()
       const [dx, dy] = move[e.key]
       const next = targets
         ? stepAmong(targets, at, dx, dy)
         : { x: clampTo(range.x, at.x + dx), y: clampTo(range.y, at.y + dy) }
       setCursor(next)
       setGhost(next)
-    } else if ((e.key === 'Enter' || e.key === ' ') && (cursor ?? ghost)) {
+    } else if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault()
-      commit((cursor ?? ghost)!)
+      e.stopPropagation()
+      const put = cursor ?? ghost
+      if (put) commit(put)
     }
   }
+  const keys = useRef(onKeyDown)
+  useLayoutEffect(() => {
+    keys.current = onKeyDown
+  })
+  useEffect(() => {
+    const svg = svgRef.current
+    if (!svg) return
+    const listen = (e: KeyboardEvent) => keys.current(e)
+    svg.addEventListener('keydown', listen)
+    return () => svg.removeEventListener('keydown', listen)
+  }, [])
 
   const pupilShapes: Shape[] =
     mode.kind === 'figure' && draft.points.length >= 2
@@ -437,7 +457,6 @@ export const InteractivePlane = ({
       role={interactive ? 'application' : 'img'}
       aria-label={label}
       tabIndex={interactive ? 0 : undefined}
-      onKeyDown={onKeyDown}
       onFocus={onFocus}
       onBlur={() => {
         setCursor(null)
