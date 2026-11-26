@@ -43,12 +43,20 @@ const ROOT: SignSymbol = { title: '√', latex: '\\sqrt', label: '√' }
 const NTH_ROOT: SignSymbol = { title: 'ⁿ√', latex: '\\nthroot', label: 'ⁿ√' }
 const DEGREE: SignSymbol = { title: '°', latex: '^{\\circ}', label: '°' }
 const POWER: SignSymbol = { title: 'xⁿ', latex: '^{}', label: 'xⁿ' }
+// ±π/4 + 2πk: the backend's trigonometry answer takes ± only as ±, not as
+// two answers; ±√33 is taken either way
+const PLUS_MINUS: SignSymbol = { title: '±', latex: '\\pm', label: '±' }
+// |x| ≤ 12, 7ln|x| + C: the released page has < and >, not ≤ ≥ and the bars
+const LESS_EQUAL: SignSymbol = { title: '≤', latex: '\\le', label: '≤' }
+const GREATER_EQUAL: SignSymbol = { title: '≥', latex: '\\ge', label: '≥' }
+const ABS: SignSymbol = { title: '|', latex: '|', label: '|' }
 // a point in a union: (−∞; −1] ∪ {2} ∪ [4; 5]
 const OPEN_BRACE: SignSymbol = { title: '{', latex: '\\{', label: '{' }
 const CLOSE_BRACE: SignSymbol = { title: '}', latex: '\\}', label: '}' }
 const LOG: SignSymbol = { title: 'log', latex: '\\log', label: 'log', fn: true }
-// no solutions: «x ∈ ∅» — the backend takes \varnothing only, not \emptyset.
-// Drawn, as ∪: the key font has no ∅ either
+// no solutions: «x ∈ ∅» — the backend's generators take \varnothing, not
+// \emptyset; one (11_12_7_15) compares its \emptyset as a string and takes
+// nothing else, its own gap (27.11). Drawn, as ∪: the key font has no ∅ either
 const EMPTY_SET: SignSymbol = {
   title: '∅',
   latex: '\\varnothing',
@@ -80,6 +88,8 @@ const ARCCOS: SignSymbol = {
   label: 'arccos',
   fn: true,
 }
+// \operatorname{arctg}: taken by 10_8_16_*; 10_4_12_10 and 10_4_5_8 compare
+// the letters «arctg» as a string and take nothing else — the backend's gap (27.11)
 const ARCTG: SignSymbol = {
   title: 'arctg',
   latex: '\\operatorname{arctg}',
@@ -133,6 +143,7 @@ const TRIGONOMETRY_PAGE: SignSymbol[] = [
   ROOT,
   NTH_ROOT,
   DEGREE,
+  PLUS_MINUS,
 ]
 
 export interface TaskKeyboard {
@@ -148,10 +159,10 @@ const swap = (cells: Record<string, SignSymbol>) =>
 
 const KEYBOARDS: Record<KeySetName, Omit<TaskKeyboard, 'set'>> = {
   // the rare ones of an interval answer: a point {2}, no solutions ∅,
-  // √2 and log₂5 as an end
+  // √2 and log₂5 as an end, ±√10
   interval: {
     main: swap(INTERVAL_CELLS),
-    extra: [OPEN_BRACE, CLOSE_BRACE, EMPTY_SET, ROOT, DELETE, LOG],
+    extra: [OPEN_BRACE, CLOSE_BRACE, EMPTY_SET, ROOT, DELETE, LOG, PLUS_MINUS],
   },
   // (−π/4 + πk; arctg 7 + πk): the interval page, the functions after it
   intervalTrig: { main: swap(INTERVAL_CELLS), extra: TRIGONOMETRY_PAGE },
@@ -159,9 +170,13 @@ const KEYBOARDS: Record<KeySetName, Omit<TaskKeyboard, 'set'>> = {
   pi: { main: MAIN, extra: [PI, DELETE] },
   vector: { main: MAIN, extra: [VECTOR, DELETE] },
   degree: { main: MAIN, extra: [DEGREE, DELETE] },
-  root: { main: MAIN, extra: [ROOT, NTH_ROOT, POWER, DELETE] },
-  // a system's pairs: (2log₃2; log₇5), (log₃5; 2log₇2)
-  log: { main: MAIN, extra: [LOG, DELETE] },
+  // √29; −√29 or ±√29, a⁴, 2ˣ, ∛9
+  root: { main: MAIN, extra: [ROOT, NTH_ROOT, POWER, PLUS_MINUS, DELETE] },
+  // a system's pairs: (2log₃2; log₇5), (log₃5; 2log₇2); log₂x⁵, log₃√x —
+  // grade 11 writes them with a power and a root beside
+  log: { main: MAIN, extra: [LOG, POWER, ROOT, NTH_ROOT, DELETE, ABS] },
+  // x ≥ 6,3; |x| < 2 — the digits page keeps < and >
+  compare: { main: MAIN, extra: [LESS_EQUAL, GREATER_EQUAL, ABS, DELETE] },
 }
 
 const SET_BY_TASK = new Map<string, KeySetName>(

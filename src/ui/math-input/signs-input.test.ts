@@ -12,8 +12,9 @@ import type { MathField } from './types'
 /**
  * The signs keys (grades 5–13) through the keyboard's own path into a real
  * MathQuill field. The latex here is what the window sends; that the backend
- * accepts it was checked by its own TaskChecker on 3 915 sampled references
- * of 783 generators (scripts/keys/README.md) — these pin the form that passed.
+ * accepts it was checked by its own TaskChecker on 11 784 sampled references
+ * of 1 964 generators of grades 5–13, 6 seeds each (27.11, scripts/keys/README.md)
+ * — these pin the form that passed.
  */
 type Field = MathField & { typedText: (t: string) => void }
 
@@ -101,14 +102,25 @@ describe('signs keys → the latex the window sends', () => {
     expect(f.latex()).toBe('\\overrightarrow{AB}')
   })
 
-  it('no solutions: ∅ — \\varnothing, the only form the backend takes', () => {
+  it("no solutions: ∅ — \\varnothing, the form the backend's generators take", () => {
     expect(press('Task_10_1_10_5', field(), '∅')).toBe('\\varnothing')
   })
 
   it('a logarithm with its base: (3; 2log₇6)', () => {
     // the system's pair in the released «( )» key, log₇ from the signs page
     expect(
-      press('Task_11_7_6_9', field(), '( )', '3', ';', '2', 'log', '7', '→', '6'),
+      press(
+        'Task_11_7_6_9',
+        field(),
+        '( )',
+        '3',
+        ';',
+        '2',
+        'log',
+        '7',
+        '→',
+        '6',
+      ),
     ).toBe('(3;2\\log_76)')
   })
 
@@ -117,5 +129,28 @@ describe('signs keys → the latex the window sends', () => {
     press('Task_6_9_11_3', f, '2', 'π')
     f.typedText('R')
     expect(f.latex()).toBe('2\\pi R')
+  })
+
+  // 27.11: what the backend of 23.11 (local-backend/hs) took, the very forms
+  it('±: ±π/4 + 2πk as one answer, the way TrigonometryTaskAnswer takes it', () => {
+    expect(
+      press('Task_10_4_1_4', field(), '±', 'x/y', 'π', '→', '4', '→', '+', '2', 'π', 'k'),
+    ).toBe('\\pm\\frac{\\pi}{4}+2\\pi k') // prettier-ignore
+  })
+
+  it('a power beyond x² x³: c¹⁹ with xⁿ', () => {
+    expect(press('Task_7_1_21_1', field(), 'c', 'xⁿ', '1', '9')).toBe('c^{19}')
+  })
+
+  it('|x| ≤ 12 on the compare page', () => {
+    expect(press('Task_6_5_65_2', field(), '|', 'x', '|', '≤', '1', '2')).toBe(
+      '|x|\\le12',
+    )
+  })
+
+  it('7ln|x|: ln from the letters, MathQuill makes it \\ln', () => {
+    expect(press('Task_11_6_7_1', field(), '7', 'l', 'n', '|', 'x', '|')).toBe(
+      '7\\ln|x|',
+    )
   })
 })
