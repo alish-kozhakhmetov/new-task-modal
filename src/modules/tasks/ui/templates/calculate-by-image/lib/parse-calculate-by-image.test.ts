@@ -31,6 +31,21 @@ describe('parseCalculateByImage', () => {
     },
   )
 
+  it('размер картинки — смысл: мячи 53, 68 и 90px остаются разными (Task_0_6_3_9)', () => {
+    const scales = Object.fromEntries(
+      parse('0_6_3_9').pool.map((item) => [item.id as string, item.scale]),
+    )
+    expect(scales.big).toBe(1)
+    expect(scales.small).toBeCloseTo(68 / 90)
+    expect(scales.smallest).toBeCloseTo(53 / 90)
+  })
+
+  it('один размер у всех — масштаб 1 (Task_0_10_5_2: булочки)', () => {
+    expect(parse('0_10_5_2').catalog.every((item) => item.scale === 1)).toBe(
+      true,
+    )
+  })
+
   it('заранее положенные предметы — в зоне (Task_0_1_38_9: три линейки)', () => {
     const model = parse('0_1_38_9')
     expect(model.preplaced.map((item) => item.id)).toEqual([

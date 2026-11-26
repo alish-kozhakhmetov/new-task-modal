@@ -9,15 +9,26 @@ import type { CalculateByImageDescription } from './types.task'
  *   on the row turns the next one into the row's item (rabbit with a carrot);
  * - add — the row adds items («Добавьте ему 3 морковки»);
  * - remove — no row, tap an item to take it out («Уберите 1 куб»);
- * - count — `withoutRemoveItem`: items only to be counted.
+ * - count — `withoutRemoveItem`, or `itemsMaxQuantity: 0` («Есть 2 кубика.
+ *   Сколько будет, если не добавлять?», Task_0_8_1_4): items only to be
+ *   counted. The old screen shows the field from the start there and hides
+ *   the row when `withInput` is set; here the row is hidden always, adding
+ *   would only be a trap.
  */
 export type WithCellMode = 'transform' | 'add' | 'remove' | 'count'
+
+/** `itemsMaxQuantity` as the old screen compares it: absent — no limit. */
+const declaredMax = (description: CalculateByImageDescription): number =>
+  description.itemsMaxQuantity == null
+    ? Number.NaN
+    : Number(description.itemsMaxQuantity)
 
 export const withCellMode = (
   description: CalculateByImageDescription,
   model: CalculateByImageModel,
 ): WithCellMode => {
   if (description.withoutRemoveItem) return 'count'
+  if (declaredMax(description) === 0) return 'count'
   const constKey = description.constItem
     ? JSON.stringify(description.constItem.id)
     : null
@@ -54,8 +65,9 @@ export const isFieldDue = (
   zoneSize: number,
 ): boolean => {
   if (description.withInputBefore || description.withoutRemoveItem) return true
-  const max = Number(description.itemsMaxQuantity) || 0
+  // old screen: `size(selectedIndexes) === itemsMaxQuantity`, so 0 — at once
+  const max = declaredMax(description)
   const correct = Number(description.itemsCorrectQuantity)
-  if (max > 0 && taps >= max) return true
+  if (Number.isFinite(max) && taps >= max) return true
   return Number.isFinite(correct) && zoneSize === correct
 }

@@ -36,9 +36,22 @@ const sameList = (a: string[], b: string[]) =>
 
 const coinValue = (id: unknown) => Number(String(id).replace(/^coin/, '')) || 0
 
-const isAnyOf = (expected: ExpectedListAnswer) =>
-  typeof expected._struct === 'string' &&
-  expected._struct.endsWith('AnyOfThemTaskAnswer')
+/**
+ * Variants when the reference is «any of them»: AnyOfThemTaskAnswer (tagged
+ * `_struct` in the fixtures, a bare `{ answers }` from the generator itself)
+ * or a plain list of answers (Task_2_3_44_24). `null` — a single answer.
+ */
+export const anyOfVariants = (expected: unknown): unknown[] | null => {
+  if (Array.isArray(expected)) return expected as unknown[]
+  if (!expected || typeof expected !== 'object') return null
+  const { _struct, answers, list } = expected as ExpectedListAnswer
+  const tagged =
+    typeof _struct === 'string' && _struct.endsWith('AnyOfThemTaskAnswer')
+  if (tagged || (list === undefined && Array.isArray(answers))) {
+    return Array.isArray(answers) ? (answers as unknown[]) : []
+  }
+  return null
+}
 
 export const isCalculateByImageCorrect = (
   expected: ExpectedListAnswer | null | undefined,
@@ -46,9 +59,9 @@ export const isCalculateByImageCorrect = (
 ): boolean => {
   if (!expected || !wire || !Array.isArray(wire.list)) return false
 
-  if (isAnyOf(expected)) {
-    const answers = Array.isArray(expected.answers) ? expected.answers : []
-    return answers.some((answer) =>
+  const variants = anyOfVariants(expected)
+  if (variants) {
+    return variants.some((answer) =>
       isCalculateByImageCorrect(answer as ExpectedListAnswer, wire),
     )
   }

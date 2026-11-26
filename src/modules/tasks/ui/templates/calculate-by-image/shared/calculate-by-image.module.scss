@@ -118,6 +118,14 @@ $item-max: to-rem(88px);
   }
 }
 
+/* Too many to lie on the picture: under it, inside the same zone. */
+.zoneItemsBelow {
+  .zoneWithPicture & {
+    position: static;
+    place-content: flex-start;
+  }
+}
+
 /* Lego bricks join into one bar. */
 .zoneItemsLego {
   gap: 0;
@@ -155,7 +163,7 @@ $item-max: to-rem(88px);
   :global(svg) {
     width: auto;
     max-width: 100%;
-    height: 100%;
+    height: calc(100% * var(--cbi-scale, 1));
   }
 }
 

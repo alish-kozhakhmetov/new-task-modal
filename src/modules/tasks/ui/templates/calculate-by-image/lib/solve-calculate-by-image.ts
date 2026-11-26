@@ -1,4 +1,7 @@
-import type { ExpectedListAnswer } from './check-calculate-by-image'
+import {
+  anyOfVariants,
+  type ExpectedListAnswer,
+} from './check-calculate-by-image'
 import { buildCatalog } from './parse-calculate-by-image'
 import type { CalculateByImageDescription } from './types.task'
 
@@ -17,13 +20,9 @@ export const solveCalculateByImage = (
 ): number[] | null => {
   if (!expected) return null
 
-  if (
-    typeof expected._struct === 'string' &&
-    expected._struct.endsWith('AnyOfThemTaskAnswer')
-  ) {
-    for (const answer of Array.isArray(expected.answers)
-      ? expected.answers
-      : []) {
+  const variants = anyOfVariants(expected)
+  if (variants) {
+    for (const answer of variants) {
       const plan = solveCalculateByImage(
         description,
         answer as ExpectedListAnswer,
@@ -56,7 +55,9 @@ export const solveCalculateByImage = (
     Number.isFinite(declared) && declared > 0
       ? Math.max(declared, preplacedCount)
       : 20
-  if (wanted.length > capacity) return null
+  if (wanted.length > capacity) {
+    return isCoin(list[0]) ? solveCoinSum(description, list, capacity) : null
+  }
 
   // What the pupil adds: the reference minus what is already there.
   let toAdd: string[]
@@ -81,9 +82,51 @@ export const solveCalculateByImage = (
       (it) =>
         key(it.id) === id && !(description.isChangable && used.has(it.index)),
     )
-    if (!item) return null
+    if (!item) {
+      return isCoin(list[0]) ? solveCoinSum(description, list, capacity) : null
+    }
     used.add(item.index)
     plan.push(item.index)
   }
+  return plan
+}
+
+const isCoin = (id: unknown) => typeof id === 'string' && id.startsWith('coin')
+const coinValue = (id: unknown) => Number(String(id).replace(/^coin/, '')) || 0
+
+/**
+ * Money: the backend compares sums, so when its own combination does not fit
+ * the zone (11 coins, `itemsMaxQuantity: 10`) the fewest coins for the same
+ * sum are tried — largest first, optimal for tenge denominations.
+ */
+const solveCoinSum = (
+  description: CalculateByImageDescription,
+  list: unknown[],
+  capacity: number,
+): number[] | null => {
+  const { catalog, preplacedCount } = buildCatalog(description)
+  const preplacedSum = catalog
+    .slice(0, preplacedCount)
+    .reduce((sum, item) => sum + coinValue(item.id), 0)
+  let rest =
+    list.reduce<number>((sum, id) => sum + coinValue(id), 0) - preplacedSum
+  const coins = catalog
+    .slice(preplacedCount)
+    .filter((item) => isCoin(item.id) && coinValue(item.id) > 0)
+    .sort((a, b) => coinValue(b.id) - coinValue(a.id))
+  const used = new Set<number>()
+  const plan: number[] = []
+  for (const coin of coins) {
+    const value = coinValue(coin.id)
+    while (
+      rest >= value &&
+      !(description.isChangable && used.has(coin.index))
+    ) {
+      used.add(coin.index)
+      plan.push(coin.index)
+      rest -= value
+    }
+  }
+  if (rest !== 0 || preplacedCount + plan.length > capacity) return null
   return plan
 }

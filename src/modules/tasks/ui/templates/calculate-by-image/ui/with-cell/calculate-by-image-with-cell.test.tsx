@@ -68,6 +68,7 @@ const MODES: Record<string, WithCellMode> = {
   '1_6_11_7': 'add',
   '1_5_1_4': 'add',
   '1_7_1_13': 'add',
+  '0_8_1_4': 'count',
 }
 
 describe('calculateByImage.withCell — каждая реальная задача доходит до поля', () => {
@@ -88,6 +89,12 @@ describe('calculateByImage.withCell — каждая реальная задач
 })
 
 describe('calculateByImage.withCell — поведение', () => {
+  it('«…если не добавлять кубики»: itemsMaxQuantity 0 — поле сразу, ряда нет (0_8_1_4)', () => {
+    renderTask(task('0_8_1_4'))
+    expect(screen.getByTestId('cbi-field')).toBeInTheDocument()
+    expect(screen.queryByTestId('cbi-pool')).not.toBeInTheDocument()
+  })
+
   it('«Посчитайте булочки»: поле сразу, предметы не трогаются (0_10_5_1)', () => {
     renderTask(task('0_10_5_1'))
     expect(screen.getByTestId('cbi-field')).toBeInTheDocument()

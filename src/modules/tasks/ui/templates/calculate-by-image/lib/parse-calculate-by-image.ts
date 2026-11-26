@@ -21,6 +21,12 @@ export interface CatalogItem {
 
 export interface PoolItem extends CatalogItem {
   html: string
+  /**
+   * Picture height against the tallest item of the task, from the SVGs' own
+   * `height` (balls of 53, 68 and 90px in «от меньшего к большему»,
+   * Task_0_6_3_9): the box stays the tap size, the picture keeps its size.
+   */
+  scale: number
   /** Picture on the row button when it differs from the item (withCell `button`). */
   buttonHtml?: string
 }
@@ -131,6 +137,39 @@ const tablePart = (value: unknown): ComplexTablePart | null =>
     ? (value as ComplexTablePart)
     : null
 
+/**
+ * Drawn height of the picture's own `<svg>` in px, as the old screen shows
+ * it: `height`, or less when `width` letterboxes the viewBox (a butterfly
+ * declared 50×310 over a square viewBox is drawn 50 high). `null` — no size.
+ */
+const svgHeight = (html: string): number | null => {
+  const tag = /<svg\b[^>]*>/i.exec(html)?.[0]
+  if (!tag) return null
+  const attr = (name: string) => {
+    const raw = new RegExp(`\\s${name}="\\s*([\\d.]+)\\s*(px)?\\s*"`, 'i').exec(
+      tag,
+    )
+    const value = raw ? Number(raw[1]) : Number.NaN
+    return Number.isFinite(value) && value > 0 ? value : null
+  }
+  const height = attr('height')
+  if (!height) return null
+  const width = attr('width')
+  const box =
+    /\sviewBox="\s*[-\d.]+[\s,]+[-\d.]+[\s,]+([\d.]+)[\s,]+([\d.]+)/i.exec(tag)
+  if (!width || !box) return height
+  const [vbWidth, vbHeight] = [Number(box[1]), Number(box[2])]
+  if (!(vbWidth > 0 && vbHeight > 0)) return height
+  return vbHeight * Math.min(width / vbWidth, height / vbHeight)
+}
+
+/*
+ * Sizes carry meaning (from smaller to bigger, a ten-rod against a cube), so
+ * pictures keep their proportions — but not below 0.3 of the tallest: a
+ * cube of 19px next to a rod of 160px would shrink to a speck in our box.
+ */
+const MIN_SCALE = 0.3
+
 export const parseCalculateByImage = (
   description: CalculateByImageDescription,
   translate: Translate,
@@ -139,9 +178,16 @@ export const parseCalculateByImage = (
   const button = description.button
     ? toText(description.button.image, translate)
     : ''
+  const pictures = raw.map((item) => toText(item.image, translate))
+  const heights = pictures.map(svgHeight)
+  const tallest = Math.max(0, ...heights.map((h) => h ?? 0))
   const catalog = raw.map((item, index) => ({
     ...item,
-    html: toText(item.image, translate),
+    html: pictures[index],
+    scale:
+      heights[index] && tallest > 0
+        ? Math.max(MIN_SCALE, heights[index] / tallest)
+        : 1,
     buttonHtml: index >= preplacedCount && button ? button : undefined,
   }))
   const preplaced = catalog.slice(0, preplacedCount)

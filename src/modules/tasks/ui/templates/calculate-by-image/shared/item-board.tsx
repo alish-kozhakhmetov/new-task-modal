@@ -1,5 +1,11 @@
 import clsx from 'clsx'
-import { Fragment, type CSSProperties } from 'react'
+import {
+  Fragment,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+} from 'react'
 
 import type {
   PoolItem,
@@ -39,9 +45,10 @@ interface Props {
   onRemove?: (zoneIndex: number) => void
 }
 
-const ItemImage = ({ html }: { html: string }) => (
+const ItemImage = ({ html, scale = 1 }: { html: string; scale?: number }) => (
   <span
     className={styles.itemImage}
+    style={scale < 1 ? ({ '--cbi-scale': scale } as CSSProperties) : undefined}
     aria-hidden
     dangerouslySetInnerHTML={{ __html: html }}
   />
@@ -76,6 +83,31 @@ export const ItemBoard = ({
       }
     : {}
 
+  /*
+   * Items lie on the picture while they fit under it. When they do not (the
+   * solution's 15 buns over a meadow sized for the old 600px screen), they
+   * go under the picture instead of being cut at its edge. Measured from
+   * the content height, so the switch does not flip back and forth.
+   */
+  const pictureRef = useRef<HTMLDivElement>(null)
+  const itemsRef = useRef<HTMLDivElement>(null)
+  const [spill, setSpill] = useState(false)
+  const topShare = placement.top ? parseFloat(placement.top) / 100 || 0 : 0
+  useLayoutEffect(() => {
+    const picture = pictureRef.current
+    const items = itemsRef.current
+    if (!zonePicture || !picture || !items) return
+    const measure = () => {
+      const room = picture.clientHeight * (1 - topShare)
+      setSpill(room > 0 && items.scrollHeight > room + 1)
+    }
+    measure()
+    if (typeof ResizeObserver === 'undefined') return
+    const observer = new ResizeObserver(measure)
+    observer.observe(picture)
+    return () => observer.disconnect()
+  }, [zonePicture, topShare, zone.length])
+
   return (
     <div className={styles.board} style={vars}>
       <div
@@ -90,6 +122,7 @@ export const ItemBoard = ({
       >
         {zonePicture ? (
           <div
+            ref={pictureRef}
             className={styles.zonePicture}
             aria-hidden
             dangerouslySetInnerHTML={{ __html: zonePicture }}
@@ -101,8 +134,11 @@ export const ItemBoard = ({
             layout === 'lego' && styles.zoneItemsLego,
             layout === 'column' && styles.zoneItemsColumn,
             placement.top && styles.zoneItemsFromTop,
+            spill && styles.zoneItemsBelow,
           )}
-          style={placed}
+          style={spill ? undefined : placed}
+          ref={itemsRef}
+          data-spill={spill ? 'true' : undefined}
         >
           {zone.map(({ item, removable }, index) => (
             <Fragment key={`${item.index}-${index}`}>
@@ -120,7 +156,7 @@ export const ItemBoard = ({
                   data-index={item.index}
                   onClick={() => onRemove(index)}
                 >
-                  <ItemImage html={item.html} />
+                  <ItemImage html={item.html} scale={item.scale} />
                 </button>
               ) : (
                 <span
@@ -129,7 +165,7 @@ export const ItemBoard = ({
                   data-index={item.index}
                   data-locked={removable ? undefined : 'true'}
                 >
-                  <ItemImage html={item.html} />
+                  <ItemImage html={item.html} scale={item.scale} />
                 </span>
               )}
             </Fragment>
@@ -148,7 +184,10 @@ export const ItemBoard = ({
                 aria-hidden
               >
                 <span className={styles.poolGhost}>
-                  <ItemImage html={item.buttonHtml ?? item.html} />
+                  <ItemImage
+                    html={item.buttonHtml ?? item.html}
+                    scale={item.buttonHtml ? 1 : item.scale}
+                  />
                 </span>
               </span>
             ) : (
@@ -162,7 +201,10 @@ export const ItemBoard = ({
                 data-index={item.index}
                 onClick={() => onAdd(item)}
               >
-                <ItemImage html={item.buttonHtml ?? item.html} />
+                <ItemImage
+                  html={item.buttonHtml ?? item.html}
+                  scale={item.buttonHtml ? 1 : item.scale}
+                />
               </button>
             ),
           )}
