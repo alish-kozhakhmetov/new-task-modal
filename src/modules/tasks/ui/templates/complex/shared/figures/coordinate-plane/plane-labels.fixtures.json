@@ -1,0 +1,3809 @@
+{
+  "_source": "local backend (be.sh + local-backend/hs, matheducator-student-platform), gen.exs seed 1, 27.11.2026",
+  "planes": [
+    {
+      "id": "Task_5_2_11_4",
+      "seed": 1,
+      "path": "description.parts[1]",
+      "plane": {
+        "yAxisLabel": "y",
+        "xAxisLabel": "x",
+        "type": 110,
+        "tickStepYMultiply": 1,
+        "tickStepXMultiply": 1,
+        "tickStep": 1,
+        "stepSize": 30,
+        "startNumber": false,
+        "showCells": false,
+        "showAxis": false,
+        "reduceHeight": 1,
+        "points": [],
+        "notClickableDots": true,
+        "minPosition": -3,
+        "maxPosition": 4.1,
+        "limitedPoint": 0,
+        "isLine": false,
+        "isFullFilled": false,
+        "isFillingLimitedByAxis": false,
+        "intervals": [],
+        "fillingFunctions": [],
+        "figures": [
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 3,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 3,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 1,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 0,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 0,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 1,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 1,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 0,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 0,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 1,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 1,
+                "x": 2,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": 0,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 1,
+                "x": -2,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": 0,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -1,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -1,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 0,
+                "x": 2,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": 4,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 0,
+                "x": 2,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": 0,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "y": 2.5,
+            "x": 0,
+            "type": 100,
+            "textAnchor": null,
+            "text": {
+              "rus": 30,
+              "module_name": "Elixir.Helpers.Translation",
+              "kaz": 30,
+              "eng": 30
+            },
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 0.5,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": {
+              "rus": 3,
+              "module_name": "Elixir.Helpers.Translation",
+              "kaz": 3,
+              "eng": 3
+            },
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 0.8,
+            "x": 1.8,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(x\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -1.2,
+            "x": -0.2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(y\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -1.2,
+            "x": 3.8,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(z\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          }
+        ],
+        "drawingFigure": 0,
+        "displayedNumbers": [],
+        "disabledPoints": [],
+        "canFill": false,
+        "canDrawMultipleFigures": false,
+        "allowedFigures": []
+      }
+    },
+    {
+      "id": "Task_5_2_11_5",
+      "seed": 1,
+      "path": "description.parts[1]",
+      "plane": {
+        "yAxisLabel": "y",
+        "xAxisLabel": "x",
+        "type": 110,
+        "tickStepYMultiply": 1,
+        "tickStepXMultiply": 1,
+        "tickStep": 1,
+        "stepSize": 30,
+        "startNumber": false,
+        "showCells": false,
+        "showAxis": false,
+        "reduceHeight": 1,
+        "points": [],
+        "notClickableDots": true,
+        "minPosition": -5.1,
+        "maxPosition": 5.1,
+        "limitedPoint": 0,
+        "isLine": false,
+        "isFullFilled": false,
+        "isFillingLimitedByAxis": false,
+        "intervals": [],
+        "fillingFunctions": [],
+        "figures": [
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 3,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 3,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 1,
+                "x": -4,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 0,
+                "x": -4,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 0,
+                "x": -2,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 1,
+                "x": -2,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 1,
+                "x": 2,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 0,
+                "x": 2,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 0,
+                "x": 4,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 1,
+                "x": 4,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 1,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": 0,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 1,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": 0,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -1,
+                "x": -6,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": -6,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": -4,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": -4,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -1,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -1,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -1,
+                "x": 4,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": 4,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": 6,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": 6,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 0,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": 2,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 0,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 0,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": -2,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 0,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "transparent",
+            "borderColor": "black"
+          },
+          {
+            "y": 2.5,
+            "x": 0,
+            "type": 100,
+            "textAnchor": null,
+            "text": "210",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 0.8,
+            "x": -3.15,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(a\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 0.5,
+            "x": 3,
+            "type": 100,
+            "textAnchor": null,
+            "text": "35",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -1.3,
+            "x": -5.1,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(b\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -1.3,
+            "x": -2.1,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(c\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -1.3,
+            "x": 1.8,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(d\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -1.3,
+            "x": 4.8,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(e\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          }
+        ],
+        "drawingFigure": 0,
+        "displayedNumbers": [],
+        "disabledPoints": [],
+        "canFill": false,
+        "canDrawMultipleFigures": false,
+        "allowedFigures": []
+      }
+    },
+    {
+      "id": "Task_1_6_11",
+      "seed": 1,
+      "path": "description.parts[1]",
+      "plane": {
+        "yAxisLabel": "y",
+        "xAxisLabel": "x",
+        "type": 110,
+        "tickStepYMultiply": 1,
+        "tickStepXMultiply": 1,
+        "tickStep": 1,
+        "stepSize": 30,
+        "startNumber": false,
+        "showCells": false,
+        "showAxis": false,
+        "reduceHeight": 1,
+        "points": [],
+        "notClickableDots": true,
+        "minPosition": -7,
+        "maxPosition": 7,
+        "limitedPoint": 0,
+        "isLine": false,
+        "isFullFilled": false,
+        "isFillingLimitedByAxis": false,
+        "intervals": [],
+        "fillingFunctions": [],
+        "figures": [
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 7,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 7,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 5,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 5,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#90EE90",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 7,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 7,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 5,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 5,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#eb34d8",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 7,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 7,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 5,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 5,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 4,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 4,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#eb34d8",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 4,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 4,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 4,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 4,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#90EE90",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 1,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 1,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#eb34d8",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 1,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 1,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#eb34d8",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -2,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -4,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -4,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#90EE90",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -2,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -4,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -4,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#eb34d8",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -2,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -4,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -4,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -5,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -5,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -7,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -7,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -5,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -5,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -7,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -7,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "y": 6.35,
+            "x": -0.15,
+            "type": 100,
+            "textAnchor": null,
+            "text": {
+              "rus": "\\(x\\)",
+              "module_name": "Elixir.Helpers.Translation",
+              "kaz": "\\(x\\)",
+              "eng": "\\(x\\)"
+            },
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 3.35,
+            "x": -4.15,
+            "type": 100,
+            "textAnchor": null,
+            "text": {
+              "rus": "\\(x\\)",
+              "module_name": "Elixir.Helpers.Translation",
+              "kaz": "\\(x\\)",
+              "eng": "\\(x\\)"
+            },
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 0.35,
+            "x": -4.15,
+            "type": 100,
+            "textAnchor": null,
+            "text": {
+              "rus": "\\(x\\)",
+              "module_name": "Elixir.Helpers.Translation",
+              "kaz": "\\(x\\)",
+              "eng": "\\(x\\)"
+            },
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 6,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "+",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 3,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 0,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -3,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "+",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 6,
+            "x": 2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 3,
+            "x": 2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "-",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -3,
+            "x": 2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -6,
+            "x": 2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 6,
+            "x": -4,
+            "type": 100,
+            "textAnchor": null,
+            "text": "4",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 6,
+            "x": 4,
+            "type": 100,
+            "textAnchor": null,
+            "text": "5",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          }
+        ],
+        "drawingFigure": 0,
+        "displayedNumbers": [],
+        "disabledPoints": [],
+        "canFill": false,
+        "canDrawMultipleFigures": false,
+        "allowedFigures": []
+      }
+    },
+    {
+      "id": "Task_1_6_12",
+      "seed": 1,
+      "path": "description.parts[1]",
+      "plane": {
+        "yAxisLabel": "y",
+        "xAxisLabel": "x",
+        "type": 110,
+        "tickStepYMultiply": 1,
+        "tickStepXMultiply": 1,
+        "tickStep": 1,
+        "stepSize": 30,
+        "startNumber": false,
+        "showCells": false,
+        "showAxis": false,
+        "reduceHeight": 1,
+        "points": [],
+        "notClickableDots": true,
+        "minPosition": -7,
+        "maxPosition": 7,
+        "limitedPoint": 0,
+        "isLine": false,
+        "isFullFilled": false,
+        "isFillingLimitedByAxis": false,
+        "intervals": [],
+        "fillingFunctions": [],
+        "figures": [
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 7,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 7,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 5,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 5,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#eb34d8",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 7,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 7,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 5,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 5,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#90EE90",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 7,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 7,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 5,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 5,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 4,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 4,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#eb34d8",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 4,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 4,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 4,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 4,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#90EE90",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 1,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 1,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#eb34d8",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 1,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 1,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#eb34d8",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -2,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -4,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -4,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#eb34d8",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -2,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -4,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -4,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#90EE90",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -2,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -4,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -4,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -5,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -5,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -7,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -7,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -5,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -5,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -7,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -7,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "y": 6.35,
+            "x": -4.15,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(x\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 3.35,
+            "x": -4.15,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(x\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 0.35,
+            "x": -4.15,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(x\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 6,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "-",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 3,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 0,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -3,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "-",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 6,
+            "x": 2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 3,
+            "x": 2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "+",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -3,
+            "x": 2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -6,
+            "x": 2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 6,
+            "x": 0,
+            "type": 100,
+            "textAnchor": null,
+            "text": "5",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 6,
+            "x": 4,
+            "type": 100,
+            "textAnchor": null,
+            "text": "6",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          }
+        ],
+        "drawingFigure": 0,
+        "displayedNumbers": [],
+        "disabledPoints": [],
+        "canFill": false,
+        "canDrawMultipleFigures": false,
+        "allowedFigures": []
+      }
+    },
+    {
+      "id": "Task_1_6_13",
+      "seed": 1,
+      "path": "description.parts[1]",
+      "plane": {
+        "yAxisLabel": "y",
+        "xAxisLabel": "x",
+        "type": 110,
+        "tickStepYMultiply": 1,
+        "tickStepXMultiply": 1,
+        "tickStep": 1,
+        "stepSize": 30,
+        "startNumber": false,
+        "showCells": false,
+        "showAxis": false,
+        "reduceHeight": 1,
+        "points": [],
+        "notClickableDots": true,
+        "minPosition": -7,
+        "maxPosition": 7,
+        "limitedPoint": 0,
+        "isLine": false,
+        "isFullFilled": false,
+        "isFillingLimitedByAxis": false,
+        "intervals": [],
+        "fillingFunctions": [],
+        "figures": [
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 7,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 7,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 5,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 5,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#eb34d8",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 7,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 7,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 5,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 5,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#90EE90",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 7,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 7,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 5,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 5,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 4,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 4,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#90EE90",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 4,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 4,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#eb34d8",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 4,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 4,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 2,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 1,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 1,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#90EE90",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": 1,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": 1,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -1,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#90EE90",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -2,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -4,
+                "x": -3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -4,
+                "x": -5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#eb34d8",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -2,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -4,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -4,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#90EE90",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -2,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -2,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -4,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -4,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -5,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -5,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -7,
+                "x": 1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -7,
+                "x": -1,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "type": 50,
+            "showPointsLetter": false,
+            "rotateDegree": 0,
+            "points": [
+              {
+                "y": -5,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -5,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -7,
+                "x": 5,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              },
+              {
+                "y": -7,
+                "x": 3,
+                "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+                "letter": "",
+                "_struct": "CustomeTypes.CoordinatePlane.Point"
+              }
+            ],
+            "fill": "#00BFFF",
+            "borderColor": "black"
+          },
+          {
+            "y": 6,
+            "x": -4,
+            "type": 100,
+            "textAnchor": null,
+            "text": "8",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 3.35,
+            "x": -4.15,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(x\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 0.35,
+            "x": -4.15,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(x\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 6,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "-",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 3,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 0,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -3,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "-",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 6,
+            "x": 2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 3,
+            "x": 2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "-",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -3,
+            "x": 2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -6,
+            "x": 2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "=",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 6.35,
+            "x": -0.15,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(x\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 6,
+            "x": 4,
+            "type": 100,
+            "textAnchor": null,
+            "text": "2",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          }
+        ],
+        "drawingFigure": 0,
+        "displayedNumbers": [],
+        "disabledPoints": [],
+        "canFill": false,
+        "canDrawMultipleFigures": false,
+        "allowedFigures": []
+      }
+    },
+    {
+      "id": "Task_10_6_4_1",
+      "seed": 1,
+      "path": "description.parts[1]",
+      "plane": {
+        "yAxisLabel": "y",
+        "xAxisLabel": "x",
+        "type": 110,
+        "tickStepYMultiply": 1,
+        "tickStepXMultiply": 1,
+        "tickStep": 1,
+        "stepSize": 30,
+        "startNumber": false,
+        "showCells": false,
+        "showAxis": false,
+        "reduceHeight": 1,
+        "points": [],
+        "notClickableDots": true,
+        "minPosition": -3,
+        "maxPosition": 3,
+        "limitedPoint": 0,
+        "isLine": false,
+        "isFullFilled": false,
+        "isFillingLimitedByAxis": false,
+        "intervals": [],
+        "fillingFunctions": [],
+        "figures": [
+          {
+            "type": 30,
+            "showDotLetters": false,
+            "point2": {
+              "y": 3,
+              "x": 0,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "point1": {
+              "y": -3,
+              "x": 0,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "lineColor": "black",
+            "dotRadius": 0,
+            "degree": 0,
+            "dashed": false
+          },
+          {
+            "type": 30,
+            "showDotLetters": false,
+            "point2": {
+              "y": 2,
+              "x": 2,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "point1": {
+              "y": 2,
+              "x": 0,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "lineColor": "black",
+            "dotRadius": 0,
+            "degree": 0,
+            "dashed": false
+          },
+          {
+            "type": 30,
+            "showDotLetters": false,
+            "point2": {
+              "y": 1,
+              "x": -1,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "point1": {
+              "y": 1,
+              "x": -3.5,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "lineColor": "black",
+            "dotRadius": 0,
+            "degree": 0,
+            "dashed": false
+          },
+          {
+            "type": 30,
+            "showDotLetters": false,
+            "point2": {
+              "y": -0.5,
+              "x": 0,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "point1": {
+              "y": -0.5,
+              "x": -2,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "lineColor": "black",
+            "dotRadius": 0,
+            "degree": 0,
+            "dashed": false
+          },
+          {
+            "y": 3,
+            "x": 0.2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(x + 4\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 3,
+            "x": -3.4,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(x^2 + 9x - 9\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 2,
+            "x": -3.4,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(x^2 + 4x\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 1,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(5x - 9\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 0.3,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(5x + 20\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -1,
+            "x": -0.8,
+            "type": 100,
+            "textAnchor": null,
+            "text": "-29",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 1.8,
+            "x": 0.2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(x + 5\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          }
+        ],
+        "drawingFigure": 0,
+        "displayedNumbers": [],
+        "disabledPoints": [],
+        "canFill": false,
+        "canDrawMultipleFigures": false,
+        "allowedFigures": []
+      }
+    },
+    {
+      "id": "Task_10_6_4_2",
+      "seed": 1,
+      "path": "description.parts[1]",
+      "plane": {
+        "yAxisLabel": "y",
+        "xAxisLabel": "x",
+        "type": 110,
+        "tickStepYMultiply": 1,
+        "tickStepXMultiply": 1,
+        "tickStep": 1,
+        "stepSize": 30,
+        "startNumber": false,
+        "showCells": false,
+        "showAxis": false,
+        "reduceHeight": 1,
+        "points": [],
+        "notClickableDots": true,
+        "minPosition": -5,
+        "maxPosition": 5,
+        "limitedPoint": 0,
+        "isLine": false,
+        "isFullFilled": false,
+        "isFillingLimitedByAxis": false,
+        "intervals": [],
+        "fillingFunctions": [],
+        "figures": [
+          {
+            "type": 30,
+            "showDotLetters": false,
+            "point2": {
+              "y": 3,
+              "x": 0,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "point1": {
+              "y": -3,
+              "x": 0,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "lineColor": "black",
+            "dotRadius": 0,
+            "degree": 0,
+            "dashed": false
+          },
+          {
+            "type": 30,
+            "showDotLetters": false,
+            "point2": {
+              "y": 2,
+              "x": 2,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "point1": {
+              "y": 2,
+              "x": 0,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "lineColor": "black",
+            "dotRadius": 0,
+            "degree": 0,
+            "dashed": false
+          },
+          {
+            "type": 30,
+            "showDotLetters": false,
+            "point2": {
+              "y": 1,
+              "x": -1,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "point1": {
+              "y": 1,
+              "x": -5.5,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "lineColor": "black",
+            "dotRadius": 0,
+            "degree": 0,
+            "dashed": false
+          },
+          {
+            "type": 30,
+            "showDotLetters": false,
+            "point2": {
+              "y": -0.5,
+              "x": 0,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "point1": {
+              "y": -0.5,
+              "x": -4,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "lineColor": "black",
+            "dotRadius": 0,
+            "degree": 0,
+            "dashed": false
+          },
+          {
+            "y": 3,
+            "x": 0.3,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(x^2 + x + 1\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 3,
+            "x": -5.3,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(3x^3 + 6x^2 - 9x + 4\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 2,
+            "x": -5.3,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(3x^3 + 3x^2 + 3x\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 1,
+            "x": -3.7,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(3x^2 - 12x + 4\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 0.2,
+            "x": -3.7,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(3x^2 + 3x + 3\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -1,
+            "x": -2.9,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(-15x + 1\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 2,
+            "x": 0.3,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(3x + 3\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          }
+        ],
+        "drawingFigure": 0,
+        "displayedNumbers": [],
+        "disabledPoints": [],
+        "canFill": false,
+        "canDrawMultipleFigures": false,
+        "allowedFigures": []
+      }
+    },
+    {
+      "id": "Task_10_6_4_3",
+      "seed": 1,
+      "path": "description.parts[1]",
+      "plane": {
+        "yAxisLabel": "y",
+        "xAxisLabel": "x",
+        "type": 110,
+        "tickStepYMultiply": 1,
+        "tickStepXMultiply": 1,
+        "tickStep": 1,
+        "stepSize": 30,
+        "startNumber": false,
+        "showCells": false,
+        "showAxis": false,
+        "reduceHeight": 1,
+        "points": [],
+        "notClickableDots": true,
+        "minPosition": -3,
+        "maxPosition": 3,
+        "limitedPoint": 0,
+        "isLine": false,
+        "isFullFilled": false,
+        "isFillingLimitedByAxis": false,
+        "intervals": [],
+        "fillingFunctions": [],
+        "figures": [
+          {
+            "type": 30,
+            "showDotLetters": false,
+            "point2": {
+              "y": 3,
+              "x": 0,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "point1": {
+              "y": -3,
+              "x": 0,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "lineColor": "black",
+            "dotRadius": 0,
+            "degree": 0,
+            "dashed": false
+          },
+          {
+            "type": 30,
+            "showDotLetters": false,
+            "point2": {
+              "y": 2,
+              "x": 2,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "point1": {
+              "y": 2,
+              "x": 0,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "lineColor": "black",
+            "dotRadius": 0,
+            "degree": 0,
+            "dashed": false
+          },
+          {
+            "type": 30,
+            "showDotLetters": false,
+            "point2": {
+              "y": 1,
+              "x": -1,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "point1": {
+              "y": 1,
+              "x": -3.5,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "lineColor": "black",
+            "dotRadius": 0,
+            "degree": 0,
+            "dashed": false
+          },
+          {
+            "type": 30,
+            "showDotLetters": false,
+            "point2": {
+              "y": -0.5,
+              "x": 0,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "point1": {
+              "y": -0.5,
+              "x": -2,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            },
+            "lineColor": "black",
+            "dotRadius": 0,
+            "degree": 0,
+            "dashed": false
+          },
+          {
+            "y": 3,
+            "x": 0.2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(x + 1\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 3,
+            "x": -3.3,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(3x^2 + x + 17\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 2,
+            "x": -3.3,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(3x^2 + ax\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 1,
+            "x": -2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(bx + 17\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 0.2,
+            "x": -2.5,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(- 2x - 2\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -0.8,
+            "x": -0.5,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(c\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 2,
+            "x": 0.2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(3x - 2\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 18,
+            "dominantBaseline": null,
+            "degree": 0
+          }
+        ],
+        "drawingFigure": 0,
+        "displayedNumbers": [],
+        "disabledPoints": [],
+        "canFill": false,
+        "canDrawMultipleFigures": false,
+        "allowedFigures": []
+      }
+    },
+    {
+      "id": "Task_5_5_4_9",
+      "seed": 1,
+      "path": "description.parts[2]",
+      "plane": {
+        "yAxisLabel": "y",
+        "xAxisLabel": "x",
+        "type": 110,
+        "tickStepYMultiply": 1,
+        "tickStepXMultiply": 1,
+        "tickStep": 1,
+        "stepSize": 30,
+        "startNumber": false,
+        "showCells": false,
+        "showAxis": false,
+        "reduceHeight": 1,
+        "points": [],
+        "notClickableDots": true,
+        "minPosition": -3,
+        "maxPosition": 4,
+        "limitedPoint": 0,
+        "isLine": false,
+        "isFullFilled": false,
+        "isFillingLimitedByAxis": false,
+        "intervals": [],
+        "fillingFunctions": [],
+        "figures": [
+          {
+            "type": 60,
+            "strokeColor": "red",
+            "radius": 2,
+            "innerColor": "transparent",
+            "dashed": false,
+            "centerPoint": {
+              "y": 2,
+              "x": 1.2,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            }
+          },
+          {
+            "type": 60,
+            "strokeColor": "black",
+            "radius": 2,
+            "innerColor": "transparent",
+            "dashed": false,
+            "centerPoint": {
+              "y": 2,
+              "x": -1.2,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            }
+          },
+          {
+            "type": 60,
+            "strokeColor": "#00BFFF",
+            "radius": 2,
+            "innerColor": "transparent",
+            "dashed": false,
+            "centerPoint": {
+              "y": -0.2,
+              "x": 0,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": "",
+              "_struct": "CustomeTypes.CoordinatePlane.Point"
+            }
+          },
+          {
+            "y": 2,
+            "x": 2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "7",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 23,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 2.3,
+            "x": 0,
+            "type": 100,
+            "textAnchor": null,
+            "text": "4",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 23,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 2.7,
+            "x": -2.2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(x\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 30,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 1.15,
+            "x": 0,
+            "type": 100,
+            "textAnchor": null,
+            "text": "3",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 23,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 0.6,
+            "x": 1,
+            "type": 100,
+            "textAnchor": null,
+            "text": "8",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 23,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 0.6,
+            "x": -1,
+            "type": 100,
+            "textAnchor": null,
+            "text": "1",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 23,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -0.2,
+            "x": -0.2,
+            "type": 100,
+            "textAnchor": null,
+            "text": "\\(y\\)",
+            "isLatex": true,
+            "fontWeight": null,
+            "fontSize": 30,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 4.5,
+            "x": -1.5,
+            "type": 100,
+            "textAnchor": null,
+            "text": "A",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 23,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": 4.5,
+            "x": 1.5,
+            "type": 100,
+            "textAnchor": null,
+            "text": "B",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 23,
+            "dominantBaseline": null,
+            "degree": 0
+          },
+          {
+            "y": -2.5,
+            "x": 0.6,
+            "type": 100,
+            "textAnchor": null,
+            "text": "C",
+            "isLatex": false,
+            "fontWeight": null,
+            "fontSize": 23,
+            "dominantBaseline": null,
+            "degree": 0
+          }
+        ],
+        "drawingFigure": 0,
+        "displayedNumbers": [],
+        "disabledPoints": [],
+        "canFill": false,
+        "canDrawMultipleFigures": false,
+        "allowedFigures": []
+      }
+    },
+    {
+      "id": "Task_5_7_10_1",
+      "seed": 1,
+      "path": "description.variants[3]",
+      "plane": {
+        "yAxisLabel": "y",
+        "xAxisLabel": "x",
+        "type": 110,
+        "tickStepYMultiply": 1,
+        "tickStepXMultiply": 1,
+        "tickStep": 1,
+        "stepSize": 30,
+        "startNumber": false,
+        "showCells": false,
+        "showAxis": false,
+        "reduceHeight": 1,
+        "points": [],
+        "notClickableDots": true,
+        "minPosition": -1.5,
+        "maxPosition": 1.5,
+        "limitedPoint": 0,
+        "isLine": false,
+        "isFullFilled": false,
+        "isFillingLimitedByAxis": false,
+        "intervals": [],
+        "fillingFunctions": [],
+        "figures": [
+          {
+            "type": 70,
+            "ry": 1,
+            "rx": 2,
+            "centerPoint": {
+              "y": 0,
+              "x": 0,
+              "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+              "letter": ""
+            },
+            "backDashed": false
+          }
+        ],
+        "drawingFigure": 0,
+        "displayedNumbers": [],
+        "disabledPoints": [],
+        "canFill": false,
+        "canDrawMultipleFigures": false,
+        "allowedFigures": []
+      }
+    }
+  ]
+}

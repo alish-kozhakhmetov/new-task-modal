@@ -5,6 +5,7 @@ export const PlaneFigureType = {
   LineSegment: 30,
   Polygon: 50,
   Circle: 60,
+  Ellipse: 70,
   Vector: 80,
   Text: 100,
   EllipticalArc: 110,
@@ -108,6 +109,10 @@ export const contentBounds = (
         break
       case PlaneFigureType.Circle:
         if (num(f.radius)) add(pt(f.centerPoint), Math.abs(f.radius))
+        break
+      case PlaneFigureType.Ellipse:
+        if (num(f.rx) && num(f.ry))
+          add(pt(f.centerPoint), Math.abs(f.rx), Math.abs(f.ry))
         break
       case PlaneFigureType.EllipticalArc:
         if (num(f.rx) && num(f.ry))
