@@ -1,5 +1,6 @@
 import { pupilText, TASK_TEXT } from '@/lib/helpers/pupil-text'
 import { isActiveSolution } from '@/modules/tasks/lib/solution-types'
+import { hasMultipleAnswers } from '@/modules/tasks/lib/test-multiple-answers'
 import type { TaskComponentProps } from '@/modules/tasks/model/types'
 import { TaskTitle } from '@/modules/tasks/ui/common/task-title/task-title'
 import type { Translation } from '@/types/api/task'
@@ -30,7 +31,7 @@ interface TestTemplateConfig {
 /**
  * Multiple-choice test: title + question + optional figures + options.
  *
- *  arrives from the backend and decides the mechanic:
+ * `description.hasMultipleAnswers` arrives from the backend and decides the mechanic:
  * radios for one correct answer, checkboxes for several. Until it was read,
  * a task with several correct answers could not be answered at all — the
  * pupil had one radio for four right options.
@@ -70,7 +71,7 @@ export const createTestTemplate = ({ id }: TestTemplateConfig) => {
           onChange={onChange}
           description={task.description}
           deps={deps}
-          multiple={Boolean(task.hasMultipleAnswers)}
+          multiple={hasMultipleAnswers(task)}
           multipleHint={multipleHint(deps)}
         />
       </div>

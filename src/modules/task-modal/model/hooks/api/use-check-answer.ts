@@ -6,6 +6,7 @@ import {
   joinMultiAnswer,
   toWireMultiAnswer,
 } from '@/modules/tasks/lib/multi-answer'
+import { toCheckerTestAnswer } from '@/modules/tasks/lib/test-multiple-answers'
 
 import { hostLanguage } from '../../lib/host-language'
 import { isApiError } from '../../lib/is-api-error'
@@ -144,7 +145,9 @@ export const useCheckAnswer = ({ props, refs }: Args) => {
       const response = await api.checkAnswer(
         {
           ...activeTask,
-          answer: toCheckerAnswer(answer),
+          // A test with several correct options goes as a list of letters,
+          // the record the checker accepts (test-multiple-answers.ts).
+          answer: toCheckerAnswer(toCheckerTestAnswer(activeTask, answer)),
           lockVersion,
           language: hostLanguage(global),
         },

@@ -20,10 +20,14 @@ import { useCheckAnswer } from './use-check-answer'
  * (`modules/tasks/lib/checker-answer.ts`), while the store keeps what the
  * pupil typed.
  */
-const check = async (typed: string) => {
-  const { activeTask, tasks } = midLesson()
+const check = async (typed: string, asTask?: (task: Task) => Task) => {
+  const lesson = midLesson()
+  const activeTask = asTask ? asTask(lesson.activeTask) : lesson.activeTask
+  const tasks = lesson.tasks.map((t) =>
+    t.id === lesson.activeTask.id ? activeTask : t,
+  )
   const base = makeTrainerProps(activeTask)
-  const sent: string[] = []
+  const sent: unknown[] = []
   const { api } = base.deps
 
   const props: TaskModalProps = {
@@ -33,7 +37,7 @@ const check = async (typed: string) => {
       api: {
         ...api,
         checkAnswer: (...args: Parameters<typeof api.checkAnswer>) => {
-          sent.push((args[0] as Task).answer as string)
+          sent.push(args[0].answer)
           return api.checkAnswer(...args)
         },
       },
@@ -73,5 +77,40 @@ describe('useCheckAnswer — the answer goes in the checker’s record', () => {
   it('a grade-4 answer goes as typed', async () => {
     expect(await check('2\\frac{3}{5}')).toBe('2\\frac{3}{5}')
     expect(await check('100')).toBe('100')
+  })
+})
+
+/** The lesson's task as a test, the flag where the backend puts it. */
+const asTest =
+  (flag: Record<string, unknown>) =>
+  (task: Task): Task =>
+    ({
+      ...task,
+      type: 'Elixir.Task_5_1_8',
+      description: {
+        type: 'test',
+        question: 'Найдите ряды, в которых все числа натуральные.',
+        variants: ['1; 2', '0; 1', '3; 4', '5; −6', '7; 8'],
+        ...flag,
+      },
+    }) as unknown as Task
+
+describe('useCheckAnswer — a test with several correct options', () => {
+  // TaskChecker of origin/master accepts only a list: ["A","D","E"] → 30,
+  // "A,D,E", "A;;D;;E" → 20; one correct option — ["D"], not "D" (27.11)
+  it('the picks go as a list of letters', async () => {
+    expect(
+      await check('A;;D;;E', asTest({ hasMultipleAnswers: true })),
+    ).toEqual(['A', 'D', 'E'])
+  })
+
+  it('one option picked: still a list', async () => {
+    expect(await check('D', asTest({ hasMultipleAnswers: true }))).toEqual([
+      'D',
+    ])
+  })
+
+  it('a test with one correct option: the letter as a string', async () => {
+    expect(await check('B', asTest({ hasMultipleAnswers: false }))).toBe('B')
   })
 })

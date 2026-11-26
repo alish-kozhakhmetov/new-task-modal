@@ -306,7 +306,9 @@ export interface Api {
    * sends it (host-language.ts); arguments after `lessonId` it never read.
    */
   checkAnswer(
-    task: Task & {
+    task: Omit<Task, 'answer'> & {
+      /** A string; a list of letters for a test with several correct options (as the old window sends it). */
+      answer?: string | string[] | null
       language?: string
     },
     lessonId?: number,
