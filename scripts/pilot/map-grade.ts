@@ -19,6 +19,7 @@
  * A generator whose samples disagree takes the template that covers all of
  * them, else it is listed.
  */
+import { spawnSync } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
 
@@ -379,4 +380,7 @@ for (const [f, m] of files) {
     `import { TemplateTypes } from '../../../model/template-types.ts'\n\nconst map = {\n${entries.join('\n')}\n}\n\nexport default map\n`,
   )
 }
+// The maps go through the package's eslint (prettier) like the hand-written grade 4 maps, so the written files pass `pnpm lint`.
+const lint = spawnSync('npx', ['eslint', '--fix', ...files.keys()], { cwd: root, stdio: 'inherit' })
+if (lint.status !== 0) console.log('eslint --fix left problems in the written maps, see above')
 console.log(`written ${files.size} chapter files: +${added} generators, ${kept} already mapped, ${removed} excluded`)

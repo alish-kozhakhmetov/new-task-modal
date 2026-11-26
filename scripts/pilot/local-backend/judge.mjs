@@ -15,7 +15,8 @@ const HERE = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(HERE, '../../..')
 const args = Object.fromEntries(process.argv.slice(2).map((a) => { const [k, ...v] = a.replace(/^--/, '').split('='); return [k, v.join('=') || 'true'] }))
 const GRADE = Number(args.grade ?? 3)
-const CACHE = path.join(ROOT, '.pilot-cache', `grade-${GRADE}`)
+// --cache=<dir>: a cache of its own under .pilot-cache (a local-backend run beside the live lessons)
+const CACHE = path.join(ROOT, '.pilot-cache', args.cache && /^[\w.-]+$/.test(args.cache) ? args.cache : `grade-${GRADE}`)
 const SOLVE = path.join(CACHE, 'solve')
 
 const files = fs.readdirSync(SOLVE).filter((f) => f.endsWith('.json'))
@@ -23,6 +24,8 @@ const jobs = []
 const wrongOf = (sent) => {
   const s = String(sent)
   if (/^[A-Z](,[A-Z])*$/.test(s)) return s === 'A' ? 'B' : 'A'
+  // a comparison sign: the other sign, not a malformed answer
+  if (/^[<>=]$/.test(s)) return s === '<' ? '>' : '<'
   return s.replace(/\d/, (d) => String((Number(d) + 1) % 10)) !== s ? s.replace(/\d/, (d) => String((Number(d) + 1) % 10)) : `${s}9`
 }
 for (const f of files) {

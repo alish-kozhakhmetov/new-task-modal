@@ -12,7 +12,8 @@ import { fileURLToPath } from 'node:url'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..')
 const args = Object.fromEntries(process.argv.slice(2).map((a) => { const [k, ...v] = a.replace(/^--/, '').split('='); return [k, v.join('=') || 'true'] }))
 const GRADE = Number(args.grade ?? 3)
-const CACHE = path.join(ROOT, '.pilot-cache', `grade-${GRADE}`)
+// --cache=<dir>: a cache of its own under .pilot-cache (a local-backend run beside the live lessons)
+const CACHE = path.join(ROOT, '.pilot-cache', args.cache && /^[\w.-]+$/.test(args.cache) ? args.cache : `grade-${GRADE}`)
 const results = fs.readdirSync(path.join(CACHE, 'solve')).map((f) => ({ file: f, ...JSON.parse(fs.readFileSync(path.join(CACHE, 'solve', f), 'utf8')) }))
 const gens = new Map()
 for (const r of results) {

@@ -7,7 +7,7 @@
  * or, with --verify=local, against the reference itself.
  *
  *   node scripts/pilot/solve.mjs --grade=5 [--chapters=170,171] [--lessons=1511]
- *        [--workers=4] [--verify=sandbox|local] [--refs=<file>] [--force]
+ *        [--workers=4] [--verify=collect|sandbox|local] [--refs=<file>] [--force] [--cache=<dir>]
  *
  * Needs the vite dev server on :5191 (npx vite --port 5191 --host 127.0.0.1).
  * One result per task in .pilot-cache/grade-N/solve/<lesson>-<index>.json.
@@ -28,12 +28,14 @@ const args = Object.fromEntries(
   }),
 )
 const GRADE = Number(args.grade ?? 5)
-const CACHE = path.join(ROOT, '.pilot-cache', `grade-${GRADE}`)
+// --cache=<dir>: a cache of its own under .pilot-cache (a local-backend run beside the live lessons)
+const CACHE = path.join(ROOT, '.pilot-cache', args.cache && /^[\w.-]+$/.test(args.cache) ? args.cache : `grade-${GRADE}`)
 const DIR = args.dir === 'offline' ? 'offline' : 'lessons'
 const OUT = path.join(CACHE, DIR === 'offline' ? 'solve-offline' : 'solve')
 const BASE = args.base ?? 'http://127.0.0.1:5191'
 const WORKERS = Number(args.workers ?? 4)
-const VERIFY = args.verify ?? 'sandbox'
+// test.qalan.kz only when asked by name: by default the answers are collected for the local checker
+const VERIFY = args.verify ?? 'collect'
 const chapters = args.chapters ? new Set(args.chapters.split(',').map(Number)) : null
 const lessonsOnly = args.lessons ? new Set(args.lessons.split(',').map(Number)) : null
 fs.mkdirSync(OUT, { recursive: true })
@@ -147,11 +149,12 @@ export function keysOf(part) {
     }
     const cmd = /^\\([a-zA-Z]+)/.exec(s.slice(i))
     if (cmd) {
-      const c = cmd[1]
       const map = { cdot: '*', times: '*', div: ':', le: '≤', ge: '≥', neq: '≠', ne: '≠', pi: 'π', circ: '°', degree: '°', percent: '%' }
-      if (!(c in map)) throw new Error(`no key for \\${c}`)
+      // a command glued to a letter of the answer: «3\cdotc» is \cdot, then c
+      const c = cmd[1] in map ? cmd[1] : ['cdot', 'times', 'div'].find((k) => cmd[1].startsWith(k))
+      if (!c) throw new Error(`no key for \\${cmd[1]}`)
       acts.push({ type: map[c] })
-      i += cmd[0].length
+      i += 1 + c.length
       continue
     }
     if (s.startsWith('\\%', i)) {
@@ -202,7 +205,7 @@ async function solveOne(page, job) {
   page.on('console', onConsole)
   page.on('pageerror', onPageError)
   try {
-    await page.goto(`${BASE}/scripts/pilot/harness/index.html?grade=${GRADE}&lesson=${job.lessonId}&task=${job.index}&dir=${DIR}`)
+    await page.goto(`${BASE}/scripts/pilot/harness/index.html?grade=${GRADE}&lesson=${job.lessonId}&task=${job.index}&dir=${DIR}${args.cache ? `&cache=${encodeURIComponent(args.cache)}` : ''}${args.layout ? `&layout=${args.layout}` : ''}`)
     const shown = await page
       .waitForSelector('[data-template-id], [data-testid="task-unavailable"], .task-modal [class*="unavailable"]', { timeout: 20000 })
       .catch(() => null)

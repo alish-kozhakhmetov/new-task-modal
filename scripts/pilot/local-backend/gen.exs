@@ -5,9 +5,14 @@
 # the sandbox would answer (`answerString`: InvokeTask.answer, lists joined
 # by « || »).
 #
-#   elixir -pa <ebins> gen.exs <types.txt> <out.jsonl> <samples>
-[list_file, out_file, k] = System.argv()
+#   elixir -pa <ebins> gen.exs <types.txt> <out.jsonl> <samples> [salt]
+# salt: the seeds' third part (default 20261126, G3's run); another salt, other samples
+[list_file, out_file, k | rest] = System.argv()
 k = String.to_integer(k)
+salt = case rest do
+  [x | _] -> String.to_integer(x)
+  [] -> 20261126
+end
 types = File.read!(list_file) |> String.split("\n", trim: true)
 {:ok, out} = File.open(out_file, [:write, :utf8])
 
@@ -17,7 +22,7 @@ answer_string = fn task ->
 end
 
 for type <- types, s <- 1..k do
-  :rand.seed(:exsss, {s, :erlang.phash2(type), 20261126})
+  :rand.seed(:exsss, {s, :erlang.phash2(type), salt})
   mod = String.to_atom("Elixir." <> type)
 
   line =
@@ -47,7 +52,7 @@ for type <- types, s <- 1..k do
 
           if ok == [], do: raise("no new/0 and no difficulty :x1…:x40")
           d = Enum.at(ok, rem(s - 1, length(ok)))
-          :rand.seed(:exsss, {s, :erlang.phash2(type), 20261126})
+          :rand.seed(:exsss, {s, :erlang.phash2(type), salt})
           {Kernel.apply(mod, :new, [d]), Atom.to_string(d)}
         end
 
