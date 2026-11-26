@@ -1,0 +1,165 @@
+{
+  "attemptsCount": null,
+  "isPrimary": true,
+  "hasVideoUrl": false,
+  "isPenalty": false,
+  "answerInput": {
+    "type": 40,
+    "input4": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "\\(y_2 =\\)",
+        "rus": "\\(y_2 =\\)",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "\\(y_2 =\\)",
+        "kaz": "\\(y_2 =\\)",
+        "eng": "\\(y_2 =\\)",
+        "aze": "\\(y_2 =\\)",
+        "arsa": "\\(y_2 =\\)",
+        "arjd": "\\(y_2 =\\)",
+        "areg": "\\(y_2 =\\)"
+      },
+      "after": "\\(, (k,n∈Z)\\)"
+    },
+    "input3": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "\\(x_2 =\\)",
+        "rus": "\\(x_2 =\\)",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "\\(x_2 =\\)",
+        "kaz": "\\(x_2 =\\)",
+        "eng": "\\(x_2 =\\)",
+        "aze": "\\(x_2 =\\)",
+        "arsa": "\\(x_2 =\\)",
+        "arjd": "\\(x_2 =\\)",
+        "areg": "\\(x_2 =\\)"
+      },
+      "after": "\\(, (k,n∈Z)\\)"
+    },
+    "input2": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "\\(y_1 =\\)",
+        "rus": "\\(y_1 =\\)",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "\\(y_1 =\\)",
+        "kaz": "\\(y_1 =\\)",
+        "eng": "\\(y_1 =\\)",
+        "aze": "\\(y_1 =\\)",
+        "arsa": "\\(y_1 =\\)",
+        "arjd": "\\(y_1 =\\)",
+        "areg": "\\(y_1 =\\)"
+      },
+      "after": "\\(, (k,n∈Z)\\)"
+    },
+    "input1": {
+      "up": "",
+      "type": 10,
+      "text": " ",
+      "svg": "",
+      "down": "",
+      "before": {
+        "with_audio_player": false,
+        "uzb": "\\(x_1 =\\)",
+        "rus": "\\(x_1 =\\)",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "\\(x_1 =\\)",
+        "kaz": "\\(x_1 =\\)",
+        "eng": "\\(x_1 =\\)",
+        "aze": "\\(x_1 =\\)",
+        "arsa": "\\(x_1 =\\)",
+        "arjd": "\\(x_1 =\\)",
+        "areg": "\\(x_1 =\\)"
+      },
+      "after": "\\(, (k,n∈Z)\\)"
+    },
+    "inline": false
+  },
+  "difficulty": null,
+  "result": "none",
+  "title": {
+    "with_audio_player": false,
+    "uzb": "Trigonometrik tenglamalar sistemasini yeching.",
+    "rus": "Решите систему тригонометрических уравнений.",
+    "module_name": "Elixir.Helpers.Translation",
+    "kgz": "Тригонометриялык теңдемелердин системасын чыгарыңыз.",
+    "kaz": "Тригонометриялық теңдеулер жүйесін шешіңіз.",
+    "eng": "",
+    "aze": "Triqonometrik tənliklər sistemini həll edin.",
+    "arsa": "",
+    "arjd": "",
+    "areg": ""
+  },
+  "fields": {
+    "degree": 60
+  },
+  "description": {
+    "type": "equation",
+    "content": {
+      "with_audio_player": false,
+      "uzb": "\\left\\{ \\begin{array}{l}\r\n\\sin{ x } · \\sin{ y } = \\frac{1}{4}\r\\\\\\cos{ x } · \\cos{ y } = \\frac{1}{4}\r\\\\\r\n\\end{array} \\right.\r\n",
+      "rus": "\\left\\{ \\begin{array}{l}\r\n\\sin{ x } · \\sin{ y } = \\frac{1}{4}\r\\\\\\cos{ x } · \\cos{ y } = \\frac{1}{4}\r\\\\\r\n\\end{array} \\right.\r\n",
+      "module_name": "Elixir.Helpers.Translation",
+      "kgz": "\\left\\{ \\begin{array}{l}\r\n\\sin{ x } · \\sin{ y } = \\frac{1}{4}\r\\\\\\cos{ x } · \\cos{ y } = \\frac{1}{4}\r\\\\\r\n\\end{array} \\right.\r\n",
+      "kaz": "\\left\\{ \\begin{array}{l}\r\n\\sin{ x } · \\sin{ y } = \\frac{1}{4}\r\\\\\\cos{ x } · \\cos{ y } = \\frac{1}{4}\r\\\\\r\n\\end{array} \\right.\r\n",
+      "eng": "\\left\\{ \\begin{array}{l}\r\n\\sin{ x } · \\sin{ y } = \\frac{1}{4}\r\\\\\\cos{ x } · \\cos{ y } = \\frac{1}{4}\r\\\\\r\n\\end{array} \\right.\r\n",
+      "aze": "\\left\\{ \\begin{array}{l}\r\n\\sin{ x } · \\sin{ y } = \\frac{1}{4}\r\\\\\\cos{ x } · \\cos{ y } = \\frac{1}{4}\r\\\\\r\n\\end{array} \\right.\r\n",
+      "arsa": "\\left\\{ \\begin{array}{l}\r\n\\sin{ x } · \\sin{ y } = \\frac{1}{4}\r\\\\\\cos{ x } · \\cos{ y } = \\frac{1}{4}\r\\\\\r\n\\end{array} \\right.\r\n",
+      "arjd": "\\left\\{ \\begin{array}{l}\r\n\\sin{ x } · \\sin{ y } = \\frac{1}{4}\r\\\\\\cos{ x } · \\cos{ y } = \\frac{1}{4}\r\\\\\r\n\\end{array} \\right.\r\n",
+      "areg": "\\left\\{ \\begin{array}{l}\r\n\\sin{ x } × \\sin{ y } = \\frac{1}{4}\r\\\\\\cos{ x } × \\cos{ y } = \\frac{1}{4}\r\\\\\r\n\\end{array} \\right.\r\n"
+    }
+  },
+  "type": "Elixir.Task_10_4_6_1",
+  "position": 0,
+  "id": "eq-fixture-task_10_4_6_1",
+  "solution": {
+    "type": "formula",
+    "answer": {
+      "with_audio_player": false,
+      "aze": "\\(\\frac{5\\pi}{12}+{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{\\pi}{12}-{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{\\pi}{12}+{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{5\\pi}{12}-{\\pi}k+\\frac{{\\pi}n}{2}\\)",
+      "kgz": "\\(\\frac{5\\pi}{12}+{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{\\pi}{12}-{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{\\pi}{12}+{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{5\\pi}{12}-{\\pi}k+\\frac{{\\pi}n}{2}\\)",
+      "uzb": "\\(\\frac{5\\pi}{12}+{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{\\pi}{12}-{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{\\pi}{12}+{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{5\\pi}{12}-{\\pi}k+\\frac{{\\pi}n}{2}\\)",
+      "eng": "\\(\\frac{5\\pi}{12}+{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{\\pi}{12}-{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{\\pi}{12}+{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{5\\pi}{12}-{\\pi}k+\\frac{{\\pi}n}{2}\\)",
+      "rus": "\\(\\frac{5\\pi}{12}+{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{\\pi}{12}-{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{\\pi}{12}+{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{5\\pi}{12}-{\\pi}k+\\frac{{\\pi}n}{2}\\)",
+      "kaz": "\\(\\frac{5\\pi}{12}+{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{\\pi}{12}-{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{\\pi}{12}+{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{5\\pi}{12}-{\\pi}k+\\frac{{\\pi}n}{2}\\)",
+      "arjd": "\\(\\frac{5\\pi}{12}+{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{\\pi}{12}-{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{\\pi}{12}+{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{5\\pi}{12}-{\\pi}k+\\frac{{\\pi}n}{2}\\)",
+      "arsa": "\\(\\frac{5\\pi}{12}+{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{\\pi}{12}-{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{\\pi}{12}+{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{5\\pi}{12}-{\\pi}k+\\frac{{\\pi}n}{2}\\)",
+      "areg": "\\(\\frac{5\\pi}{12}+{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{\\pi}{12}-{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{\\pi}{12}+{\\pi}k+\\frac{{\\pi}n}{2};;\\frac{5\\pi}{12}-{\\pi}k+\\frac{{\\pi}n}{2}\\)",
+      "module_name": "Elixir.Helpers.Translation"
+    },
+    "content": {
+      "with_audio_player": false,
+      "aze": "",
+      "kgz": "",
+      "uzb": "",
+      "eng": "",
+      "rus": "",
+      "kaz": "",
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "module_name": "Elixir.Helpers.Translation"
+    }
+  },
+  "hint1": null,
+  "hint2": null,
+  "videoId": null,
+  "videoUrl": null,
+  "_fixtureSource": "variants.json (generator run 02.08)"
+}

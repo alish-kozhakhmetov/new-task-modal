@@ -51,5 +51,16 @@
   ],
   "comparison": ["comparison.plain"],
   "test": ["test.plain"],
-  "equation": ["equation.before"]
+  "equation": [
+    "equation.plain",
+    "equation.before",
+    "equation.after",
+    "equation.beforeAfter",
+    "equation.multi.stack.n2.before",
+    "equation.multi.stack.n2.beforeAfter",
+    "equation.multi.stack.n3.before",
+    "equation.multi.stack.n4.before",
+    "equation.multi.stack.n4.beforeAfter",
+    "equation.multi.inline.n2.beforeAfter"
+  ]
 }

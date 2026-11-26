@@ -7,7 +7,7 @@ import { TaskTitle } from '@/modules/tasks/ui/common/task-title/task-title'
 import { EquationAnswerRow } from './equation-answer-row'
 import { EquationContent } from './equation-content'
 import styles from './equation.module.scss'
-import type { EquationTask } from './lib/types.task'
+import type { EquationTask, SimpleEquationAnswerInput } from './lib/types.task'
 
 type Props = TaskSolutionComponentProps<EquationTask> & {
   withBefore?: boolean
@@ -39,7 +39,7 @@ export const EquationSolution = ({
       />
 
       <EquationAnswerRow
-        answerInput={task.answerInput}
+        answerInput={task.answerInput as SimpleEquationAnswerInput | undefined}
         deps={deps}
         answer={answer}
         mode="solution"

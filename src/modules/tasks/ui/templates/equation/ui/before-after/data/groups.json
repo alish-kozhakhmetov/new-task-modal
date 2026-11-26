@@ -1,0 +1,212 @@
+[
+  {
+    "group": "equation_beforeAfter_1",
+    "count": 1,
+    "tasks": [
+      {
+        "id": "10_2_10_1"
+      }
+    ],
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "up": "",
+        "type": 10,
+        "text": " ",
+        "svg": "",
+        "down": "",
+        "before": {
+          "with_audio_player": false,
+          "uzb": "\\(x_{max} = \\)",
+          "rus": "\\(x_{max} = \\)",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "\\(x_{max} = \\)",
+          "kaz": "\\(x_{max} = \\)",
+          "eng": "\\(x_{max} = \\)",
+          "aze": "\\(x_{max} = \\)",
+          "arsa": "\\(x_{max} = \\)",
+          "arjd": "\\(x_{max} = \\)",
+          "areg": "\\(x_{max} = \\)"
+        },
+        "after": "\\(, k∈Z\\)"
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": {
+        "with_audio_player": false,
+        "uzb": "Berilgan funksiyaning maksimum nuqtalarini toping.",
+        "rus": "Найдите точки максимума заданной функции.",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "Берилген функциянын максимум чекиттерин табыңыз.",
+        "kaz": "Берілген функцияның максимум нүктелерін табыңыз.",
+        "eng": "",
+        "aze": "Verilmiş funksiyanın maksimum nöqtələrini tapın.",
+        "arsa": "",
+        "arjd": "",
+        "areg": ""
+      },
+      "fields": {},
+      "description": {
+        "type": "equation",
+        "content": {
+          "with_audio_player": false,
+          "uzb": "y = \\sin{ x }",
+          "rus": "y = \\sin{ x }",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "y = \\sin{ x }",
+          "kaz": "y = \\sin{ x }",
+          "eng": "y = \\sin{ x }",
+          "aze": "y = \\sin{ x }",
+          "arsa": "y = \\sin{ x }",
+          "arjd": "y = \\sin{ x }",
+          "areg": "y = \\sin{ x }"
+        }
+      },
+      "type": "Elixir.Task_10_2_10_1",
+      "position": 0,
+      "id": "eq-fixture-task_10_2_10_1",
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "\\(\\frac{\\pi}{2}+2{\\pi}k\\)",
+          "kgz": "\\(\\frac{\\pi}{2}+2{\\pi}k\\)",
+          "uzb": "\\(\\frac{\\pi}{2}+2{\\pi}k\\)",
+          "eng": "\\(\\frac{\\pi}{2}+2{\\pi}k\\)",
+          "rus": "\\(\\frac{\\pi}{2}+2{\\pi}k\\)",
+          "kaz": "\\(\\frac{\\pi}{2}+2{\\pi}k\\)",
+          "arjd": "\\(\\frac{\\pi}{2}+2{\\pi}k\\)",
+          "arsa": "\\(\\frac{\\pi}{2}+2{\\pi}k\\)",
+          "areg": "\\(\\frac{\\pi}{2}+2{\\pi}k\\)",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      },
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "_fixtureSource": "variants.json (generator run 02.08)"
+    }
+  },
+  {
+    "group": "equation_beforeAfter_2",
+    "count": 1,
+    "tasks": [
+      {
+        "id": "10_2_10_2"
+      }
+    ],
+    "task": {
+      "attemptsCount": null,
+      "isPrimary": true,
+      "hasVideoUrl": false,
+      "isPenalty": false,
+      "answerInput": {
+        "up": "",
+        "type": 10,
+        "text": " ",
+        "svg": "",
+        "down": "",
+        "before": {
+          "with_audio_player": false,
+          "uzb": "\\(x_{min} = \\)",
+          "rus": "\\(x_{min} = \\)",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "\\(x_{min} = \\)",
+          "kaz": "\\(x_{min} = \\)",
+          "eng": "\\(x_{min} = \\)",
+          "aze": "\\(x_{min} = \\)",
+          "arsa": "\\(x_{min} = \\)",
+          "arjd": "\\(x_{min} = \\)",
+          "areg": "\\(x_{min} = \\)"
+        },
+        "after": "\\(, k∈Z\\)"
+      },
+      "difficulty": null,
+      "result": "none",
+      "title": {
+        "with_audio_player": false,
+        "uzb": "Berilgan funksiyaning minimum nuqtalarini toping.",
+        "rus": "Найдите точки минимума заданной функции",
+        "module_name": "Elixir.Helpers.Translation",
+        "kgz": "Берилген функциянын минимум чекиттерин табыңыз.",
+        "kaz": "Берілген функцияның минимум нүктелерін табыңыз.",
+        "eng": "",
+        "aze": "Verilmiş funksiyanın minimum nöqtələrini tapın.\r\n",
+        "arsa": "",
+        "arjd": "",
+        "areg": ""
+      },
+      "fields": {},
+      "description": {
+        "type": "equation",
+        "content": {
+          "with_audio_player": false,
+          "uzb": "y = \\sin{ x }",
+          "rus": "y = \\sin{ x }",
+          "module_name": "Elixir.Helpers.Translation",
+          "kgz": "y = \\sin{ x }",
+          "kaz": "y = \\sin{ x }",
+          "eng": "y = \\sin{ x }",
+          "aze": "y = \\sin{ x }",
+          "arsa": "y = \\sin{ x }",
+          "arjd": "y = \\sin{ x }",
+          "areg": "y = \\sin{ x }"
+        }
+      },
+      "type": "Elixir.Task_10_2_10_2",
+      "position": 0,
+      "id": "eq-fixture-task_10_2_10_2",
+      "solution": {
+        "type": "formula",
+        "answer": {
+          "with_audio_player": false,
+          "aze": "\\(-\\frac{\\pi}{2}+2{\\pi}k\\)",
+          "kgz": "\\(-\\frac{\\pi}{2}+2{\\pi}k\\)",
+          "uzb": "\\(-\\frac{\\pi}{2}+2{\\pi}k\\)",
+          "eng": "\\(-\\frac{\\pi}{2}+2{\\pi}k\\)",
+          "rus": "\\(-\\frac{\\pi}{2}+2{\\pi}k\\)",
+          "kaz": "\\(-\\frac{\\pi}{2}+2{\\pi}k\\)",
+          "arjd": "\\(-\\frac{\\pi}{2}+2{\\pi}k\\)",
+          "arsa": "\\(-\\frac{\\pi}{2}+2{\\pi}k\\)",
+          "areg": "\\(-\\frac{\\pi}{2}+2{\\pi}k\\)",
+          "module_name": "Elixir.Helpers.Translation"
+        },
+        "content": {
+          "with_audio_player": false,
+          "aze": "",
+          "kgz": "",
+          "uzb": "",
+          "eng": "",
+          "rus": "",
+          "kaz": "",
+          "arjd": "",
+          "arsa": "",
+          "areg": "",
+          "module_name": "Elixir.Helpers.Translation"
+        }
+      },
+      "hint1": null,
+      "hint2": null,
+      "videoId": null,
+      "videoUrl": null,
+      "_fixtureSource": "variants.json (generator run 02.08)"
+    }
+  }
+]

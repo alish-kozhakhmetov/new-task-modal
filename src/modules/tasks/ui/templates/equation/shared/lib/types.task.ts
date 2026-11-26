@@ -23,7 +23,21 @@ export interface SimpleEquationAnswerInput {
   svg: string
 }
 
-export type EquationAnswerInput = SimpleEquationAnswerInput
+/**
+ * `equation.multi.*` (grades 6–11): `input1..N`, each a `TaskAnswerInput`
+ * with its own before/after (`x_1 =` … `, k∈Z`); `inline` puts them in one
+ * row — `x ∈ ▢ ∪ ▢`, `(▢ ; ▢)`. Shape from `variants.json` (02.08):
+ * `Task_10_4_1_10`, `Task_10_4_13_6`, `Task_7_2_1_1`.
+ */
+export interface MultiEquationAnswerInput {
+  type: number
+  inline?: boolean
+  [input: `input${number}`]: SimpleEquationAnswerInput
+}
+
+export type EquationAnswerInput =
+  | SimpleEquationAnswerInput
+  | MultiEquationAnswerInput
 
 export interface EquationTask {
   id: string
