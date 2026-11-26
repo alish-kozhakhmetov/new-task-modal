@@ -51,6 +51,7 @@ export const TestSolution = ({ task, deps, answer, solution }: Props) => {
         value={correctValue}
         onChange={() => {}}
         description={task.description}
+        deps={deps}
         readOnly
       />
 

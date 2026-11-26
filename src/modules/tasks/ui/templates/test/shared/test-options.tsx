@@ -1,11 +1,14 @@
 import clsx from 'clsx'
 
+import type { TaskModalDependencies } from '@/modules/task-modal/model/types/props'
+import { renderConditionPart } from '@/modules/tasks/ui/templates/complex/shared/complex-description'
 import { CheckboxGroup } from '@/ui/checkbox/checkbox-group'
 import {
   RadioButtonGroup,
   type RadioOption,
 } from '@/ui/radio-button/radio-button-group'
 
+import { isFigureVariant } from '../lib/get-test-variants'
 import type { TestTaskDescription } from '../lib/types.task'
 
 import styles from './test.module.scss'
@@ -17,6 +20,8 @@ interface Props {
   value: string
   onChange: (value: string) => void
   description: TestTaskDescription
+  /** Needed to draw figure variants; without it they stay empty labels. */
+  deps?: TaskModalDependencies
   disabled?: boolean
   readOnly?: boolean
   /** Task admits more than one correct answer — pick with checkboxes. */
@@ -27,15 +32,28 @@ interface Props {
 
 export const TestOptions = ({
   name,
-  options,
+  options: plainOptions,
   value,
   onChange,
   description,
+  deps,
   disabled = false,
   readOnly = false,
   multiple = false,
   multipleHint,
 }: Props) => {
+  const variants: unknown[] = Array.isArray(description.variants)
+    ? description.variants
+    : []
+  const options = deps
+    ? plainOptions.map((option, index) => {
+        const raw = variants[index]
+        return isFigureVariant(raw)
+          ? { ...option, figure: renderConditionPart(raw, deps, index) }
+          : option
+      })
+    : plainOptions
+
   useVariantKeys({
     name,
     options,

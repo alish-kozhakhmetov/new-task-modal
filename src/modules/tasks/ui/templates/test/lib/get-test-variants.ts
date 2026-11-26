@@ -2,6 +2,22 @@ import type { Translation } from '@/types/api/task'
 import { normalizeOperatorSigns } from '@/ui/math-text/normalize-operator-signs'
 import type { RadioOption } from '@/ui/radio-button/radio-button-group'
 
+/**
+ * A variant that is a drawing, not a label: a coordinate plane (110) or a
+ * frequency polygon (190) to pick from (5_7_10_1, 5_1_69_13). It has a figure
+ * `type`; a Translation has none. TestOptions draws it.
+ */
+export const isFigureVariant = (
+  option: unknown,
+): option is { type: number; [key: string]: unknown } => {
+  if (typeof option !== 'object' || option === null || Array.isArray(option))
+    return false
+  const { type } = option as { type?: unknown }
+  return (
+    typeof type === 'number' || (typeof type === 'string' && /^\d+$/.test(type))
+  )
+}
+
 /** Letter for variant index: 0 → A, 1 → B, … */
 export const getTestRadioValue = (index: number) =>
   String.fromCharCode(65 + index)
@@ -12,6 +28,9 @@ export const getTestVariants = (
   translate: (value: Translation | string) => string,
 ): RadioOption[] =>
   (variants ?? []).map((option, index) => {
+    if (isFigureVariant(option)) {
+      return { value: getTestRadioValue(index), label: '' }
+    }
     const label = translate(option)
     return {
       value: getTestRadioValue(index),

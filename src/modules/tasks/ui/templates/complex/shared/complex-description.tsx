@@ -180,6 +180,17 @@ const renderPart = (
   }
 }
 
+/**
+ * One display-only part of a condition, for templates that borrow the
+ * complex figures: the test draws its `figures`, its `table` and figure
+ * variants through it (Matheducator draws them with the same components).
+ */
+export const renderConditionPart = (
+  raw: ComplexPart | Record<string, unknown>,
+  deps: TaskModalDependencies,
+  index: number,
+) => renderPart(raw as ComplexPart, deps, index, null, null, undefined, false)
+
 export const ComplexDescription = ({
   description,
   deps,

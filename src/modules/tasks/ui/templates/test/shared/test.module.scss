@@ -24,6 +24,13 @@
   gap: 12px;
 }
 
+// The test's table takes its own row and the column's width: with
+// remove_padding its cells only part by the stretch (5_10_34_1).
+.table {
+  flex: 1 1 100%;
+  min-width: 0;
+}
+
 .figuresVertical {
   flex-direction: column;
   align-items: center;

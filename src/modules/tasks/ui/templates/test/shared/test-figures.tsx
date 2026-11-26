@@ -6,6 +6,7 @@ import type {
   ComplexImagePart,
   ComplexTextPart,
 } from '@/modules/tasks/ui/templates/complex/lib/types.task'
+import { renderConditionPart } from '@/modules/tasks/ui/templates/complex/shared/complex-description'
 import { AngleListPart } from '@/modules/tasks/ui/templates/complex/shared/figures/angle-list-part'
 import { ImagePart } from '@/modules/tasks/ui/templates/complex/shared/figures/image-part'
 import { TextPart } from '@/modules/tasks/ui/templates/complex/shared/figures/text-part'
@@ -19,7 +20,15 @@ interface Props {
   deps: TaskModalDependencies
 }
 
-/** Display-only figures / images above the radio options. */
+/**
+ * Display-only figures / images above the radio options.
+ *
+ * Text, image and angle list keep their own drawing; every other figure
+ * (number line, Euler circles, planes, tables, histograms…) and the test's
+ * `table` go through the complex condition's parts, as on the old screen,
+ * where the test used the same components. Before 26.11 they showed
+ * «Unsupported figure type» and the table was not drawn at all.
+ */
 export const TestFigures = ({ description, deps }: Props) => {
   const images = Array.isArray(description.images)
     ? description.images.filter(
@@ -28,8 +37,12 @@ export const TestFigures = ({ description, deps }: Props) => {
     : []
   const figures = Array.isArray(description.figures) ? description.figures : []
   const vertical = Boolean(description.isFiguresVertical)
+  const table =
+    description.table && typeof description.table === 'object'
+      ? (description.table as Record<string, unknown>)
+      : null
 
-  if (!images.length && !figures.length && !description.background) {
+  if (!images.length && !figures.length && !description.background && !table) {
     return null
   }
 
@@ -40,6 +53,11 @@ export const TestFigures = ({ description, deps }: Props) => {
     >
       {description.background ? (
         <div dangerouslySetInnerHTML={{ __html: description.background }} />
+      ) : null}
+      {table ? (
+        <div className={styles.table} data-testid="test-table">
+          {renderConditionPart({ ...table, type: 120 }, deps, -1)}
+        </div>
       ) : null}
       {images.length > 0 ? (
         <div className={styles.images}>
@@ -77,11 +95,7 @@ export const TestFigures = ({ description, deps }: Props) => {
               <AngleListPart key={index} part={part as ComplexAngleListPart} />
             )
           default:
-            return (
-              <p key={index} className={styles.unsupported}>
-                Unsupported figure type {type}
-              </p>
-            )
+            return renderConditionPart(part, deps, index)
         }
       })}
     </div>
