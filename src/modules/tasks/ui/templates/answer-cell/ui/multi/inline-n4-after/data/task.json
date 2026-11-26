@@ -1,0 +1,79 @@
+{
+  "answerInput": {
+    "input4": {
+      "before": "",
+      "svg": "",
+      "after": "",
+      "text": " ",
+      "down": "",
+      "up": "",
+      "type": 10
+    },
+    "input3": {
+      "before": "",
+      "svg": "",
+      "after": ") = ",
+      "text": " ",
+      "down": "",
+      "up": "",
+      "type": 10
+    },
+    "input2": {
+      "before": "",
+      "svg": "",
+      "after": " + ",
+      "text": " ",
+      "down": "",
+      "up": "",
+      "type": 10
+    },
+    "input1": {
+      "before": "",
+      "svg": "",
+      "after": " – (",
+      "text": " ",
+      "down": "",
+      "up": "",
+      "type": 10
+    },
+    "inline": true,
+    "type": 40
+  },
+  "attemptsCount": null,
+  "isPenalty": false,
+  "difficulty": null,
+  "result": "none",
+  "fields": {
+    "number3": 10,
+    "number1": 85,
+    "number2": 60
+  },
+  "title": null,
+  "description": {
+    "withAudio": true,
+    "type": "answerCell",
+    "textBefore": {
+      "with_audio_player": false,
+      "arjd": "",
+      "arsa": "",
+      "areg": "",
+      "aze": "85 – (60 + 10) ifadəsində toplananların yerlərini dəyişin və qiymətini tapın.",
+      "kgz": "",
+      "uzb": "85 – (60 + 10) ifodasidagi qo‘shiluvchilarning o‘rinlarini almashtirib, qiymatini toping.",
+      "eng": "",
+      "rus": "Поменяйте местами слагаемые в выражении 85 – (60 + 10) и найдите значение.",
+      "kaz": "85 – (60 + 10) өрнегіндегі қосылғыштардың орындарын ауыстырып, мәнін табыңыз.",
+      "module_name": "Elixir.Helpers.Translation"
+    },
+    "textAfter": "",
+    "tableBefore": null,
+    "isColumn": false,
+    "imageBefore": "",
+    "content": "answercell - (answercell + answercell) = answercell",
+    "answerCellMargin": ""
+  },
+  "type": "Elixir.Task_2_6_12_6",
+  "position": 1,
+  "id": "g3-Task_2_6_12_6-1",
+  "solution": null
+}
