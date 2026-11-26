@@ -69,6 +69,7 @@ export const createTestTemplate = ({ id }: TestTemplateConfig) => {
           value={answer}
           onChange={onChange}
           description={task.description}
+          deps={deps}
           multiple={Boolean(task.hasMultipleAnswers)}
           multipleHint={multipleHint(deps)}
         />

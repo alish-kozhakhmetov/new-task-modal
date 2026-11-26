@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import React, { useId } from 'react'
+import React, { type ReactNode, useId } from 'react'
 
 import { MathText } from '../math-text/math-text'
 import mathTextStyles from '../math-text/math-text.module.scss'
@@ -19,6 +19,8 @@ interface Props {
   name: string
   value: string
   label: string
+  /** A drawing in place of the label text (figure variant of a test). */
+  figure?: ReactNode
   checked: boolean
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   disabled?: boolean
@@ -30,13 +32,14 @@ export const RadioButton = ({
   name,
   value,
   label,
+  figure,
   checked,
   onChange,
   disabled = false,
   readOnly = false,
 }: Props) => {
   const id = useId()
-  const htmlLabel = isHtmlRadioLabel(label)
+  const htmlLabel = figure != null || isHtmlRadioLabel(label)
 
   return (
     <label
@@ -61,7 +64,9 @@ export const RadioButton = ({
         aria-label={htmlLabel ? value : undefined}
       />
       <span className={styles.radioControl} aria-hidden />
-      {htmlLabel ? (
+      {figure != null ? (
+        <span className={styles.radioLabel}>{figure}</span>
+      ) : htmlLabel ? (
         <span
           className={clsx(styles.radioLabel, mathTextStyles.mathText)}
           dangerouslySetInnerHTML={{ __html: label }}

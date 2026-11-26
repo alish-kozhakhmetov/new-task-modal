@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import type { ReactNode } from 'react'
 
 import { RadioButton } from './radio-button'
 import styles from './radio-button-group.module.scss'
@@ -6,6 +7,8 @@ import styles from './radio-button-group.module.scss'
 export interface RadioOption {
   value: string
   label: string
+  /** A drawing as the option (test variant that is a figure); wins over label. */
+  figure?: ReactNode
   disabled?: boolean
 }
 
@@ -43,6 +46,7 @@ export const RadioButtonGroup = ({
           name={name}
           value={option.value}
           label={option.label}
+          figure={option.figure}
           checked={value === option.value}
           onChange={() => onChange(option.value)}
           disabled={disabled || option.disabled}
