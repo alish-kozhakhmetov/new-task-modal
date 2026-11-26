@@ -287,7 +287,9 @@ async function solveOne(page, job) {
         if (!letters.every((l) => /^[A-Z]$/.test(l))) throw new Error(`choice reference not letters: ${ref}`)
         for (const l of letters) await page.keyboard.press(l.toLowerCase())
       } else {
-        const parts = answerParts(ref)
+        let parts = answerParts(ref)
+        // a reference of several fields joined by a single «;» (MultipleTaskAnswer without separator)
+        if (parts.length === 1 && probe.inputs > 1 && parts[0].split(';').length === probe.inputs) parts = parts[0].split(';')
         if (parts.length > probe.inputs && probe.inputs === 1) {
           // several values into one field, as the reference writes them
           parts.splice(0, parts.length, parts.join(';'))
@@ -334,6 +336,13 @@ async function solveOne(page, job) {
     if (sent == null) {
       res.issues.push('no check sent')
       res.verdict = 'broken'
+      return res
+    }
+    if (VERIFY === 'collect') {
+      // judged afterwards by the backend's own TaskChecker, run locally
+      // (scripts/pilot/local-backend/judge.mjs): the fields go with the answer
+      res.fields = job.task.fields
+      res.verdict = 'sent'
       return res
     }
     if (VERIFY === 'sandbox') {
