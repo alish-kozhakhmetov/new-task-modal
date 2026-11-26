@@ -42,6 +42,13 @@ const file = q.get('file') ?? ''
 const id = q.get('id') ?? ''
 const language = (q.get('lang') as StoryLanguage) ?? 'russian'
 const layout = (q.get('layout') as 'wide' | 'phone') ?? 'phone'
+// fill=1: the phone frame takes the window's width (a 390 px phone, not the
+// stories' 375 px frame), as the app's web view gives the window to the site
+if (q.get('fill') === '1') {
+  const style = document.createElement('style')
+  style.textContent = '[data-testid="lesson-frame"]{width:100vw !important}'
+  document.head.append(style)
+}
 
 const run = async () => {
   const data = (await fetch(`/${file}`).then((r) => r.json())) as {

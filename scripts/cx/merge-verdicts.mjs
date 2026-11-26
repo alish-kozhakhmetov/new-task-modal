@@ -2,7 +2,7 @@
  * Stream CX: the verify run's verdicts into cx-mapping.json, and the summary
  * by work-matrix code and grade (scripts/cx/summary.json).
  *
- *   node scripts/cx/merge-verdicts.mjs
+ *   node scripts/cx/merge-verdicts.mjs [verify-results.corpus-all.<tag>.json]
  *
  * Per generator `check`:
  *   passed      — its example rendered right in the real window, the
@@ -27,7 +27,7 @@ const mapping = JSON.parse(fs.readFileSync(MAPPING, 'utf8'))
 // the local backend's whole tasks judged by its TaskChecker first; the
 // 02.08 examples (cut strings, ported check) where the local run has none
 const read = (f) => (fs.existsSync(path.join(HERE, f)) ? JSON.parse(fs.readFileSync(path.join(HERE, f), 'utf8')) : { results: [] })
-const local = read('verify-results.corpus-all.json')
+const local = read(process.argv[2] ?? 'verify-results.corpus-all.json')
 const verify = read('verify-results.json')
 const byGenerator = new Map(verify.results.map((r) => [r.generator, { ...r, source: 'variants.json 02.08' }]))
 for (const r of local.results) byGenerator.set(r.generator, { ...r, source: 'local backend' })

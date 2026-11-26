@@ -13,6 +13,18 @@
  *   3. the reference with its last value changed → must be rejected.
  *
  *   node scripts/cx/verify.mjs [--only=<layout id>] [--workers=4] [--shots]
+ *     [--viewport=390x844] [--layout=phone|wide] [--route=layout|chapters]
+ *     [--probe-only] [--ids=Task_3_5_4_19,…] [--tag=<results suffix>] [--port=5197]
+ *     [--shots=all]
+ *
+ * --viewport: the window; the phone frame takes its width (390 px phone),
+ *   from 1100 px the site's wide layout. Every visible field's bounding box
+ *   is measured against the window's width (fieldOut) and against the
+ *   nearest ancestor that clips (fieldClipped): a field past the edge is an
+ *   issue, whatever the template's own box says.
+ * --route=chapters: the window's own resolver (the grades' chapter maps), not
+ *   the classifier — the regression run of a grade that is already live.
+ * --probe-only: the form on screen only, no typing (the wide pass).
  *
  * Results: scripts/cx/verify-results.json; with --shots one PNG per layout
  * (and per grade-3 example) in scripts/cx/shots/ (not in git).
@@ -40,7 +52,14 @@ const args = Object.fromEntries(
 )
 const WORKERS = Number(args.workers ?? 4)
 const SHOTS = Boolean(args.shots)
-const SHOT_DIR = path.join(HERE, 'shots')
+// --shots=all: one PNG per example (the regression's pixel comparison)
+const SHOT_ALL = args.shots === 'all'
+const [VW, VH] = String(args.viewport ?? '390x844').split('x').map(Number)
+const LAYOUT = args.layout ?? (VW >= 1100 ? 'wide' : 'phone')
+const ROUTE = args.route ?? 'layout'
+const PROBE_ONLY = Boolean(args['probe-only'])
+const IDS = args.ids ? new Set(String(args.ids).split(',')) : null
+const SHOT_DIR = path.join(HERE, 'shots', args.tag ?? `${VW}`)
 if (SHOTS) fs.mkdirSync(SHOT_DIR, { recursive: true })
 
 // ---------- the server: the package's dev config without stylelint's --fix
@@ -55,6 +74,7 @@ const server = await createServer({
       name: 'cx-route-by-layout',
       enforce: 'pre',
       resolveId(source, importer) {
+        if (ROUTE !== 'layout') return null
         if (!importer || importer === OVERRIDE) return null
         if (/(^|\/)get-task-component$/.test(source)) return OVERRIDE
         return null
@@ -78,10 +98,10 @@ const server = await createServer({
       },
     },
   },
-  server: { port: 5197, host: '127.0.0.1', strictPort: true },
+  server: { port: Number(args.port ?? 5197), host: '127.0.0.1', strictPort: true },
 })
 await server.listen()
-const BASE = 'http://127.0.0.1:5197'
+const BASE = `http://127.0.0.1:${Number(args.port ?? 5197)}`
 
 // ---------- the pupil's keys (scripts/pilot/solve.mjs of feat/grade-5-pilot)
 const stripLatex = (s) =>
@@ -143,8 +163,15 @@ const mutate = (parts) => {
   const out = [...parts]
   const last = out.length - 1
   const num = /^(-?)(\d+)([.,]\d+)?$/.exec(out[last])
-  // a number: its whole part plus one (an appended digit may vanish in a float)
-  out[last] = num ? `${num[1]}${Number(num[2]) + 1}${num[3] ?? ''}` : `${out[last]}1`
+  // a number: its whole part plus one (an appended digit may vanish in a float);
+  // else its last digit changed — «\frac{3}{4}» + «1» reads as ×1 and the
+  // checker rightly accepts it (27.11: 30 false «wrong answer accepted»)
+  const lastDigit = /(\d)(?!.*\d)/s
+  out[last] = num
+    ? `${num[1]}${Number(num[2]) + 1}${num[3] ?? ''}`
+    : lastDigit.test(out[last])
+      ? out[last].replace(lastDigit, (d) => String((Number(d) + 7) % 10))
+      : `${out[last]}1`
   return out
 }
 
@@ -159,15 +186,19 @@ const fieldsOf = (task) => {
   return n || 1
 }
 if (args.corpus) {
-  const corpus = JSON.parse(fs.readFileSync(path.resolve(ROOT, args.corpus), 'utf8')).filter((e) => e.task && e.layout)
-  const byGrade = {}
-  for (const e of corpus) (byGrade[e.grade] ??= []).push(e)
-  const file = path.relative(ROOT, path.resolve(ROOT, args.corpus)).replace(/\.json$/, '.harness.json')
-  fs.writeFileSync(path.join(ROOT, file), JSON.stringify({ byGrade }))
+  const corpus = JSON.parse(fs.readFileSync(path.resolve(ROOT, args.corpus), 'utf8')).filter(
+    (e) => e.task && (e.layout || ROUTE === 'chapters'),
+  )
+  // one small file per example: the page fetches it, not the whole corpus
+  const hdir = path.join(ROOT, '.cx-local/h', path.basename(args.corpus, '.json'))
+  fs.mkdirSync(hdir, { recursive: true })
   const seen = new Set()
   for (const e of corpus) {
     if (args.only && args.only !== e.layout) continue
-    const l = LAYOUT_BY_ID.get(e.layout) ?? { id: e.layout, n: fieldsOf(e.task), existing: true }
+    if (IDS && !IDS.has(e.generator) && !IDS.has(e.id)) continue
+    const file = path.relative(ROOT, path.join(hdir, `${e.id}.json`))
+    fs.writeFileSync(path.join(ROOT, file), JSON.stringify({ byGrade: { [e.grade]: [e] } }))
+    const l = (ROUTE === 'layout' && LAYOUT_BY_ID.get(e.layout)) || { id: e.layout ?? '(chapter map)', n: fieldsOf(e.task), existing: true }
     const ref = e.answerString == null ? null : String(e.answerString).split(' || ')[0]
     jobs.push({ layout: l, file, entry: { ...e, accepted: ref == null ? null : [ref] }, first: !seen.has(e.layout) })
     seen.add(e.layout)
@@ -201,7 +232,7 @@ const RAW = /\\(frac|cdot|left|right|begin|text|times|div|sqrt|over|mathrm|dfrac
 
 async function openForm(page, job, lang = 'russian') {
   await page.goto(
-    `${BASE}/scripts/cx/harness/index.html?file=${encodeURIComponent(job.file)}&id=${encodeURIComponent(job.entry.id)}&lang=${lang}`,
+    `${BASE}/scripts/cx/harness/index.html?file=${encodeURIComponent(job.file)}&id=${encodeURIComponent(job.entry.id)}&lang=${lang}&layout=${LAYOUT}&fill=1`,
   )
   const shown = await page.waitForSelector('[data-template-id]', { timeout: 30000 }).catch(() => null)
   await page.waitForTimeout(600)
@@ -233,7 +264,30 @@ async function probe(page) {
     // the window itself slid sideways (a focused field past the edge)
     let slid = 0
     for (let a = tpl; a; a = a.parentElement) slid = Math.max(slid, a.scrollLeft)
+    // every visible field's box against the window and against the nearest
+    // ancestor that clips it (a scroller: the field is out of sight there)
+    const W = window.innerWidth
+    let fieldOut = 0
+    let fieldClipped = 0
+    const fieldBoxes = []
+    for (const f of document.querySelectorAll('.task-modal [data-input]')) {
+      if (!vis(f)) continue
+      const r = f.getBoundingClientRect()
+      fieldBoxes.push([Math.round(r.left), Math.round(r.right)])
+      fieldOut = Math.max(fieldOut, r.right - W, -r.left)
+      for (let a = f.parentElement; a && a !== document.body; a = a.parentElement) {
+        if (getComputedStyle(a).overflowX === 'visible') continue
+        const ar = a.getBoundingClientRect()
+        fieldClipped = Math.max(fieldClipped, r.right - ar.right, ar.left - r.left)
+        break
+      }
+    }
     return {
+      innerWidth: W,
+      fieldOut: Math.round(fieldOut),
+      fieldClipped: Math.round(fieldClipped),
+      fieldBoxes,
+      pageOverflow: Math.max(0, document.documentElement.scrollWidth - W),
       templateId: tpl?.getAttribute('data-template-id') ?? null,
       resolved: window.__cx?.resolved ?? null,
       inputs: [...document.querySelectorAll('.task-modal [data-input]')].filter(vis).length,
@@ -319,34 +373,50 @@ async function verifyOne(page, job) {
   try {
     const shown = await openForm(page, job)
     const p = await probe(page)
-    Object.assign(res, { templateId: p.templateId, resolved: p.resolved, inputs: p.inputs })
+    Object.assign(res, {
+      templateId: p.templateId,
+      resolved: p.resolved,
+      inputs: p.inputs,
+      innerWidth: p.innerWidth,
+      fieldBoxes: p.fieldBoxes,
+    })
+    if (!p.innerWidth) res.issues.push('window width 0: the measure is void')
     if (p.error) res.issues.push(`harness: ${p.error.slice(0, 160)}`)
     if (!shown || !p.templateId) {
       res.issues.push('nothing on screen')
       if (SHOTS) {
         const shot = path.join(SHOT_DIR, `${layout.id}__${entry.id}.png`)
-        await page.screenshot({ path: shot })
+        await page.screenshot({ path: shot, animations: 'disabled', caret: 'hide' })
         res.shot = path.relative(ROOT, shot)
       }
       res.verdict = 'broken'
       return res
     }
-    if (p.templateId !== layout.id) res.issues.push(`template ${p.templateId}, expected ${layout.id}`)
+    if (ROUTE === 'layout' && p.templateId !== layout.id) res.issues.push(`template ${p.templateId}, expected ${layout.id}`)
     const hidden = entry.task.description?.isAnswerCellHidden === true
     if (!entry.truncated && !hidden && p.inputs !== layout.n) res.issues.push(`${p.inputs} fields, layout has ${layout.n}`)
     const raw = RAW.exec(p.text)
     if (raw) res.issues.push(`raw latex: «${p.text.slice(Math.max(0, raw.index - 40), raw.index + 40)}»`)
     if (/\bundefined\b|\bNaN\b|\[object Object\]/.test(p.text)) res.issues.push('undefined/NaN on screen')
     if (p.overflow > 4) res.issues.push(`overflow ${p.overflow}px`)
+    if (p.fieldOut > 2) res.issues.push(`field past the window's edge by ${p.fieldOut}px (window ${p.innerWidth})`)
+    if (p.fieldClipped > 2) res.issues.push(`field clipped by its scroller by ${p.fieldClipped}px`)
+    if (p.pageOverflow > 2) res.issues.push(`page scrolls sideways by ${p.pageOverflow}px`)
     const flat = flatText(p.text)
     for (const a of labelsOf(entry.task)) if (!flat.includes(a)) res.issues.push(`label not on screen: «${a}»`)
     const shoot = async () => {
       if (!SHOTS || res.shot) return
       const shot = path.join(SHOT_DIR, `${layout.id}__${entry.id}.png`)
-      await page.screenshot({ path: shot })
+      await page.screenshot({ path: shot, animations: 'disabled', caret: 'hide' })
       res.shot = path.relative(ROOT, shot)
     }
     if (res.issues.length) await shoot()
+    if (PROBE_ONLY) {
+      if (SHOT_ALL) await page.waitForTimeout(600)
+      if (SHOT_ALL || job.first || entry.grade === 3 || IDS) await shoot()
+      res.verdict = res.issues.length ? 'broken' : 'rendered'
+      return res
+    }
 
     // ---- the answer
     const ref = entry.accepted?.[0] ?? null
@@ -374,7 +444,9 @@ async function verifyOne(page, job) {
     }
     const after = await probe(page)
     if (after.slid > 0) res.issues.push(`window slid ${after.slid}px sideways on typing`)
-    if (job.first || entry.grade === 3 || after.slid > 0) await shoot()
+    if (after.fieldOut > 2 && !(p.fieldOut > 2))
+      res.issues.push(`typed answer pushes a field past the edge by ${after.fieldOut}px`)
+    if (job.first || entry.grade === 3 || after.slid > 0 || after.fieldOut > 2 || IDS) await shoot()
     res.sent = await sendCheck(page)
     const local = judgedLocally(entry.grade)
     res.judge = local ? 'TaskChecker (local backend)' : 'port of task_checker.ex'
@@ -424,7 +496,7 @@ const tally = new Map()
 try {
   await Promise.all(
     Array.from({ length: Math.min(WORKERS, jobs.length) }, async () => {
-      const ctx = await browser.newContext({ viewport: { width: 375, height: 812 }, locale: 'ru-RU' })
+      const ctx = await browser.newContext({ viewport: { width: VW, height: VH }, locale: 'ru-RU' })
       const page = await ctx.newPage()
       while (next < jobs.length) {
         const job = jobs[next++]
@@ -488,7 +560,14 @@ if (pending.length) {
   for (const r of results) tally.set(r.verdict, (tally.get(r.verdict) ?? 0) + 1)
 }
 results.sort((a, b) => (a.layout + a.id).localeCompare(b.layout + b.id))
-const tag = [args.corpus ? path.basename(args.corpus, '.json') : null, args.only].filter(Boolean).join('.')
+const tag = [args.corpus ? path.basename(args.corpus, '.json') : null, args.only, args.tag].filter(Boolean).join('.')
 const out = path.join(HERE, tag ? `verify-results.${tag}.json` : 'verify-results.json')
-fs.writeFileSync(out, JSON.stringify({ at: new Date().toISOString(), tally: Object.fromEntries(tally), results }, null, 1))
+fs.writeFileSync(
+  out,
+  JSON.stringify(
+    { at: new Date().toISOString(), viewport: `${VW}x${VH}`, layout: LAYOUT, route: ROUTE, tally: Object.fromEntries(tally), results },
+    null,
+    1,
+  ),
+)
 console.log('done', Object.fromEntries(tally), '→', path.relative(ROOT, out))
