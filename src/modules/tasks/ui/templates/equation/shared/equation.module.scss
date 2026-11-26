@@ -28,6 +28,12 @@
   min-width: 120px;
 }
 
+// equation.plain: one field, no label — the whole line (rule 18).
+.inputFull {
+  flex: 1 1 auto;
+  width: 100%;
+}
+
 .answerFormula {
   min-width: 120px;
 }

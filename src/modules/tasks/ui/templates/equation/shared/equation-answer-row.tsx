@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 import type { TaskModalDependencies } from '@/modules/task-modal/model/types/props'
 import type { Translation } from '@/types/api/task'
 import { MathInput } from '@/ui/math-input/math-input'
@@ -8,10 +10,10 @@ import { stripMathDelimiters } from '../../text/lib/strip-math-delimiters'
 import { TextAdornment } from '../../text/shared/text-adornment'
 
 import styles from './equation.module.scss'
-import type { EquationAnswerInput } from './lib/types.task'
+import type { SimpleEquationAnswerInput } from './lib/types.task'
 
 interface Props {
-  answerInput: EquationAnswerInput | undefined
+  answerInput: SimpleEquationAnswerInput | undefined
   deps: TaskModalDependencies
   answer: string
   mode: 'input' | 'solution'
@@ -66,7 +68,9 @@ export const EquationAnswerRow = ({
           ref={mathInputRef}
           formula={answer}
           onMathFieldChanged={onChange}
-          className={styles.input}
+          // A lone field with no sign or unit takes the whole line (rule 18),
+          // as in text.plain; with a label it keeps its 120px.
+          className={clsx(styles.input, !before && !after && styles.inputFull)}
         />
       ) : correctAnswer ? (
         <MathFormula className={styles.answerFormula}>
