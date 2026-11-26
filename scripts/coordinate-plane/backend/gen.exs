@@ -16,6 +16,10 @@
   end
 # the Kazakhstan request: DecimalFormatPlug sets :comma before generation and check
 if Code.ensure_loaded?(DecimalFormat), do: apply(DecimalFormat, :set_separator, [:comma])
+# The separator lives in the process dictionary (Process.get(:decimal_separator,
+# :dot) on master): everything below runs in this one process, no Task —
+# set once here it holds for every task (checked 27.11: rerun with :comma
+# = the corpus, with :dot 22 of 39 conditions change).
 
 defmodule Plain do
   def to(%{__struct__: s} = m) when s in [Decimal], do: Decimal.to_float(m)

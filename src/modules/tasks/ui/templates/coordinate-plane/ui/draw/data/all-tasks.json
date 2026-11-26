@@ -82366,6 +82366,420 @@
   }
  },
  {
+  "id": "cp-Task_11_6_1_4",
+  "type": "Elixir.Task_11_6_1_4",
+  "title": {
+   "rus": "Постройте график функции:",
+   "module_name": "Elixir.Helpers.Translation",
+   "kaz": "Функцияның графигін салыңыз:",
+   "eng": "Plot the graph of the function:",
+   "_struct": "Helpers.Translation"
+  },
+  "description": {
+   "type": "coordinatePlane",
+   "figure": {
+    "yAxisLabel": "y",
+    "xAxisLabel": "x",
+    "type": 110,
+    "tickStepYMultiply": 1,
+    "tickStepXMultiply": 1,
+    "tickStep": 1,
+    "stepSize": 30,
+    "startNumber": false,
+    "showCells": true,
+    "showAxis": true,
+    "reduceHeight": 1,
+    "points": [],
+    "notClickableDots": true,
+    "minPosition": -8,
+    "maxPosition": 8,
+    "limitedPoint": 0,
+    "isLine": false,
+    "isFullFilled": false,
+    "isFillingLimitedByAxis": false,
+    "intervals": [],
+    "fillingFunctions": [],
+    "figures": [],
+    "drawingFigure": 5,
+    "displayedNumbers": [],
+    "disabledPoints": [],
+    "canFill": false,
+    "canDrawMultipleFigures": true,
+    "allowedFigures": [
+     280,
+     270
+    ]
+   },
+   "content": "\\[y = 8^x\\]"
+  },
+  "answerInput": {
+   "up": "",
+   "type": 10,
+   "text": " ",
+   "svg": "",
+   "down": "",
+   "before": "",
+   "after": "",
+   "_struct": "TaskAnswerInput"
+  },
+  "solution": {
+   "type": "complex",
+   "parts": [
+    {
+     "type": 10,
+     "content": {
+      "rus": "\\(х\\) может быть любым числом. А множество значений — это числа больше 0, потому что никакая степень 8 не является отрицательной.\nПо мере увеличения значений \\(х\\) растут и значения функции.\n",
+      "module_name": "Elixir.Helpers.Translation",
+      "kaz": "\\(х\\)-ке кез-келген сан қоюға болады. Ал мәндер жиыны 0-ден үлкен сандар, себебі 8-дің ешқандай дәрежесі теріс сан болмайды.\n\\(х\\)-тің мәндері өскен сайын, функцияның мәндері де өседі.\n",
+      "eng": "\\(х\\) can be any number. And the set of values ​​are numbers greater than 0, because no power of 8 is negative.\nAs the values ​​of \\(х\\) increase, so do the values ​​of the function.\n",
+      "_struct": "Helpers.Translation"
+     },
+     "center": false,
+     "_struct": "ComplexTaskSolution.Text"
+    },
+    {
+     "yAxisLabel": "y",
+     "xAxisLabel": "x",
+     "type": 110,
+     "tickStepYMultiply": 1,
+     "tickStepXMultiply": 1,
+     "tickStep": 1,
+     "stepSize": 30,
+     "startNumber": false,
+     "showCells": true,
+     "showAxis": true,
+     "reduceHeight": 1,
+     "points": [],
+     "notClickableDots": true,
+     "minPosition": -8,
+     "maxPosition": 8,
+     "limitedPoint": 0,
+     "isLine": false,
+     "isFullFilled": false,
+     "isFillingLimitedByAxis": false,
+     "intervals": [],
+     "fillingFunctions": [],
+     "figures": [
+      {
+       "type": 270,
+       "point2": {
+        "y": 8,
+        "x": 1,
+        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+        "letter": "",
+        "_struct": "CustomeTypes.CoordinatePlane.Point"
+       },
+       "point1": {
+        "y": 1,
+        "x": 0,
+        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+        "letter": "",
+        "_struct": "CustomeTypes.CoordinatePlane.Point"
+       },
+       "dashed": false
+      },
+      {
+       "type": 20,
+       "point2": {
+        "y": 0,
+        "x": 1,
+        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+        "letter": "",
+        "_struct": "CustomeTypes.CoordinatePlane.Point"
+       },
+       "point1": {
+        "y": 0,
+        "x": 0,
+        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+        "letter": "",
+        "_struct": "CustomeTypes.CoordinatePlane.Point"
+       },
+       "hideArrow": false,
+       "dotRadius": 0,
+       "dashed": false
+      }
+     ],
+     "drawingFigure": 0,
+     "displayedNumbers": [],
+     "disabledPoints": [],
+     "canFill": false,
+     "canDrawMultipleFigures": false,
+     "allowedFigures": []
+    }
+   ],
+   "answer": "\\({\"asymptote_point_y\":0,\"graph_function\":\"y = 8^x\",\"dashed?\":null}\\)",
+   "_struct": "ComplexTaskSolution"
+  },
+  "fields": {},
+  "_backend": {
+   "id": "Task_11_6_1_4",
+   "seed": 1,
+   "answer": {
+    "graph_function": "y = 8^x",
+    "dashed?": null,
+    "asymptote_point_y": 0,
+    "_struct": "TaskAnswers.CoordinatePlane.ExponentialGraphTaskAnswer"
+   },
+   "answerType": "TaskAnswers.CoordinatePlane.ExponentialGraphTaskAnswer"
+  }
+ },
+ {
+  "id": "cp-Task_11_6_1_5",
+  "type": "Elixir.Task_11_6_1_5",
+  "title": {
+   "rus": "Постройте график функции:",
+   "module_name": "Elixir.Helpers.Translation",
+   "kaz": "Функцияның графигін салыңыз:",
+   "eng": "Plot the graph of the function:",
+   "_struct": "Helpers.Translation"
+  },
+  "description": {
+   "type": "coordinatePlane",
+   "figure": {
+    "yAxisLabel": "y",
+    "xAxisLabel": "x",
+    "type": 110,
+    "tickStepYMultiply": 1,
+    "tickStepXMultiply": 1,
+    "tickStep": 1,
+    "stepSize": 30,
+    "startNumber": false,
+    "showCells": true,
+    "showAxis": true,
+    "reduceHeight": 1,
+    "points": [],
+    "notClickableDots": true,
+    "minPosition": -8,
+    "maxPosition": 8,
+    "limitedPoint": 0,
+    "isLine": false,
+    "isFullFilled": false,
+    "isFillingLimitedByAxis": false,
+    "intervals": [],
+    "fillingFunctions": [],
+    "figures": [],
+    "drawingFigure": 5,
+    "displayedNumbers": [],
+    "disabledPoints": [],
+    "canFill": false,
+    "canDrawMultipleFigures": true,
+    "allowedFigures": [
+     280,
+     270
+    ]
+   },
+   "content": "\\[y = (\\frac{1}{8})^x\\]"
+  },
+  "answerInput": {
+   "up": "",
+   "type": 10,
+   "text": " ",
+   "svg": "",
+   "down": "",
+   "before": "",
+   "after": "",
+   "_struct": "TaskAnswerInput"
+  },
+  "solution": {
+   "type": "complex",
+   "parts": [
+    {
+     "type": 10,
+     "content": {
+      "rus": "\\(х\\) может быть любым числом. А множество значений — это числа больше 0, потому что никакая степень \\(\\frac{1}{8}\\) не является отрицательной.\nПо мере увеличения значений \\(х\\) значения функции уменьшаются.\n",
+      "module_name": "Elixir.Helpers.Translation",
+      "kaz": "\\(x\\)-ке кез-келген сан қоюға болады. Ал мәндер жиыны 0-ден үлкен сандар, себебі \\(\\frac{1}{8}\\)-дің ешқандай дәрежесі теріс сан болмайды.\n\\(x\\)-тің мәндері өскен сайын, функцияның мәндері кемиді.\n",
+      "eng": "\\(x\\) can be any number. And the set of values ​​are numbers greater than 0, because no power of \\(\\frac{1}{8}\\) is negative.\nAs the values ​​of \\(x\\) increase, the values ​​of the function decrease.\n",
+      "_struct": "Helpers.Translation"
+     },
+     "center": false,
+     "_struct": "ComplexTaskSolution.Text"
+    },
+    {
+     "yAxisLabel": "y",
+     "xAxisLabel": "x",
+     "type": 110,
+     "tickStepYMultiply": 1,
+     "tickStepXMultiply": 1,
+     "tickStep": 1,
+     "stepSize": 30,
+     "startNumber": false,
+     "showCells": true,
+     "showAxis": true,
+     "reduceHeight": 1,
+     "points": [],
+     "notClickableDots": true,
+     "minPosition": -8,
+     "maxPosition": 8,
+     "limitedPoint": 0,
+     "isLine": false,
+     "isFullFilled": false,
+     "isFillingLimitedByAxis": false,
+     "intervals": [],
+     "fillingFunctions": [],
+     "figures": [
+      {
+       "type": 120,
+       "strokeWidth": 1,
+       "startPoint": -9,
+       "formula": "(1/8)^x",
+       "endPoint": 9,
+       "color": "red"
+      }
+     ],
+     "drawingFigure": 0,
+     "displayedNumbers": [],
+     "disabledPoints": [],
+     "canFill": false,
+     "canDrawMultipleFigures": false,
+     "allowedFigures": []
+    }
+   ],
+   "answer": "\\({\"asymptote_point_y\":0,\"graph_function\":\"y = 0.125^x\",\"dashed?\":null}\\)",
+   "_struct": "ComplexTaskSolution"
+  },
+  "fields": {},
+  "_backend": {
+   "id": "Task_11_6_1_5",
+   "seed": 1,
+   "answer": {
+    "graph_function": "y = 0.125^x",
+    "dashed?": null,
+    "asymptote_point_y": 0,
+    "_struct": "TaskAnswers.CoordinatePlane.ExponentialGraphTaskAnswer"
+   },
+   "answerType": "TaskAnswers.CoordinatePlane.ExponentialGraphTaskAnswer"
+  }
+ },
+ {
+  "id": "cp-Task_11_6_1_6",
+  "type": "Elixir.Task_11_6_1_6",
+  "title": {
+   "rus": "Постройте график функции:",
+   "module_name": "Elixir.Helpers.Translation",
+   "kaz": "Функцияның графигін салыңыз:",
+   "eng": "Plot the graph of the function:",
+   "_struct": "Helpers.Translation"
+  },
+  "description": {
+   "type": "coordinatePlane",
+   "figure": {
+    "yAxisLabel": "y",
+    "xAxisLabel": "x",
+    "type": 110,
+    "tickStepYMultiply": 1,
+    "tickStepXMultiply": 1,
+    "tickStep": 1,
+    "stepSize": 30,
+    "startNumber": false,
+    "showCells": true,
+    "showAxis": true,
+    "reduceHeight": 1,
+    "points": [],
+    "notClickableDots": true,
+    "minPosition": -8,
+    "maxPosition": 8,
+    "limitedPoint": -2,
+    "isLine": false,
+    "isFullFilled": false,
+    "isFillingLimitedByAxis": false,
+    "intervals": [],
+    "fillingFunctions": [],
+    "figures": [],
+    "drawingFigure": 5,
+    "displayedNumbers": [],
+    "disabledPoints": [],
+    "canFill": false,
+    "canDrawMultipleFigures": true,
+    "allowedFigures": [
+     280,
+     270
+    ]
+   },
+   "content": "\\[y = 4^x - 2\\]"
+  },
+  "answerInput": {
+   "up": "",
+   "type": 10,
+   "text": " ",
+   "svg": "",
+   "down": "",
+   "before": "",
+   "after": "",
+   "_struct": "TaskAnswerInput"
+  },
+  "solution": {
+   "type": "complex",
+   "parts": [
+    {
+     "type": 10,
+     "content": {
+      "rus": "Сначала мы рисуем график функции \\(y = 4^x\\), а затем перемещаем его параллельно оси у на 2 единицы вниз.\nх может быть любым числом.\nА множество значений — это числа больше -2, потому что никакая степень 4 не является отрицательной.\nА если вычесть из него 2, то наименьшее значение будет -2.\nПо мере увеличения значений x растут и значения функции.\n",
+      "module_name": "Elixir.Helpers.Translation",
+      "kaz": "Алдымен \\(y = 4^x\\) функциясының графигін саламыз, содан соң оны \\(y\\) осімен 2 бірлік төмен араллель көшіреміз.\n\\(x\\)-ке кез-келген сан қоюға болады.\nАл мәндер жиыны \\(-2\\)-ден үлкен сандар, себебі 4-тің ешқандай дәрежесі теріс сан болмайды.\nАл одан 2-ні азайтсақ, ең кіші мәні \\(-2\\) болады.\n\\(x\\)-тің мәндері өскен сайын, функцияның мәндері де өседі.\n",
+      "eng": "First we plot the graph of the function \\(y = 4^x\\) and then we move it parallel to the \\(y\\)-axis by 2 units down.\n\\(x\\) can be any number.\nAnd the set of values ​​are numbers greater than -2, because no power of 4 is negative.\nAnd if you subtract 2 from it, the smallest value is -2.\nAs the values ​​of \\(x\\) increase, so do the values ​​of the function.\n",
+      "_struct": "Helpers.Translation"
+     },
+     "center": false,
+     "_struct": "ComplexTaskSolution.Text"
+    },
+    {
+     "yAxisLabel": "y",
+     "xAxisLabel": "x",
+     "type": 110,
+     "tickStepYMultiply": 1,
+     "tickStepXMultiply": 1,
+     "tickStep": 1,
+     "stepSize": 30,
+     "startNumber": false,
+     "showCells": true,
+     "showAxis": true,
+     "reduceHeight": 1,
+     "points": [],
+     "notClickableDots": true,
+     "minPosition": -9,
+     "maxPosition": 9,
+     "limitedPoint": 0,
+     "isLine": false,
+     "isFullFilled": false,
+     "isFillingLimitedByAxis": false,
+     "intervals": [],
+     "fillingFunctions": [],
+     "figures": [
+      {
+       "type": 120,
+       "strokeWidth": 1,
+       "startPoint": -10,
+       "formula": "4^x - 2",
+       "endPoint": 10,
+       "color": "red"
+      }
+     ],
+     "drawingFigure": 0,
+     "displayedNumbers": [],
+     "disabledPoints": [],
+     "canFill": false,
+     "canDrawMultipleFigures": false,
+     "allowedFigures": []
+    }
+   ],
+   "answer": "\\({\"asymptote_point_y\":-2,\"graph_function\":\"y = 4^x - 2\",\"dashed?\":null}\\)",
+   "_struct": "ComplexTaskSolution"
+  },
+  "fields": {},
+  "_backend": {
+   "id": "Task_11_6_1_6",
+   "seed": 1,
+   "answer": {
+    "graph_function": "y = 4^x - 2",
+    "dashed?": null,
+    "asymptote_point_y": -2,
+    "_struct": "TaskAnswers.CoordinatePlane.ExponentialGraphTaskAnswer"
+   },
+   "answerType": "TaskAnswers.CoordinatePlane.ExponentialGraphTaskAnswer"
+  }
+ },
+ {
   "id": "cp-Task_11_9_5_2",
   "type": "Elixir.Task_11_9_5_2",
   "title": null,
@@ -83811,6 +84225,322 @@
     "_struct": "TaskAnswers.CoordinatePlane.CircleTaskAnswer"
    },
    "answerType": "TaskAnswers.CoordinatePlane.CircleTaskAnswer"
+  }
+ },
+ {
+  "id": "cp-Task_11_6_4_1",
+  "type": "Elixir.Task_11_6_4_1",
+  "title": null,
+  "description": {
+   "type": "coordinatePlane",
+   "figure": {
+    "yAxisLabel": "y",
+    "xAxisLabel": "x",
+    "type": 110,
+    "tickStepYMultiply": 1,
+    "tickStepXMultiply": 1,
+    "tickStep": 1,
+    "stepSize": 30,
+    "startNumber": false,
+    "showCells": true,
+    "showAxis": true,
+    "reduceHeight": 1,
+    "points": [],
+    "notClickableDots": true,
+    "minPosition": -8,
+    "maxPosition": 8,
+    "limitedPoint": 0,
+    "isLine": false,
+    "isFullFilled": false,
+    "isFillingLimitedByAxis": false,
+    "intervals": [],
+    "fillingFunctions": [],
+    "figures": [],
+    "drawingFigure": 5,
+    "displayedNumbers": [],
+    "disabledPoints": [],
+    "canFill": false,
+    "canDrawMultipleFigures": true,
+    "allowedFigures": [
+     280,
+     290
+    ]
+   },
+   "content": {
+    "rus": "Постройте график функции \\(f(x) = \\log_8x\\).",
+    "module_name": "Elixir.Helpers.Translation",
+    "kaz": "\\(f(x) = \\log_8x\\) функциясының графигін салыңыз.",
+    "eng": "",
+    "_struct": "Helpers.Translation"
+   }
+  },
+  "answerInput": {
+   "up": "",
+   "type": 10,
+   "text": " ",
+   "svg": "",
+   "down": "",
+   "before": "",
+   "after": "",
+   "_struct": "TaskAnswerInput"
+  },
+  "solution": {
+   "type": "complex",
+   "parts": [
+    {
+     "type": 10,
+     "content": {
+      "rus": "Поскольку возможными значениями \\(x\\) являются только положительные числа, график лежит в квадрантах I и IV. А поскольку основание логарифма больше 1, то функция возрастает. Поскольку\\(\\\\\\)\\(log_a1 = 0\\) любая функция \\(f(x) = log_ax\\) проходит через точку (1;0).\\(\\\\\\)",
+      "module_name": "Elixir.Helpers.Translation",
+      "kaz": "\\(x\\)-тің мүмкін мәндері тек оң сандар болғандықтан, график I және IV ширектерде орналасады. Ал логарифмнің негізі 1-ден үлкен болғандықтан функция өспелі болады.\\(\\\\\\)\\(log_a1 = 0\\) болғандықтан, кез-келген \\(f(x) = log_ax\\) функциясы (1;0) нүктесінен өтеді.\\(\\\\\\)",
+      "eng": "Since the only possible values ​​of \\(x\\) are positive numbers, the graph lies in quadrants I and IV. And since the base of the logarithm is greater than 1, the function increases.\\(\\\\\\)Since \\(log_a1 = 0\\) any function \\(f(x) = log_ax\\) passes through the point (1;0).\\(\\\\\\)\\(\\\\\\)",
+      "_struct": "Helpers.Translation"
+     },
+     "center": false,
+     "_struct": "ComplexTaskSolution.Text"
+    },
+    {
+     "yAxisLabel": "y",
+     "xAxisLabel": "x",
+     "type": 110,
+     "tickStepYMultiply": 1,
+     "tickStepXMultiply": 1,
+     "tickStep": 1,
+     "stepSize": 23,
+     "startNumber": false,
+     "showCells": true,
+     "showAxis": true,
+     "reduceHeight": 1,
+     "points": [],
+     "notClickableDots": true,
+     "minPosition": -8,
+     "maxPosition": 8,
+     "limitedPoint": 0,
+     "isLine": false,
+     "isFullFilled": false,
+     "isFillingLimitedByAxis": false,
+     "intervals": [],
+     "fillingFunctions": [],
+     "figures": [
+      {
+       "type": 290,
+       "point2": {
+        "y": 1,
+        "x": 8,
+        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+        "letter": "",
+        "_struct": "CustomeTypes.CoordinatePlane.Point"
+       },
+       "point1": {
+        "y": 0,
+        "x": 1,
+        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+        "letter": "",
+        "_struct": "CustomeTypes.CoordinatePlane.Point"
+       },
+       "dashed": false
+      },
+      {
+       "type": 20,
+       "point2": {
+        "y": 1,
+        "x": 0,
+        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+        "letter": "",
+        "_struct": "CustomeTypes.CoordinatePlane.Point"
+       },
+       "point1": {
+        "y": 0,
+        "x": 0,
+        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+        "letter": "",
+        "_struct": "CustomeTypes.CoordinatePlane.Point"
+       },
+       "hideArrow": false,
+       "dotRadius": 0,
+       "dashed": false
+      }
+     ],
+     "drawingFigure": 0,
+     "displayedNumbers": [],
+     "disabledPoints": [],
+     "canFill": false,
+     "canDrawMultipleFigures": false,
+     "allowedFigures": []
+    }
+   ],
+   "answer": "\\({\"asymptote_point_x\":0,\"graph_function\":\"y=\\\\log_8x\",\"dashed?\":null}\\)",
+   "_struct": "ComplexTaskSolution"
+  },
+  "fields": {},
+  "_backend": {
+   "id": "Task_11_6_4_1",
+   "seed": 1,
+   "answer": {
+    "graph_function": "y=\\log_8x",
+    "dashed?": null,
+    "asymptote_point_x": 0,
+    "_struct": "TaskAnswers.CoordinatePlane.LogarithmGraphTaskAnswer"
+   },
+   "answerType": "TaskAnswers.CoordinatePlane.LogarithmGraphTaskAnswer"
+  }
+ },
+ {
+  "id": "cp-Task_11_6_4_2",
+  "type": "Elixir.Task_11_6_4_2",
+  "title": null,
+  "description": {
+   "type": "coordinatePlane",
+   "figure": {
+    "yAxisLabel": "y",
+    "xAxisLabel": "x",
+    "type": 110,
+    "tickStepYMultiply": 1,
+    "tickStepXMultiply": 1,
+    "tickStep": 1,
+    "stepSize": 30,
+    "startNumber": false,
+    "showCells": true,
+    "showAxis": true,
+    "reduceHeight": 1,
+    "points": [],
+    "notClickableDots": true,
+    "minPosition": -8,
+    "maxPosition": 8,
+    "limitedPoint": 0,
+    "isLine": false,
+    "isFullFilled": false,
+    "isFillingLimitedByAxis": false,
+    "intervals": [],
+    "fillingFunctions": [],
+    "figures": [],
+    "drawingFigure": 5,
+    "displayedNumbers": [],
+    "disabledPoints": [],
+    "canFill": false,
+    "canDrawMultipleFigures": true,
+    "allowedFigures": [
+     280,
+     290
+    ]
+   },
+   "content": {
+    "rus": "Постройте график функции \\(f(x) = log_\\frac{1}{4}x\\).",
+    "module_name": "Elixir.Helpers.Translation",
+    "kaz": "\\(f(x) = log_\\frac{1}{4}x\\) функциясының графигін салыңыз.",
+    "eng": "",
+    "_struct": "Helpers.Translation"
+   }
+  },
+  "answerInput": {
+   "up": "",
+   "type": 10,
+   "text": " ",
+   "svg": "",
+   "down": "",
+   "before": "",
+   "after": "",
+   "_struct": "TaskAnswerInput"
+  },
+  "solution": {
+   "type": "complex",
+   "parts": [
+    {
+     "type": 10,
+     "content": {
+      "rus": "Поскольку возможными значениями \\(x\\) являются только положительные числа, график лежит в квадрантах I и IV. А поскольку основание логарифма меньше 1, то функция убывает.\\(\\\\\\)",
+      "module_name": "Elixir.Helpers.Translation",
+      "kaz": "\\(x\\)-тің мүмкін мәндері тек оң сандар болғандықтан, график I және IV ширектерде орналасады. Ал логарифмнің негізі 1-ден кіші болғандықтан функция кемімелі болады.\\(\\\\\\)",
+      "eng": "Since the only possible values ​​of \\(x\\) are positive numbers, the graph lies in quadrants I and IV. And since the base of the logarithm is less than 1, the function decreases.",
+      "_struct": "Helpers.Translation"
+     },
+     "center": false,
+     "_struct": "ComplexTaskSolution.Text"
+    },
+    {
+     "yAxisLabel": "y",
+     "xAxisLabel": "x",
+     "type": 110,
+     "tickStepYMultiply": 1,
+     "tickStepXMultiply": 1,
+     "tickStep": 1,
+     "stepSize": 23,
+     "startNumber": false,
+     "showCells": true,
+     "showAxis": true,
+     "reduceHeight": 1,
+     "points": [],
+     "notClickableDots": true,
+     "minPosition": -8,
+     "maxPosition": 8,
+     "limitedPoint": 0,
+     "isLine": false,
+     "isFullFilled": false,
+     "isFillingLimitedByAxis": false,
+     "intervals": [],
+     "fillingFunctions": [],
+     "figures": [
+      {
+       "type": 290,
+       "point2": {
+        "y": 1,
+        "x": 0.25,
+        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+        "letter": "",
+        "_struct": "CustomeTypes.CoordinatePlane.Point"
+       },
+       "point1": {
+        "y": 0,
+        "x": 1,
+        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+        "letter": "",
+        "_struct": "CustomeTypes.CoordinatePlane.Point"
+       },
+       "dashed": false
+      },
+      {
+       "type": 20,
+       "point2": {
+        "y": 1,
+        "x": 0,
+        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+        "letter": "",
+        "_struct": "CustomeTypes.CoordinatePlane.Point"
+       },
+       "point1": {
+        "y": 0,
+        "x": 0,
+        "module_name": "Elixir.CustomeTypes.CoordinatePlane.Point",
+        "letter": "",
+        "_struct": "CustomeTypes.CoordinatePlane.Point"
+       },
+       "hideArrow": false,
+       "dotRadius": 0,
+       "dashed": false
+      }
+     ],
+     "drawingFigure": 0,
+     "displayedNumbers": [],
+     "disabledPoints": [],
+     "canFill": false,
+     "canDrawMultipleFigures": false,
+     "allowedFigures": []
+    }
+   ],
+   "answer": "\\({\"asymptote_point_x\":0,\"graph_function\":\"y=\\\\log_{\\\\frac{1}{4}}x\",\"dashed?\":null}\\)",
+   "_struct": "ComplexTaskSolution"
+  },
+  "fields": {},
+  "_backend": {
+   "id": "Task_11_6_4_2",
+   "seed": 1,
+   "answer": {
+    "graph_function": "y=\\log_{\\frac{1}{4}}x",
+    "dashed?": null,
+    "asymptote_point_x": 0,
+    "_struct": "TaskAnswers.CoordinatePlane.LogarithmGraphTaskAnswer"
+   },
+   "answerType": "TaskAnswers.CoordinatePlane.LogarithmGraphTaskAnswer"
   }
  },
  {

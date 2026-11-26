@@ -190,6 +190,10 @@ describe('coordinatePlane.draw — real tasks solved through the window', () => 
     ).toEqual([...UNSOLVABLE])
     // a plane to shade (scenario F): lines and circles, then the region
     expect(multi.filter((t) => solutionOf(t).fill).length).toBeGreaterThan(20)
+    // the exponent and the logarithm with the asymptote (grade 11): 5 × 3 seeds
+    expect(
+      multi.filter((t) => /^Task_11_6_[14]_/.test(t._backend.id)),
+    ).toHaveLength(15)
     // the trigonometric axes are in the corpus (scenario D′, grade 10)
     expect(
       answerable.filter((t) => {

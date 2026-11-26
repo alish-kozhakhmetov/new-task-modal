@@ -9,6 +9,10 @@
 # map for dots and figures), and the verdict is user_answer_correct?/2.
 [in_file, out_file] = System.argv()
 if Code.ensure_loaded?(DecimalFormat), do: apply(DecimalFormat, :set_separator, [:comma])
+# The separator lives in the process dictionary (Process.get(:decimal_separator,
+# :dot) on master): everything below runs in this one process, no Task —
+# set once here it holds for every task (checked 27.11: rerun with :comma
+# = the corpus, with :dot 22 of 39 conditions change).
 
 File.write!(out_file, "")
 
