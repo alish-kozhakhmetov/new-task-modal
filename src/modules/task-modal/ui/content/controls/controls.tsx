@@ -104,6 +104,7 @@ export const TaskModalControls = ({
           className={clsx(isAdjusting && s.adjusting)}
           ref={calc}
           global={props.deps.global}
+          taskType={activeTask.type}
           onInput={handleInput}
         />
       )}

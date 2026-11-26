@@ -8,6 +8,8 @@ export interface CalculatorSymbol {
   label: string
   icon?: SvgComponent | null
   action?: string
+  /** A word on the key (sin, arcsin) — set in the smaller type. */
+  fn?: boolean
   upperCased?: Partial<CalculatorSymbol>
 }
 

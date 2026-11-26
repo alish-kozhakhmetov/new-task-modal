@@ -46,3 +46,6 @@ storybook-static
 
 # grade-5 pilot: API answers of test.qalan.kz, not for git
 .pilot-cache/
+
+# keys harness: temporary chapter maps, never commit (scripts/keys/harness-maps.mjs)
+/src/modules/tasks/ui/grades/__keys-harness__/

@@ -112,6 +112,11 @@ const handleSpecialSymbol = (
       mathField?.write(')')
       mathField?.keystroke('Left')
     },
+    // xⁿ (grades 5–13): an empty power, the caret in it — x², x³ cover only 2 and 3
+    '^{}': () => {
+      mathField?.write('^{}')
+      mathField?.keystroke('Left')
+    },
     '_^': () => {
       mathField?.write('_{}^{}')
       mathField?.keystroke('Left')

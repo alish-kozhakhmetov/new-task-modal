@@ -86,6 +86,17 @@
   }
 }
 
+.fnKey {
+  // sin, arcsin: a word, not a sign — the DS «Additional» page sets it ~19–20
+  @include body-medium-regular;
+
+  :global(body.lang-ar) & {
+    @include body-medium-regular;
+
+    font-family: var(--font-halvar) !important;
+  }
+}
+
 .operator {
   color: var(--text-on-brand);
   background-color: var(--status-fg-warning);
