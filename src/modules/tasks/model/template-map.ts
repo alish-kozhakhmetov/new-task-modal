@@ -365,6 +365,273 @@ export const TEMPLATE_MAP = {
         (module) => ({ default: module.EquationBefore }),
       ),
     ),
+  // Stream CX (wave 1): complex / answerCell / text layouts missing at 2.5.8.
+  [TemplateTypes.Complex.Before]: () =>
+    wrapComplex(() =>
+      import('@/modules/tasks/ui/templates/complex/ui/before').then(
+        (module) => ({ default: module.ComplexBefore }),
+      ),
+    ),
+  [TemplateTypes.Complex.Multi.Stack.N2Before]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/stack-n2-before'
+      ).then((module) => ({ default: module.ComplexMultiStackN2Before })),
+    ),
+  [TemplateTypes.Complex.Multi.Stack.N3BeforeAfter]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/stack-n3-before-after'
+      ).then((module) => ({ default: module.ComplexMultiStackN3BeforeAfter })),
+    ),
+  [TemplateTypes.Complex.Multi.Stack.N3Before]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/stack-n3-before'
+      ).then((module) => ({ default: module.ComplexMultiStackN3Before })),
+    ),
+  [TemplateTypes.Complex.Multi.Stack.N4BeforeAfter]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/stack-n4-before-after'
+      ).then((module) => ({ default: module.ComplexMultiStackN4BeforeAfter })),
+    ),
+  [TemplateTypes.AnswerCell.Multi.Stack.N3Plain]: () =>
+    wrapAnswerCell(() =>
+      import(
+        '@/modules/tasks/ui/templates/answer-cell/ui/multi/stack-n3-plain'
+      ).then((module) => ({ default: module.AnswerCellMultiStackN3Plain })),
+    ),
+  [TemplateTypes.AnswerCell.Multi.Inline.N2After]: () =>
+    wrapAnswerCell(() =>
+      import(
+        '@/modules/tasks/ui/templates/answer-cell/ui/multi/inline-n2-after'
+      ).then((module) => ({ default: module.AnswerCellMultiInlineN2After })),
+    ),
+  [TemplateTypes.Text.Multi.Inline.N2BeforeAfter]: () =>
+    wrapText(() =>
+      import(
+        '@/modules/tasks/ui/templates/text/ui/multi/inline-n2-before-after'
+      ).then((module) => ({ default: module.TextMultiInlineN2BeforeAfter })),
+    ),
+  [TemplateTypes.Text.Multi.Stack.N5BeforeAfter]: () =>
+    wrapText(() =>
+      import(
+        '@/modules/tasks/ui/templates/text/ui/multi/stack-n5-before-after'
+      ).then((module) => ({ default: module.TextMultiStackN5BeforeAfter })),
+    ),
+  [TemplateTypes.Text.Multi.Stack.N2Plain]: () =>
+    wrapText(() =>
+      import('@/modules/tasks/ui/templates/text/ui/multi/stack-n2-plain').then(
+        (module) => ({ default: module.TextMultiStackN2Plain }),
+      ),
+    ),
+  [TemplateTypes.Complex.Multi.Stack.N4Before]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/stack-n4-before'
+      ).then((module) => ({ default: module.ComplexMultiStackN4Before })),
+    ),
+  [TemplateTypes.Complex.Multi.Stack.N2Plain]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/stack-n2-plain'
+      ).then((module) => ({ default: module.ComplexMultiStackN2Plain })),
+    ),
+  [TemplateTypes.Complex.Multi.Inline.N3After]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/inline-n3-after'
+      ).then((module) => ({ default: module.ComplexMultiInlineN3After })),
+    ),
+  [TemplateTypes.AnswerCell.Multi.Inline.N3Plain]: () =>
+    wrapAnswerCell(() =>
+      import(
+        '@/modules/tasks/ui/templates/answer-cell/ui/multi/inline-n3-plain'
+      ).then((module) => ({ default: module.AnswerCellMultiInlineN3Plain })),
+    ),
+  [TemplateTypes.Complex.Multi.Inline.N2After]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/inline-n2-after'
+      ).then((module) => ({ default: module.ComplexMultiInlineN2After })),
+    ),
+  [TemplateTypes.AnswerCell.Multi.Inline.N5Plain]: () =>
+    wrapAnswerCell(() =>
+      import(
+        '@/modules/tasks/ui/templates/answer-cell/ui/multi/inline-n5-plain'
+      ).then((module) => ({ default: module.AnswerCellMultiInlineN5Plain })),
+    ),
+  [TemplateTypes.Text.Multi.Stack.N4Before]: () =>
+    wrapText(() =>
+      import('@/modules/tasks/ui/templates/text/ui/multi/stack-n4-before').then(
+        (module) => ({ default: module.TextMultiStackN4Before }),
+      ),
+    ),
+  [TemplateTypes.Text.Multi.Stack.N3After]: () =>
+    wrapText(() =>
+      import('@/modules/tasks/ui/templates/text/ui/multi/stack-n3-after').then(
+        (module) => ({ default: module.TextMultiStackN3After }),
+      ),
+    ),
+  [TemplateTypes.Complex.Multi.Inline.N2BeforeAfter]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/inline-n2-before-after'
+      ).then((module) => ({ default: module.ComplexMultiInlineN2BeforeAfter })),
+    ),
+  [TemplateTypes.Complex.Multi.Stack.N3Plain]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/stack-n3-plain'
+      ).then((module) => ({ default: module.ComplexMultiStackN3Plain })),
+    ),
+  [TemplateTypes.Text.Multi.Stack.N4Plain]: () =>
+    wrapText(() =>
+      import('@/modules/tasks/ui/templates/text/ui/multi/stack-n4-plain').then(
+        (module) => ({ default: module.TextMultiStackN4Plain }),
+      ),
+    ),
+  [TemplateTypes.AnswerCell.Multi.Inline.N3After]: () =>
+    wrapAnswerCell(() =>
+      import(
+        '@/modules/tasks/ui/templates/answer-cell/ui/multi/inline-n3-after'
+      ).then((module) => ({ default: module.AnswerCellMultiInlineN3After })),
+    ),
+  [TemplateTypes.AnswerCell.Multi.Stack.N4Plain]: () =>
+    wrapAnswerCell(() =>
+      import(
+        '@/modules/tasks/ui/templates/answer-cell/ui/multi/stack-n4-plain'
+      ).then((module) => ({ default: module.AnswerCellMultiStackN4Plain })),
+    ),
+  [TemplateTypes.AnswerCell.Multi.Stack.N2After]: () =>
+    wrapAnswerCell(() =>
+      import(
+        '@/modules/tasks/ui/templates/answer-cell/ui/multi/stack-n2-after'
+      ).then((module) => ({ default: module.AnswerCellMultiStackN2After })),
+    ),
+  [TemplateTypes.Text.Multi.Inline.N3After]: () =>
+    wrapText(() =>
+      import('@/modules/tasks/ui/templates/text/ui/multi/inline-n3-after').then(
+        (module) => ({ default: module.TextMultiInlineN3After }),
+      ),
+    ),
+  [TemplateTypes.Complex.Multi.Stack.N5Before]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/stack-n5-before'
+      ).then((module) => ({ default: module.ComplexMultiStackN5Before })),
+    ),
+  [TemplateTypes.Text.Multi.Stack.N3Plain]: () =>
+    wrapText(() =>
+      import('@/modules/tasks/ui/templates/text/ui/multi/stack-n3-plain').then(
+        (module) => ({ default: module.TextMultiStackN3Plain }),
+      ),
+    ),
+  [TemplateTypes.Text.Multi.Inline.N2Before]: () =>
+    wrapText(() =>
+      import(
+        '@/modules/tasks/ui/templates/text/ui/multi/inline-n2-before'
+      ).then((module) => ({ default: module.TextMultiInlineN2Before })),
+    ),
+  [TemplateTypes.Complex.Multi.Inline.N3BeforeAfter]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/inline-n3-before-after'
+      ).then((module) => ({ default: module.ComplexMultiInlineN3BeforeAfter })),
+    ),
+  [TemplateTypes.Complex.Multi.Inline.N2Plain]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/inline-n2-plain'
+      ).then((module) => ({ default: module.ComplexMultiInlineN2Plain })),
+    ),
+  [TemplateTypes.AnswerCell.Multi.Inline.N4Plain]: () =>
+    wrapAnswerCell(() =>
+      import(
+        '@/modules/tasks/ui/templates/answer-cell/ui/multi/inline-n4-plain'
+      ).then((module) => ({ default: module.AnswerCellMultiInlineN4Plain })),
+    ),
+  [TemplateTypes.Complex.Multi.Inline.N4After]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/inline-n4-after'
+      ).then((module) => ({ default: module.ComplexMultiInlineN4After })),
+    ),
+  [TemplateTypes.Complex.Multi.Stack.N5BeforeAfter]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/stack-n5-before-after'
+      ).then((module) => ({ default: module.ComplexMultiStackN5BeforeAfter })),
+    ),
+  [TemplateTypes.Complex.Multi.Inline.N2Before]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/inline-n2-before'
+      ).then((module) => ({ default: module.ComplexMultiInlineN2Before })),
+    ),
+  [TemplateTypes.AnswerCell.Multi.Stack.N3BeforeAfter]: () =>
+    wrapAnswerCell(() =>
+      import(
+        '@/modules/tasks/ui/templates/answer-cell/ui/multi/stack-n3-before-after'
+      ).then((module) => ({
+        default: module.AnswerCellMultiStackN3BeforeAfter,
+      })),
+    ),
+  [TemplateTypes.Complex.Multi.Stack.N3After]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/stack-n3-after'
+      ).then((module) => ({ default: module.ComplexMultiStackN3After })),
+    ),
+  [TemplateTypes.Text.Multi.Inline.N4After]: () =>
+    wrapText(() =>
+      import('@/modules/tasks/ui/templates/text/ui/multi/inline-n4-after').then(
+        (module) => ({ default: module.TextMultiInlineN4After }),
+      ),
+    ),
+  [TemplateTypes.Text.Multi.Inline.N4BeforeAfter]: () =>
+    wrapText(() =>
+      import(
+        '@/modules/tasks/ui/templates/text/ui/multi/inline-n4-before-after'
+      ).then((module) => ({ default: module.TextMultiInlineN4BeforeAfter })),
+    ),
+  [TemplateTypes.Text.Multi.Stack.N4BeforeAfter]: () =>
+    wrapText(() =>
+      import(
+        '@/modules/tasks/ui/templates/text/ui/multi/stack-n4-before-after'
+      ).then((module) => ({ default: module.TextMultiStackN4BeforeAfter })),
+    ),
+  [TemplateTypes.Text.Multi.Stack.N5Before]: () =>
+    wrapText(() =>
+      import('@/modules/tasks/ui/templates/text/ui/multi/stack-n5-before').then(
+        (module) => ({ default: module.TextMultiStackN5Before }),
+      ),
+    ),
+  [TemplateTypes.AnswerCell.Multi.Stack.N3After]: () =>
+    wrapAnswerCell(() =>
+      import(
+        '@/modules/tasks/ui/templates/answer-cell/ui/multi/stack-n3-after'
+      ).then((module) => ({ default: module.AnswerCellMultiStackN3After })),
+    ),
+  [TemplateTypes.Complex.Multi.Stack.N4Plain]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/stack-n4-plain'
+      ).then((module) => ({ default: module.ComplexMultiStackN4Plain })),
+    ),
+  [TemplateTypes.Complex.Multi.Inline.N3Before]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/inline-n3-before'
+      ).then((module) => ({ default: module.ComplexMultiInlineN3Before })),
+    ),
+  [TemplateTypes.Complex.Multi.Inline.N5Plain]: () =>
+    wrapComplex(() =>
+      import(
+        '@/modules/tasks/ui/templates/complex/ui/multi/inline-n5-plain'
+      ).then((module) => ({ default: module.ComplexMultiInlineN5Plain })),
+    ),
 } satisfies Record<string, unknown>
 
 export type TemplateType = Awaited<
