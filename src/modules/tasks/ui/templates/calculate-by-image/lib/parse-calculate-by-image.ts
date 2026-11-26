@@ -1,0 +1,226 @@
+import { isTranslation } from '@/modules/tasks/lib/translation-utils'
+import type { Translation } from '@/types/api/task'
+
+import type { ComplexTablePart } from '../../complex/lib/types.task'
+
+import type { CalculateByImageDescription, SelectableItem } from './types.task'
+
+export type ItemId = SelectableItem['id']
+
+/**
+ * One item of the task's catalog: everything in the zone at start, then one
+ * entry per tappable item in the row. The store keeps catalog indexes, not
+ * ids — several pictures share an id (Task_1_13_8_4: every family member is
+ * `family_member`), so ids alone cannot say which picture is in the zone.
+ */
+export interface CatalogItem {
+  index: number
+  id: ItemId
+  image: unknown
+}
+
+export interface PoolItem extends CatalogItem {
+  html: string
+  /** Picture on the row button when it differs from the item (withCell `button`). */
+  buttonHtml?: string
+}
+
+/** How items sit in the zone. */
+export type ZoneLayout = 'row' | 'lego' | 'column'
+
+export interface ZonePlacement {
+  /** Items start at this share of the picture's height; `null` — centred. */
+  top: string | null
+  left: string | null
+  right: string | null
+}
+
+export interface CalculateByImageModel {
+  pool: PoolItem[]
+  /** Items in the zone when the task opens. */
+  preplaced: PoolItem[]
+  catalog: PoolItem[]
+  /** Zone capacity (plain) or tap limit (withCell). */
+  capacity: number
+  /** Each row item can be taken once (`isChangable`). */
+  oneTime: boolean
+  layout: ZoneLayout
+  separator: boolean
+  perRow: number
+  /** SVG picture the zone sits on; `null` for the plain box. */
+  zonePicture: string | null
+  placement: ZonePlacement
+  textBefore: string
+  textAfter: string
+  imageBefore: string
+  tableBefore: ComplexTablePart | null
+  tableAfter: ComplexTablePart | null
+}
+
+type Translate = (value: Translation | string) => string
+
+export const toText = (value: unknown, translate: Translate): string => {
+  if (value == null) return ''
+  if (isTranslation(value)) return translate(value)
+  return typeof value === 'string' ? value : ''
+}
+
+const rawItems = (raw: unknown): SelectableItem[] =>
+  (Array.isArray(raw) ? raw : []).filter(
+    (item): item is SelectableItem =>
+      item != null && typeof item === 'object' && 'id' in item,
+  )
+
+/*
+ * When the row is a source (`isChangable: false`), it may still repeat one
+ * picture per unit (five identical chicks). Only exact duplicates — same id
+ * and same picture — collapse into one button; tapping it again takes
+ * another one. When each item can be taken once, every item stays.
+ */
+const sameKind = (item: SelectableItem) => JSON.stringify([item.id, item.image])
+
+/** Order and indexes the store relies on; needs no translation. */
+export const buildCatalog = (
+  description: CalculateByImageDescription,
+): { catalog: CatalogItem[]; preplacedCount: number } => {
+  const preplaced = rawItems(description.items)
+  const seen = new Set<string>()
+  const oneTime = Boolean(description.isChangable)
+  const pool = rawItems(description.selectableItems).filter((item) => {
+    if (oneTime) return true
+    const kind = sameKind(item)
+    if (seen.has(kind)) return false
+    seen.add(kind)
+    return true
+  })
+  const catalog = [...preplaced, ...pool].map((item, index) => ({
+    index,
+    id: item.id,
+    image: item.image,
+  }))
+  return { catalog, preplacedCount: preplaced.length }
+}
+
+/*
+ * A background made only of rectangles is the old zone's frame or fill
+ * (`<rect fill="lightcyan">`, a black 3px border) — the zone draws its own
+ * frame from tokens. A real picture (basket, meadow, scales) has paths.
+ */
+const PICTURE_TAGS =
+  /<(path|circle|ellipse|polygon|polyline|line|image|text)\b/i
+
+const zonePictureFrom = (background: string): string | null =>
+  background.includes('<svg') && PICTURE_TAGS.test(background)
+    ? background
+    : null
+
+/** Percent positions are relative to the picture; pixels are not kept. */
+const percent = (value: unknown): string | null =>
+  typeof value === 'string' &&
+  /^\d+(\.\d+)?%$/.test(value.trim()) &&
+  value.trim() !== '0%'
+    ? value.trim()
+    : null
+
+const DEFAULT_CAPACITY = 20
+
+const tablePart = (value: unknown): ComplexTablePart | null =>
+  value != null &&
+  typeof value === 'object' &&
+  Array.isArray((value as { rows?: unknown }).rows)
+    ? (value as ComplexTablePart)
+    : null
+
+export const parseCalculateByImage = (
+  description: CalculateByImageDescription,
+  translate: Translate,
+): CalculateByImageModel => {
+  const { catalog: raw, preplacedCount } = buildCatalog(description)
+  const button = description.button
+    ? toText(description.button.image, translate)
+    : ''
+  const catalog = raw.map((item, index) => ({
+    ...item,
+    html: toText(item.image, translate),
+    buttonHtml: index >= preplacedCount && button ? button : undefined,
+  }))
+  const preplaced = catalog.slice(0, preplacedCount)
+  const declared = Number(description.itemsMaxQuantity)
+  const capacity =
+    Number.isFinite(declared) && declared > 0
+      ? Math.max(declared, preplaced.length)
+      : DEFAULT_CAPACITY
+  const perRow = Number(description.maxItemsPerRow)
+
+  const layout: ZoneLayout =
+    description.vertical || description.isVertical
+      ? 'column'
+      : description.isNotLegoTask === false
+        ? 'lego'
+        : 'row'
+
+  return {
+    pool: catalog.slice(preplacedCount),
+    preplaced,
+    catalog,
+    capacity,
+    oneTime: Boolean(description.isChangable),
+    layout,
+    separator: Boolean(description.seperator),
+    perRow: Number.isFinite(perRow) && perRow > 0 ? perRow : 5,
+    zonePicture: zonePictureFrom(
+      toText(description.backgroundImage, translate),
+    ),
+    placement: {
+      top: description.isFromTop ? percent(description.topPosition) : null,
+      left: description.isFromLeft ? percent(description.leftPosition) : null,
+      right: description.isFromRight
+        ? percent(description.rightPosition)
+        : null,
+    },
+    textBefore: toText(description.textBefore, translate),
+    textAfter: toText(description.textAfter, translate),
+    imageBefore: toText(description.imageBefore, translate),
+    tableBefore: tablePart(description.tableBefore),
+    tableAfter: tablePart(description.tableAfter),
+  }
+}
+
+/*
+ * Store format: JSON array of catalog indexes in tap order, preplaced items
+ * included. `''` means nothing was touched yet, which keeps «Проверить»
+ * disabled.
+ */
+export const encodeZone = (items: CatalogItem[]): string =>
+  JSON.stringify(items.map((item) => item.index))
+
+export const decodeZone = (answer: string): number[] | null => {
+  if (!answer) return null
+  try {
+    const parsed: unknown = JSON.parse(answer)
+    return Array.isArray(parsed) && parsed.every(Number.isInteger)
+      ? (parsed as number[])
+      : null
+  } catch {
+    return null
+  }
+}
+
+/**
+ * Wire format: `{ list: [{ image: '', id }] }` with raw ids — strings, numbers
+ * or translation objects, repeats and tap order kept. The old screen sends
+ * the same: description items first, then the pupil's, `image` blanked
+ * (`TaskModalActions.js`, calculateByImage branch). The backend rejects every
+ * string form.
+ */
+export const toCalculateByImageApiAnswer = (
+  answer: string,
+  description: CalculateByImageDescription,
+): { list: { image: ''; id: ItemId }[] } | null => {
+  const indexes = decodeZone(answer)
+  if (!indexes) return null
+  const { catalog } = buildCatalog(description)
+  const ids = indexes.map((index) => catalog[index]?.id)
+  if (ids.some((id) => id === undefined)) return null
+  return { list: ids.map((id) => ({ image: '' as const, id: id })) }
+}
