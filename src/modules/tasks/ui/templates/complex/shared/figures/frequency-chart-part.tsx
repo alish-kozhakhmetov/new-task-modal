@@ -1,4 +1,4 @@
-import { useRef, type ReactNode } from 'react'
+import { useLayoutEffect, useRef, useState, type ReactNode } from 'react'
 
 import type { TaskModalDependencies } from '@/modules/task-modal/model/types/props'
 
@@ -41,7 +41,8 @@ interface ChartProps {
   yName: string
   /** Wide y labels (text ticks) push the y axis name further left. */
   yLabelChars: number
-  children: (font: number) => ReactNode
+  /** `font` — label size in viewBox units; `tickY` — centre of the x labels. */
+  children: (layout: { font: number; tickY: number }) => ReactNode
 }
 
 const Chart = ({
@@ -53,21 +54,33 @@ const Chart = ({
   children,
 }: ChartProps) => {
   const svgRef = useRef<SVGSVGElement>(null)
-  const font = LABEL_PX * useLabelScale(svgRef)
-  const yNameX = Math.max(14, X0 - 20 - yLabelChars * font * 0.55)
+  // The box grows with the labels, the scale follows the box: measure again
+  // with the box of the last render (the hook ignores changes under 2%).
+  const [measuredBox, setMeasuredBox] = useState<string>()
+  const font = LABEL_PX * useLabelScale(svgRef, measuredBox)
+  // Labels keep 18px while the chart shrinks to a phone (×2.3 on 375px), so
+  // every offset from the axes is counted in label sizes, not in fixed units:
+  // y name left of the widest y label, x name under the tick labels.
+  const tickY = Y0 + 8 + font / 2
+  const yNameX = X0 - 10 - yLabelChars * font * 0.6 - 8 - font / 2
+  const xNameY = tickY + font + 8
+  const left = yName ? Math.max(0, Math.ceil(font / 2 + 2 - yNameX)) : 0
+  const bottom = xName ? Math.max(0, Math.ceil(xNameY + font / 2 + 2 - H)) : 0
+  const box = `${-left} 0 ${W + left} ${H + bottom}`
+  useLayoutEffect(() => setMeasuredBox(box), [box])
   return (
     <svg
       ref={svgRef}
       className={styles.planeSvg}
       data-figure-type={figureType}
       data-testid={testId}
-      width={W}
-      height={H}
-      viewBox={`0 0 ${W} ${H}`}
+      width={W + left}
+      height={H + bottom}
+      viewBox={box}
       fontSize={font}
       overflow="visible"
     >
-      {children(font)}
+      {children({ font, tickY })}
       <path
         d={`M${X0},${TOP} L${X0},${Y0} L${X0 + PLOT_W},${Y0}`}
         stroke={INK}
@@ -78,7 +91,7 @@ const Chart = ({
       {xName ? (
         <text
           x={X0 + PLOT_W / 2}
-          y={Y0 + 48}
+          y={xNameY}
           textAnchor="middle"
           dominantBaseline="central"
           fill={INK}
@@ -156,7 +169,7 @@ export const FrequencyHistogramPart = ({ part, deps }: HistogramProps) => {
       yName={t(part.yName)}
       yLabelChars={yLabelChars}
     >
-      {(font) => {
+      {({ font, tickY }) => {
         const textTickFont = fitFont(xTexts, stepX * scaleX, font)
         return (
           <>
@@ -250,7 +263,7 @@ export const FrequencyHistogramPart = ({ part, deps }: HistogramProps) => {
                   <text
                     key={`lx-${i}`}
                     x={xOfTick(i)}
-                    y={Y0 + 18}
+                    y={tickY}
                     fontSize={size}
                     textAnchor="middle"
                     dominantBaseline="central"
@@ -311,7 +324,7 @@ export const FrequencyPolygonPart = ({ part, deps }: PolygonProps) => {
       yName={t(part.yName)}
       yLabelChars={yLabelChars}
     >
-      {() => (
+      {({ tickY }) => (
         <>
           <g
             data-plane-layer="grid"
@@ -362,7 +375,7 @@ export const FrequencyPolygonPart = ({ part, deps }: PolygonProps) => {
               <text
                 key={`lx-${i}`}
                 x={xOfTick(i)}
-                y={Y0 + 18}
+                y={tickY}
                 textAnchor="middle"
                 dominantBaseline="central"
               >
