@@ -6,7 +6,12 @@
 export const stripMathDelimiters = (value: string): string => {
   const trimmed = value.trim()
   const match = trimmed.match(/^\\\(([\s\S]*)\\\)$/)
-  return match ? match[1].trim() : trimmed
+  // An escaped space at the end, «\( \ \cdot \ \)», keeps its space: trimmed to
+  // «\ \cdot \» it re-wraps as «\(\ \cdot \\)», and MathJax reads «\\)» as a line
+  // break plus «)» — the pupil saw raw TeX (3 класс, 3_14_16_3; stream CX).
+  return match
+    ? match[1].replace(/^\s+/, '').replace(/(?<!\\)\s+$/, '')
+    : trimmed
 }
 
 /** True when the whole string is a single `\(...\)` island (outer wrap only). */

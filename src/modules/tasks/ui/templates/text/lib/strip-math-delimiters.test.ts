@@ -17,6 +17,14 @@ describe('stripMathDelimiters', () => {
     expect(stripMathDelimiters('\\(\\frac{2}{23}\\)')).toBe('\\frac{2}{23}')
   })
 
+  it('keeps an escaped space at the end of the island (3_14_16_3)', () => {
+    expect(stripMathDelimiters('\\( \\ \\cdot \\ \\)')).toBe('\\ \\cdot \\ ')
+    expect(`\\(${stripMathDelimiters('\\( \\ \\cdot \\ \\)')}\\)`).toBe(
+      '\\(\\ \\cdot \\ \\)',
+    )
+    expect(stripMathDelimiters('\\( 8000 \\)')).toBe('8000')
+  })
+
   it('keeps plain strings intact', () => {
     expect(stripMathDelimiters('8000')).toBe('8000')
     expect(stripMathDelimiters('24834 : 12417')).toBe('24834 : 12417')
