@@ -1,4 +1,4 @@
-import type { Task } from '@/types/api/task'
+import type { Task, Translation } from '@/types/api/task'
 
 export interface InlineInputConfig {
   key: string
@@ -6,10 +6,24 @@ export interface InlineInputConfig {
   after?: string
 }
 
+/**
+ * A field label as the host translates it: the whole Translation, not its
+ * `rus` field — a label written only in Kazakh (grade 3: «Ең кіші сан:») was
+ * dropped, and a Kazakh pupil saw the Russian one (stream CX, 26.11).
+ */
+const labelText = (
+  value: unknown,
+  translate: (text: string | Translation) => string,
+): string => {
+  if (typeof value === 'string') return translate(value)
+  if (value && typeof value === 'object') return translate(value as Translation)
+  return ''
+}
+
 /** answerInput с input1, input2, … для inline-задач (text / answerCell / columnOperation). */
 export const getInlineInputEntries = (
   task: Task,
-  translate: (text: string) => string,
+  translate: (text: string | Translation) => string,
 ): InlineInputConfig[] => {
   const answerInput = task.answerInput as Record<string, unknown> | undefined
   if (!answerInput) return []
@@ -18,26 +32,13 @@ export const getInlineInputEntries = (
     .filter(([key]) => key.startsWith('input'))
     .sort(([a], [b]) => a.localeCompare(b))
     .map(([key, raw]) => {
-      const config = raw as {
-        before?: string | { rus?: string }
-        after?: string | { rus?: string }
+      const config = raw as { before?: unknown; after?: unknown }
+
+      return {
+        key,
+        before: labelText(config.before, translate),
+        after: labelText(config.after, translate),
       }
-
-      const before =
-        typeof config.before === 'string'
-          ? translate(config.before)
-          : config.before?.rus
-            ? translate(config.before.rus)
-            : ''
-
-      const after =
-        typeof config.after === 'string'
-          ? translate(config.after)
-          : config.after?.rus
-            ? translate(config.after.rus)
-            : ''
-
-      return { key, before, after }
     })
 }
 
@@ -45,6 +46,6 @@ export const hasInlineAnswerInput = (task: Task): boolean => {
   const answerInput = task.answerInput as Record<string, unknown> | undefined
   return (
     Boolean(answerInput?.inline) ||
-    getInlineInputEntries(task, (s) => s).length > 0
+    getInlineInputEntries(task, () => '').length > 0
   )
 }
