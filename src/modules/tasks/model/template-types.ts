@@ -82,6 +82,21 @@ export const TemplateTypes = {
     Plain: 'comparison.plain',
   },
   Equation: {
+    Plain: 'equation.plain',
     Before: 'equation.before',
+    After: 'equation.after',
+    BeforeAfter: 'equation.beforeAfter',
+    Multi: {
+      Stack: {
+        N2Before: 'equation.multi.stack.n2.before',
+        N2BeforeAfter: 'equation.multi.stack.n2.beforeAfter',
+        N3Before: 'equation.multi.stack.n3.before',
+        N4Before: 'equation.multi.stack.n4.before',
+        N4BeforeAfter: 'equation.multi.stack.n4.beforeAfter',
+      },
+      Inline: {
+        N2BeforeAfter: 'equation.multi.inline.n2.beforeAfter',
+      },
+    },
   },
 }
