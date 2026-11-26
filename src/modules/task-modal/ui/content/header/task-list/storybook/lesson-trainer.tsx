@@ -38,8 +38,11 @@ interface Props {
   layout?: 'phone' | 'wide'
   /** Open on the list or on a task's review, as after a tap on «№N/M». */
   view?: Exclude<TaskListView, null>
-  /** Sees the answer of every check request, as the backend would. */
-  onCheck?: (answer: string) => void
+  /**
+   * Sees the answer of every check request, as the backend would: a string,
+   * or the list of letters of a test with several correct options.
+   */
+  onCheck?: (answer: string | string[]) => void
 }
 
 /**
@@ -94,7 +97,7 @@ export const LessonTrainer = ({
           checkAnswer: (
             ...args: Parameters<typeof base.deps.api.checkAnswer>
           ) => {
-            onCheck?.(String(args[0].answer ?? ''))
+            onCheck?.(args[0].answer ?? '')
             return base.deps.api.checkAnswer(...args)
           },
         },
