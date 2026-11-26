@@ -1,0 +1,10299 @@
+[
+ {
+  "id": "Task_1_5_2_16",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 0,
+       "x": -3
+      },
+      {
+       "y": 0,
+       "x": 3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_1_5_2_16",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-3,\"y\":0},{\"x\":3,\"y\":0}],\"type\":30,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_1_5_2_16",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 0,
+       "x": 3
+      },
+      {
+       "y": 0,
+       "x": -3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_1_5_2_16",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 0,
+       "x": -3
+      },
+      {
+       "y": 1,
+       "x": 3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_1_5_2_16",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 0,
+       "x": -2
+      },
+      {
+       "y": 0,
+       "x": 3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_2_18_6_7",
+  "label": "solved",
+  "wire": "(4;1)",
+  "verdict": true
+ },
+ {
+  "id": "Task_2_18_6_7",
+  "label": "last y+1",
+  "wire": "(4;2)",
+  "verdict": false
+ },
+ {
+  "id": "Task_2_18_6_7",
+  "label": "first x+1",
+  "wire": "(5;1)",
+  "verdict": false
+ },
+ {
+  "id": "Task_2_18_6_8",
+  "label": "solved",
+  "wire": "(2;-5)",
+  "verdict": true
+ },
+ {
+  "id": "Task_2_18_6_8",
+  "label": "last y+1",
+  "wire": "(2;-4)",
+  "verdict": false
+ },
+ {
+  "id": "Task_2_18_6_8",
+  "label": "first x+1",
+  "wire": "(3;-5)",
+  "verdict": false
+ },
+ {
+  "id": "Task_2_18_6_9",
+  "label": "solved",
+  "wire": "(2;-3)",
+  "verdict": true
+ },
+ {
+  "id": "Task_2_18_6_9",
+  "label": "last y+1",
+  "wire": "(2;-2)",
+  "verdict": false
+ },
+ {
+  "id": "Task_2_18_6_9",
+  "label": "first x+1",
+  "wire": "(3;-3)",
+  "verdict": false
+ },
+ {
+  "id": "Task_3_3_7_17",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 3,
+       "x": -1
+      },
+      {
+       "y": -2,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_3_3_7_17",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-1,\"y\":3},{\"x\":-2,\"y\":-2}],\"type\":30,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_3_3_7_17",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -2,
+       "x": -2
+      },
+      {
+       "y": 3,
+       "x": -1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_3_3_7_17",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 3,
+       "x": -1
+      },
+      {
+       "y": -1,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_3_3_7_17",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 3,
+       "x": 0
+      },
+      {
+       "y": -2,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_3_3_7_18",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -2,
+       "x": 2
+      },
+      {
+       "y": -4,
+       "x": -3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_3_3_7_18",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":2,\"y\":-2},{\"x\":-3,\"y\":-4}],\"type\":30,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_3_3_7_18",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -4,
+       "x": -3
+      },
+      {
+       "y": -2,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_3_3_7_18",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -2,
+       "x": 2
+      },
+      {
+       "y": -3,
+       "x": -3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_3_3_7_18",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -2,
+       "x": 3
+      },
+      {
+       "y": -4,
+       "x": -3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_3_8_5_27",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 5,
+       "x": 0
+      },
+      {
+       "y": -5,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_3_8_5_27",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":5},{\"x\":0,\"y\":-5}],\"type\":30,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_3_8_5_27",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -5,
+       "x": 0
+      },
+      {
+       "y": 5,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_3_8_5_27",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 5,
+       "x": 0
+      },
+      {
+       "y": -4,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_3_8_5_27",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 5,
+       "x": 1
+      },
+      {
+       "y": -5,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_3_3_8_19",
+  "label": "solved",
+  "wire": "(3;0)",
+  "verdict": true
+ },
+ {
+  "id": "Task_3_3_8_19",
+  "label": "last y+1",
+  "wire": "(3;1)",
+  "verdict": false
+ },
+ {
+  "id": "Task_3_3_8_19",
+  "label": "first x+1",
+  "wire": "(4;0)",
+  "verdict": false
+ },
+ {
+  "id": "Task_3_3_8_20",
+  "label": "solved",
+  "wire": "(0;3)",
+  "verdict": true
+ },
+ {
+  "id": "Task_3_3_8_20",
+  "label": "last y+1",
+  "wire": "(0;4)",
+  "verdict": false
+ },
+ {
+  "id": "Task_3_3_8_20",
+  "label": "first x+1",
+  "wire": "(1;3)",
+  "verdict": false
+ },
+ {
+  "id": "Task_3_3_8_21",
+  "label": "solved",
+  "wire": "(-2;3)",
+  "verdict": true
+ },
+ {
+  "id": "Task_3_3_8_21",
+  "label": "last y+1",
+  "wire": "(-2;4)",
+  "verdict": false
+ },
+ {
+  "id": "Task_3_3_8_21",
+  "label": "first x+1",
+  "wire": "(-1;3)",
+  "verdict": false
+ },
+ {
+  "id": "Task_4_13_5_2",
+  "label": "solved",
+  "wire": "(1;0)",
+  "verdict": true
+ },
+ {
+  "id": "Task_4_13_5_2",
+  "label": "last y+1",
+  "wire": "(1;1)",
+  "verdict": false
+ },
+ {
+  "id": "Task_4_13_5_2",
+  "label": "first x+1",
+  "wire": "(2;0)",
+  "verdict": false
+ },
+ {
+  "id": "Task_4_13_5_7",
+  "label": "solved",
+  "wire": "(-2;0)",
+  "verdict": true
+ },
+ {
+  "id": "Task_4_13_5_7",
+  "label": "last y+1",
+  "wire": "(-2;1)",
+  "verdict": false
+ },
+ {
+  "id": "Task_4_13_5_7",
+  "label": "first x+1",
+  "wire": "(-1;0)",
+  "verdict": false
+ },
+ {
+  "id": "Task_5_3_6_5",
+  "label": "solved",
+  "wire": "(-3;1)",
+  "verdict": true
+ },
+ {
+  "id": "Task_5_3_6_5",
+  "label": "last y+1",
+  "wire": "(-3;2)",
+  "verdict": false
+ },
+ {
+  "id": "Task_5_3_6_5",
+  "label": "first x+1",
+  "wire": "(-2;1)",
+  "verdict": true
+ },
+ {
+  "id": "Task_5_3_6_6",
+  "label": "solved",
+  "wire": "(-2;0.5)",
+  "verdict": true
+ },
+ {
+  "id": "Task_5_3_6_6",
+  "label": "last y+1",
+  "wire": "(-2;1.5)",
+  "verdict": false
+ },
+ {
+  "id": "Task_5_3_6_6",
+  "label": "first x+1",
+  "wire": "(-1;0.5)",
+  "verdict": true
+ },
+ {
+  "id": "Task_5_3_6_7",
+  "label": "solved",
+  "wire": "(-6;0.5)",
+  "verdict": true
+ },
+ {
+  "id": "Task_5_3_6_7",
+  "label": "last y+1",
+  "wire": "(-6;1.5)",
+  "verdict": false
+ },
+ {
+  "id": "Task_5_3_6_7",
+  "label": "first x+1",
+  "wire": "(-5;0.5)",
+  "verdict": true
+ },
+ {
+  "id": "Task_5_8_1_4",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 60,
+     "points": [
+      {
+       "y": -5,
+       "x": -5
+      },
+      {
+       "y": -5,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_5_8_1_4",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-5,\"y\":-5},{\"x\":-2,\"y\":-5}],\"type\":60,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_5_8_1_4",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 60,
+     "points": [
+      {
+       "y": -5,
+       "x": -2
+      },
+      {
+       "y": -5,
+       "x": -5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_5_8_1_4",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 60,
+     "points": [
+      {
+       "y": -5,
+       "x": -5
+      },
+      {
+       "y": -4,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_5_8_1_4",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 60,
+     "points": [
+      {
+       "y": -5,
+       "x": -4
+      },
+      {
+       "y": -5,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_5_3_4_8",
+  "label": "solved",
+  "wire": "(0;0.5)",
+  "verdict": true
+ },
+ {
+  "id": "Task_5_3_4_8",
+  "label": "last y+1",
+  "wire": "(0;1.5)",
+  "verdict": false
+ },
+ {
+  "id": "Task_5_3_4_8",
+  "label": "first x+1",
+  "wire": "(1;0.5)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_9_5_1",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 1,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_9_5_1",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":1,\"y\":1}],\"type\":20,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_9_5_1",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 1,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_9_5_1",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 2,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_9_5_1",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 1,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_9_5_2",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 2,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_9_5_2",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":1,\"y\":2}],\"type\":20,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_9_5_2",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 2,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_9_5_2",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 3,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_9_5_2",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 2,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_9_5_3",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": -1,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_9_5_3",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":1,\"y\":-1}],\"type\":20,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_9_5_3",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": -1,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_9_5_3",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 0,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_9_5_3",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": -1,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_9_5_4",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": -5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_9_5_4",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":1,\"y\":-5}],\"type\":20,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_9_5_4",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": -5,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_9_5_4",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": -4,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_9_5_4",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": -5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_9_5_5",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 1,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_9_5_5",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":2,\"y\":1}],\"type\":20,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_9_5_5",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 1,
+       "x": 2
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_9_5_5",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 2,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_9_5_5",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 1,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_11",
+  "label": "solved",
+  "wire": "(3;3)",
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_11",
+  "label": "last y+1",
+  "wire": "(3;4)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_11",
+  "label": "first x+1",
+  "wire": "(4;3)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_18_1",
+  "label": "solved",
+  "wire": "(1;-5)",
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_18_1",
+  "label": "last y+1",
+  "wire": "(1;-4)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_18_1",
+  "label": "first x+1",
+  "wire": "(2;-5)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_18_2",
+  "label": "solved",
+  "wire": "(-1;5)",
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_18_2",
+  "label": "last y+1",
+  "wire": "(-1;6)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_18_2",
+  "label": "first x+1",
+  "wire": "(0;5)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_18_3",
+  "label": "solved",
+  "wire": "(-1;-5)",
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_18_3",
+  "label": "last y+1",
+  "wire": "(-1;-4)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_18_3",
+  "label": "first x+1",
+  "wire": "(0;-5)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_18_4",
+  "label": "solved",
+  "wire": "(1;5)",
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_18_4",
+  "label": "last y+1",
+  "wire": "(1;6)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_18_4",
+  "label": "first x+1",
+  "wire": "(2;5)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_20_1",
+  "label": "solved",
+  "wire": "(3;-1)",
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_20_1",
+  "label": "last y+1",
+  "wire": "(3;0)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_20_1",
+  "label": "first x+1",
+  "wire": "(4;-1)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_20_2",
+  "label": "solved",
+  "wire": "(-1;-1)",
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_20_2",
+  "label": "last y+1",
+  "wire": "(-1;0)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_20_2",
+  "label": "first x+1",
+  "wire": "(0;-1)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_20_4",
+  "label": "solved",
+  "wire": "(-1;-1)",
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_20_4",
+  "label": "last y+1",
+  "wire": "(-1;0)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_20_4",
+  "label": "first x+1",
+  "wire": "(0;-1)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_20_5",
+  "label": "solved",
+  "wire": "(3;-3)",
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_20_5",
+  "label": "last y+1",
+  "wire": "(3;-2)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_20_5",
+  "label": "first x+1",
+  "wire": "(4;-3)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_22",
+  "label": "solved",
+  "wire": "(-1;-5)",
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_22",
+  "label": "last y+1",
+  "wire": "(-1;-4)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_22",
+  "label": "first x+1",
+  "wire": "(0;-5)",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_14_1",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -3,
+       "x": 3
+      },
+      {
+       "y": -2,
+       "x": -3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_14_1",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":3,\"y\":-3},{\"x\":-3,\"y\":-2}],\"type\":30,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_14_1",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -2,
+       "x": -3
+      },
+      {
+       "y": -3,
+       "x": 3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_14_1",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -3,
+       "x": 3
+      },
+      {
+       "y": -1,
+       "x": -3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_14_1",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -3,
+       "x": 4
+      },
+      {
+       "y": -2,
+       "x": -3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_19_1",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 5,
+       "x": -1
+      },
+      {
+       "y": 3,
+       "x": -5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_19_1",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-1,\"y\":5},{\"x\":-5,\"y\":3}],\"type\":30,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_19_1",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 3,
+       "x": -5
+      },
+      {
+       "y": 5,
+       "x": -1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_19_1",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 5,
+       "x": -1
+      },
+      {
+       "y": 4,
+       "x": -5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_19_1",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 5,
+       "x": 0
+      },
+      {
+       "y": 3,
+       "x": -5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_19_2",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -5,
+       "x": 1
+      },
+      {
+       "y": -3,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_19_2",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":1,\"y\":-5},{\"x\":5,\"y\":-3}],\"type\":30,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_19_2",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -3,
+       "x": 5
+      },
+      {
+       "y": -5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_19_2",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -5,
+       "x": 1
+      },
+      {
+       "y": -2,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_19_2",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -5,
+       "x": 2
+      },
+      {
+       "y": -3,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_20_3",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 2,
+       "x": 3
+      },
+      {
+       "y": 0,
+       "x": 3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_20_3",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":3,\"y\":2},{\"x\":3,\"y\":0}],\"type\":30,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_20_3",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 0,
+       "x": 3
+      },
+      {
+       "y": 2,
+       "x": 3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_20_3",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 2,
+       "x": 3
+      },
+      {
+       "y": 1,
+       "x": 3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_20_3",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 2,
+       "x": 4
+      },
+      {
+       "y": 0,
+       "x": 3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_23",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -1,
+       "x": -1
+      },
+      {
+       "y": -3,
+       "x": -5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_23",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-1,\"y\":-1},{\"x\":-5,\"y\":-3}],\"type\":30,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_23",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -3,
+       "x": -5
+      },
+      {
+       "y": -1,
+       "x": -1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_23",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -1,
+       "x": -1
+      },
+      {
+       "y": -2,
+       "x": -5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_23",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -1,
+       "x": 0
+      },
+      {
+       "y": -3,
+       "x": -5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_14_2",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": -5,
+       "x": 4
+      },
+      {
+       "y": 4,
+       "x": -3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_14_2",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":4,\"y\":-5},{\"x\":-3,\"y\":4}],\"type\":20,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_14_2",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 4,
+       "x": -3
+      },
+      {
+       "y": -5,
+       "x": 4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_6_14_2",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": -5,
+       "x": 4
+      },
+      {
+       "y": 5,
+       "x": -3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_6_14_2",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": -5,
+       "x": 5
+      },
+      {
+       "y": 4,
+       "x": -3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_7_10",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 1,
+       "x": 1
+      },
+      {
+       "y": 3,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_6_7_10",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":1,\"y\":1},{\"x\":5,\"y\":3}],\"type\":80,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_6_7_10",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 3,
+       "x": 5
+      },
+      {
+       "y": 1,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_7_10",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 1,
+       "x": 1
+      },
+      {
+       "y": 4,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_6_7_10",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 1,
+       "x": 2
+      },
+      {
+       "y": 3,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_7_2_5_1",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 5,
+       "x": 1
+      },
+      {
+       "y": -5,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_7_2_5_1",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":1,\"y\":5},{\"x\":0,\"y\":-5}],\"type\":30,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_7_2_5_1",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -5,
+       "x": 0
+      },
+      {
+       "y": 5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_7_2_5_1",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 5,
+       "x": 1
+      },
+      {
+       "y": -4,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_7_2_5_1",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 5,
+       "x": 2
+      },
+      {
+       "y": -5,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_7_2_5_2",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -3,
+       "x": 5
+      },
+      {
+       "y": 0,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_7_2_5_2",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":5,\"y\":-3},{\"x\":-2,\"y\":0}],\"type\":30,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_7_2_5_2",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 0,
+       "x": -2
+      },
+      {
+       "y": -3,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_7_2_5_2",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -3,
+       "x": 5
+      },
+      {
+       "y": 1,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_7_2_5_2",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -3,
+       "x": 6
+      },
+      {
+       "y": 0,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_7_2_5_3",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 5,
+       "x": 1
+      },
+      {
+       "y": -5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_7_2_5_3",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":1,\"y\":5},{\"x\":1,\"y\":-5}],\"type\":30,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_7_2_5_3",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -5,
+       "x": 1
+      },
+      {
+       "y": 5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_7_2_5_3",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 5,
+       "x": 1
+      },
+      {
+       "y": -4,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_7_2_5_3",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 5,
+       "x": 2
+      },
+      {
+       "y": -5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_7_2_5_4",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 5,
+       "x": -2
+      },
+      {
+       "y": -5,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_7_2_5_4",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-2,\"y\":5},{\"x\":-2,\"y\":-5}],\"type\":30,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_7_2_5_4",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -5,
+       "x": -2
+      },
+      {
+       "y": 5,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_7_2_5_4",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 5,
+       "x": -2
+      },
+      {
+       "y": -4,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_7_2_5_4",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 5,
+       "x": -1
+      },
+      {
+       "y": -5,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_7_2_5_5",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 5,
+       "x": -4
+      },
+      {
+       "y": -5,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_7_2_5_5",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-4,\"y\":5},{\"x\":2,\"y\":-5}],\"type\":30,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_7_2_5_5",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -5,
+       "x": 2
+      },
+      {
+       "y": 5,
+       "x": -4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_7_2_5_5",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 5,
+       "x": -4
+      },
+      {
+       "y": -4,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_7_2_5_5",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 5,
+       "x": -3
+      },
+      {
+       "y": -5,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_7_1",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 1,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_7_1",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":1,\"y\":1}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_7_1",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 1,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_7_1",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 2,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_7_1",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 1,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_7_2",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_7_2",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":1,\"y\":5}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_7_2",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 5,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_7_2",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 6,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_7_2",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_7_3",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 2,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_7_3",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":2,\"y\":2}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_7_3",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 2,
+       "x": 2
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_7_3",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 3,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_7_3",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 2,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_7_4",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": -1,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_7_4",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":1,\"y\":-1}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_7_4",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -1,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_7_4",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 0,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_7_4",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": -1,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_7_5",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": -2,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_7_5",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":2,\"y\":-2}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_7_5",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -2,
+       "x": 2
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_7_5",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": -1,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_7_5",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": -2,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_7_6",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": -5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_7_6",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":1,\"y\":-5}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_7_6",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -5,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_7_6",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": -4,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_7_6",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": -5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_15_1",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 1,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_15_1",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":1,\"y\":1}],\"type\":130,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_15_1",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": 1,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_15_1",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 2,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_15_1",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 1,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_15_2",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": -1,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_15_2",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":1,\"y\":-1}],\"type\":130,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_15_2",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": -1,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_15_2",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 0,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_15_2",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": -1,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_15_3",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_15_3",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":1,\"y\":5}],\"type\":130,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_15_3",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": 5,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_15_3",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 6,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_15_3",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_15_4",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": -5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_15_4",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":1,\"y\":-5}],\"type\":130,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_15_4",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": -5,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_15_4",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": -4,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_15_4",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": -5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_15_5",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 4,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_15_5",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":2,\"y\":4}],\"type\":130,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_15_5",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": 4,
+       "x": 2
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_15_5",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 5,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": "raise: invalid range in character class at position 27"
+ },
+ {
+  "id": "Task_7_3_15_5",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 130,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 4,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_38",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 4,
+       "x": 0
+      },
+      {
+       "y": 5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_7_3_38",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":4},{\"x\":1,\"y\":5}],\"type\":20,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_38",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 5,
+       "x": 1
+      },
+      {
+       "y": 4,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_7_3_38",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 4,
+       "x": 0
+      },
+      {
+       "y": 6,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_38",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 4,
+       "x": 1
+      },
+      {
+       "y": 5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_3_11",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 2
+      },
+      {
+       "y": -4,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_7_3_3_11",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":2,\"y\":0},{\"x\":0,\"y\":-4}],\"type\":20,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_3_11",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": -4,
+       "x": 0
+      },
+      {
+       "y": 0,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_7_3_3_11",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 2
+      },
+      {
+       "y": -3,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_3_11",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 3
+      },
+      {
+       "y": -4,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_3_12",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 2
+      },
+      {
+       "y": 4,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_7_3_3_12",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":2,\"y\":0},{\"x\":0,\"y\":4}],\"type\":20,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_3_12",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 4,
+       "x": 0
+      },
+      {
+       "y": 0,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_7_3_3_12",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 2
+      },
+      {
+       "y": 5,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_3_12",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 0,
+       "x": 3
+      },
+      {
+       "y": 4,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_53_1",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 2,
+       "x": 0
+      },
+      {
+       "y": 1,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_7_3_53_1",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":2},{\"x\":-2,\"y\":1}],\"type\":20,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_53_1",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 1,
+       "x": -2
+      },
+      {
+       "y": 2,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_7_3_53_1",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 2,
+       "x": 0
+      },
+      {
+       "y": 2,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_53_1",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 2,
+       "x": 1
+      },
+      {
+       "y": 1,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_53_2",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": -4,
+       "x": 0
+      },
+      {
+       "y": 2,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_7_3_53_2",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":-4},{\"x\":1,\"y\":2}],\"type\":20,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_53_2",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 2,
+       "x": 1
+      },
+      {
+       "y": -4,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_7_3_53_2",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": -4,
+       "x": 0
+      },
+      {
+       "y": 3,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_53_2",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": -4,
+       "x": 1
+      },
+      {
+       "y": 2,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_21_1",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_7_3_21_1",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":1,\"y\":5}],\"type\":140,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_21_1",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 5,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_21_1",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 6,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_21_1",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_21_2",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_7_3_21_2",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":1,\"y\":5}],\"type\":140,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_21_2",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 5,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_21_2",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 6,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_21_2",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_21_3",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 1,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_7_3_21_3",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":2,\"y\":1}],\"type\":140,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_21_3",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 1,
+       "x": 2
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_21_3",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 2,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_21_3",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 1,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_27_1",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 4,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_7_3_27_1",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":1,\"y\":4}],\"type\":150,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_27_1",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 4,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_27_1",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 5,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_27_1",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 4,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_27_2",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": -4,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_7_3_27_2",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":1,\"y\":-4}],\"type\":150,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_27_2",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": -4,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_27_2",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": -3,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_27_2",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": -4,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_39",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 3,
+       "x": 0
+      },
+      {
+       "y": 3,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_7_3_39",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":3},{\"x\":1,\"y\":3}],\"type\":20,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_39",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 3,
+       "x": 1
+      },
+      {
+       "y": 3,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_7_3_39",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 3,
+       "x": 0
+      },
+      {
+       "y": 4,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_7_3_39",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 20,
+     "points": [
+      {
+       "y": 3,
+       "x": 1
+      },
+      {
+       "y": 3,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_12_1",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -4,
+       "x": 1
+      },
+      {
+       "y": -3,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_12_1",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":1,\"y\":-4},{\"x\":2,\"y\":-3}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_12_1",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -3,
+       "x": 2
+      },
+      {
+       "y": -4,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_12_1",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -4,
+       "x": 1
+      },
+      {
+       "y": -2,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_12_1",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -4,
+       "x": 2
+      },
+      {
+       "y": -3,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_12_2",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 4,
+       "x": -1
+      },
+      {
+       "y": 3,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_12_2",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-1,\"y\":4},{\"x\":0,\"y\":3}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_12_2",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 3,
+       "x": 0
+      },
+      {
+       "y": 4,
+       "x": -1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_12_2",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 4,
+       "x": -1
+      },
+      {
+       "y": 4,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_12_2",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 4,
+       "x": 0
+      },
+      {
+       "y": 3,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_12_3",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": -2
+      },
+      {
+       "y": 1,
+       "x": -1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_12_3",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-2,\"y\":0},{\"x\":-1,\"y\":1}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_12_3",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 1,
+       "x": -1
+      },
+      {
+       "y": 0,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_12_3",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": -2
+      },
+      {
+       "y": 2,
+       "x": -1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_12_3",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": -1
+      },
+      {
+       "y": 1,
+       "x": -1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_12_4",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -4,
+       "x": -1
+      },
+      {
+       "y": -5,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_12_4",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-1,\"y\":-4},{\"x\":0,\"y\":-5}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_12_4",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -5,
+       "x": 0
+      },
+      {
+       "y": -4,
+       "x": -1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_12_4",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -4,
+       "x": -1
+      },
+      {
+       "y": -4,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_12_4",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -4,
+       "x": 0
+      },
+      {
+       "y": -5,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_1",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 5
+      },
+      {
+       "y": 1,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_6_1",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":5,\"y\":0},{\"x\":6,\"y\":1}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_1",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 1,
+       "x": 6
+      },
+      {
+       "y": 0,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_1",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 5
+      },
+      {
+       "y": 2,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_1",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 6
+      },
+      {
+       "y": 1,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_10",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 3,
+       "x": -5
+      },
+      {
+       "y": 2,
+       "x": -4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_6_10",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-5,\"y\":3},{\"x\":-4,\"y\":2}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_10",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 2,
+       "x": -4
+      },
+      {
+       "y": 3,
+       "x": -5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_10",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 3,
+       "x": -5
+      },
+      {
+       "y": 3,
+       "x": -4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_10",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 3,
+       "x": -4
+      },
+      {
+       "y": 2,
+       "x": -4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_11",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -3,
+       "x": -5
+      },
+      {
+       "y": -2,
+       "x": -4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_6_11",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-5,\"y\":-3},{\"x\":-4,\"y\":-2}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_11",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -2,
+       "x": -4
+      },
+      {
+       "y": -3,
+       "x": -5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_11",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -3,
+       "x": -5
+      },
+      {
+       "y": -1,
+       "x": -4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_11",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -3,
+       "x": -4
+      },
+      {
+       "y": -2,
+       "x": -4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_12",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 3,
+       "x": 5
+      },
+      {
+       "y": 2,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_6_12",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":5,\"y\":3},{\"x\":6,\"y\":2}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_12",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 2,
+       "x": 6
+      },
+      {
+       "y": 3,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_12",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 3,
+       "x": 5
+      },
+      {
+       "y": 3,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_12",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 3,
+       "x": 6
+      },
+      {
+       "y": 2,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_19",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 5
+      },
+      {
+       "y": 2,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_6_19",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":5,\"y\":0},{\"x\":6,\"y\":2}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_19",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 2,
+       "x": 6
+      },
+      {
+       "y": 0,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_19",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 5
+      },
+      {
+       "y": 3,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_19",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 6
+      },
+      {
+       "y": 2,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_2",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": -5
+      },
+      {
+       "y": 1,
+       "x": -4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_6_2",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-5,\"y\":0},{\"x\":-4,\"y\":1}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_2",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 1,
+       "x": -4
+      },
+      {
+       "y": 0,
+       "x": -5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_2",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": -5
+      },
+      {
+       "y": 2,
+       "x": -4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_2",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": -4
+      },
+      {
+       "y": 1,
+       "x": -4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_20",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 4,
+       "x": 5
+      },
+      {
+       "y": 2,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_6_20",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":5,\"y\":4},{\"x\":6,\"y\":2}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_20",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 2,
+       "x": 6
+      },
+      {
+       "y": 4,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_20",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 4,
+       "x": 5
+      },
+      {
+       "y": 3,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_20",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 4,
+       "x": 6
+      },
+      {
+       "y": 2,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_21",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -4,
+       "x": 0
+      },
+      {
+       "y": -2,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_6_21",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":-4},{\"x\":2,\"y\":-2}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_21",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -2,
+       "x": 2
+      },
+      {
+       "y": -4,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_21",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -4,
+       "x": 0
+      },
+      {
+       "y": -1,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_21",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -4,
+       "x": 1
+      },
+      {
+       "y": -2,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_22",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 4,
+       "x": 5
+      },
+      {
+       "y": 2,
+       "x": 7
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_6_22",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":5,\"y\":4},{\"x\":7,\"y\":2}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_22",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 2,
+       "x": 7
+      },
+      {
+       "y": 4,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_22",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 4,
+       "x": 5
+      },
+      {
+       "y": 3,
+       "x": 7
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_22",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 4,
+       "x": 6
+      },
+      {
+       "y": 2,
+       "x": 7
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_3",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -4,
+       "x": 0
+      },
+      {
+       "y": -3,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_6_3",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":-4},{\"x\":1,\"y\":-3}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_3",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -3,
+       "x": 1
+      },
+      {
+       "y": -4,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_3",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -4,
+       "x": 0
+      },
+      {
+       "y": -2,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_3",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -4,
+       "x": 1
+      },
+      {
+       "y": -3,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_4",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 5
+      },
+      {
+       "y": -1,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_6_4",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":5,\"y\":0},{\"x\":6,\"y\":-1}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_4",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -1,
+       "x": 6
+      },
+      {
+       "y": 0,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_4",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 5
+      },
+      {
+       "y": 0,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_4",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": 6
+      },
+      {
+       "y": -1,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_5",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 4,
+       "x": 0
+      },
+      {
+       "y": 3,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_6_5",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":4},{\"x\":1,\"y\":3}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_5",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 3,
+       "x": 1
+      },
+      {
+       "y": 4,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_5",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 4,
+       "x": 0
+      },
+      {
+       "y": 4,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_5",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 4,
+       "x": 1
+      },
+      {
+       "y": 3,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_6",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": -5
+      },
+      {
+       "y": -1,
+       "x": -4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_6_6",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-5,\"y\":0},{\"x\":-4,\"y\":-1}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_6",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -1,
+       "x": -4
+      },
+      {
+       "y": 0,
+       "x": -5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_6",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": -5
+      },
+      {
+       "y": 0,
+       "x": -4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_6",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 0,
+       "x": -4
+      },
+      {
+       "y": -1,
+       "x": -4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_7",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 2,
+       "x": 0
+      },
+      {
+       "y": 3,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_6_7",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":2},{\"x\":1,\"y\":3}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_7",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 3,
+       "x": 1
+      },
+      {
+       "y": 2,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_7",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 2,
+       "x": 0
+      },
+      {
+       "y": 4,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_7",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": 2,
+       "x": 1
+      },
+      {
+       "y": 3,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_8",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -3,
+       "x": -5
+      },
+      {
+       "y": -2,
+       "x": -4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_6_8",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-5,\"y\":-3},{\"x\":-4,\"y\":-2}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_8",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -2,
+       "x": -4
+      },
+      {
+       "y": -3,
+       "x": -5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_8",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -3,
+       "x": -5
+      },
+      {
+       "y": -1,
+       "x": -4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_8",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -3,
+       "x": -4
+      },
+      {
+       "y": -2,
+       "x": -4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_9",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -3,
+       "x": 5
+      },
+      {
+       "y": -2,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_6_9",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":5,\"y\":-3},{\"x\":6,\"y\":-2}],\"type\":90,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_9",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -2,
+       "x": 6
+      },
+      {
+       "y": -3,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_9",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -3,
+       "x": 5
+      },
+      {
+       "y": -1,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_6_9",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 90,
+     "points": [
+      {
+       "y": -3,
+       "x": 6
+      },
+      {
+       "y": -2,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_1",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 0,
+       "x": -1
+      },
+      {
+       "y": 1,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_14_1",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-1,\"y\":0},{\"x\":0,\"y\":1}],\"type\":150,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_1",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 1,
+       "x": 0
+      },
+      {
+       "y": 0,
+       "x": -1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_1",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 0,
+       "x": -1
+      },
+      {
+       "y": 2,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_1",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 1,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_2",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 1,
+       "x": 0
+      },
+      {
+       "y": 3,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_14_2",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":1},{\"x\":1,\"y\":3}],\"type\":150,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_2",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 3,
+       "x": 1
+      },
+      {
+       "y": 1,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_2",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 1,
+       "x": 0
+      },
+      {
+       "y": 4,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_2",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 1,
+       "x": 1
+      },
+      {
+       "y": 3,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_3",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 2,
+       "x": 2
+      },
+      {
+       "y": 3,
+       "x": 3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_14_3",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":2,\"y\":2},{\"x\":3,\"y\":3}],\"type\":150,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_3",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 3,
+       "x": 3
+      },
+      {
+       "y": 2,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_3",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 2,
+       "x": 2
+      },
+      {
+       "y": 4,
+       "x": 3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_3",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 2,
+       "x": 3
+      },
+      {
+       "y": 3,
+       "x": 3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_4",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 2,
+       "x": 2
+      },
+      {
+       "y": 4,
+       "x": 3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_14_4",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":2,\"y\":2},{\"x\":3,\"y\":4}],\"type\":150,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_4",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 4,
+       "x": 3
+      },
+      {
+       "y": 2,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_4",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 2,
+       "x": 2
+      },
+      {
+       "y": 5,
+       "x": 3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_4",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 2,
+       "x": 3
+      },
+      {
+       "y": 4,
+       "x": 3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_5",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": -2,
+       "x": -1
+      },
+      {
+       "y": -4,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_14_5",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-1,\"y\":-2},{\"x\":0,\"y\":-4}],\"type\":150,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_5",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": -4,
+       "x": 0
+      },
+      {
+       "y": -2,
+       "x": -1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_5",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": -2,
+       "x": -1
+      },
+      {
+       "y": -3,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_5",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": -2,
+       "x": 0
+      },
+      {
+       "y": -4,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_6",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 1,
+       "x": -1
+      },
+      {
+       "y": 3,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_14_6",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-1,\"y\":1},{\"x\":0,\"y\":3}],\"type\":150,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_6",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 3,
+       "x": 0
+      },
+      {
+       "y": 1,
+       "x": -1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_6",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 1,
+       "x": -1
+      },
+      {
+       "y": 4,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_14_6",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 150,
+     "points": [
+      {
+       "y": 1,
+       "x": 0
+      },
+      {
+       "y": 3,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_1",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": -3,
+       "x": 0
+      },
+      {
+       "y": -2,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_15_1",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":-3},{\"x\":1,\"y\":-2}],\"type\":140,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_1",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": -2,
+       "x": 1
+      },
+      {
+       "y": -3,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_1",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": -3,
+       "x": 0
+      },
+      {
+       "y": -1,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_1",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": -3,
+       "x": 1
+      },
+      {
+       "y": -2,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_2",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 3,
+       "x": 0
+      },
+      {
+       "y": 2,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_15_2",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":3},{\"x\":1,\"y\":2}],\"type\":140,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_2",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 2,
+       "x": 1
+      },
+      {
+       "y": 3,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_2",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 3,
+       "x": 0
+      },
+      {
+       "y": 3,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_2",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 3,
+       "x": 1
+      },
+      {
+       "y": 2,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_3",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 1,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_15_3",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":1,\"y\":0},{\"x\":2,\"y\":1}],\"type\":140,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_3",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 1,
+       "x": 2
+      },
+      {
+       "y": 0,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_3",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 2,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_3",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 0,
+       "x": 2
+      },
+      {
+       "y": 1,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_4",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": -1,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_15_4",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":1,\"y\":0},{\"x\":2,\"y\":-1}],\"type\":140,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_4",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": -1,
+       "x": 2
+      },
+      {
+       "y": 0,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_4",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_4",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 0,
+       "x": 2
+      },
+      {
+       "y": -1,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_5",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 2,
+       "x": 1
+      },
+      {
+       "y": 3,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_8_3_15_5",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":1,\"y\":2},{\"x\":2,\"y\":3}],\"type\":140,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_5",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 3,
+       "x": 2
+      },
+      {
+       "y": 2,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_5",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 2,
+       "x": 1
+      },
+      {
+       "y": 4,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_8_3_15_5",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 140,
+     "points": [
+      {
+       "y": 2,
+       "x": 2
+      },
+      {
+       "y": 3,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_8_4_9",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 60,
+     "points": [
+      {
+       "y": 2,
+       "x": 1
+      },
+      {
+       "y": 2,
+       "x": 4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_8_4_9",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":1,\"y\":2},{\"x\":4,\"y\":2}],\"type\":60,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_8_4_9",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 60,
+     "points": [
+      {
+       "y": 2,
+       "x": 4
+      },
+      {
+       "y": 2,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_8_4_9",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 60,
+     "points": [
+      {
+       "y": 2,
+       "x": 1
+      },
+      {
+       "y": 3,
+       "x": 4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_8_4_9",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 60,
+     "points": [
+      {
+       "y": 2,
+       "x": 2
+      },
+      {
+       "y": 2,
+       "x": 4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_10",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 5,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_9_1_10",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":2,\"y\":5}],\"type\":80,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_10",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 5,
+       "x": 2
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_10",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 6,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_10",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 5,
+       "x": 2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_12",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": -3,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_9_1_12",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":1,\"y\":-3}],\"type\":80,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_12",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": -3,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_12",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": -2,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_12",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": -3,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_15_1",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 1,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_9_1_15_1",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":5,\"y\":1}],\"type\":80,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_15_1",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 1,
+       "x": 5
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_15_1",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 2,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_15_1",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 1,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_15_2",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 1,
+       "x": -3
+      },
+      {
+       "y": 5,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_9_1_15_2",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-3,\"y\":1},{\"x\":-2,\"y\":5}],\"type\":80,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_15_2",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 5,
+       "x": -2
+      },
+      {
+       "y": 1,
+       "x": -3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_15_2",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 1,
+       "x": -3
+      },
+      {
+       "y": 6,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_15_2",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 1,
+       "x": -2
+      },
+      {
+       "y": 5,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_18",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": -5,
+       "x": -5
+      },
+      {
+       "y": -5,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_9_1_18",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-5,\"y\":-5},{\"x\":5,\"y\":-5}],\"type\":80,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_18",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": -5,
+       "x": 5
+      },
+      {
+       "y": -5,
+       "x": -5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_18",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": -5,
+       "x": -5
+      },
+      {
+       "y": -4,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_18",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": -5,
+       "x": -4
+      },
+      {
+       "y": -5,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_31",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 2,
+       "x": 3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_9_1_31",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":3,\"y\":2}],\"type\":80,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_31",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 2,
+       "x": 3
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_31",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 3,
+       "x": 3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_1_31",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 2,
+       "x": 3
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_1",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": -5,
+       "x": -4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_9_2_1",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":-4,\"y\":-5}],\"type\":80,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_1",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": -5,
+       "x": -4
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_1",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": -4,
+       "x": -4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_1",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": -5,
+       "x": -4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_2",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 4,
+       "x": -2
+      },
+      {
+       "y": 4,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_9_2_2",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-2,\"y\":4},{\"x\":0,\"y\":4}],\"type\":80,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_2",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 4,
+       "x": 0
+      },
+      {
+       "y": 4,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_2",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 4,
+       "x": -2
+      },
+      {
+       "y": 5,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_2",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 80,
+     "points": [
+      {
+       "y": 4,
+       "x": -1
+      },
+      {
+       "y": 4,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_4",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -5,
+       "x": -5
+      },
+      {
+       "y": -1,
+       "x": -1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_9_2_4",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":-5,\"y\":-5},{\"x\":-1,\"y\":-1}],\"type\":30,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_4",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -1,
+       "x": -1
+      },
+      {
+       "y": -5,
+       "x": -5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_9_2_4",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -5,
+       "x": -5
+      },
+      {
+       "y": 0,
+       "x": -1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_4",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -5,
+       "x": -4
+      },
+      {
+       "y": -1,
+       "x": -1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_7",
+  "label": "solved",
+  "wire": "(0;5)",
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_9_2_7",
+  "label": "last y+1",
+  "wire": "(0;6)",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_7",
+  "label": "first x+1",
+  "wire": "(1;5)",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_8",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 3,
+       "x": 0
+      },
+      {
+       "y": 1,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_9_2_8",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":3},{\"x\":5,\"y\":1}],\"type\":30,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_8",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 1,
+       "x": 5
+      },
+      {
+       "y": 3,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_9_2_8",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 3,
+       "x": 0
+      },
+      {
+       "y": 2,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_8",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 3,
+       "x": 1
+      },
+      {
+       "y": 1,
+       "x": 5
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_20",
+  "label": "solved",
+  "wire": "(3;6)",
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_9_2_20",
+  "label": "last y+1",
+  "wire": "(3;7)",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_20",
+  "label": "first x+1",
+  "wire": "(4;6)",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_21",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 4,
+       "x": 4
+      },
+      {
+       "y": 2,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_9_2_21",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":4,\"y\":4},{\"x\":6,\"y\":2}],\"type\":30,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_21",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 2,
+       "x": 6
+      },
+      {
+       "y": 4,
+       "x": 4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_9_2_21",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 4,
+       "x": 4
+      },
+      {
+       "y": 3,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_21",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 4,
+       "x": 5
+      },
+      {
+       "y": 2,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_24",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 60,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 0,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "GeoTask_9_2_24",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":1,\"y\":0}],\"type\":60,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_24",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 60,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_24",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 60,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": 1,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "GeoTask_9_2_24",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 60,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": 0,
+       "x": 1
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_10_1_16_1",
+  "label": "solved",
+  "wire": {
+   "points": [
+    {
+     "y": 3,
+     "x": 0
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_10_1_16_1",
+  "label": "solved as string",
+  "wire": "{\"points\":[{\"x\":0,\"y\":3}]}",
+  "verdict": "raise: protocol Enumerable not implemented for BitString\n\nGot value:\n\n    \"{\\\"points\\\":[{\\\"x\\\":0,\\\"y\\\":3}]}\"\n"
+ },
+ {
+  "id": "Task_10_1_16_1",
+  "label": "last y+1",
+  "wire": {
+   "points": [
+    {
+     "y": 4,
+     "x": 0
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_10_1_16_1",
+  "label": "first x+1",
+  "wire": {
+   "points": [
+    {
+     "y": 3,
+     "x": 1
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_10_1_16_2",
+  "label": "solved",
+  "wire": {
+   "points": [
+    {
+     "y": 0,
+     "x": -2
+    },
+    {
+     "y": 0,
+     "x": 2
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_10_1_16_2",
+  "label": "solved as string",
+  "wire": "{\"points\":[{\"x\":-2,\"y\":0},{\"x\":2,\"y\":0}]}",
+  "verdict": "raise: protocol Enumerable not implemented for BitString\n\nGot value:\n\n    \"{\\\"points\\\":[{\\\"x\\\":-2,\\\"y\\\":0},{\\\"x\\\":2,\\\"y\\\":0}]}\""
+ },
+ {
+  "id": "Task_10_1_16_2",
+  "label": "reversed",
+  "wire": {
+   "points": [
+    {
+     "y": 0,
+     "x": 2
+    },
+    {
+     "y": 0,
+     "x": -2
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_10_1_16_2",
+  "label": "last y+1",
+  "wire": {
+   "points": [
+    {
+     "y": 0,
+     "x": -2
+    },
+    {
+     "y": 1,
+     "x": 2
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_10_1_16_2",
+  "label": "first x+1",
+  "wire": {
+   "points": [
+    {
+     "y": 0,
+     "x": -1
+    },
+    {
+     "y": 0,
+     "x": 2
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_10_1_16_3",
+  "label": "solved",
+  "wire": {
+   "points": [
+    {
+     "y": -5,
+     "x": 1
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_10_1_16_3",
+  "label": "solved as string",
+  "wire": "{\"points\":[{\"x\":1,\"y\":-5}]}",
+  "verdict": "raise: protocol Enumerable not implemented for BitString\n\nGot value:\n\n    \"{\\\"points\\\":[{\\\"x\\\":1,\\\"y\\\":-5}]}\"\n"
+ },
+ {
+  "id": "Task_10_1_16_3",
+  "label": "last y+1",
+  "wire": {
+   "points": [
+    {
+     "y": -4,
+     "x": 1
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_10_1_16_3",
+  "label": "first x+1",
+  "wire": {
+   "points": [
+    {
+     "y": -5,
+     "x": 2
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_10_1_16_4",
+  "label": "solved",
+  "wire": {
+   "points": [
+    {
+     "y": -7,
+     "x": -9
+    },
+    {
+     "y": 1,
+     "x": 0
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_10_1_16_4",
+  "label": "solved as string",
+  "wire": "{\"points\":[{\"x\":-9,\"y\":-7},{\"x\":0,\"y\":1}]}",
+  "verdict": "raise: protocol Enumerable not implemented for BitString\n\nGot value:\n\n    \"{\\\"points\\\":[{\\\"x\\\":-9,\\\"y\\\":-7},{\\\"x\\\":0,\\\"y\\\":1}]}"
+ },
+ {
+  "id": "Task_10_1_16_4",
+  "label": "reversed",
+  "wire": {
+   "points": [
+    {
+     "y": 1,
+     "x": 0
+    },
+    {
+     "y": -7,
+     "x": -9
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_10_1_16_4",
+  "label": "last y+1",
+  "wire": {
+   "points": [
+    {
+     "y": -7,
+     "x": -9
+    },
+    {
+     "y": 2,
+     "x": 0
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_10_1_16_4",
+  "label": "first x+1",
+  "wire": {
+   "points": [
+    {
+     "y": -7,
+     "x": -8
+    },
+    {
+     "y": 1,
+     "x": 0
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_10_1_16_5",
+  "label": "solved",
+  "wire": {
+   "points": [
+    {
+     "y": 7,
+     "x": -4
+    },
+    {
+     "y": 5,
+     "x": 5
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_10_1_16_5",
+  "label": "solved as string",
+  "wire": "{\"points\":[{\"x\":-4,\"y\":7},{\"x\":5,\"y\":5}]}",
+  "verdict": "raise: protocol Enumerable not implemented for BitString\n\nGot value:\n\n    \"{\\\"points\\\":[{\\\"x\\\":-4,\\\"y\\\":7},{\\\"x\\\":5,\\\"y\\\":5}]}\""
+ },
+ {
+  "id": "Task_10_1_16_5",
+  "label": "reversed",
+  "wire": {
+   "points": [
+    {
+     "y": 5,
+     "x": 5
+    },
+    {
+     "y": 7,
+     "x": -4
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_10_1_16_5",
+  "label": "last y+1",
+  "wire": {
+   "points": [
+    {
+     "y": 7,
+     "x": -4
+    },
+    {
+     "y": 6,
+     "x": 5
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_10_1_16_5",
+  "label": "first x+1",
+  "wire": {
+   "points": [
+    {
+     "y": 7,
+     "x": -3
+    },
+    {
+     "y": 5,
+     "x": 5
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_11_5_5_1",
+  "label": "solved",
+  "wire": {
+   "points": [
+    {
+     "y": 2,
+     "x": 3
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_11_5_5_1",
+  "label": "solved as string",
+  "wire": "{\"points\":[{\"x\":3,\"y\":2}]}",
+  "verdict": "raise: protocol Enumerable not implemented for BitString\n\nGot value:\n\n    \"{\\\"points\\\":[{\\\"x\\\":3,\\\"y\\\":2}]}\"\n"
+ },
+ {
+  "id": "Task_11_5_5_1",
+  "label": "last y+1",
+  "wire": {
+   "points": [
+    {
+     "y": 3,
+     "x": 3
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_11_5_5_1",
+  "label": "first x+1",
+  "wire": {
+   "points": [
+    {
+     "y": 2,
+     "x": 4
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_11_5_5_2",
+  "label": "solved",
+  "wire": {
+   "points": [
+    {
+     "y": 2,
+     "x": -3
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_11_5_5_2",
+  "label": "solved as string",
+  "wire": "{\"points\":[{\"x\":-3,\"y\":2}]}",
+  "verdict": "raise: protocol Enumerable not implemented for BitString\n\nGot value:\n\n    \"{\\\"points\\\":[{\\\"x\\\":-3,\\\"y\\\":2}]}\"\n"
+ },
+ {
+  "id": "Task_11_5_5_2",
+  "label": "last y+1",
+  "wire": {
+   "points": [
+    {
+     "y": 3,
+     "x": -3
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_11_5_5_2",
+  "label": "first x+1",
+  "wire": {
+   "points": [
+    {
+     "y": 2,
+     "x": -2
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_11_5_5_3",
+  "label": "solved",
+  "wire": {
+   "points": [
+    {
+     "y": 3,
+     "x": 0
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_11_5_5_3",
+  "label": "solved as string",
+  "wire": "{\"points\":[{\"x\":0,\"y\":3}]}",
+  "verdict": "raise: protocol Enumerable not implemented for BitString\n\nGot value:\n\n    \"{\\\"points\\\":[{\\\"x\\\":0,\\\"y\\\":3}]}\"\n"
+ },
+ {
+  "id": "Task_11_5_5_3",
+  "label": "last y+1",
+  "wire": {
+   "points": [
+    {
+     "y": 4,
+     "x": 0
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_11_5_5_3",
+  "label": "first x+1",
+  "wire": {
+   "points": [
+    {
+     "y": 3,
+     "x": 1
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_11_5_5_4",
+  "label": "solved",
+  "wire": {
+   "points": [
+    {
+     "y": 0,
+     "x": -2
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_11_5_5_4",
+  "label": "solved as string",
+  "wire": "{\"points\":[{\"x\":-2,\"y\":0}]}",
+  "verdict": "raise: protocol Enumerable not implemented for BitString\n\nGot value:\n\n    \"{\\\"points\\\":[{\\\"x\\\":-2,\\\"y\\\":0}]}\"\n"
+ },
+ {
+  "id": "Task_11_5_5_4",
+  "label": "last y+1",
+  "wire": {
+   "points": [
+    {
+     "y": 1,
+     "x": -2
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_11_5_5_4",
+  "label": "first x+1",
+  "wire": {
+   "points": [
+    {
+     "y": 0,
+     "x": -1
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_11_5_5_7",
+  "label": "solved",
+  "wire": {
+   "points": [
+    {
+     "y": 2,
+     "x": -2
+    },
+    {
+     "y": -2,
+     "x": -2
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_11_5_5_7",
+  "label": "solved as string",
+  "wire": "{\"points\":[{\"x\":-2,\"y\":2},{\"x\":-2,\"y\":-2}]}",
+  "verdict": "raise: protocol Enumerable not implemented for BitString\n\nGot value:\n\n    \"{\\\"points\\\":[{\\\"x\\\":-2,\\\"y\\\":2},{\\\"x\\\":-2,\\\"y\\\":-2}]"
+ },
+ {
+  "id": "Task_11_5_5_7",
+  "label": "reversed",
+  "wire": {
+   "points": [
+    {
+     "y": -2,
+     "x": -2
+    },
+    {
+     "y": 2,
+     "x": -2
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_11_5_5_7",
+  "label": "last y+1",
+  "wire": {
+   "points": [
+    {
+     "y": 2,
+     "x": -2
+    },
+    {
+     "y": -1,
+     "x": -2
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_11_5_5_7",
+  "label": "first x+1",
+  "wire": {
+   "points": [
+    {
+     "y": 2,
+     "x": -1
+    },
+    {
+     "y": -2,
+     "x": -2
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_11_5_5_8",
+  "label": "solved",
+  "wire": {
+   "points": [
+    {
+     "y": -2,
+     "x": 3
+    },
+    {
+     "y": 3,
+     "x": -2
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_11_5_5_8",
+  "label": "solved as string",
+  "wire": "{\"points\":[{\"x\":3,\"y\":-2},{\"x\":-2,\"y\":3}]}",
+  "verdict": "raise: protocol Enumerable not implemented for BitString\n\nGot value:\n\n    \"{\\\"points\\\":[{\\\"x\\\":3,\\\"y\\\":-2},{\\\"x\\\":-2,\\\"y\\\":3}]}"
+ },
+ {
+  "id": "Task_11_5_5_8",
+  "label": "reversed",
+  "wire": {
+   "points": [
+    {
+     "y": 3,
+     "x": -2
+    },
+    {
+     "y": -2,
+     "x": 3
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_11_5_5_8",
+  "label": "last y+1",
+  "wire": {
+   "points": [
+    {
+     "y": -2,
+     "x": 3
+    },
+    {
+     "y": 4,
+     "x": -2
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_11_5_5_8",
+  "label": "first x+1",
+  "wire": {
+   "points": [
+    {
+     "y": -2,
+     "x": 4
+    },
+    {
+     "y": 3,
+     "x": -2
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_11_5_5_9",
+  "label": "solved",
+  "wire": {
+   "points": [
+    {
+     "y": 3,
+     "x": -3
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_11_5_5_9",
+  "label": "solved as string",
+  "wire": "{\"points\":[{\"x\":-3,\"y\":3}]}",
+  "verdict": "raise: protocol Enumerable not implemented for BitString\n\nGot value:\n\n    \"{\\\"points\\\":[{\\\"x\\\":-3,\\\"y\\\":3}]}\"\n"
+ },
+ {
+  "id": "Task_11_5_5_9",
+  "label": "last y+1",
+  "wire": {
+   "points": [
+    {
+     "y": 4,
+     "x": -3
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_11_5_5_9",
+  "label": "first x+1",
+  "wire": {
+   "points": [
+    {
+     "y": 3,
+     "x": -2
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_11_9_5_1",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 60,
+     "points": [
+      {
+       "y": -1,
+       "x": 4
+      },
+      {
+       "y": -1,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_11_9_5_1",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":4,\"y\":-1},{\"x\":6,\"y\":-1}],\"type\":60,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_11_9_5_1",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 60,
+     "points": [
+      {
+       "y": -1,
+       "x": 6
+      },
+      {
+       "y": -1,
+       "x": 4
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_11_9_5_1",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 60,
+     "points": [
+      {
+       "y": -1,
+       "x": 4
+      },
+      {
+       "y": 0,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_11_9_5_1",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 60,
+     "points": [
+      {
+       "y": -1,
+       "x": 5
+      },
+      {
+       "y": -1,
+       "x": 6
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_11_9_5_9",
+  "label": "solved",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": -6,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_11_9_5_9",
+  "label": "solved as string",
+  "wire": "{\"figures\":[{\"points\":[{\"x\":0,\"y\":0},{\"x\":-2,\"y\":-6}],\"type\":30,\"dashed\":false}],\"fillingPoints\":[]}",
+  "verdict": false
+ },
+ {
+  "id": "Task_11_9_5_9",
+  "label": "reversed",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": -6,
+       "x": -2
+      },
+      {
+       "y": 0,
+       "x": 0
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": true
+ },
+ {
+  "id": "Task_11_9_5_9",
+  "label": "last y+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 0,
+       "x": 0
+      },
+      {
+       "y": -5,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ },
+ {
+  "id": "Task_11_9_5_9",
+  "label": "first x+1",
+  "wire": {
+   "fillingPoints": [],
+   "figures": [
+    {
+     "type": 30,
+     "points": [
+      {
+       "y": 0,
+       "x": 1
+      },
+      {
+       "y": -6,
+       "x": -2
+      }
+     ],
+     "dashed": false
+    }
+   ]
+  },
+  "verdict": false
+ }
+]
