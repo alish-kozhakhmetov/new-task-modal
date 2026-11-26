@@ -145,3 +145,22 @@ export const StateNoLives: Story = {
     )
   },
 }
+
+/*
+ * На взгляд Алишера: «Раздайте кроликам по одной морковке» — морковки
+ * розданы, появился вопрос, число набрано клавиатурой окна. Знак готовности
+ * для скрипта снимков — `data-review-ready`, как в историях plain.
+ */
+export const ReviewWithCell: Story = {
+  name: 'Взгляд: withCell',
+  args: { taskId: '0_3_11_6' },
+  parameters: { layout: 'fullscreen', skipRunPlayButton: true },
+  render: ({ taskId }) => (
+    <TrainerFrame Template={Template} task={byId(taskId)} />
+  ),
+  play: async ({ canvasElement, args }) => {
+    await actUntilField(canvasElement)
+    await typeNumber(canvasElement, String(byId(args.taskId)._expected))
+    canvasElement.setAttribute('data-review-ready', 'true')
+  },
+}

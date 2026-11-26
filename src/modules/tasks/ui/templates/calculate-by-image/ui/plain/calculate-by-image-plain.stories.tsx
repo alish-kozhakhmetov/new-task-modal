@@ -178,3 +178,72 @@ export const StateNoLives: Story = {
     )
   },
 }
+
+/*
+ * На взгляд Алишера — по истории на сценарий, в настоящем окне, без панели.
+ * Плей доводит задачу до вида, ради которого история, и ставит
+ * `data-review-ready`: по нему снимает скрипт
+ * `scripts/calculate-by-image-review-shots.ts`. Задачи — реальные payload.
+ */
+const markReady = (canvasElement: HTMLElement) =>
+  canvasElement.setAttribute('data-review-ready', 'true')
+
+/** plain: «Дайте Шарику 15 булочек» — эталон собран, «Проверить» активна. */
+export const ReviewPlain: Story = {
+  name: 'Взгляд: plain',
+  args: { taskId: '0_10_5_2' },
+  parameters: { layout: 'fullscreen', skipRunPlayButton: true },
+  render: ({ taskId }) => (
+    <TrainerFrame Template={Template} task={byId(taskId)} />
+  ),
+  play: async ({ canvasElement, args }) => {
+    await fillReference(canvasElement, byId(args.taskId))
+    markReady(canvasElement)
+  },
+}
+
+/** Крупная картинка: игрушки 150 px в корзинке 600 × 400. */
+export const ReviewBigPicture: Story = {
+  name: 'Взгляд: крупная картинка',
+  args: { taskId: '0_5_12_9' },
+  parameters: { layout: 'fullscreen', skipRunPlayButton: true },
+  render: ({ taskId }) => (
+    <TrainerFrame Template={Template} task={byId(taskId)} />
+  ),
+  play: async ({ canvasElement, args }) => {
+    await fillReference(canvasElement, byId(args.taskId))
+    markReady(canvasElement)
+  },
+}
+
+/** Мелкая картинка: кольца пирамиды 15–32 px, порядок важен. */
+export const ReviewSmallPicture: Story = {
+  name: 'Взгляд: мелкая картинка',
+  args: { taskId: '1_1_2_9' },
+  parameters: { layout: 'fullscreen', skipRunPlayButton: true },
+  render: ({ taskId }) => (
+    <TrainerFrame Template={Template} task={byId(taskId)} />
+  ),
+  play: async ({ canvasElement, args }) => {
+    await fillReference(canvasElement, byId(args.taskId))
+    markReady(canvasElement)
+  },
+}
+
+/** С ошибкой: монеты на другую сумму, «Проверить» — минус жизнь, монеты остались. */
+export const ReviewError: Story = {
+  name: 'Взгляд: с ошибкой',
+  args: { taskId: '1_20_1_14' },
+  parameters: { layout: 'fullscreen', skipRunPlayButton: true },
+  render: ({ taskId }) => (
+    <TrainerFrame Template={Template} task={byId(taskId)} />
+  ),
+  play: async ({ canvasElement, args }) => {
+    await fillWrong(canvasElement, byId(args.taskId), 0)
+    await submit(canvasElement)
+    await waitFor(() =>
+      expect(useStore.getState().state?.activeTask.attemptsCount).toBe(1),
+    )
+    markReady(canvasElement)
+  },
+}
