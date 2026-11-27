@@ -25,6 +25,7 @@ import {
 } from './render-table-cell-content'
 import type { TableTask } from './types.task'
 import { useAlignedWrap } from './use-aligned-wrap'
+import { useHeaderWrapWhenItFits } from './use-header-wrap'
 import { useHiddenRight } from './use-hidden-right'
 
 /** Flex rows that wrap on a phone; a field stays glued to the cell after it. */
@@ -55,6 +56,7 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
     // Called before the early returns below: hook order must not depend on
     // whether the task is in solution mode or has a table.
     const { ref: wrapperRef, hiddenRight } = useHiddenRight<HTMLDivElement>()
+    useHeaderWrapWhenItFits(wrapperRef)
     const tableRef = useAlignedWrap<HTMLTableElement>(GLUED_ROW_IDS.has(id))
     const grouping = useDigitGrouping()
 
@@ -132,7 +134,8 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
 
     // Rule 12 with rule 59а: a header line that wraps no longer holds its
     // column open, so a field under it keeps room for its answer itself
-    // (`.inputCellAnswerRoom`). Columns whose header does not wrap keep the
+    // (`.inputCellAnswerRoom`, in force only while the header wraps, see
+    // useHeaderWrapWhenItFits). Columns whose header does not wrap keep the
     // width they had.
     const inWrappingColumn = (cellIndex: number) =>
       table.rows.some(({ cells }, rowIndex) => {

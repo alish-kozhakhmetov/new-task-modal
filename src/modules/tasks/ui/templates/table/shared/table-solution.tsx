@@ -1,3 +1,5 @@
+import { useRef } from 'react'
+
 import type { TaskModalDependencies } from '@/modules/task-modal/model/types/props'
 import { getCorrectMultiAnswerParts } from '@/modules/tasks/lib/get-correct-multi-answer-parts'
 import { splitMultiAnswer } from '@/modules/tasks/lib/multi-answer'
@@ -16,6 +18,7 @@ import {
 } from '../lib/get-table-classnames'
 import { TableStaticCellContent } from '../lib/render-table-cell-content'
 import type { TableTask } from '../lib/types.task'
+import { useHeaderWrapWhenItFits } from '../lib/use-header-wrap'
 
 import styles from './table.module.scss'
 
@@ -35,6 +38,10 @@ export const TableSolution = ({
   solution,
   templateId,
 }: Props) => {
+  // before the early return: hook order must not depend on the table
+  const wrapperRef = useRef<HTMLDivElement>(null)
+  useHeaderWrapWhenItFits(wrapperRef)
+
   const table = task.description.table
 
   if (!table) {
@@ -80,7 +87,7 @@ export const TableSolution = ({
         deps={deps}
       />
 
-      <div className={styles.tableWrapper}>
+      <div ref={wrapperRef} className={styles.tableWrapper}>
         <table
           className={getTableClassName({
             id: templateId ?? 'table.plain',
