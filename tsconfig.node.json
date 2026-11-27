@@ -27,16 +27,16 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["vite.config.ts", "scripts"],
+  "include": ["vite.config.ts", "scripts", "tools"],
   /*
    * Browser harnesses (DOM, JSX) run in Vite pages, not in Node; the jsdom
    * test of the window's code is typed with the app's settings,
    * tsconfig.keys.json
    */
   "exclude": [
-    "scripts/pilot/harness",
-    "scripts/keys/harness",
-    "scripts/cx/harness",
-    "scripts/keys/candidates.test.ts"
+    "tools/pilot/pilot/harness",
+    "tools/pilot/keys/harness",
+    "tools/pilot/cx/harness",
+    "tools/pilot/keys/candidates.test.ts"
   ]
 }

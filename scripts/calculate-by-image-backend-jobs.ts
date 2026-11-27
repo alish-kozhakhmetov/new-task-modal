@@ -1,7 +1,7 @@
 /**
  * Proof against the backend itself, not the ported rule: turns locally
  * generated calculateByImage tasks into answer records for the monolith's
- * TaskChecker (ntm-g3 `scripts/pilot/local-backend/check.exs`).
+ * TaskChecker (`tools/pilot/pilot/local-backend/check.exs`, first run in ntm-g3).
  *
  * In: JSONL from a generator run, one `{ type, seed, answer, task }` per line
  * (`task` as GET /lessons/:id/tasks builds it, `answer` — InvokeTask.answer).

@@ -75,5 +75,5 @@ arcsin arccos arctg  arcctg xⁿ
    `arc`-функций отдельными клавишами** (в ДС arc — вкладыш у sin/cos/tan/ctg).
 5. Подписи точек индикатора: «Буквы», «Цифры», «Знаки» (каз. «Таңбалар»).
 
-Снимки клавиатуры в задаче, 390 и 1280: `scripts/keys/.cache/drive/` в
-каталоге ветки (не в git) — пересобираются `node scripts/keys/drive.mjs`.
+Снимки клавиатуры в задаче, 390 и 1280: `tools/pilot/keys/.cache/drive/` в
+каталоге ветки (не в git) — пересобираются `node tools/pilot/keys/drive.mjs`.
