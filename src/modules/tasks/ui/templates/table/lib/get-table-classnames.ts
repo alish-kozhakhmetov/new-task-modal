@@ -70,6 +70,8 @@ export function getCellClassName(params: {
   isLastRow: boolean
   /** Visible text of the cell; drives label weight and number alignment. */
   content?: string
+  /** The column's header has a line that wraps (`hasWrappingLine`). */
+  inWrappingColumn?: boolean
 }): string {
   const {
     id,
@@ -80,6 +82,7 @@ export function getCellClassName(params: {
     isHeaderRow,
     isLastRow,
     content,
+    inWrappingColumn,
   } = params
 
   return clsx(
@@ -87,6 +90,12 @@ export function getCellClassName(params: {
     isInput && styles.inputCell,
     isInput && !FLEX_SIZED_IDS.has(id) && styles.inputCellDefaultWidth,
     isHeaderRow && styles.cellHeader,
+    // Rule 12: a wrapped header no longer holds the column open, so the field
+    // keeps room for its answer itself (4_10_9_9: an empty 62px for «1500»).
+    ROUNDED_IDS.has(id) &&
+      isInput &&
+      inWrappingColumn &&
+      styles.inputCellAnswerRoom,
     ROUNDED_IDS.has(id) && isLastRow && styles.cellNoBottomBorder,
     // Row labels are bold only when they are words (rule 58): a first column
     // of numbers is data, not an axis.

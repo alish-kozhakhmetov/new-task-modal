@@ -289,6 +289,16 @@
   white-space: normal;
 }
 
+// Rule 12: a field shows the room its answer needs. Under a header line that
+// wraps (above) nothing else holds the column open: 4_10_9_9's empty «Общая
+// масса» field came out 62px, too small for its 100..1500, and typing «1500»
+// widened it to 72 and shifted the table. 80 is the floor every field has in
+// the flex rows (`.inputCellInlineInput`): four digits with the caret. Only
+// these columns: a header that does not wrap sets the width it always set.
+.inputCellAnswerRoom .input {
+  min-width: 80px;
+}
+
 .cellNoBottomBorder {
   border-bottom: none;
 }

@@ -23,10 +23,23 @@ const MATH_ISLAND_RE = /\\\([\s\S]*?\\\)/g
 /**
  * A line of several words («Площадь выращивания», «(\(S\)) (га)»), not one
  * word («сот.», «3-ий»). A header may wrap such a line between its words
- * (rule 59а); a one-word line stays whole.
+ * (rule 59а); a one-word line stays whole. A Cyrillic island is read as the
+ * plain text it renders to (`uprightCyrillicMath`): `\(\text{Площадь
+ * выращивания}\)` is two words on screen.
  */
 export const isSeveralWords = (line: string): boolean =>
-  /\S\s+\S/.test(line.replace(MATH_ISLAND_RE, 'x').trim())
+  /\S\s+\S/.test(uprightCyrillicMath(line).replace(MATH_ISLAND_RE, 'x').trim())
+
+/**
+ * A cell the backend broke into lines with `\(\\\)`, one of them of
+ * several words: in a header that line wraps (`.cellLineWords`), so the
+ * header no longer sets its column's width.
+ */
+export const hasWrappingLine = (content: string): boolean => {
+  if (isHtmlTableCellContent(content)) return false
+  const lines = content.split(LINE_BREAK_ISLAND_RE)
+  return lines.length > 1 && lines.some(isSeveralWords)
+}
 
 /**
  * MathJax math mode italicizes letters and `\text{…}` uses MJX text fonts

@@ -19,7 +19,10 @@ import {
   getInputClassName,
   getTableClassName,
 } from './get-table-classnames'
-import { TableStaticCellContent } from './render-table-cell-content'
+import {
+  hasWrappingLine,
+  TableStaticCellContent,
+} from './render-table-cell-content'
 import type { TableTask } from './types.task'
 import { useAlignedWrap } from './use-aligned-wrap'
 import { useHiddenRight } from './use-hidden-right'
@@ -120,6 +123,27 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
       return wide ? COLUMN_GROUPING : grouping
     }
 
+    const isHeaderRowAt = (rowIndex: number) =>
+      id === 'table.grid'
+        ? rowIndex < table.rows.length - 1
+        : id === 'table.multiRow' || id === 'table.multiRowSvg'
+          ? rowIndex === 0
+          : false
+
+    // Rule 12 with rule 59а: a header line that wraps no longer holds its
+    // column open, so a field under it keeps room for its answer itself
+    // (`.inputCellAnswerRoom`). Columns whose header does not wrap keep the
+    // width they had.
+    const inWrappingColumn = (cellIndex: number) =>
+      table.rows.some(({ cells }, rowIndex) => {
+        const cell = cells[cellIndex]
+        if (!isHeaderRowAt(rowIndex) || cell === undefined) return false
+        if (cell === 'answercell') return false
+        return hasWrappingLine(
+          typeof cell === 'string' ? cell : deps.global.translateTasks(cell),
+        )
+      })
+
     return (
       <div className={styles.container} data-template-id={id} data-mode="input">
         <TaskTitle title={task.title} deps={deps} />
@@ -159,12 +183,7 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
             >
               <tbody>
                 {table.rows.map((row, rowIndex) => {
-                  const isHeaderRow =
-                    id === 'table.grid'
-                      ? rowIndex < table.rows.length - 1
-                      : id === 'table.multiRow' || id === 'table.multiRowSvg'
-                        ? rowIndex === 0
-                        : false
+                  const isHeaderRow = isHeaderRowAt(rowIndex)
 
                   const cellClass = (
                     cellIndex: number,
@@ -180,6 +199,7 @@ export const createTableTemplate = ({ id }: TableTemplateConfig) => {
                       isLastCell: cellIndex === row.cells.length - 1,
                       isHeaderRow,
                       isLastRow: rowIndex === table.rows.length - 1,
+                      inWrappingColumn: isInput && inWrappingColumn(cellIndex),
                     })
 
                   const renderInput = () => {
