@@ -280,6 +280,15 @@
   white-space: nowrap;
 }
 
+// Rule 59а: a header wraps between words — a line the backend broke off too.
+// «Площадь выращивания» over «(S) (га)» (4_10_9_9) held one line, set its
+// column at 202px and the table at 637 on a 362px phone column, and the
+// header was cut under the fade. A one-word line («3-ий») has no such class
+// and keeps the nowrap above: it never splits at its hyphen.
+.cellHeader .cellLineWords {
+  white-space: normal;
+}
+
 .cellNoBottomBorder {
   border-bottom: none;
 }

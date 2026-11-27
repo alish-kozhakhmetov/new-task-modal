@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { Fragment } from 'react'
 
 import { stripEmptyMathIslands } from '@/modules/tasks/ui/templates/text/lib/strip-empty-math-islands'
@@ -15,6 +16,17 @@ const CYRILLIC_RE = /[а-яА-ЯёЁ]/
 
 /** A math island holding only `\\` — the backend's line break inside a cell. */
 const LINE_BREAK_ISLAND_RE = /\\\(\s*\\\\\s*\\\)/
+
+/** A math island `\(…\)` is typeset as one unit: its inner spaces are no place to wrap. */
+const MATH_ISLAND_RE = /\\\([\s\S]*?\\\)/g
+
+/**
+ * A line of several words («Площадь выращивания», «(\(S\)) (га)»), not one
+ * word («сот.», «3-ий»). A header may wrap such a line between its words
+ * (rule 59а); a one-word line stays whole.
+ */
+export const isSeveralWords = (line: string): boolean =>
+  /\S\s+\S/.test(line.replace(MATH_ISLAND_RE, 'x').trim())
 
 /**
  * MathJax math mode italicizes letters and `\text{…}` uses MJX text fonts
@@ -77,9 +89,16 @@ export const TableStaticCellContent = ({
       <>
         {lines.map((line, index) => (
           <Fragment key={index}>
-            {/* A line the backend broke on purpose is one unit: «3-ий» must
-                not wrap again at its hyphen once headers are allowed to wrap. */}
-            <span className={styles.cellLine}>
+            {/* A line the backend broke on purpose keeps its words: «3-ий»
+                must not wrap again at its hyphen once headers are allowed to
+                wrap. A line of several words may wrap between them in a
+                header (rule 59а, `.cellHeader .cellLineWords`). */}
+            <span
+              className={clsx(
+                styles.cellLine,
+                isSeveralWords(line) && styles.cellLineWords,
+              )}
+            >
               <TableStaticCellContent content={line} asFormula={asFormula} />
             </span>
           </Fragment>
