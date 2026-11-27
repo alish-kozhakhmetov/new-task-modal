@@ -22,5 +22,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["vite.config.ts", "scripts"]
+  "include": ["vite.config.ts", "scripts"],
+  // a jsdom test of the window's code: typed with the app's settings, tsconfig.keys.json
+  "exclude": ["scripts/keys/candidates.test.ts"]
 }
