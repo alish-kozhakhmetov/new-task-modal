@@ -6,8 +6,9 @@ import fs from 'node:fs'
 const [samplesFile, keysFile, outFile] = process.argv.slice(2)
 const src = fs.readFileSync(keysFile, 'utf8')
 const setOf = new Map()
-for (const m of src.matchAll(/^ {2}(\w+): \[\n([\s\S]*?)\n {2}\],/gm))
-  for (const k of m[2].matchAll(/'([0-9_]+)'/g)) setOf.set(k[1], m[1])
+// a set's ids, one per line or (prettier, a short set) on one line
+for (const m of src.matchAll(/^ {2}(\w+): \[([^\]]*)\]/gm))
+  for (const k of m[2].matchAll(/'([0-9a-z_]+)'/g)) setOf.set(k[1], m[1])
 
 const SIGNS = {
   infty: /\\infty/,

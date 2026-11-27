@@ -4,6 +4,8 @@
 # itself, as the backend prints it (refOk false — the backend's own gap).
 #   be.sh -pa <hs> scripts/keys/backend/judge.exs <cands.jsonl> <verdicts.jsonl>
 [in_file, out_file] = System.argv()
+# the rebuild below runs here, the checks in their own Tasks: :comma in both
+DecimalFormat.set_separator(:comma)
 {:ok, out} = File.open(out_file, [:write, :utf8])
 digit = fn s ->
   case Regex.run(~r/\d/, s, return: :index) do
@@ -42,7 +44,16 @@ n =
   File.stream!(in_file)
   |> Enum.reduce(0, fn line, n ->
     r = Poison.decode!(line)
-    t = r["task"] |> Base.decode64!() |> :erlang.binary_to_term()
+    # the struct the API checks: rebuilt from the fields the window sends back
+    t =
+      case r do
+        %{"fields" => f} when is_binary(f) ->
+          Kernel.struct(
+            String.to_atom("Elixir." <> r["id"]),
+            f |> Poison.decode!() |> TaskConverters.from_string_fields_to_atom_fields()
+          )
+        _ -> r["task"] |> Base.decode64!() |> :erlang.binary_to_term()
+      end
     ok = for {name, ans} <- r["cands"], name != "no_key", into: %{}, do: {name, check.(t, ans)}
     wrong = if r["cands"]["keys"], do: check.(t, mutate.(r["cands"]["keys"])), else: nil
     # the reference itself, as the backend prints it: false — the backend's own gap, not the keys'

@@ -69,6 +69,8 @@ export const TG_KEY: Record<TgMode, { tg: string[]; ctg: string[] }> = {
   letters: { tg: ['t', 'g'], ctg: ['c', 't', 'g'] },
 }
 
+const GLUED = /^(arcsin|arccos|sin|cos|tan|cot|ln|lg)([a-z]+)$/
+
 /** Words the backend writes without a backslash: «tg{ β − θ }», «arctg7». */
 const BARE_FUNCTION = /^(arcctg|arctg|arcsin|arccos|ctg|tg)(?![a-z])/
 
@@ -112,8 +114,14 @@ export const referenceToKeys = (
       }
       const m = /^\\([a-zA-Z]+)/.exec(ref.slice(i))
       if (!m) return false
-      const name = m[1]
+      let name = m[1]
       i += m[0].length
+      // \lnx, \cosx: the backend glues a letter argument to the name
+      const glued = GLUED.exec(name)
+      if (glued) {
+        name = glued[1]
+        i -= glued[2].length
+      }
       if (name === 'left' || name === 'right') return true
       // ∅: one key; the backend's generators spell it either way
       if (name === 'leq' || name === 'geq') {

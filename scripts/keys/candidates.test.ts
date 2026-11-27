@@ -36,6 +36,16 @@ const OUT = process.env.KEYS_CANDIDATES
 
 type Field = MathField & { typedText: (t: string) => void }
 
+/** A line of backend/sample.exs: the task's fields as the API rebuilds them. */
+interface Sample {
+  id: string
+  i: number
+  refs: (string | null)[]
+  fields?: string
+  /** Older samples: the task as an Erlang term. */
+  task?: string
+}
+
 const field = (): Field => {
   const el = document.createElement('span')
   document.body.appendChild(el)
@@ -56,7 +66,7 @@ describe.skipIf(!SAMPLES)('keys: references typed into MathQuill', () => {
       .readFileSync(SAMPLES!, 'utf8')
       .split('\n')
       .filter(Boolean)
-      .map((l) => JSON.parse(l))
+      .map((l) => JSON.parse(l) as Sample)
     const out: string[] = []
     let typed = 0
     for (const r of rows) {
@@ -71,12 +81,15 @@ describe.skipIf(!SAMPLES)('keys: references typed into MathQuill', () => {
           ...(kb.extra ?? []),
         ].map((s) => s.latex || s.title),
       )
-      const has = (k: string) => onBoard.has(k)
+      // a keyboard with signs has the fraction that nests: \frac{}{}
+      const frac = onBoard.has('\\frac{}{}') ? '\\frac{}{}' : '\\frac'
+      const board = (k: string) => (k === '\\frac' ? frac : k)
+      const has = (k: string) => onBoard.has(board(k))
       const single = has('(')
       const base = { singleBrackets: single, has, pair: single ? '(' : '( )' }
       const cands: Record<string, string> = {}
       const keys = referenceToKeys(ref, { ...base, tg: 'key' })
-      if (keys) cands.keys = typeKeys(keys)
+      if (keys) cands.keys = typeKeys(keys.map(board))
       else cands.no_key = 'no key on this keyboard'
       // the representations tg/ctg could have been given, for the record
       if (/tg|tan|cot/.test(ref))
@@ -93,7 +106,16 @@ describe.skipIf(!SAMPLES)('keys: references typed into MathQuill', () => {
         cands.typed = f.latex()
         typed++
       }
-      out.push(JSON.stringify({ id: r.id, i: r.i, ref, task: r.task, cands }))
+      out.push(
+        JSON.stringify({
+          id: r.id,
+          i: r.i,
+          ref,
+          task: r.task,
+          fields: r.fields,
+          cands,
+        }),
+      )
       document.body.innerHTML = ''
     }
     fs.writeFileSync(OUT!, out.join('\n'))

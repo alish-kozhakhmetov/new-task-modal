@@ -7,8 +7,9 @@ const [vFile, needFile, keysFile, ...rest] = process.argv.slice(2)
 const listOut = rest.find((a) => a.startsWith('--list='))?.slice(7)
 const src = fs.readFileSync(keysFile, 'utf8')
 const setOf = new Map()
-for (const m of src.matchAll(/^ {2}(\w+): \[\n([\s\S]*?)\n {2}\],/gm))
-  for (const k of m[2].matchAll(/'([0-9_]+)'/g)) setOf.set(k[1], m[1])
+// a set's ids, one per line or (prettier, a short set) on one line
+for (const m of src.matchAll(/^ {2}(\w+): \[([^\]]*)\]/gm))
+  for (const k of m[2].matchAll(/'([0-9a-z_]+)'/g)) setOf.set(k[1], m[1])
 const need = new Map(JSON.parse(fs.readFileSync(needFile, 'utf8')).map((g) => [g.id, g]))
 
 const gens = new Map()
@@ -16,7 +17,7 @@ for (const line of fs.readFileSync(vFile, 'utf8').split('\n')) {
   if (!line) continue
   const r = JSON.parse(line)
   const k = r.id.replace(/^Task_/, '')
-  const g = gens.get(k) ?? { id: k, n: 0, ok: 0, nokey: 0, wrongOk: 0, typedN: 0, typedOk: 0, fails: [] }
+  const g = gens.get(k) ?? { id: k, n: 0, ok: 0, nokey: 0, wrongOk: 0, typedN: 0, typedOk: 0, refOk: 0, fails: [] }
   g.n++
   if (r.cands.no_key) {
     g.nokey++
@@ -24,6 +25,8 @@ for (const line of fs.readFileSync(vFile, 'utf8').split('\n')) {
   } else if (r.ok.keys === true) g.ok++
   else g.fails.push({ ref: r.ref, sent: r.cands.keys, why: String(r.ok.keys) })
   if (r.wrong === true) g.wrongOk++
+  // the backend's own reference, as it prints it: rejected — its gap, not the keys'
+  if (r.refOk === true) g.refOk++
   if ('typed' in r.ok) {
     g.typedN++
     if (r.ok.typed === true) g.typedOk++

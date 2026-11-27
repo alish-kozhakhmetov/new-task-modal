@@ -1,6 +1,8 @@
 # KEYS 27.11: samples of generators from the local backend (hs + common).
 # Each sample in its own process with a 4 s cap (some generators loop), the
 # decimal separator set to comma inside it (Process dictionary, Kazakhstan).
+# The task is rebuilt from its fields the way the API does (JSON → atom fields
+# → struct, task_controller): the reference and the check use that struct.
 #   be.sh -pa <hs> scripts/keys/backend/sample.exs <ids.txt> <out.jsonl> <seeds> [dto]
 [ids_file, out_file, n | rest] = System.argv()
 n = String.to_integer(n)
@@ -30,15 +32,17 @@ one = fn id, s ->
   mod = String.to_atom("Elixir." <> id)
   {:module, _} = Code.ensure_loaded(mod)
   fns = mod.__info__(:functions)
-  t =
+  t0 =
     cond do
       Keyword.get_values(fns, :new) |> Enum.member?(0) -> apply(mod, :new, [])
       Keyword.get_values(fns, :new) |> Enum.member?(1) -> apply(mod, :new, [:x1])
       true -> raise "no new"
     end
+  fields = t0 |> Map.from_struct() |> Poison.encode!()
+  t = Kernel.struct(mod, fields |> Poison.decode!() |> TaskConverters.from_string_fields_to_atom_fields())
   a = InvokeTask.answer(t)
   refs = if is_list(a), do: Enum.map(a, str), else: [str.(a)]
-  base = %{id: id, i: s, kind: kind.(a), refs: refs, task: Base.encode64(:erlang.term_to_binary(t))}
+  base = %{id: id, i: s, kind: kind.(a), refs: refs, fields: fields}
   if dto? do
     Map.merge(base, %{
       dto: %{
