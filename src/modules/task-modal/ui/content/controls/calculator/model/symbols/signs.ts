@@ -104,6 +104,11 @@ const ARCCTG: SignSymbol = {
 }
 
 const DELETE = MAIN.find((s) => s.label === 'Delete')!
+const FRACTION = MAIN.find((s) => s.latex === '\\frac')!
+// a fraction inside a fraction: −1/(6cos²(14 − x/6)), 2·5^(x/2)/ln5
+// (10_8_17_12, 11_6_6_7 on master 27.11). The released key won't open one
+// there (math-input/model.ts); grades 0–4 keep it
+const ANY_FRACTION: SignSymbol = { ...FRACTION, latex: '\\frac{}{}' }
 
 /**
  * Interval page = the digits page with its function cells swapped (the way
@@ -154,8 +159,10 @@ export interface TaskKeyboard {
   extra: SignSymbol[] | null
 }
 
-const swap = (cells: Record<string, SignSymbol>) =>
-  MAIN.map((s) => cells[s.title] ?? s)
+/** The digits page of a task with signs: its cells swapped, the fraction nesting. */
+const swap = (cells: Record<string, SignSymbol> = {}) =>
+  MAIN.map((s) => cells[s.title] ?? (s === FRACTION ? ANY_FRACTION : s))
+const DIGITS = swap()
 
 const KEYBOARDS: Record<KeySetName, Omit<TaskKeyboard, 'set'>> = {
   // the rare ones of an interval answer: a point {2}, no solutions ∅,
@@ -166,17 +173,21 @@ const KEYBOARDS: Record<KeySetName, Omit<TaskKeyboard, 'set'>> = {
   },
   // (−π/4 + πk; arctg 7 + πk): the interval page, the functions after it
   intervalTrig: { main: swap(INTERVAL_CELLS), extra: TRIGONOMETRY_PAGE },
-  trigonometry: { main: MAIN, extra: TRIGONOMETRY_PAGE },
-  pi: { main: MAIN, extra: [PI, DELETE] },
-  vector: { main: MAIN, extra: [VECTOR, DELETE] },
-  degree: { main: MAIN, extra: [DEGREE, DELETE] },
+  trigonometry: { main: DIGITS, extra: TRIGONOMETRY_PAGE },
+  pi: { main: DIGITS, extra: [PI, DELETE] },
+  vector: { main: DIGITS, extra: [VECTOR, DELETE] },
+  degree: { main: DIGITS, extra: [DEGREE, DELETE] },
   // √29; −√29 or ±√29, a⁴, 2ˣ, ∛9
-  root: { main: MAIN, extra: [ROOT, NTH_ROOT, POWER, PLUS_MINUS, DELETE] },
+  root: { main: DIGITS, extra: [ROOT, NTH_ROOT, POWER, PLUS_MINUS, DELETE] },
   // a system's pairs: (2log₃2; log₇5), (log₃5; 2log₇2); log₂x⁵, log₃√x —
-  // grade 11 writes them with a power and a root beside
-  log: { main: MAIN, extra: [LOG, POWER, ROOT, NTH_ROOT, DELETE, ABS] },
+  // grade 11 writes them with a power and a root beside; −ln|cos x| + C
+  // (11_6_7_13, 11_6_7_14) wants sin and cos too
+  log: {
+    main: DIGITS,
+    extra: [LOG, POWER, ROOT, NTH_ROOT, DELETE, ABS, SIN, COS],
+  },
   // x ≥ 6,3; |x| < 2 — the digits page keeps < and >
-  compare: { main: MAIN, extra: [LESS_EQUAL, GREATER_EQUAL, ABS, DELETE] },
+  compare: { main: DIGITS, extra: [LESS_EQUAL, GREATER_EQUAL, ABS, DELETE] },
 }
 
 const SET_BY_TASK = new Map<string, KeySetName>(

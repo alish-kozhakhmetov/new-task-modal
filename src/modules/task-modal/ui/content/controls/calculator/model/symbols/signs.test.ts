@@ -25,6 +25,17 @@ describe('signs — which task gets which keys', () => {
     expect(keyboardForTask('Task_99_1_1').extra).toBeNull()
   })
 
+  it('x/y of a task with signs nests a fraction; grades 0–4 keep the released one', () => {
+    const latexOf = (t: string) =>
+      keyboardForTask(t).main.find((k) => k.title === 'x/y')!.latex
+    // −1/(6cos²(14 − x/6)), 2·5^(x/2)/ln5 — master 27.11
+    expect(latexOf('Task_10_8_17_12')).toBe('\\frac{}{}')
+    expect(latexOf('Task_11_6_6_7')).toBe('\\frac{}{}')
+    expect(latexOf('Task_6_5_49_4')).toBe('\\frac{}{}')
+    expect(latexOf('Task_4_11_10_4')).toBe('\\frac')
+    expect(latexOf('Task_6_1_1_1')).toBe('\\frac')
+  })
+
   it('a task is in one set at most', () => {
     const all = Object.values(TASK_KEY_SETS).flat()
     expect(new Set(all).size).toBe(all.length)
@@ -52,15 +63,16 @@ describe('signs — which task gets which keys', () => {
       '∪', '1', '2', '3', '-',
       'π', ';', '0', ',', '+',
     ]) // prettier-ignore
-    // digits, the operator column, x/y, «;» and «,» are the released ones
+    // digits, the operator column, «;» and «,» are the released ones; x/y
+    // nests a fraction
     const kept = kb.main.filter((k) => MAIN.includes(k))
-    expect(kept).toHaveLength(18)
+    expect(kept).toHaveLength(17)
   })
 
   it('trigonometry: the digits page as released, then a signs page', () => {
     const kb = keyboardForTask('Task_9_4_18_9')
     expect(kb.set).toBe('trigonometry')
-    expect(kb.main).toBe(MAIN)
+    expect(titles(kb.main)).toEqual(titles(MAIN))
     expect(titles(kb.extra!)).toEqual([
       'sin', 'cos', 'tg', 'ctg', 'Delete',
       'arcsin', 'arccos', 'arctg', 'arcctg', 'xⁿ',
@@ -104,8 +116,9 @@ describe('signs — which task gets which keys', () => {
       '°',
       'Delete',
     ])
-    // 5_8_7_25 the backend of 23.11 answers 100;;130;;50;;80, no degree sign
-    expect(keyboardForTask('Task_5_8_7_25').set).toBeNull()
+    // 5_8_7_25: test's backend answers 100;;130;;50;;80, master (production)
+    // 100°;;110°;;50°;;100° — the sets follow master
+    expect(keyboardForTask('Task_5_8_7_25').set).toBe('degree')
     expect(titles(keyboardForTask('Task_8_2_4_4').extra!)).toEqual([
       '√', 'ⁿ√', 'xⁿ', '±', 'Delete',
     ]) // prettier-ignore
@@ -121,10 +134,12 @@ describe('signs — which task gets which keys', () => {
     expect(keyboardForTask('Task_10_4_1_10').set).toBe('trigonometry')
     expect(keyboardForTask('Task_8_2_4_4').set).toBe('root') // √29; −√29
     expect(titles(keyboardForTask('Task_11_7_6_9').extra!)).toEqual([
-      'log', 'xⁿ', '√', 'ⁿ√', 'Delete', '|',
+      'log', 'xⁿ', '√', 'ⁿ√', 'Delete', '|', 'sin', 'cos',
     ]) // prettier-ignore
     // 7ln|x| + C: ln from the letters, the bars from the log page
     expect(keyboardForTask('Task_11_6_7_1').set).toBe('log')
+    // −ln|cos x| + C, ln|sin x − 1| + C (master 27.11): sin, cos on that page
+    expect(keyboardForTask('Task_11_6_7_14').set).toBe('log')
     const trigInterval = keyboardForTask('Task_10_4_12_10') // (−π/4 + πk; arctg 7 + πk)
     expect(trigInterval.main).toEqual(keyboardForTask('Task_6_5_63_7').main)
     expect(titles(trigInterval.extra!)).toContain('arctg')
@@ -144,7 +159,7 @@ describe('signs — which task gets which keys', () => {
     // |x| ≤ 12, x ≥ 6,3: the released < > stay, ≤ ≥ | after the digits
     const cmp = keyboardForTask('Task_6_5_65_2')
     expect(cmp.set).toBe('compare')
-    expect(cmp.main).toBe(MAIN)
+    expect(titles(cmp.main)).toEqual(titles(MAIN))
     expect(titles(cmp.extra!)).toEqual(['≤', '≥', '|', 'Delete'])
     // a matrix is not typed with keys; a curve on the plane is drawn
     expect(keyboardForTask('Task_13_2_0_0').set).toBeNull()

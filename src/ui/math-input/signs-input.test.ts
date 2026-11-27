@@ -63,6 +63,24 @@ describe('signs keys → the latex the window sends', () => {
     ).toBe('(-\\infty;-1]\\cup[1;+\\infty)') // prettier-ignore
   })
 
+  it('a fraction in a fraction: −1/(6cos²(14 − x/6)), grade 10', () => {
+    expect(
+      press('Task_10_8_17_12', field(), '-', 'x/y', '1', '→', '6', 'cos', 'x²', '( )', '1', '4', '-', 'x/y', 'x', '→', '6'),
+    ).toBe('-\\frac{1}{6\\cos^2(14-\\frac{x}{6})}') // prettier-ignore
+  })
+
+  it('−ln|cos x| + C on the log page, grade 11', () => {
+    expect(
+      press('Task_11_6_7_14', field(), '-', 'l', 'n', '|', 'cos', 'x', '|'),
+    ).toBe('-\\ln|\\cos x|') // prettier-ignore
+  })
+
+  it('grade 4 keeps the released fraction: none inside another', () => {
+    expect(
+      press('Task_4_11_10_4', field(), 'x/y', '1', '→', 'x/y', 'x', '→', '6'),
+    ).toBe('\\frac{1}{x}6')
+  })
+
   it('a fraction of π in an interval: [−π/2; 0]', () => {
     expect(
       press('Task_10_2_7_1', field(), '[', '-', 'x/y', 'π', '→', '2', '→', ';', '0', ']'),
