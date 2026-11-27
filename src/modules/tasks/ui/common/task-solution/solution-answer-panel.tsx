@@ -11,6 +11,7 @@ import { useAnswerTruncation } from '@/ui/math-text/use-answer-truncation'
 import type { TaskModalDependencies } from '../../../../task-modal/model/types/props'
 
 import s from './solution-answer-panel.module.scss'
+import { spansLines, useLayoutFlag } from './use-layout-flag'
 
 interface Props {
   userAnswer: string
@@ -76,6 +77,51 @@ const UserAnswerHighlight = ({
   )
 }
 
+/** The correct answer takes more than one line inside its block. */
+const answerWraps = (row: HTMLDivElement) => {
+  const answer = row.querySelector(`.${s.answer}`)
+  return answer ? spansLines(answer) : false
+}
+
+/**
+ * The correct answer wraps inside its own block after the label: a row whose
+ * answer took more than one line gets `data-wrapped`, and the label stands on
+ * the block's first line instead of its last (the module's styles).
+ */
+const CorrectAnswerHighlight = ({
+  text,
+  label,
+  unit,
+  alignCenter,
+}: {
+  text: string
+  label: string
+  unit?: string
+  alignCenter?: boolean
+}) => {
+  const rowRef = useLayoutFlag<HTMLDivElement>('data-wrapped', answerWraps)
+
+  return (
+    <div
+      ref={rowRef}
+      className={clsx(s.highlight, alignCenter && s.highlightCenter)}
+    >
+      <CheckIcon className={s.icon} />
+      <span className={s.label}>{label}</span>
+      <MathText inline className={s.answer}>
+        {text}
+      </MathText>
+      {unit ? (
+        <TextAdornment
+          data-testid="answer-unit"
+          className={s.unit}
+          value={unit}
+        />
+      ) : null}
+    </div>
+  )
+}
+
 export const SolutionAnswerPanel = ({
   userAnswer,
   correctAnswer,
@@ -110,20 +156,12 @@ export const SolutionAnswerPanel = ({
       {showUser && showCorrect && <hr className={s.delimeter} />}
 
       {showCorrect && (
-        <div className={clsx(s.highlight, alignCenter && s.highlightCenter)}>
-          <CheckIcon className={s.icon} />
-          <span className={s.label}>{t('correctAnswer')}</span>
-          <MathText inline className={s.answer}>
-            {resolvedCorrectLabel}
-          </MathText>
-          {unit ? (
-            <TextAdornment
-              data-testid="answer-unit"
-              className={s.unit}
-              value={unit}
-            />
-          ) : null}
-        </div>
+        <CorrectAnswerHighlight
+          text={resolvedCorrectLabel}
+          label={t('correctAnswer')}
+          unit={unit}
+          alignCenter={alignCenter}
+        />
       )}
     </div>
   )

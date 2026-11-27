@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import type { ReactNode } from 'react'
-import { describe, expect, it, vi } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import type { TaskModalDependencies } from '@/modules/task-modal/model/types/props'
 import { makeTaskModalDeps } from '@/modules/tasks/ui/templates/shared/testing/make-task-modal-deps'
@@ -68,5 +68,57 @@ describe('SolutionExplanation title in the pupil language (2.5.7)', () => {
   it('reads «Түсіндірме» in a Kazakh lesson', () => {
     render(<SolutionExplanation solution="\(2+2=4\)" deps={kazakhDeps()} />)
     expect(screen.getByText('Түсіндірме')).toBeInTheDocument()
+  })
+})
+
+/**
+ * jsdom lays nothing out: the lines of the correct answer are what its text
+ * runs report — `lines` boxes 23 px apart, one per line.
+ */
+const layOutAnswer = (lines: number) => {
+  const boxes = Array.from(
+    { length: lines },
+    (_, i) => new DOMRect(0, i * 23, 120, 20),
+  )
+  Object.defineProperty(Range.prototype, 'getClientRects', {
+    configurable: true,
+    value: () => boxes,
+  })
+}
+
+// The row has no role or test id of its own: its markup stays as in 2.5.8.
+const correctRow = () =>
+  // eslint-disable-next-line testing-library/no-node-access
+  screen.getByText('Правильный ответ:').parentElement
+
+describe('a correct answer longer than its line (5_2_11_1 on a phone)', () => {
+  afterEach(() => {
+    delete (Range.prototype as { getClientRects?: unknown }).getClientRects
+  })
+
+  it('marks the row: the block starts after the label, not over it', () => {
+    layOutAnswer(2)
+    render(
+      <SolutionAnswerPanel
+        userAnswer=""
+        correctAnswer="\(0;2;10\) ; \(1;13;15\) ; \(10;15\) ; \(2;13\)"
+        deps={makeTaskModalDeps()}
+      />,
+    )
+
+    expect(correctRow()).toHaveAttribute('data-wrapped')
+  })
+
+  it('leaves a one-line answer as it was (grade 4 since 2.5.8)', () => {
+    layOutAnswer(1)
+    render(
+      <SolutionAnswerPanel
+        userAnswer="50068"
+        correctAnswer="\(80011\)"
+        deps={makeTaskModalDeps()}
+      />,
+    )
+
+    expect(correctRow()).not.toHaveAttribute('data-wrapped')
   })
 })

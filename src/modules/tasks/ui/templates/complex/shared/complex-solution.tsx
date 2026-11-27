@@ -14,6 +14,7 @@ import { isTextOnlyComplexDescription } from '../lib/is-text-only-complex-descri
 import type { ComplexTask, SimpleComplexAnswerInput } from '../lib/types.task'
 
 import { ComplexSolutionCondition } from './complex-solution-condition'
+import { ComplexSolutionRow } from './complex-solution-row'
 import styles from './complex.module.scss'
 
 type Props = TaskSolutionComponentProps<ComplexTask> & {
@@ -132,9 +133,7 @@ export const ComplexSolution = ({
           {description}
           {answerPanel}
           {showAdornmentRow ? (
-            <div className={`${styles.inputRow} ${styles.solutionRow}`}>
-              {answerControls}
-            </div>
+            <ComplexSolutionRow>{answerControls}</ComplexSolutionRow>
           ) : null}
         </>
       )}
