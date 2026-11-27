@@ -20,7 +20,18 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    /* The same `@/` alias as tsconfig.app: scripts import src modules that use it */
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
-  "include": ["vite.config.ts", "scripts"]
+  "include": ["vite.config.ts", "scripts"],
+  /* Browser harnesses (DOM, JSX) run in Vite pages, not in Node */
+  "exclude": [
+    "scripts/pilot/harness",
+    "scripts/keys/harness",
+    "scripts/cx/harness"
+  ]
 }

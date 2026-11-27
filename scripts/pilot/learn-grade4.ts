@@ -17,7 +17,6 @@ for (let ch = 1; ch <= 12; ch++) {
     for (const id of ids) mapOf.set(`${ch}_${id}`, tpl)
 }
 const pairs = new Map<string, Map<string, number>>()
-const descOf = new Map<string, Map<string, number>>()
 let none = 0
 for (const b of bundles) for (const t of b.tasks ?? []) {
   const p = parseType(t.type)

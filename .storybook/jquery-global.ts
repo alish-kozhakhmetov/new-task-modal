@@ -8,5 +8,8 @@ declare global {
   }
 }
 
-window.jQuery = jQuery
-window.$ = jQuery
+// globalThis is `window` in the browser; it also type-checks under the Node
+// config, which reaches this file through scripts/keys/candidates.test.ts
+const host = globalThis as typeof globalThis & Pick<Window, 'jQuery' | '$'>
+host.jQuery = jQuery
+host.$ = jQuery
