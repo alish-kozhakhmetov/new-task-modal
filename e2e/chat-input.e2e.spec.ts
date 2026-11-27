@@ -81,7 +81,7 @@ test.beforeEach(async ({ page }) => {
   })
 
   await page.getByText('Ментор').click()
-  await expect(page.getByPlaceholder('Cообщение...')).toBeVisible()
+  await expect(page.getByPlaceholder('Сообщение…')).toBeVisible()
 })
 
 const attachFile = async (page: Page, filePath: string) => {
@@ -90,7 +90,7 @@ const attachFile = async (page: Page, filePath: string) => {
 
 test.describe('Chat input (Storybook)', () => {
   test('sends a text message', async ({ page }) => {
-    const input = page.getByPlaceholder('Cообщение...')
+    const input = page.getByPlaceholder('Сообщение…')
     await input.fill('Привет из e2e')
     await input.press('Enter')
 
@@ -135,7 +135,7 @@ test.describe('Chat input (Storybook)', () => {
     await expect(page.getByText('0:00')).toBeVisible()
     await page.getByRole('button').last().click()
 
-    await expect(page.getByPlaceholder('Cообщение...')).toBeVisible()
+    await expect(page.getByPlaceholder('Сообщение…')).toBeVisible()
     // Fake blob often fails WaveSurfer — either waveform duration or fallback.
     await expect(
       page.getByText('Audio unavailable').or(page.getByText(/^\d+:\d{2}$/)),
