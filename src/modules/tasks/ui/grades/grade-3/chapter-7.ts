@@ -6,7 +6,7 @@ import { TemplateTypes } from '../../../model/template-types.ts'
  * content reused from grade 3 without a renumbered type. availableTasks keys
  * off that embedded type id (grade-N/chapter-M folder digits), not the real
  * session grade, so they were mapped here first (2.5.x); the rest of the
- * chapter joined with grade 3 (feat/grade-3, scripts/pilot/map-grade.ts).
+ * chapter joined with grade 3 (feat/grade-3, tools/pilot/pilot/map-grade.ts).
  */
 const map = {
   [TemplateTypes.Complex.After]: [

@@ -8,7 +8,7 @@ import type { MainPanelSymbol } from './types'
 /**
  * Signs beyond the released keyboard (2.5.8) — for grades 5–13: intervals,
  * unions, trigonometry, π, a vector, degrees, a root, a logarithm. What each key writes is
- * what the backend's TaskChecker accepts (scripts/keys/README.md): every
+ * what the backend's TaskChecker accepts (tools/pilot/keys/README.md): every
  * sampled reference of these generators typed with these keys into
  * MathQuill and judged by the backend's own checker.
  *

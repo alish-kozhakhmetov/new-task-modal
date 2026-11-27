@@ -13,7 +13,7 @@ import type { MathField } from './types'
  * The signs keys (grades 5–13) through the keyboard's own path into a real
  * MathQuill field. The latex here is what the window sends; that the backend
  * accepts it was checked by its own TaskChecker on 11 784 sampled references
- * of 1 964 generators of grades 5–13, 6 seeds each (27.11, scripts/keys/README.md)
+ * of 1 964 generators of grades 5–13, 6 seeds each (27.11, tools/pilot/keys/README.md)
  * — these pin the form that passed.
  */
 type Field = MathField & { typedText: (t: string) => void }
