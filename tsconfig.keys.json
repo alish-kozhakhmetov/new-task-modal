@@ -1,0 +1,10 @@
+{
+  // scripts/keys/candidates.test.ts runs in vitest's jsdom on the window's own
+  // code: the app's settings (DOM, @/ paths, svg imports) plus node's fs
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.keys.tsbuildinfo",
+    "types": ["vite/client", "node"]
+  },
+  "include": ["scripts/keys/candidates.test.ts", "vite-env.d.ts"]
+}

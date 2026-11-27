@@ -98,6 +98,11 @@ const handleSpecialSymbol = (
       }
       mathField?.cmd('\\frac')
     },
+    // the fraction key of a task with signs (grades 5–13, symbols/signs.ts):
+    // a fraction may sit inside another one there — 1/(6cos²(14 − x/6))
+    '\\frac{}{}': () => {
+      mathField?.cmd('\\frac')
+    },
     '≠': () => {
       mathField?.cmd('\\neq')
     },
