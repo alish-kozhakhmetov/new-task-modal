@@ -1,7 +1,0 @@
-import { c as e } from "./create-table-template-Ds1a3i2p.js";
-const a = e({
-  id: "table.multiRow"
-});
-export {
-  a as TableMultiRow
-};
