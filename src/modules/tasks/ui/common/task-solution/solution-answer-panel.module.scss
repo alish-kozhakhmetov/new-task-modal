@@ -74,3 +74,18 @@
   min-width: 24px;
   margin-right: var(--space-4);
 }
+
+// A correct answer of several values longer than its line (5_2_11_1 on a
+// phone) wraps inside its own block. End-aligned, the block's first lines
+// stood over «Правильный ответ:» and only its tail came after the label.
+// Wrapped (`data-wrapped`, use-layout-flag.ts), the label and the block's
+// first line share a baseline and the rest goes under the value. A one-line
+// answer keeps the end alignment: a fraction's bottom on the label's, as in
+// grade 4 since 2.5.8.
+.highlight[data-wrapped] {
+  align-items: baseline;
+
+  .icon {
+    align-self: flex-start;
+  }
+}

@@ -13,6 +13,7 @@ import { MathFormula } from '@/ui/math-text/math-formula'
 import type { ComplexTask } from '../lib/types.task'
 
 import { ComplexDescription } from './complex-description'
+import { ComplexSolutionRow } from './complex-solution-row'
 import styles from './complex.module.scss'
 import { complexDescriptionHasTableAnswerCells } from './figures/table-part'
 
@@ -72,10 +73,7 @@ export const MultiComplexSolution = ({
           className={layout === 'inline' ? styles.inline : styles.stack}
         >
           {inputEntries.map(({ key, before, after }, index) => (
-            <div
-              key={key}
-              className={`${styles.inputRow} ${styles.solutionRow}`}
-            >
+            <ComplexSolutionRow key={key}>
               {before ? (
                 <TextAdornment
                   data-testid="text-prefix"
@@ -93,7 +91,7 @@ export const MultiComplexSolution = ({
                   value={after}
                 />
               ) : null}
-            </div>
+            </ComplexSolutionRow>
           ))}
         </div>
       ) : null}

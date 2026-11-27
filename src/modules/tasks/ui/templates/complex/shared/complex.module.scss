@@ -117,6 +117,16 @@
   white-space: normal;
 }
 
+// A value that fits beside a long label and a unit that does not: the row
+// wraps by items, and «см²» fell alone under «60» (3_10_15_4 on a phone).
+// The label takes its own line and the value goes down with its unit, as the
+// field with its unit does in the task (`data-unit-down`,
+// complex-solution-row.tsx). A row that fits is not touched.
+.solutionRow[data-unit-down] > .fieldLabel,
+.solutionRow[data-unit-down] > .prefix {
+  flex-basis: 100%;
+}
+
 .stack {
   display: flex;
   flex-direction: column;
