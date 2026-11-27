@@ -25,13 +25,21 @@ import { resolveLayoutId } from './resolve-by-layout'
 
 declare global {
   interface Window {
-    __cx: { checks: string[]; ready: boolean; resolved?: string | null; error?: string }
+    __cx: {
+      checks: string[]
+      ready: boolean
+      resolved?: string | null
+      error?: string
+    }
   }
 }
 
 window.__cx = { checks: [], ready: false }
 window.addEventListener('unhandledrejection', (event) => {
-  const message = event.reason instanceof Error ? event.reason.message : String(event.reason ?? '')
+  const message =
+    event.reason instanceof Error
+      ? event.reason.message
+      : String(event.reason ?? '')
   if (message.startsWith('Typesetting failed:')) event.preventDefault()
 })
 
@@ -46,13 +54,17 @@ const layout = (q.get('layout') as 'wide' | 'phone') ?? 'phone'
 // stories' 375 px frame), as the app's web view gives the window to the site
 if (q.get('fill') === '1') {
   const style = document.createElement('style')
-  style.textContent = '[data-testid="lesson-frame"]{width:100vw !important}'
+  // the solution view whole on one shot: the frame takes the window's height
+  style.textContent = `[data-testid="lesson-frame"]{width:100vw !important${q.get('solution') === '1' ? ';height:100vh !important' : ''}}`
   document.head.append(style)
 }
 
 const run = async () => {
   const data = (await fetch(`/${file}`).then((r) => r.json())) as {
-    byGrade: Record<string, Array<{ id: string; task: Task }>>
+    byGrade: Record<
+      string,
+      Array<{ id: string; task: Task; answerString?: string }>
+    >
   }
   const entry = Object.values(data.byGrade)
     .flat()
@@ -63,10 +75,32 @@ const run = async () => {
   }
   const activeTask = { ...entry.task, solution: null } as Task
   window.__cx.resolved = resolveLayoutId(activeTask)
+  // solution=1: the check's mock answers the third wrong attempt with the
+  // reference as the backend's solution (verify.mjs --solution), so the
+  // window shows its solution view: «Ваш ответ», «Правильный ответ», the rows
+  const reference = String(entry.answerString ?? '').split(' || ')[0]
+  const text = (value: string) => ({ rus: value, kaz: value })
+  // a story fixture brings its own (the INT sheets' numbers)
+  const solution =
+    q.get('solution') !== '1'
+      ? undefined
+      : (entry.task.solution ??
+        (reference
+          ? ({
+              type: 'formula',
+              answer: text(reference),
+              content: text(''),
+            } as unknown as Task['solution'])
+          : undefined))
   createRoot(document.getElementById('root')!).render(
     <MathJaxContext config={MATH_JAX_CONFIG}>
       <LessonTrainer
-        lesson={{ tasks: [activeTask], activeTask, initialTasksCount: 1 }}
+        lesson={{
+          tasks: [activeTask],
+          activeTask,
+          initialTasksCount: 1,
+          solution,
+        }}
         language={language}
         layout={layout}
         onCheck={(answer) => window.__cx.checks.push(answer)}

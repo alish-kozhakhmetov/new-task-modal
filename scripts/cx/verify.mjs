@@ -15,7 +15,7 @@
  *   node scripts/cx/verify.mjs [--only=<layout id>] [--workers=4] [--shots]
  *     [--viewport=390x844] [--layout=phone|wide] [--route=layout|chapters]
  *     [--probe-only] [--ids=Task_3_5_4_19,…] [--tag=<results suffix>] [--port=5197]
- *     [--shots=all]
+ *     [--shots=all] [--solution]
  *
  * --viewport: the window; the phone frame takes its width (390 px phone),
  *   from 1100 px the site's wide layout. Every visible field's bounding box
@@ -59,8 +59,12 @@ const LAYOUT = args.layout ?? (VW >= 1100 ? 'wide' : 'phone')
 const ROUTE = args.route ?? 'layout'
 const PROBE_ONLY = Boolean(args['probe-only'])
 const IDS = args.ids ? new Set(String(args.ids).split(',')) : null
+// --solution: three wrong attempts, then the window's solution view (the
+// harness's mock answers with the reference); a PNG and the template's DOM
+// per example in shots/<tag>/ — the plate «Правильный ответ» and the rows
+const SOLUTION = Boolean(args.solution)
 const SHOT_DIR = path.join(HERE, 'shots', args.tag ?? `${VW}`)
-if (SHOTS) fs.mkdirSync(SHOT_DIR, { recursive: true })
+if (SHOTS || SOLUTION) fs.mkdirSync(SHOT_DIR, { recursive: true })
 
 // ---------- the server: the package's dev config without stylelint's --fix
 const OVERRIDE = path.join(HERE, 'harness/resolve-by-layout.ts')
@@ -211,7 +215,10 @@ if (args.corpus) {
     const data = JSON.parse(fs.readFileSync(path.join(ROOT, file), 'utf8'))
     let i = 0
     for (const [g, list] of Object.entries(data.byGrade))
-      for (const e of list) jobs.push({ layout: l, file, entry: { ...e, grade: Number(g) }, first: i++ === 0 })
+      for (const e of list) {
+        if (IDS && !IDS.has(e.id)) continue
+        jobs.push({ layout: l, file, entry: { ...e, grade: Number(g) }, first: i++ === 0 })
+      }
   }
 }
 
@@ -233,7 +240,7 @@ const RAW = /\\(frac|cdot|left|right|begin|text|times|div|sqrt|over|mathrm|dfrac
 
 async function openForm(page, job, lang = 'russian') {
   await page.goto(
-    `${BASE}/scripts/cx/harness/index.html?file=${encodeURIComponent(job.file)}&id=${encodeURIComponent(job.entry.id)}&lang=${lang}&layout=${LAYOUT}&fill=1`,
+    `${BASE}/scripts/cx/harness/index.html?file=${encodeURIComponent(job.file)}&id=${encodeURIComponent(job.entry.id)}&lang=${lang}&layout=${LAYOUT}&fill=1${SOLUTION ? '&solution=1' : ''}`,
   )
   const shown = await page.waitForSelector('[data-template-id]', { timeout: 30000 }).catch(() => null)
   await page.waitForTimeout(600)
@@ -436,6 +443,7 @@ async function verifyOne(page, job) {
       res.verdict = 'broken'
       return res
     }
+    if (SOLUTION) return await solutionView(page, res, mutate(parts), entry)
     try {
       await typeParts(page, parts)
     } catch (e) {
@@ -469,6 +477,52 @@ async function verifyOne(page, job) {
     page.off('console', onConsole)
     page.off('pageerror', onPageError)
   }
+}
+
+// ---------- the solution view: a wrong answer three times, as a pupil who
+// ran out of attempts sees it
+async function solutionView(page, res, wrong, entry) {
+  try {
+    await typeParts(page, wrong)
+  } catch (e) {
+    res.issues.push(`typing: ${String(e.message ?? e).slice(0, 120)}`)
+    res.verdict = 'solver cannot type'
+    return res
+  }
+  const plate = page.locator('.task-modal').getByText('Правильный ответ', { exact: false })
+  // the button stays off until the answer changes: one more digit in the last
+  // field (the focused one) per attempt — still wrong for the mock's compare
+  for (let attempt = 0; attempt < 4 && !(await plate.count()); attempt++) {
+    if (attempt > 0) await page.keyboard.type('1')
+    const sent = await page.evaluate(() => window.__cx.checks.length)
+    await page.keyboard.press('Enter')
+    await page
+      .waitForFunction((n) => window.__cx.checks.length > n, sent, { timeout: 2000 })
+      .catch(() => {})
+    await page.waitForTimeout(250)
+  }
+  if (!(await plate.count())) {
+    res.checks = await page.evaluate(() => window.__cx.checks.length)
+    await page.screenshot({ path: path.join(SHOT_DIR, `${res.layout}__${entry.id}.fail.png`) })
+    res.issues.push('no solution view after the attempts')
+    res.verdict = 'no solution view'
+    return res
+  }
+  // MathJax typesets the solution after it mounts; the wrap hooks re-measure
+  await page.waitForTimeout(900)
+  const base = path.join(SHOT_DIR, `${res.layout}__${entry.id}`)
+  const dom = await page.evaluate(() => {
+    const tpl = document.querySelector('.task-modal [data-template-id]')
+    return tpl ? tpl.outerHTML : ''
+  })
+  fs.writeFileSync(`${base}.html`, dom)
+  res.dom = path.relative(ROOT, `${base}.html`)
+  if (SHOTS) {
+    await page.screenshot({ path: `${base}.png`, animations: 'disabled', caret: 'hide', fullPage: true })
+    res.shot = path.relative(ROOT, `${base}.png`)
+  }
+  res.verdict = 'solution shown'
+  return res
 }
 
 function finish(res) {
