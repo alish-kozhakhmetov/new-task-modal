@@ -67,7 +67,8 @@ describe('a header line of several words wraps between them (rule 59а)', () => 
       ),
       'utf8',
     )
-    const rule = /\.cellHeader \.cellLineWords \{\s*white-space: normal;\s*\}/
+    const rule =
+      /\.tableWrapper\[data-header-wrap\] \.cellHeader \.cellLineWords \{\s*white-space: normal;\s*\}/
     expect(tableScss).toMatch(rule)
     expect(tableScss).toMatch(/\.cellLine \{[^}]*white-space: nowrap;/)
   })

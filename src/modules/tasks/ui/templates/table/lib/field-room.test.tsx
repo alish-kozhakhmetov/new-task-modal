@@ -70,7 +70,7 @@ describe('a field under a wrapping header keeps room for its answer (rule 12)', 
       'utf8',
     )
     expect(tableScss).toMatch(
-      /\.inputCellAnswerRoom \.input \{\s*min-width: 80px;\s*\}/,
+      /\.tableWrapper\[data-header-wrap\] \.inputCellAnswerRoom \.input \{\s*min-width: 80px;\s*\}/,
     )
   })
 

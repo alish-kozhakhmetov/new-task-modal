@@ -280,12 +280,14 @@
   white-space: nowrap;
 }
 
-// Rule 59а: a header wraps between words — a line the backend broke off too.
-// «Площадь выращивания» over «(S) (га)» (4_10_9_9) held one line, set its
-// column at 202px and the table at 637 on a 362px phone column, and the
-// header was cut under the fade. A one-word line («3-ий») has no such class
-// and keeps the nowrap above: it never splits at its hyphen.
-.cellHeader .cellLineWords {
+// Rule 59а: a header wraps between words — a line the backend broke off too —
+// where the table then fits its column (`data-header-wrap`, set by
+// useHeaderWrapWhenItFits). «Площадь выращивания» over «(S) (га)» (4_10_9_9)
+// held one line and the table at 637: 49px past the 592px column at 1280,
+// where wrapped it fits. On a phone it scrolls either way, and there the
+// header keeps one line, as in 2.5.9. A one-word line («3-ий») has no such
+// class and keeps the nowrap above: it never splits at its hyphen.
+.tableWrapper[data-header-wrap] .cellHeader .cellLineWords {
   white-space: normal;
 }
 
@@ -295,7 +297,7 @@
 // widened it to 72 and shifted the table. 80 is the floor every field has in
 // the flex rows (`.inputCellInlineInput`): four digits with the caret. Only
 // these columns: a header that does not wrap sets the width it always set.
-.inputCellAnswerRoom .input {
+.tableWrapper[data-header-wrap] .inputCellAnswerRoom .input {
   min-width: 80px;
 }
 
